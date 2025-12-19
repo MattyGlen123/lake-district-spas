@@ -26,6 +26,7 @@ const config: Config = {
           foreground: 'hsl(var(--muted-foreground))',
         },
         border: 'hsl(var(--border))',
+        'filter-bg': 'hsl(var(--filter-bg))',
       },
       animation: {
         'slide-down': 'slideDown 0.3s ease-out',
