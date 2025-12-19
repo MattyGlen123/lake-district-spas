@@ -1,13 +1,8 @@
-import heroImage from '@/assets/hero-lake-district.jpg';
-
 const Hero = () => {
   return (
     <section className="relative h-[300px] md:h-[400px] mt-16 overflow-hidden">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/40" />
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 to-foreground/70" />
