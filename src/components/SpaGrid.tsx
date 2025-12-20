@@ -35,7 +35,7 @@ const SpaGrid = ({ spas }: SpaGridProps) => {
   return (
     <section className="py-8 md:py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+        <div className="flex flex-col gap-6 lg:gap-8">
           {spas.map((spa) => (
             <SpaCard
               key={spa.id}
