@@ -135,6 +135,91 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
             ))}
           </ul>
 
+          {/* Expanded Content - Mobile */}
+          {isExpanded && (
+            <div className="pt-4 border-t border-border animate-slide-down mb-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Thermal Facilities */}
+                <div>
+                  <h4 className="flex items-center gap-2 text-base font-semibold text-foreground mb-3">
+                    <Thermometer className="w-5 h-5 text-primary" />
+                    Thermal Suite Facilities
+                  </h4>
+                  <div className="space-y-2">
+                    {spa.thermalFacilities.map((facility, index) => (
+                      <div key={index} className="text-sm">
+                        <span className="text-foreground block">
+                          {facility.name}
+                        </span>
+                        <span className="text-muted-foreground">
+                          {facility.details}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Pool Features */}
+                <div>
+                  <h4 className="flex items-center gap-2 text-base font-semibold text-foreground mb-3">
+                    <Waves className="w-5 h-5 text-primary" />
+                    Pools & Water Features
+                  </h4>
+                  <div className="space-y-2">
+                    {spa.poolFeatures.map((pool, index) => (
+                      <div key={index} className="text-sm">
+                        <span className="font-medium text-foreground block">
+                          {pool.name}:
+                        </span>
+                        <span className="text-muted-foreground">
+                          {pool.details}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Access Policy */}
+                <div>
+                  <h4 className="flex items-center gap-2 text-base font-semibold text-foreground mb-3">
+                    <Shield className="w-5 h-5 text-primary" />
+                    Access Policy & Booking
+                  </h4>
+                  <ul className="space-y-2">
+                    {spa.accessPolicy.map((policy, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start gap-2 text-sm text-foreground"
+                      >
+                        <span className="text-muted-foreground">•</span>
+                        {policy}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Good to Know */}
+                <div>
+                  <h4 className="flex items-center gap-2 text-base font-semibold text-foreground mb-3">
+                    <Lightbulb className="w-5 h-5 text-primary" />
+                    Good to Know
+                  </h4>
+                  <ul className="space-y-2">
+                    {spa.goodToKnow.map((info, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start gap-2 text-sm text-foreground"
+                      >
+                        <span className="text-muted-foreground">•</span>
+                        {info}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Expand/Collapse Button */}
           <button
             onClick={onToggle}
@@ -245,9 +330,9 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
         </div>
       </div>
 
-      {/* Expanded Content - Full Width (shared for both layouts) */}
+      {/* Expanded Content - Desktop */}
       {isExpanded && (
-        <div className="p-6 pt-0 lg:pt-6 lg:border-t border-border animate-slide-down">
+        <div className="hidden lg:block p-6 pt-6 border-t border-border animate-slide-down">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Thermal Facilities */}
             <div>
