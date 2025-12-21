@@ -374,9 +374,9 @@ export const spaData: Spa[] = [
     imageAlt:
       'Contemporary indoor pool at Lakeside Hotel Health Club and Spa on Lake Windermere, featuring distinctive teal and green mosaic tile columns, flowing wave-pattern ceiling design, and spacious swimming area with loungers overlooking the Lake District waterfront',
     keyFeatures: [
-      'Spa access varies by room type',
-      '3 treatment rooms pool',
-      'Call to confirm treatment rooms',
+      '17m indoor pool',
+      'Outdoor spa garden',
+      'Multiple treatment rooms',
     ],
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Steam room' },
@@ -661,11 +661,13 @@ export const spaData: Spa[] = [
     id: 'castle-green-hotel',
     name: 'Castle Green Hotel',
     location: 'Kendal',
-    websiteUrl: 'https://castlegreenhotel.co.uk',
+    websiteUrl:
+      'https://castlegreenhotel.co.uk//hotel-guest-leisure-club-access/',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
     imageSrc: '/images/spas/lake-district-spas_castle-green-hotel.jpg',
-    imageAlt: 'Castle Green Hotel thermal suite and pool facilities',
+    imageAlt:
+      'Spacious lane-marked swimming pool at Castle Green Hotel in Kendal, featuring impressive sculptural ceiling installations with organic flowing design, ambient pink and purple mood lighting, cream limestone tiling, and extensive leisure club facilities in the Lake District gateway town',
     keyFeatures: [
       'Spa included with all room bookings',
       'Award: BW Premier Collection',
@@ -695,13 +697,12 @@ export const spaData: Spa[] = [
     id: 'appleby-manor-hotel-garden-spa',
     name: 'Appleby Manor Hotel & Garden Spa',
     location: 'Appleby-in-Westmorland',
-    websiteUrl: 'https://applebymanor.co.uk',
+    websiteUrl: 'https://applebymanor.co.uk/garden-spa',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
-    imageSrc:
-      '/images/spas/lake-district-spas_appleby-manor-hotel-garden-spa.jpg',
+    imageSrc: '/images/spas/lake-district-spas_appleby-manor.jpg',
     imageAlt:
-      'Appleby Manor Hotel & Garden Spa thermal suite and pool facilities',
+      'Contemporary hydrotherapy pool at Appleby Manor Country House Hotel near Appleby-in-Westmorland, featuring dramatic blue LED underwater lighting, natural Lake District pebble stone border detail, modern wicker relaxation seating with tropical palms, and luxury spa facilities in the Eden Valley',
     keyFeatures: [
       'Spa costs extra for hotel guests',
       'Award: AA Rosette restaurant, £1m Garden Spa',
@@ -743,11 +744,12 @@ export const spaData: Spa[] = [
     id: 'netherwood-hotel-spa',
     name: 'Netherwood Hotel & Spa',
     location: 'Grange-over-Sands',
-    websiteUrl: 'https://netherwood-hotel.co.uk',
+    websiteUrl: 'https://netherwood-hotel.co.uk/spa-fitness',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
-    imageSrc: '/images/spas/lake-district-spas_netherwood-hotel-spa.jpg',
-    imageAlt: 'Netherwood Hotel & Spa thermal suite and pool facilities',
+    imageSrc: '/images/spas/lake-district-spas_netherwood-hotel.webp',
+    imageAlt:
+      'Unique circular Kneipp footbath at Netherwood Hotel and Spa in Grange-over-Sands, featuring natural rope-wrapped wooden basin design with dual cascade water features, positioned against authentic Lakeland dry stone walling with designer loungers and orange accent cushions',
     keyFeatures: [
       'Spa costs extra for hotel guests',
       'Award: Grade II listed Victorian mansion (1893)',
@@ -785,11 +787,12 @@ export const spaData: Spa[] = [
     id: 'grange-hotel',
     name: 'Grange Hotel',
     location: 'Grange-over-Sands',
-    websiteUrl: 'https://grange-hotel.co.uk',
+    websiteUrl: 'https://grange-hotel.co.uk/the-spa/',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
     imageSrc: '/images/spas/lake-district-spas_grange-hotel.jpg',
-    imageAlt: 'Grange Hotel thermal suite and pool facilities',
+    imageAlt:
+      'Luxury facial treatment at The Grange Boutique Hotel and Restaurant in Grange-over-Sands, featuring professional spa therapies with skilled hands performing rejuvenating skincare treatments in an intimate, serene environment overlooking Morecambe Bay in the southern Lake District',
     keyFeatures: [
       'Spa included with all room bookings',
       'Award: Built 1866, 4-star',
