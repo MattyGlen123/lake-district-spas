@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import {
   MapPin,
@@ -24,6 +24,7 @@ interface SpaCardProps {
 const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const config = businessModelConfig[spa.businessModel];
+  const [imageError, setImageError] = useState(false);
 
   const getBadgeClass = (model: BusinessModel) => {
     const classes: Record<BusinessModel, string> = {
@@ -62,16 +63,22 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
 
         {/* Image - Mobile: 389px × 250px (1.556:1 ratio) */}
         <div className="aspect-[389/250] overflow-hidden bg-gray-200 relative">
-          <Image
-            src={spa.imageSrc}
-            alt={spa.imageAlt}
-            width={389}
-            height={250}
-            className="w-full h-full object-cover"
-            loading="lazy"
-            quality={85}
-            sizes="100vw"
-          />
+          {!imageError ? (
+            <Image
+              src={spa.imageSrc}
+              alt={spa.imageAlt}
+              fill
+              className="object-cover"
+              loading="lazy"
+              quality={85}
+              sizes="100vw"
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+              <span className="text-sm">Image not available</span>
+            </div>
+          )}
         </div>
 
         {/* Content */}
@@ -233,16 +240,23 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
         <div className="flex">
           {/* Image - Left Side: 600px × 400px (1.5:1 ratio) */}
           <div className="w-[600px] h-[400px] shrink-0 bg-gray-200 relative overflow-hidden">
-            <Image
-              src={spa.imageSrc}
-              alt={spa.imageAlt}
-              width={600}
-              height={400}
-              className="w-full h-full object-cover"
-              loading="lazy"
-              quality={85}
-              sizes="600px"
-            />
+            {!imageError ? (
+              <Image
+                src={spa.imageSrc}
+                alt={spa.imageAlt}
+                fill
+                className="object-cover"
+                loading="lazy"
+                quality={85}
+                sizes="600px"
+                onError={() => setImageError(true)}
+                unoptimized
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                <span className="text-sm">Image not available</span>
+              </div>
+            )}
           </div>
 
           {/* Content - Right Side */}

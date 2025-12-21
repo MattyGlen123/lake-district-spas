@@ -7,11 +7,11 @@ describe('Spa Data Validation', () => {
       expect(spaData.length).toBeGreaterThan(0);
     });
 
-    it('should have 22 unique spas', () => {
-      expect(spaData.length).toBe(22);
+    it('should have 20 unique spas', () => {
+      expect(spaData.length).toBe(20);
       const ids = spaData.map((spa) => spa.id);
       const uniqueIds = new Set(ids);
-      expect(uniqueIds.size).toBe(22);
+      expect(uniqueIds.size).toBe(20);
     });
 
     it('each spa should have all required fields', () => {
@@ -54,7 +54,8 @@ describe('Spa Data Validation', () => {
 
     it('each spa should have valid image URL format', () => {
       spaData.forEach((spa) => {
-        expect(spa.imageSrc).toMatch(/^\/.*\.jpg$/);
+        // Images can be .jpg, .jpeg, .webp, or .png
+        expect(spa.imageSrc).toMatch(/^\/.*\.(jpg|jpeg|webp|png)$/);
       });
     });
   });

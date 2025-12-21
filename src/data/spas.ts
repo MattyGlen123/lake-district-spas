@@ -60,8 +60,9 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://armathwaite-hall.com/spa',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with room, day passes Packages available',
-    imageSrc: '/spa-armathwaite-hall-hotel-spa.jpg',
-    imageAlt: 'Armathwaite Hall Hotel & Spa thermal suite and pool facilities',
+    imageSrc: '/images/spas/lake-district-spas_armathwaite-hall.jpg',
+    imageAlt:
+      'Luxury thermal relaxation suite at Armathwaite Hall Hotel and Spa near Bassenthwaite Lake, featuring heated ceramic loungers with burnt orange throws, ambient candlelit atmosphere with green velvet curtains and contemporary design, offering award-winning spa facilities in a Lake District country estate setting',
     keyFeatures: [
       'Spa included with room, day passes Packages available',
       'Award: Celebrated spa in Lake District',
@@ -103,9 +104,9 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://brimstonehotel.co.uk/rooms/spa-break/',
     businessModel: 'guests-only',
     businessModelText: 'Exclusive to hotel guests only',
-    imageSrc: '/spa-brimstone-spa-at-brimstone-hotel.jpg',
+    imageSrc: '/images/spas/lake-district-spas_brimstone-hotel.jpg',
     imageAlt:
-      'Brimstone Spa (at Brimstone Hotel) thermal suite and pool facilities',
+      'Unique swim-through hydrotherapy pool at Brimstone Hotel and Spa in Langdale featuring iridescent blue mosaic tiles, modern Nordic-inspired design with wooden accents and floor-to-ceiling windows, white heated loungers, and indoor-outdoor connectivity in the heart of the Lake District',
     keyFeatures: [
       'Exclusive to hotel guests only',
       'Award: Premium spa',
@@ -154,8 +155,9 @@ export const spaData: Spa[] = [
     businessModel: 'day-passes',
     businessModelText:
       'Spa included with room, day passes £35 Mon-Thu, £45 Fri-Sun (3 hours)',
-    imageSrc: '/spa-spa-at-the-daffodil-hotel.jpg',
-    imageAlt: 'Spa at the Daffodil Hotel thermal suite and pool facilities',
+    imageSrc: '/images/spas/lake-district-spas_daffodil-hotel-and-spa.webp',
+    imageAlt:
+      'Contemporary hydrotherapy pool at Daffodil Hotel and Spa in Grasmere with dramatic blue and purple ambient lighting, cascade waterfall features, heated lounger seating, and modern minimalist design creating a tranquil Lake District wellness experience',
     keyFeatures: [
       'Spa included with room, day passes £35 Mon-Thu, £45 Fri-Sun (3 hours)',
       'Award: Luxury experience',
@@ -192,9 +194,9 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://swanhotel.com//spa/',
     businessModel: 'day-passes',
     businessModelText: 'Spa included with room, day passes £40 (2 hours)',
-    imageSrc: '/spa-the-swan-hotel-spa-holte-spa.jpg',
+    imageSrc: '/images/spas/lake-district-spas_swan-hotel.webp',
     imageAlt:
-      'The Swan Hotel & Spa (Holte Spa) thermal suite and pool facilities',
+      'Illuminated outdoor hydrotherapy pool at Swan Hotel and Spa in Newby Bridge at twilight, featuring swim-through access connecting indoor relaxation areas with heated outdoor pool, blue underwater lighting, and glass walls showcasing integrated spa facilities in the Lake District',
     keyFeatures: [
       'Spa included with room, day passes £40 (2 hours)',
       'Award: Award-winning spa',
@@ -235,94 +237,15 @@ export const spaData: Spa[] = [
     },
   },
   {
-    id: 'langdale-hotel-spa-langdale-leisure',
-    name: 'Langdale Hotel & Spa (Langdale Leisure)',
-    location: 'Ambleside',
-    websiteUrl: 'https://langdale.co.uk',
-    businessModel: 'hybrid',
-    businessModelText: 'Free leisure facilities, premium spa upgrade available',
-    imageSrc: '/spa-langdale-hotel-spa-langdale-leisure.jpg',
-    imageAlt:
-      'Langdale Hotel & Spa (Langdale Leisure) thermal suite and pool facilities',
-    keyFeatures: [
-      'Free leisure facilities, premium spa upgrade available',
-      'Award: Part of Langdale Estate',
-      '20m indoor pool',
-      'Available via Brimstone treatment rooms',
-    ],
-    thermalFacilities: [
-      { name: 'Finnish Sauna', details: '(in leisure)' },
-      { name: 'Experience Showers', details: '(Tropical)' },
-    ],
-    poolFeatures: [
-      { name: 'Indoor Pool', details: '20m' },
-      { name: 'Hot Tub', details: 'Spa bath' },
-    ],
-    accessPolicy: [
-      'Spa included with room booking',
-      'Day passes: Not available',
-      'Pre-booking: Automatic for guests',
-      'Age restriction: Family leisure, 18+ for Brimstone',
-      'Spa hours: Throughout stay',
-    ],
-    goodToKnow: ['What to bring: Swimming attire'],
-    facilities: {
-      sauna: true,
-      steamRoom: false,
-      iceRoom: false,
-      hotTub: true,
-      poolOver15m: true,
-      thermalSuite: true,
-    },
-  },
-  {
-    id: 'the-wordsworth-hotel-spa',
-    name: 'The Wordsworth Hotel & Spa',
-    location: 'Grasmere',
-    websiteUrl: '#',
-    businessModel: 'free-with-booking',
-    businessModelText: 'Spa included with all room bookings',
-    imageSrc: '/spa-the-wordsworth-hotel-spa.jpg',
-    imageAlt: 'The Wordsworth Hotel & Spa thermal suite and pool facilities',
-    keyFeatures: [
-      'Spa included with all room bookings',
-      'Award: 4-star, 2 AA Rosettes restaurant',
-      'Treatment rooms available',
-    ],
-    thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
-    ],
-    poolFeatures: [
-      { name: 'Indoor Pool', details: 'Heated' },
-      { name: 'Hot Tub', details: 'Hot tub or jacuzzi' },
-    ],
-    accessPolicy: [
-      'Spa included with room booking',
-      'Day passes: Not available',
-      'Pre-booking: For treatments',
-      'Age restriction: Adults only for spa',
-      'Spa hours: Guest access throughout stay',
-    ],
-    goodToKnow: ['What to bring: Swimming attire'],
-    facilities: {
-      sauna: true,
-      steamRoom: false,
-      iceRoom: false,
-      hotTub: true,
-      poolOver15m: false,
-      thermalSuite: false,
-    },
-  },
-  {
     id: 'macdonald-old-england-hotel-spa',
     name: 'Macdonald Old England Hotel & Spa',
     location: 'Bowness-on-Windermere',
-    websiteUrl: 'https://macdonaldhotels.co.uk',
+    websiteUrl: 'https://macdonaldhotels.co.uk/old-england/spa-leisure/spa',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
-    imageSrc: '/spa-macdonald-old-england-hotel-spa.jpg',
+    imageSrc: '/images/spas/lake-district-spas_old-england-hotel.jpg',
     imageAlt:
-      'Macdonald Old England Hotel & Spa thermal suite and pool facilities',
+      'Modern indoor swimming pool at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring deep blue mosaic tiling, contemporary black and white interior design, underwater lighting, and heated pool facilities in a luxurious Lake District spa setting',
     keyFeatures: [
       'Spa costs extra for hotel guests',
       'Award: Established hotel',
@@ -356,12 +279,13 @@ export const spaData: Spa[] = [
     id: 'the-spa-at-low-wood-bay',
     name: 'The Spa at Low Wood Bay',
     location: 'Windermere',
-    websiteUrl: 'https://englishlakes.co.uk/low-wood-bay/spa',
+    websiteUrl: 'https://englishlakes.co.uk/low-wood-bay/the-spa',
     businessModel: 'paid-extra',
     businessModelText:
       'Spa included with room, day passes Various packages 10am-8pm',
-    imageSrc: '/spa-the-spa-at-low-wood-bay.jpg',
-    imageAlt: 'The Spa at Low Wood Bay thermal suite and pool facilities',
+    imageSrc: '/images/spas/lake-district-spas_low-wood-bay.webp',
+    imageAlt:
+      'Spectacular infinity-edge vitality pool at Low Wood Bay Resort and Spa on the shores of Lake Windermere, featuring panoramic Lake District mountain views, traditional Lakeland dry stone walling, wooden sun loungers, and outdoor relaxation areas perfect for spa days',
     keyFeatures: [
       'Spa included with all room bookings',
       'Award: Best Spa North West 2025, 5 Bubble Luxury Spa',
@@ -402,12 +326,12 @@ export const spaData: Spa[] = [
     id: 'ambleside-salutation-hotel-spa-waterfall-spa',
     name: 'Ambleside Salutation Hotel & Spa (Waterfall Spa)',
     location: 'Ambleside',
-    websiteUrl: 'https://hotelslakedistrict.com',
+    websiteUrl: 'https://www.hotelslakedistrict.com/waterfall-spa/',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
-    imageSrc: '/spa-ambleside-salutation-hotel-spa-waterfall-spa.jpg',
+    imageSrc: '/images/spas/lake-district-spas_salutation-hotel.jpg',
     imageAlt:
-      'Ambleside Salutation Hotel & Spa (Waterfall Spa) thermal suite and pool facilities',
+      'Elegant indoor pool at The Salutation Hotel and Spa in Ambleside featuring starlit fibre optic ceiling, suspended designer pod chairs, modern grey loungers, and sophisticated neutral colour palette creating a tranquil spa experience in the heart of the Lake District',
     keyFeatures: [
       'Spa included with all room bookings',
       'Award: BW Premier Collection, WorldHotels Distinctive',
@@ -443,11 +367,12 @@ export const spaData: Spa[] = [
     id: 'lakeside-hotel-spa',
     name: 'Lakeside Hotel & Spa',
     location: 'Newby Bridge',
-    websiteUrl: 'https://lakesidehotel.co.uk',
+    websiteUrl: 'https://lakesidehotel.co.uk/spa',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa access varies by room type',
-    imageSrc: '/spa-lakeside-hotel-spa.jpg',
-    imageAlt: 'Lakeside Hotel & Spa thermal suite and pool facilities',
+    imageSrc: '/images/spas/lake-district-spas_lakeside-hotel.webp',
+    imageAlt:
+      'Contemporary indoor pool at Lakeside Hotel Health Club and Spa on Lake Windermere, featuring distinctive teal and green mosaic tile columns, flowing wave-pattern ceiling design, and spacious swimming area with loungers overlooking the Lake District waterfront',
     keyFeatures: [
       'Spa access varies by room type',
       '3 treatment rooms pool',
@@ -482,11 +407,12 @@ export const spaData: Spa[] = [
     id: 'gilpin-hotel-lake-house',
     name: 'Gilpin Hotel & Lake House',
     location: 'Windermere',
-    websiteUrl: 'https://thegilpin.co.uk',
+    websiteUrl: 'https://thegilpin.co.uk/spa-space',
     businessModel: 'guests-only',
     businessModelText: 'Spa access varies by room type',
-    imageSrc: '/spa-gilpin-hotel-lake-house.jpg',
-    imageAlt: 'Gilpin Hotel & Lake House thermal suite and pool facilities',
+    imageSrc: '/images/spas/lake-district-spas_gilpin-hotel-lake-house.jpg',
+    imageAlt:
+      'Luxury dual treatment room at Gilpin Hotel and Lake House Spa near Windermere, featuring natural exposed wooden beams, floor-to-ceiling windows with garden views, contemporary green basin accents, and designer spa beds in an intimate boutique spa setting in the Lake District',
     keyFeatures: [
       'Spa access varies by room type',
       'Multiple rooms - Jetty Spa at Lake House pool',
@@ -528,7 +454,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://windermereboutiquehotel.co.uk',
     businessModel: 'guests-only',
     businessModelText: 'Spa access varies by room type',
-    imageSrc: '/spa-windermere-boutique-hotel.jpg',
+    imageSrc: '/images/spas/lake-district-spas_windermere-boutique-hotel.jpg',
     imageAlt: 'Windermere Boutique Hotel thermal suite and pool facilities',
     keyFeatures: [
       'Spa access varies by room type',
@@ -570,7 +496,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://beechhillhotel.co.uk',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
-    imageSrc: '/spa-beech-hill-hotel-spa.jpg',
+    imageSrc: '/images/spas/lake-district-spas_beech-hill-hotel-spa.jpg',
     imageAlt: 'Beech Hill Hotel & Spa thermal suite and pool facilities',
     keyFeatures: [
       'Spa costs extra for hotel guests',
@@ -615,7 +541,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://harbourhotels.co.uk/rothay-garden',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with room, day passes Call for pricing',
-    imageSrc: '/spa-rothay-garden-by-harbour-hotels.jpg',
+    imageSrc: '/images/spas/lake-district-spas_rothay-garden-by-harbour-hotels.jpg',
     imageAlt:
       'Rothay Garden by Harbour Hotels thermal suite and pool facilities',
     keyFeatures: [
@@ -658,7 +584,7 @@ export const spaData: Spa[] = [
     businessModel: 'free-with-booking',
     businessModelText:
       'Spa included with room, day passes £15 one-off visit or £55/month membership',
-    imageSrc: '/spa-north-lakes-hotel-spa.jpg',
+    imageSrc: '/images/spas/lake-district-spas_north-lakes-hotel-spa.jpg',
     imageAlt: 'North Lakes Hotel & Spa thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with room, day passes £15 one-off visit or £55/month membership',
@@ -698,7 +624,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://whitewater-hotel.co.uk',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
-    imageSrc: '/spa-whitewater-hotel-leisure-club.jpg',
+    imageSrc: '/images/spas/lake-district-spas_whitewater-hotel-leisure-club.jpg',
     imageAlt:
       'Whitewater Hotel & Leisure Club thermal suite and pool facilities',
     keyFeatures: [
@@ -739,7 +665,7 @@ export const spaData: Spa[] = [
     businessModel: 'free-with-booking',
     businessModelText:
       'Spa included with room, day passes Membership available for non-guests',
-    imageSrc: '/spa-another-place-the-lake.jpg',
+    imageSrc: '/images/spas/lake-district-spas_another-place-the-lake.jpg',
     imageAlt: 'Another Place, The Lake thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with all room bookings',
@@ -776,7 +702,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://castlegreenhotel.co.uk',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
-    imageSrc: '/spa-castle-green-hotel.jpg',
+    imageSrc: '/images/spas/lake-district-spas_castle-green-hotel.jpg',
     imageAlt: 'Castle Green Hotel thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with all room bookings',
@@ -810,7 +736,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://applebymanor.co.uk',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
-    imageSrc: '/spa-appleby-manor-hotel-garden-spa.jpg',
+    imageSrc: '/images/spas/lake-district-spas_appleby-manor-hotel-garden-spa.jpg',
     imageAlt:
       'Appleby Manor Hotel & Garden Spa thermal suite and pool facilities',
     keyFeatures: [
@@ -857,7 +783,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://netherwood-hotel.co.uk',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
-    imageSrc: '/spa-netherwood-hotel-spa.jpg',
+    imageSrc: '/images/spas/lake-district-spas_netherwood-hotel-spa.jpg',
     imageAlt: 'Netherwood Hotel & Spa thermal suite and pool facilities',
     keyFeatures: [
       'Spa costs extra for hotel guests',
@@ -899,7 +825,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://grange-hotel.co.uk',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
-    imageSrc: '/spa-grange-hotel.jpg',
+    imageSrc: '/images/spas/lake-district-spas_grange-hotel.jpg',
     imageAlt: 'Grange Hotel thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with all room bookings',
