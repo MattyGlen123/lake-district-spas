@@ -22,7 +22,8 @@ export interface Spa {
   websiteUrl: string;
   businessModel: BusinessModel;
   businessModelText: string;
-  imageUrl: string;
+  imageSrc: string;
+  imageAlt: string;
   keyFeatures: string[];
   thermalFacilities: ThermalFacility[];
   poolFeatures: PoolFeature[];

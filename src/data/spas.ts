@@ -8,15 +8,20 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://lakedistrictspa.co.uk',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with room, day passes £60-160 approx',
-    imageUrl: '/spa-the-falls-spa-at-lodore-falls-hotel.jpg',
+    imageSrc: '/images/spas/lake-district-spas_lodore-falls-spa.jpg',
+    imageAlt:
+      'Luxurious 16-metre outdoor hydrotherapy pool at The Falls Spa at Lodore Falls Hotel in Borrowdale, featuring heated water with neck jets and underwater bubble loungers, surrounded by white sun loungers on slate decking with dramatic Lake District mountain views at sunset, spa access included with room booking',
     keyFeatures: [
       'Spa included with room, day passes £60-160 approx',
-      'Award: One of Lake District\'s finest',
+      "Award: One of Lake District's finest",
       '16m outdoor hydrotherapy pool',
       '5 luxury treatment rooms',
     ],
     thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Glass-walled with panoramic views, 85°C' },
+      {
+        name: 'Finnish Sauna',
+        details: 'Glass-walled with panoramic views, 85°C',
+      },
       { name: 'Laconium', details: '35°C gentle heat' },
       { name: 'Salt Steam Room', details: '40°C at 95% humidity' },
       { name: 'Ice Room', details: 'Cold drench bucket' },
@@ -25,7 +30,10 @@ export const spaData: Spa[] = [
     poolFeatures: [
       { name: 'Indoor Pool', details: '16m outdoor hydrotherapy' },
       { name: 'Outdoor Pool', details: '16m hydrotherapy' },
-      { name: 'Hydrotherapy Pool', details: '16m outdoor with neck jets, underwater bubble loungers' },
+      {
+        name: 'Hydrotherapy Pool',
+        details: '16m outdoor with neck jets, underwater bubble loungers',
+      },
       { name: 'Hot Tub', details: 'Hot tub or jacuzzi' },
     ],
     accessPolicy: [
@@ -35,9 +43,7 @@ export const spaData: Spa[] = [
       'Age restriction: 18+ only',
       'Spa hours: 10am-4pm thermal suite',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire, flip flops',
-    ],
+    goodToKnow: ['What to bring: Swimming attire, flip flops'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -51,10 +57,11 @@ export const spaData: Spa[] = [
     id: 'armathwaite-hall-hotel-spa',
     name: 'Armathwaite Hall Hotel & Spa',
     location: 'Bassenthwaite',
-    websiteUrl: 'https://armathwaite-hall.com',
+    websiteUrl: 'https://armathwaite-hall.com/spa',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with room, day passes Packages available',
-    imageUrl: '/spa-armathwaite-hall-hotel-spa.jpg',
+    imageSrc: '/spa-armathwaite-hall-hotel-spa.jpg',
+    imageAlt: 'Armathwaite Hall Hotel & Spa thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with room, day passes Packages available',
       'Award: Celebrated spa in Lake District',
@@ -62,7 +69,10 @@ export const spaData: Spa[] = [
     ],
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
-      { name: 'Crystal Steam Room', details: 'Amethyst Crystal Cave steam room' },
+      {
+        name: 'Crystal Steam Room',
+        details: 'Amethyst Crystal Cave steam room',
+      },
     ],
     poolFeatures: [
       { name: 'Indoor Pool', details: 'Indoor swimming pool' },
@@ -76,9 +86,7 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only',
       'Spa hours: Spa days available',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -92,10 +100,12 @@ export const spaData: Spa[] = [
     id: 'brimstone-spa-at-brimstone-hotel',
     name: 'Brimstone Spa (at Brimstone Hotel)',
     location: 'Great Langdale',
-    websiteUrl: 'https://brimstonehotel.co.uk',
+    websiteUrl: 'https://brimstonehotel.co.uk/rooms/spa-break/',
     businessModel: 'guests-only',
     businessModelText: 'Exclusive to hotel guests only',
-    imageUrl: '/spa-brimstone-spa-at-brimstone-hotel.jpg',
+    imageSrc: '/spa-brimstone-spa-at-brimstone-hotel.jpg',
+    imageAlt:
+      'Brimstone Spa (at Brimstone Hotel) thermal suite and pool facilities',
     keyFeatures: [
       'Exclusive to hotel guests only',
       'Award: Premium spa',
@@ -107,7 +117,10 @@ export const spaData: Spa[] = [
       { name: 'Laconium', details: 'Gentle heat therapy' },
       { name: 'Aroma Steam Room', details: 'Aromatherapy steam room' },
       { name: 'Ice Room', details: 'Cool down experience' },
-      { name: 'Experience Showers', details: 'Multi-sensory shower experience' },
+      {
+        name: 'Experience Showers',
+        details: 'Multi-sensory shower experience',
+      },
     ],
     poolFeatures: [
       { name: 'Indoor Pool', details: '9m' },
@@ -122,9 +135,7 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only',
       'Spa hours: Throughout stay for guests',
     ],
-    goodToKnow: [
-      'What to bring: Provided for guests',
-    ],
+    goodToKnow: ['What to bring: Provided for guests'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -138,10 +149,13 @@ export const spaData: Spa[] = [
     id: 'spa-at-the-daffodil-hotel',
     name: 'Spa at the Daffodil Hotel',
     location: 'Grasmere',
-    websiteUrl: 'https://crerarhotels.com/daffodil',
+    websiteUrl:
+      'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa/',
     businessModel: 'day-passes',
-    businessModelText: 'Spa included with room, day passes £35 Mon-Thu, £45 Fri-Sun (3 hours)',
-    imageUrl: '/spa-spa-at-the-daffodil-hotel.jpg',
+    businessModelText:
+      'Spa included with room, day passes £35 Mon-Thu, £45 Fri-Sun (3 hours)',
+    imageSrc: '/spa-spa-at-the-daffodil-hotel.jpg',
+    imageAlt: 'Spa at the Daffodil Hotel thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with room, day passes £35 Mon-Thu, £45 Fri-Sun (3 hours)',
       'Award: Luxury experience',
@@ -161,9 +175,7 @@ export const spaData: Spa[] = [
       'Age restriction: 16+ only',
       'Spa hours: 8am-8pm daily, treatments 10am-6:30pm',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: false,
@@ -177,10 +189,12 @@ export const spaData: Spa[] = [
     id: 'the-swan-hotel-spa-holte-spa',
     name: 'The Swan Hotel & Spa (Holte Spa)',
     location: 'Newby Bridge',
-    websiteUrl: 'https://swanhotel.com',
+    websiteUrl: 'https://swanhotel.com//spa/',
     businessModel: 'day-passes',
     businessModelText: 'Spa included with room, day passes £40 (2 hours)',
-    imageUrl: '/spa-the-swan-hotel-spa-holte-spa.jpg',
+    imageSrc: '/spa-the-swan-hotel-spa-holte-spa.jpg',
+    imageAlt:
+      'The Swan Hotel & Spa (Holte Spa) thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with room, day passes £40 (2 hours)',
       'Award: Award-winning spa',
@@ -188,12 +202,18 @@ export const spaData: Spa[] = [
     ],
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Authentic outdoor Finnish sauna' },
-      { name: 'Experience Showers', details: 'Multi-sensory shower experience' },
+      {
+        name: 'Experience Showers',
+        details: 'Multi-sensory shower experience',
+      },
     ],
     poolFeatures: [
       { name: 'Indoor Pool', details: 'Indoor/outdoor swim-through' },
       { name: 'Outdoor Pool', details: 'Swim-through to outdoor' },
-      { name: 'Hydrotherapy Pool', details: 'Naturally filtered, minimal chlorine' },
+      {
+        name: 'Hydrotherapy Pool',
+        details: 'Naturally filtered, minimal chlorine',
+      },
       { name: 'Swim-Through Pool', details: 'Unique indoor-to-outdoor' },
       { name: 'Hot Tub', details: 'Hot tub or jacuzzi' },
     ],
@@ -204,9 +224,7 @@ export const spaData: Spa[] = [
       'Age restriction: 18+ (16-17 with parent/guardian)',
       'Spa hours: 10am-4pm spa access',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: false,
@@ -223,7 +241,9 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://langdale.co.uk',
     businessModel: 'hybrid',
     businessModelText: 'Free leisure facilities, premium spa upgrade available',
-    imageUrl: '/spa-langdale-hotel-spa-langdale-leisure.jpg',
+    imageSrc: '/spa-langdale-hotel-spa-langdale-leisure.jpg',
+    imageAlt:
+      'Langdale Hotel & Spa (Langdale Leisure) thermal suite and pool facilities',
     keyFeatures: [
       'Free leisure facilities, premium spa upgrade available',
       'Award: Part of Langdale Estate',
@@ -245,9 +265,7 @@ export const spaData: Spa[] = [
       'Age restriction: Family leisure, 18+ for Brimstone',
       'Spa hours: Throughout stay',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: false,
@@ -264,7 +282,8 @@ export const spaData: Spa[] = [
     websiteUrl: '#',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
-    imageUrl: '/spa-the-wordsworth-hotel-spa.jpg',
+    imageSrc: '/spa-the-wordsworth-hotel-spa.jpg',
+    imageAlt: 'The Wordsworth Hotel & Spa thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with all room bookings',
       'Award: 4-star, 2 AA Rosettes restaurant',
@@ -284,9 +303,7 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only for spa',
       'Spa hours: Guest access throughout stay',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: false,
@@ -303,7 +320,9 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://macdonaldhotels.co.uk',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
-    imageUrl: '/spa-macdonald-old-england-hotel-spa.jpg',
+    imageSrc: '/spa-macdonald-old-england-hotel-spa.jpg',
+    imageAlt:
+      'Macdonald Old England Hotel & Spa thermal suite and pool facilities',
     keyFeatures: [
       'Spa costs extra for hotel guests',
       'Award: Established hotel',
@@ -315,9 +334,7 @@ export const spaData: Spa[] = [
       { name: 'Ice Room', details: 'Cool down experience' },
       { name: 'Experience Showers', details: 'Aromatherapy shower' },
     ],
-    poolFeatures: [
-      { name: 'Indoor Pool', details: '20m with lake views' },
-    ],
+    poolFeatures: [{ name: 'Indoor Pool', details: '20m with lake views' }],
     accessPolicy: [
       'Hotel guest access: Must book separately/pay extra',
       'Day passes: Various packages',
@@ -325,9 +342,7 @@ export const spaData: Spa[] = [
       'Age restriction: 18+ for treatments, kids allowed in pool',
       'Spa hours: Pool & gym 7am-6:30pm, children swim 10am-5pm',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -343,8 +358,10 @@ export const spaData: Spa[] = [
     location: 'Windermere',
     websiteUrl: 'https://englishlakes.co.uk/low-wood-bay/spa',
     businessModel: 'paid-extra',
-    businessModelText: 'Spa included with room, day passes Various packages 10am-8pm',
-    imageUrl: '/spa-the-spa-at-low-wood-bay.jpg',
+    businessModelText:
+      'Spa included with room, day passes Various packages 10am-8pm',
+    imageSrc: '/spa-the-spa-at-low-wood-bay.jpg',
+    imageAlt: 'The Spa at Low Wood Bay thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with all room bookings',
       'Award: Best Spa North West 2025, 5 Bubble Luxury Spa',
@@ -353,7 +370,10 @@ export const spaData: Spa[] = [
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Fellside Sauna panoramic views' },
       { name: 'Herbal Lounge', details: 'The Herbal Lounge' },
-      { name: 'Experience Showers', details: 'Multi-sensory shower experience' },
+      {
+        name: 'Experience Showers',
+        details: 'Multi-sensory shower experience',
+      },
     ],
     poolFeatures: [
       { name: 'Indoor Pool', details: 'Thermal & vitality pool' },
@@ -368,9 +388,7 @@ export const spaData: Spa[] = [
       'Age restriction: 16+ only',
       'Spa hours: Sunrise 7:30am-9:30am, Treatments 9:30am-7:30pm, Spa Days 10am-8pm',
     ],
-    goodToKnow: [
-      'What to bring: Own flip flops (sustainable policy)',
-    ],
+    goodToKnow: ['What to bring: Own flip flops (sustainable policy)'],
     facilities: {
       sauna: true,
       steamRoom: false,
@@ -387,7 +405,9 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://hotelslakedistrict.com',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
-    imageUrl: '/spa-ambleside-salutation-hotel-spa-waterfall-spa.jpg',
+    imageSrc: '/spa-ambleside-salutation-hotel-spa-waterfall-spa.jpg',
+    imageAlt:
+      'Ambleside Salutation Hotel & Spa (Waterfall Spa) thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with all room bookings',
       'Award: BW Premier Collection, WorldHotels Distinctive',
@@ -409,9 +429,7 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only for spa',
       'Spa hours: Throughout guest stay',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: false,
@@ -428,7 +446,8 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://lakesidehotel.co.uk',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa access varies by room type',
-    imageUrl: '/spa-lakeside-hotel-spa.jpg',
+    imageSrc: '/spa-lakeside-hotel-spa.jpg',
+    imageAlt: 'Lakeside Hotel & Spa thermal suite and pool facilities',
     keyFeatures: [
       'Spa access varies by room type',
       '3 treatment rooms pool',
@@ -449,8 +468,7 @@ export const spaData: Spa[] = [
       'Day passes: Not available',
       'Spa hours: Yes - dog friendly',
     ],
-    goodToKnow: [
-    ],
+    goodToKnow: [],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -467,7 +485,8 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://thegilpin.co.uk',
     businessModel: 'guests-only',
     businessModelText: 'Spa access varies by room type',
-    imageUrl: '/spa-gilpin-hotel-lake-house.jpg',
+    imageSrc: '/spa-gilpin-hotel-lake-house.jpg',
+    imageAlt: 'Gilpin Hotel & Lake House thermal suite and pool facilities',
     keyFeatures: [
       'Spa access varies by room type',
       'Multiple rooms - Jetty Spa at Lake House pool',
@@ -475,18 +494,24 @@ export const spaData: Spa[] = [
     ],
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Steam room' },
-      { name: 'Aroma Steam Room', details: 'Heated indoor pool at Lake House (Knipe Tarn views)' },
+      {
+        name: 'Aroma Steam Room',
+        details: 'Heated indoor pool at Lake House (Knipe Tarn views)',
+      },
     ],
     poolFeatures: [
-      { name: 'Outdoor Pool', details: '2 outdoor hot tubs at Lake House, 22 rooms at Gilpin Hotel have private hot tubs' },
+      {
+        name: 'Outdoor Pool',
+        details:
+          '2 outdoor hot tubs at Lake House, 22 rooms at Gilpin Hotel have private hot tubs',
+      },
       { name: 'Vitality Pool', details: 'Vitality pool with jets' },
     ],
     accessPolicy: [
       'Hotel guests: Yes - Traditional sauna at Lake House',
       'Spa hours: Yes',
     ],
-    goodToKnow: [
-    ],
+    goodToKnow: [],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -503,7 +528,8 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://windermereboutiquehotel.co.uk',
     businessModel: 'guests-only',
     businessModelText: 'Spa access varies by room type',
-    imageUrl: '/spa-windermere-boutique-hotel.jpg',
+    imageSrc: '/spa-windermere-boutique-hotel.jpg',
+    imageAlt: 'Windermere Boutique Hotel thermal suite and pool facilities',
     keyFeatures: [
       'Spa access varies by room type',
       'Award: Boutique hotel with unique in-room spa concept',
@@ -514,7 +540,11 @@ export const spaData: Spa[] = [
       { name: 'Aroma Steam Room', details: 'In select suites (steam room)' },
     ],
     poolFeatures: [
-      { name: 'Hot Tub', details: 'In-room hot tubs in multiple suites (outdoor & indoor options)' },
+      {
+        name: 'Hot Tub',
+        details:
+          'In-room hot tubs in multiple suites (outdoor & indoor options)',
+      },
     ],
     accessPolicy: [
       'Hotel guests: Included in room rate',
@@ -523,9 +553,7 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only',
       'Spa hours: N/A - in-room facilities',
     ],
-    goodToKnow: [
-      'What to bring: All provided in room',
-    ],
+    goodToKnow: ['What to bring: All provided in room'],
     facilities: {
       sauna: false,
       steamRoom: true,
@@ -542,7 +570,8 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://beechhillhotel.co.uk',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
-    imageUrl: '/spa-beech-hill-hotel-spa.jpg',
+    imageSrc: '/spa-beech-hill-hotel-spa.jpg',
+    imageAlt: 'Beech Hill Hotel & Spa thermal suite and pool facilities',
     keyFeatures: [
       'Spa costs extra for hotel guests',
       'Award: Lakeside location hotel',
@@ -554,7 +583,10 @@ export const spaData: Spa[] = [
       { name: 'Aroma Steam Room', details: 'Steam room' },
     ],
     poolFeatures: [
-      { name: 'Indoor Pool', details: '12m (40ft) indoor pool with atmospheric lighting' },
+      {
+        name: 'Indoor Pool',
+        details: '12m (40ft) indoor pool with atmospheric lighting',
+      },
       { name: 'Outdoor Pool', details: '2 outdoor vitality spa pools' },
       { name: 'Vitality Pool', details: '2 outdoor vitality pools' },
       { name: 'Hot Tub', details: '2 outdoor hot tubs with lake views' },
@@ -566,9 +598,7 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only for spa',
       'Spa hours: Call to confirm',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -585,7 +615,9 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://harbourhotels.co.uk/rothay-garden',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with room, day passes Call for pricing',
-    imageUrl: '/spa-rothay-garden-by-harbour-hotels.jpg',
+    imageSrc: '/spa-rothay-garden-by-harbour-hotels.jpg',
+    imageAlt:
+      'Rothay Garden by Harbour Hotels thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with room, day passes Call for pricing',
       'Award: 4 AA Silver Stars, 2 AA Rosettes restaurant',
@@ -608,9 +640,7 @@ export const spaData: Spa[] = [
       'Age restriction: 18+ charged as adults',
       'Spa hours: Riverside Spa - call to confirm',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -626,8 +656,10 @@ export const spaData: Spa[] = [
     location: 'Penrith',
     websiteUrl: 'https://northlakeshotel.com',
     businessModel: 'free-with-booking',
-    businessModelText: 'Spa included with room, day passes £15 one-off visit or £55/month membership',
-    imageUrl: '/spa-north-lakes-hotel-spa.jpg',
+    businessModelText:
+      'Spa included with room, day passes £15 one-off visit or £55/month membership',
+    imageSrc: '/spa-north-lakes-hotel-spa.jpg',
+    imageAlt: 'North Lakes Hotel & Spa thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with room, day passes £15 one-off visit or £55/month membership',
       'Award: Award-winning spa',
@@ -649,9 +681,7 @@ export const spaData: Spa[] = [
       'Age restriction: All ages welcome',
       'Spa hours: Classes available, aqua aerobics',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -668,10 +698,12 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://whitewater-hotel.co.uk',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
-    imageUrl: '/spa-whitewater-hotel-leisure-club.jpg',
+    imageSrc: '/spa-whitewater-hotel-leisure-club.jpg',
+    imageAlt:
+      'Whitewater Hotel & Leisure Club thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with all room bookings',
-      'Award: Tripadvisor Travellers\' Choice Award 2023',
+      "Award: Tripadvisor Travellers' Choice Award 2023",
       'Range of Elemis treatments treatment rooms',
     ],
     thermalFacilities: [
@@ -689,9 +721,7 @@ export const spaData: Spa[] = [
       'Age restriction: All ages welcome',
       'Spa hours: 7am-8pm (varies)',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -707,17 +737,17 @@ export const spaData: Spa[] = [
     location: 'Ullswater',
     websiteUrl: 'https://another.place/the-lake',
     businessModel: 'free-with-booking',
-    businessModelText: 'Spa included with room, day passes Membership available for non-guests',
-    imageUrl: '/spa-another-place-the-lake.jpg',
+    businessModelText:
+      'Spa included with room, day passes Membership available for non-guests',
+    imageSrc: '/spa-another-place-the-lake.jpg',
+    imageAlt: 'Another Place, The Lake thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with all room bookings',
       'Award: Contemporary lakeside retreat',
       '20m pool',
       'Swim Club includes treatment rooms',
     ],
-    thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Sauna' },
-    ],
+    thermalFacilities: [{ name: 'Finnish Sauna', details: 'Sauna' }],
     poolFeatures: [
       { name: 'Indoor Pool', details: '20m indoor pool with lake view' },
       { name: 'Hot Tub', details: 'Hot tub' },
@@ -729,9 +759,7 @@ export const spaData: Spa[] = [
       'Age restriction: Children not permitted in pool before 9am or after 6pm',
       'Spa hours: 7am-9pm daily',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: false,
@@ -748,19 +776,16 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://castlegreenhotel.co.uk',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
-    imageUrl: '/spa-castle-green-hotel.jpg',
+    imageSrc: '/spa-castle-green-hotel.jpg',
+    imageAlt: 'Castle Green Hotel thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with all room bookings',
       'Award: BW Premier Collection',
       'Small pool pool',
       'Treatment rooms available',
     ],
-    thermalFacilities: [
-      { name: 'Aroma Steam Room', details: 'Steam room' },
-    ],
-    poolFeatures: [
-      { name: 'Indoor Pool', details: 'Indoor pool' },
-    ],
+    thermalFacilities: [{ name: 'Aroma Steam Room', details: 'Steam room' }],
+    poolFeatures: [{ name: 'Indoor Pool', details: 'Indoor pool' }],
     accessPolicy: [
       'Spa included with room booking',
       'Day passes: Not available',
@@ -768,9 +793,7 @@ export const spaData: Spa[] = [
       'Age restriction: 16+ for gym facilities',
       'Spa hours: Pool: Mon-Fri 6:30-9:30am & 5-7pm (pre-book), Weekends no booking',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: false,
       steamRoom: true,
@@ -787,7 +810,9 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://applebymanor.co.uk',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
-    imageUrl: '/spa-appleby-manor-hotel-garden-spa.jpg',
+    imageSrc: '/spa-appleby-manor-hotel-garden-spa.jpg',
+    imageAlt:
+      'Appleby Manor Hotel & Garden Spa thermal suite and pool facilities',
     keyFeatures: [
       'Spa costs extra for hotel guests',
       'Award: AA Rosette restaurant, £1m Garden Spa',
@@ -802,7 +827,11 @@ export const spaData: Spa[] = [
       { name: 'Experience Showers', details: 'Experience showers' },
     ],
     poolFeatures: [
-      { name: 'Hot Tub', details: '2 outdoor hot tubs in spa garden, Private hire hot tub in glass cube' },
+      {
+        name: 'Hot Tub',
+        details:
+          '2 outdoor hot tubs in spa garden, Private hire hot tub in glass cube',
+      },
     ],
     accessPolicy: [
       'Hotel guest access: Must pay separately',
@@ -811,9 +840,7 @@ export const spaData: Spa[] = [
       'Age restriction: 16+ only',
       'Spa hours: Thermal Suite 10am-5pm Mon-Thu, 9:30am-6pm Fri-Sun',
     ],
-    goodToKnow: [
-      'What to bring: Bring own waterproof footwear',
-    ],
+    goodToKnow: ['What to bring: Bring own waterproof footwear'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -830,7 +857,8 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://netherwood-hotel.co.uk',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
-    imageUrl: '/spa-netherwood-hotel-spa.jpg',
+    imageSrc: '/spa-netherwood-hotel-spa.jpg',
+    imageAlt: 'Netherwood Hotel & Spa thermal suite and pool facilities',
     keyFeatures: [
       'Spa costs extra for hotel guests',
       'Award: Grade II listed Victorian mansion (1893)',
@@ -854,9 +882,7 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only',
       'Spa hours: Thermal Suite 9am-8pm. Treatments 10am-6pm',
     ],
-    goodToKnow: [
-      'What to bring: Swimwear',
-    ],
+    goodToKnow: ['What to bring: Swimwear'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -873,7 +899,8 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://grange-hotel.co.uk',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
-    imageUrl: '/spa-grange-hotel.jpg',
+    imageSrc: '/spa-grange-hotel.jpg',
+    imageAlt: 'Grange Hotel thermal suite and pool facilities',
     keyFeatures: [
       'Spa included with all room bookings',
       'Award: Built 1866, 4-star',
@@ -895,9 +922,7 @@ export const spaData: Spa[] = [
       'Age restriction: All ages welcome',
       'Spa hours: 7am-8pm daily',
     ],
-    goodToKnow: [
-      'What to bring: Swimming attire',
-    ],
+    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -906,7 +931,7 @@ export const spaData: Spa[] = [
       poolOver15m: false,
       thermalSuite: true,
     },
-  }
+  },
 ];
 
 export const locations = [
@@ -924,7 +949,7 @@ export const locations = [
   'Newby Bridge',
   'Penrith',
   'Ullswater',
-  'Windermere'
+  'Windermere',
 ];
 
 export const facilityOptions = [
@@ -935,4 +960,3 @@ export const facilityOptions = [
   { key: 'poolOver15m', label: 'Pool 15m+' },
   { key: 'thermalSuite', label: 'Thermal Suite' },
 ] as const;
-

@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import Image from 'next/image';
 import {
   MapPin,
   ChevronDown,
@@ -14,22 +15,11 @@ import {
 } from 'lucide-react';
 import { Spa, businessModelConfig, BusinessModel } from '@/types/spa';
 
-// Import spa images (add more as they become available)
-// For now, we'll use a fallback approach that works with public folder images
-// or shows a placeholder if images aren't available
-
 interface SpaCardProps {
   spa: Spa;
   isExpanded: boolean;
   onToggle: () => void;
 }
-
-// Image map for imported assets (add entries as images are added to assets folder)
-const imageMap: Record<string, string> = {
-  // Add imported images here when available
-  // Example:
-  // '/spa-armathwaite-hall-hotel-spa.jpg': spaArmathwaite,
-};
 
 const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -55,26 +45,6 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
     }
   }, [isExpanded]);
 
-  // Use mapped image if available, otherwise fall back to public folder path
-  // If image doesn't exist, browser will show broken image (we can add error handling later)
-  const imageUrl = imageMap[spa.imageUrl] || spa.imageUrl;
-
-  // Handle image loading errors with a placeholder
-  const handleImageError = (
-    e: React.SyntheticEvent<HTMLImageElement, Event>
-  ) => {
-    const target = e.target as HTMLImageElement;
-    // Fallback to a placeholder gradient if image fails to load
-    target.style.display = 'none';
-    const parent = target.parentElement;
-    if (parent) {
-      parent.className =
-        'w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center';
-      parent.innerHTML =
-        '<span class="text-muted-foreground text-sm">Image coming soon</span>';
-    }
-  };
-
   return (
     <article ref={cardRef} className="spa-card overflow-hidden">
       {/* Mobile Layout (stacked) */}
@@ -90,14 +60,17 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
           </span>
         </div>
 
-        {/* Image */}
-        <div className="aspect-video overflow-hidden bg-gray-200">
-          <img
-            src={imageUrl}
-            alt={`${spa.name} thermal suite and pool`}
+        {/* Image - Mobile: 389px × 250px (1.556:1 ratio) */}
+        <div className="aspect-[389/250] overflow-hidden bg-gray-200 relative">
+          <Image
+            src={spa.imageSrc}
+            alt={spa.imageAlt}
+            width={389}
+            height={250}
             className="w-full h-full object-cover"
             loading="lazy"
-            onError={handleImageError}
+            quality={85}
+            sizes="100vw"
           />
         </div>
 
@@ -258,14 +231,17 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
         </div>
 
         <div className="flex">
-          {/* Image - Left Side */}
-          <div className="w-80 xl:w-96 shrink-0 bg-gray-200">
-            <img
-              src={imageUrl}
-              alt={`${spa.name} thermal suite and pool`}
+          {/* Image - Left Side: 600px × 400px (1.5:1 ratio) */}
+          <div className="w-[600px] h-[400px] shrink-0 bg-gray-200 relative overflow-hidden">
+            <Image
+              src={spa.imageSrc}
+              alt={spa.imageAlt}
+              width={600}
+              height={400}
               className="w-full h-full object-cover"
               loading="lazy"
-              onError={handleImageError}
+              quality={85}
+              sizes="600px"
             />
           </div>
 
