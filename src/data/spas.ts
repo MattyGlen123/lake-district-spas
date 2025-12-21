@@ -448,56 +448,15 @@ export const spaData: Spa[] = [
     },
   },
   {
-    id: 'windermere-boutique-hotel',
-    name: 'Windermere Boutique Hotel',
-    location: 'Windermere',
-    websiteUrl: 'https://windermereboutiquehotel.co.uk',
-    businessModel: 'guests-only',
-    businessModelText: 'Spa access varies by room type',
-    imageSrc: '/images/spas/lake-district-spas_windermere-boutique-hotel.jpg',
-    imageAlt: 'Windermere Boutique Hotel thermal suite and pool facilities',
-    keyFeatures: [
-      'Spa access varies by room type',
-      'Award: Boutique hotel with unique in-room spa concept',
-      'N/A pool',
-      'In-room treatments available treatment rooms',
-    ],
-    thermalFacilities: [
-      { name: 'Aroma Steam Room', details: 'In select suites (steam room)' },
-    ],
-    poolFeatures: [
-      {
-        name: 'Hot Tub',
-        details:
-          'In-room hot tubs in multiple suites (outdoor & indoor options)',
-      },
-    ],
-    accessPolicy: [
-      'Hotel guests: Included in room rate',
-      'Day passes: Not available',
-      'Pre-booking: For in-room treatments',
-      'Age restriction: Adults only',
-      'Spa hours: N/A - in-room facilities',
-    ],
-    goodToKnow: ['What to bring: All provided in room'],
-    facilities: {
-      sauna: false,
-      steamRoom: true,
-      iceRoom: false,
-      hotTub: true,
-      poolOver15m: false,
-      thermalSuite: false,
-    },
-  },
-  {
     id: 'beech-hill-hotel-spa',
     name: 'Beech Hill Hotel & Spa',
     location: 'Windermere',
-    websiteUrl: 'https://beechhillhotel.co.uk',
+    websiteUrl: 'https://beechhillhotel.co.uk/spa',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
-    imageSrc: '/images/spas/lake-district-spas_beech-hill-hotel-spa.jpg',
-    imageAlt: 'Beech Hill Hotel & Spa thermal suite and pool facilities',
+    imageSrc: '/images/spas/lake-district-spas_beech-hill-hotel.jpg',
+    imageAlt:
+      'Botanical-inspired indoor pool at Beech Hill Hotel and Spa near Windermere, featuring natural woven pendant lights, cascading artificial greenery from ceiling, dark slate mosaic walls, turquoise heated pool, and contemporary nature-themed wellness design in the Lake District',
     keyFeatures: [
       'Spa costs extra for hotel guests',
       'Award: Lakeside location hotel',
@@ -538,12 +497,13 @@ export const spaData: Spa[] = [
     id: 'rothay-garden-by-harbour-hotels',
     name: 'Rothay Garden by Harbour Hotels',
     location: 'Grasmere',
-    websiteUrl: 'https://harbourhotels.co.uk/rothay-garden',
+    websiteUrl:
+      'https://www.harbourhotels.co.uk/our-hotels/lake-district/rothay-garden-by-harbour-hotels/riverside-spa',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with room, day passes Call for pricing',
-    imageSrc: '/images/spas/lake-district-spas_rothay-garden-by-harbour-hotels.jpg',
+    imageSrc: '/images/spas/lake-district-spas_rothay-garden-hotel.jpg',
     imageAlt:
-      'Rothay Garden by Harbour Hotels thermal suite and pool facilities',
+      'Panoramic hydrotherapy pool at Rothay Garden Hotel and Riverside Spa in Grasmere, featuring curved floor-to-ceiling windows with dramatic Lake District fell views, dual cascade water features, bamboo-panelled walls, and intimate circular hot tub design surrounded by nature',
     keyFeatures: [
       'Spa included with room, day passes Call for pricing',
       'Award: 4 AA Silver Stars, 2 AA Rosettes restaurant',
@@ -580,12 +540,13 @@ export const spaData: Spa[] = [
     id: 'north-lakes-hotel-spa',
     name: 'North Lakes Hotel & Spa',
     location: 'Penrith',
-    websiteUrl: 'https://northlakeshotel.com',
+    websiteUrl: 'https://northlakeshotel.com/spa-treatments',
     businessModel: 'free-with-booking',
     businessModelText:
       'Spa included with room, day passes £15 one-off visit or £55/month membership',
-    imageSrc: '/images/spas/lake-district-spas_north-lakes-hotel-spa.jpg',
-    imageAlt: 'North Lakes Hotel & Spa thermal suite and pool facilities',
+    imageSrc: '/images/spas/lake-district-spas_north-lakes-hotel.jpg',
+    imageAlt:
+      'Tranquil thermal relaxation suite at North Lakes Hotel and Spa in Penrith, featuring heated ceramic loungers with plush robes, ambient mood lighting, Lake District landscape artwork, Japanese-inspired sliding screens, and peaceful spa environment for complete relaxation',
     keyFeatures: [
       'Spa included with room, day passes £15 one-off visit or £55/month membership',
       'Award: Award-winning spa',
@@ -621,12 +582,12 @@ export const spaData: Spa[] = [
     id: 'whitewater-hotel-leisure-club',
     name: 'Whitewater Hotel & Leisure Club',
     location: 'Backbarrow',
-    websiteUrl: 'https://whitewater-hotel.co.uk',
+    websiteUrl: 'https://whitewater-hotel.co.uk/spa-fitness/',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
-    imageSrc: '/images/spas/lake-district-spas_whitewater-hotel-leisure-club.jpg',
+    imageSrc: '/images/spas/lake-district-spas_whitewater-hotel.jpg',
     imageAlt:
-      'Whitewater Hotel & Leisure Club thermal suite and pool facilities',
+      'Expansive leisure pool at Whitewater Hotel Country Club near Newby Bridge, featuring multi-level design with mosaic-tiled stepping stones, burgundy and cream decorative columns, spacious swimming area, and grand architectural poolside complex in the Lake District',
     keyFeatures: [
       'Spa included with all room bookings',
       "Award: Tripadvisor Travellers' Choice Award 2023",
@@ -661,12 +622,13 @@ export const spaData: Spa[] = [
     id: 'another-place-the-lake',
     name: 'Another Place, The Lake',
     location: 'Ullswater',
-    websiteUrl: 'https://another.place/the-lake',
+    websiteUrl: 'https://another.place/the-lake/swim-club/',
     businessModel: 'free-with-booking',
     businessModelText:
       'Spa included with room, day passes Membership available for non-guests',
-    imageSrc: '/images/spas/lake-district-spas_another-place-the-lake.jpg',
-    imageAlt: 'Another Place, The Lake thermal suite and pool facilities',
+    imageSrc: '/images/spas/lake-district-spas_another-place.jpg',
+    imageAlt:
+      'Stunning infinity-edge pool at Another Place The Lake on the shores of Ullswater, featuring floor-to-ceiling glass walls with breathtaking Lake District mountain and valley views, modern minimalist design with exposed beams, and seamless indoor-outdoor spa experience in a luxury countryside retreat',
     keyFeatures: [
       'Spa included with all room bookings',
       'Award: Contemporary lakeside retreat',
@@ -736,7 +698,8 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://applebymanor.co.uk',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
-    imageSrc: '/images/spas/lake-district-spas_appleby-manor-hotel-garden-spa.jpg',
+    imageSrc:
+      '/images/spas/lake-district-spas_appleby-manor-hotel-garden-spa.jpg',
     imageAlt:
       'Appleby Manor Hotel & Garden Spa thermal suite and pool facilities',
     keyFeatures: [
