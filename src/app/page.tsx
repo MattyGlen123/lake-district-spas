@@ -184,7 +184,7 @@ export default function Home() {
       <main>
         <Hero />
 
-        <div className="container mx-auto px-4 py-6">
+        <div className="sticky top-0 z-20 container flex justify-center mx-auto px-4 py-4">
           <FilterButton
             onClick={handleOpenModal}
             activeFilterCount={activeFilterCount}
