@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Lake District Spas 2025 - Complete Access Guide',
   description:
-    'Compare 22 Lake District spa hotels. Know before you book: Is the spa included with your room? Detailed thermal suite, pool and access policy information.',
+    "Find you're perfect Spa. Compare Lake District spas. Know before you book: Is the spa included with your room? Detailed thermal suite, pool and access policy information.",
   keywords: [
     'lake district spas',
     'spa hotels lake district',
@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     description:
       'Know Before You Book - Compare spa access policies across 22 Lake District hotels',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
