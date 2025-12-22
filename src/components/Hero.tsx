@@ -1,8 +1,20 @@
+import Image from 'next/image';
+
 const Hero = () => {
   return (
     <section className="relative h-[300px] md:h-[400px] mt-16 overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/40" />
+      <div className="absolute inset-0">
+        <Image
+          src="/images/lake-district-spas_hero.jpg"
+          alt="Luxury Lake District spa hotel nestled on tranquil lakeside at dawn with dramatic mountain fells rising through morning mist, warm golden lighting reflecting on still waters, showcasing the stunning natural setting of Lake District spa retreats and wellness destinations in Cumbria"
+          fill
+          className="object-cover"
+          priority
+          quality={90}
+          sizes="100vw"
+        />
+      </div>
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 to-foreground/70" />
