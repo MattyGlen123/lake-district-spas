@@ -68,15 +68,7 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
         <div className="p-4">
           {/* Spa Name */}
           <h3 className="text-xl font-semibold text-foreground mb-1">
-            <a
-              href={spa.websiteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 hover:text-primary transition-colors"
-            >
-              {spa.name}
-              <ExternalLink className="w-4 h-4" />
-            </a>
+            {spa.name}
           </h3>
 
           {/* Location */}
@@ -183,6 +175,16 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
             </div>
           )}
 
+          {/* View Website Button */}
+          <a
+            href={spa.websiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full bg-white border border-gray-300 hover:bg-gray-100 text-gray-900 rounded-lg px-4 py-3 text-sm font-medium transition-colors mt-4 flex items-center justify-center gap-2"
+          >
+            View Website <ExternalLink className="w-4 h-4" />
+          </a>
+
           {/* Expand/Collapse Button */}
           <button
             onClick={onToggle}
@@ -241,15 +243,7 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
             <div className="flex-1">
               {/* Spa Name */}
               <h3 className="text-2xl font-semibold text-foreground mb-1">
-                <a
-                  href={spa.websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 hover:text-primary transition-colors"
-                >
-                  {spa.name}
-                  <ExternalLink className="w-5 h-5" />
-                </a>
+                {spa.name}
               </h3>
 
               {/* Location */}
@@ -271,6 +265,16 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
                 ))}
               </ul>
             </div>
+
+            {/* View Website Button */}
+            <a
+              href={spa.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-white border border-gray-300 hover:bg-gray-100 text-gray-900 rounded-lg px-4 py-3 text-sm font-medium transition-colors mt-4 flex items-center justify-center gap-2 self-start"
+            >
+              View Website <ExternalLink className="w-4 h-4" />
+            </a>
 
             {/* Expand/Collapse Button */}
             <button
