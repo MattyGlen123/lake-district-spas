@@ -65,7 +65,7 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
         </div>
 
         {/* Content */}
-        <div className="p-6">
+        <div className="p-4">
           {/* Spa Name */}
           <h3 className="text-xl font-semibold text-foreground mb-1">
             <a
