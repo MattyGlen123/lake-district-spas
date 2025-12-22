@@ -26,17 +26,6 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
   const config = businessModelConfig[spa.businessModel];
   const [imageError, setImageError] = useState(false);
 
-  const getBadgeClass = (model: BusinessModel) => {
-    const classes: Record<BusinessModel, string> = {
-      'free-with-booking': 'badge-green',
-      'paid-extra': 'badge-yellow',
-      'day-passes': 'badge-blue',
-      'guests-only': 'badge-red',
-      hybrid: 'badge-purple',
-    };
-    return classes[model];
-  };
-
   useEffect(() => {
     if (isExpanded && cardRef.current) {
       const yOffset = -80;
@@ -50,19 +39,13 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
     <article ref={cardRef} className="spa-card overflow-hidden">
       {/* Mobile Layout (stacked) */}
       <div className="lg:hidden">
-        {/* Business Model Badge */}
-        <div
-          className={`h-10 flex items-center justify-center font-bold text-sm ${getBadgeClass(
-            spa.businessModel
-          )}`}
-        >
-          <span>
-            {config.dot} {config.badgeText}
-          </span>
-        </div>
-
         {/* Image - Mobile: 389px × 250px (1.556:1 ratio) */}
         <div className="aspect-[389/250] overflow-hidden bg-gray-200 relative">
+          {/* Business Model Badge - Top Left */}
+          <div className="absolute top-2 left-2 z-10 bg-white text-black px-2 py-1 rounded-lg text-sm inline-flex items-center gap-1">
+            <span>{config.dot}</span>
+            <span>{config.label}</span>
+          </div>
           {!imageError ? (
             <Image
               src={spa.imageSrc}
@@ -226,20 +209,14 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
 
       {/* Desktop Layout (horizontal) */}
       <div className="hidden lg:block">
-        {/* Business Model Badge - Full Width */}
-        <div
-          className={`h-10 flex items-center justify-center font-bold text-sm ${getBadgeClass(
-            spa.businessModel
-          )}`}
-        >
-          <span>
-            {config.dot} {config.badgeText}
-          </span>
-        </div>
-
         <div className="flex">
           {/* Image - Left Side: 600px × 400px (1.5:1 ratio) */}
           <div className="w-[600px] h-[400px] shrink-0 bg-gray-200 relative overflow-hidden">
+            {/* Business Model Badge - Top Left */}
+            <div className="absolute top-1 left-1 z-10 bg-white text-black px-2 py-1 rounded-md font-bold text-sm inline-flex items-center gap-1">
+              <span>{config.dot}</span>
+              <span>{config.label}</span>
+            </div>
             {!imageError ? (
               <Image
                 src={spa.imageSrc}
