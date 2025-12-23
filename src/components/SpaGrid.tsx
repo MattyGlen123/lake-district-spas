@@ -35,6 +35,11 @@ const SpaGrid = ({ spas }: SpaGridProps) => {
   return (
     <section className="py-8 md:py-12">
       <div className="container mx-auto px-4">
+        {/* Heading */}
+        <h2 className="text-2xl font-bold text-foreground mb-6">
+          Explore {spas.length} {spas.length === 1 ? 'spa' : 'spas'}
+        </h2>
+
         <div className="flex flex-col gap-6 lg:gap-8">
           {spas.map((spa) => (
             <SpaCard

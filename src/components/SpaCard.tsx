@@ -211,11 +211,11 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
 
       {/* Desktop Layout (horizontal) */}
       <div className="hidden lg:block">
-        <div className="flex">
+        <div className="flex items-stretch">
           {/* Image - Left Side: 600px × 400px (1.5:1 ratio) */}
-          <div className="w-[600px] h-[400px] shrink-0 bg-gray-200 relative overflow-hidden">
+          <div className="w-[600px] min-h-[400px] shrink-0 bg-gray-200 relative overflow-hidden">
             {/* Business Model Badge - Top Left */}
-            <div className="absolute top-1 left-1 z-10 bg-white text-black px-2 py-1 rounded-md font-bold text-sm inline-flex items-center gap-1">
+            <div className="absolute top-4 left-4 z-10 bg-white text-black px-2 py-1 rounded-md font-bold text-sm inline-flex items-center gap-1">
               <span>{config.dot}</span>
               <span>{config.label}</span>
             </div>
@@ -239,7 +239,7 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
           </div>
 
           {/* Content - Right Side */}
-          <div className="flex-1 p-6 flex flex-col">
+          <div className="flex-1 p-6 flex flex-col min-h-[400px]">
             <div className="flex-1">
               {/* Spa Name */}
               <h3 className="text-2xl font-semibold text-foreground mb-1">

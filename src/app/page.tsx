@@ -184,11 +184,13 @@ export default function Home() {
       <main>
         <Hero />
 
-        <div className="sticky top-0 z-20 container flex justify-center mx-auto px-4 py-4">
-          <FilterButton
-            onClick={handleOpenModal}
-            activeFilterCount={activeFilterCount}
-          />
+        <div className="sticky top-0 z-20 mx-auto bg-gray-100 border-b border-gray-300">
+          <div className="mx-auto container flex justify-end px-4 py-3">
+            <FilterButton
+              onClick={handleOpenModal}
+              activeFilterCount={activeFilterCount}
+            />
+          </div>
         </div>
 
         <SpaGrid spas={filteredSpas} />

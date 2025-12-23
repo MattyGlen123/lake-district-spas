@@ -11,7 +11,7 @@ const FilterButton = ({ onClick, activeFilterCount }: FilterButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className="flex items-center gap-2 px-4 py-2 bg-background border border-border rounded-lg text-sm font-medium hover:border-primary/50 transition-colors"
+      className="flex items-center gap-2 px-10 py-2 bg-background border border-border rounded-lg text-sm font-medium hover:border-primary/50 transition-colors"
     >
       <Filter className="w-4 h-4" />
       <span>Filters</span>
