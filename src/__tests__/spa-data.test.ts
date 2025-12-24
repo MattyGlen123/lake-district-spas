@@ -28,7 +28,6 @@ describe('Spa Data Validation', () => {
         expect(spa.thermalFacilities).toBeDefined();
         expect(spa.poolFeatures).toBeDefined();
         expect(spa.accessPolicy).toBeDefined();
-        expect(spa.goodToKnow).toBeDefined();
         expect(spa.facilities).toBeDefined();
       });
     });
@@ -146,18 +145,6 @@ describe('Spa Data Validation', () => {
         spa.accessPolicy.forEach((policy) => {
           expect(typeof policy).toBe('string');
           expect(policy.trim().length).toBeGreaterThan(0);
-        });
-      });
-    });
-
-    it('goodToKnow should be an array', () => {
-      spaData.forEach((spa) => {
-        expect(Array.isArray(spa.goodToKnow)).toBe(true);
-        spa.goodToKnow.forEach((item) => {
-          expect(typeof item).toBe('string');
-          if (item.trim().length > 0) {
-            expect(item.trim().length).toBeGreaterThan(0);
-          }
         });
       });
     });

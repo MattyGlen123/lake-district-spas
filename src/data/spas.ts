@@ -6,44 +6,62 @@ export const spaData: Spa[] = [
     name: 'The Falls Spa at Lodore Falls Hotel',
     location: 'Borrowdale',
     websiteUrl: 'https://lakedistrictspa.co.uk',
-    businessModel: 'free-with-booking',
-    businessModelText: 'Spa included with room, day passes £60-160 approx',
+    businessModel: 'hybrid',
+    businessModelText:
+      'Spa included for suites, additonal cost for other rooms, day passes from £60',
     imageSrc: '/images/spas/lake-district-spas_lodore-falls-spa.jpg',
     imageAlt:
-      'Luxurious 16-metre outdoor hydrotherapy pool at The Falls Spa at Lodore Falls Hotel in Borrowdale, featuring heated water with neck jets and underwater bubble loungers, surrounded by white sun loungers on slate decking with dramatic Lake District mountain views at sunset, spa access included with room booking',
+      'Luxurious 16-metre outdoor hydrotherapy pool at The Falls Spa at Lodore Falls Hotel in Borrowdale, featuring heated water with neck jets and underwater bubble loungers, surrounded by white sun loungers on slate decking with dramatic Lake District mountain views at sunset, spa access included with suite bookings',
     keyFeatures: [
-      'Spa included with room, day passes £60-160 approx',
-      "Award: One of Lake District's finest",
-      '16m outdoor hydrotherapy pool',
-      '5 luxury treatment rooms',
+      'Spa included for suites, paid access for other rooms',
+      'Day passes from £60',
+      '16m infinity-edge outdoor hydrotherapy pool',
+      '5 treatment rooms & relaxation lounge',
+      '4-person mud rasul',
+      'Champagne Bar for refreshments',
     ],
     thermalFacilities: [
       {
         name: 'Finnish Sauna',
-        details: 'Glass-walled with panoramic views, 85°C',
+        details: 'Panoramic views over Derwentwater, 85°C',
       },
-      { name: 'Laconium', details: '35°C gentle heat' },
-      { name: 'Salt Steam Room', details: '40°C at 95% humidity' },
-      { name: 'Ice Room', details: 'Cold drench bucket' },
-      { name: 'Experience Showers', details: 'Hot shower' },
+      {
+        name: 'Herbal Sauna',
+        details: '65-75°C infused with herbs',
+      },
+      { name: 'Laconium', details: 'Roman bath style' },
+      {
+        name: 'Aroma Steam Room',
+        details: '45°C at 95% humidity, essential oils',
+      },
+      {
+        name: 'Salt Steam Room',
+        details: '40°C at 95% humidity, halotherapy',
+      },
+      { name: 'Heated Loungers', details: 'Relaxation in thermal suite' },
     ],
     poolFeatures: [
-      { name: 'Indoor Pool', details: '16m outdoor hydrotherapy' },
-      { name: 'Outdoor Pool', details: '16m hydrotherapy' },
       {
-        name: 'Hydrotherapy Pool',
-        details: '16m outdoor with neck jets, underwater bubble loungers',
+        name: 'Infinity-Edge Vitality Pool',
+        details:
+          ' underwater bubble loungers, volcano fountain, hydromassage neck jets',
       },
-      { name: 'Hot Tub', details: 'Hot tub or jacuzzi' },
+      {
+        name: 'Experience Showers',
+        details: 'Forest Rinse, Tropical Rain, Thermal Sensation',
+      },
+      {
+        name: 'Ice Fountain',
+        details: 'Cool down post-sauna, boost circulation',
+      },
+      { name: 'Cold Drench Bucket', details: 'Outdoor cool down after sauna' },
     ],
     accessPolicy: [
-      'Spa included with room booking',
-      'Day passes: £60-160 approx',
-      'Pre-booking: recommended',
-      'Age restriction: 18+ only',
-      'Spa hours: 10am-4pm thermal suite',
+      'Suites: Spa included - 2hrs complimentary per night',
+      'Paid access for other rooms: 2hr slots',
+      'Book slots after room booking',
+      'Age restriction: 18+ only (due to heat experiences)',
     ],
-    goodToKnow: ['What to bring: Swimming attire, flip flops'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -87,7 +105,6 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only',
       'Spa hours: Spa days available',
     ],
-    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -136,7 +153,6 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only',
       'Spa hours: Throughout stay for guests',
     ],
-    goodToKnow: ['What to bring: Provided for guests'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -177,7 +193,6 @@ export const spaData: Spa[] = [
       'Age restriction: 16+ only',
       'Spa hours: 8am-8pm daily, treatments 10am-6:30pm',
     ],
-    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: false,
@@ -226,7 +241,6 @@ export const spaData: Spa[] = [
       'Age restriction: 18+ (16-17 with parent/guardian)',
       'Spa hours: 10am-4pm spa access',
     ],
-    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: false,
@@ -265,7 +279,6 @@ export const spaData: Spa[] = [
       'Age restriction: 18+ for treatments, kids allowed in pool',
       'Spa hours: Pool & gym 7am-6:30pm, children swim 10am-5pm',
     ],
-    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -312,7 +325,6 @@ export const spaData: Spa[] = [
       'Age restriction: 16+ only',
       'Spa hours: Sunrise 7:30am-9:30am, Treatments 9:30am-7:30pm, Spa Days 10am-8pm',
     ],
-    goodToKnow: ['What to bring: Own flip flops (sustainable policy)'],
     facilities: {
       sauna: true,
       steamRoom: false,
@@ -353,7 +365,6 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only for spa',
       'Spa hours: Throughout guest stay',
     ],
-    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: false,
@@ -393,7 +404,6 @@ export const spaData: Spa[] = [
       'Day passes: Not available',
       'Spa hours: Yes - dog friendly',
     ],
-    goodToKnow: [],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -437,7 +447,6 @@ export const spaData: Spa[] = [
       'Hotel guests: Yes - Traditional sauna at Lake House',
       'Spa hours: Yes',
     ],
-    goodToKnow: [],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -483,7 +492,6 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only for spa',
       'Spa hours: Call to confirm',
     ],
-    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -526,7 +534,6 @@ export const spaData: Spa[] = [
       'Age restriction: 18+ charged as adults',
       'Spa hours: Riverside Spa - call to confirm',
     ],
-    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -568,7 +575,6 @@ export const spaData: Spa[] = [
       'Age restriction: All ages welcome',
       'Spa hours: Classes available, aqua aerobics',
     ],
-    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -608,7 +614,6 @@ export const spaData: Spa[] = [
       'Age restriction: All ages welcome',
       'Spa hours: 7am-8pm (varies)',
     ],
-    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -647,7 +652,6 @@ export const spaData: Spa[] = [
       'Age restriction: Children not permitted in pool before 9am or after 6pm',
       'Spa hours: 7am-9pm daily',
     ],
-    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: false,
@@ -683,7 +687,6 @@ export const spaData: Spa[] = [
       'Age restriction: 16+ for gym facilities',
       'Spa hours: Pool: Mon-Fri 6:30-9:30am & 5-7pm (pre-book), Weekends no booking',
     ],
-    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: false,
       steamRoom: true,
@@ -730,7 +733,6 @@ export const spaData: Spa[] = [
       'Age restriction: 16+ only',
       'Spa hours: Thermal Suite 10am-5pm Mon-Thu, 9:30am-6pm Fri-Sun',
     ],
-    goodToKnow: ['What to bring: Bring own waterproof footwear'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -773,7 +775,6 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only',
       'Spa hours: Thermal Suite 9am-8pm. Treatments 10am-6pm',
     ],
-    goodToKnow: ['What to bring: Swimwear'],
     facilities: {
       sauna: true,
       steamRoom: true,
@@ -814,7 +815,6 @@ export const spaData: Spa[] = [
       'Age restriction: All ages welcome',
       'Spa hours: 7am-8pm daily',
     ],
-    goodToKnow: ['What to bring: Swimming attire'],
     facilities: {
       sauna: true,
       steamRoom: true,

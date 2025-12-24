@@ -28,7 +28,6 @@ export interface Spa {
   thermalFacilities: ThermalFacility[];
   poolFeatures: PoolFeature[];
   accessPolicy: string[];
-  goodToKnow: string[];
   facilities: {
     sauna: boolean;
     steamRoom: boolean;

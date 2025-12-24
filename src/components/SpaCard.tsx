@@ -152,25 +152,6 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
                     ))}
                   </ul>
                 </div>
-
-                {/* Good to Know */}
-                <div>
-                  <h4 className="flex items-center gap-2 text-base font-semibold text-foreground mb-3">
-                    <Lightbulb className="w-5 h-5 text-primary" />
-                    Good to Know
-                  </h4>
-                  <ul className="space-y-2">
-                    {spa.goodToKnow.map((info, index) => (
-                      <li
-                        key={index}
-                        className="flex items-start gap-2 text-sm text-foreground"
-                      >
-                        <span className="text-muted-foreground">•</span>
-                        {info}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             </div>
           )}
@@ -304,7 +285,7 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
       {/* Expanded Content - Desktop */}
       {isExpanded && (
         <div className="hidden lg:block p-6 pt-6 border-t border-border animate-slide-down">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Thermal Facilities */}
             <div>
               <h4 className="flex items-center gap-2 text-base font-semibold text-foreground mb-3">
@@ -359,25 +340,6 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
                   >
                     <span className="text-muted-foreground">•</span>
                     {policy}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Good to Know */}
-            <div>
-              <h4 className="flex items-center gap-2 text-base font-semibold text-foreground mb-3">
-                <Lightbulb className="w-5 h-5 text-primary" />
-                Good to Know
-              </h4>
-              <ul className="space-y-2">
-                {spa.goodToKnow.map((info, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-2 text-sm text-foreground"
-                  >
-                    <span className="text-muted-foreground">•</span>
-                    {info}
                   </li>
                 ))}
               </ul>
