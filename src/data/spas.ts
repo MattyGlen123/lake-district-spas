@@ -83,6 +83,8 @@ export const spaData: Spa[] = [
       'Luxury thermal relaxation suite at Armathwaite Hall Hotel and Spa near Bassenthwaite Lake, featuring heated ceramic loungers with burnt orange throws, ambient candlelit atmosphere with green velvet curtains and contemporary design, offering award-winning spa facilities in a Lake District country estate setting',
     keyFeatures: [
       'Spa included with room, day passes Packages available',
+      'Indoor swimming pool',
+      'Outdoor infinity pools',
       'Award: Celebrated spa in Lake District',
       'Multiple treatment rooms',
     ],
@@ -103,7 +105,6 @@ export const spaData: Spa[] = [
       'Day passes: Packages available',
       'Pre-booking: Recommended',
       'Age restriction: Adults only',
-      'Spa hours: Spa days available',
     ],
     facilities: {
       sauna: true,
@@ -116,7 +117,7 @@ export const spaData: Spa[] = [
   },
   {
     id: 'brimstone-spa-at-brimstone-hotel',
-    name: 'Brimstone Spa (at Brimstone Hotel)',
+    name: 'Brimstone Spa',
     location: 'Great Langdale',
     websiteUrl: 'https://brimstonehotel.co.uk/rooms/spa-break/',
     businessModel: 'guests-only',
@@ -126,8 +127,8 @@ export const spaData: Spa[] = [
       'Unique swim-through hydrotherapy pool at Brimstone Hotel and Spa in Langdale featuring iridescent blue mosaic tiles, modern Nordic-inspired design with wooden accents and floor-to-ceiling windows, white heated loungers, and indoor-outdoor connectivity in the heart of the Lake District',
     keyFeatures: [
       'Exclusive to hotel guests only',
-      'Award: Premium spa',
-      '9m relaxation pool pool',
+      'Swim-through indoor/outdoor pool',
+      'Sauna and steam room',
       'Treatment rooms available',
     ],
     thermalFacilities: [
@@ -141,7 +142,7 @@ export const spaData: Spa[] = [
       },
     ],
     poolFeatures: [
-      { name: 'Indoor Pool', details: '9m' },
+      { name: 'Indoor Pool', details: '9m pool' },
       { name: 'Outdoor Pool', details: 'Swim-through indoor/outdoor' },
       { name: 'Swim-Through Pool', details: '9m indoor/outdoor' },
       { name: 'Hot Tub', details: 'Hot tub or jacuzzi' },
@@ -151,7 +152,6 @@ export const spaData: Spa[] = [
       'Day passes: Not available',
       'Pre-booking: Guest access automatic',
       'Age restriction: Adults only',
-      'Spa hours: Throughout stay for guests',
     ],
     facilities: {
       sauna: true,
