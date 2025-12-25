@@ -28,13 +28,34 @@ function filterSpas(
     }
 
     // Filter by facilities - ALL selected facilities must be present
+    // EXCEPT for pools: if both indoorPool and outdoorPool are selected, use OR logic
     if (facilities.length > 0) {
-      const hasFacilities = facilities.every((facility) => {
-        const facilityKey = facility as keyof typeof spa.facilities;
-        return spa.facilities[facilityKey];
-      });
-      if (!hasFacilities) {
-        return false;
+      const poolFilters = ['indoorPool', 'outdoorPool'];
+      const selectedPools = facilities.filter((f) => poolFilters.includes(f));
+      const otherFacilities = facilities.filter(
+        (f) => !poolFilters.includes(f)
+      );
+
+      // Check pools with OR logic if both are selected
+      if (selectedPools.length > 0) {
+        const hasAnyPool = selectedPools.some((pool) => {
+          const poolKey = pool as keyof typeof spa.facilities;
+          return spa.facilities[poolKey];
+        });
+        if (!hasAnyPool) {
+          return false;
+        }
+      }
+
+      // Check other facilities with AND logic
+      if (otherFacilities.length > 0) {
+        const hasAllOtherFacilities = otherFacilities.every((facility) => {
+          const facilityKey = facility as keyof typeof spa.facilities;
+          return spa.facilities[facilityKey];
+        });
+        if (!hasAllOtherFacilities) {
+          return false;
+        }
       }
     }
 
@@ -269,10 +290,10 @@ describe('Spa Filtering Logic', () => {
     });
 
     it('should filter spas with pool over 15m', () => {
-      const result = filterSpas(spaData, [], 'All Locations', ['poolOver15m']);
+      const result = filterSpas(spaData, [], 'All Locations', ['indoorPool']);
 
       result.forEach((spa) => {
-        expect(spa.facilities.poolOver15m).toBe(true);
+        expect(spa.facilities.indoorPool).toBe(true);
       });
     });
 
@@ -492,7 +513,8 @@ describe('Spa Filtering Logic', () => {
         'steamRoom',
         'iceRoom',
         'hotTub',
-        'poolOver15m',
+        'indoorPool',
+        'outdoorPool',
         'thermalSuite',
       ];
 
@@ -500,8 +522,27 @@ describe('Spa Filtering Logic', () => {
       const result = filterSpas(spaData, [], 'All Locations', allFacilities);
 
       // If we get results, all spas should have all facilities
+      // Note: For pools, OR logic applies - spa needs either indoorPool OR outdoorPool
       result.forEach((spa) => {
-        allFacilities.forEach((facility) => {
+        const poolFilters = ['indoorPool', 'outdoorPool'];
+        const otherFacilities = allFacilities.filter(
+          (f) => !poolFilters.includes(f)
+        );
+
+        // Check pools with OR logic
+        const selectedPools = allFacilities.filter((f) =>
+          poolFilters.includes(f)
+        );
+        if (selectedPools.length > 0) {
+          const hasAnyPool = selectedPools.some((pool) => {
+            const poolKey = pool as keyof typeof spa.facilities;
+            return spa.facilities[poolKey];
+          });
+          expect(hasAnyPool).toBe(true);
+        }
+
+        // Check other facilities with AND logic
+        otherFacilities.forEach((facility) => {
           const facilityKey = facility as keyof typeof spa.facilities;
           expect(spa.facilities[facilityKey]).toBe(true);
         });
@@ -617,12 +658,12 @@ describe('Spa Filtering Logic', () => {
         spaData,
         ['day-passes-available'],
         'All Locations',
-        ['poolOver15m']
+        ['indoorPool']
       );
 
       result.forEach((spa) => {
         expect(spa.accessLabels).toContain('day-passes-available');
-        expect(spa.facilities.poolOver15m).toBe(true);
+        expect(spa.facilities.indoorPool).toBe(true);
       });
     });
 

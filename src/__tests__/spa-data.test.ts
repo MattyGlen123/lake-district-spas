@@ -164,7 +164,8 @@ describe('Spa Data Validation', () => {
         'steamRoom',
         'iceRoom',
         'hotTub',
-        'poolOver15m',
+        'indoorPool',
+        'outdoorPool',
         'thermalSuite',
       ];
 
@@ -220,7 +221,8 @@ describe('Spa Data Validation', () => {
         'steamRoom',
         'iceRoom',
         'hotTub',
-        'poolOver15m',
+        'indoorPool',
+        'outdoorPool',
         'thermalSuite',
       ]);
 

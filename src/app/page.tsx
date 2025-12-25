@@ -129,13 +129,37 @@ export default function Home() {
         return false;
       }
 
+      // Filter by facilities - ALL selected facilities must be present
+      // EXCEPT for pools: if both indoorPool and outdoorPool are selected, use OR logic
       if (selectedFacilities.length > 0) {
-        const hasFacilities = selectedFacilities.every((facility) => {
-          const facilityKey = facility as keyof typeof spa.facilities;
-          return spa.facilities[facilityKey];
-        });
-        if (!hasFacilities) {
-          return false;
+        const poolFilters = ['indoorPool', 'outdoorPool'];
+        const selectedPools = selectedFacilities.filter((f) =>
+          poolFilters.includes(f)
+        );
+        const otherFacilities = selectedFacilities.filter(
+          (f) => !poolFilters.includes(f)
+        );
+
+        // Check pools with OR logic if any are selected
+        if (selectedPools.length > 0) {
+          const hasAnyPool = selectedPools.some((pool) => {
+            const poolKey = pool as keyof typeof spa.facilities;
+            return spa.facilities[poolKey];
+          });
+          if (!hasAnyPool) {
+            return false;
+          }
+        }
+
+        // Check other facilities with AND logic
+        if (otherFacilities.length > 0) {
+          const hasAllOtherFacilities = otherFacilities.every((facility) => {
+            const facilityKey = facility as keyof typeof spa.facilities;
+            return spa.facilities[facilityKey];
+          });
+          if (!hasAllOtherFacilities) {
+            return false;
+          }
         }
       }
 
@@ -163,13 +187,37 @@ export default function Home() {
         return false;
       }
 
+      // Filter by facilities - ALL selected facilities must be present
+      // EXCEPT for pools: if both indoorPool and outdoorPool are selected, use OR logic
       if (tempFilters.facilities.length > 0) {
-        const hasFacilities = tempFilters.facilities.every((facility) => {
-          const facilityKey = facility as keyof typeof spa.facilities;
-          return spa.facilities[facilityKey];
-        });
-        if (!hasFacilities) {
-          return false;
+        const poolFilters = ['indoorPool', 'outdoorPool'];
+        const selectedPools = tempFilters.facilities.filter((f) =>
+          poolFilters.includes(f)
+        );
+        const otherFacilities = tempFilters.facilities.filter(
+          (f) => !poolFilters.includes(f)
+        );
+
+        // Check pools with OR logic if any are selected
+        if (selectedPools.length > 0) {
+          const hasAnyPool = selectedPools.some((pool) => {
+            const poolKey = pool as keyof typeof spa.facilities;
+            return spa.facilities[poolKey];
+          });
+          if (!hasAnyPool) {
+            return false;
+          }
+        }
+
+        // Check other facilities with AND logic
+        if (otherFacilities.length > 0) {
+          const hasAllOtherFacilities = otherFacilities.every((facility) => {
+            const facilityKey = facility as keyof typeof spa.facilities;
+            return spa.facilities[facilityKey];
+          });
+          if (!hasAllOtherFacilities) {
+            return false;
+          }
         }
       }
 

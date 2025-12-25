@@ -32,9 +32,11 @@ export interface Spa {
     steamRoom: boolean;
     iceRoom: boolean;
     hotTub: boolean;
-    poolOver15m: boolean;
+    indoorPool: boolean;
+    outdoorPool: boolean;
     coldPlunge: boolean;
     thermalSuite: boolean;
+    infraredSauna: boolean;
   };
 }
 
