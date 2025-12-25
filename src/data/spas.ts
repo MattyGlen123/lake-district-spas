@@ -210,7 +210,7 @@ export const spaData: Spa[] = [
   },
   {
     id: 'the-swan-hotel-spa-holte-spa',
-    name: 'The Swan Hotel & Spa (Holte Spa)',
+    name: 'The Swan Hotel & Spa',
     location: 'Newby Bridge',
     websiteUrl: 'https://swanhotel.com//spa/',
     businessModel: 'day-passes',
