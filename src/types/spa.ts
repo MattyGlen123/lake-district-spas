@@ -42,6 +42,7 @@ export interface Spa {
     iceRoom: boolean;
     hotTub: boolean;
     poolOver15m: boolean;
+    coldPlunge: boolean;
     thermalSuite: boolean;
   };
 }

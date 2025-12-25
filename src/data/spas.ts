@@ -64,6 +64,7 @@ export const spaData: Spa[] = [
       'Age restriction: 18+ only (due to heat experiences)',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: true,
@@ -109,6 +110,7 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: false,
@@ -157,6 +159,7 @@ export const spaData: Spa[] = [
       'Age restriction: Adults only',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: true,
@@ -204,6 +207,7 @@ export const spaData: Spa[] = [
       'Treatment hours: 10am-6:30pm',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: false,
@@ -216,49 +220,70 @@ export const spaData: Spa[] = [
     id: 'the-swan-hotel-spa-holte-spa',
     name: 'The Swan Hotel & Spa',
     location: 'Newby Bridge',
-    websiteUrl: 'https://swanhotel.com//spa/',
-    businessModel: 'day-passes',
-    businessModelText: 'Spa included with room, day passes £40 (2 hours)',
+    websiteUrl: 'https://swanhotel.com/spa/',
+    businessModel: 'hybrid',
+    businessModelText:
+      'Free spa access for Splendid room bookings and above. Day passes available to the public.',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_swan-hotel.webp',
     imageAlt:
       'Illuminated outdoor hydrotherapy pool at Swan Hotel and Spa in Newby Bridge at twilight, featuring swim-through access connecting indoor relaxation areas with heated outdoor pool, blue underwater lighting, and glass walls showcasing integrated spa facilities in the Lake District',
     keyFeatures: [
-      'Spa included with room, day passes £40 (2 hours)',
-      'Award: Award-winning spa',
-      'Treatment rooms available',
+      'Free spa access for Splendid rooms and above',
+      'Day passes available to the public',
+      'Unique indoor/outdoor swim-through pool',
+      'Authentic outdoor Finnish sauna',
+      'Cold plunge pool',
     ],
     thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Authentic outdoor Finnish sauna' },
+      {
+        name: 'Outdoor Finnish Sauna',
+        details: 'Authentic outdoor Finnish sauna',
+      },
+      {
+        name: 'Indoor Finnish Sauna',
+        details: 'Finnish-inspired indoor sauna',
+      },
+      { name: 'Steam Room', details: '100% humidity steam room' },
       {
         name: 'Experience Showers',
-        details: 'Multi-sensory shower experience',
+        details:
+          'Multi-sensory showers with tropical rain, mist, monsoon and cold waterfall effects',
+      },
+      {
+        name: 'Cold Plunge Pool',
+        details:
+          'For reduced inflammation, improved circulation and mental resilience',
       },
     ],
     poolFeatures: [
-      { name: 'Indoor Pool', details: 'Indoor/outdoor swim-through' },
-      { name: 'Outdoor Pool', details: 'Swim-through to outdoor' },
       {
-        name: 'Hydrotherapy Pool',
-        details: 'Naturally filtered, minimal chlorine',
+        name: 'Indoor/Outdoor Swim-Through Pool',
+        details:
+          'Unique indoor-to-outdoor hydrotherapy pool, naturally filtered with minimal chlorine',
       },
-      { name: 'Swim-Through Pool', details: 'Unique indoor-to-outdoor' },
-      { name: 'Hot Tub', details: 'Hot tub or jacuzzi' },
+      {
+        name: 'Jacuzzi Pool',
+        details:
+          '12-seater jacuzzi pool with gentle jets to alleviate tight muscles and tension',
+      },
     ],
     accessPolicy: [
-      'Spa included with room booking',
-      'Day passes: £40 (2 hours)',
-      'Pre-booking: Recommended',
+      'Hotel guests: Free spa access for Splendid room bookings and above',
+      'Standard room guests: Day pass available',
+      'Public day passes available',
+      'Pre-booking recommended',
       'Age restriction: 18+ (16-17 with parent/guardian)',
-      'Spa hours: 10am-4pm spa access',
+      'Spa hours: 10am-4pm',
     ],
     facilities: {
       sauna: true,
-      steamRoom: false,
-      iceRoom: false,
+      steamRoom: true,
+      iceRoom: true,
       hotTub: true,
       poolOver15m: false,
-      thermalSuite: false,
+      thermalSuite: true,
+      coldPlunge: true,
     },
   },
   {
@@ -292,6 +317,7 @@ export const spaData: Spa[] = [
       'Spa hours: Pool & gym 7am-6:30pm, children swim 10am-5pm',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: true,
@@ -339,6 +365,7 @@ export const spaData: Spa[] = [
       'Spa hours: Sunrise 7:30am-9:30am, Treatments 9:30am-7:30pm, Spa Days 10am-8pm',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: false,
       iceRoom: false,
@@ -380,6 +407,7 @@ export const spaData: Spa[] = [
       'Spa hours: Throughout guest stay',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: false,
       iceRoom: true,
@@ -420,6 +448,7 @@ export const spaData: Spa[] = [
       'Spa hours: Yes - dog friendly',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: true,
@@ -464,6 +493,7 @@ export const spaData: Spa[] = [
       'Spa hours: Yes',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: false,
@@ -510,6 +540,7 @@ export const spaData: Spa[] = [
       'Spa hours: Call to confirm',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: false,
@@ -553,6 +584,7 @@ export const spaData: Spa[] = [
       'Spa hours: Riverside Spa - call to confirm',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: false,
@@ -595,6 +627,7 @@ export const spaData: Spa[] = [
       'Spa hours: Classes available, aqua aerobics',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: false,
@@ -635,6 +668,7 @@ export const spaData: Spa[] = [
       'Spa hours: 7am-8pm (varies)',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: false,
@@ -674,6 +708,7 @@ export const spaData: Spa[] = [
       'Spa hours: 7am-9pm daily',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: false,
       iceRoom: false,
@@ -710,6 +745,7 @@ export const spaData: Spa[] = [
       'Spa hours: Pool: Mon-Fri 6:30-9:30am & 5-7pm (pre-book), Weekends no booking',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: false,
       steamRoom: true,
       iceRoom: false,
@@ -757,6 +793,7 @@ export const spaData: Spa[] = [
       'Spa hours: Thermal Suite 10am-5pm Mon-Thu, 9:30am-6pm Fri-Sun',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: true,
@@ -800,6 +837,7 @@ export const spaData: Spa[] = [
       'Spa hours: Thermal Suite 9am-8pm. Treatments 10am-6pm',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: true,
@@ -841,6 +879,7 @@ export const spaData: Spa[] = [
       'Spa hours: 7am-8pm daily',
     ],
     facilities: {
+      coldPlunge: false,
       sauna: true,
       steamRoom: true,
       iceRoom: false,
