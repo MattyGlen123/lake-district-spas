@@ -1,5 +1,5 @@
 import { spaData } from '@/data/spas';
-import { BusinessModel, Spa } from '@/types/spa';
+import { AccessLabel, Spa } from '@/types/spa';
 
 /**
  * Core filtering logic extracted from page.tsx for testing
@@ -7,14 +7,19 @@ import { BusinessModel, Spa } from '@/types/spa';
  */
 function filterSpas(
   spas: Spa[],
-  businessModels: BusinessModel[],
+  accessLabels: AccessLabel[],
   location: string,
   facilities: string[]
 ): Spa[] {
   return spas.filter((spa: Spa) => {
-    // Filter by business model
-    if (businessModels.length > 0 && !businessModels.includes(spa.businessModel)) {
-      return false;
+    // Filter by access labels (OR logic - show if spa has ANY selected label)
+    if (accessLabels.length > 0) {
+      const hasAnyLabel = spa.accessLabels.some((label) =>
+        accessLabels.includes(label)
+      );
+      if (!hasAnyLabel) {
+        return false;
+      }
     }
 
     // Filter by location
@@ -42,12 +47,12 @@ function filterSpas(
  * This mirrors the logic in page.tsx
  */
 function calculateActiveFilterCount(
-  businessModels: BusinessModel[],
+  accessLabels: AccessLabel[],
   location: string,
   facilities: string[]
 ): number {
   return (
-    businessModels.length +
+    accessLabels.length +
     (location !== 'All Locations' ? 1 : 0) +
     facilities.length
   );
@@ -67,83 +72,118 @@ describe('Spa Filtering Logic', () => {
     });
   });
 
-  describe('Single Business Model Filter', () => {
-    it('should filter by "free-with-booking" business model', () => {
-      const result = filterSpas(spaData, ['free-with-booking'], 'All Locations', []);
+  describe('Single Access Label Filter', () => {
+    it('should filter by "free-for-all-guests" access label', () => {
+      const result = filterSpas(
+        spaData,
+        ['free-for-all-guests'],
+        'All Locations',
+        []
+      );
 
       expect(result.length).toBeGreaterThan(0);
       result.forEach((spa) => {
-        expect(spa.businessModel).toBe('free-with-booking');
+        expect(spa.accessLabels).toContain('free-for-all-guests');
       });
     });
 
-    it('should filter by "paid-extra" business model', () => {
-      const result = filterSpas(spaData, ['paid-extra'], 'All Locations', []);
+    it('should filter by "paid-for-guests" access label', () => {
+      const result = filterSpas(
+        spaData,
+        ['paid-for-guests'],
+        'All Locations',
+        []
+      );
 
       result.forEach((spa) => {
-        expect(spa.businessModel).toBe('paid-extra');
+        expect(spa.accessLabels).toContain('paid-for-guests');
       });
     });
 
-    it('should filter by "day-passes" business model', () => {
-      const result = filterSpas(spaData, ['day-passes'], 'All Locations', []);
+    it('should filter by "day-passes-available" access label', () => {
+      const result = filterSpas(
+        spaData,
+        ['day-passes-available'],
+        'All Locations',
+        []
+      );
 
       result.forEach((spa) => {
-        expect(spa.businessModel).toBe('day-passes');
+        expect(spa.accessLabels).toContain('day-passes-available');
       });
     });
 
-    it('should filter by "guests-only" business model', () => {
-      const result = filterSpas(spaData, ['guests-only'], 'All Locations', []);
+    it('should filter by "guests-only-no-passes" access label', () => {
+      const result = filterSpas(
+        spaData,
+        ['guests-only-no-passes'],
+        'All Locations',
+        []
+      );
 
       result.forEach((spa) => {
-        expect(spa.businessModel).toBe('guests-only');
+        expect(spa.accessLabels).toContain('guests-only-no-passes');
       });
     });
 
-    it('should filter by "hybrid" business model', () => {
-      const result = filterSpas(spaData, ['hybrid'], 'All Locations', []);
+    it('should filter by "free-for-some-rooms" access label', () => {
+      const result = filterSpas(
+        spaData,
+        ['free-for-some-rooms'],
+        'All Locations',
+        []
+      );
 
       result.forEach((spa) => {
-        expect(spa.businessModel).toBe('hybrid');
+        expect(spa.accessLabels).toContain('free-for-some-rooms');
       });
     });
 
-    it('should calculate active filter count as 1 for single business model', () => {
-      const count = calculateActiveFilterCount(['free-with-booking'], 'All Locations', []);
+    it('should calculate active filter count as 1 for single access label', () => {
+      const count = calculateActiveFilterCount(
+        ['free-for-all-guests'],
+        'All Locations',
+        []
+      );
       expect(count).toBe(1);
     });
   });
 
-  describe('Multiple Business Model Filters', () => {
-    it('should return spas matching ANY of the selected business models', () => {
-      const selectedModels: BusinessModel[] = ['free-with-booking', 'guests-only'];
-      const result = filterSpas(spaData, selectedModels, 'All Locations', []);
+  describe('Multiple Access Label Filters', () => {
+    it('should return spas matching ANY of the selected access labels', () => {
+      const selectedLabels: AccessLabel[] = [
+        'free-for-all-guests',
+        'guests-only-no-passes',
+      ];
+      const result = filterSpas(spaData, selectedLabels, 'All Locations', []);
 
       expect(result.length).toBeGreaterThan(0);
       result.forEach((spa) => {
-        expect(selectedModels).toContain(spa.businessModel);
+        const hasAnyLabel = spa.accessLabels.some((label) =>
+          selectedLabels.includes(label)
+        );
+        expect(hasAnyLabel).toBe(true);
       });
     });
 
-    it('should calculate active filter count for multiple business models', () => {
+    it('should calculate active filter count for multiple access labels', () => {
       const count = calculateActiveFilterCount(
-        ['free-with-booking', 'guests-only'],
+        ['free-for-all-guests', 'guests-only-no-passes'],
         'All Locations',
         []
       );
       expect(count).toBe(2);
     });
 
-    it('should return all spas when all business models are selected', () => {
-      const allModels: BusinessModel[] = [
-        'free-with-booking',
-        'paid-extra',
-        'day-passes',
-        'guests-only',
-        'hybrid',
+    it('should return all spas when all access labels are selected', () => {
+      const allLabels: AccessLabel[] = [
+        'free-for-all-guests',
+        'free-for-some-rooms',
+        'paid-for-guests',
+        'guests-only-no-passes',
+        'day-passes-available',
       ];
-      const result = filterSpas(spaData, allModels, 'All Locations', []);
+      const result = filterSpas(spaData, allLabels, 'All Locations', []);
 
       expect(result).toHaveLength(spaData.length);
     });
@@ -253,7 +293,10 @@ describe('Spa Filtering Logic', () => {
 
   describe('Multiple Facility Filters (AND logic)', () => {
     it('should require ALL selected facilities to be present (sauna AND steamRoom)', () => {
-      const result = filterSpas(spaData, [], 'All Locations', ['sauna', 'steamRoom']);
+      const result = filterSpas(spaData, [], 'All Locations', [
+        'sauna',
+        'steamRoom',
+      ]);
 
       expect(result.length).toBeGreaterThan(0);
       result.forEach((spa) => {
@@ -263,7 +306,11 @@ describe('Spa Filtering Logic', () => {
     });
 
     it('should require ALL selected facilities (sauna AND iceRoom AND hotTub)', () => {
-      const result = filterSpas(spaData, [], 'All Locations', ['sauna', 'iceRoom', 'hotTub']);
+      const result = filterSpas(spaData, [], 'All Locations', [
+        'sauna',
+        'iceRoom',
+        'hotTub',
+      ]);
 
       result.forEach((spa) => {
         expect(spa.facilities.sauna).toBe(true);
@@ -274,65 +321,78 @@ describe('Spa Filtering Logic', () => {
 
     it('should return fewer results when more facilities are required', () => {
       const oneFacility = filterSpas(spaData, [], 'All Locations', ['sauna']);
-      const twoFacilities = filterSpas(spaData, [], 'All Locations', ['sauna', 'iceRoom']);
-      const threeFacilities = filterSpas(
-        spaData,
-        [],
-        'All Locations',
-        ['sauna', 'iceRoom', 'hotTub']
-      );
+      const twoFacilities = filterSpas(spaData, [], 'All Locations', [
+        'sauna',
+        'iceRoom',
+      ]);
+      const threeFacilities = filterSpas(spaData, [], 'All Locations', [
+        'sauna',
+        'iceRoom',
+        'hotTub',
+      ]);
 
       expect(twoFacilities.length).toBeLessThanOrEqual(oneFacility.length);
       expect(threeFacilities.length).toBeLessThanOrEqual(twoFacilities.length);
     });
 
     it('should calculate active filter count for multiple facilities', () => {
-      const count = calculateActiveFilterCount([], 'All Locations', ['sauna', 'iceRoom', 'hotTub']);
+      const count = calculateActiveFilterCount([], 'All Locations', [
+        'sauna',
+        'iceRoom',
+        'hotTub',
+      ]);
       expect(count).toBe(3);
     });
   });
 
-  describe('Combined Filters (Business Model + Location)', () => {
-    it('should filter by business model AND location', () => {
-      // Find a location that has spas with specific business model
-      const borrowdaleSpas = spaData.filter((spa) => spa.location === 'Borrowdale');
-      const businessModels = [...new Set(borrowdaleSpas.map((spa) => spa.businessModel))];
+  describe('Combined Filters (Access Label + Location)', () => {
+    it('should filter by access label AND location', () => {
+      // Find a location that has spas with specific access label
+      const borrowdaleSpas = spaData.filter(
+        (spa) => spa.location === 'Borrowdale'
+      );
+      const allLabels = borrowdaleSpas.flatMap((spa) => spa.accessLabels);
+      const uniqueLabels = [...new Set(allLabels)];
 
-      if (businessModels.length > 0) {
-        const result = filterSpas(spaData, [businessModels[0]], 'Borrowdale', []);
+      if (uniqueLabels.length > 0) {
+        const result = filterSpas(spaData, [uniqueLabels[0]], 'Borrowdale', []);
 
         result.forEach((spa) => {
-          expect(spa.businessModel).toBe(businessModels[0]);
+          expect(spa.accessLabels).toContain(uniqueLabels[0]);
           expect(spa.location).toBe('Borrowdale');
         });
       }
     });
 
-    it('should calculate active filter count for business model + location', () => {
-      const count = calculateActiveFilterCount(['free-with-booking'], 'Borrowdale', []);
+    it('should calculate active filter count for access label + location', () => {
+      const count = calculateActiveFilterCount(
+        ['free-for-all-guests'],
+        'Borrowdale',
+        []
+      );
       expect(count).toBe(2);
     });
   });
 
-  describe('Combined Filters (Business Model + Facilities)', () => {
-    it('should filter by business model AND facilities', () => {
+  describe('Combined Filters (Access Label + Facilities)', () => {
+    it('should filter by access label AND facilities', () => {
       const result = filterSpas(
         spaData,
-        ['free-with-booking'],
+        ['free-for-all-guests'],
         'All Locations',
         ['sauna', 'steamRoom']
       );
 
       result.forEach((spa) => {
-        expect(spa.businessModel).toBe('free-with-booking');
+        expect(spa.accessLabels).toContain('free-for-all-guests');
         expect(spa.facilities.sauna).toBe(true);
         expect(spa.facilities.steamRoom).toBe(true);
       });
     });
 
-    it('should calculate active filter count for business model + facilities', () => {
+    it('should calculate active filter count for access label + facilities', () => {
       const count = calculateActiveFilterCount(
-        ['free-with-booking'],
+        ['free-for-all-guests'],
         'All Locations',
         ['sauna', 'steamRoom']
       );
@@ -343,7 +403,9 @@ describe('Spa Filtering Logic', () => {
   describe('Combined Filters (Location + Facilities)', () => {
     it('should filter by location AND facilities', () => {
       // Find a location with enough spas to test
-      const borrowdaleSpas = spaData.filter((spa) => spa.location === 'Borrowdale');
+      const borrowdaleSpas = spaData.filter(
+        (spa) => spa.location === 'Borrowdale'
+      );
 
       if (borrowdaleSpas.length > 0) {
         const result = filterSpas(spaData, [], 'Borrowdale', ['sauna']);
@@ -356,22 +418,28 @@ describe('Spa Filtering Logic', () => {
     });
 
     it('should calculate active filter count for location + facilities', () => {
-      const count = calculateActiveFilterCount([], 'Borrowdale', ['sauna', 'hotTub']);
+      const count = calculateActiveFilterCount([], 'Borrowdale', [
+        'sauna',
+        'hotTub',
+      ]);
       expect(count).toBe(3);
     });
   });
 
   describe('Combined Filters (All Three)', () => {
-    it('should filter by business model AND location AND facilities', () => {
+    it('should filter by access label AND location AND facilities', () => {
       const result = filterSpas(
         spaData,
-        ['free-with-booking', 'guests-only'],
+        ['free-for-all-guests', 'guests-only-no-passes'],
         'Borrowdale',
         ['sauna']
       );
 
       result.forEach((spa) => {
-        expect(['free-with-booking', 'guests-only']).toContain(spa.businessModel);
+        const hasAnyLabel =
+          spa.accessLabels.includes('free-for-all-guests') ||
+          spa.accessLabels.includes('guests-only-no-passes');
+        expect(hasAnyLabel).toBe(true);
         expect(spa.location).toBe('Borrowdale');
         expect(spa.facilities.sauna).toBe(true);
       });
@@ -379,35 +447,38 @@ describe('Spa Filtering Logic', () => {
 
     it('should calculate active filter count for all three filter types', () => {
       const count = calculateActiveFilterCount(
-        ['free-with-booking', 'guests-only'],
+        ['free-for-all-guests', 'guests-only-no-passes'],
         'Borrowdale',
         ['sauna', 'iceRoom']
       );
-      expect(count).toBe(5); // 2 business models + 1 location + 2 facilities
+      expect(count).toBe(5); // 2 access labels + 1 location + 2 facilities
     });
   });
 
   describe('Empty Results Scenarios', () => {
     it('should return empty array when no spas match the filters', () => {
       // Create a filter combination that is impossible
-      // Find a location with only certain business models
+      // Find a location with only certain access labels
       const allLocations = [...new Set(spaData.map((spa) => spa.location))];
 
       // Try to find an impossible combination
       for (const location of allLocations) {
         const locationSpas = spaData.filter((spa) => spa.location === location);
-        const availableModels = [...new Set(locationSpas.map((spa) => spa.businessModel))];
-        const allModels: BusinessModel[] = [
-          'free-with-booking',
-          'paid-extra',
-          'day-passes',
-          'guests-only',
-          'hybrid',
+        const allLabels = locationSpas.flatMap((spa) => spa.accessLabels);
+        const availableLabels = [...new Set(allLabels)];
+        const allPossibleLabels: AccessLabel[] = [
+          'free-for-all-guests',
+          'free-for-some-rooms',
+          'paid-for-guests',
+          'guests-only-no-passes',
+          'day-passes-available',
         ];
-        const unavailableModel = allModels.find((m) => !availableModels.includes(m));
+        const unavailableLabel = allPossibleLabels.find(
+          (l) => !availableLabels.includes(l)
+        );
 
-        if (unavailableModel) {
-          const result = filterSpas(spaData, [unavailableModel], location, []);
+        if (unavailableLabel) {
+          const result = filterSpas(spaData, [unavailableLabel], location, []);
           expect(result).toEqual([]);
           return;
         }
@@ -416,7 +487,14 @@ describe('Spa Filtering Logic', () => {
 
     it('should return empty array when requiring facilities that do not exist together', () => {
       // Check if there's a facility combination that no spa has
-      const allFacilities = ['sauna', 'steamRoom', 'iceRoom', 'hotTub', 'poolOver15m', 'thermalSuite'];
+      const allFacilities = [
+        'sauna',
+        'steamRoom',
+        'iceRoom',
+        'hotTub',
+        'poolOver15m',
+        'thermalSuite',
+      ];
 
       // Test with all facilities - it's unlikely any spa has all of them
       const result = filterSpas(spaData, [], 'All Locations', allFacilities);
@@ -433,25 +511,30 @@ describe('Spa Filtering Logic', () => {
 
   describe('Edge Cases', () => {
     it('should handle empty spa data array', () => {
-      const result = filterSpas([], ['free-with-booking'], 'Borrowdale', ['sauna']);
+      const result = filterSpas([], ['free-for-all-guests'], 'Borrowdale', [
+        'sauna',
+      ]);
       expect(result).toEqual([]);
     });
 
-    it('should handle duplicate business models in filter', () => {
+    it('should handle duplicate access labels in filter', () => {
       const result = filterSpas(
         spaData,
-        ['free-with-booking', 'free-with-booking'],
+        ['free-for-all-guests', 'free-for-all-guests'],
         'All Locations',
         []
       );
 
       result.forEach((spa) => {
-        expect(spa.businessModel).toBe('free-with-booking');
+        expect(spa.accessLabels).toContain('free-for-all-guests');
       });
     });
 
     it('should handle duplicate facilities in filter', () => {
-      const result = filterSpas(spaData, [], 'All Locations', ['sauna', 'sauna']);
+      const result = filterSpas(spaData, [], 'All Locations', [
+        'sauna',
+        'sauna',
+      ]);
 
       result.forEach((spa) => {
         expect(spa.facilities.sauna).toBe(true);
@@ -466,20 +549,33 @@ describe('Spa Filtering Logic', () => {
 
   describe('Filter Consistency', () => {
     it('should produce same results when filters are applied in different order', () => {
-      const filters1 = filterSpas(spaData, ['free-with-booking'], 'Borrowdale', ['sauna']);
-      const filters2 = filterSpas(spaData, ['free-with-booking'], 'Borrowdale', ['sauna']);
+      const filters1 = filterSpas(
+        spaData,
+        ['free-for-all-guests'],
+        'Borrowdale',
+        ['sauna']
+      );
+      const filters2 = filterSpas(
+        spaData,
+        ['free-for-all-guests'],
+        'Borrowdale',
+        ['sauna']
+      );
 
       expect(filters1).toEqual(filters2);
     });
 
     it('should be deterministic - multiple calls return same results', () => {
-      const businessModels: BusinessModel[] = ['free-with-booking', 'guests-only'];
+      const accessLabels: AccessLabel[] = [
+        'free-for-all-guests',
+        'guests-only-no-passes',
+      ];
       const location = 'Borrowdale';
       const facilities = ['sauna', 'steamRoom'];
 
-      const result1 = filterSpas(spaData, businessModels, location, facilities);
-      const result2 = filterSpas(spaData, businessModels, location, facilities);
-      const result3 = filterSpas(spaData, businessModels, location, facilities);
+      const result1 = filterSpas(spaData, accessLabels, location, facilities);
+      const result2 = filterSpas(spaData, accessLabels, location, facilities);
+      const result3 = filterSpas(spaData, accessLabels, location, facilities);
 
       expect(result1).toEqual(result2);
       expect(result2).toEqual(result3);
@@ -488,17 +584,26 @@ describe('Spa Filtering Logic', () => {
 
   describe('Real-World Usage Scenarios', () => {
     it('should find free spas in Borrowdale with sauna', () => {
-      const result = filterSpas(spaData, ['free-with-booking'], 'Borrowdale', ['sauna']);
+      const result = filterSpas(
+        spaData,
+        ['free-for-all-guests'],
+        'Borrowdale',
+        ['sauna']
+      );
 
       result.forEach((spa) => {
-        expect(spa.businessModel).toBe('free-with-booking');
+        expect(spa.accessLabels).toContain('free-for-all-guests');
         expect(spa.location).toBe('Borrowdale');
         expect(spa.facilities.sauna).toBe(true);
       });
     });
 
     it('should find spas with full thermal experience (sauna, steam, ice)', () => {
-      const result = filterSpas(spaData, [], 'All Locations', ['sauna', 'steamRoom', 'iceRoom']);
+      const result = filterSpas(spaData, [], 'All Locations', [
+        'sauna',
+        'steamRoom',
+        'iceRoom',
+      ]);
 
       result.forEach((spa) => {
         expect(spa.facilities.sauna).toBe(true);
@@ -508,19 +613,29 @@ describe('Spa Filtering Logic', () => {
     });
 
     it('should find public-accessible spas with large pools', () => {
-      const result = filterSpas(spaData, ['day-passes'], 'All Locations', ['poolOver15m']);
+      const result = filterSpas(
+        spaData,
+        ['day-passes-available'],
+        'All Locations',
+        ['poolOver15m']
+      );
 
       result.forEach((spa) => {
-        expect(spa.businessModel).toBe('day-passes');
+        expect(spa.accessLabels).toContain('day-passes-available');
         expect(spa.facilities.poolOver15m).toBe(true);
       });
     });
 
     it('should find hotel-exclusive spas with thermal suite', () => {
-      const result = filterSpas(spaData, ['guests-only'], 'All Locations', ['thermalSuite']);
+      const result = filterSpas(
+        spaData,
+        ['guests-only-no-passes'],
+        'All Locations',
+        ['thermalSuite']
+      );
 
       result.forEach((spa) => {
-        expect(spa.businessModel).toBe('guests-only');
+        expect(spa.accessLabels).toContain('guests-only-no-passes');
         expect(spa.facilities.thermalSuite).toBe(true);
       });
     });
@@ -529,7 +644,12 @@ describe('Spa Filtering Logic', () => {
   describe('Performance Characteristics', () => {
     it('should handle filtering the entire dataset efficiently', () => {
       const startTime = performance.now();
-      filterSpas(spaData, ['free-with-booking', 'guests-only'], 'Borrowdale', ['sauna', 'steamRoom']);
+      filterSpas(
+        spaData,
+        ['free-for-all-guests', 'guests-only-no-passes'],
+        'Borrowdale',
+        ['sauna', 'steamRoom']
+      );
       const endTime = performance.now();
 
       // Filtering should take less than 10ms for this small dataset
@@ -540,7 +660,7 @@ describe('Spa Filtering Logic', () => {
       const originalLength = spaData.length;
       const originalFirstSpa = { ...spaData[0] };
 
-      filterSpas(spaData, ['free-with-booking'], 'Borrowdale', ['sauna']);
+      filterSpas(spaData, ['free-for-all-guests'], 'Borrowdale', ['sauna']);
 
       expect(spaData.length).toBe(originalLength);
       expect(spaData[0]).toEqual(originalFirstSpa);

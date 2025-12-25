@@ -8,15 +8,15 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog';
 import { Checkbox } from '@/components/ui/checkbox';
-import { BusinessModel, businessModelConfig } from '@/types/spa';
+import { AccessLabel, accessLabelConfig } from '@/types/spa';
 import { locations, facilityOptions } from '@/data/spas';
 
 interface FilterModalProps {
   isOpen: boolean;
   onClose: () => void;
   onApply: () => void;
-  selectedBusinessModels: BusinessModel[];
-  onBusinessModelChange: (model: BusinessModel) => void;
+  selectedAccessLabels: AccessLabel[];
+  onAccessLabelChange: (label: AccessLabel) => void;
   selectedLocation: string;
   onLocationChange: (location: string) => void;
   selectedFacilities: string[];
@@ -29,8 +29,8 @@ const FilterModal = ({
   isOpen,
   onClose,
   onApply,
-  selectedBusinessModels,
-  onBusinessModelChange,
+  selectedAccessLabels,
+  onAccessLabelChange,
   selectedLocation,
   onLocationChange,
   selectedFacilities,
@@ -56,31 +56,41 @@ const FilterModal = ({
             <div className="space-y-0">
               {(
                 [
-                  'free-with-booking',
-                  'paid-extra',
-                  'day-passes',
-                  'guests-only',
-                  'hybrid',
-                ] as BusinessModel[]
-              ).map((model) => {
-                const config = businessModelConfig[model];
-                const isSelected = selectedBusinessModels.includes(model);
-                return (
-                  <label
-                    key={model}
-                    className="flex items-center justify-between py-3 cursor-pointer"
-                  >
-                    <span className="text-sm text-foreground flex items-center gap-2 flex-1">
-                      <span>{config.dot}</span>
-                      <span className="text-foreground">{config.label}</span>
-                    </span>
-                    <Checkbox
-                      checked={isSelected}
-                      onCheckedChange={() => onBusinessModelChange(model)}
-                    />
-                  </label>
-                );
-              })}
+                  'free-for-all-guests',
+                  'free-for-some-rooms',
+                  'paid-for-guests',
+                  'guests-only-no-passes',
+                  'day-passes-available',
+                ] as AccessLabel[]
+              )
+                .sort((a, b) => {
+                  // Sort: hotel labels first, then public labels
+                  const aCategory = accessLabelConfig[a].category;
+                  const bCategory = accessLabelConfig[b].category;
+                  if (aCategory === 'hotel' && bCategory === 'public')
+                    return -1;
+                  if (aCategory === 'public' && bCategory === 'hotel') return 1;
+                  return 0;
+                })
+                .map((label) => {
+                  const config = accessLabelConfig[label];
+                  const isSelected = selectedAccessLabels.includes(label);
+                  return (
+                    <label
+                      key={label}
+                      className="flex items-center justify-between py-3 cursor-pointer"
+                    >
+                      <span className="text-sm text-foreground flex items-center gap-2 flex-1">
+                        <span>{config.dot}</span>
+                        <span className="text-foreground">{config.label}</span>
+                      </span>
+                      <Checkbox
+                        checked={isSelected}
+                        onCheckedChange={() => onAccessLabelChange(label)}
+                      />
+                    </label>
+                  );
+                })}
             </div>
           </div>
 

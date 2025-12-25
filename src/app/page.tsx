@@ -8,24 +8,24 @@ import FilterModal from '@/components/FilterModal';
 import SpaGrid from '@/components/SpaGrid';
 import Footer from '@/components/Footer';
 import { spaData } from '@/data/spas';
-import { BusinessModel, Spa } from '@/types/spa';
+import { BusinessModel, AccessLabel, Spa } from '@/types/spa';
 
 export default function Home() {
-  const [selectedBusinessModels, setSelectedBusinessModels] = useState<
-    BusinessModel[]
+  const [selectedAccessLabels, setSelectedAccessLabels] = useState<
+    AccessLabel[]
   >([]);
   const [selectedLocation, setSelectedLocation] = useState('All Locations');
   const [selectedFacilities, setSelectedFacilities] = useState<string[]>([]);
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [tempFilters, setTempFilters] = useState({
-    businessModels: [] as BusinessModel[],
+    accessLabels: [] as AccessLabel[],
     location: 'All Locations',
     facilities: [] as string[],
   });
 
-  const handleBusinessModelChange = (model: BusinessModel) => {
-    setSelectedBusinessModels((prev) =>
-      prev.includes(model) ? prev.filter((m) => m !== model) : [...prev, model]
+  const handleAccessLabelChange = (label: AccessLabel) => {
+    setSelectedAccessLabels((prev) =>
+      prev.includes(label) ? prev.filter((l) => l !== label) : [...prev, label]
     );
   };
 
@@ -42,7 +42,7 @@ export default function Home() {
   };
 
   const handleClearFilters = () => {
-    setSelectedBusinessModels([]);
+    setSelectedAccessLabels([]);
     setSelectedLocation('All Locations');
     setSelectedFacilities([]);
   };
@@ -51,7 +51,7 @@ export default function Home() {
   const handleOpenModal = () => {
     // Copy current filters to temp state when opening
     setTempFilters({
-      businessModels: selectedBusinessModels,
+      accessLabels: selectedAccessLabels,
       location: selectedLocation,
       facilities: selectedFacilities,
     });
@@ -61,7 +61,7 @@ export default function Home() {
   const handleCloseModal = () => {
     // Discard temp filters (reset to main filters)
     setTempFilters({
-      businessModels: selectedBusinessModels,
+      accessLabels: selectedAccessLabels,
       location: selectedLocation,
       facilities: selectedFacilities,
     });
@@ -70,19 +70,19 @@ export default function Home() {
 
   const handleApplyFilters = () => {
     // Apply temp filters to main filters
-    setSelectedBusinessModels(tempFilters.businessModels);
+    setSelectedAccessLabels(tempFilters.accessLabels);
     setSelectedLocation(tempFilters.location);
     setSelectedFacilities(tempFilters.facilities);
     setIsFilterModalOpen(false);
   };
 
   // Temp filter handlers (for modal)
-  const handleTempBusinessModelChange = (model: BusinessModel) => {
+  const handleTempAccessLabelChange = (label: AccessLabel) => {
     setTempFilters((prev) => ({
       ...prev,
-      businessModels: prev.businessModels.includes(model)
-        ? prev.businessModels.filter((m) => m !== model)
-        : [...prev.businessModels, model],
+      accessLabels: prev.accessLabels.includes(label)
+        ? prev.accessLabels.filter((l) => l !== label)
+        : [...prev.accessLabels, label],
     }));
   };
 
@@ -104,7 +104,7 @@ export default function Home() {
 
   const handleTempClearFilters = () => {
     setTempFilters({
-      businessModels: [],
+      accessLabels: [],
       location: 'All Locations',
       facilities: [],
     });
@@ -112,11 +112,14 @@ export default function Home() {
 
   const filteredSpas = useMemo(() => {
     return spaData.filter((spa: Spa) => {
-      if (
-        selectedBusinessModels.length > 0 &&
-        !selectedBusinessModels.includes(spa.businessModel)
-      ) {
-        return false;
+      // Filter by access labels (OR logic - show if spa has ANY selected label)
+      if (selectedAccessLabels.length > 0) {
+        const hasAnyLabel = spa.accessLabels.some((label) =>
+          selectedAccessLabels.includes(label)
+        );
+        if (!hasAnyLabel) {
+          return false;
+        }
       }
 
       if (
@@ -138,16 +141,19 @@ export default function Home() {
 
       return true;
     });
-  }, [selectedBusinessModels, selectedLocation, selectedFacilities]);
+  }, [selectedAccessLabels, selectedLocation, selectedFacilities]);
 
   // Calculate filtered count based on temp filters (for modal display)
   const tempFilteredCount = useMemo(() => {
     return spaData.filter((spa: Spa) => {
-      if (
-        tempFilters.businessModels.length > 0 &&
-        !tempFilters.businessModels.includes(spa.businessModel)
-      ) {
-        return false;
+      // Filter by access labels (OR logic)
+      if (tempFilters.accessLabels.length > 0) {
+        const hasAnyLabel = spa.accessLabels.some((label) =>
+          tempFilters.accessLabels.includes(label)
+        );
+        if (!hasAnyLabel) {
+          return false;
+        }
       }
 
       if (
@@ -173,7 +179,7 @@ export default function Home() {
 
   // Calculate active filter count
   const activeFilterCount =
-    selectedBusinessModels.length +
+    selectedAccessLabels.length +
     (selectedLocation !== 'All Locations' ? 1 : 0) +
     selectedFacilities.length;
 
@@ -199,8 +205,8 @@ export default function Home() {
           isOpen={isFilterModalOpen}
           onClose={handleCloseModal}
           onApply={handleApplyFilters}
-          selectedBusinessModels={tempFilters.businessModels}
-          onBusinessModelChange={handleTempBusinessModelChange}
+          selectedAccessLabels={tempFilters.accessLabels}
+          onAccessLabelChange={handleTempAccessLabelChange}
           selectedLocation={tempFilters.location}
           onLocationChange={handleTempLocationChange}
           selectedFacilities={tempFilters.facilities}

@@ -9,6 +9,7 @@ export const spaData: Spa[] = [
     businessModel: 'hybrid',
     businessModelText:
       'Spa included for suites, additonal cost for other rooms, day passes from £60',
+    accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_lodore-falls-spa.jpg',
     imageAlt:
       'Luxurious 16-metre outdoor hydrotherapy pool at The Falls Spa at Lodore Falls Hotel in Borrowdale, featuring heated water with neck jets and underwater bubble loungers, surrounded by white sun loungers on slate decking with dramatic Lake District mountain views at sunset, spa access included with suite bookings',
@@ -78,6 +79,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://armathwaite-hall.com/spa',
     businessModel: 'hybrid',
     businessModelText: 'Spa included with room, day passes Packages available',
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_armathwaite-hall.jpg',
     imageAlt:
       'Luxury thermal relaxation suite at Armathwaite Hall Hotel and Spa near Bassenthwaite Lake, featuring heated ceramic loungers with burnt orange throws, ambient candlelit atmosphere with green velvet curtains and contemporary design, offering award-winning spa facilities in a Lake District country estate setting',
@@ -122,6 +124,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://brimstonehotel.co.uk/rooms/spa-break/',
     businessModel: 'guests-only',
     businessModelText: 'Exclusive to hotel guests only',
+    accessLabels: ['guests-only-no-passes'],
     imageSrc: '/images/spas/lake-district-spas_brimstone-hotel.jpg',
     imageAlt:
       'Unique swim-through hydrotherapy pool at Brimstone Hotel and Spa in Langdale featuring iridescent blue mosaic tiles, modern Nordic-inspired design with wooden accents and floor-to-ceiling windows, white heated loungers, and indoor-outdoor connectivity in the heart of the Lake District',
@@ -171,6 +174,7 @@ export const spaData: Spa[] = [
     businessModel: 'hybrid',
     businessModelText:
       'Free spa access for hotel guests. Day passes available to the public.',
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_daffodil-hotel-and-spa.webp',
     imageAlt:
       'Contemporary hydrotherapy pool at Daffodil Hotel and Spa in Grasmere with dramatic blue and purple ambient lighting, cascade waterfall features, heated lounger seating, and modern minimalist design creating a tranquil Lake District wellness experience',
@@ -215,6 +219,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://swanhotel.com//spa/',
     businessModel: 'day-passes',
     businessModelText: 'Spa included with room, day passes £40 (2 hours)',
+    accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_swan-hotel.webp',
     imageAlt:
       'Illuminated outdoor hydrotherapy pool at Swan Hotel and Spa in Newby Bridge at twilight, featuring swim-through access connecting indoor relaxation areas with heated outdoor pool, blue underwater lighting, and glass walls showcasing integrated spa facilities in the Lake District',
@@ -263,6 +268,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://macdonaldhotels.co.uk/old-england/spa-leisure/spa',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
+    accessLabels: ['paid-for-guests'],
     imageSrc: '/images/spas/lake-district-spas_old-england-hotel.jpg',
     imageAlt:
       'Modern indoor swimming pool at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring deep blue mosaic tiling, contemporary black and white interior design, underwater lighting, and heated pool facilities in a luxurious Lake District spa setting',
@@ -302,6 +308,7 @@ export const spaData: Spa[] = [
     businessModel: 'paid-extra',
     businessModelText:
       'Spa included with room, day passes Various packages 10am-8pm',
+    accessLabels: ['paid-for-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_low-wood-bay.webp',
     imageAlt:
       'Spectacular infinity-edge vitality pool at Low Wood Bay Resort and Spa on the shores of Lake Windermere, featuring panoramic Lake District mountain views, traditional Lakeland dry stone walling, wooden sun loungers, and outdoor relaxation areas perfect for spa days',
@@ -347,6 +354,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://www.hotelslakedistrict.com/waterfall-spa/',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
+    accessLabels: ['free-for-all-guests'],
     imageSrc: '/images/spas/lake-district-spas_salutation-hotel.jpg',
     imageAlt:
       'Elegant indoor pool at The Salutation Hotel and Spa in Ambleside featuring starlit fibre optic ceiling, suspended designer pod chairs, modern grey loungers, and sophisticated neutral colour palette creating a tranquil spa experience in the heart of the Lake District',
@@ -387,6 +395,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://lakesidehotel.co.uk/spa',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa access varies by room type',
+    accessLabels: ['free-for-some-rooms'],
     imageSrc: '/images/spas/lake-district-spas_lakeside-hotel.webp',
     imageAlt:
       'Contemporary indoor pool at Lakeside Hotel Health Club and Spa on Lake Windermere, featuring distinctive teal and green mosaic tile columns, flowing wave-pattern ceiling design, and spacious swimming area with loungers overlooking the Lake District waterfront',
@@ -426,6 +435,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://thegilpin.co.uk/spa-space',
     businessModel: 'guests-only',
     businessModelText: 'Spa access varies by room type',
+    accessLabels: ['guests-only-no-passes'],
     imageSrc: '/images/spas/lake-district-spas_gilpin-hotel-lake-house.jpg',
     imageAlt:
       'Luxury dual treatment room at Gilpin Hotel and Lake House Spa near Windermere, featuring natural exposed wooden beams, floor-to-ceiling windows with garden views, contemporary green basin accents, and designer spa beds in an intimate boutique spa setting in the Lake District',
@@ -469,6 +479,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://beechhillhotel.co.uk/spa',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
+    accessLabels: ['paid-for-guests'],
     imageSrc: '/images/spas/lake-district-spas_beech-hill-hotel.jpg',
     imageAlt:
       'Botanical-inspired indoor pool at Beech Hill Hotel and Spa near Windermere, featuring natural woven pendant lights, cascading artificial greenery from ceiling, dark slate mosaic walls, turquoise heated pool, and contemporary nature-themed wellness design in the Lake District',
@@ -515,6 +526,7 @@ export const spaData: Spa[] = [
       'https://www.harbourhotels.co.uk/our-hotels/lake-district/rothay-garden-by-harbour-hotels/riverside-spa',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with room, day passes Call for pricing',
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_rothay-garden-hotel.jpg',
     imageAlt:
       'Panoramic hydrotherapy pool at Rothay Garden Hotel and Riverside Spa in Grasmere, featuring curved floor-to-ceiling windows with dramatic Lake District fell views, dual cascade water features, bamboo-panelled walls, and intimate circular hot tub design surrounded by nature',
@@ -557,6 +569,7 @@ export const spaData: Spa[] = [
     businessModel: 'free-with-booking',
     businessModelText:
       'Spa included with room, day passes £15 one-off visit or £55/month membership',
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_north-lakes-hotel.jpg',
     imageAlt:
       'Tranquil thermal relaxation suite at North Lakes Hotel and Spa in Penrith, featuring heated ceramic loungers with plush robes, ambient mood lighting, Lake District landscape artwork, Japanese-inspired sliding screens, and peaceful spa environment for complete relaxation',
@@ -597,6 +610,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://whitewater-hotel.co.uk/spa-fitness/',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
+    accessLabels: ['free-for-all-guests'],
     imageSrc: '/images/spas/lake-district-spas_whitewater-hotel.jpg',
     imageAlt:
       'Expansive leisure pool at Whitewater Hotel Country Club near Newby Bridge, featuring multi-level design with mosaic-tiled stepping stones, burgundy and cream decorative columns, spacious swimming area, and grand architectural poolside complex in the Lake District',
@@ -637,6 +651,7 @@ export const spaData: Spa[] = [
     businessModel: 'free-with-booking',
     businessModelText:
       'Spa included with room, day passes Membership available for non-guests',
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_another-place.jpg',
     imageAlt:
       'Stunning infinity-edge pool at Another Place The Lake on the shores of Ullswater, featuring floor-to-ceiling glass walls with breathtaking Lake District mountain and valley views, modern minimalist design with exposed beams, and seamless indoor-outdoor spa experience in a luxury countryside retreat',
@@ -675,6 +690,7 @@ export const spaData: Spa[] = [
       'https://castlegreenhotel.co.uk//hotel-guest-leisure-club-access/',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
+    accessLabels: ['free-for-all-guests'],
     imageSrc: '/images/spas/lake-district-spas_castle-green-hotel.jpg',
     imageAlt:
       'Spacious lane-marked swimming pool at Castle Green Hotel in Kendal, featuring impressive sculptural ceiling installations with organic flowing design, ambient pink and purple mood lighting, cream limestone tiling, and extensive leisure club facilities in the Lake District gateway town',
@@ -709,6 +725,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://applebymanor.co.uk/garden-spa',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
+    accessLabels: ['paid-for-guests'],
     imageSrc: '/images/spas/lake-district-spas_appleby-manor.jpg',
     imageAlt:
       'Contemporary hydrotherapy pool at Appleby Manor Country House Hotel near Appleby-in-Westmorland, featuring dramatic blue LED underwater lighting, natural Lake District pebble stone border detail, modern wicker relaxation seating with tropical palms, and luxury spa facilities in the Eden Valley',
@@ -755,6 +772,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://netherwood-hotel.co.uk/spa-fitness',
     businessModel: 'paid-extra',
     businessModelText: 'Spa costs extra for hotel guests',
+    accessLabels: ['paid-for-guests'],
     imageSrc: '/images/spas/lake-district-spas_netherwood-hotel.webp',
     imageAlt:
       'Unique circular Kneipp footbath at Netherwood Hotel and Spa in Grange-over-Sands, featuring natural rope-wrapped wooden basin design with dual cascade water features, positioned against authentic Lakeland dry stone walling with designer loungers and orange accent cushions',
@@ -797,6 +815,7 @@ export const spaData: Spa[] = [
     websiteUrl: 'https://grange-hotel.co.uk/the-spa/',
     businessModel: 'free-with-booking',
     businessModelText: 'Spa included with all room bookings',
+    accessLabels: ['free-for-all-guests'],
     imageSrc: '/images/spas/lake-district-spas_grange-hotel.jpg',
     imageAlt:
       'Luxury facial treatment at The Grange Boutique Hotel and Restaurant in Grange-over-Sands, featuring professional spa therapies with skilled hands performing rejuvenating skincare treatments in an intimate, serene environment overlooking Morecambe Bay in the southern Lake District',

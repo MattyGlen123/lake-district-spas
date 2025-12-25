@@ -1,5 +1,11 @@
 import { spaData, locations, facilityOptions } from '@/data/spas';
-import { Spa, BusinessModel, businessModelConfig } from '@/types/spa';
+import {
+  Spa,
+  BusinessModel,
+  AccessLabel,
+  businessModelConfig,
+  accessLabelConfig,
+} from '@/types/spa';
 
 describe('Spa Data Validation', () => {
   describe('Data Structure', () => {
@@ -22,6 +28,7 @@ describe('Spa Data Validation', () => {
         expect(spa.websiteUrl).toBeDefined();
         expect(spa.businessModel).toBeDefined();
         expect(spa.businessModelText).toBeDefined();
+        expect(spa.accessLabels).toBeDefined();
         expect(spa.imageSrc).toBeDefined();
         expect(spa.imageAlt).toBeDefined();
         expect(spa.keyFeatures).toBeDefined();
