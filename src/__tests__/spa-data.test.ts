@@ -1,11 +1,5 @@
 import { spaData, locations, facilityOptions } from '@/data/spas';
-import {
-  Spa,
-  BusinessModel,
-  AccessLabel,
-  businessModelConfig,
-  accessLabelConfig,
-} from '@/types/spa';
+import { Spa, AccessLabel, accessLabelConfig } from '@/types/spa';
 
 describe('Spa Data Validation', () => {
   describe('Data Structure', () => {
@@ -26,8 +20,6 @@ describe('Spa Data Validation', () => {
         expect(spa.name).toBeDefined();
         expect(spa.location).toBeDefined();
         expect(spa.websiteUrl).toBeDefined();
-        expect(spa.businessModel).toBeDefined();
-        expect(spa.businessModelText).toBeDefined();
         expect(spa.accessLabels).toBeDefined();
         expect(spa.imageSrc).toBeDefined();
         expect(spa.imageAlt).toBeDefined();
@@ -44,7 +36,6 @@ describe('Spa Data Validation', () => {
         expect(spa.id.trim().length).toBeGreaterThan(0);
         expect(spa.name.trim().length).toBeGreaterThan(0);
         expect(spa.location.trim().length).toBeGreaterThan(0);
-        expect(spa.businessModelText.trim().length).toBeGreaterThan(0);
         expect(spa.imageSrc.trim().length).toBeGreaterThan(0);
         expect(spa.imageAlt.trim().length).toBeGreaterThan(0);
       });
@@ -66,41 +57,50 @@ describe('Spa Data Validation', () => {
     });
   });
 
-  describe('Business Models', () => {
-    const validBusinessModels: BusinessModel[] = [
-      'free-with-booking',
-      'paid-extra',
-      'day-passes',
-      'guests-only',
-      'hybrid',
+  describe('Access Labels', () => {
+    const validAccessLabels: AccessLabel[] = [
+      'free-for-all-guests',
+      'free-for-some-rooms',
+      'paid-for-guests',
+      'guests-only-no-passes',
+      'day-passes-available',
     ];
 
-    it('each spa should have a valid business model', () => {
+    it('each spa should have valid access labels', () => {
       spaData.forEach((spa) => {
-        expect(validBusinessModels).toContain(spa.businessModel);
+        expect(Array.isArray(spa.accessLabels)).toBe(true);
+        expect(spa.accessLabels.length).toBeGreaterThan(0);
+        spa.accessLabels.forEach((label) => {
+          expect(validAccessLabels).toContain(label);
+        });
       });
     });
 
-    it('business model config should exist for all business models', () => {
-      const usedModels = new Set(spaData.map((spa) => spa.businessModel));
-      usedModels.forEach((model) => {
-        expect(businessModelConfig[model]).toBeDefined();
-        expect(businessModelConfig[model].label).toBeDefined();
-        expect(businessModelConfig[model].color).toBeDefined();
-        expect(businessModelConfig[model].dot).toBeDefined();
-        expect(businessModelConfig[model].badgeText).toBeDefined();
+    it('access label config should exist for all access labels', () => {
+      const allLabels = spaData.flatMap((spa) => spa.accessLabels);
+      const uniqueLabels = [...new Set(allLabels)];
+      uniqueLabels.forEach((label) => {
+        expect(accessLabelConfig[label]).toBeDefined();
+        expect(accessLabelConfig[label].label).toBeDefined();
+        expect(accessLabelConfig[label].shortLabel).toBeDefined();
+        expect(accessLabelConfig[label].color).toBeDefined();
+        expect(accessLabelConfig[label].dot).toBeDefined();
+        expect(accessLabelConfig[label].badgeText).toBeDefined();
+        expect(accessLabelConfig[label].category).toBeDefined();
       });
     });
 
-    it('should have expected distribution of business models', () => {
-      const modelCounts = spaData.reduce((acc, spa) => {
-        acc[spa.businessModel] = (acc[spa.businessModel] || 0) + 1;
+    it('should have expected distribution of access labels', () => {
+      const labelCounts = spaData.reduce((acc, spa) => {
+        spa.accessLabels.forEach((label) => {
+          acc[label] = (acc[label] || 0) + 1;
+        });
         return acc;
-      }, {} as Record<BusinessModel, number>);
+      }, {} as Record<AccessLabel, number>);
 
       // Verify we have a reasonable distribution
-      expect(modelCounts['free-with-booking']).toBeGreaterThan(0);
-      expect(Object.keys(modelCounts).length).toBeGreaterThan(1);
+      expect(labelCounts['free-for-all-guests']).toBeGreaterThan(0);
+      expect(Object.keys(labelCounts).length).toBeGreaterThan(1);
     });
   });
 

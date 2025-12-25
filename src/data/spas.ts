@@ -6,9 +6,6 @@ export const spaData: Spa[] = [
     name: 'The Falls Spa at Lodore Falls Hotel',
     location: 'Borrowdale',
     websiteUrl: 'https://lakedistrictspa.co.uk',
-    businessModel: 'hybrid',
-    businessModelText:
-      'Spa included for suites, additonal cost for other rooms, day passes from £60',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_lodore-falls-spa.jpg',
     imageAlt:
@@ -78,8 +75,6 @@ export const spaData: Spa[] = [
     name: 'Armathwaite Hall Hotel & Spa',
     location: 'Bassenthwaite',
     websiteUrl: 'https://armathwaite-hall.com/spa',
-    businessModel: 'hybrid',
-    businessModelText: 'Spa included with room, day passes Packages available',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_armathwaite-hall.jpg',
     imageAlt:
@@ -124,8 +119,6 @@ export const spaData: Spa[] = [
     name: 'Brimstone Spa',
     location: 'Great Langdale',
     websiteUrl: 'https://brimstonehotel.co.uk/rooms/spa-break/',
-    businessModel: 'guests-only',
-    businessModelText: 'Exclusive to hotel guests only',
     accessLabels: ['guests-only-no-passes'],
     imageSrc: '/images/spas/lake-district-spas_brimstone-hotel.jpg',
     imageAlt:
@@ -174,9 +167,6 @@ export const spaData: Spa[] = [
     location: 'Grasmere',
     websiteUrl:
       'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa/',
-    businessModel: 'hybrid',
-    businessModelText:
-      'Free spa access for hotel guests. Day passes available to the public.',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_daffodil-hotel-and-spa.webp',
     imageAlt:
@@ -221,9 +211,6 @@ export const spaData: Spa[] = [
     name: 'The Swan Hotel & Spa',
     location: 'Newby Bridge',
     websiteUrl: 'https://swanhotel.com/spa/',
-    businessModel: 'hybrid',
-    businessModelText:
-      'Free spa access for Splendid room bookings and above. Day passes available to the public.',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_swan-hotel.webp',
     imageAlt:
@@ -291,16 +278,15 @@ export const spaData: Spa[] = [
     name: 'Macdonald Old England Hotel & Spa',
     location: 'Bowness-on-Windermere',
     websiteUrl: 'https://macdonaldhotels.co.uk/old-england/spa-leisure/spa',
-    businessModel: 'paid-extra',
-    businessModelText: 'Spa costs extra for hotel guests',
-    accessLabels: ['paid-for-guests'],
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_old-england-hotel.jpg',
     imageAlt:
       'Modern indoor swimming pool at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring deep blue mosaic tiling, contemporary black and white interior design, underwater lighting, and heated pool facilities in a luxurious Lake District spa setting',
     keyFeatures: [
-      'Spa costs extra for hotel guests',
-      'Award: Established hotel',
-      '20m pool',
+      'Free spa access for hotel guests',
+      'Spa day packages available',
+      '20m indoor pool with Lake Windermere views',
+      'Thermal suite with sauna, steam and ice room',
     ],
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
@@ -308,13 +294,19 @@ export const spaData: Spa[] = [
       { name: 'Ice Room', details: 'Cool down experience' },
       { name: 'Experience Showers', details: 'Aromatherapy shower' },
     ],
-    poolFeatures: [{ name: 'Indoor Pool', details: '20m with lake views' }],
+    poolFeatures: [
+      {
+        name: 'Indoor Pool',
+        details: '20m lakeside pool with Lake Windermere views',
+      },
+    ],
     accessPolicy: [
-      'Hotel guest access: Must book separately/pay extra',
-      'Day passes: Various packages',
-      'Pre-booking: Recommended',
-      'Age restriction: 18+ for treatments, kids allowed in pool',
-      'Spa hours: Pool & gym 7am-6:30pm, children swim 10am-5pm',
+      'Hotel guests: Free access to pool and thermal suite',
+      'Spa day packages',
+      'Pool & gym hours: 7am-6:30pm',
+      'Children swim times: 10am-5pm',
+      'Age restriction: 18+ for thermal suite, children allowed in pool during designated times',
+      'Pre-booking: Required for spa day packages with treatments',
     ],
     facilities: {
       coldPlunge: false,
@@ -331,9 +323,6 @@ export const spaData: Spa[] = [
     name: 'The Spa at Low Wood Bay',
     location: 'Windermere',
     websiteUrl: 'https://englishlakes.co.uk/low-wood-bay/the-spa',
-    businessModel: 'paid-extra',
-    businessModelText:
-      'Spa included with room, day passes Various packages 10am-8pm',
     accessLabels: ['paid-for-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_low-wood-bay.webp',
     imageAlt:
@@ -379,8 +368,6 @@ export const spaData: Spa[] = [
     name: 'Ambleside Salutation Hotel & Spa (Waterfall Spa)',
     location: 'Ambleside',
     websiteUrl: 'https://www.hotelslakedistrict.com/waterfall-spa/',
-    businessModel: 'free-with-booking',
-    businessModelText: 'Spa included with all room bookings',
     accessLabels: ['free-for-all-guests'],
     imageSrc: '/images/spas/lake-district-spas_salutation-hotel.jpg',
     imageAlt:
@@ -421,8 +408,6 @@ export const spaData: Spa[] = [
     name: 'Lakeside Hotel & Spa',
     location: 'Newby Bridge',
     websiteUrl: 'https://lakesidehotel.co.uk/spa',
-    businessModel: 'free-with-booking',
-    businessModelText: 'Spa access varies by room type',
     accessLabels: ['free-for-some-rooms'],
     imageSrc: '/images/spas/lake-district-spas_lakeside-hotel.webp',
     imageAlt:
@@ -462,8 +447,6 @@ export const spaData: Spa[] = [
     name: 'Gilpin Hotel & Lake House',
     location: 'Windermere',
     websiteUrl: 'https://thegilpin.co.uk/spa-space',
-    businessModel: 'guests-only',
-    businessModelText: 'Spa access varies by room type',
     accessLabels: ['guests-only-no-passes'],
     imageSrc: '/images/spas/lake-district-spas_gilpin-hotel-lake-house.jpg',
     imageAlt:
@@ -507,8 +490,6 @@ export const spaData: Spa[] = [
     name: 'Beech Hill Hotel & Spa',
     location: 'Windermere',
     websiteUrl: 'https://beechhillhotel.co.uk/spa',
-    businessModel: 'paid-extra',
-    businessModelText: 'Spa costs extra for hotel guests',
     accessLabels: ['paid-for-guests'],
     imageSrc: '/images/spas/lake-district-spas_beech-hill-hotel.jpg',
     imageAlt:
@@ -555,8 +536,6 @@ export const spaData: Spa[] = [
     location: 'Grasmere',
     websiteUrl:
       'https://www.harbourhotels.co.uk/our-hotels/lake-district/rothay-garden-by-harbour-hotels/riverside-spa',
-    businessModel: 'free-with-booking',
-    businessModelText: 'Spa included with room, day passes Call for pricing',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_rothay-garden-hotel.jpg',
     imageAlt:
@@ -598,9 +577,6 @@ export const spaData: Spa[] = [
     name: 'North Lakes Hotel & Spa',
     location: 'Penrith',
     websiteUrl: 'https://northlakeshotel.com/spa-treatments',
-    businessModel: 'free-with-booking',
-    businessModelText:
-      'Spa included with room, day passes £15 one-off visit or £55/month membership',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_north-lakes-hotel.jpg',
     imageAlt:
@@ -641,8 +617,6 @@ export const spaData: Spa[] = [
     name: 'Whitewater Hotel & Leisure Club',
     location: 'Backbarrow',
     websiteUrl: 'https://whitewater-hotel.co.uk/spa-fitness/',
-    businessModel: 'free-with-booking',
-    businessModelText: 'Spa included with all room bookings',
     accessLabels: ['free-for-all-guests'],
     imageSrc: '/images/spas/lake-district-spas_whitewater-hotel.jpg',
     imageAlt:
@@ -682,9 +656,6 @@ export const spaData: Spa[] = [
     name: 'Another Place, The Lake',
     location: 'Ullswater',
     websiteUrl: 'https://another.place/the-lake/swim-club/',
-    businessModel: 'free-with-booking',
-    businessModelText:
-      'Spa included with room, day passes Membership available for non-guests',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_another-place.jpg',
     imageAlt:
@@ -723,8 +694,6 @@ export const spaData: Spa[] = [
     location: 'Kendal',
     websiteUrl:
       'https://castlegreenhotel.co.uk//hotel-guest-leisure-club-access/',
-    businessModel: 'free-with-booking',
-    businessModelText: 'Spa included with all room bookings',
     accessLabels: ['free-for-all-guests'],
     imageSrc: '/images/spas/lake-district-spas_castle-green-hotel.jpg',
     imageAlt:
@@ -759,8 +728,6 @@ export const spaData: Spa[] = [
     name: 'Appleby Manor Hotel & Garden Spa',
     location: 'Appleby-in-Westmorland',
     websiteUrl: 'https://applebymanor.co.uk/garden-spa',
-    businessModel: 'paid-extra',
-    businessModelText: 'Spa costs extra for hotel guests',
     accessLabels: ['paid-for-guests'],
     imageSrc: '/images/spas/lake-district-spas_appleby-manor.jpg',
     imageAlt:
@@ -807,8 +774,6 @@ export const spaData: Spa[] = [
     name: 'Netherwood Hotel & Spa',
     location: 'Grange-over-Sands',
     websiteUrl: 'https://netherwood-hotel.co.uk/spa-fitness',
-    businessModel: 'paid-extra',
-    businessModelText: 'Spa costs extra for hotel guests',
     accessLabels: ['paid-for-guests'],
     imageSrc: '/images/spas/lake-district-spas_netherwood-hotel.webp',
     imageAlt:
@@ -851,8 +816,6 @@ export const spaData: Spa[] = [
     name: 'Grange Hotel',
     location: 'Grange-over-Sands',
     websiteUrl: 'https://grange-hotel.co.uk/the-spa/',
-    businessModel: 'free-with-booking',
-    businessModelText: 'Spa included with all room bookings',
     accessLabels: ['free-for-all-guests'],
     imageSrc: '/images/spas/lake-district-spas_grange-hotel.jpg',
     imageAlt:

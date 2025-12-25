@@ -8,7 +8,7 @@ import FilterModal from '@/components/FilterModal';
 import SpaGrid from '@/components/SpaGrid';
 import Footer from '@/components/Footer';
 import { spaData } from '@/data/spas';
-import { BusinessModel, AccessLabel, Spa } from '@/types/spa';
+import { AccessLabel, Spa } from '@/types/spa';
 
 export default function Home() {
   const [selectedAccessLabels, setSelectedAccessLabels] = useState<
