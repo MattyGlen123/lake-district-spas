@@ -76,7 +76,7 @@ export const spaData: Spa[] = [
     name: 'Armathwaite Hall Hotel & Spa',
     location: 'Bassenthwaite',
     websiteUrl: 'https://armathwaite-hall.com/spa',
-    businessModel: 'free-with-booking',
+    businessModel: 'hybrid',
     businessModelText: 'Spa included with room, day passes Packages available',
     imageSrc: '/images/spas/lake-district-spas_armathwaite-hall.jpg',
     imageAlt:
@@ -168,38 +168,44 @@ export const spaData: Spa[] = [
     location: 'Grasmere',
     websiteUrl:
       'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa/',
-    businessModel: 'day-passes',
+    businessModel: 'hybrid',
     businessModelText:
-      'Spa included with room, day passes £35 Mon-Thu, £45 Fri-Sun (3 hours)',
+      'Free spa access for hotel guests. Day passes available to the public.',
     imageSrc: '/images/spas/lake-district-spas_daffodil-hotel-and-spa.webp',
     imageAlt:
       'Contemporary hydrotherapy pool at Daffodil Hotel and Spa in Grasmere with dramatic blue and purple ambient lighting, cascade waterfall features, heated lounger seating, and modern minimalist design creating a tranquil Lake District wellness experience',
     keyFeatures: [
-      'Spa included with room, day passes £35 Mon-Thu, £45 Fri-Sun (3 hours)',
-      'Award: Luxury experience',
-      'Multiple treatment rooms',
+      'Free spa access included with hotel room',
+      'Day passes available to the public',
+      'Indoor hydrotherapy pool',
+      'Sauna and steam room',
+      'Rasul mud chamber',
     ],
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
+      { name: 'Steam Room', details: 'Revitalising steam room' },
     ],
     poolFeatures: [
-      { name: 'Indoor Pool', details: 'Hydro pool' },
-      { name: 'Hydrotherapy Pool', details: 'Hydrotherapy pool' },
+      {
+        name: 'Hydrotherapy Pool',
+        details: 'Hydrotherapy pool with cascade features',
+      },
     ],
     accessPolicy: [
-      'Spa included with room booking',
-      'Day passes: £35 Mon-Thu, £45 Fri-Sun (3 hours)',
-      'Pre-booking: arrive 30 mins before treatment',
+      'Hotel guests: Free spa access included with room booking',
+      'Public day passes available',
+      'Pre-booking required: Arrive 30 mins before any treatment',
       'Age restriction: 16+ only',
-      'Spa hours: 8am-8pm daily, treatments 10am-6:30pm',
+      'Spa hours: 8am-8pm daily',
+      'Treatment hours: 10am-6:30pm',
     ],
     facilities: {
       sauna: true,
-      steamRoom: false,
+      steamRoom: true,
       iceRoom: false,
       hotTub: false,
       poolOver15m: false,
-      thermalSuite: false,
+      thermalSuite: true,
     },
   },
   {
