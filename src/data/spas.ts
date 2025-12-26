@@ -512,84 +512,43 @@ export const spaData: Spa[] = [
     },
   },
   {
-    id: 'gilpin-hotel-lake-house',
-    name: 'Gilpin Hotel & Lake House',
-    location: 'Windermere',
-    websiteUrl: 'https://thegilpin.co.uk/spa-space',
-    accessLabels: ['guests-only-no-passes'],
-    imageSrc: '/images/spas/lake-district-spas_gilpin-hotel-lake-house.jpg',
-    imageAlt:
-      'Luxury dual treatment room at Gilpin Hotel and Lake House Spa near Windermere, featuring natural exposed wooden beams, floor-to-ceiling windows with garden views, contemporary green basin accents, and designer spa beds in an intimate boutique spa setting in the Lake District',
-    keyFeatures: [
-      'Spa access varies by room type',
-      'Multiple rooms - Jetty Spa at Lake House pool',
-      'By appointment treatment rooms',
-    ],
-    thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Steam room' },
-      {
-        name: 'Aroma Steam Room',
-        details: 'Heated indoor pool at Lake House (Knipe Tarn views)',
-      },
-    ],
-    poolFeatures: [
-      {
-        name: 'Outdoor Pool',
-        details:
-          '2 outdoor hot tubs at Lake House, 22 rooms at Gilpin Hotel have private hot tubs',
-      },
-      { name: 'Vitality Pool', details: 'Vitality pool with jets' },
-    ],
-    accessPolicy: [
-      'Hotel guests: Yes - Traditional sauna at Lake House',
-      'Spa hours: Yes',
-    ],
-    facilities: {
-      infraredSauna: false,
-      coldPlunge: false,
-      sauna: true,
-      steamRoom: true,
-      iceRoom: false,
-      hotTub: false,
-      indoorPool: false,
-      outdoorPool: true,
-      thermalSuite: true,
-    },
-  },
-  {
     id: 'beech-hill-hotel-spa',
     name: 'Beech Hill Hotel & Spa',
     location: 'Windermere',
     websiteUrl: 'https://beechhillhotel.co.uk/spa',
-    accessLabels: ['paid-for-guests'],
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_beech-hill-hotel.jpg',
     imageAlt:
       'Botanical-inspired indoor pool at Beech Hill Hotel and Spa near Windermere, featuring natural woven pendant lights, cascading artificial greenery from ceiling, dark slate mosaic walls, turquoise heated pool, and contemporary nature-themed wellness design in the Lake District',
     keyFeatures: [
-      'Spa costs extra for hotel guests',
-      'Award: Lakeside location hotel',
-      '12m (40ft) indoor pool',
-      'Massage/treatment rooms',
+      'Views of Lake Windermere',
+      '35ft indoor pool',
+      'Himalayan sauna',
+      'Spa terrace with outdoor vitality pools',
     ],
     thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Sauna' },
-      { name: 'Aroma Steam Room', details: 'Steam room' },
+      { name: 'Himalayan Sauna', details: 'Himalayan sauna' },
+      { name: 'Aromatic Steam Room', details: 'Aromatic steam room' },
     ],
     poolFeatures: [
       {
         name: 'Indoor Pool',
-        details: '12m (40ft) indoor pool with atmospheric lighting',
+        details:
+          '35ft indoor pool with atmospheric lighting and Lake Windermere views',
       },
-      { name: 'Outdoor Pool', details: '2 outdoor vitality spa pools' },
-      { name: 'Vitality Pool', details: '2 outdoor vitality pools' },
-      { name: 'Hot Tub', details: '2 outdoor hot tubs with lake views' },
+      {
+        name: 'Outdoor Vitality Spa Pools',
+        details: '2 outdoor vitality spa pools on spa terrace with lake views',
+      },
     ],
     accessPolicy: [
-      'Hotel guests: £20 per person (not included)',
-      'Day passes: £20 per person',
-      'Pre-booking: Pre-booking recommended',
-      'Age restriction: Adults only for spa',
-      'Spa hours: Call to confirm',
+      'Hotel guests: Complimentary spa access included',
+      'Spa access from Thu-Sun 9:30am-4pm, Fri-Sat 9:30am-6pm',
+      'Spa access included with all treatments',
+      'Pre-booking: Required',
+      'Age restriction: 16+ only for spa',
+      'Children allowed in pool 10am-1pm only',
+      'Maximum group size: 6 people',
     ],
     facilities: {
       infraredSauna: false,
