@@ -11,12 +11,10 @@ export const spaData: Spa[] = [
     imageAlt:
       'Luxurious 16-metre outdoor hydrotherapy pool at The Falls Spa at Lodore Falls Hotel in Borrowdale, featuring heated water with neck jets and underwater bubble loungers, surrounded by white sun loungers on slate decking with dramatic Lake District mountain views at sunset, spa access included with suite bookings',
     keyFeatures: [
-      'Spa included for suites, paid access for other rooms',
-      'Day passes from £60',
       '16m infinity-edge outdoor hydrotherapy pool',
+      'Multtiple thermal facilities',
       '5 treatment rooms & relaxation lounge',
       '4-person mud rasul',
-      'Champagne Bar for refreshments',
     ],
     thermalFacilities: [
       {
@@ -82,10 +80,8 @@ export const spaData: Spa[] = [
     imageAlt:
       'Luxury thermal relaxation suite at Armathwaite Hall Hotel and Spa near Bassenthwaite Lake, featuring heated ceramic loungers with burnt orange throws, ambient candlelit atmosphere with green velvet curtains and contemporary design, offering award-winning spa facilities in a Lake District country estate setting',
     keyFeatures: [
-      'Spa included with room, day passes Packages available',
       'Indoor swimming pool',
       'Outdoor infinity pools',
-      'Award: Celebrated spa in Lake District',
       'Multiple treatment rooms',
     ],
     thermalFacilities: [
@@ -128,10 +124,9 @@ export const spaData: Spa[] = [
     imageAlt:
       'Unique swim-through hydrotherapy pool at Brimstone Hotel and Spa in Langdale featuring iridescent blue mosaic tiles, modern Nordic-inspired design with wooden accents and floor-to-ceiling windows, white heated loungers, and indoor-outdoor connectivity in the heart of the Lake District',
     keyFeatures: [
-      'Exclusive to hotel guests only',
       'Swim-through indoor/outdoor pool',
       'Sauna and steam room',
-      'Treatment rooms available',
+      'Ice Room and Experience Showers',
     ],
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
@@ -178,8 +173,6 @@ export const spaData: Spa[] = [
     imageAlt:
       'Contemporary hydrotherapy pool at Daffodil Hotel and Spa in Grasmere with dramatic blue and purple ambient lighting, cascade waterfall features, heated lounger seating, and modern minimalist design creating a tranquil Lake District wellness experience',
     keyFeatures: [
-      'Free spa access included with hotel room',
-      'Day passes available to the public',
       'Indoor hydrotherapy pool',
       'Sauna and steam room',
       'Rasul mud chamber',
@@ -195,7 +188,7 @@ export const spaData: Spa[] = [
       },
     ],
     accessPolicy: [
-      'Hotel guests: Free spa access included with room booking',
+      'Free spa access included with room booking',
       'Public day passes available',
       'Pre-booking required: Arrive 30 mins before any treatment',
       'Age restriction: 16+ only',
@@ -224,8 +217,6 @@ export const spaData: Spa[] = [
     imageAlt:
       'Illuminated outdoor hydrotherapy pool at Swan Hotel and Spa in Newby Bridge at twilight, featuring swim-through access connecting indoor relaxation areas with heated outdoor pool, blue underwater lighting, and glass walls showcasing integrated spa facilities in the Lake District',
     keyFeatures: [
-      'Free spa access for Splendid rooms and above',
-      'Day passes available to the public',
       'Unique indoor/outdoor swim-through pool',
       'Authentic outdoor Finnish sauna',
       'Cold plunge pool',
@@ -293,10 +284,9 @@ export const spaData: Spa[] = [
     imageAlt:
       'Modern indoor swimming pool at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring deep blue mosaic tiling, contemporary black and white interior design, underwater lighting, and heated pool facilities in a luxurious Lake District spa setting',
     keyFeatures: [
-      'Free spa access for hotel guests',
-      'Spa day packages available',
       '20m indoor pool with Lake Windermere views',
       'Thermal suite with sauna, steam and ice room',
+      'Ice Room and Experience Showers',
     ],
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
@@ -340,11 +330,10 @@ export const spaData: Spa[] = [
     imageAlt:
       'Spectacular infinity-edge vitality pool at Low Wood Bay Resort and Spa on the shores of Lake Windermere, featuring panoramic Lake District mountain views, traditional Lakeland dry stone walling, wooden sun loungers, and outdoor relaxation areas perfect for spa days',
     keyFeatures: [
-      'Award-winning: Best Spa North West 2025, 5 Bubble Luxury Spa',
       'Indoor and outdoor thermal spaces',
-      'Two heated outdoor infinity pools with lake views',
+      'Outdoor infinity pool with lake views',
+      'Indoor thermal & vitality pool',
       'Three saunas including infrared sauna',
-      'Fire pit and outdoor bar',
     ],
     thermalFacilities: [
       {
@@ -413,7 +402,6 @@ export const spaData: Spa[] = [
     imageAlt:
       'Elegant indoor pool at The Salutation Hotel and Spa in Ambleside featuring starlit fibre optic ceiling, suspended designer pod chairs, modern grey loungers, and sophisticated neutral colour palette creating a tranquil spa experience in the heart of the Lake District',
     keyFeatures: [
-      'Free spa access for all hotel guests',
       '13m indoor pool with starlit ceiling',
       'Outdoor hydrotherapy fountain spa',
       'Infrared sauna and steam room',
@@ -521,7 +509,6 @@ export const spaData: Spa[] = [
     imageAlt:
       'Botanical-inspired indoor pool at Beech Hill Hotel and Spa near Windermere, featuring natural woven pendant lights, cascading artificial greenery from ceiling, dark slate mosaic walls, turquoise heated pool, and contemporary nature-themed wellness design in the Lake District',
     keyFeatures: [
-      'Views of Lake Windermere',
       '35ft indoor pool',
       'Himalayan sauna',
       'Spa terrace with outdoor vitality pools',
@@ -573,26 +560,32 @@ export const spaData: Spa[] = [
     imageAlt:
       'Panoramic hydrotherapy pool at Rothay Garden Hotel and Riverside Spa in Grasmere, featuring curved floor-to-ceiling windows with dramatic Lake District fell views, dual cascade water features, bamboo-panelled walls, and intimate circular hot tub design surrounded by nature',
     keyFeatures: [
-      'Spa included with room, day passes Call for pricing',
-      'Award: 4 AA Silver Stars, 2 AA Rosettes restaurant',
-      'N/A pool',
-      '3 treatment rooms',
+      'Floor-to-ceiling views of riverside and fells',
+      'Hydrotherapy pool with sunken loungers',
+      'Infrared heated loungers',
     ],
     thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Herbal pine sauna' },
-      { name: 'Aroma Steam Room', details: 'Aromatherapy room/steam room' },
+      { name: 'Herbal Pine Sauna', details: 'Herbal pine sauna' },
+      { name: 'Steam Room', details: 'Aromatherapy steam room' },
       { name: 'Experience Showers', details: 'Monsoon showers' },
+      {
+        name: 'Infrared Loungers',
+        details: 'Heated infrared loungers for muscle relaxation',
+      },
     ],
     poolFeatures: [
-      { name: 'Hydrotherapy Pool', details: 'HydroSpa with sunken loungers' },
+      {
+        name: 'Hydrotherapy Pool',
+        details: 'HydroSpa with sunken loungers and riverside views',
+      },
       { name: 'Hot Tub', details: 'Hot tub' },
     ],
     accessPolicy: [
-      'Hotel guests: Likely FREE (Harbour Hotels standard)',
-      'Day passes: Call for pricing',
-      'Pre-booking: Pre-booking recommended',
-      'Age restriction: 18+ charged as adults',
-      'Spa hours: Riverside Spa - call to confirm',
+      'Hotel guests: Free spa access included, no booking required',
+      'Day passes: Available to public',
+      'In-room treatments available when booked in advance',
+      'Age restriction: 18+ only, no children permitted',
+      'Spa hours: 8am-8pm daily',
     ],
     facilities: {
       infraredSauna: false,
@@ -601,7 +594,7 @@ export const spaData: Spa[] = [
       steamRoom: true,
       iceRoom: false,
       hotTub: true,
-      indoorPool: false,
+      indoorPool: true,
       outdoorPool: false,
       thermalSuite: true,
     },
