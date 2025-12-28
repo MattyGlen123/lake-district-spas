@@ -609,25 +609,24 @@ export const spaData: Spa[] = [
     imageAlt:
       'Tranquil thermal relaxation suite at North Lakes Hotel and Spa in Penrith, featuring heated ceramic loungers with plush robes, ambient mood lighting, Lake District landscape artwork, Japanese-inspired sliding screens, and peaceful spa environment for complete relaxation',
     keyFeatures: [
-      'Spa included with room, day passes £15 one-off visit or £55/month membership',
-      'Award: Award-winning spa',
-      '13m pool',
-      'Treatment rooms available',
+      '13m indoor pool',
+      'Separate male and female saunas',
+      'Thermal relaxation suite with heated loungers',
     ],
     thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Single-sex saunas' },
-      { name: 'Aroma Steam Room', details: 'Steam room' },
+      { name: 'Finnish Sauna', details: 'Separate male and female saunas' },
+      { name: 'Steam Room', details: 'Steam room' },
     ],
     poolFeatures: [
-      { name: 'Indoor Pool', details: '13m long pool' },
-      { name: 'Hot Tub', details: 'Hot tub/whirlpool' },
+      { name: 'Indoor Pool', details: '13m pool' },
+      { name: 'Hot Tub', details: 'Whirlpool hot tub' },
     ],
     accessPolicy: [
-      'Spa included with room booking',
-      'Day passes: £15 one-off visit or £55/month membership',
-      'Pre-booking: Free for hotel residents & treatment bookings',
-      'Age restriction: All ages welcome',
-      'Spa hours: Classes available, aqua aerobics',
+      'Hotel guests: Free spa access included',
+      'Day passes and memberships available',
+      'Age restriction: Children welcome during designated times only',
+      'Spa hours: Mon-Fri 6am-9:30pm, Sat-Sun 7am-8pm',
+      'Robes and slippers provided',
     ],
     facilities: {
       infraredSauna: false,
