@@ -703,22 +703,37 @@ export const spaData: Spa[] = [
     imageAlt:
       'Stunning infinity-edge pool at Another Place The Lake on the shores of Ullswater, featuring floor-to-ceiling glass walls with breathtaking Lake District mountain and valley views, modern minimalist design with exposed beams, and seamless indoor-outdoor spa experience in a luxury countryside retreat',
     keyFeatures: [
-      'Spa included with all room bookings',
-      'Award: Contemporary lakeside retreat',
-      '20m pool',
-      'Swim Club includes treatment rooms',
+      '20m indoor pool with views of Ullswater lake',
+      'Outdoor Swedish hot tub overlooking the grounds',
+      'Sauna with lake views',
     ],
-    thermalFacilities: [{ name: 'Finnish Sauna', details: 'Sauna' }],
+    thermalFacilities: [
+      {
+        name: 'Sauna',
+        details:
+          'Sauna overlooking the grounds with 20 minute session limit when busy, 16+ only',
+      },
+    ],
     poolFeatures: [
-      { name: 'Indoor Pool', details: '20m indoor pool with lake view' },
-      { name: 'Hot Tub', details: 'Hot tub' },
+      {
+        name: 'Indoor Pool',
+        details:
+          '20m pool with floor-to-ceiling glass walls, skylight, ultra-violet filtered water (low chlorine), shallow area for children',
+      },
+      {
+        name: 'Outdoor Hot Tub',
+        details:
+          'Swedish-design heated outdoor hot tub overlooking grounds, 20 minute session limit when busy, 16+ only',
+      },
     ],
     accessPolicy: [
-      'Spa included with room booking',
-      'Day passes: Membership available for non-guests',
-      'Pre-booking: Pre-booking recommended',
-      'Age restriction: Children not permitted in pool before 9am or after 6pm',
-      'Spa hours: 7am-9pm daily',
+      'Free access for Hotel guests',
+      'Day membership available',
+      'Pool hours: 7am-9pm daily',
+      'Adult-only swim times: 7am-9am and 6pm-9pm',
+      'Family swim times: 9am-6pm',
+      'Age restriction: Hot tub and sauna 16+ only',
+      'Treatments available',
     ],
     facilities: {
       infraredSauna: false,
