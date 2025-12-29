@@ -645,29 +645,41 @@ export const spaData: Spa[] = [
     name: 'Whitewater Hotel & Leisure Club',
     location: 'Backbarrow',
     websiteUrl: 'https://whitewater-hotel.co.uk/spa-fitness/',
-    accessLabels: ['free-for-all-guests'],
+    accessLabels: ['guests-only-no-passes'],
     imageSrc: '/images/spas/lake-district-spas_whitewater-hotel.jpg',
     imageAlt:
       'Expansive leisure pool at Whitewater Hotel Country Club near Newby Bridge, featuring multi-level design with mosaic-tiled stepping stones, burgundy and cream decorative columns, spacious swimming area, and grand architectural poolside complex in the Lake District',
     keyFeatures: [
-      'Spa included with all room bookings',
-      "Award: Tripadvisor Travellers' Choice Award 2023",
-      'Range of Elemis treatments treatment rooms',
+      'Outdoor jacuzzi overlooking River Leven',
+      'Turkish Hamam aromatherapy steam room',
+      'Indoor heated swimming pool',
     ],
     thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Sauna' },
-      { name: 'Aroma Steam Room', details: 'Arabian steam room' },
+      { name: 'Sauna', details: 'Traditional sauna' },
+      {
+        name: 'Turkish Hamam Steam Room',
+        details: 'Aromatherapy Turkish Hamam steam room',
+      },
+      { name: 'Feature Shower', details: 'Multi-sensory feature shower' },
+      {
+        name: 'Rasul Mud Temple (additional cost)',
+        details:
+          'Arabian steam room with multiple mud applications for deep cleansing',
+      },
     ],
     poolFeatures: [
       { name: 'Indoor Pool', details: 'Heated indoor swimming pool' },
-      { name: 'Hot Tub', details: 'Whirlpool/Jacuzzi' },
+      {
+        name: 'Outdoor Jacuzzi',
+        details: 'Outdoor hot tub overlooking River Leven with scenic views',
+      },
     ],
     accessPolicy: [
-      'Spa included with room booking',
-      'Day passes: Not available',
-      'Pre-booking: Spa treatments pre-booking recommended',
-      'Age restriction: All ages welcome',
-      'Spa hours: 7am-8pm (varies)',
+      'Hotel guests: Free spa access included, 10% discount on treatments',
+      'Day passes: Not available to public',
+      'Pre-booking: Required for spa treatments',
+      'No age restriction',
+      'Robes and towels: Provided',
     ],
     facilities: {
       infraredSauna: false,
