@@ -752,26 +752,17 @@ export const spaData: Spa[] = [
     name: 'Castle Green Hotel',
     location: 'Kendal',
     websiteUrl:
-      'https://castlegreenhotel.co.uk//hotel-guest-leisure-club-access/',
-    accessLabels: ['free-for-all-guests'],
+      'https://castlegreenhotel.co.uk/hotel-guest-leisure-club-access/',
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_castle-green-hotel.jpg',
     imageAlt:
       'Spacious lane-marked swimming pool at Castle Green Hotel in Kendal, featuring impressive sculptural ceiling installations with organic flowing design, ambient pink and purple mood lighting, cream limestone tiling, and extensive leisure club facilities in the Lake District gateway town',
-    keyFeatures: [
-      'Spa included with all room bookings',
-      'Award: BW Premier Collection',
-      'Small pool pool',
-      'Treatment rooms available',
+    keyFeatures: ['12m indoor pool', 'Steam room'],
+    thermalFacilities: [{ name: 'Steam Room', details: 'Steam room' }],
+    poolFeatures: [
+      { name: 'Indoor Pool', details: '12m pool with lane swimming times' },
     ],
-    thermalFacilities: [{ name: 'Aroma Steam Room', details: 'Steam room' }],
-    poolFeatures: [{ name: 'Indoor Pool', details: 'Indoor pool' }],
-    accessPolicy: [
-      'Spa included with room booking',
-      'Day passes: Not available',
-      'Pre-booking: Lane swimming must be pre-booked Mon-Fri',
-      'Age restriction: 16+ for gym facilities',
-      'Spa hours: Pool: Mon-Fri 6:30-9:30am & 5-7pm (pre-book), Weekends no booking',
-    ],
+    accessPolicy: ['Free access for hotel guests ', 'Available day passes'],
     facilities: {
       infraredSauna: false,
       coldPlunge: false,
