@@ -865,30 +865,23 @@ export const spaData: Spa[] = [
     name: 'Grange Hotel',
     location: 'Grange-over-Sands',
     websiteUrl: 'https://grange-hotel.co.uk/the-spa/',
-    accessLabels: ['free-for-all-guests'],
+    accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_grange-hotel.jpg',
     imageAlt:
       'Luxury facial treatment at The Grange Boutique Hotel and Restaurant in Grange-over-Sands, featuring professional spa therapies with skilled hands performing rejuvenating skincare treatments in an intimate, serene environment overlooking Morecambe Bay in the southern Lake District',
-    keyFeatures: [
-      'Spa included with all room bookings',
-      'Award: Built 1866, 4-star',
-      'Small pool pool',
-      'Body wraps, facials, pedicures, massages treatment rooms',
-    ],
+    keyFeatures: ['Heated indoor pool', 'Sauna and steam room', 'Jacuzzi'],
     thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Sauna' },
-      { name: 'Aroma Steam Room', details: 'Steam room' },
+      { name: 'Sauna', details: 'Traditional sauna' },
+      { name: 'Steam Room', details: 'Steam room' },
     ],
     poolFeatures: [
       { name: 'Indoor Pool', details: 'Heated indoor pool' },
-      { name: 'Hot Tub', details: 'Jacuzzi/hot tub' },
+      { name: 'Jacuzzi', details: 'Jacuzzi' },
     ],
     accessPolicy: [
-      'Spa included with room booking',
-      'Day passes: Not available',
-      'Pre-booking: Pool/facilities open to guests & members',
-      'Age restriction: All ages welcome',
-      'Spa hours: 7am-8pm daily',
+      'Hotel guests: Spa access additional charge (some overnight packages include access)',
+      'Spa Day Packages: Available with treatment and facility access',
+      'Robes and slippers: Provided',
     ],
     facilities: {
       infraredSauna: false,
@@ -899,7 +892,7 @@ export const spaData: Spa[] = [
       hotTub: true,
       indoorPool: true,
       outdoorPool: false,
-      thermalSuite: true,
+      thermalSuite: false,
     },
   },
 ];
