@@ -748,34 +748,6 @@ export const spaData: Spa[] = [
     },
   },
   {
-    id: 'castle-green-hotel',
-    name: 'Castle Green Hotel',
-    location: 'Kendal',
-    websiteUrl:
-      'https://castlegreenhotel.co.uk/hotel-guest-leisure-club-access/',
-    accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_castle-green-hotel.jpg',
-    imageAlt:
-      'Spacious lane-marked swimming pool at Castle Green Hotel in Kendal, featuring impressive sculptural ceiling installations with organic flowing design, ambient pink and purple mood lighting, cream limestone tiling, and extensive leisure club facilities in the Lake District gateway town',
-    keyFeatures: ['12m indoor pool', 'Steam room'],
-    thermalFacilities: [{ name: 'Steam Room', details: 'Steam room' }],
-    poolFeatures: [
-      { name: 'Indoor Pool', details: '12m pool with lane swimming times' },
-    ],
-    accessPolicy: ['Free access for hotel guests ', 'Available day passes'],
-    facilities: {
-      infraredSauna: false,
-      coldPlunge: false,
-      sauna: false,
-      steamRoom: true,
-      iceRoom: false,
-      hotTub: false,
-      indoorPool: true,
-      outdoorPool: false,
-      thermalSuite: false,
-    },
-  },
-  {
     id: 'appleby-manor-hotel-garden-spa',
     name: 'Appleby Manor Hotel & Garden Spa',
     location: 'Appleby-in-Westmorland',

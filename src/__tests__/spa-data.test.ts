@@ -7,11 +7,11 @@ describe('Spa Data Validation', () => {
       expect(spaData.length).toBeGreaterThan(0);
     });
 
-    it('should have 20 unique spas', () => {
-      expect(spaData.length).toBe(18);
+    it('should have unique spas', () => {
+      expect(spaData.length).toBe(17);
       const ids = spaData.map((spa) => spa.id);
       const uniqueIds = new Set(ids);
-      expect(uniqueIds.size).toBe(18);
+      expect(uniqueIds.size).toBe(17);
     });
 
     it('each spa should have all required fields', () => {
