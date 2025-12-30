@@ -892,7 +892,7 @@ export const spaData: Spa[] = [
       hotTub: true,
       indoorPool: true,
       outdoorPool: false,
-      thermalSuite: false,
+      thermalSuite: true,
     },
   },
 ];
