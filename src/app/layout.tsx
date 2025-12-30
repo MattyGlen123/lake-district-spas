@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -45,7 +46,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="8DORP03UN9uFDBQ6qcXLGw"
+          strategy="afterInteractive"
+        />
+        {children}
+      </body>
     </html>
   );
 }
