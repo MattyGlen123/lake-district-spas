@@ -53,7 +53,7 @@ export const accessLabelConfig: Record<
 > = {
   'free-for-all-guests': {
     label: 'Free for all hotel guests',
-    shortLabel: 'Free for guests',
+    shortLabel: 'Free for hotel guests',
     color: 'bg-spa-green',
     dot: '🟢',
     badgeText: 'SPA INCLUDED WITH ALL ROOM BOOKINGS',
@@ -61,7 +61,7 @@ export const accessLabelConfig: Record<
   },
   'free-for-some-rooms': {
     label: 'Free for some room types',
-    shortLabel: 'Free for some rooms',
+    shortLabel: 'Free for some room types',
     color: 'bg-spa-purple',
     dot: '🟣',
     badgeText: 'SPA INCLUDED WITH SELECT ROOM TYPES',
