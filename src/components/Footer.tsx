@@ -65,6 +65,24 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Image Notice */}
+        <div className="border-t border-primary-foreground/20 mt-8 pt-8">
+          <p className="text-sm text-primary-foreground/70 text-center md:text-left leading-relaxed">
+            <span className="font-medium">Image Notice:</span> Photos are
+            sourced from spa websites for informational purposes to help
+            visitors make informed decisions. Spa owners: if you'd prefer we use
+            different images please contact us at{' '}
+            <a
+              href="mailto:contact@lakedistrictspas.co.uk"
+              className="text-primary-foreground hover:text-primary-foreground/90 underline underline-offset-2 font-medium"
+              aria-label="Email contact@lakedistrictspas.co.uk"
+            >
+              contact@lakedistrictspas.co.uk
+            </a>
+            .
+          </p>
+        </div>
+
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-sm text-primary-foreground/60">
             © {new Date().getFullYear()} Lake District Spas. All rights
