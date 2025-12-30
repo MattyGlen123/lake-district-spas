@@ -769,20 +769,19 @@ export const spaData: Spa[] = [
       },
       { name: 'Steam Room', details: 'Aromatherapy steam room' },
       {
-        name: 'Rain Sky Experience Shower',
-        details: 'Rain sky experience shower',
+        name: 'Experience Showers',
+        details: 'Rain sky experience showers',
       },
     ],
     poolFeatures: [
       {
         name: 'Hydrotherapy Pool',
         details:
-          'Indoor vitality pool with underwater massage loungers, bench seating, volcano pads, shoulder cannons, neck fountains, powerful water jets and bubble pools',
+          'Indoor vitality pool with underwater massage loungers and water jets',
       },
       {
-        name: 'Outdoor Hot Tubs',
-        details:
-          'Outdoor spa baths in sheltered spa garden with fire pit and lounge furniture',
+        name: 'Outdoor Hot Tub',
+        details: 'Outdoor spa baths in sheltered spa garden with fire pit',
       },
     ],
     accessPolicy: [
@@ -808,36 +807,50 @@ export const spaData: Spa[] = [
     name: 'Netherwood Hotel & Spa',
     location: 'Grange-over-Sands',
     websiteUrl: 'https://netherwood-hotel.co.uk/spa-fitness',
-    accessLabels: ['paid-for-guests'],
+    accessLabels: ['paid-for-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_netherwood-hotel.webp',
     imageAlt:
       'Unique circular Kneipp footbath at Netherwood Hotel and Spa in Grange-over-Sands, featuring natural rope-wrapped wooden basin design with dual cascade water features, positioned against authentic Lakeland dry stone walling with designer loungers and orange accent cushions',
     keyFeatures: [
-      'Spa costs extra for hotel guests',
-      'Award: Grade II listed Victorian mansion (1893)',
-      'N/A - no pool pool',
-      '3 treatment rooms (including couples room)',
+      'Boutique thermal suite',
+      'Plunge tub room with hot, warm and cold tubs',
+      'Panoramic views of Morecambe Bay',
+      'Salt inhalation room',
     ],
     thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Traditional sauna' },
-      { name: 'Salt Steam Room', details: 'Salt inhalation room' },
-      { name: 'Aroma Steam Room', details: 'Aroma steam room' },
-      { name: 'Ice Room', details: 'Ice fountain' },
-      { name: 'Experience Showers', details: 'Monsoon shower' },
+      {
+        name: 'Dry Heat Sauna',
+        details: 'Traditional dry heat sauna to ease tension',
+      },
+      { name: 'Salt Room', details: 'Calming salt inhalation room' },
+      {
+        name: 'Aroma Steam Room',
+        details:
+          'Aromatherapy steam room with lemongrass, citrus and cinnamon scents',
+      },
+      { name: 'Ice Fountain', details: 'Refreshing ice fountain' },
+      {
+        name: 'Thermal Shower',
+        details: 'Thermal shower with mist and massaging jets',
+      },
     ],
     poolFeatures: [
-      { name: 'Hot Tub', details: 'Warm wooden hot tubs (outdoor)' },
+      {
+        name: 'Plunge Tub Room',
+        details:
+          'Hot, warm and cold plunge tubs to relax muscles and revive body',
+      },
     ],
     accessPolicy: [
-      'Hotel guest access: Must pay separately',
-      'Day passes: £20/hour per person (£10 each additional hour)',
-      'Pre-booking: Must pre-book thermal suite. Towel, robe, slippers included',
-      'Age restriction: Adults only',
-      'Spa hours: Thermal Suite 9am-8pm. Treatments 10am-6pm',
+      'Hotel guests: Must pay separately for Thermal Journey',
+      'Day passes available',
+      'Thermal Journey hours: Mon-Sun 10am-5:30pm',
+      'Treatment hours: 10am-6pm',
+      'Robes, towels and slippers: Included',
     ],
     facilities: {
       infraredSauna: false,
-      coldPlunge: false,
+      coldPlunge: true,
       sauna: true,
       steamRoom: true,
       iceRoom: true,
