@@ -918,7 +918,7 @@ export const locations = [
 export const facilityOptions = [
   { key: 'sauna', label: 'Sauna' },
   { key: 'steamRoom', label: 'Steam Room' },
-  { key: 'iceRoom', label: 'Ice Room' },
+  { key: 'iceRoom', label: 'Ice Room or Cold Plunge' },
   { key: 'hotTub', label: 'Hot Tub' },
   { key: 'indoorPool', label: 'Indoor Pool' },
   { key: 'outdoorPool', label: 'Outdoor Pool' },

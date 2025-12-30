@@ -29,20 +29,29 @@ function filterSpas(
 
     // Filter by facilities - ALL selected facilities must be present
     // EXCEPT for pools: if both indoorPool and outdoorPool are selected, use OR logic
+    // EXCEPT for ice room: if iceRoom is selected, show spas with either iceRoom OR coldPlunge
     if (facilities.length > 0) {
       const poolFilters = ['indoorPool', 'outdoorPool'];
       const selectedPools = facilities.filter((f) => poolFilters.includes(f));
+      const hasIceRoomFilter = facilities.includes('iceRoom');
       const otherFacilities = facilities.filter(
-        (f) => !poolFilters.includes(f)
+        (f) => !poolFilters.includes(f) && f !== 'iceRoom'
       );
 
-      // Check pools with OR logic if both are selected
+      // Check pools with OR logic if any are selected
       if (selectedPools.length > 0) {
         const hasAnyPool = selectedPools.some((pool) => {
           const poolKey = pool as keyof typeof spa.facilities;
           return spa.facilities[poolKey];
         });
         if (!hasAnyPool) {
+          return false;
+        }
+      }
+
+      // Check ice room filter with OR logic (iceRoom OR coldPlunge)
+      if (hasIceRoomFilter) {
+        if (!spa.facilities.iceRoom && !spa.facilities.coldPlunge) {
           return false;
         }
       }
@@ -272,11 +281,13 @@ describe('Spa Filtering Logic', () => {
       });
     });
 
-    it('should filter spas with ice room', () => {
+    it('should filter spas with ice room or cold plunge', () => {
       const result = filterSpas(spaData, [], 'All Locations', ['iceRoom']);
 
       result.forEach((spa) => {
-        expect(spa.facilities.iceRoom).toBe(true);
+        const hasIceRoomOrColdPlunge =
+          spa.facilities.iceRoom || spa.facilities.coldPlunge;
+        expect(hasIceRoomOrColdPlunge).toBe(true);
       });
     });
 

@@ -131,13 +131,15 @@ export default function Home() {
 
       // Filter by facilities - ALL selected facilities must be present
       // EXCEPT for pools: if both indoorPool and outdoorPool are selected, use OR logic
+      // EXCEPT for ice room: if iceRoom is selected, show spas with either iceRoom OR coldPlunge
       if (selectedFacilities.length > 0) {
         const poolFilters = ['indoorPool', 'outdoorPool'];
         const selectedPools = selectedFacilities.filter((f) =>
           poolFilters.includes(f)
         );
+        const hasIceRoomFilter = selectedFacilities.includes('iceRoom');
         const otherFacilities = selectedFacilities.filter(
-          (f) => !poolFilters.includes(f)
+          (f) => !poolFilters.includes(f) && f !== 'iceRoom'
         );
 
         // Check pools with OR logic if any are selected
@@ -147,6 +149,13 @@ export default function Home() {
             return spa.facilities[poolKey];
           });
           if (!hasAnyPool) {
+            return false;
+          }
+        }
+
+        // Check ice room filter with OR logic (iceRoom OR coldPlunge)
+        if (hasIceRoomFilter) {
+          if (!spa.facilities.iceRoom && !spa.facilities.coldPlunge) {
             return false;
           }
         }
@@ -189,13 +198,15 @@ export default function Home() {
 
       // Filter by facilities - ALL selected facilities must be present
       // EXCEPT for pools: if both indoorPool and outdoorPool are selected, use OR logic
+      // EXCEPT for ice room: if iceRoom is selected, show spas with either iceRoom OR coldPlunge
       if (tempFilters.facilities.length > 0) {
         const poolFilters = ['indoorPool', 'outdoorPool'];
         const selectedPools = tempFilters.facilities.filter((f) =>
           poolFilters.includes(f)
         );
+        const hasIceRoomFilter = tempFilters.facilities.includes('iceRoom');
         const otherFacilities = tempFilters.facilities.filter(
-          (f) => !poolFilters.includes(f)
+          (f) => !poolFilters.includes(f) && f !== 'iceRoom'
         );
 
         // Check pools with OR logic if any are selected
@@ -205,6 +216,13 @@ export default function Home() {
             return spa.facilities[poolKey];
           });
           if (!hasAnyPool) {
+            return false;
+          }
+        }
+
+        // Check ice room filter with OR logic (iceRoom OR coldPlunge)
+        if (hasIceRoomFilter) {
+          if (!spa.facilities.iceRoom && !spa.facilities.coldPlunge) {
             return false;
           }
         }
