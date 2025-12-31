@@ -120,7 +120,7 @@ export const spaData: Spa[] = [
     name: 'Brimstone Spa',
     location: 'Great Langdale',
     websiteUrl: 'https://brimstonehotel.co.uk/rooms/spa-break/',
-    accessLabels: ['guests-only-no-passes'],
+    accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_brimstone-hotel.jpg',
     imageAlt:
       'Unique swim-through hydrotherapy pool at Brimstone Hotel and Spa in Langdale featuring iridescent blue mosaic tiles, modern Nordic-inspired design with wooden accents and floor-to-ceiling windows, white heated loungers, and indoor-outdoor connectivity in the heart of the Lake District',
@@ -403,7 +403,7 @@ export const spaData: Spa[] = [
     name: 'Ambleside Salutation Hotel & Spa',
     location: 'Ambleside',
     websiteUrl: 'https://www.hotelslakedistrict.com/waterfall-spa/',
-    accessLabels: ['guests-only-no-passes'],
+    accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_salutation-hotel.jpg',
     imageAlt:
       'Elegant indoor pool at The Salutation Hotel and Spa in Ambleside featuring starlit fibre optic ceiling, suspended designer pod chairs, modern grey loungers, and sophisticated neutral colour palette creating a tranquil spa experience in the heart of the Lake District',
@@ -654,7 +654,7 @@ export const spaData: Spa[] = [
     name: 'Whitewater Hotel & Leisure Club',
     location: 'Backbarrow',
     websiteUrl: 'https://whitewater-hotel.co.uk/spa-fitness/',
-    accessLabels: ['guests-only-no-passes'],
+    accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_whitewater-hotel.jpg',
     imageAlt:
       'Expansive leisure pool at Whitewater Hotel Country Club near Newby Bridge, featuring multi-level design with mosaic-tiled stepping stones, burgundy and cream decorative columns, spacious swimming area, and grand architectural poolside complex in the Lake District',

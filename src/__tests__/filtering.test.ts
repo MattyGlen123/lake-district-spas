@@ -143,16 +143,16 @@ describe('Spa Filtering Logic', () => {
       });
     });
 
-    it('should filter by "guests-only-no-passes" access label', () => {
+    it('should filter by "no-day-passes-available" access label', () => {
       const result = filterSpas(
         spaData,
-        ['guests-only-no-passes'],
+        ['no-day-passes-available'],
         'All Locations',
         []
       );
 
       result.forEach((spa) => {
-        expect(spa.accessLabels).toContain('guests-only-no-passes');
+        expect(spa.accessLabels).toContain('no-day-passes-available');
       });
     });
 
@@ -183,7 +183,7 @@ describe('Spa Filtering Logic', () => {
     it('should return spas matching ANY of the selected access labels', () => {
       const selectedLabels: AccessLabel[] = [
         'free-for-all-guests',
-        'guests-only-no-passes',
+        'no-day-passes-available',
       ];
       const result = filterSpas(spaData, selectedLabels, 'All Locations', []);
 
@@ -198,7 +198,7 @@ describe('Spa Filtering Logic', () => {
 
     it('should calculate active filter count for multiple access labels', () => {
       const count = calculateActiveFilterCount(
-        ['free-for-all-guests', 'guests-only-no-passes'],
+        ['free-for-all-guests', 'no-day-passes-available'],
         'All Locations',
         []
       );
@@ -210,7 +210,7 @@ describe('Spa Filtering Logic', () => {
         'free-for-all-guests',
         'free-for-some-rooms',
         'paid-for-guests',
-        'guests-only-no-passes',
+        'no-day-passes-available',
         'day-passes-available',
       ];
       const result = filterSpas(spaData, allLabels, 'All Locations', []);
@@ -462,7 +462,7 @@ describe('Spa Filtering Logic', () => {
     it('should filter by access label AND location AND facilities', () => {
       const result = filterSpas(
         spaData,
-        ['free-for-all-guests', 'guests-only-no-passes'],
+        ['free-for-all-guests', 'no-day-passes-available'],
         'Borrowdale',
         ['sauna']
       );
@@ -470,7 +470,7 @@ describe('Spa Filtering Logic', () => {
       result.forEach((spa) => {
         const hasAnyLabel =
           spa.accessLabels.includes('free-for-all-guests') ||
-          spa.accessLabels.includes('guests-only-no-passes');
+          spa.accessLabels.includes('no-day-passes-available');
         expect(hasAnyLabel).toBe(true);
         expect(spa.location).toBe('Borrowdale');
         expect(spa.facilities.sauna).toBe(true);
@@ -479,7 +479,7 @@ describe('Spa Filtering Logic', () => {
 
     it('should calculate active filter count for all three filter types', () => {
       const count = calculateActiveFilterCount(
-        ['free-for-all-guests', 'guests-only-no-passes'],
+        ['free-for-all-guests', 'no-day-passes-available'],
         'Borrowdale',
         ['sauna', 'iceRoom']
       );
@@ -502,7 +502,7 @@ describe('Spa Filtering Logic', () => {
           'free-for-all-guests',
           'free-for-some-rooms',
           'paid-for-guests',
-          'guests-only-no-passes',
+          'no-day-passes-available',
           'day-passes-available',
         ];
         const unavailableLabel = allPossibleLabels.find(
@@ -620,7 +620,7 @@ describe('Spa Filtering Logic', () => {
     it('should be deterministic - multiple calls return same results', () => {
       const accessLabels: AccessLabel[] = [
         'free-for-all-guests',
-        'guests-only-no-passes',
+        'no-day-passes-available',
       ];
       const location = 'Borrowdale';
       const facilities = ['sauna', 'steamRoom'];
@@ -678,16 +678,16 @@ describe('Spa Filtering Logic', () => {
       });
     });
 
-    it('should find hotel-exclusive spas with thermal suite', () => {
+    it('should find spas with no day passes and thermal suite', () => {
       const result = filterSpas(
         spaData,
-        ['guests-only-no-passes'],
+        ['no-day-passes-available'],
         'All Locations',
         ['thermalSuite']
       );
 
       result.forEach((spa) => {
-        expect(spa.accessLabels).toContain('guests-only-no-passes');
+        expect(spa.accessLabels).toContain('no-day-passes-available');
         expect(spa.facilities.thermalSuite).toBe(true);
       });
     });
@@ -698,7 +698,7 @@ describe('Spa Filtering Logic', () => {
       const startTime = performance.now();
       filterSpas(
         spaData,
-        ['free-for-all-guests', 'guests-only-no-passes'],
+        ['free-for-all-guests', 'no-day-passes-available'],
         'Borrowdale',
         ['sauna', 'steamRoom']
       );

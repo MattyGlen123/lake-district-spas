@@ -62,7 +62,7 @@ describe('Spa Data Validation', () => {
       'free-for-all-guests',
       'free-for-some-rooms',
       'paid-for-guests',
-      'guests-only-no-passes',
+      'no-day-passes-available',
       'day-passes-available',
     ];
 

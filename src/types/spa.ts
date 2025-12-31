@@ -3,7 +3,7 @@ export type AccessLabel =
   | 'free-for-some-rooms'
   | 'paid-for-guests'
   | 'day-passes-available'
-  | 'guests-only-no-passes';
+  | 'no-day-passes-available';
 
 export interface ThermalFacility {
   name: string;
@@ -76,9 +76,9 @@ export const accessLabelConfig: Record<
     badgeText: 'SPA COSTS EXTRA FOR HOTEL GUESTS',
     category: 'hotel',
   },
-  'guests-only-no-passes': {
-    label: 'Hotel guests only',
-    shortLabel: 'Guests only',
+  'no-day-passes-available': {
+    label: 'No day passes available',
+    shortLabel: 'No day passes',
     color: 'bg-spa-red',
     dot: '🔴',
     badgeText: 'EXCLUSIVE TO HOTEL GUESTS',
