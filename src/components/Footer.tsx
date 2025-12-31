@@ -9,7 +9,7 @@ const Footer = () => {
               Lake District Spas
             </h3>
             <p className="text-sm text-primary-foreground/70 leading-relaxed">
-              Your complete guide to spa hotels in the Lake District. Compare
+              Your complete guide to spas in the Lake District. Compare
               facilities, access policies, and find your perfect wellness
               retreat.
             </p>
