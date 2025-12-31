@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 relative">
           {/* Logo - Left */}
-          <div className="flex items-center">
+          <Link href="/" className="flex items-center">
             <div className="p-1">
               <Image
                 src="/logo.svg"
@@ -23,7 +24,7 @@ const Header = () => {
                 priority
               />
             </div>
-          </div>
+          </Link>
 
           {/* Centered Text */}
           <div className="absolute left-1/2 transform -translate-x-1/2">

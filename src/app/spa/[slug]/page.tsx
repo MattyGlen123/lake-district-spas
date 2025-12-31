@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SpaHero from '@/components/SpaHero';
 import { Spa } from '@/types/spa';
 import { spaData } from '@/data/spas';
 
@@ -52,7 +53,7 @@ export default function SpaDetailPage({
       <Header />
 
       <main>
-        <nav className="max-w-7xl mx-auto px-4 py-4 md:py-6 text-sm flex items-center text-slate-500 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        <nav className="container mx-auto px-4 lg:px-8 py-4 md:py-6 text-sm flex items-center text-slate-500 overflow-x-auto whitespace-nowrap scrollbar-hide">
           <Link href="/" className="hover:text-blue-600 transition-colors">
             Home
           </Link>
@@ -63,9 +64,9 @@ export default function SpaDetailPage({
             {spa.name}
           </span>
         </nav>
+        <SpaHero spa={spa} />
         <div className="container mx-auto px-4 py-8">
-          <h1 className="text-3xl font-bold">{spa.name}</h1>
-          <p className="text-muted-foreground">{spa.location}</p>
+          {/* Content sections will go here */}
         </div>
       </main>
 
