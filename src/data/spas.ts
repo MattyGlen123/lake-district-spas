@@ -2,8 +2,8 @@ import { Spa } from '@/types/spa';
 
 export const spaData: Spa[] = [
   {
-    id: 'the-falls-spa-at-lodore-falls-hotel',
-    name: 'The Falls Spa at Lodore Falls Hotel',
+    id: 'lodore-falls-spa',
+    name: 'Lodore Falls Hotel Spa',
     location: 'Borrowdale',
     websiteUrl: 'https://lakedistrictspa.co.uk',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
@@ -115,7 +115,7 @@ export const spaData: Spa[] = [
     },
   },
   {
-    id: 'brimstone-spa-at-brimstone-hotel',
+    id: 'brimstone-hotel-spa',
     name: 'Brimstone Spa',
     location: 'Great Langdale',
     websiteUrl: 'https://brimstonehotel.co.uk/rooms/spa-break/',
@@ -163,8 +163,8 @@ export const spaData: Spa[] = [
     },
   },
   {
-    id: 'spa-at-the-daffodil-hotel',
-    name: 'Spa at the Daffodil Hotel',
+    id: 'daffodil-hotel-spa',
+    name: 'Daffodil Hotel Spa',
     location: 'Grasmere',
     websiteUrl:
       'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa/',
@@ -208,8 +208,8 @@ export const spaData: Spa[] = [
     },
   },
   {
-    id: 'the-swan-hotel-spa-holte-spa',
-    name: 'The Swan Hotel & Spa',
+    id: 'swan-hotel-spa',
+    name: 'Swan Hotel Spa',
     location: 'Newby Bridge',
     websiteUrl: 'https://swanhotel.com/spa/',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
@@ -321,8 +321,8 @@ export const spaData: Spa[] = [
     },
   },
   {
-    id: 'the-spa-at-low-wood-bay',
-    name: 'The Spa at Low Wood Bay',
+    id: 'low-wood-bay-spa',
+    name: 'Low Wood Bay Spa',
     location: 'Windermere',
     websiteUrl: 'https://englishlakes.co.uk/hotels/low-wood-bay/the-spa/',
     accessLabels: ['paid-for-guests', 'day-passes-available'],
@@ -393,7 +393,7 @@ export const spaData: Spa[] = [
     },
   },
   {
-    id: 'ambleside-salutation-hotel-spa-waterfall-spa',
+    id: 'ambleside-salutation-hotel-spa',
     name: 'Ambleside Salutation Hotel & Spa',
     location: 'Ambleside',
     websiteUrl: 'https://www.hotelslakedistrict.com/waterfall-spa/',
