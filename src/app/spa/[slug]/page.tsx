@@ -98,7 +98,13 @@ export default function SpaDetailPage({
 
         {/* Quick Facts Bar */}
         <section className="max-w-7xl mx-auto px-4 mb-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div
+            className={`grid gap-4 ${
+              spa.agePolicy
+                ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+                : 'grid-cols-1 sm:grid-cols-2'
+            }`}
+          >
             {/* Guest Access Card */}
             <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start space-x-4">
               <div className={`p-3 ${guestAccessColor} rounded-lg`}>
