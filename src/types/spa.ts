@@ -38,6 +38,7 @@ export interface Spa {
     thermalSuite: boolean;
     infraredSauna: boolean;
   };
+  agePolicy?: string;
 }
 
 export const accessLabelConfig: Record<

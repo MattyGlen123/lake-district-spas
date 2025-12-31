@@ -69,6 +69,7 @@ export const spaData: Spa[] = [
       outdoorPool: true,
       thermalSuite: true,
     },
+    agePolicy: '18+ only (due to heat experiences)',
   },
   {
     id: 'armathwaite-hall-hotel-spa',
@@ -161,6 +162,7 @@ export const spaData: Spa[] = [
       outdoorPool: true,
       thermalSuite: true,
     },
+    agePolicy: 'Adults only',
   },
   {
     id: 'daffodil-hotel-spa',
@@ -206,6 +208,7 @@ export const spaData: Spa[] = [
       outdoorPool: false,
       thermalSuite: true,
     },
+    agePolicy: '16+ only',
   },
   {
     id: 'swan-hotel-spa',
@@ -273,6 +276,7 @@ export const spaData: Spa[] = [
       thermalSuite: true,
       coldPlunge: true,
     },
+    agePolicy: '18+ (16-17 with parent/guardian)',
   },
   {
     id: 'macdonald-old-england-hotel-spa',
@@ -319,6 +323,8 @@ export const spaData: Spa[] = [
       outdoorPool: false,
       thermalSuite: true,
     },
+    agePolicy:
+      '18+ for thermal suite, children allowed in pool during designated times',
   },
   {
     id: 'low-wood-bay-spa',
@@ -498,6 +504,7 @@ export const spaData: Spa[] = [
       outdoorPool: false,
       thermalSuite: true,
     },
+    agePolicy: 'Pool suitable for children',
   },
   {
     id: 'beech-hill-hotel-spa',
@@ -598,6 +605,7 @@ export const spaData: Spa[] = [
       outdoorPool: false,
       thermalSuite: true,
     },
+    agePolicy: 'Children welcome during designated times only',
   },
   {
     id: 'north-lakes-hotel-spa',
@@ -639,6 +647,7 @@ export const spaData: Spa[] = [
       outdoorPool: false,
       thermalSuite: true,
     },
+    agePolicy: '16+ only for spa, children allowed in pool 10am-1pm only',
   },
   {
     id: 'whitewater-hotel-leisure-club',
@@ -746,6 +755,7 @@ export const spaData: Spa[] = [
       outdoorPool: false,
       thermalSuite: false,
     },
+    agePolicy: 'No age restriction',
   },
   {
     id: 'appleby-manor-hotel-garden-spa',
@@ -801,6 +811,7 @@ export const spaData: Spa[] = [
       outdoorPool: false,
       thermalSuite: true,
     },
+    agePolicy: undefined,
   },
   {
     id: 'netherwood-hotel-spa',
@@ -859,6 +870,7 @@ export const spaData: Spa[] = [
       outdoorPool: false,
       thermalSuite: true,
     },
+    agePolicy: undefined,
   },
   {
     id: 'grange-hotel',
@@ -894,6 +906,7 @@ export const spaData: Spa[] = [
       outdoorPool: false,
       thermalSuite: true,
     },
+    agePolicy: undefined,
   },
 ];
 
