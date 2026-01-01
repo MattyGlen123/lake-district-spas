@@ -15,7 +15,7 @@ export default function SpaNavigation({ currentSpa }: SpaNavigationProps) {
 
   return (
     <section className="bg-slate-50 border-y border-slate-200 py-8 sm:py-16 mb-20">
-      <div className="max-w-4xl mx-auto px-4 flex flex-row items-stretch justify-between gap-2 sm:gap-6">
+      <div className="container mx-auto px-4 md:px-8 flex flex-row items-stretch justify-between gap-2 sm:gap-6">
         {prevSpa ? (
           <Link
             href={`/spa/${prevSpa.url}`}
