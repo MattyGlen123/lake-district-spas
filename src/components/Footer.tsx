@@ -29,22 +29,6 @@ const Footer = () => {
                   Home
                 </a>
               </li>
-              <li>
-                <a
-                  href="#about"
-                  className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-                >
-                  Contact
-                </a>
-              </li>
             </ul>
           </div>
 
