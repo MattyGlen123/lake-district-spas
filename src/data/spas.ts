@@ -35,22 +35,22 @@ export const spaData: Spa[] = [
         details: '40°C at 95% humidity, halotherapy',
       },
       { name: 'Heated Loungers', details: 'Relaxation in thermal suite' },
-    ],
-    poolFeatures: [
-      {
-        name: 'Infinity-Edge Vitality Pool',
-        details:
-          ' underwater bubble loungers, volcano fountain, hydromassage neck jets',
-      },
-      {
-        name: 'Experience Showers',
-        details: 'Forest Rinse, Tropical Rain, Thermal Sensation',
-      },
       {
         name: 'Ice Fountain',
         details: 'Cool down post-sauna, boost circulation',
       },
       { name: 'Cold Drench Bucket', details: 'Outdoor cool down after sauna' },
+      {
+        name: 'Experience Showers',
+        details: 'Forest Rinse, Tropical Rain, Thermal Sensation',
+      },
+    ],
+    poolFeatures: [
+      {
+        name: 'Infinity-Edge Vitality Pool',
+        details:
+          'Underwater bubble loungers, volcano fountain, hydromassage neck jets',
+      },
     ],
     accessPolicy: [
       'Suites: Spa included - 2hrs complimentary per night',
