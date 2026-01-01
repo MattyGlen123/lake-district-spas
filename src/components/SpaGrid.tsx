@@ -9,9 +9,9 @@ interface SpaGridProps {
 }
 
 const SpaGrid = ({ spas }: SpaGridProps) => {
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [expandedId, setExpandedId] = useState<number | null>(null);
 
-  const handleToggle = (id: string) => {
+  const handleToggle = (id: number) => {
     setExpandedId(expandedId === id ? null : id);
   };
 

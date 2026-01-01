@@ -18,7 +18,7 @@ export default function SpaNavigation({ currentSpa }: SpaNavigationProps) {
       <div className="max-w-4xl mx-auto px-4 flex flex-row items-stretch justify-between gap-2 sm:gap-6">
         {prevSpa ? (
           <Link
-            href={`/spa/${prevSpa.id}`}
+            href={`/spa/${prevSpa.url}`}
             className="flex-1 flex items-center text-left min-w-0 group py-1"
           >
             <div className="h-8 w-8 sm:h-12 sm:w-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-blue-600 group-hover:text-blue-600 transition-all mr-2 sm:mr-4 flex-shrink-0">
@@ -42,7 +42,7 @@ export default function SpaNavigation({ currentSpa }: SpaNavigationProps) {
 
         {nextSpa ? (
           <Link
-            href={`/spa/${nextSpa.id}`}
+            href={`/spa/${nextSpa.url}`}
             className="flex-1 flex items-center text-right justify-end min-w-0 group py-1"
           >
             <div className="flex-1 min-w-0 text-right">

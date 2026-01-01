@@ -17,6 +17,7 @@ describe('Spa Data Validation', () => {
     it('each spa should have all required fields', () => {
       spaData.forEach((spa) => {
         expect(spa.id).toBeDefined();
+        expect(spa.url).toBeDefined();
         expect(spa.name).toBeDefined();
         expect(spa.location).toBeDefined();
         expect(spa.websiteUrl).toBeDefined();
@@ -28,12 +29,15 @@ describe('Spa Data Validation', () => {
         expect(spa.poolFeatures).toBeDefined();
         expect(spa.accessPolicy).toBeDefined();
         expect(spa.facilities).toBeDefined();
+        expect(spa.relatedSpas).toBeDefined();
       });
     });
 
     it('each spa should have non-empty required string fields', () => {
       spaData.forEach((spa) => {
-        expect(spa.id.trim().length).toBeGreaterThan(0);
+        expect(typeof spa.id).toBe('number');
+        expect(spa.id).toBeGreaterThan(0);
+        expect(spa.url.trim().length).toBeGreaterThan(0);
         expect(spa.name.trim().length).toBeGreaterThan(0);
         expect(spa.location.trim().length).toBeGreaterThan(0);
         expect(spa.imageSrc.trim().length).toBeGreaterThan(0);
@@ -41,11 +45,11 @@ describe('Spa Data Validation', () => {
       });
     });
 
-    it('each spa should have valid kebab-case IDs', () => {
+    it('each spa should have valid kebab-case URL slugs', () => {
       spaData.forEach((spa) => {
-        // ID should be lowercase with hyphens, no spaces or special chars
-        expect(spa.id).toMatch(/^[a-z0-9-]+$/);
-        expect(spa.id).not.toMatch(/^-|-$/); // No leading/trailing hyphens
+        // URL should be lowercase with hyphens, no spaces or special chars
+        expect(spa.url).toMatch(/^[a-z0-9-]+$/);
+        expect(spa.url).not.toMatch(/^-|-$/); // No leading/trailing hyphens
       });
     });
 
@@ -252,6 +256,40 @@ describe('Spa Data Validation', () => {
       const ids = spaData.map((spa) => spa.id);
       const uniqueIds = new Set(ids);
       expect(uniqueIds.size).toBe(ids.length);
+    });
+
+    it('should have no duplicate spa URLs', () => {
+      const urls = spaData.map((spa) => spa.url);
+      const uniqueUrls = new Set(urls);
+      expect(uniqueUrls.size).toBe(urls.length);
+    });
+
+    it('should have sequential numeric IDs from 1 to 17', () => {
+      const ids = spaData.map((spa) => spa.id).sort((a, b) => a - b);
+      expect(ids[0]).toBe(1);
+      expect(ids[ids.length - 1]).toBe(17);
+      expect(ids.length).toBe(17);
+      // Check they're sequential
+      ids.forEach((id, index) => {
+        expect(id).toBe(index + 1);
+      });
+    });
+
+    it('each spa should have valid relatedSpas array', () => {
+      spaData.forEach((spa) => {
+        expect(Array.isArray(spa.relatedSpas)).toBe(true);
+        expect(spa.relatedSpas.length).toBeGreaterThanOrEqual(2);
+        expect(spa.relatedSpas.length).toBeLessThanOrEqual(3);
+        spa.relatedSpas.forEach((relatedId) => {
+          expect(typeof relatedId).toBe('number');
+          expect(relatedId).toBeGreaterThanOrEqual(1);
+          expect(relatedId).toBeLessThanOrEqual(17);
+          expect(relatedId).not.toBe(spa.id); // Should not reference itself
+          // Verify the related spa exists
+          const relatedSpa = spaData.find((s) => s.id === relatedId);
+          expect(relatedSpa).toBeDefined();
+        });
+      });
     });
 
     it('website URLs should be valid format', () => {

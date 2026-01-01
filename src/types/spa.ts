@@ -16,7 +16,8 @@ export interface PoolFeature {
 }
 
 export interface Spa {
-  id: string;
+  id: number;
+  url: string;
   name: string;
   location: string;
   websiteUrl: string;
@@ -39,6 +40,7 @@ export interface Spa {
     infraredSauna: boolean;
   };
   agePolicy?: string;
+  relatedSpas: number[];
 }
 
 export const accessLabelConfig: Record<

@@ -16,7 +16,7 @@ import { spaData } from '@/data/spas';
 // Generate static params for all spas at build time
 export async function generateStaticParams() {
   return spaData.map((spa) => ({
-    slug: spa.id,
+    slug: spa.url,
   }));
 }
 
@@ -26,7 +26,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const spa = spaData.find((s) => s.id === params.slug);
+  const spa = spaData.find((s) => s.url === params.slug);
 
   if (!spa) {
     return {
@@ -47,7 +47,7 @@ export default function SpaDetailPage({
 }: {
   params: { slug: string };
 }) {
-  const spa: Spa | undefined = spaData.find((s) => s.id === params.slug);
+  const spa: Spa | undefined = spaData.find((s) => s.url === params.slug);
 
   if (!spa) {
     notFound();
