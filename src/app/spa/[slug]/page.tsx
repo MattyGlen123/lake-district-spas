@@ -7,6 +7,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import QuickFactsBar from '@/components/QuickFactsBar';
 import BackButton from '@/components/BackButton';
 import ThermalFacilities from '@/components/ThermalFacilities';
+import PoolFeatures from '@/components/PoolFeatures';
 import { Spa } from '@/types/spa';
 import { spaData } from '@/data/spas';
 
@@ -62,6 +63,7 @@ export default function SpaDetailPage({
 
         <div className="container mx-auto px-4 md:px-8 py-8">
           <ThermalFacilities spa={spa} />
+          <PoolFeatures spa={spa} />
         </div>
       </main>
 
