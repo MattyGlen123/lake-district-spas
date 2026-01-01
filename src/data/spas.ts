@@ -13,9 +13,9 @@ export const spaData: Spa[] = [
       'Luxurious 16-metre outdoor hydrotherapy pool at The Falls Spa at Lodore Falls Hotel in Borrowdale, featuring heated water with neck jets and underwater bubble loungers, surrounded by white sun loungers on slate decking with dramatic Lake District mountain views at sunset, spa access included with suite bookings',
     keyFeatures: [
       '16m infinity-edge outdoor hydrotherapy pool',
-      'Multtiple thermal facilities',
-      '5 treatment rooms & relaxation lounge',
-      '4-person mud rasul',
+      'Finnish and herbal saunas',
+      'Salt and aroma steam rooms',
+      'Ice fountain and cold drench bucket',
     ],
     thermalFacilities: [
       {
@@ -84,10 +84,10 @@ export const spaData: Spa[] = [
     imageAlt:
       'Spectacular infinity-edge vitality pool at Low Wood Bay Resort and Spa on the shores of Lake Windermere, featuring panoramic Lake District mountain views, traditional Lakeland dry stone walling, wooden sun loungers, and outdoor relaxation areas perfect for spa days',
     keyFeatures: [
-      'Indoor and outdoor thermal spaces',
-      'Outdoor infinity pool with lake views',
-      'Indoor thermal & vitality pool',
-      'Three saunas including infrared sauna',
+      'Two outdoor infinity pools with lake views',
+      'Three saunas including infrared and fellside sauna',
+      'Indoor thermal and vitality pool',
+      'Multiple outdoor hot tubs',
     ],
     thermalFacilities: [
       {
@@ -217,7 +217,7 @@ export const spaData: Spa[] = [
     keyFeatures: [
       'Indoor swimming pool',
       'Outdoor infinity pools',
-      'Multiple treatment rooms',
+      'Finnish sauna and crystal steam room',
     ],
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
@@ -229,7 +229,7 @@ export const spaData: Spa[] = [
     poolFeatures: [
       { name: 'Indoor Pool', details: 'Indoor swimming pool' },
       { name: 'Outdoor Pool', details: 'Multiple outdoor infinity pools' },
-      { name: 'Hot Tub', details: 'Hot tub or jacuzzi' },
+      { name: 'Hot Tub', details: 'Hot tub' },
     ],
     accessPolicy: [
       'Spa included with room booking',
@@ -262,8 +262,8 @@ export const spaData: Spa[] = [
       'Unique swim-through hydrotherapy pool at Brimstone Hotel and Spa in Langdale featuring iridescent blue mosaic tiles, modern Nordic-inspired design with wooden accents and floor-to-ceiling windows, white heated loungers, and indoor-outdoor connectivity in the heart of the Lake District',
     keyFeatures: [
       'Swim-through indoor/outdoor pool',
-      'Sauna and steam room',
-      'Ice Room and Experience Showers',
+      'Finnish sauna, laconium and aroma steam room',
+      'Ice room and experience showers',
     ],
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
@@ -313,8 +313,8 @@ export const spaData: Spa[] = [
     imageAlt:
       'Contemporary hydrotherapy pool at Daffodil Hotel and Spa in Grasmere with dramatic blue and purple ambient lighting, cascade waterfall features, heated lounger seating, and modern minimalist design creating a tranquil Lake District wellness experience',
     keyFeatures: [
-      'Indoor hydrotherapy pool',
-      'Sauna and steam room',
+      'Indoor hydrotherapy pool with cascade features',
+      'Finnish sauna and steam room',
       'Rasul mud chamber',
     ],
     thermalFacilities: [
@@ -488,9 +488,9 @@ export const spaData: Spa[] = [
     imageAlt:
       'Contemporary indoor pool at Lakeside Hotel Health Club and Spa on Lake Windermere, featuring distinctive teal and green mosaic tile columns, flowing wave-pattern ceiling design, and spacious swimming area with loungers overlooking the Lake District waterfront',
     keyFeatures: [
-      'Free spa access for all hotel guests',
-      'Day passes available to public',
-      '17m indoor heated pool overlooking Lake Windermere',
+      'Indoor pool overlooking Lake Windermere',
+      'Traditional sauna and steam room',
+      'Outdoor spa garden with fire pit and heat domes',
     ],
     thermalFacilities: [
       { name: 'Sauna', details: 'Traditional sauna' },
@@ -543,12 +543,12 @@ export const spaData: Spa[] = [
     imageAlt:
       'Panoramic hydrotherapy pool at Rothay Garden Hotel and Riverside Spa in Grasmere, featuring curved floor-to-ceiling windows with dramatic Lake District fell views, dual cascade water features, bamboo-panelled walls, and intimate circular hot tub design surrounded by nature',
     keyFeatures: [
-      'Floor-to-ceiling views of riverside and fells',
-      'Hydrotherapy pool with sunken loungers',
+      'Hydrotherapy pool with riverside and fell views',
       'Infrared heated loungers',
+      'Herbal pine sauna and steam room',
     ],
     thermalFacilities: [
-      { name: 'Herbal Pine Sauna', details: 'Herbal pine sauna' },
+      { name: 'Sauna', details: 'Herbal pine sauna' },
       { name: 'Steam Room', details: 'Aromatherapy steam room' },
       { name: 'Experience Showers', details: 'Monsoon showers' },
       {
@@ -595,9 +595,9 @@ export const spaData: Spa[] = [
     imageAlt:
       'Contemporary hydrotherapy pool at Appleby Manor Country House Hotel near Appleby-in-Westmorland, featuring dramatic blue LED underwater lighting, natural Lake District pebble stone border detail, modern wicker relaxation seating with tropical palms, and luxury spa facilities in the Eden Valley',
     keyFeatures: [
-      'Hydrotherapy pool',
+      'Hydrotherapy pool with underwater massage loungers',
       'Outdoor spa garden with hot tubs and fire pit',
-      'Salt inhalation room',
+      'Salt inhalation room and sauna',
     ],
     thermalFacilities: [
       { name: 'Sauna', details: 'Traditional sauna' },
@@ -653,9 +653,10 @@ export const spaData: Spa[] = [
     imageAlt:
       'Tranquil thermal relaxation suite at North Lakes Hotel and Spa in Penrith, featuring heated ceramic loungers with plush robes, ambient mood lighting, Lake District landscape artwork, Japanese-inspired sliding screens, and peaceful spa environment for complete relaxation',
     keyFeatures: [
-      '13m indoor pool',
-      'Separate male and female saunas',
-      'Thermal relaxation suite with heated loungers',
+      'Indoor pool',
+      'Separate male and female Finnish saunas',
+      'Steam room',
+      'Hot tub',
     ],
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Separate male and female saunas' },
@@ -697,10 +698,10 @@ export const spaData: Spa[] = [
     imageAlt:
       'Unique circular Kneipp footbath at Netherwood Hotel and Spa in Grange-over-Sands, featuring natural rope-wrapped wooden basin design with dual cascade water features, positioned against authentic Lakeland dry stone walling with designer loungers and orange accent cushions',
     keyFeatures: [
-      'Boutique thermal suite',
       'Plunge tub room with hot, warm and cold tubs',
-      'Panoramic views of Morecambe Bay',
       'Salt inhalation room',
+      'Dry heat sauna and aroma steam room',
+      'Ice fountain',
     ],
     thermalFacilities: [
       {
@@ -758,9 +759,9 @@ export const spaData: Spa[] = [
     imageAlt:
       'Botanical-inspired indoor pool at Beech Hill Hotel and Spa near Windermere, featuring natural woven pendant lights, cascading artificial greenery from ceiling, dark slate mosaic walls, turquoise heated pool, and contemporary nature-themed wellness design in the Lake District',
     keyFeatures: [
-      '35ft indoor pool',
-      'Himalayan sauna',
-      'Spa terrace with outdoor vitality pools',
+      'Indoor pool with Lake Windermere views',
+      'Himalayan sauna and aromatic steam room',
+      'Two outdoor vitality spa pools on terrace',
     ],
     thermalFacilities: [
       { name: 'Himalayan Sauna', details: 'Himalayan sauna' },
@@ -810,9 +811,9 @@ export const spaData: Spa[] = [
     imageAlt:
       'Modern indoor swimming pool at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring deep blue mosaic tiling, contemporary black and white interior design, underwater lighting, and heated pool facilities in a luxurious Lake District spa setting',
     keyFeatures: [
-      '20m indoor pool with Lake Windermere views',
+      'Indoor pool with Lake Windermere views',
       'Thermal suite with sauna, steam and ice room',
-      'Ice Room and Experience Showers',
+      'Aromatherapy experience showers',
     ],
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
@@ -859,7 +860,7 @@ export const spaData: Spa[] = [
     imageSrc: '/images/spas/lake-district-spas_grange-hotel.jpg',
     imageAlt:
       'Luxury facial treatment at The Grange Boutique Hotel and Restaurant in Grange-over-Sands, featuring professional spa therapies with skilled hands performing rejuvenating skincare treatments in an intimate, serene environment overlooking Morecambe Bay in the southern Lake District',
-    keyFeatures: ['Heated indoor pool', 'Sauna and steam room', 'Jacuzzi'],
+    keyFeatures: ['Indoor pool', 'Traditional sauna and steam room', 'Jacuzzi'],
     thermalFacilities: [
       { name: 'Sauna', details: 'Traditional sauna' },
       { name: 'Steam Room', details: 'Steam room' },
@@ -900,7 +901,7 @@ export const spaData: Spa[] = [
     keyFeatures: [
       'Outdoor jacuzzi overlooking River Leven',
       'Turkish Hamam aromatherapy steam room',
-      'Indoor heated swimming pool',
+      'Indoor swimming pool',
     ],
     thermalFacilities: [
       { name: 'Sauna', details: 'Traditional sauna' },
