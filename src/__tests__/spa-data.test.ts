@@ -154,8 +154,13 @@ describe('Spa Data Validation', () => {
         expect(Array.isArray(spa.accessPolicy)).toBe(true);
         expect(spa.accessPolicy.length).toBeGreaterThan(0);
         spa.accessPolicy.forEach((policy) => {
-          expect(typeof policy).toBe('string');
-          expect(policy.trim().length).toBeGreaterThan(0);
+          expect(typeof policy).toBe('object');
+          expect(policy).toHaveProperty('name');
+          expect(policy).toHaveProperty('details');
+          expect(typeof policy.name).toBe('string');
+          expect(typeof policy.details).toBe('string');
+          expect(policy.name.trim().length).toBeGreaterThan(0);
+          expect(policy.details.trim().length).toBeGreaterThan(0);
         });
       });
     });

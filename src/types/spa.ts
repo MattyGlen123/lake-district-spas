@@ -15,6 +15,17 @@ export interface PoolFeature {
   details: string;
 }
 
+export interface AccessPolicy {
+  name: string;
+  details: string;
+  accessType?:
+    | 'hotel'
+    | 'general'
+    | 'day-pass'
+    | 'age-restriction'
+    | 'spa-hours';
+}
+
 export interface Spa {
   id: number;
   url: string;
@@ -27,7 +38,7 @@ export interface Spa {
   keyFeatures: string[];
   thermalFacilities: ThermalFacility[];
   poolFeatures: PoolFeature[];
-  accessPolicy: string[];
+  accessPolicy: AccessPolicy[];
   facilities: {
     sauna: boolean;
     steamRoom: boolean;

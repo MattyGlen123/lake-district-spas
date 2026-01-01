@@ -165,7 +165,10 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
                         className="flex items-start gap-2 text-sm text-foreground"
                       >
                         <span className="text-muted-foreground">•</span>
-                        {policy}
+                        <span>
+                          <span className="font-semibold">{policy.name}:</span>{' '}
+                          {policy.details}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -173,16 +176,6 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
               </div>
             </div>
           )}
-
-          {/* View Website Button */}
-          <a
-            href={spa.websiteUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full bg-white border border-gray-300 hover:bg-gray-100 text-gray-900 rounded-lg px-4 py-3 text-sm font-medium transition-colors mt-4 flex items-center justify-center gap-2"
-          >
-            View Website <ExternalLink className="w-4 h-4" />
-          </a>
 
           {/* Expand/Collapse Button */}
           <button
@@ -275,16 +268,6 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
               </ul>
             </div>
 
-            {/* View Website Button */}
-            <a
-              href={spa.websiteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-white border border-gray-300 hover:bg-gray-100 text-gray-900 rounded-lg px-4 py-3 text-sm font-medium transition-colors mt-4 flex items-center justify-center gap-2 self-start"
-            >
-              View Website <ExternalLink className="w-4 h-4" />
-            </a>
-
             {/* Expand/Collapse Button */}
             <button
               onClick={onToggle}
@@ -367,7 +350,10 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
                     className="flex items-start gap-2 text-sm text-foreground"
                   >
                     <span className="text-muted-foreground">•</span>
-                    {policy}
+                    <span>
+                      <span className="font-semibold">{policy.name}:</span>{' '}
+                      {policy.details}
+                    </span>
                   </li>
                 ))}
               </ul>

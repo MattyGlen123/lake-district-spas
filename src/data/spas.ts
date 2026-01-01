@@ -54,10 +54,26 @@ export const spaData: Spa[] = [
       },
     ],
     accessPolicy: [
-      'Suites: Spa included - 2hrs complimentary per night',
-      'Paid access for other rooms: 2hr slots',
-      'Book slots after room booking',
-      'Age restriction: 18+ only (due to heat experiences)',
+      {
+        name: 'Suites',
+        details: 'Spa included - 2hrs complimentary per night',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Standard Rooms',
+        details: 'Paid access, 2hr slots',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Booking',
+        details: 'Book slots after room booking',
+        accessType: 'general',
+      },
+      {
+        name: 'Age Restriction',
+        details: '18+ only (due to heat experiences)',
+        accessType: 'age-restriction',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -126,13 +142,42 @@ export const spaData: Spa[] = [
       },
     ],
     accessPolicy: [
-      'Hotel guests: Spa access NOT included unless booking spa break package',
-      'Hotel guests can book spa day or treatment separately with 25% discount Mon-Thu',
-      'Day passes: Available for public, various packages 10am-8pm',
-      'Age restriction: 16+ only (no children allowed)',
-      'Spa hours: Treatments 9:30am-7:30pm and Spa Days 10am-8pm',
-      'No slippers provided - bring flip flops or purchase on-site',
-      'Pregnancy restrictions: No thermal cabins, hot tubs or mud rooms',
+      {
+        name: 'Hotel Guests',
+        details: 'Spa access NOT included unless booking spa break package',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Guest Discount',
+        details:
+          'Book spa day or treatment separately with 25% discount Mon-Thu',
+        accessType: 'general',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Available for public, various packages 10am-8pm',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Age Restriction',
+        details: '16+ only (no children allowed)',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Spa Hours',
+        details: 'Treatments 9:30am-7:30pm and Spa Days 10am-8pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Footwear',
+        details: 'No slippers provided - bring flip flops or purchase on-site',
+        accessType: 'general',
+      },
+      {
+        name: 'Pregnancy',
+        details: 'No thermal cabins, hot tubs or mud rooms',
+        accessType: 'general',
+      },
     ],
     facilities: {
       coldPlunge: false,
@@ -182,13 +227,41 @@ export const spaData: Spa[] = [
       },
     ],
     accessPolicy: [
-      'Free access for Hotel guests',
-      'Day membership available',
-      'Pool hours: 7am-9pm daily',
-      'Adult-only swim times: 7am-9am and 6pm-9pm',
-      'Family swim times: 9am-6pm',
-      'Age restriction: Hot tub and sauna 16+ only',
-      'Treatments available',
+      {
+        name: 'Hotel Guests',
+        details: 'Free access for Hotel guests',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Day membership available',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Pool Hours',
+        details: '7am-9pm daily',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Adult Swim Times',
+        details: '7am-9am and 6pm-9pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Family Swim Times',
+        details: '9am-6pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Age Restriction',
+        details: 'Hot tub and sauna 16+ only',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Treatments',
+        details: 'Treatments available',
+        accessType: 'general',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -232,10 +305,26 @@ export const spaData: Spa[] = [
       { name: 'Hot Tub', details: 'Hot tub' },
     ],
     accessPolicy: [
-      'Spa included with room booking',
-      'Day passes: Packages available',
-      'Pre-booking: Recommended',
-      'Age restriction: Adults only',
+      {
+        name: 'Hotel Guests',
+        details: 'Spa included with room booking',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Packages available',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Pre-booking',
+        details: 'Recommended',
+        accessType: 'general',
+      },
+      {
+        name: 'Age Restriction',
+        details: 'Adults only',
+        accessType: 'age-restriction',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -282,10 +371,26 @@ export const spaData: Spa[] = [
       { name: 'Hot Tub', details: 'Hot tub or jacuzzi' },
     ],
     accessPolicy: [
-      'Spa included with room booking',
-      'Day passes: Not available',
-      'Pre-booking: Guest access automatic',
-      'Age restriction: Adults only',
+      {
+        name: 'Hotel Guests',
+        details: 'Spa included with room booking',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Not available',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Pre-booking',
+        details: 'Guest access automatic',
+        accessType: 'general',
+      },
+      {
+        name: 'Age Restriction',
+        details: 'Adults only',
+        accessType: 'age-restriction',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -328,12 +433,36 @@ export const spaData: Spa[] = [
       },
     ],
     accessPolicy: [
-      'Free spa access included with room booking',
-      'Public day passes available',
-      'Pre-booking required: Arrive 30 mins before any treatment',
-      'Age restriction: 16+ only',
-      'Spa hours: 8am-8pm daily',
-      'Treatment hours: 10am-6:30pm',
+      {
+        name: 'Hotel Guests',
+        details: 'Free spa access included with room booking',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Public day passes available',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Pre-booking',
+        details: 'Required: Arrive 30 mins before any treatment',
+        accessType: 'general',
+      },
+      {
+        name: 'Age Restriction',
+        details: '16+ only',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Spa Hours',
+        details: '8am-8pm daily',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Treatment Hours',
+        details: '10am-6:30pm',
+        accessType: 'spa-hours',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -398,12 +527,36 @@ export const spaData: Spa[] = [
       },
     ],
     accessPolicy: [
-      'Hotel guests: Free spa access for Splendid room bookings and above',
-      'Standard room guests: Day pass available',
-      'Public day passes available',
-      'Pre-booking recommended',
-      'Age restriction: 18+ (16-17 with parent/guardian)',
-      'Spa hours: 10am-4pm',
+      {
+        name: 'Hotel Guests',
+        details: 'Free spa access for Splendid room bookings and above',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Standard Rooms',
+        details: 'Day pass available',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Public day passes available',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Pre-booking',
+        details: 'Recommended',
+        accessType: 'general',
+      },
+      {
+        name: 'Age Restriction',
+        details: '18+ (16-17 with parent/guardian)',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Spa Hours',
+        details: '10am-4pm',
+        accessType: 'spa-hours',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -458,11 +611,31 @@ export const spaData: Spa[] = [
       },
     ],
     accessPolicy: [
-      'Hotel guests: Free spa access included',
-      'Day passes: Not available to public',
-      'Pre-booking: Required for spa treatments',
-      'Age restriction: Adults only',
-      'Spa hours: 8am-8pm daily',
+      {
+        name: 'Hotel Guests',
+        details: 'Free spa access included',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Not available to public',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Pre-booking',
+        details: 'Required for spa treatments',
+        accessType: 'general',
+      },
+      {
+        name: 'Age Restriction',
+        details: 'Adults only',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Spa Hours',
+        details: '8am-8pm daily',
+        accessType: 'spa-hours',
+      },
     ],
     facilities: {
       infraredSauna: true,
@@ -512,10 +685,26 @@ export const spaData: Spa[] = [
       },
     ],
     accessPolicy: [
-      'Hotel guests: Free access to pool, gym, sauna and steam room included',
-      'Public day passes available',
-      'Child-friendly: Pool is suitable for children',
-      'Spa garden: Outdoor retreat with fire pit and heat domes',
+      {
+        name: 'Hotel Guests',
+        details: 'Free access to pool, gym, sauna and steam room included',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Public day passes available',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Children',
+        details: 'Pool is suitable for children',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Spa Garden',
+        details: 'Outdoor retreat with fire pit and heat domes',
+        accessType: 'general',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -564,11 +753,31 @@ export const spaData: Spa[] = [
       { name: 'Hot Tub', details: 'Hot tub' },
     ],
     accessPolicy: [
-      'Hotel guests: Free spa access included, no booking required',
-      'Day passes: Available to public',
-      'In-room treatments available when booked in advance',
-      'Age restriction: 18+ only, no children permitted',
-      'Spa hours: 8am-8pm daily',
+      {
+        name: 'Hotel Guests',
+        details: 'Free spa access included, no booking required',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Available to public',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Treatments',
+        details: 'In-room treatments available when booked in advance',
+        accessType: 'general',
+      },
+      {
+        name: 'Age Restriction',
+        details: '18+ only, no children permitted',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Spa Hours',
+        details: '8am-8pm daily',
+        accessType: 'spa-hours',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -623,10 +832,26 @@ export const spaData: Spa[] = [
       },
     ],
     accessPolicy: [
-      'Hotel guests: Must pay separately for spa access',
-      'Day passes available',
-      'Spa breaks: Available with overnight stays',
-      'Age restriction: 16+ (treatments may require 18+)',
+      {
+        name: 'Hotel Guests',
+        details: 'Must pay separately for spa access',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Day passes available',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Spa Breaks',
+        details: 'Available with overnight stays',
+        accessType: 'general',
+      },
+      {
+        name: 'Age Restriction',
+        details: '16+ (treatments may require 18+)',
+        accessType: 'age-restriction',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -667,11 +892,31 @@ export const spaData: Spa[] = [
       { name: 'Hot Tub', details: 'Whirlpool hot tub' },
     ],
     accessPolicy: [
-      'Hotel guests: Free spa access included',
-      'Day passes and memberships available',
-      'Age restriction: Children welcome during designated times only',
-      'Spa hours: Mon-Fri 6am-9:30pm, Sat-Sun 7am-8pm',
-      'Robes and slippers provided',
+      {
+        name: 'Hotel Guests',
+        details: 'Free spa access included',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Day passes and memberships available',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Age Restriction',
+        details: 'Children welcome during designated times only',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Spa Hours',
+        details: 'Mon-Fri 6am-9:30pm, Sat-Sun 7am-8pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Amenities',
+        details: 'Robes and slippers provided',
+        accessType: 'general',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -728,11 +973,31 @@ export const spaData: Spa[] = [
       },
     ],
     accessPolicy: [
-      'Hotel guests: Must pay separately for Thermal Journey',
-      'Day passes available',
-      'Thermal Journey hours: Mon-Sun 10am-5:30pm',
-      'Treatment hours: 10am-6pm',
-      'Robes, towels and slippers: Included',
+      {
+        name: 'Hotel Guests',
+        details: 'Must pay separately for Thermal Journey',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Day passes available',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Thermal Journey Hours',
+        details: 'Mon-Sun 10am-5:30pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Treatment Hours',
+        details: '10am-6pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Amenities',
+        details: 'Robes, towels and slippers included',
+        accessType: 'general',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -779,13 +1044,41 @@ export const spaData: Spa[] = [
       },
     ],
     accessPolicy: [
-      'Hotel guests: Complimentary spa access included',
-      'Spa access from Thu-Sun 9:30am-4pm, Fri-Sat 9:30am-6pm',
-      'Spa access included with all treatments',
-      'Pre-booking: Required',
-      'Age restriction: 16+ only for spa',
-      'Children allowed in pool 10am-1pm only',
-      'Maximum group size: 6 people',
+      {
+        name: 'Hotel Guests',
+        details: 'Complimentary spa access included',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Spa Hours',
+        details: 'Thu-Sun 9:30am-4pm, Fri-Sat 9:30am-6pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Treatments',
+        details: 'Spa access included with all treatments',
+        accessType: 'general',
+      },
+      {
+        name: 'Pre-booking',
+        details: 'Required',
+        accessType: 'general',
+      },
+      {
+        name: 'Age Restriction',
+        details: '16+ only for spa',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Children',
+        details: 'Allowed in pool 10am-1pm only',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Group Size',
+        details: 'Maximum 6 people',
+        accessType: 'general',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -828,12 +1121,37 @@ export const spaData: Spa[] = [
       },
     ],
     accessPolicy: [
-      'Hotel guests: Free access to pool and thermal suite',
-      'Spa day packages',
-      'Pool & gym hours: 7am-6:30pm',
-      'Children swim times: 10am-5pm',
-      'Age restriction: 18+ for thermal suite, children allowed in pool during designated times',
-      'Pre-booking: Required for spa day packages with treatments',
+      {
+        name: 'Hotel Guests',
+        details: 'Free access to pool and thermal suite',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Spa Day Packages',
+        details: 'Spa day packages available',
+        accessType: 'general',
+      },
+      {
+        name: 'Pool & Gym Hours',
+        details: '7am-6:30pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Children Swim Times',
+        details: '10am-5pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Age Restriction',
+        details:
+          '18+ for thermal suite, children allowed in pool during designated times',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Pre-booking',
+        details: 'Required for spa day packages with treatments',
+        accessType: 'general',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -870,9 +1188,22 @@ export const spaData: Spa[] = [
       { name: 'Jacuzzi', details: 'Jacuzzi' },
     ],
     accessPolicy: [
-      'Hotel guests: Spa access additional charge (some overnight packages include access)',
-      'Spa Day Packages: Available with treatment and facility access',
-      'Robes and slippers: Provided',
+      {
+        name: 'Hotel Guests',
+        details:
+          'Spa access additional charge (some overnight packages include access)',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Spa Day Packages',
+        details: 'Available with treatment and facility access',
+        accessType: 'general',
+      },
+      {
+        name: 'Amenities',
+        details: 'Robes and slippers provided',
+        accessType: 'general',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -924,11 +1255,31 @@ export const spaData: Spa[] = [
       },
     ],
     accessPolicy: [
-      'Hotel guests: Free spa access included, 10% discount on treatments',
-      'Day passes: Not available to public',
-      'Pre-booking: Required for spa treatments',
-      'No age restriction',
-      'Robes and towels: Provided',
+      {
+        name: 'Hotel Guests',
+        details: 'Free spa access included, 10% discount on treatments',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Not available to public',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Pre-booking',
+        details: 'Required for spa treatments',
+        accessType: 'general',
+      },
+      {
+        name: 'Age Restriction',
+        details: 'No age restriction',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Amenities',
+        details: 'Robes and towels provided',
+        accessType: 'general',
+      },
     ],
     facilities: {
       infraredSauna: false,
