@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import SpaCard from './SpaCard';
 import { Spa } from '@/types/spa';
 
@@ -9,12 +8,6 @@ interface SpaGridProps {
 }
 
 const SpaGrid = ({ spas }: SpaGridProps) => {
-  const [expandedId, setExpandedId] = useState<number | null>(null);
-
-  const handleToggle = (id: number) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
-
   if (spas.length === 0) {
     return (
       <section className="py-12">
@@ -42,12 +35,7 @@ const SpaGrid = ({ spas }: SpaGridProps) => {
 
         <div className="flex flex-col gap-6 lg:gap-8">
           {spas.map((spa) => (
-            <SpaCard
-              key={spa.id}
-              spa={spa}
-              isExpanded={expandedId === spa.id}
-              onToggle={() => handleToggle(spa.id)}
-            />
+            <SpaCard key={spa.id} spa={spa} />
           ))}
         </div>
       </div>

@@ -1,28 +1,16 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
-import {
-  MapPin,
-  ChevronDown,
-  ChevronUp,
-  Check,
-  Thermometer,
-  Waves,
-  Shield,
-  Lightbulb,
-  ExternalLink,
-} from 'lucide-react';
-import { Spa, accessLabelConfig, AccessLabel } from '@/types/spa';
+import Link from 'next/link';
+import { MapPin, Check, ChevronRight } from 'lucide-react';
+import { Spa, accessLabelConfig } from '@/types/spa';
 
 interface SpaCardProps {
   spa: Spa;
-  isExpanded: boolean;
-  onToggle: () => void;
 }
 
-const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
-  const cardRef = useRef<HTMLDivElement>(null);
+const SpaCard = ({ spa }: SpaCardProps) => {
   const [imageError, setImageError] = useState(false);
 
   // Sort access labels: hotel badges first, then public (day passes)
@@ -34,17 +22,8 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
     return 0;
   });
 
-  useEffect(() => {
-    if (isExpanded && cardRef.current) {
-      const yOffset = -80;
-      const y =
-        cardRef.current.getBoundingClientRect().top + window.scrollY + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  }, [isExpanded]);
-
   return (
-    <article ref={cardRef} className="spa-card overflow-hidden">
+    <article className="spa-card overflow-hidden">
       {/* Mobile Layout (stacked) */}
       <div className="lg:hidden">
         {/* Image - Mobile: 389px × 250px (1.556:1 ratio) */}
@@ -108,96 +87,13 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
             ))}
           </ul>
 
-          {/* Expanded Content - Mobile */}
-          {isExpanded && (
-            <div className="pt-4 border-t border-border animate-slide-down mb-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Thermal Facilities */}
-                <div>
-                  <h4 className="flex items-center gap-2 text-base font-semibold text-foreground mb-3">
-                    <Thermometer className="w-5 h-5 text-primary" />
-                    Thermal Suite Facilities
-                  </h4>
-                  <div className="space-y-2">
-                    {spa.thermalFacilities.map((facility, index) => (
-                      <div key={index} className="text-sm">
-                        <span className="text-foreground block">
-                          {facility.name}
-                        </span>
-                        <span className="text-muted-foreground">
-                          {facility.details}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Pool Features */}
-                <div>
-                  <h4 className="flex items-center gap-2 text-base font-semibold text-foreground mb-3">
-                    <Waves className="w-5 h-5 text-primary" />
-                    Pools & Water Features
-                  </h4>
-                  <div className="space-y-2">
-                    {spa.poolFeatures.map((pool, index) => (
-                      <div key={index} className="text-sm">
-                        <span className="font-medium text-foreground block">
-                          {pool.name}:
-                        </span>
-                        <span className="text-muted-foreground">
-                          {pool.details}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Access Policy */}
-                <div>
-                  <h4 className="flex items-center gap-2 text-base font-semibold text-foreground mb-3">
-                    <Shield className="w-5 h-5 text-primary" />
-                    Access Policy & Booking
-                  </h4>
-                  <ul className="space-y-2">
-                    {spa.accessPolicy.map((policy, index) => (
-                      <li
-                        key={index}
-                        className="flex items-start gap-2 text-sm text-foreground"
-                      >
-                        <span className="text-muted-foreground">•</span>
-                        <span>
-                          <span className="font-semibold">{policy.name}:</span>{' '}
-                          {policy.details}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Expand/Collapse Button */}
-          <button
-            onClick={onToggle}
+          {/* View Full Details Link */}
+          <Link
+            href={`/spa/${spa.url}`}
             className="card-expand-btn mt-4 flex items-center justify-center gap-2"
-            aria-expanded={isExpanded}
-            aria-label={
-              isExpanded
-                ? `Collapse details for ${spa.name}`
-                : `View full details for ${spa.name}`
-            }
           >
-            {isExpanded ? (
-              <>
-                Collapse Details <ChevronUp className="w-4 h-4" />
-              </>
-            ) : (
-              <>
-                View Full Details <ChevronDown className="w-4 h-4" />
-              </>
-            )}
-          </button>
+            View Full Details <ChevronRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
 
@@ -268,99 +164,16 @@ const SpaCard = ({ spa, isExpanded, onToggle }: SpaCardProps) => {
               </ul>
             </div>
 
-            {/* Expand/Collapse Button */}
-            <button
-              onClick={onToggle}
+            {/* View Full Details Link */}
+            <Link
+              href={`/spa/${spa.url}`}
               className="card-expand-btn mt-4 flex items-center justify-center gap-2 self-start"
-              aria-expanded={isExpanded}
-              aria-label={
-                isExpanded
-                  ? `Collapse details for ${spa.name}`
-                  : `View full details for ${spa.name}`
-              }
             >
-              {isExpanded ? (
-                <>
-                  Collapse Details <ChevronUp className="w-4 h-4" />
-                </>
-              ) : (
-                <>
-                  View Full Details <ChevronDown className="w-4 h-4" />
-                </>
-              )}
-            </button>
+              View Full Details <ChevronRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>
-
-      {/* Expanded Content - Desktop */}
-      {isExpanded && (
-        <div className="hidden lg:block p-6 pt-6 border-t border-border animate-slide-down">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Thermal Facilities */}
-            <div>
-              <h4 className="flex items-center gap-2 text-base font-semibold text-foreground mb-3">
-                <Thermometer className="w-5 h-5 text-primary" />
-                Thermal Suite Facilities
-              </h4>
-              <div className="space-y-2">
-                {spa.thermalFacilities.map((facility, index) => (
-                  <div key={index} className="text-sm">
-                    <span className="text-foreground block">
-                      {facility.name}
-                    </span>
-                    <span className="text-muted-foreground">
-                      {facility.details}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Pool Features */}
-            <div>
-              <h4 className="flex items-center gap-2 text-base font-semibold text-foreground mb-3">
-                <Waves className="w-5 h-5 text-primary" />
-                Pools & Water Features
-              </h4>
-              <div className="space-y-2">
-                {spa.poolFeatures.map((pool, index) => (
-                  <div key={index} className="text-sm">
-                    <span className="font-medium text-foreground block">
-                      {pool.name}:
-                    </span>
-                    <span className="text-muted-foreground">
-                      {pool.details}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Access Policy */}
-            <div>
-              <h4 className="flex items-center gap-2 text-base font-semibold text-foreground mb-3">
-                <Shield className="w-5 h-5 text-primary" />
-                Access Policy & Booking
-              </h4>
-              <ul className="space-y-2">
-                {spa.accessPolicy.map((policy, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-2 text-sm text-foreground"
-                  >
-                    <span className="text-muted-foreground">•</span>
-                    <span>
-                      <span className="font-semibold">{policy.name}:</span>{' '}
-                      {policy.details}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      )}
     </article>
   );
 };
