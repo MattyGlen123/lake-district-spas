@@ -8,6 +8,7 @@ import QuickFactsBar from '@/components/QuickFactsBar';
 import BackButton from '@/components/BackButton';
 import ThermalFacilities from '@/components/ThermalFacilities';
 import PoolFeatures from '@/components/PoolFeatures';
+import BookVisitCTA from '@/components/BookVisitCTA';
 import { Spa } from '@/types/spa';
 import { spaData } from '@/data/spas';
 
@@ -65,6 +66,8 @@ export default function SpaDetailPage({
           <ThermalFacilities spa={spa} />
           <PoolFeatures spa={spa} />
         </div>
+
+        <BookVisitCTA spa={spa} />
       </main>
 
       <Footer />
