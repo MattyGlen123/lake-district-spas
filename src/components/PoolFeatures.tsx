@@ -11,8 +11,8 @@ export default function PoolFeatures({ spa }: PoolFeaturesProps) {
   }
 
   return (
-    <section id="pools" className="mb-16">
-      <div className="flex items-center space-x-3 mb-6">
+    <section id="pools" className="mb-4">
+      <div className="flex items-center space-x-3 mb-4">
         <Waves className="h-7 w-7 text-blue-600" />
         <h2 className="text-3xl font-bold text-slate-900">
           Pools & Water Features

@@ -7,20 +7,19 @@ interface BookVisitCTAProps {
 
 export default function BookVisitCTA({ spa }: BookVisitCTAProps) {
   return (
-    <div className="container mx-auto px-4 md:px-8 mb-16">
+    <div className="container mx-auto px-4 md:px-8 m-12">
       <section
         id="book"
-        className="bg-slate-900 text-white rounded-3xl p-8 md:p-12 shadow-xl"
+        className="bg-slate-900 text-white rounded-3xl p-6 md:p-12 shadow-xl"
       >
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">
             Book Your {spa.name} Experience
           </h2>
-          <p className="text-slate-300 text-lg mb-8">
+          <p className="text-slate-300 text-lg text-left md:text-center mb-8">
             Ready to experience the {spa.name}? As a curated directory, we
             connect you directly with the hotel for official pricing and
-            real-time availability. We recommend booking in advance, especially
-            during peak seasons.
+            real-time availability.
           </p>
           <a
             href={spa.websiteUrl}
