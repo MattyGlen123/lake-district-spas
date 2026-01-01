@@ -22,7 +22,7 @@ export default function SpaHero({ spa }: SpaHeroProps) {
   });
 
   return (
-    <section className="container mx-auto px-4 mb-12 lg:px-8">
+    <section className="container mx-auto px-4 mb-4 md:mb-12 lg:px-8">
       <div className="relative rounded-2xl overflow-hidden aspect-[389/350] md:aspect-[389/250] lg:h-[500px] lg:w-full shadow-lg group">
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10" />

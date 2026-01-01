@@ -97,7 +97,7 @@ export default function SpaDetailPage({
         <SpaHero spa={spa} />
 
         {/* Quick Facts Bar */}
-        <section className="max-w-7xl mx-auto px-4 mb-16">
+        <section className="container mx-auto px-4 md:px-8 mb-16">
           <div
             className={`grid gap-4 ${
               spa.agePolicy
