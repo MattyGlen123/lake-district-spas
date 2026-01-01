@@ -25,7 +25,7 @@ export default function RelatedSpas({ spa }: RelatedSpasProps) {
         </h2>
         <Link
           href="/"
-          className="text-blue-600 font-semibold flex items-center hover:underline"
+          className="text-slate-900 font-semibold flex items-center hover:underline"
         >
           View All
           <ChevronRight className="h-4 w-4 ml-1" />
