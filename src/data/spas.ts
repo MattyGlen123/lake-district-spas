@@ -74,6 +74,137 @@ export const spaData: Spa[] = [
     relatedSpas: [5, 2],
   },
   {
+    id: 7,
+    url: 'low-wood-bay-spa',
+    name: 'Low Wood Bay Spa',
+    location: 'Windermere',
+    websiteUrl: 'https://englishlakes.co.uk/hotels/low-wood-bay/the-spa/',
+    accessLabels: ['paid-for-guests', 'day-passes-available'],
+    imageSrc: '/images/spas/lake-district-spas_low-wood-bay.webp',
+    imageAlt:
+      'Spectacular infinity-edge vitality pool at Low Wood Bay Resort and Spa on the shores of Lake Windermere, featuring panoramic Lake District mountain views, traditional Lakeland dry stone walling, wooden sun loungers, and outdoor relaxation areas perfect for spa days',
+    keyFeatures: [
+      'Indoor and outdoor thermal spaces',
+      'Outdoor infinity pool with lake views',
+      'Indoor thermal & vitality pool',
+      'Three saunas including infrared sauna',
+    ],
+    thermalFacilities: [
+      {
+        name: 'Dry Salt Sauna',
+        details: 'Indoor dry salt sauna with therapeutic benefits',
+      },
+      {
+        name: 'Infrared Sauna',
+        details: 'Infrared sauna for deep tissue relaxation',
+      },
+      {
+        name: 'Fellside Sauna',
+        details: 'Outdoor sauna with panoramic Lake District views',
+      },
+      { name: 'Coconut Steam Room', details: 'Coconut-infused steam room' },
+      { name: 'Herbal Lounge', details: 'Gentle herbal infusion lounge' },
+      {
+        name: 'Experience Showers',
+        details: 'Multi-sensory shower experiences (indoor and outdoor)',
+      },
+    ],
+    poolFeatures: [
+      {
+        name: 'Indoor Swimming Pool',
+        details: 'Indoor thermal & vitality pool with bubble spa features',
+      },
+      {
+        name: 'Outdoor Infinity Pools',
+        details:
+          'Two heated outdoor infinity pools with stunning Lake Windermere views',
+      },
+      {
+        name: 'Jacuzzi/Hot Tubs',
+        details:
+          'Multiple outdoor jacuzzis and hot tubs, perfect for star gazing',
+      },
+    ],
+    accessPolicy: [
+      'Hotel guests: Spa access NOT included unless booking spa break package',
+      'Hotel guests can book spa day or treatment separately with 25% discount Mon-Thu',
+      'Day passes: Available for public, various packages 10am-8pm',
+      'Age restriction: 16+ only (no children allowed)',
+      'Spa hours: Treatments 9:30am-7:30pm and Spa Days 10am-8pm',
+      'No slippers provided - bring flip flops or purchase on-site',
+      'Pregnancy restrictions: No thermal cabins, hot tubs or mud rooms',
+    ],
+    facilities: {
+      coldPlunge: false,
+      sauna: true,
+      steamRoom: true,
+      iceRoom: false,
+      hotTub: true,
+      indoorPool: true,
+      outdoorPool: true,
+      thermalSuite: true,
+      infraredSauna: true,
+    },
+    relatedSpas: [10, 15],
+  },
+  {
+    id: 14,
+    url: 'another-place-the-lake',
+    name: 'Another Place, The Lake',
+    location: 'Ullswater',
+    websiteUrl: 'https://another.place/the-lake/swim-club/',
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
+    imageSrc: '/images/spas/lake-district-spas_another-place.jpg',
+    imageAlt:
+      'Stunning infinity-edge pool at Another Place The Lake on the shores of Ullswater, featuring floor-to-ceiling glass walls with breathtaking Lake District mountain and valley views, modern minimalist design with exposed beams, and seamless indoor-outdoor spa experience in a luxury countryside retreat',
+    keyFeatures: [
+      '20m indoor pool with views of Ullswater lake',
+      'Outdoor Swedish hot tub overlooking the grounds',
+      'Sauna with lake views',
+    ],
+    thermalFacilities: [
+      {
+        name: 'Sauna',
+        details:
+          'Sauna overlooking the grounds with 20 minute session limit when busy, 16+ only',
+      },
+    ],
+    poolFeatures: [
+      {
+        name: 'Indoor Pool',
+        details:
+          '20m pool with floor-to-ceiling glass walls, skylight, ultra-violet filtered water (low chlorine), shallow area for children',
+      },
+      {
+        name: 'Outdoor Hot Tub',
+        details:
+          'Swedish-design heated outdoor hot tub overlooking grounds, 20 minute session limit when busy, 16+ only',
+      },
+    ],
+    accessPolicy: [
+      'Free access for Hotel guests',
+      'Day membership available',
+      'Pool hours: 7am-9pm daily',
+      'Adult-only swim times: 7am-9am and 6pm-9pm',
+      'Family swim times: 9am-6pm',
+      'Age restriction: Hot tub and sauna 16+ only',
+      'Treatments available',
+    ],
+    facilities: {
+      infraredSauna: false,
+      coldPlunge: false,
+      sauna: true,
+      steamRoom: false,
+      iceRoom: false,
+      hotTub: true,
+      indoorPool: true,
+      outdoorPool: false,
+      thermalSuite: false,
+    },
+    agePolicy: 'No age restriction',
+    relatedSpas: [2, 11],
+  },
+  {
     id: 2,
     url: 'armathwaite-hall-hotel-spa',
     name: 'Armathwaite Hall Hotel & Spa',
@@ -289,130 +420,6 @@ export const spaData: Spa[] = [
     relatedSpas: [9, 1],
   },
   {
-    id: 6,
-    url: 'macdonald-old-england-hotel-spa',
-    name: 'Macdonald Old England Hotel & Spa',
-    location: 'Bowness-on-Windermere',
-    websiteUrl: 'https://macdonaldhotels.co.uk/old-england/spa-leisure/spa',
-    accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_old-england-hotel.jpg',
-    imageAlt:
-      'Modern indoor swimming pool at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring deep blue mosaic tiling, contemporary black and white interior design, underwater lighting, and heated pool facilities in a luxurious Lake District spa setting',
-    keyFeatures: [
-      '20m indoor pool with Lake Windermere views',
-      'Thermal suite with sauna, steam and ice room',
-      'Ice Room and Experience Showers',
-    ],
-    thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
-      { name: 'Aroma Steam Room', details: 'Aromatherapy steam room' },
-      { name: 'Ice Room', details: 'Cool down experience' },
-      { name: 'Experience Showers', details: 'Aromatherapy shower' },
-    ],
-    poolFeatures: [
-      {
-        name: 'Indoor Pool',
-        details: '20m lakeside pool with Lake Windermere views',
-      },
-    ],
-    accessPolicy: [
-      'Hotel guests: Free access to pool and thermal suite',
-      'Spa day packages',
-      'Pool & gym hours: 7am-6:30pm',
-      'Children swim times: 10am-5pm',
-      'Age restriction: 18+ for thermal suite, children allowed in pool during designated times',
-      'Pre-booking: Required for spa day packages with treatments',
-    ],
-    facilities: {
-      infraredSauna: false,
-      coldPlunge: false,
-      sauna: true,
-      steamRoom: true,
-      iceRoom: true,
-      hotTub: false,
-      indoorPool: true,
-      outdoorPool: false,
-      thermalSuite: true,
-    },
-    agePolicy:
-      '18+ for thermal suite, children allowed in pool during designated times',
-    relatedSpas: [7, 10],
-  },
-  {
-    id: 7,
-    url: 'low-wood-bay-spa',
-    name: 'Low Wood Bay Spa',
-    location: 'Windermere',
-    websiteUrl: 'https://englishlakes.co.uk/hotels/low-wood-bay/the-spa/',
-    accessLabels: ['paid-for-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_low-wood-bay.webp',
-    imageAlt:
-      'Spectacular infinity-edge vitality pool at Low Wood Bay Resort and Spa on the shores of Lake Windermere, featuring panoramic Lake District mountain views, traditional Lakeland dry stone walling, wooden sun loungers, and outdoor relaxation areas perfect for spa days',
-    keyFeatures: [
-      'Indoor and outdoor thermal spaces',
-      'Outdoor infinity pool with lake views',
-      'Indoor thermal & vitality pool',
-      'Three saunas including infrared sauna',
-    ],
-    thermalFacilities: [
-      {
-        name: 'Dry Salt Sauna',
-        details: 'Indoor dry salt sauna with therapeutic benefits',
-      },
-      {
-        name: 'Infrared Sauna',
-        details: 'Infrared sauna for deep tissue relaxation',
-      },
-      {
-        name: 'Fellside Sauna',
-        details: 'Outdoor sauna with panoramic Lake District views',
-      },
-      { name: 'Coconut Steam Room', details: 'Coconut-infused steam room' },
-      { name: 'Herbal Lounge', details: 'Gentle herbal infusion lounge' },
-      {
-        name: 'Experience Showers',
-        details: 'Multi-sensory shower experiences (indoor and outdoor)',
-      },
-    ],
-    poolFeatures: [
-      {
-        name: 'Indoor Swimming Pool',
-        details: 'Indoor thermal & vitality pool with bubble spa features',
-      },
-      {
-        name: 'Outdoor Infinity Pools',
-        details:
-          'Two heated outdoor infinity pools with stunning Lake Windermere views',
-      },
-      {
-        name: 'Jacuzzi/Hot Tubs',
-        details:
-          'Multiple outdoor jacuzzis and hot tubs, perfect for star gazing',
-      },
-    ],
-    accessPolicy: [
-      'Hotel guests: Spa access NOT included unless booking spa break package',
-      'Hotel guests can book spa day or treatment separately with 25% discount Mon-Thu',
-      'Day passes: Available for public, various packages 10am-8pm',
-      'Age restriction: 16+ only (no children allowed)',
-      'Spa hours: Treatments 9:30am-7:30pm and Spa Days 10am-8pm',
-      'No slippers provided - bring flip flops or purchase on-site',
-      'Pregnancy restrictions: No thermal cabins, hot tubs or mud rooms',
-    ],
-    facilities: {
-      coldPlunge: false,
-      sauna: true,
-      steamRoom: true,
-      iceRoom: false,
-      hotTub: true,
-      indoorPool: true,
-      outdoorPool: true,
-      thermalSuite: true,
-      infraredSauna: true,
-    },
-    relatedSpas: [10, 15],
-  },
-  {
     id: 8,
     url: 'ambleside-salutation-hotel-spa',
     name: 'Ambleside Salutation Hotel & Spa',
@@ -525,58 +532,6 @@ export const spaData: Spa[] = [
     relatedSpas: [5, 13],
   },
   {
-    id: 10,
-    url: 'beech-hill-hotel-spa',
-    name: 'Beech Hill Hotel & Spa',
-    location: 'Windermere',
-    websiteUrl: 'https://beechhillhotel.co.uk/spa',
-    accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_beech-hill-hotel.jpg',
-    imageAlt:
-      'Botanical-inspired indoor pool at Beech Hill Hotel and Spa near Windermere, featuring natural woven pendant lights, cascading artificial greenery from ceiling, dark slate mosaic walls, turquoise heated pool, and contemporary nature-themed wellness design in the Lake District',
-    keyFeatures: [
-      '35ft indoor pool',
-      'Himalayan sauna',
-      'Spa terrace with outdoor vitality pools',
-    ],
-    thermalFacilities: [
-      { name: 'Himalayan Sauna', details: 'Himalayan sauna' },
-      { name: 'Aromatic Steam Room', details: 'Aromatic steam room' },
-    ],
-    poolFeatures: [
-      {
-        name: 'Indoor Pool',
-        details:
-          '35ft indoor pool with atmospheric lighting and Lake Windermere views',
-      },
-      {
-        name: 'Outdoor Vitality Spa Pools',
-        details: '2 outdoor vitality spa pools on spa terrace with lake views',
-      },
-    ],
-    accessPolicy: [
-      'Hotel guests: Complimentary spa access included',
-      'Spa access from Thu-Sun 9:30am-4pm, Fri-Sat 9:30am-6pm',
-      'Spa access included with all treatments',
-      'Pre-booking: Required',
-      'Age restriction: 16+ only for spa',
-      'Children allowed in pool 10am-1pm only',
-      'Maximum group size: 6 people',
-    ],
-    facilities: {
-      infraredSauna: false,
-      coldPlunge: false,
-      sauna: true,
-      steamRoom: true,
-      iceRoom: false,
-      hotTub: true,
-      indoorPool: true,
-      outdoorPool: true,
-      thermalSuite: true,
-    },
-    relatedSpas: [7, 6],
-  },
-  {
     id: 11,
     url: 'rothay-garden-by-harbour-hotels',
     name: 'Rothay Garden by Harbour Hotels',
@@ -628,162 +583,6 @@ export const spaData: Spa[] = [
     },
     agePolicy: 'Children welcome during designated times only',
     relatedSpas: [4, 12],
-  },
-  {
-    id: 12,
-    url: 'north-lakes-hotel-spa',
-    name: 'North Lakes Hotel & Spa',
-    location: 'Penrith',
-    websiteUrl: 'https://northlakeshotel.com/spa-treatments',
-    accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_north-lakes-hotel.jpg',
-    imageAlt:
-      'Tranquil thermal relaxation suite at North Lakes Hotel and Spa in Penrith, featuring heated ceramic loungers with plush robes, ambient mood lighting, Lake District landscape artwork, Japanese-inspired sliding screens, and peaceful spa environment for complete relaxation',
-    keyFeatures: [
-      '13m indoor pool',
-      'Separate male and female saunas',
-      'Thermal relaxation suite with heated loungers',
-    ],
-    thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Separate male and female saunas' },
-      { name: 'Steam Room', details: 'Steam room' },
-    ],
-    poolFeatures: [
-      { name: 'Indoor Pool', details: '13m pool' },
-      { name: 'Hot Tub', details: 'Whirlpool hot tub' },
-    ],
-    accessPolicy: [
-      'Hotel guests: Free spa access included',
-      'Day passes and memberships available',
-      'Age restriction: Children welcome during designated times only',
-      'Spa hours: Mon-Fri 6am-9:30pm, Sat-Sun 7am-8pm',
-      'Robes and slippers provided',
-    ],
-    facilities: {
-      infraredSauna: false,
-      coldPlunge: false,
-      sauna: true,
-      steamRoom: true,
-      iceRoom: false,
-      hotTub: true,
-      indoorPool: true,
-      outdoorPool: false,
-      thermalSuite: true,
-    },
-    agePolicy: '16+ only for spa, children allowed in pool 10am-1pm only',
-    relatedSpas: [2, 9],
-  },
-  {
-    id: 13,
-    url: 'whitewater-hotel-leisure-club',
-    name: 'Whitewater Hotel & Leisure Club',
-    location: 'Backbarrow',
-    websiteUrl: 'https://whitewater-hotel.co.uk/spa-fitness/',
-    accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_whitewater-hotel.jpg',
-    imageAlt:
-      'Expansive leisure pool at Whitewater Hotel Country Club near Newby Bridge, featuring multi-level design with mosaic-tiled stepping stones, burgundy and cream decorative columns, spacious swimming area, and grand architectural poolside complex in the Lake District',
-    keyFeatures: [
-      'Outdoor jacuzzi overlooking River Leven',
-      'Turkish Hamam aromatherapy steam room',
-      'Indoor heated swimming pool',
-    ],
-    thermalFacilities: [
-      { name: 'Sauna', details: 'Traditional sauna' },
-      {
-        name: 'Turkish Hamam Steam Room',
-        details: 'Aromatherapy Turkish Hamam steam room',
-      },
-      { name: 'Feature Shower', details: 'Multi-sensory feature shower' },
-      {
-        name: 'Rasul Mud Temple (additional cost)',
-        details:
-          'Arabian steam room with multiple mud applications for deep cleansing',
-      },
-    ],
-    poolFeatures: [
-      { name: 'Indoor Pool', details: 'Heated indoor swimming pool' },
-      {
-        name: 'Outdoor Jacuzzi',
-        details: 'Outdoor hot tub overlooking River Leven with scenic views',
-      },
-    ],
-    accessPolicy: [
-      'Hotel guests: Free spa access included, 10% discount on treatments',
-      'Day passes: Not available to public',
-      'Pre-booking: Required for spa treatments',
-      'No age restriction',
-      'Robes and towels: Provided',
-    ],
-    facilities: {
-      infraredSauna: false,
-      coldPlunge: false,
-      sauna: true,
-      steamRoom: true,
-      iceRoom: false,
-      hotTub: true,
-      indoorPool: true,
-      outdoorPool: false,
-      thermalSuite: true,
-    },
-    relatedSpas: [9, 3],
-  },
-  {
-    id: 14,
-    url: 'another-place-the-lake',
-    name: 'Another Place, The Lake',
-    location: 'Ullswater',
-    websiteUrl: 'https://another.place/the-lake/swim-club/',
-    accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_another-place.jpg',
-    imageAlt:
-      'Stunning infinity-edge pool at Another Place The Lake on the shores of Ullswater, featuring floor-to-ceiling glass walls with breathtaking Lake District mountain and valley views, modern minimalist design with exposed beams, and seamless indoor-outdoor spa experience in a luxury countryside retreat',
-    keyFeatures: [
-      '20m indoor pool with views of Ullswater lake',
-      'Outdoor Swedish hot tub overlooking the grounds',
-      'Sauna with lake views',
-    ],
-    thermalFacilities: [
-      {
-        name: 'Sauna',
-        details:
-          'Sauna overlooking the grounds with 20 minute session limit when busy, 16+ only',
-      },
-    ],
-    poolFeatures: [
-      {
-        name: 'Indoor Pool',
-        details:
-          '20m pool with floor-to-ceiling glass walls, skylight, ultra-violet filtered water (low chlorine), shallow area for children',
-      },
-      {
-        name: 'Outdoor Hot Tub',
-        details:
-          'Swedish-design heated outdoor hot tub overlooking grounds, 20 minute session limit when busy, 16+ only',
-      },
-    ],
-    accessPolicy: [
-      'Free access for Hotel guests',
-      'Day membership available',
-      'Pool hours: 7am-9pm daily',
-      'Adult-only swim times: 7am-9am and 6pm-9pm',
-      'Family swim times: 9am-6pm',
-      'Age restriction: Hot tub and sauna 16+ only',
-      'Treatments available',
-    ],
-    facilities: {
-      infraredSauna: false,
-      coldPlunge: false,
-      sauna: true,
-      steamRoom: false,
-      iceRoom: false,
-      hotTub: true,
-      indoorPool: true,
-      outdoorPool: false,
-      thermalSuite: false,
-    },
-    agePolicy: 'No age restriction',
-    relatedSpas: [2, 11],
   },
   {
     id: 15,
@@ -842,6 +641,50 @@ export const spaData: Spa[] = [
     },
     agePolicy: undefined,
     relatedSpas: [7, 16],
+  },
+  {
+    id: 12,
+    url: 'north-lakes-hotel-spa',
+    name: 'North Lakes Hotel & Spa',
+    location: 'Penrith',
+    websiteUrl: 'https://northlakeshotel.com/spa-treatments',
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
+    imageSrc: '/images/spas/lake-district-spas_north-lakes-hotel.jpg',
+    imageAlt:
+      'Tranquil thermal relaxation suite at North Lakes Hotel and Spa in Penrith, featuring heated ceramic loungers with plush robes, ambient mood lighting, Lake District landscape artwork, Japanese-inspired sliding screens, and peaceful spa environment for complete relaxation',
+    keyFeatures: [
+      '13m indoor pool',
+      'Separate male and female saunas',
+      'Thermal relaxation suite with heated loungers',
+    ],
+    thermalFacilities: [
+      { name: 'Finnish Sauna', details: 'Separate male and female saunas' },
+      { name: 'Steam Room', details: 'Steam room' },
+    ],
+    poolFeatures: [
+      { name: 'Indoor Pool', details: '13m pool' },
+      { name: 'Hot Tub', details: 'Whirlpool hot tub' },
+    ],
+    accessPolicy: [
+      'Hotel guests: Free spa access included',
+      'Day passes and memberships available',
+      'Age restriction: Children welcome during designated times only',
+      'Spa hours: Mon-Fri 6am-9:30pm, Sat-Sun 7am-8pm',
+      'Robes and slippers provided',
+    ],
+    facilities: {
+      infraredSauna: false,
+      coldPlunge: false,
+      sauna: true,
+      steamRoom: true,
+      iceRoom: false,
+      hotTub: true,
+      indoorPool: true,
+      outdoorPool: false,
+      thermalSuite: true,
+    },
+    agePolicy: '16+ only for spa, children allowed in pool 10am-1pm only',
+    relatedSpas: [2, 9],
   },
   {
     id: 16,
@@ -905,6 +748,108 @@ export const spaData: Spa[] = [
     relatedSpas: [17, 15],
   },
   {
+    id: 10,
+    url: 'beech-hill-hotel-spa',
+    name: 'Beech Hill Hotel & Spa',
+    location: 'Windermere',
+    websiteUrl: 'https://beechhillhotel.co.uk/spa',
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
+    imageSrc: '/images/spas/lake-district-spas_beech-hill-hotel.jpg',
+    imageAlt:
+      'Botanical-inspired indoor pool at Beech Hill Hotel and Spa near Windermere, featuring natural woven pendant lights, cascading artificial greenery from ceiling, dark slate mosaic walls, turquoise heated pool, and contemporary nature-themed wellness design in the Lake District',
+    keyFeatures: [
+      '35ft indoor pool',
+      'Himalayan sauna',
+      'Spa terrace with outdoor vitality pools',
+    ],
+    thermalFacilities: [
+      { name: 'Himalayan Sauna', details: 'Himalayan sauna' },
+      { name: 'Aromatic Steam Room', details: 'Aromatic steam room' },
+    ],
+    poolFeatures: [
+      {
+        name: 'Indoor Pool',
+        details:
+          '35ft indoor pool with atmospheric lighting and Lake Windermere views',
+      },
+      {
+        name: 'Outdoor Vitality Spa Pools',
+        details: '2 outdoor vitality spa pools on spa terrace with lake views',
+      },
+    ],
+    accessPolicy: [
+      'Hotel guests: Complimentary spa access included',
+      'Spa access from Thu-Sun 9:30am-4pm, Fri-Sat 9:30am-6pm',
+      'Spa access included with all treatments',
+      'Pre-booking: Required',
+      'Age restriction: 16+ only for spa',
+      'Children allowed in pool 10am-1pm only',
+      'Maximum group size: 6 people',
+    ],
+    facilities: {
+      infraredSauna: false,
+      coldPlunge: false,
+      sauna: true,
+      steamRoom: true,
+      iceRoom: false,
+      hotTub: true,
+      indoorPool: true,
+      outdoorPool: true,
+      thermalSuite: true,
+    },
+    relatedSpas: [7, 6],
+  },
+  {
+    id: 6,
+    url: 'macdonald-old-england-hotel-spa',
+    name: 'Macdonald Old England Hotel & Spa',
+    location: 'Bowness-on-Windermere',
+    websiteUrl: 'https://macdonaldhotels.co.uk/old-england/spa-leisure/spa',
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
+    imageSrc: '/images/spas/lake-district-spas_old-england-hotel.jpg',
+    imageAlt:
+      'Modern indoor swimming pool at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring deep blue mosaic tiling, contemporary black and white interior design, underwater lighting, and heated pool facilities in a luxurious Lake District spa setting',
+    keyFeatures: [
+      '20m indoor pool with Lake Windermere views',
+      'Thermal suite with sauna, steam and ice room',
+      'Ice Room and Experience Showers',
+    ],
+    thermalFacilities: [
+      { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
+      { name: 'Aroma Steam Room', details: 'Aromatherapy steam room' },
+      { name: 'Ice Room', details: 'Cool down experience' },
+      { name: 'Experience Showers', details: 'Aromatherapy shower' },
+    ],
+    poolFeatures: [
+      {
+        name: 'Indoor Pool',
+        details: '20m lakeside pool with Lake Windermere views',
+      },
+    ],
+    accessPolicy: [
+      'Hotel guests: Free access to pool and thermal suite',
+      'Spa day packages',
+      'Pool & gym hours: 7am-6:30pm',
+      'Children swim times: 10am-5pm',
+      'Age restriction: 18+ for thermal suite, children allowed in pool during designated times',
+      'Pre-booking: Required for spa day packages with treatments',
+    ],
+    facilities: {
+      infraredSauna: false,
+      coldPlunge: false,
+      sauna: true,
+      steamRoom: true,
+      iceRoom: true,
+      hotTub: false,
+      indoorPool: true,
+      outdoorPool: false,
+      thermalSuite: true,
+    },
+    agePolicy:
+      '18+ for thermal suite, children allowed in pool during designated times',
+    relatedSpas: [7, 10],
+  },
+  {
     id: 17,
     url: 'grange-hotel',
     name: 'Grange Hotel',
@@ -941,6 +886,61 @@ export const spaData: Spa[] = [
     },
     agePolicy: undefined,
     relatedSpas: [16, 5],
+  },
+  {
+    id: 13,
+    url: 'whitewater-hotel-leisure-club',
+    name: 'Whitewater Hotel & Leisure Club',
+    location: 'Backbarrow',
+    websiteUrl: 'https://whitewater-hotel.co.uk/spa-fitness/',
+    accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
+    imageSrc: '/images/spas/lake-district-spas_whitewater-hotel.jpg',
+    imageAlt:
+      'Expansive leisure pool at Whitewater Hotel Country Club near Newby Bridge, featuring multi-level design with mosaic-tiled stepping stones, burgundy and cream decorative columns, spacious swimming area, and grand architectural poolside complex in the Lake District',
+    keyFeatures: [
+      'Outdoor jacuzzi overlooking River Leven',
+      'Turkish Hamam aromatherapy steam room',
+      'Indoor heated swimming pool',
+    ],
+    thermalFacilities: [
+      { name: 'Sauna', details: 'Traditional sauna' },
+      {
+        name: 'Turkish Hamam Steam Room',
+        details: 'Aromatherapy Turkish Hamam steam room',
+      },
+      { name: 'Feature Shower', details: 'Multi-sensory feature shower' },
+      {
+        name: 'Rasul Mud Temple (additional cost)',
+        details:
+          'Arabian steam room with multiple mud applications for deep cleansing',
+      },
+    ],
+    poolFeatures: [
+      { name: 'Indoor Pool', details: 'Heated indoor swimming pool' },
+      {
+        name: 'Outdoor Jacuzzi',
+        details: 'Outdoor hot tub overlooking River Leven with scenic views',
+      },
+    ],
+    accessPolicy: [
+      'Hotel guests: Free spa access included, 10% discount on treatments',
+      'Day passes: Not available to public',
+      'Pre-booking: Required for spa treatments',
+      'No age restriction',
+      'Robes and towels: Provided',
+    ],
+    facilities: {
+      infraredSauna: false,
+      coldPlunge: false,
+      sauna: true,
+      steamRoom: true,
+      iceRoom: false,
+      hotTub: true,
+      indoorPool: true,
+      outdoorPool: false,
+      thermalSuite: true,
+    },
+    relatedSpas: [9, 3],
   },
 ];
 
