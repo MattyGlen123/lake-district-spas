@@ -10,6 +10,7 @@ import ThermalFacilities from '@/components/ThermalFacilities';
 import PoolFeatures from '@/components/PoolFeatures';
 import BookVisitCTA from '@/components/BookVisitCTA';
 import SpaNavigation from '@/components/SpaNavigation';
+import RelatedSpas from '@/components/RelatedSpas';
 import { Spa } from '@/types/spa';
 import { spaData } from '@/data/spas';
 
@@ -70,6 +71,7 @@ export default function SpaDetailPage({
 
         <BookVisitCTA spa={spa} />
         <SpaNavigation currentSpa={spa} />
+        <RelatedSpas spa={spa} />
       </main>
 
       <Footer />
