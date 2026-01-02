@@ -23,30 +23,6 @@ export default function Home() {
     facilities: [] as string[],
   });
 
-  const handleAccessLabelChange = (label: AccessLabel) => {
-    setSelectedAccessLabels((prev) =>
-      prev.includes(label) ? prev.filter((l) => l !== label) : [...prev, label]
-    );
-  };
-
-  const handleLocationChange = (location: string) => {
-    setSelectedLocation(location);
-  };
-
-  const handleFacilityChange = (facility: string) => {
-    setSelectedFacilities((prev) =>
-      prev.includes(facility)
-        ? prev.filter((f) => f !== facility)
-        : [...prev, facility]
-    );
-  };
-
-  const handleClearFilters = () => {
-    setSelectedAccessLabels([]);
-    setSelectedLocation('All Locations');
-    setSelectedFacilities([]);
-  };
-
   // Modal handlers
   const handleOpenModal = () => {
     // Copy current filters to temp state when opening

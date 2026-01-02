@@ -1,5 +1,5 @@
 import { spaData, locations, facilityOptions } from '@/data/spas';
-import { Spa, AccessLabel, accessLabelConfig } from '@/types/spa';
+import { AccessLabel, accessLabelConfig } from '@/types/spa';
 
 describe('Spa Data Validation', () => {
   describe('Data Structure', () => {

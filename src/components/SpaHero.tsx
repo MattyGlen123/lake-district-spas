@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { MapPin } from 'lucide-react';
 import { Spa, accessLabelConfig } from '@/types/spa';
 
 interface SpaHeroProps {
