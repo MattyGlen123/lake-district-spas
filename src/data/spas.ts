@@ -6,6 +6,8 @@ export const spaData: Spa[] = [
     url: 'lodore-falls-spa',
     name: 'Lodore Falls Hotel Spa',
     location: 'Borrowdale',
+    metaDescription:
+      'Luxury spa in Borrowdale with infinity-edge outdoor pool overlooking the fells. Three thermal pools and steam room. Perfect for romantic couples.',
     websiteUrl: 'https://lakedistrictspa.co.uk',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_lodore-falls-spa.jpg',
@@ -94,6 +96,8 @@ export const spaData: Spa[] = [
     url: 'low-wood-bay-spa',
     name: 'Low Wood Bay Spa',
     location: 'Windermere',
+    metaDescription:
+      "Windermere's premium spa with two outdoor infinity pools and stunning lake views. Three saunas including infrared cabin. Perfect for luxurious girls' getaways.",
     websiteUrl: 'https://englishlakes.co.uk/hotels/low-wood-bay/the-spa/',
     accessLabels: ['paid-for-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_low-wood-bay.webp',
@@ -198,6 +202,8 @@ export const spaData: Spa[] = [
     url: 'another-place-the-lake',
     name: 'Another Place, The Lake',
     location: 'Ullswater',
+    metaDescription:
+      'Family-friendly Ullswater spa featuring 20m pool with panoramic lake views. Open-air hot tub and thermal experiences.',
     websiteUrl: 'https://another.place/the-lake/swim-club/',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_another-place.jpg',
@@ -283,6 +289,8 @@ export const spaData: Spa[] = [
     url: 'armathwaite-hall-hotel-spa',
     name: 'Armathwaite Hall Hotel & Spa',
     location: 'Bassenthwaite',
+    metaDescription:
+      'Luxury Bassenthwaite spa with multiple outdoor infinity pools and fell views. Sauna, steam room, and lakeside relaxation. Ideal for couples.',
     websiteUrl: 'https://armathwaite-hall.com/spa',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_armathwaite-hall.jpg',
@@ -348,6 +356,8 @@ export const spaData: Spa[] = [
     url: 'brimstone-hotel-spa',
     name: 'Brimstone Spa',
     location: 'Great Langdale',
+    metaDescription:
+      "Great Langdale's tranquil spa features unique swim-through indoor/outdoor pool. Mountain views and thermal suite. Ideal for couples and girls' weekends.",
     websiteUrl: 'https://brimstonehotel.co.uk/rooms/spa-break/',
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_brimstone-hotel.jpg',
@@ -415,6 +425,8 @@ export const spaData: Spa[] = [
     url: 'daffodil-hotel-spa',
     name: 'Daffodil Hotel Spa',
     location: 'Grasmere',
+    metaDescription:
+      "Grasmere's contemporary spa with thermal facilities in the village heart. Modern wellness and mountain views. Perfect for village-based escapes.",
     websiteUrl:
       'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa/',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
@@ -487,6 +499,8 @@ export const spaData: Spa[] = [
     url: 'swan-hotel-spa',
     name: 'Swan Hotel Spa',
     location: 'Newby Bridge',
+    metaDescription:
+      'Newby Bridge spa with outdoor Finnish sauna and cold plunge pool overlooking the River Leven. Traditional wellness experiences. Perfect for rejuvenating spa breaks.',
     websiteUrl: 'https://swanhotel.com/spa/',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_swan-hotel.webp',
@@ -581,6 +595,8 @@ export const spaData: Spa[] = [
     url: 'ambleside-salutation-hotel-spa',
     name: 'Ambleside Salutation Hotel & Spa',
     location: 'Ambleside',
+    metaDescription:
+      "Central Ambleside spa featuring infrared sauna and outdoor hydrotherapy fountain. Intimate wellness facilities, ideal for couples' retreats.",
     websiteUrl: 'https://www.hotelslakedistrict.com/waterfall-spa/',
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_salutation-hotel.jpg',
@@ -666,6 +682,8 @@ export const spaData: Spa[] = [
     url: 'lakeside-hotel-spa',
     name: 'Lakeside Hotel & Spa',
     location: 'Newby Bridge',
+    metaDescription:
+      'Romantic Newby Bridge spa with 17m pool overlooking Lake Windermere. Outdoor spa garden with fire pit. Your lakeside wellness escape for a weekend.',
     websiteUrl: 'https://lakesidehotel.co.uk/spa',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_lakeside-hotel.webp',
@@ -736,6 +754,8 @@ export const spaData: Spa[] = [
     url: 'rothay-garden-by-harbour-hotels',
     name: 'Rothay Garden by Harbour Hotels',
     location: 'Grasmere',
+    metaDescription:
+      "Grasmere's riverside spa featuring hydrotherapy pool with fell views. Infrared heated loungers and peaceful setting. Ideal for wellness-focused groups.",
     websiteUrl:
       'https://www.harbourhotels.co.uk/our-hotels/lake-district/rothay-garden-by-harbour-hotels/riverside-spa',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
@@ -809,6 +829,8 @@ export const spaData: Spa[] = [
     url: 'appleby-manor-hotel-garden-spa',
     name: 'Appleby Manor Hotel & Garden Spa',
     location: 'Appleby-in-Westmorland',
+    metaDescription:
+      "Appleby Manor's outdoor spa garden with hot tubs, fire pit, and scenic grounds. Traditional spa facilities. Perfect for groups and special celebrations.",
     websiteUrl: 'https://applebymanor.co.uk/garden-spa',
     accessLabels: ['paid-for-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_appleby-manor.jpg',
@@ -883,6 +905,8 @@ export const spaData: Spa[] = [
     url: 'north-lakes-hotel-spa',
     name: 'North Lakes Hotel & Spa',
     location: 'Penrith',
+    metaDescription:
+      "Penrith's family-friendly spa with dedicated family sessions and thermal facilities. Indoor pool and wellness amenities. Perfect for a group of friends.",
     websiteUrl: 'https://northlakeshotel.com/spa-treatments',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_north-lakes-hotel.jpg',
@@ -948,6 +972,8 @@ export const spaData: Spa[] = [
     url: 'netherwood-hotel-spa',
     name: 'Netherwood Hotel & Spa',
     location: 'Grange-over-Sands',
+    metaDescription:
+      'Grange-over-Sands spa with unique plunge tub experience (hot, warm, cold) and salt inhalation room. Therapeutic wellness facilities. Ideal for friends seeking relaxation.',
     websiteUrl: 'https://netherwood-hotel.co.uk/spa-fitness',
     accessLabels: ['paid-for-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_netherwood-hotel.webp',
@@ -1034,6 +1060,8 @@ export const spaData: Spa[] = [
     url: 'beech-hill-hotel-spa',
     name: 'Beech Hill Hotel & Spa',
     location: 'Windermere',
+    metaDescription:
+      'Windermere spa featuring two outdoor vitality pools on lakeside terrace. Panoramic lake views and thermal facilities. Perfect for romantic lakeside getaways.',
     websiteUrl: 'https://beechhillhotel.co.uk/spa',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_beech-hill-hotel.jpg',
@@ -1116,6 +1144,8 @@ export const spaData: Spa[] = [
     url: 'macdonald-old-england-hotel-spa',
     name: 'Macdonald Old England Hotel & Spa',
     location: 'Bowness-on-Windermere',
+    metaDescription:
+      "Historic Bowness spa overlooking Lake Windermere with traditional thermal facilities. Classic elegance in a prime location. Ideal for a day's relaxation by the lake.",
     websiteUrl: 'https://macdonaldhotels.co.uk/old-england/spa-leisure/spa',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_old-england-hotel.jpg',
@@ -1191,6 +1221,8 @@ export const spaData: Spa[] = [
     url: 'grange-hotel',
     name: 'Grange Hotel',
     location: 'Grange-over-Sands',
+    metaDescription:
+      'Elegant Grange-over-Sands spa with thermal pool and traditional wellness facilities. Edwardian grandeur meets modern relaxation. Ideal for refined spa breaks.',
     websiteUrl: 'https://grange-hotel.co.uk/the-spa/',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_grange-hotel.jpg',
@@ -1242,6 +1274,8 @@ export const spaData: Spa[] = [
     url: 'whitewater-hotel-leisure-club',
     name: 'Whitewater Hotel & Leisure Club',
     location: 'Backbarrow',
+    metaDescription:
+      "Backbarrow's riverside spa with outdoor jacuzzi overlooking River Leven. Peaceful natural setting and intimate wellness. Ideal for secluded couples' retreats.",
     websiteUrl: 'https://whitewater-hotel.co.uk/spa-fitness/',
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_whitewater-hotel.jpg',

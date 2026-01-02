@@ -39,7 +39,9 @@ export async function generateMetadata({
 
   return {
     title: `${spa.name} - Lake District Spas`,
-    description: `Discover ${spa.name} in ${spa.location}. Compare spa facilities, access policies, and find your perfect wellness retreat.`,
+    description:
+      spa.metaDescription ??
+      `Discover ${spa.name} in ${spa.location}. Compare spa facilities, access policies, and find your perfect wellness retreat.`,
   };
 }
 
