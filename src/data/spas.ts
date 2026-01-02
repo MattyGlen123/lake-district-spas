@@ -12,7 +12,7 @@ export const spaData: Spa[] = [
     imageAlt:
       'Luxurious 16-metre outdoor hydrotherapy pool at The Falls Spa at Lodore Falls Hotel in Borrowdale, featuring heated water with neck jets and underwater bubble loungers, surrounded by white sun loungers on slate decking with dramatic Lake District mountain views at sunset, spa access included with suite bookings',
     keyFeatures: [
-      '16m infinity-edge outdoor hydrotherapy pool',
+      'Infinity-edge outdoor hydrotherapy pool',
       'Finnish and herbal saunas',
       'Salt and aroma steam rooms',
       'Ice fountain and cold drench bucket',
@@ -203,7 +203,7 @@ export const spaData: Spa[] = [
     imageAlt:
       'Stunning infinity-edge pool at Another Place The Lake on the shores of Ullswater, featuring floor-to-ceiling glass walls with breathtaking Lake District mountain and valley views, modern minimalist design with exposed beams, and seamless indoor-outdoor spa experience in a luxury countryside retreat',
     keyFeatures: [
-      '20m indoor pool with views of Ullswater lake',
+      'Indoor pool with views of Ullswater lake',
       'Outdoor Swedish hot tub overlooking the grounds',
       'Sauna with lake views',
     ],
@@ -583,7 +583,7 @@ export const spaData: Spa[] = [
     imageAlt:
       'Elegant indoor pool at The Salutation Hotel and Spa in Ambleside featuring starlit fibre optic ceiling, suspended designer pod chairs, modern grey loungers, and sophisticated neutral colour palette creating a tranquil spa experience in the heart of the Lake District',
     keyFeatures: [
-      '13m indoor pool with starlit ceiling',
+      'Indoor pool with starlit ceiling',
       'Outdoor hydrotherapy fountain spa',
       'Infrared sauna and steam room',
     ],

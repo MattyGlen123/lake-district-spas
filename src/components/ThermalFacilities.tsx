@@ -18,13 +18,13 @@ export default function ThermalFacilities({ spa }: ThermalFacilitiesProps) {
           Thermal Facilities
         </h2>
       </div>
-      <p className="text-lg text-slate-600 leading-relaxed mb-8">
+      {/* <p className="text-lg text-slate-600 leading-relaxed mb-8">
         Experience {spa.name}'s comprehensive thermal suite featuring a range of
         heat therapy experiences designed to promote relaxation, improve
         circulation, and enhance your overall wellness journey. From traditional
         saunas to modern steam rooms, each facility offers unique therapeutic
         benefits to help you unwind and rejuvenate.
-      </p>
+      </p> */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {spa.thermalFacilities.map((facility: ThermalFacility, idx: number) => (
           <div

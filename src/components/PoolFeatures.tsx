@@ -18,13 +18,13 @@ export default function PoolFeatures({ spa }: PoolFeaturesProps) {
           Pools & Water Features
         </h2>
       </div>
-      <p className="text-lg text-slate-600 leading-relaxed mb-8">
+      {/* <p className="text-lg text-slate-600 leading-relaxed mb-8">
         The water facilities at {spa.name} offer a serene aquatic experience
         designed to promote relaxation, improve circulation, and provide
         therapeutic benefits. From invigorating hydrotherapy pools to tranquil
         swimming areas, each water feature is thoughtfully designed to enhance
         your wellness journey and provide moments of pure tranquility.
-      </p>
+      </p> */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {spa.poolFeatures.map((pool: PoolFeature, idx: number) => (
           <div
