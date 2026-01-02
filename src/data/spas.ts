@@ -190,6 +190,7 @@ export const spaData: Spa[] = [
       thermalSuite: true,
       infraredSauna: true,
     },
+    agePolicy: '16+ only',
     relatedSpas: [10, 15],
   },
   {
@@ -322,7 +323,8 @@ export const spaData: Spa[] = [
       },
       {
         name: 'Age Restriction',
-        details: 'Adults only',
+        details:
+          '18+ to book spa experiences. Under 16s can use facilities only Monday-Sunday 8:30am-9:30am with adult supervision',
         accessType: 'age-restriction',
       },
     ],
@@ -337,6 +339,8 @@ export const spaData: Spa[] = [
       outdoorPool: true,
       thermalSuite: true,
     },
+    agePolicy:
+      '18+ to book spa experiences. Under 16s can use facilities only Monday-Sunday 8:30am-9:30am with adult supervision',
     relatedSpas: [6, 9],
   },
   {
@@ -628,7 +632,13 @@ export const spaData: Spa[] = [
       },
       {
         name: 'Age Restriction',
-        details: 'Adults only',
+        details:
+          "Under 16 not permitted in pool area unless they're hotel guests",
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Treatments Age',
+        details: 'Treatments available from age 12+',
         accessType: 'age-restriction',
       },
       {
@@ -648,6 +658,7 @@ export const spaData: Spa[] = [
       outdoorPool: true,
       thermalSuite: true,
     },
+    agePolicy: "Under 16 not permitted pool area unless they're hotel guests.",
     relatedSpas: [3, 13],
   },
   {
@@ -864,7 +875,7 @@ export const spaData: Spa[] = [
       outdoorPool: false,
       thermalSuite: true,
     },
-    agePolicy: undefined,
+    agePolicy: '16+ (treatments may require 18+)',
     relatedSpas: [7, 16],
   },
   {
@@ -998,6 +1009,11 @@ export const spaData: Spa[] = [
         details: 'Robes, towels and slippers included',
         accessType: 'general',
       },
+      {
+        name: 'Age Restriction',
+        details: 'Adults only',
+        accessType: 'age-restriction',
+      },
     ],
     facilities: {
       infraredSauna: false,
@@ -1010,7 +1026,7 @@ export const spaData: Spa[] = [
       outdoorPool: false,
       thermalSuite: true,
     },
-    agePolicy: undefined,
+    agePolicy: 'Adults only',
     relatedSpas: [17, 15],
   },
   {
@@ -1091,6 +1107,8 @@ export const spaData: Spa[] = [
       outdoorPool: true,
       thermalSuite: true,
     },
+    agePolicy:
+      '16+ only for spa facilities. Children allowed in pool only 10am-1pm',
     relatedSpas: [7, 6],
   },
   {
@@ -1272,7 +1290,7 @@ export const spaData: Spa[] = [
       },
       {
         name: 'Age Restriction',
-        details: 'No age restriction',
+        details: '18+ only (no one under 18 allowed for spa treatments)',
         accessType: 'age-restriction',
       },
       {
@@ -1292,6 +1310,7 @@ export const spaData: Spa[] = [
       outdoorPool: false,
       thermalSuite: true,
     },
+    agePolicy: '18+ only (no one under 18 allowed for spa treatments)',
     relatedSpas: [9, 3],
   },
 ];
