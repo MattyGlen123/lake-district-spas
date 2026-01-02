@@ -54,8 +54,8 @@ const Footer = () => {
           <p className="text-sm text-primary-foreground/70 text-center md:text-left leading-relaxed">
             <span className="font-medium">Image Notice:</span> Photos are
             sourced from spa websites for informational purposes to help
-            visitors make informed decisions. Spa owners: if you&apos;d prefer we use
-            different images please contact us at{' '}
+            visitors make informed decisions. Spa owners: if you&apos;d prefer
+            we use different images please contact us at{' '}
             <a
               href="mailto:contact@lakedistrictspas.co.uk"
               className="text-primary-foreground hover:text-primary-foreground/90 underline underline-offset-2 font-medium"
