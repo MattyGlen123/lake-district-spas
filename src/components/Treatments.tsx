@@ -26,7 +26,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment }) => {
       onClick={() => setIsExpanded(!isExpanded)}
       aria-expanded={isExpanded}
     >
-      <div className="p-6">
+      <div className="p-4 md:p-6">
         {/* Header - Always Visible */}
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1">
@@ -149,7 +149,7 @@ export default function Treatments({ spa }: TreatmentsProps) {
               </h3>
 
               {/* Treatment Cards */}
-              <div className="space-y-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {treatments.map((treatment, idx) => (
                   <TreatmentCard key={idx} treatment={treatment} />
                 ))}
