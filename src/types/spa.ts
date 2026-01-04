@@ -26,6 +26,22 @@ export interface AccessPolicy {
     | 'spa-hours';
 }
 
+export type TreatmentCategory =
+  | 'Massage Therapies'
+  | 'Facial Treatments'
+  | 'Body Treatments & Rituals'
+  | 'Hands & Feet Treatments';
+
+export interface Treatment {
+  spaId: number;
+  name: string;
+  description: string;
+  shortDescription: string;
+  duration: string;
+  brand?: string;
+  category: TreatmentCategory;
+}
+
 export interface Spa {
   id: number;
   url: string;

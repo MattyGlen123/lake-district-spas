@@ -8,6 +8,7 @@ import QuickFactsBar from '@/components/QuickFactsBar';
 import BackButton from '@/components/BackButton';
 import ThermalFacilities from '@/components/ThermalFacilities';
 import PoolFeatures from '@/components/PoolFeatures';
+import Treatments from '@/components/Treatments';
 import AccessPolicy from '@/components/AccessPolicy';
 import BookVisitCTA from '@/components/BookVisitCTA';
 import SpaNavigation from '@/components/SpaNavigation';
@@ -70,6 +71,7 @@ export default function SpaDetailPage({
         <div className="container mx-auto px-4 md:px-8 py-8">
           <ThermalFacilities spa={spa} />
           <PoolFeatures spa={spa} />
+          <Treatments spa={spa} />
         </div>
 
         <div className="w-full bg-slate-50 py-12">
