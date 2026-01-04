@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Sparkles, Plus, Minus } from 'lucide-react';
 import { Spa, TreatmentCategory, Treatment } from '@/types/spa';
-import { getTreatmentsBySpaId } from '@/data/treatments';
+import { getTreatmentsBySpaId } from '@/data/treatments/index';
 
 interface TreatmentsProps {
   spa: Spa;
