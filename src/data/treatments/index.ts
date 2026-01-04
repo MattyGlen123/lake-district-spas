@@ -7,6 +7,10 @@ import { spa5Treatments } from './spa-5-treatments';
 import { spa6Treatments } from './spa-6-treatments';
 import { spa7Treatments } from './spa-7-treatments';
 import { spa8Treatments } from './spa-8-treatments';
+import { spa9Treatments } from './spa-9-treatments';
+import { spa10Treatments } from './spa-10-treatments';
+import { spa12Treatments } from './spa-12-treatments';
+import { spa15Treatments } from './spa-15-treatments';
 
 // Map of spa IDs to their treatments
 const treatmentsBySpaId: Record<number, Treatment[]> = {
@@ -18,6 +22,10 @@ const treatmentsBySpaId: Record<number, Treatment[]> = {
   6: spa6Treatments,
   7: spa7Treatments,
   8: spa8Treatments,
+  9: spa9Treatments,
+  10: spa10Treatments,
+  12: spa12Treatments,
+  15: spa15Treatments,
 };
 
 /**
