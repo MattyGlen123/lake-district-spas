@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Sparkles, Plus, Minus } from 'lucide-react';
 import { Spa, TreatmentCategory, Treatment } from '@/types/spa';
-import { treatmentsData } from '@/data/treatments';
+import { getTreatmentsBySpaId } from '@/data/treatments';
 
 interface TreatmentsProps {
   spa: Spa;
@@ -87,8 +87,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment }) => {
 
 export default function Treatments({ spa }: TreatmentsProps) {
   // Get treatments for this spa
-  const spaId = spa.id;
-  const spaTreatments = treatmentsData.filter((t) => t.spaId === spaId);
+  const spaTreatments = getTreatmentsBySpaId(spa.id);
 
   // Return null if no treatments
   if (spaTreatments.length === 0) {
