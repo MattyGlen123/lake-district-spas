@@ -47,6 +47,10 @@ export interface Spa {
   url: string;
   name: string;
   location: string;
+  street: string;
+  region: string;
+  postcode: string;
+  country: string;
   metaDescription?: string;
   websiteUrl: string;
   accessLabels: AccessLabel[];
