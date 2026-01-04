@@ -128,7 +128,7 @@ export default function Treatments({ spa }: TreatmentsProps) {
 
       {/* Intro paragraph */}
       <p className="text-lg text-slate-600 leading-relaxed mb-8">
-        Explore {spa.name}'s curated menu of luxury therapies. Click on any
+        Explore {spa.name}&apos;s curated menu of luxury therapies. Click on any
         treatment to view full details and learn more.
       </p>
 
