@@ -42,15 +42,20 @@ export interface Treatment {
   category: TreatmentCategory;
 }
 
+export interface SpaAddress {
+  street: string;
+  locality: string;
+  region: string;
+  postcode: string;
+  country: string;
+}
+
 export interface Spa {
   id: number;
   url: string;
   name: string;
   location: string;
-  street: string;
-  region: string;
-  postcode: string;
-  country: string;
+  address?: SpaAddress;
   metaDescription?: string;
   websiteUrl: string;
   accessLabels: AccessLabel[];

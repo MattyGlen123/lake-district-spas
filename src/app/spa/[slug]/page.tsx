@@ -15,6 +15,7 @@ import SpaNavigation from '@/components/SpaNavigation';
 import RelatedSpas from '@/components/RelatedSpas';
 import { Spa } from '@/types/spa';
 import { spaData } from '@/data/spas';
+import { generateSpaSchema } from '@/utils/generateSpaSchema';
 
 // Generate static params for all spas at build time
 export async function generateStaticParams() {
@@ -58,8 +59,14 @@ export default function SpaDetailPage({
     notFound();
   }
 
+  const schemaData = generateSpaSchema(spa);
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <Header />
 
       <main>
