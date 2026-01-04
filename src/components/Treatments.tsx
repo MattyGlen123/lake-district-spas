@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Sparkles, Plus, Minus } from 'lucide-react';
 import { Spa, TreatmentCategory, Treatment } from '@/types/spa';
-import { treatmentsData } from '@/data/treatments';
+import { getTreatmentsBySpaId } from '@/data/treatments/index';
 
 interface TreatmentsProps {
   spa: Spa;
@@ -26,7 +26,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment }) => {
       onClick={() => setIsExpanded(!isExpanded)}
       aria-expanded={isExpanded}
     >
-      <div className="p-6">
+      <div className="p-4 md:p-6">
         {/* Header - Always Visible */}
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1">
@@ -87,8 +87,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment }) => {
 
 export default function Treatments({ spa }: TreatmentsProps) {
   // Get treatments for this spa
-  const spaId = spa.id;
-  const spaTreatments = treatmentsData.filter((t) => t.spaId === spaId);
+  const spaTreatments = getTreatmentsBySpaId(spa.id);
 
   // Return null if no treatments
   if (spaTreatments.length === 0) {
@@ -150,7 +149,7 @@ export default function Treatments({ spa }: TreatmentsProps) {
               </h3>
 
               {/* Treatment Cards */}
-              <div className="space-y-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {treatments.map((treatment, idx) => (
                   <TreatmentCard key={idx} treatment={treatment} />
                 ))}
