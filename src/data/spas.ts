@@ -793,7 +793,7 @@ Spa access is complimentary for all hotel guests throughout their stay. The spa 
       'Romantic Newby Bridge spa with 17m pool overlooking Lake Windermere. Outdoor spa garden with fire pit. Your lakeside wellness escape for a weekend.',
     intro: `Lakeside Hotel & Spa offers is a destination spa on the southern shore of Lake Windermere in Newby Bridge. The spa features a 17-metre heated pool with views across Lake Windermere, incorporating a beach-style shallow area for families.
 
-Thermal facilities include a traditional sauna, steam room, and poolside jacuzzi. The outdoor spa garden provides a tranquil retreat with an open fire pit and heat domes to keep warm while enjoying the lakeside setting. All Aveda spa treatments are delivered by skilled therapists in three private treatment rooms.
+Thermal facilities include a traditional sauna, steam room, and poolside jacuzzi. The outdoor spa garden provides a tranquil retreat with an open fire pit and heat domes to keep warm while enjoying the lakeside setting. All spa treatments are delivered by skilled therapists using a range of products.
 
 Spa access is complimentary for all hotel guests, including pool, sauna, steam room and gym. Day spa experiences are available for non-residents. The pool welcomes children, making this a family-friendly wellness destination.`,
     websiteUrl: 'https://lakesidehotel.co.uk/spa',
