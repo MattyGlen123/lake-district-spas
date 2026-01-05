@@ -334,6 +334,11 @@ Swim Club access is complimentary for all hotel guests. Day memberships are avai
     },
     metaDescription:
       'Luxury Bassenthwaite spa with multiple outdoor infinity pools and fell views. Sauna, steam room, and lakeside relaxation. Ideal for couples.',
+    intro: `The Spa at Armathwaite Hall Hotel & Spa combines contemporary wellness facilities with a historic Lake District estate setting. Located on the shores of Bassenthwaite Lake near Keswick, within 400 acres of private deer park and woodland, the spa features a 16-metre indoor infinity pool alongside multiple outdoor infinity pools and an outdoor hot tub with views across the surrounding fells.
+
+The thermal suite includes a traditional Finnish sauna and an Amethyst Crystal Cave steam room for deep heat experiences. The treatment menu spans 34 experiences, including the Herbal Sleep Cocoon wrap designed to promote restful sleep after fell walking.
+
+Spa access is complimentary for all hotel guests and Day spa packages are available for non-residents. This is an 18+ spa for bookings and treatments, though under-16s can use the facilities with adult supervision.`,
     websiteUrl: 'https://armathwaite-hall.com/spa',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_armathwaite-hall.jpg',
@@ -374,8 +379,13 @@ Swim Club access is complimentary for all hotel guests. Day memberships are avai
       },
       {
         name: 'Age Restriction',
+        details: '18+ to book spa experiences.',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Age Restriction',
         details:
-          '18+ to book spa experiences. Under 16s can use facilities only Monday-Sunday 8:30am-9:30am with adult supervision',
+          'Under 16s can use facilities only Monday-Sunday 8:30am-9:30am with adult supervision',
         accessType: 'age-restriction',
       },
     ],
@@ -390,8 +400,7 @@ Swim Club access is complimentary for all hotel guests. Day memberships are avai
       outdoorPool: true,
       thermalSuite: true,
     },
-    agePolicy:
-      '18+ to book spa experiences. Under 16s can use facilities only Monday-Sunday 8:30am-9:30am with adult supervision',
+    agePolicy: '18+ to book spa experiences.',
     relatedSpas: [6, 9],
   },
   {

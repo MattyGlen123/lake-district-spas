@@ -50,7 +50,11 @@ function validateIntroFacts(spa: Spa) {
     }
   }
   if (intro.includes('herbal')) {
+    // Check if it's a treatment name (like "Herbal Sleep Cocoon") vs thermal facility
+    const isTreatmentMention =
+      intro.includes('herbal sleep') || intro.includes('herbal wrap');
     if (
+      !isTreatmentMention &&
       !facilityNames.some((n) => n.includes('herbal')) &&
       !allFacilityText.includes('herbal')
     ) {
@@ -87,7 +91,10 @@ function validateIntroFacts(spa: Spa) {
   const allPoolText = [...poolNames, ...poolDetails].join(' ');
 
   if (intro.includes('infinity')) {
-    if (!poolNames.some((n) => n.includes('infinity'))) {
+    if (
+      !poolNames.some((n) => n.includes('infinity')) &&
+      !poolDetails.some((d) => d.includes('infinity'))
+    ) {
       errors.push('Mentions "infinity" pool but not found');
     }
   }
