@@ -235,6 +235,11 @@ Unlike many Lake District spa hotels, spa access is not included with standard r
     },
     metaDescription:
       'Family-friendly Ullswater spa featuring 20m pool with panoramic lake views. Open-air hot tub and thermal experiences.',
+    intro: `Another Place, The Lake brings a contemporary, design-led approach to Lake District wellness. The Swim Club sits on the shores of Ullswater at Watermillock, centred around a striking 20-metre pool with floor-to-ceiling glass walls, skylight, and views across the water to the fells beyond.
+
+The pool uses UV-filtered, low-chlorine water and includes a shallow area for children. A Swedish outdoor hot tub and sauna overlook the grounds (both 16+ only). The treatment menu features 18 spa experiences using land&water products, including the signature Fell Walkers Massage designed for tired legs after a day on the fells, plus pregnancy-safe options and side-by-side treatments for couples.
+
+Swim Club access is complimentary for all hotel guests. Day memberships are available for non-residents. Family swim runs 9am to 6pm, with adult-only sessions 7am to 9am and 6pm to 9pm.`,
     websiteUrl: 'https://another.place/the-lake/swim-club/',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_another-place.jpg',
@@ -312,7 +317,7 @@ Unlike many Lake District spa hotels, spa access is not included with standard r
       outdoorPool: false,
       thermalSuite: false,
     },
-    agePolicy: 'No age restriction',
+    agePolicy: '16+ for hot tub and sauna',
     relatedSpas: [2, 11],
   },
   {

@@ -139,14 +139,40 @@ function validateIntroFacts(spa: Spa) {
   }
 
   // Validate age policy if mentioned (handles 16+, 18+, adults-only)
+  // Check if 16+ is mentioned for specific facilities (hot tub, sauna) vs overall policy
+  const mentions16ForFacilities =
+    intro.includes('16+') &&
+    (intro.includes('hot tub') ||
+      intro.includes('sauna') ||
+      intro.includes('both 16+'));
   if (intro.includes('18+') || intro.includes('adults-only')) {
     if (!spa.agePolicy || !spa.agePolicy.toLowerCase().includes('18+')) {
       errors.push('Mentions 18+/adults-only but agePolicy does not match');
     }
   }
-  if (intro.includes('16+')) {
+  if (intro.includes('16+') && !mentions16ForFacilities) {
+    // Only validate if 16+ is mentioned as overall policy, not for specific facilities
     if (!spa.agePolicy || !spa.agePolicy.toLowerCase().includes('16+')) {
       errors.push('Mentions 16+ but agePolicy does not match');
+    }
+  }
+  // If 16+ is mentioned for specific facilities, check agePolicy and access policy mention it
+  if (mentions16ForFacilities) {
+    // Validate agePolicy mentions 16+ (should include "16+" when facilities are 16+)
+    if (!spa.agePolicy || !spa.agePolicy.toLowerCase().includes('16+')) {
+      errors.push(
+        'Mentions 16+ for facilities but agePolicy does not include 16+'
+      );
+    }
+    // Validate access policy mentions it
+    const has16PlusInAccessPolicy = spa.accessPolicy.some(
+      (p) =>
+        p.details.toLowerCase().includes('16+') ||
+        (p.name.toLowerCase().includes('age') &&
+          p.details.toLowerCase().includes('16+'))
+    );
+    if (!has16PlusInAccessPolicy) {
+      errors.push('Mentions 16+ for facilities but not found in access policy');
     }
   }
 
