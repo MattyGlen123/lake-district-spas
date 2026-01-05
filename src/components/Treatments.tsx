@@ -115,6 +115,25 @@ export default function Treatments({ spa }: TreatmentsProps) {
     (cat) => treatmentsByCategory[cat]
   );
 
+  // Analyze treatments for dynamic intro
+  const totalTreatments = spaTreatments.length;
+  const categoryCount = sortedCategories.length;
+
+  // Extract unique brands (up to 2)
+  const brands = Array.from(
+    new Set(
+      spaTreatments.map((t) => t.brand).filter((b): b is string => Boolean(b))
+    )
+  ).slice(0, 2);
+
+  // Generate brand text
+  let brandText = '';
+  if (brands.length === 2) {
+    brandText = `, including ${brands[0]} and ${brands[1]} therapies`;
+  } else if (brands.length === 1) {
+    brandText = `, featuring ${brands[0]} products`;
+  }
+
   return (
     <section id="treatments" className="mt-16 mb-16">
       {/* Header */}
@@ -126,10 +145,15 @@ export default function Treatments({ spa }: TreatmentsProps) {
       </div>
 
       {/* Intro paragraph */}
-      {/* <p className="text-lg text-slate-600 leading-relaxed mb-8">
-        Explore {spa.name}&apos;s curated menu of luxury therapies. Click on any
-        treatment to view full details and learn more.
-      </p> */}
+      <p className="text-lg text-slate-600 leading-relaxed mb-8">
+        Explore {spa.name}&apos;s curated menu of{' '}
+        <strong>
+          {totalTreatments} luxury therapies across {categoryCount} categories
+          {brandText}
+        </strong>
+        . From rejuvenating massages to revitalizing facial treatments, each
+        experience is designed to restore balance and enhance wellbeing.
+      </p>
 
       {/* Categories */}
       <div className="space-y-16">
