@@ -8,14 +8,30 @@ function validateIntroFacts(spa: Spa) {
   const intro = spa.intro?.toLowerCase() || '';
   const errors: string[] = [];
 
-  // Validate thermal facility count if mentioned
-  const thermalCountMatch = intro.match(/(\d+)\s+thermal/);
+  // Validate thermal facility count if mentioned (handles both numeric and written numbers)
+  const numberWords: Record<string, number> = {
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9,
+    ten: 10,
+  };
+  const thermalCountMatch =
+    intro.match(/(\d+)\s+thermal/) ||
+    intro.match(/(one|two|three|four|five|six|seven|eight|nine|ten)\s+thermal/);
   if (thermalCountMatch) {
-    const mentionedCount = parseInt(thermalCountMatch[1]);
+    const mentionedCount = thermalCountMatch[1].match(/\d+/)
+      ? parseInt(thermalCountMatch[1])
+      : numberWords[thermalCountMatch[1].toLowerCase()];
     const actualCount = spa.thermalFacilities.length;
     if (mentionedCount !== actualCount) {
       errors.push(
-        `Mentions "${mentionedCount} thermal" but has ${actualCount} facilities`
+        `Mentions "${thermalCountMatch[1]} thermal" but has ${actualCount} facilities`
       );
     }
   }
@@ -27,15 +43,18 @@ function validateIntroFacts(spa: Spa) {
   );
   const allFacilityText = [...facilityNames, ...facilityDetails].join(' ');
 
-  // Check sauna types mentioned
-  if (intro.includes('finnish sauna')) {
+  // Check sauna types mentioned (with synonyms)
+  if (intro.includes('finnish')) {
     if (!facilityNames.some((n) => n.includes('finnish'))) {
-      errors.push('Mentions "Finnish sauna" but facility not found');
+      errors.push('Mentions "Finnish" but facility not found');
     }
   }
-  if (intro.includes('herbal sauna')) {
-    if (!facilityNames.some((n) => n.includes('herbal'))) {
-      errors.push('Mentions "herbal sauna" but facility not found');
+  if (intro.includes('herbal')) {
+    if (
+      !facilityNames.some((n) => n.includes('herbal')) &&
+      !allFacilityText.includes('herbal')
+    ) {
+      errors.push('Mentions "herbal" but facility not found');
     }
   }
   if (intro.includes('laconium')) {
@@ -43,9 +62,22 @@ function validateIntroFacts(spa: Spa) {
       errors.push('Mentions "laconium" but facility not found');
     }
   }
-  if (intro.includes('steam room')) {
+  if (intro.includes('steam room') || intro.includes('steam')) {
     if (!facilityNames.some((n) => n.includes('steam'))) {
       errors.push('Mentions "steam room" but facility not found');
+    }
+  }
+  if (intro.includes('infrared')) {
+    if (
+      !facilityNames.some((n) => n.includes('infrared')) &&
+      !allFacilityText.includes('infrared')
+    ) {
+      errors.push('Mentions "infrared" but facility not found');
+    }
+  }
+  if (intro.includes('coconut')) {
+    if (!facilityNames.some((n) => n.includes('coconut'))) {
+      errors.push('Mentions "coconut" but facility not found');
     }
   }
 
@@ -86,8 +118,12 @@ function validateIntroFacts(spa: Spa) {
     }
   });
 
-  // Validate access policy mentions
-  if (intro.includes('complimentary') || intro.includes('included')) {
+  // Validate access policy mentions (check for negative statements)
+  const mentionsComplimentary =
+    (intro.includes('complimentary') || intro.includes('included')) &&
+    !intro.includes('not included') &&
+    !intro.includes('not complimentary');
+  if (mentionsComplimentary) {
     const hasFreeAccess = spa.accessLabels.some(
       (label) =>
         label === 'free-for-all-guests' || label === 'free-for-some-rooms'
@@ -102,10 +138,15 @@ function validateIntroFacts(spa: Spa) {
     }
   }
 
-  // Validate age policy if mentioned
+  // Validate age policy if mentioned (handles 16+, 18+, adults-only)
   if (intro.includes('18+') || intro.includes('adults-only')) {
     if (!spa.agePolicy || !spa.agePolicy.toLowerCase().includes('18+')) {
       errors.push('Mentions 18+/adults-only but agePolicy does not match');
+    }
+  }
+  if (intro.includes('16+')) {
+    if (!spa.agePolicy || !spa.agePolicy.toLowerCase().includes('16+')) {
+      errors.push('Mentions 16+ but agePolicy does not match');
     }
   }
 
@@ -129,7 +170,7 @@ describe('Spa Introduction Text Validation', () => {
       it(`should validate ${spa.name} intro facts match data`, () => {
         const errors = validateIntroFacts(spa);
         if (errors.length > 0) {
-          fail(
+          throw new Error(
             `Validation errors for ${spa.name}:\n${errors
               .map((e) => `  - ${e}`)
               .join('\n')}`

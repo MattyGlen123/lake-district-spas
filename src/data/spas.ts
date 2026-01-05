@@ -117,6 +117,11 @@ Spa access is complimentary for suite bookings (2 hours per night), while standa
     },
     metaDescription:
       "Windermere's premium spa with two outdoor infinity pools and stunning lake views. Three saunas including infrared cabin. Perfect for luxurious girls' getaways.",
+    intro: `The Spa at Low Wood Bay offers one of the Lake District's most impressive spa settings, featuring two outdoor infinity pools with panoramic views across Lake Windermere to the Langdale Pikes. Located on the lake's eastern shore near Ambleside, Low Wood Bay Resort & Spa combines extensive thermal facilities with direct waterfront access.
+
+The spa includes six thermal experiences: three saunas featuring the outdoor Fellside Sauna with fell views, a dry salt sauna, and an infrared cabin for deep tissue relaxation. The coconut steam room and herbal lounge provide gentler heat options, while multiple outdoor hot tubs are perfect for evening stargazing.
+
+Unlike many Lake District spa hotels, spa access is not included with standard room bookings - guests can add spa sessions separately (with 25% off Monday to Thursday). Day spa packages are available for non-residents from 10am to 8pm. This is a 16+ spa.`,
     websiteUrl: 'https://englishlakes.co.uk/hotels/low-wood-bay/the-spa/',
     accessLabels: ['paid-for-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_low-wood-bay.webp',
