@@ -271,6 +271,40 @@ function validateIntroFacts(spa: Spa) {
     }
   }
 
+  // Validate family-friendly or children welcome mentions
+  if (
+    intro.includes('family-friendly') ||
+    intro.includes('family friendly') ||
+    intro.includes('welcomes children') ||
+    intro.includes('welcome children') ||
+    intro.includes('children welcome') ||
+    intro.includes('suitable for children') ||
+    intro.includes('suitable for families')
+  ) {
+    const agePolicyLower = spa.agePolicy?.toLowerCase() || '';
+    const hasFamilyFriendlyInAgePolicy =
+      agePolicyLower.includes('children') ||
+      agePolicyLower.includes('family') ||
+      agePolicyLower.includes('suitable for children') ||
+      agePolicyLower.includes('welcomes children');
+
+    // Check access policy mentions it
+    const hasFamilyFriendlyInAccessPolicy = spa.accessPolicy.some(
+      (p) =>
+        p.details.toLowerCase().includes('children') ||
+        p.details.toLowerCase().includes('family') ||
+        p.details.toLowerCase().includes('suitable for children') ||
+        p.details.toLowerCase().includes('welcomes children')
+    );
+
+    // Either agePolicy or accessPolicy should mention it
+    if (!hasFamilyFriendlyInAgePolicy && !hasFamilyFriendlyInAccessPolicy) {
+      errors.push(
+        'Mentions family-friendly/children welcome but not found in agePolicy or access policy'
+      );
+    }
+  }
+
   return errors;
 }
 
