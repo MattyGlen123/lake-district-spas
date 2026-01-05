@@ -84,6 +84,22 @@ function validateIntroFacts(spa: Spa) {
       errors.push('Mentions "coconut" but facility not found');
     }
   }
+  if (intro.includes('tepidarium')) {
+    if (
+      !facilityNames.some((n) => n.includes('tepidarium')) &&
+      !allFacilityText.includes('tepidarium')
+    ) {
+      errors.push('Mentions "tepidarium" but facility not found');
+    }
+  }
+  if (intro.includes('rasul')) {
+    if (
+      !facilityNames.some((n) => n.includes('rasul')) &&
+      !allFacilityText.includes('rasul')
+    ) {
+      errors.push('Mentions "rasul" but facility not found');
+    }
+  }
 
   // Validate pool features mentioned
   const poolNames = spa.poolFeatures.map((p) => p.name.toLowerCase());

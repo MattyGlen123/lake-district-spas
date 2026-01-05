@@ -498,6 +498,11 @@ Spa access is complimentary for all Brimstone Hotel guests throughout their stay
     },
     metaDescription:
       "Grasmere's contemporary spa with thermal facilities in the village heart. Modern wellness and mountain views. Perfect for village-based escapes.",
+    intro: `Daffodil Hotel Spa offers contemporary wellness in the heart of Grasmere village, just a five-minute walk from the village center and on the shores of Grasmere lake. The spa features a 33ft hydrotherapy pool with cascade water features, creating multiple levels of hydromassage.
+
+Thermal facilities include a Finnish sauna, steam room, and tepidarium for gentle warming heat therapy. The spa also features a rasul mud chamber where guests can apply mineral-rich mud in a tranquil tiled room. The treatment menu spans 33 experiences using Germaine De Capuccini and Temple Spa products.
+
+Spa access is complimentary for all hotel guests from 2pm on arrival until midday on departure. Day passes are available for non-residents for two-hour sessions. This is a 16+ spa.`,
     websiteUrl:
       'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa/',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
@@ -512,11 +517,17 @@ Spa access is complimentary for all Brimstone Hotel guests throughout their stay
     thermalFacilities: [
       { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
       { name: 'Steam Room', details: 'Revitalising steam room' },
+      { name: 'Tepidarium', details: 'Gentle warming heat therapy' },
+      {
+        name: 'Rasul Mud Chamber',
+        details: 'Mineral-rich mud application in tranquil tiled room',
+      },
     ],
     poolFeatures: [
       {
         name: 'Hydrotherapy Pool',
-        details: 'Hydrotherapy pool with cascade features',
+        details:
+          '33ft hydrotherapy pool with cascade water features, creating multiple levels of hydromassage',
       },
     ],
     accessPolicy: [
