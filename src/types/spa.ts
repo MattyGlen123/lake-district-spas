@@ -57,6 +57,7 @@ export interface Spa {
   location: string;
   address?: SpaAddress;
   metaDescription?: string;
+  intro?: string;
   websiteUrl: string;
   accessLabels: AccessLabel[];
   imageSrc: string;

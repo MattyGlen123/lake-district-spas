@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import SpaHero from '@/components/SpaHero';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import QuickFactsBar from '@/components/QuickFactsBar';
+import SpaIntroduction from '@/components/SpaIntroduction';
 import BackButton from '@/components/BackButton';
 import ThermalFacilities from '@/components/ThermalFacilities';
 import PoolFeatures from '@/components/PoolFeatures';
@@ -76,6 +77,7 @@ export default function SpaDetailPage({
         <BackButton />
 
         <div className="container mx-auto px-4 md:px-8 py-8">
+          <SpaIntroduction spa={spa} />
           <ThermalFacilities spa={spa} />
           <PoolFeatures spa={spa} />
           <Treatments spa={spa} />

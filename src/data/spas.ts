@@ -15,6 +15,11 @@ export const spaData: Spa[] = [
     },
     metaDescription:
       'Luxury spa in Borrowdale with infinity-edge outdoor pool overlooking the fells. Three thermal pools and steam room. Perfect for romantic couples.',
+    intro: `The Falls Spa at Lodore Falls Hotel offers one of the Lake District's finest spa experiences, featuring an infinity-edge outdoor hydrotherapy pool overlooking Derwentwater and the surrounding fells. Set in Borrowdale near Keswick, this adults-only retreat combines nine thermal experiences with stunning Cumbrian scenery.
+
+The comprehensive thermal suite includes Finnish and herbal saunas with panoramic views, a Roman laconium, salt and aroma steam rooms, plus ice fountain and cold drench bucket for contrast therapy. The outdoor vitality pool features underwater bubble loungers, volcano fountain, and hydromassage neck jets.
+
+Spa access is complimentary for suite bookings (2 hours per night), while standard room guests can add spa sessions for an additional fee. Day spa packages are also available for non-residents. Please note this is an 18+ spa due to the heat experiences.`,
     websiteUrl: 'https://lakedistrictspa.co.uk',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_lodore-falls-spa.jpg',
