@@ -698,6 +698,11 @@ Spa access is complimentary for Splendid room bookings and above. Standard room 
     },
     metaDescription:
       "Central Ambleside spa featuring infrared sauna and outdoor hydrotherapy fountain. Intimate wellness facilities, ideal for couples' retreats.",
+    intro: `Waterfall Spa at Ambleside Salutation Hotel brings contemporary wellness to the heart of Ambleside village, a 350-year-old hotel on Lake Road. The spa features a 13-metre heated pool with a starlit fibre optic ceiling, creating an atmospheric swimming experience alongside an outdoor hydrotherapy fountain spa.
+
+Thermal facilities include an infrared sauna for deep tissue relaxation, steam room, ice fountain for contrast cooling, and a poolside hot tub. The 18 Elemis Expert treatments include the Walkers Leg Massage designed specifically for tired legs after fell walking, plus pregnancy-safe massage.
+
+Spa access is complimentary for all hotel guests throughout their stay. The spa is exclusive to hotel residents only and day passes are not available to the public.`,
     websiteUrl: 'https://www.hotelslakedistrict.com/waterfall-spa/',
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_salutation-hotel.jpg',
@@ -749,13 +754,7 @@ Spa access is complimentary for Splendid room bookings and above. Standard room 
       },
       {
         name: 'Age Restriction',
-        details:
-          "Under 16 not permitted in pool area unless they're hotel guests",
-        accessType: 'age-restriction',
-      },
-      {
-        name: 'Treatments Age',
-        details: 'Treatments available from age 12+',
+        details: 'Under 16 must be accompanied by an adult',
         accessType: 'age-restriction',
       },
       {
@@ -775,7 +774,7 @@ Spa access is complimentary for Splendid room bookings and above. Standard room 
       outdoorPool: true,
       thermalSuite: true,
     },
-    agePolicy: "Under 16 not permitted pool area unless they're hotel guests.",
+    agePolicy: 'Under 16 must be accompanied by an adult',
     relatedSpas: [3, 13],
   },
   {

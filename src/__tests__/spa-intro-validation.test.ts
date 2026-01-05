@@ -221,6 +221,56 @@ function validateIntroFacts(spa: Spa) {
     }
   }
 
+  // Validate treatment age restrictions if mentioned separately from general age policy
+  if (
+    intro.includes('treatment') &&
+    (intro.includes('age 12+') ||
+      intro.includes('from age 12+') ||
+      intro.includes('12+'))
+  ) {
+    const hasTreatmentAgeInAccessPolicy = spa.accessPolicy.some(
+      (p) =>
+        (p.name.toLowerCase().includes('treatment') ||
+          p.name.toLowerCase().includes('age')) &&
+        (p.details.toLowerCase().includes('12+') ||
+          p.details.toLowerCase().includes('from age 12'))
+    );
+    if (!hasTreatmentAgeInAccessPolicy) {
+      errors.push('Mentions treatment age 12+ but not found in access policy');
+    }
+  }
+
+  // Validate "under 16" or "accompanied by adult" age policy mentions
+  if (
+    intro.includes('under 16') ||
+    intro.includes('under-16') ||
+    intro.includes('under 16s') ||
+    intro.includes('under-16s') ||
+    intro.includes('accompanied by') ||
+    intro.includes('accompanied by an adult')
+  ) {
+    const agePolicyLower = spa.agePolicy?.toLowerCase() || '';
+    const hasUnder16InAgePolicy =
+      agePolicyLower.includes('under 16') ||
+      agePolicyLower.includes('under-16') ||
+      agePolicyLower.includes('accompanied');
+
+    // Check access policy mentions it
+    const hasUnder16InAccessPolicy = spa.accessPolicy.some(
+      (p) =>
+        p.details.toLowerCase().includes('under 16') ||
+        p.details.toLowerCase().includes('under-16') ||
+        p.details.toLowerCase().includes('accompanied')
+    );
+
+    // Either agePolicy or accessPolicy should mention it
+    if (!hasUnder16InAgePolicy && !hasUnder16InAccessPolicy) {
+      errors.push(
+        'Mentions under 16/accompanied by adult but not found in agePolicy or access policy'
+      );
+    }
+  }
+
   return errors;
 }
 
