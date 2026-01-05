@@ -418,6 +418,11 @@ Spa access is complimentary for all hotel guests and Day spa packages are availa
     metaDescription:
       "Great Langdale's tranquil spa features unique swim-through indoor/outdoor pool. Mountain views and thermal suite. Ideal for couples and girls' weekends.",
     websiteUrl: 'https://brimstonehotel.co.uk/rooms/spa-break/',
+    intro: `Brimstone Spa brings contemporary Scandinavian-inspired design to Great Langdale, featuring a unique 9-metre swim-through pool that connects indoor relaxation with outdoor fell views. Located on the Langdale Estate in the heart of the Lake District, this adults-only spa combines thermal experiences with Lake District-inspired treatments.
+
+Five thermal facilities include a Finnish sauna, laconium for gentle heat, aroma steam room, ice room, and multi-sensory experience showers. The treatment menu features 27 experiences using exclusive Pure Alchemy products developed from Lake District natural elements, including the signature Fellwalker treatment designed for mountain enthusiasts.
+
+Spa access is complimentary for all Brimstone Hotel guests throughout their stay. The spa is exclusive to hotel guests only – day passes are not available. This is an adults-only environment.`,
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_brimstone-hotel.jpg',
     imageAlt:

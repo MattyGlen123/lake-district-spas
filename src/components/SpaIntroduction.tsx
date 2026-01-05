@@ -1,4 +1,3 @@
-import { MapPin } from 'lucide-react';
 import { Spa } from '@/types/spa';
 
 interface SpaIntroductionProps {

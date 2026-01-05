@@ -139,9 +139,26 @@ function validateIntroFacts(spa: Spa) {
       errors.push('Mentions complimentary/included but no free access labels');
     }
   }
-  if (intro.includes('day pass') || intro.includes('non-resident')) {
+  // Check for day pass mentions (handle both positive and negative statements)
+  const mentionsDayPass =
+    intro.includes('day pass') || intro.includes('non-resident');
+  const dayPassNotAvailable =
+    (intro.includes('day pass') &&
+      (intro.includes('not available') ||
+        intro.includes('are not available') ||
+        intro.includes('exclusive to hotel') ||
+        intro.includes('hotel guests only'))) ||
+    intro.includes('exclusive to hotel guests');
+  if (mentionsDayPass && !dayPassNotAvailable) {
     if (!spa.accessLabels.includes('day-passes-available')) {
       errors.push('Mentions day passes but day-passes-available not set');
+    }
+  }
+  if (dayPassNotAvailable) {
+    if (spa.accessLabels.includes('day-passes-available')) {
+      errors.push(
+        'Mentions day passes not available but day-passes-available is set'
+      );
     }
   }
 
@@ -153,7 +170,12 @@ function validateIntroFacts(spa: Spa) {
       intro.includes('sauna') ||
       intro.includes('both 16+'));
   if (intro.includes('18+') || intro.includes('adults-only')) {
-    if (!spa.agePolicy || !spa.agePolicy.toLowerCase().includes('18+')) {
+    const agePolicyLower = spa.agePolicy?.toLowerCase() || '';
+    const has18Plus = agePolicyLower.includes('18+');
+    const hasAdultsOnly =
+      agePolicyLower.includes('adults only') ||
+      agePolicyLower.includes('adults-only');
+    if (!has18Plus && !hasAdultsOnly) {
       errors.push('Mentions 18+/adults-only but agePolicy does not match');
     }
   }
