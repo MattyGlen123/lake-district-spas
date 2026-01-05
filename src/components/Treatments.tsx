@@ -126,10 +126,10 @@ export default function Treatments({ spa }: TreatmentsProps) {
       </div>
 
       {/* Intro paragraph */}
-      <p className="text-lg text-slate-600 leading-relaxed mb-8">
+      {/* <p className="text-lg text-slate-600 leading-relaxed mb-8">
         Explore {spa.name}&apos;s curated menu of luxury therapies. Click on any
         treatment to view full details and learn more.
-      </p>
+      </p> */}
 
       {/* Categories */}
       <div className="space-y-16">
