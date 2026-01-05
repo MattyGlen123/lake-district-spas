@@ -40,11 +40,37 @@ export async function generateMetadata({
     };
   }
 
+  const baseUrl = 'https://lakedistrictspas.co.uk';
+  const pageUrl = `${baseUrl}/spa/${spa.url}`;
+  const imageUrl = `${baseUrl}${spa.imageSrc}`;
+  const title = `${spa.name} - Lake District Spas`;
+  const description =
+    spa.metaDescription ??
+    `Discover ${spa.name} in ${spa.location}. Compare spa facilities, access policies, and find your perfect wellness retreat.`;
+
   return {
-    title: `${spa.name} - Lake District Spas`,
-    description:
-      spa.metaDescription ??
-      `Discover ${spa.name} in ${spa.location}. Compare spa facilities, access policies, and find your perfect wellness retreat.`,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: pageUrl,
+      siteName: 'Lake District Spas',
+      images: [
+        {
+          url: imageUrl,
+          alt: spa.imageAlt || `${spa.name} - Lake District Spa`,
+        },
+      ],
+      locale: 'en_GB',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [imageUrl],
+    },
   };
 }
 
