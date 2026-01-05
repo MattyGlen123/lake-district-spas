@@ -590,6 +590,11 @@ Spa access is complimentary for all hotel guests from 2pm on arrival until midda
     },
     metaDescription:
       'Newby Bridge spa with outdoor Finnish sauna and cold plunge pool overlooking the River Leven. Traditional wellness experiences. Perfect for rejuvenating spa breaks.',
+    intro: `Swan Hotel Spa, known as Holte Spa, brings contemporary thermal wellness to Newby Bridge on the River Leven at the southern tip of Lake Windermere. The spa features a unique swim-through hydrotherapy pool connecting indoor relaxation with heated outdoor bathing, naturally filtered with minimal chlorine.
+
+Five thermal experiences include an authentic outdoor Finnish sauna with river views, indoor Finnish sauna, 100% humidity steam room, cold plunge pool for contrast therapy, and multi-sensory experience showers with tropical rain and monsoon effects. The 28 Temple Spa treatments include pregnancy-safe massage and Gua Sha facial techniques.
+
+Spa access is complimentary for Splendid room bookings and above. Standard room guests and day visitors can add two-hour spa sessions. This is an 18+ spa, though 16-17 year olds can visit with a parent or guardian.`,
     websiteUrl: 'https://swanhotel.com/spa/',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_swan-hotel.webp',
