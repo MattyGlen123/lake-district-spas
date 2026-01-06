@@ -142,10 +142,25 @@ function validateIntroFacts(spa: Spa) {
   });
 
   // Validate access policy mentions (check for negative statements)
+  // Check if "included" refers to spa access vs amenities (robes, towels, etc.)
+  const includedRefersToAmenities =
+    (intro.includes('robes') && intro.includes('included')) ||
+    (intro.includes('towels') && intro.includes('included')) ||
+    (intro.includes('slippers') && intro.includes('included'));
+  const isNegativeStatement =
+    intro.includes('not included') ||
+    intro.includes('not complimentary') ||
+    (intro.includes('spa access') && intro.includes('not included'));
   const mentionsComplimentary =
-    (intro.includes('complimentary') || intro.includes('included')) &&
-    !intro.includes('not included') &&
-    !intro.includes('not complimentary');
+    !isNegativeStatement &&
+    (intro.includes('complimentary') ||
+      (intro.includes('included') &&
+        !includedRefersToAmenities &&
+        (intro.includes('spa access') ||
+          intro.includes('spa included') ||
+          intro.includes('access is') ||
+          intro.includes('access for') ||
+          intro.includes('guests'))));
   if (mentionsComplimentary) {
     const hasFreeAccess = spa.accessLabels.some(
       (label) =>

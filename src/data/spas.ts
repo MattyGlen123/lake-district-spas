@@ -949,6 +949,106 @@ Spa access is complimentary for all hotel guests with no booking required. Day s
     relatedSpas: [4, 12],
   },
   {
+    id: 16,
+    url: 'netherwood-hotel-spa',
+    name: 'Netherwood Hotel & Spa',
+    location: 'Grange-over-Sands',
+    address: {
+      street: 'Lindale Road',
+      locality: 'Grange-over-Sands',
+      region: 'Cumbria',
+      postcode: 'LA11 6ET',
+      country: 'GB',
+    },
+    metaDescription:
+      'Grange-over-Sands spa with unique plunge tub experience (hot, warm, cold) and salt inhalation room. Therapeutic wellness facilities. Ideal for friends seeking relaxation.',
+    intro: `This Grade II listed Victorian mansion overlooks Morecambe Bay from Grange-over-Sands at the southern gateway to the Lake District. Netherwood Hotel & Spa's signature feature is its plunge tub room, offering hot, warm and cold hydrotherapy circuits for therapeutic muscle relaxation and circulation. Adults-only throughout for a peaceful atmosphere.
+
+Five thermal facilities create a wellness journey: calming salt inhalation room for respiratory health, traditional dry heat sauna, aromatherapy steam room infused with lemongrass and citrus, refreshing ice fountain and thermal shower with massaging jets.
+
+Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with day passes also available to non-residents. Robes, towels and slippers included. Ideal for wellness seekers wanting unique hydrotherapy circuits and therapeutic facilities in a coastal Victorian setting.`,
+    websiteUrl: 'https://netherwood-hotel.co.uk/spa-fitness',
+    accessLabels: ['paid-for-guests', 'day-passes-available'],
+    imageSrc: '/images/spas/lake-district-spas_netherwood-hotel.webp',
+    imageAlt:
+      'Unique circular Kneipp footbath at Netherwood Hotel and Spa in Grange-over-Sands, featuring natural rope-wrapped wooden basin design with dual cascade water features, positioned against authentic Lakeland dry stone walling with designer loungers and orange accent cushions',
+    keyFeatures: [
+      'Plunge tub room with hot, warm and cold tubs',
+      'Salt inhalation room',
+      'Dry heat sauna and aroma steam room',
+      'Ice fountain',
+    ],
+    thermalFacilities: [
+      {
+        name: 'Dry Heat Sauna',
+        details: 'Traditional dry heat sauna to ease tension',
+      },
+      { name: 'Salt Room', details: 'Calming salt inhalation room' },
+      {
+        name: 'Aroma Steam Room',
+        details:
+          'Aromatherapy steam room with lemongrass, citrus and cinnamon scents',
+      },
+      { name: 'Ice Fountain', details: 'Refreshing ice fountain' },
+      {
+        name: 'Thermal Shower',
+        details: 'Thermal shower with mist and massaging jets',
+      },
+    ],
+    poolFeatures: [
+      {
+        name: 'Plunge Tub Room',
+        details:
+          'Hot, warm and cold hydrotherapy circuits for therapeutic muscle relaxation and circulation',
+      },
+    ],
+    accessPolicy: [
+      {
+        name: 'Hotel Guests',
+        details: 'Must pay separately for Thermal Journey',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Day passes available',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Thermal Journey Hours',
+        details: 'Mon-Sun 10am-5:30pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Treatment Hours',
+        details: '10am-6pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Amenities',
+        details: 'Robes, towels and slippers included',
+        accessType: 'general',
+      },
+      {
+        name: 'Age Restriction',
+        details: 'Adults only',
+        accessType: 'age-restriction',
+      },
+    ],
+    facilities: {
+      infraredSauna: false,
+      coldPlunge: true,
+      sauna: true,
+      steamRoom: true,
+      iceRoom: true,
+      hotTub: true,
+      indoorPool: false,
+      outdoorPool: false,
+      thermalSuite: true,
+    },
+    agePolicy: 'Adults only',
+    relatedSpas: [17, 15],
+  },
+  {
     id: 15,
     url: 'appleby-manor-hotel-garden-spa',
     name: 'Appleby Manor Hotel & Garden Spa',
@@ -1109,101 +1209,6 @@ Hotel guests must book spa access separately and day spa packages are available 
     },
     agePolicy: '16+ only for spa, children allowed in pool 10am-1pm only',
     relatedSpas: [2, 9],
-  },
-  {
-    id: 16,
-    url: 'netherwood-hotel-spa',
-    name: 'Netherwood Hotel & Spa',
-    location: 'Grange-over-Sands',
-    address: {
-      street: 'Lindale Road',
-      locality: 'Grange-over-Sands',
-      region: 'Cumbria',
-      postcode: 'LA11 6ET',
-      country: 'GB',
-    },
-    metaDescription:
-      'Grange-over-Sands spa with unique plunge tub experience (hot, warm, cold) and salt inhalation room. Therapeutic wellness facilities. Ideal for friends seeking relaxation.',
-    websiteUrl: 'https://netherwood-hotel.co.uk/spa-fitness',
-    accessLabels: ['paid-for-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_netherwood-hotel.webp',
-    imageAlt:
-      'Unique circular Kneipp footbath at Netherwood Hotel and Spa in Grange-over-Sands, featuring natural rope-wrapped wooden basin design with dual cascade water features, positioned against authentic Lakeland dry stone walling with designer loungers and orange accent cushions',
-    keyFeatures: [
-      'Plunge tub room with hot, warm and cold tubs',
-      'Salt inhalation room',
-      'Dry heat sauna and aroma steam room',
-      'Ice fountain',
-    ],
-    thermalFacilities: [
-      {
-        name: 'Dry Heat Sauna',
-        details: 'Traditional dry heat sauna to ease tension',
-      },
-      { name: 'Salt Room', details: 'Calming salt inhalation room' },
-      {
-        name: 'Aroma Steam Room',
-        details:
-          'Aromatherapy steam room with lemongrass, citrus and cinnamon scents',
-      },
-      { name: 'Ice Fountain', details: 'Refreshing ice fountain' },
-      {
-        name: 'Thermal Shower',
-        details: 'Thermal shower with mist and massaging jets',
-      },
-    ],
-    poolFeatures: [
-      {
-        name: 'Plunge Tub Room',
-        details:
-          'Hot, warm and cold plunge tubs to relax muscles and revive body',
-      },
-    ],
-    accessPolicy: [
-      {
-        name: 'Hotel Guests',
-        details: 'Must pay separately for Thermal Journey',
-        accessType: 'hotel',
-      },
-      {
-        name: 'Day Passes',
-        details: 'Day passes available',
-        accessType: 'day-pass',
-      },
-      {
-        name: 'Thermal Journey Hours',
-        details: 'Mon-Sun 10am-5:30pm',
-        accessType: 'spa-hours',
-      },
-      {
-        name: 'Treatment Hours',
-        details: '10am-6pm',
-        accessType: 'spa-hours',
-      },
-      {
-        name: 'Amenities',
-        details: 'Robes, towels and slippers included',
-        accessType: 'general',
-      },
-      {
-        name: 'Age Restriction',
-        details: 'Adults only',
-        accessType: 'age-restriction',
-      },
-    ],
-    facilities: {
-      infraredSauna: false,
-      coldPlunge: true,
-      sauna: true,
-      steamRoom: true,
-      iceRoom: true,
-      hotTub: true,
-      indoorPool: false,
-      outdoorPool: false,
-      thermalSuite: true,
-    },
-    agePolicy: 'Adults only',
-    relatedSpas: [17, 15],
   },
   {
     id: 10,
