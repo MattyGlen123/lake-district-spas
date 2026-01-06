@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Lake District Spas 2025 - Complete Access Guide',
   description:
-    "Find you're perfect Spa. Compare Lake District spas. Know before you book: Is the spa included with your room? Detailed thermal suite, pool and access policy information.",
+    "Find your perfect Spa. Compare Lake District spas. Know before you book: Is the spa included with your room? Detailed thermal suite, pool and access policy information.",
   keywords: [
     'lake district spas',
     'spa hotels lake district',
