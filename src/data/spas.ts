@@ -1477,6 +1477,11 @@ Spa access requires additional charge for hotel guests, though some overnight pa
     },
     metaDescription:
       "Backbarrow's riverside spa with outdoor jacuzzi overlooking River Leven. Peaceful natural setting and intimate wellness. Ideal for secluded couples' retreats.",
+    intro: `The Whitewater Hotel sits directly on River Leven's banks in Backbarrow's Lakeland Village. Located one mile south of Lake Windermere near Ulverston, the spa features the Lake District's first Rasul Mud Temple, a genuinely unique Arabian thermal experience unavailable elsewhere in the region.
+
+The indoor heated pool and outdoor jacuzzi overlook River Leven's flowing waters. The thermal circuit includes Turkish Hamam aromatherapy steam room, traditional sauna, and multi-sensory feature shower. Elemis spa treatments complete the wellness offering.
+
+Complimentary Cascades access included for all hotel guests, with 10% discount on spa treatments. No day passes available to public, ensuring intimate atmosphere exclusively for hotel residents. Adults 18+ only throughout spa facilities.`,
     websiteUrl: 'https://whitewater-hotel.co.uk/spa-fitness/',
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_whitewater-hotel.jpg',
@@ -1545,7 +1550,7 @@ Spa access requires additional charge for hotel guests, though some overnight pa
       outdoorPool: false,
       thermalSuite: true,
     },
-    agePolicy: '18+ only (no one under 18 allowed for spa treatments)',
+    agePolicy: '18+ only',
     relatedSpas: [9, 3],
   },
 ];

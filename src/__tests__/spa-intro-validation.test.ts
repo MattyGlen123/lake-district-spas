@@ -177,8 +177,11 @@ function validateIntroFacts(spa: Spa) {
     (intro.includes('day pass') &&
       (intro.includes('not available') ||
         intro.includes('are not available') ||
+        intro.includes('no day pass') ||
+        intro.includes('no day passes') ||
         intro.includes('exclusive to hotel') ||
-        intro.includes('hotel guests only'))) ||
+        intro.includes('hotel guests only') ||
+        intro.includes('exclusively for hotel'))) ||
     intro.includes('exclusive to hotel guests');
   if (mentionsDayPass && !dayPassNotAvailable) {
     if (!spa.accessLabels.includes('day-passes-available')) {
