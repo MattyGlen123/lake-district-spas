@@ -1412,6 +1412,11 @@ Complimentary spa access included for hotel guests, with day passes and annual m
     },
     metaDescription:
       'Elegant Grange-over-Sands spa with thermal pool and traditional wellness facilities. Edwardian grandeur meets modern relaxation. Ideal for refined spa breaks.',
+    intro: `The Grange Hotel combines historical grandeur with boutique hotel elegance in Grange-over-Sands on Morecambe Bay's coastal edge. Set in landscaped gardens, this four-star property offers panoramic bay views and sits just 15 minutes from Lake Windermere, ideally positioned on the southern gateway to the Lake District National Park.
+
+The leisure suite features an indoor heated pool, jacuzzi hot tub, traditional sauna and steam room for thermal relaxation. Spa treatments use Tropic Skincare's natural, freshly-made formulations emphasizing botanical wellbeing. The elegant Carriages Restaurant provides five-course table d'hôte dining with local ingredients, complementing the boutique spa experience in Victorian surroundings.
+
+Spa access requires additional charge for hotel guests, though some overnight packages include complimentary facilities. Spa day packages available combining treatments with leisure suite access. The railway station location opposite the hotel provides exceptional accessibility for car-free visits. Two purpose-designed accessible bedrooms feature walk-in wet rooms.`,
     websiteUrl: 'https://grange-hotel.co.uk/the-spa/',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_grange-hotel.jpg',
