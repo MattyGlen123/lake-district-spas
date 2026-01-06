@@ -962,6 +962,11 @@ Spa access is complimentary for all hotel guests with no booking required. Day s
     },
     metaDescription:
       "Appleby Manor's outdoor spa garden with hot tubs, fire pit, and scenic grounds. Traditional spa facilities. Perfect for groups and special celebrations.",
+    intro: `The Garden Spa at Appleby Manor Hotel offers contemporary wellness in the Eden Valley on the edge of the Lake District, near Appleby-in-Westmorland. Set within a 19th-century country house hotel with views toward Appleby Castle, the spa features an indoor vitality pool with underwater massage loungers, volcano pads, and shoulder cannons for targeted hydrotherapy.
+
+Thermal experiences include a traditional sauna, aromatherapy steam room, salt inhalation room for respiratory benefits, and rain sky experience showers. The sheltered outdoor spa garden features hot tubs and an open fire pit for year-round relaxation, plus a private hot tub is available for hire with panoramic countryside views.
+
+Hotel guests must book spa access separately and day spa packages are available to the public. This is a 16+ spa, though some treatments require guests to be 18+.`,
     websiteUrl: 'https://applebymanor.co.uk/garden-spa',
     accessLabels: ['paid-for-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_appleby-manor.jpg',
