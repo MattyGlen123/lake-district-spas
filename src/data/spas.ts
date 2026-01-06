@@ -949,6 +949,102 @@ Spa access is complimentary for all hotel guests with no booking required. Day s
     relatedSpas: [4, 12],
   },
   {
+    id: 10,
+    url: 'beech-hill-hotel-spa',
+    name: 'Beech Hill Hotel & Spa',
+    location: 'Windermere',
+    address: {
+      street: 'Newby Bridge Road',
+      locality: 'Windermere',
+      region: 'Cumbria',
+      postcode: 'LA23 3LR',
+      country: 'GB',
+    },
+    metaDescription:
+      'Windermere spa featuring two outdoor vitality pools on lakeside terrace. Panoramic lake views and thermal facilities. Perfect for romantic lakeside getaways.',
+    intro: `Built in the early 1900s on the eastern shore of Lake Windermere, Beech Hill Hotel & Spa sits in landscaped gardens with two private jetties offering direct access to England's largest lake. The signature feature is two outdoor vitality spa pools positioned on a lakeside terrace overlooking panoramic Windermere and fell views, rare among Lake District spas.
+
+The 35ft indoor pool features atmospheric lighting and floor-to-ceiling windows maximising lake vistas. Thermal facilities include a Himalayan sauna and aromatic steam room. Outside, the dual vitality spa pools on the dedicated terrace provide alfresco hydrotherapy with uninterrupted views. Secret gate access leads to the lakeshore for open water swimming from the private beach.
+
+Complimentary spa access included for all hotel guests, with day spa packages available to non-residents. Pre-booking required. Spa facilities are 16+ only, though children may use the pool 10am-1pm.`,
+    websiteUrl: 'https://beechhillhotel.co.uk/spa',
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
+    imageSrc: '/images/spas/lake-district-spas_beech-hill-hotel.jpg',
+    imageAlt:
+      'Botanical-inspired indoor pool at Beech Hill Hotel and Spa near Windermere, featuring natural woven pendant lights, cascading artificial greenery from ceiling, dark slate mosaic walls, turquoise heated pool, and contemporary nature-themed wellness design in the Lake District',
+    keyFeatures: [
+      'Indoor pool with Lake Windermere views',
+      'Himalayan sauna and aromatic steam room',
+      'Two outdoor vitality spa pools on terrace',
+    ],
+    thermalFacilities: [
+      { name: 'Himalayan Sauna', details: 'Himalayan sauna' },
+      { name: 'Aromatic Steam Room', details: 'Aromatic steam room' },
+    ],
+    poolFeatures: [
+      {
+        name: 'Indoor Pool',
+        details:
+          '35ft indoor pool with atmospheric lighting and Lake Windermere views',
+      },
+      {
+        name: 'Outdoor Vitality Spa Pools',
+        details: '2 outdoor vitality spa pools on spa terrace with lake views',
+      },
+    ],
+    accessPolicy: [
+      {
+        name: 'Hotel Guests',
+        details: 'Complimentary spa access included',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Spa Hours',
+        details: 'Thu-Sun 9:30am-4pm, Fri-Sat 9:30am-6pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Treatments',
+        details: 'Spa access included with all treatments',
+        accessType: 'general',
+      },
+      {
+        name: 'Pre-booking',
+        details: 'Required',
+        accessType: 'general',
+      },
+      {
+        name: 'Age Restriction',
+        details: '16+ only for spa',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Children',
+        details: 'Allowed in pool 10am-1pm only',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Group Size',
+        details: 'Maximum 6 people',
+        accessType: 'general',
+      },
+    ],
+    facilities: {
+      infraredSauna: false,
+      coldPlunge: false,
+      sauna: true,
+      steamRoom: true,
+      iceRoom: false,
+      hotTub: true,
+      indoorPool: true,
+      outdoorPool: true,
+      thermalSuite: true,
+    },
+    agePolicy:
+      '16+ only for spa facilities. Children allowed in pool only 10am-1pm',
+    relatedSpas: [7, 6],
+  },
+  {
     id: 16,
     url: 'netherwood-hotel-spa',
     name: 'Netherwood Hotel & Spa',
@@ -1209,97 +1305,6 @@ Hotel guests must book spa access separately and day spa packages are available 
     },
     agePolicy: '16+ only for spa, children allowed in pool 10am-1pm only',
     relatedSpas: [2, 9],
-  },
-  {
-    id: 10,
-    url: 'beech-hill-hotel-spa',
-    name: 'Beech Hill Hotel & Spa',
-    location: 'Windermere',
-    address: {
-      street: 'Newby Bridge Road',
-      locality: 'Windermere',
-      region: 'Cumbria',
-      postcode: 'LA23 3LR',
-      country: 'GB',
-    },
-    metaDescription:
-      'Windermere spa featuring two outdoor vitality pools on lakeside terrace. Panoramic lake views and thermal facilities. Perfect for romantic lakeside getaways.',
-    websiteUrl: 'https://beechhillhotel.co.uk/spa',
-    accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_beech-hill-hotel.jpg',
-    imageAlt:
-      'Botanical-inspired indoor pool at Beech Hill Hotel and Spa near Windermere, featuring natural woven pendant lights, cascading artificial greenery from ceiling, dark slate mosaic walls, turquoise heated pool, and contemporary nature-themed wellness design in the Lake District',
-    keyFeatures: [
-      'Indoor pool with Lake Windermere views',
-      'Himalayan sauna and aromatic steam room',
-      'Two outdoor vitality spa pools on terrace',
-    ],
-    thermalFacilities: [
-      { name: 'Himalayan Sauna', details: 'Himalayan sauna' },
-      { name: 'Aromatic Steam Room', details: 'Aromatic steam room' },
-    ],
-    poolFeatures: [
-      {
-        name: 'Indoor Pool',
-        details:
-          '35ft indoor pool with atmospheric lighting and Lake Windermere views',
-      },
-      {
-        name: 'Outdoor Vitality Spa Pools',
-        details: '2 outdoor vitality spa pools on spa terrace with lake views',
-      },
-    ],
-    accessPolicy: [
-      {
-        name: 'Hotel Guests',
-        details: 'Complimentary spa access included',
-        accessType: 'hotel',
-      },
-      {
-        name: 'Spa Hours',
-        details: 'Thu-Sun 9:30am-4pm, Fri-Sat 9:30am-6pm',
-        accessType: 'spa-hours',
-      },
-      {
-        name: 'Treatments',
-        details: 'Spa access included with all treatments',
-        accessType: 'general',
-      },
-      {
-        name: 'Pre-booking',
-        details: 'Required',
-        accessType: 'general',
-      },
-      {
-        name: 'Age Restriction',
-        details: '16+ only for spa',
-        accessType: 'age-restriction',
-      },
-      {
-        name: 'Children',
-        details: 'Allowed in pool 10am-1pm only',
-        accessType: 'age-restriction',
-      },
-      {
-        name: 'Group Size',
-        details: 'Maximum 6 people',
-        accessType: 'general',
-      },
-    ],
-    facilities: {
-      infraredSauna: false,
-      coldPlunge: false,
-      sauna: true,
-      steamRoom: true,
-      iceRoom: false,
-      hotTub: true,
-      indoorPool: true,
-      outdoorPool: true,
-      thermalSuite: true,
-    },
-    agePolicy:
-      '16+ only for spa facilities. Children allowed in pool only 10am-1pm',
-    relatedSpas: [7, 6],
   },
   {
     id: 6,
