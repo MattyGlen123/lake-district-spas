@@ -1045,6 +1045,93 @@ Complimentary spa access included for all hotel guests, with day spa packages av
     relatedSpas: [7, 6],
   },
   {
+    id: 6,
+    url: 'macdonald-old-england-hotel-spa',
+    name: 'Macdonald Old England Hotel & Spa',
+    location: 'Bowness-on-Windermere',
+    address: {
+      street: '23 Church Street',
+      locality: 'Bowness-on-Windermere',
+      region: 'Cumbria',
+      postcode: 'LA23 3DF',
+      country: 'GB',
+    },
+    metaDescription:
+      "Historic Bowness spa overlooking Lake Windermere with traditional thermal facilities. Classic elegance in a prime location. Ideal for a day's relaxation by the lake.",
+    intro: `The Macdonald Old England Hotel & Spa stands directly on Lake Windermere's shores in the heart of Bowness-on-Windermere. Among the Lake District's most historic hotels, it features private jetties with lakeside moorings providing exclusive water access. The 20m indoor pool offers panoramic Windermere views through floor-to-ceiling windows, positioning it as "the restaurant on the lake" for spa and dining experiences.
+
+The thermal suite combines traditional Finnish sauna with aromatherapy steam room, ice room for circulation-boosting cold therapy, and aromatherapy experience showers. The 20m lakeside pool maximises Windermere vistas while mature gardens extend down to the shoreline. Eight treatment rooms offer Elemis therapies.
+
+Complimentary pool and thermal suite access included for all hotel guests, with spa day packages available to non-residents. Children are welcome in the pool between 10am-5pm, though thermal suite facilities remain 18+ only.`,
+    websiteUrl: 'https://macdonaldhotels.co.uk/old-england/spa-leisure/spa',
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
+    imageSrc: '/images/spas/lake-district-spas_old-england-hotel.jpg',
+    imageAlt:
+      'Modern indoor swimming pool at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring deep blue mosaic tiling, contemporary black and white interior design, underwater lighting, and heated pool facilities in a luxurious Lake District spa setting',
+    keyFeatures: [
+      'Indoor pool with Lake Windermere views',
+      'Thermal suite with sauna, steam and ice room',
+      'Aromatherapy experience showers',
+    ],
+    thermalFacilities: [
+      { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
+      { name: 'Aroma Steam Room', details: 'Aromatherapy steam room' },
+      { name: 'Ice Room', details: 'Cool down experience' },
+      { name: 'Experience Showers', details: 'Aromatherapy shower' },
+    ],
+    poolFeatures: [
+      {
+        name: 'Indoor Pool',
+        details: '20m lakeside pool with Lake Windermere views',
+      },
+    ],
+    accessPolicy: [
+      {
+        name: 'Hotel Guests',
+        details: 'Free access to pool and thermal suite',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Spa Day Packages',
+        details: 'Spa day packages available',
+        accessType: 'general',
+      },
+      {
+        name: 'Pool & Gym Hours',
+        details: '7am-6:30pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Children Swim Times',
+        details: '10am-5pm',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Age Restriction',
+        details: '18+ for thermal suite',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Pre-booking',
+        details: 'Required for spa day packages with treatments',
+        accessType: 'general',
+      },
+    ],
+    facilities: {
+      infraredSauna: false,
+      coldPlunge: false,
+      sauna: true,
+      steamRoom: true,
+      iceRoom: true,
+      hotTub: false,
+      indoorPool: true,
+      outdoorPool: false,
+      thermalSuite: true,
+    },
+    agePolicy: '18+ for thermal suite',
+    relatedSpas: [7, 10],
+  },
+  {
     id: 16,
     url: 'netherwood-hotel-spa',
     name: 'Netherwood Hotel & Spa',
@@ -1310,90 +1397,6 @@ Complimentary spa access included for hotel guests, with day passes and annual m
     },
     agePolicy: '16+ only for spa, children allowed in pool 10am-1pm only',
     relatedSpas: [2, 9],
-  },
-  {
-    id: 6,
-    url: 'macdonald-old-england-hotel-spa',
-    name: 'Macdonald Old England Hotel & Spa',
-    location: 'Bowness-on-Windermere',
-    address: {
-      street: '23 Church Street',
-      locality: 'Bowness-on-Windermere',
-      region: 'Cumbria',
-      postcode: 'LA23 3DF',
-      country: 'GB',
-    },
-    metaDescription:
-      "Historic Bowness spa overlooking Lake Windermere with traditional thermal facilities. Classic elegance in a prime location. Ideal for a day's relaxation by the lake.",
-    websiteUrl: 'https://macdonaldhotels.co.uk/old-england/spa-leisure/spa',
-    accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_old-england-hotel.jpg',
-    imageAlt:
-      'Modern indoor swimming pool at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring deep blue mosaic tiling, contemporary black and white interior design, underwater lighting, and heated pool facilities in a luxurious Lake District spa setting',
-    keyFeatures: [
-      'Indoor pool with Lake Windermere views',
-      'Thermal suite with sauna, steam and ice room',
-      'Aromatherapy experience showers',
-    ],
-    thermalFacilities: [
-      { name: 'Finnish Sauna', details: 'Traditional Finnish sauna' },
-      { name: 'Aroma Steam Room', details: 'Aromatherapy steam room' },
-      { name: 'Ice Room', details: 'Cool down experience' },
-      { name: 'Experience Showers', details: 'Aromatherapy shower' },
-    ],
-    poolFeatures: [
-      {
-        name: 'Indoor Pool',
-        details: '20m lakeside pool with Lake Windermere views',
-      },
-    ],
-    accessPolicy: [
-      {
-        name: 'Hotel Guests',
-        details: 'Free access to pool and thermal suite',
-        accessType: 'hotel',
-      },
-      {
-        name: 'Spa Day Packages',
-        details: 'Spa day packages available',
-        accessType: 'general',
-      },
-      {
-        name: 'Pool & Gym Hours',
-        details: '7am-6:30pm',
-        accessType: 'spa-hours',
-      },
-      {
-        name: 'Children Swim Times',
-        details: '10am-5pm',
-        accessType: 'spa-hours',
-      },
-      {
-        name: 'Age Restriction',
-        details:
-          '18+ for thermal suite, children allowed in pool during designated times',
-        accessType: 'age-restriction',
-      },
-      {
-        name: 'Pre-booking',
-        details: 'Required for spa day packages with treatments',
-        accessType: 'general',
-      },
-    ],
-    facilities: {
-      infraredSauna: false,
-      coldPlunge: false,
-      sauna: true,
-      steamRoom: true,
-      iceRoom: true,
-      hotTub: false,
-      indoorPool: true,
-      outdoorPool: false,
-      thermalSuite: true,
-    },
-    agePolicy:
-      '18+ for thermal suite, children allowed in pool during designated times',
-    relatedSpas: [7, 10],
   },
   {
     id: 17,
