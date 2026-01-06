@@ -875,6 +875,11 @@ Spa access is complimentary for all hotel guests, including pool, sauna, steam r
     },
     metaDescription:
       "Grasmere's riverside spa featuring hydrotherapy pool with fell views. Infrared heated loungers and peaceful setting. Ideal for wellness-focused groups.",
+    intro: `The Riverside Spa at Rothay Garden offers contemporary wellness in the heart of Grasmere village. Nestled within a historic 1856 building with two acres of riverside gardens. The spa features floor-to-ceiling windows overlooking the River Rothay and surrounding fells, creating a tranquil connection with the Lakeland landscape.
+
+The HydroSpa hydrotherapy pool includes sunken loungers for passive relaxation, complemented by a herbal pine sauna, aromatherapy steam room, monsoon experience showers, and infrared heated loungers for deep muscle relaxation. The heated pebble reflexology walk provides a unique sensory experience. Spa treatments can be delivered in-room when booked in advance.
+
+Spa access is complimentary for all hotel guests with no booking required. Day spa experiences are available to the public. This is an 18+ spa for a peaceful, adults-only atmosphere.`,
     websiteUrl:
       'https://www.harbourhotels.co.uk/our-hotels/lake-district/rothay-garden-by-harbour-hotels/riverside-spa',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
@@ -940,7 +945,7 @@ Spa access is complimentary for all hotel guests, including pool, sauna, steam r
       outdoorPool: false,
       thermalSuite: true,
     },
-    agePolicy: 'Children welcome during designated times only',
+    agePolicy: '18+ only, no children permitted',
     relatedSpas: [4, 12],
   },
   {
