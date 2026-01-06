@@ -1246,6 +1246,11 @@ Hotel guests must book spa access separately and day spa packages are available 
     },
     metaDescription:
       "Penrith's family-friendly spa with dedicated family sessions and thermal facilities. Indoor pool and wellness amenities. Perfect for a group of friends.",
+    intro: `Located in Penrith on the northern edge of the Lake District National Park, North Lakes Hotel & Spa combines hunting lodge style with contemporary comfort just 10 minutes from Ullswater's shores. The family-friendly spa features separate male and female Finnish saunas, a rarity offering privacy and comfort for those who prefer gender-separated thermal facilities..
+
+The 13m indoor pool and whirlpool hot tub anchor the wellness facilities, complemented by a steam room for thermal therapy. Spa treatments use French luxury brand Caudalie products.
+
+Complimentary spa access included for hotel guests, with day passes and annual memberships available to non-residents. Designated family pool sessions welcome children during specific times, while adult-only periods maintain tranquil ambience.`,
     websiteUrl: 'https://northlakeshotel.com/spa-treatments',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     imageSrc: '/images/spas/lake-district-spas_north-lakes-hotel.jpg',
