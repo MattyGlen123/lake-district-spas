@@ -64,7 +64,9 @@ export default function QuickFactsBar({ spa }: QuickFactsBarProps) {
               <p className="text-[10px] font-bold text-stone-400 uppercase tracking-widest mb-1">
                 Age Policy
               </p>
-              <p className="text-sm font-semibold text-stone-800">{spa.agePolicy}</p>
+              <p className="text-sm font-semibold text-stone-800">
+                {spa.agePolicy}
+              </p>
             </div>
           </div>
         )}
