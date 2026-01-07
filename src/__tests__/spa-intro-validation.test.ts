@@ -203,13 +203,22 @@ function validateIntroFacts(spa: Spa) {
     (intro.includes('hot tub') ||
       intro.includes('sauna') ||
       intro.includes('both 16+'));
+  // Check if 18+ is mentioned for treatments specifically (not overall policy)
+  const mentions18ForTreatments =
+    intro.includes('18+') &&
+    (intro.includes('treatment') ||
+      intro.includes('treatments') ||
+      intro.includes('some treatments'));
   if (intro.includes('18+') || intro.includes('adults-only')) {
     const agePolicyLower = spa.agePolicy?.toLowerCase() || '';
     const has18Plus = agePolicyLower.includes('18+');
     const hasAdultsOnly =
       agePolicyLower.includes('adults only') ||
       agePolicyLower.includes('adults-only');
-    if (!has18Plus && !hasAdultsOnly) {
+    // Allow 18+ for treatments if overall policy is 16+
+    if (mentions18ForTreatments && agePolicyLower.includes('16+')) {
+      // This is valid - 16+ overall with 18+ for treatments
+    } else if (!has18Plus && !hasAdultsOnly) {
       errors.push('Mentions 18+/adults-only but agePolicy does not match');
     }
   }

@@ -100,7 +100,7 @@ Spa access is complimentary for suite bookings (2 hours per night), while standa
       outdoorPool: true,
       thermalSuite: true,
     },
-    agePolicy: '18+ only (due to heat experiences)',
+    agePolicy: '18+',
     relatedSpas: [5, 2],
   },
   {
@@ -218,7 +218,7 @@ Unlike many Lake District spa hotels, spa access is not included with standard r
       thermalSuite: true,
       infraredSauna: true,
     },
-    agePolicy: '16+ only',
+    agePolicy: '16+',
     relatedSpas: [10, 15],
   },
   {
@@ -573,7 +573,7 @@ Spa access is complimentary for all hotel guests from 2pm on arrival until midda
       outdoorPool: false,
       thermalSuite: true,
     },
-    agePolicy: '16+ only',
+    agePolicy: '16+',
     relatedSpas: [11, 2],
   },
   {
@@ -925,7 +925,7 @@ Spa access is complimentary for all hotel guests with no booking required. Day s
       },
       {
         name: 'Age Restriction',
-        details: '18+ only, no children permitted',
+        details: '18+',
         accessType: 'age-restriction',
       },
       {
@@ -945,7 +945,7 @@ Spa access is complimentary for all hotel guests with no booking required. Day s
       outdoorPool: false,
       thermalSuite: true,
     },
-    agePolicy: '18+ only, no children permitted',
+    agePolicy: '18+',
     relatedSpas: [4, 12],
   },
   {
@@ -1019,6 +1019,11 @@ Complimentary spa access included for all hotel guests, with day spa packages av
         accessType: 'age-restriction',
       },
       {
+        name: 'Age Restriction',
+        details: 'Children allowed in pool only 10am-1pm',
+        accessType: 'age-restriction',
+      },
+      {
         name: 'Children',
         details: 'Allowed in pool 10am-1pm only',
         accessType: 'age-restriction',
@@ -1040,8 +1045,7 @@ Complimentary spa access included for all hotel guests, with day spa packages av
       outdoorPool: true,
       thermalSuite: true,
     },
-    agePolicy:
-      '16+ only for spa facilities. Children allowed in pool only 10am-1pm',
+    agePolicy: '16+ only for spa facilities',
     relatedSpas: [7, 6],
   },
   {
@@ -1316,7 +1320,7 @@ Hotel guests must book spa access separately and day spa packages are available 
       outdoorPool: false,
       thermalSuite: true,
     },
-    agePolicy: '16+ (treatments may require 18+)',
+    agePolicy: '16+',
     relatedSpas: [7, 16],
   },
   {
@@ -1370,7 +1374,12 @@ Complimentary spa access included for hotel guests, with day passes and annual m
       },
       {
         name: 'Age Restriction',
-        details: 'Children welcome during designated times only',
+        details: '16+ only for spa',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Age Restriction',
+        details: 'children welcome in the pool between 10am-1pm',
         accessType: 'age-restriction',
       },
       {
@@ -1395,7 +1404,7 @@ Complimentary spa access included for hotel guests, with day passes and annual m
       outdoorPool: false,
       thermalSuite: true,
     },
-    agePolicy: '16+ only for spa, children allowed in pool 10am-1pm only',
+    agePolicy: '16+ only for spa',
     relatedSpas: [2, 9],
   },
   {
@@ -1550,7 +1559,7 @@ Complimentary Cascades access included for all hotel guests, with 10% discount o
       outdoorPool: false,
       thermalSuite: true,
     },
-    agePolicy: '18+ only',
+    agePolicy: '18+',
     relatedSpas: [9, 3],
   },
 ];
