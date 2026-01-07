@@ -1,4 +1,4 @@
-import { ExternalLink, ShieldCheck, RefreshCw } from 'lucide-react';
+import { ExternalLink, Sparkles } from 'lucide-react';
 import { Spa } from '@/types/spa';
 
 interface BookVisitCTAProps {
@@ -7,38 +7,35 @@ interface BookVisitCTAProps {
 
 export default function BookVisitCTA({ spa }: BookVisitCTAProps) {
   return (
-    <div className="container mx-auto px-4 md:px-8 m-12">
+    <div className="container mx-auto px-4 md:px-8 py-24">
       <section
         id="book"
-        className="bg-slate-900 text-white rounded-3xl p-6 md:p-12 shadow-xl"
+        className="bg-emerald-950 rounded-[3rem] px-6 md:px-20 py-12 md:py-20 text-center relative overflow-hidden shadow-2xl"
       >
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Book Your {spa.name} Experience
+        {/* Decorative Background Icon */}
+        <div className="absolute top-0 right-0 p-12 opacity-5">
+          <Sparkles className="h-64 w-64 text-white" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10">
+          <h2 className="font-serif text-4xl md:text-6xl text-stone-50 mb-8 leading-tight max-w-4xl mx-auto">
+            Book your {spa.name} experience
           </h2>
-          <p className="text-slate-300 text-lg text-left md:text-center mb-8">
-            Ready to experience the {spa.name}? As a curated directory, we
-            connect you directly with the hotel for official pricing and
-            real-time availability.
-          </p>
-          <a
-            href={spa.websiteUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-500 transition-all shadow-lg hover:shadow-blue-900/40 group"
-          >
-            Visit {spa.name} Official Website
-            <ExternalLink className="h-5 w-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </a>
-          <div className="mt-8 pt-8 border-t text-left md:text-center border-slate-800 flex items-center justify-center space-x-6 text-sm text-slate-400">
-            <span className="flex items-center">
-              <ShieldCheck className="h-4 w-4 mr-1.5" />
-              Sourced from Official Website
-            </span>
-            <span className="flex items-center">
-              <RefreshCw className="h-4 w-4 mr-1.5" />
-              Regularly Updated
-            </span>
+          <div className="max-w-2xl mx-auto">
+            <p className="text-stone-400 text-lg mb-12 font-light">
+              Reservations are highly recommended to ensure the highest level of
+              personal service and availability.
+            </p>
+            <a
+              href={spa.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-10 py-5 bg-amber-600 text-stone-50 font-bold rounded-full shadow-xl uppercase tracking-widest text-xs"
+            >
+              Visit the Official Website
+              <ExternalLink className="h-4 w-4 ml-3 opacity-60" />
+            </a>
           </div>
         </div>
       </section>
