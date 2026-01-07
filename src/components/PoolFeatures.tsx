@@ -169,26 +169,34 @@ export default function PoolFeatures({ spa }: PoolFeaturesProps) {
   }
 
   return (
-    <section id="pools" className="mb-4">
-      <div className="flex items-center space-x-3 mb-4">
-        <Waves className="h-7 w-7 text-blue-600" />
-        <h2 className="text-3xl font-bold text-slate-900">
+    <section id="pools" className="bg-white py-32 -mx-4 md:-mx-8 px-4 md:px-8">
+      <div className="container mx-auto">
+        <div className="h-px w-12 bg-amber-700 opacity-30 mb-6" />
+
+        <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-6">
           Pools & Water Features
         </h2>
-      </div>
-      <p className="text-lg text-slate-600 leading-relaxed mb-8">{introText}</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {spa.poolFeatures.map((pool: PoolFeature, idx: number) => (
-          <div
-            key={idx}
-            className="bg-slate-50 border border-slate-200 p-6 rounded-xl"
-          >
-            <h3 className="font-bold text-lg text-slate-900 mb-2">
-              {pool.name}
-            </h3>
-            <p className="text-slate-600">{pool.details}</p>
-          </div>
-        ))}
+
+        <p className="text-stone-500 leading-relaxed mb-8">{introText}</p>
+
+        <div className="space-y-4">
+          {spa.poolFeatures.map((pool: PoolFeature, idx: number) => (
+            <div
+              key={idx}
+              className="flex items-center space-x-8 p-8 bg-stone-50/50 rounded-3xl border border-stone-100 shadow-sm"
+            >
+              <div className="h-16 w-16 rounded-full bg-white flex items-center justify-center text-amber-700 shadow-sm border border-stone-100 flex-shrink-0">
+                <Waves className="h-6 w-6" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h3 className="font-serif text-2xl text-stone-800 mb-1">
+                  {pool.name}
+                </h3>
+                <p className="text-stone-500 text-sm">{pool.details}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
