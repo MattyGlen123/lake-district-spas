@@ -10,7 +10,7 @@ export default function SpaIntroduction({ spa }: SpaIntroductionProps) {
   }
 
   return (
-    <section className="mb-12">
+    <section className="mb-32">
       {/* THE SETTING header */}
       <div className="flex items-center space-x-4 mb-8">
         <div className="h-px w-8 bg-amber-700 opacity-30" />

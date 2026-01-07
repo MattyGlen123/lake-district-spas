@@ -65,32 +65,46 @@ export default function ThermalFacilities({ spa }: ThermalFacilitiesProps) {
     totalFacilities >= 8 ? 'comprehensive thermal suite' : 'thermal suite';
 
   return (
-    <section id="thermal" className="mb-16">
-      <div className="flex items-center space-x-3 mb-6">
-        <Thermometer className="h-7 w-7 text-blue-600" />
-        <h2 className="text-3xl font-bold text-slate-900">
+    <section
+      id="thermal"
+      className="bg-[#F2F0ED] py-32 border-y border-stone-200/50 w-screen relative left-1/2 -translate-x-1/2"
+    >
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="mb-6">
+          <div className="h-px w-12 bg-amber-700 opacity-30" />
+        </div>
+        <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-6">
           Thermal Facilities
         </h2>
-      </div>
-      <p className="text-lg text-slate-600 leading-relaxed mb-8">
-        Experience {spa.name}&apos;s {suiteText} featuring{' '}
-        <strong>{totalFacilities} heat experiences</strong> designed to promote
-        relaxation, improve circulation, and enhance your overall wellness
-        journey. {highlightText} each facility offers unique therapeutic
-        benefits to help you unwind and rejuvenate.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {spa.thermalFacilities.map((facility: ThermalFacility, idx: number) => (
-          <div
-            key={idx}
-            className="bg-slate-50 border border-slate-200 p-6 rounded-xl"
-          >
-            <h3 className="font-bold text-lg text-slate-900 mb-2">
-              {facility.name}
-            </h3>
-            <p className="text-slate-600">{facility.details}</p>
-          </div>
-        ))}
+
+        <p className="text-stone-500 leading-relaxed mb-8">
+          Experience {spa.name}&apos;s {suiteText} featuring{' '}
+          <strong className="text-stone-700">
+            {totalFacilities} heat experiences
+          </strong>{' '}
+          designed to promote relaxation, improve circulation, and enhance your
+          overall wellness journey. {highlightText} each facility offers unique
+          therapeutic benefits to help you unwind and rejuvenate.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {spa.thermalFacilities.map(
+            (facility: ThermalFacility, idx: number) => (
+              <div
+                key={idx}
+                className="bg-white p-6 rounded-3xl border border-stone-200/60 shadow-sm"
+              >
+                <Thermometer className="h-5 w-5 text-amber-700 mb-4 opacity-30" />
+                <h3 className="font-serif text-xl text-stone-800 mb-2">
+                  {facility.name}
+                </h3>
+                <p className="text-stone-500 text-sm leading-relaxed">
+                  {facility.details}
+                </p>
+              </div>
+            )
+          )}
+        </div>
       </div>
     </section>
   );
