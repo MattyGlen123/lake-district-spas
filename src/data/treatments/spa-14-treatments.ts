@@ -4,8 +4,10 @@ export const spa14Treatments: Treatment[] = [
   {
     spaId: 14,
     name: 'Full Body Massage',
-    description: 'Therapeutic full body massage focused on relaxation and muscle tension relief.',
-    shortDescription: 'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
+    description:
+      'Therapeutic full body massage focused on relaxation and muscle tension relief.',
+    shortDescription:
+      'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
@@ -13,8 +15,10 @@ export const spa14Treatments: Treatment[] = [
   {
     spaId: 14,
     name: 'Fell Walkers Massage',
-    description: 'Foot soak and scrub. Legs wrapped in heated towels, leg and foot massage, neck and scalp massage. Perfect after a day in the fells.',
-    shortDescription: 'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
+    description:
+      'Foot soak and scrub. Legs wrapped in heated towels, leg and foot massage, neck and scalp massage. Perfect after a day in the fells.',
+    shortDescription:
+      'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
@@ -23,7 +27,8 @@ export const spa14Treatments: Treatment[] = [
     spaId: 14,
     name: 'Freestyle Massage',
     description: 'Personalised massage tailored to your needs.',
-    shortDescription: 'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
+    shortDescription:
+      'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
@@ -31,17 +36,21 @@ export const spa14Treatments: Treatment[] = [
   {
     spaId: 14,
     name: 'land&water body',
-    description: 'Full body brush, salt scrub, exfoliate, body lotion, shoulder, scalp, neck & shoulder massage.',
-    shortDescription: 'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
+    description:
+      'Full body brush, salt scrub, exfoliate, body lotion, shoulder, scalp, neck & shoulder massage.',
+    shortDescription:
+      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '60 minutes',
     brand: 'land&water',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 14,
     name: 'Hot Rocks Detox Massage',
-    description: 'A relaxing heated massage to back, neck, shoulders and back of legs.',
-    shortDescription: 'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
+    description:
+      'A relaxing heated massage to back, neck, shoulders and back of legs.',
+    shortDescription:
+      'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
@@ -50,7 +59,8 @@ export const spa14Treatments: Treatment[] = [
     spaId: 14,
     name: 'Back, Face and Scalp Massage',
     description: 'Back, neck, and shoulder, face, and scalp massage.',
-    shortDescription: 'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
+    shortDescription:
+      'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
@@ -58,8 +68,10 @@ export const spa14Treatments: Treatment[] = [
   {
     spaId: 14,
     name: 'Back, Neck and Shoulder Massage & Mini Facial',
-    description: 'Back, neck, and shoulder massage and mini facial: cleanse, tone, exfoliation, mask, scalp massage and moisturise.',
-    shortDescription: 'Express facial treatment providing quick, targeted results to refresh and revitalize skin.',
+    description:
+      'Back, neck, and shoulder massage and mini facial: cleanse, tone, exfoliation, mask, scalp massage and moisturise.',
+    shortDescription:
+      'Express facial treatment providing quick, targeted results to refresh and revitalize skin.',
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
@@ -67,8 +79,10 @@ export const spa14Treatments: Treatment[] = [
   {
     spaId: 14,
     name: 'land&water hands and feet',
-    description: 'Foot soak and salt scrub, foot and leg massage, hand soak and salt scrub, hand and arm massage with land and water hand lotion.',
-    shortDescription: 'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
+    description:
+      'Foot soak and salt scrub, foot and leg massage, hand soak and salt scrub, hand and arm massage with land and water hand lotion.',
+    shortDescription:
+      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '60 minutes',
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
@@ -76,8 +90,10 @@ export const spa14Treatments: Treatment[] = [
   {
     spaId: 14,
     name: 'land&water drench facial',
-    description: 'Cleanse, exfoliate, tone, face, neck and shoulder massage, face mask, scalp massage, moisturise.',
-    shortDescription: 'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
+    description:
+      'Cleanse, exfoliate, tone, face, neck and shoulder massage, face mask, scalp massage, moisturise.',
+    shortDescription:
+      'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
     duration: '60 minutes',
     brand: 'land&water',
     category: 'Facial Treatments',
@@ -86,7 +102,8 @@ export const spa14Treatments: Treatment[] = [
     spaId: 14,
     name: 'Mini Facial',
     description: 'Quick refreshing facial treatment.',
-    shortDescription: 'Express facial treatment providing quick, targeted results to refresh and revitalize skin.',
+    shortDescription:
+      'Express facial treatment providing quick, targeted results to refresh and revitalize skin.',
     duration: '30 minutes',
     brand: undefined,
     category: 'Facial Treatments',
@@ -95,7 +112,8 @@ export const spa14Treatments: Treatment[] = [
     spaId: 14,
     name: 'Back, Neck and Shoulders Massage',
     description: 'Focused massage on upper body tension areas.',
-    shortDescription: 'Focused massage targeting back, neck and shoulders to release tension and soothe tired muscles.',
+    shortDescription:
+      'Focused massage targeting back, neck and shoulders to release tension and soothe tired muscles.',
     duration: '30 minutes',
     brand: undefined,
     category: 'Massage Therapies',
@@ -104,7 +122,8 @@ export const spa14Treatments: Treatment[] = [
     spaId: 14,
     name: 'land&water feet',
     description: 'Foot soak, scrub and massage treatment.',
-    shortDescription: 'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
+    shortDescription:
+      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '30 minutes',
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
@@ -113,7 +132,8 @@ export const spa14Treatments: Treatment[] = [
     spaId: 14,
     name: 'land&water hands',
     description: 'Hand soak, scrub and massage treatment.',
-    shortDescription: 'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
+    shortDescription:
+      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '30 minutes',
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
@@ -122,7 +142,8 @@ export const spa14Treatments: Treatment[] = [
     spaId: 14,
     name: 'Neck and Scalp Massage',
     description: 'Targeted massage for neck and scalp relaxation.',
-    shortDescription: 'Soothing scalp and head massage to relieve mental stress and promote deep relaxation.',
+    shortDescription:
+      'Soothing scalp and head massage to relieve mental stress and promote deep relaxation.',
     duration: '30 minutes',
     brand: undefined,
     category: 'Massage Therapies',
@@ -130,17 +151,21 @@ export const spa14Treatments: Treatment[] = [
   {
     spaId: 14,
     name: 'The Works',
-    description: 'Body brush, salt scrub exfoliate, wrap, mini facial followed by a full body massage. The ultimate spa treatment experience.',
-    shortDescription: 'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
+    description:
+      'Body brush, salt scrub exfoliate, wrap, mini facial followed by a full body massage. The ultimate spa treatment experience.',
+    shortDescription:
+      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '120 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 14,
     name: 'Pregnancy Massage',
-    description: 'Full body massage, for pregnancy past first trimester. Specialist positioning ensures safety and comfort.',
-    shortDescription: 'Specially designed massage for expectant mothers focusing on sore, tired muscles without lying on your tummy.',
+    description:
+      'Full body massage, for pregnancy past first trimester. Specialist positioning ensures safety and comfort.',
+    shortDescription:
+      'Specially designed massage for expectant mothers focusing on sore, tired muscles without lying on your tummy.',
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
@@ -148,8 +173,10 @@ export const spa14Treatments: Treatment[] = [
   {
     spaId: 14,
     name: 'Drench Facial (Pregnancy)',
-    description: 'Pregnancy-safe facial treatment: cleanse, exfoliate, tone, face, neck and shoulder massage, face mask, scalp massage, moisturise.',
-    shortDescription: 'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
+    description:
+      'Pregnancy-safe facial treatment: cleanse, exfoliate, tone, face, neck and shoulder massage, face mask, scalp massage, moisturise.',
+    shortDescription:
+      'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
     duration: '60 minutes',
     brand: 'land&water',
     category: 'Facial Treatments',
@@ -157,8 +184,10 @@ export const spa14Treatments: Treatment[] = [
   {
     spaId: 14,
     name: 'land&water hands and feet (Pregnancy)',
-    description: 'Pregnancy-safe hand and feet treatment with soak, scrub and massage.',
-    shortDescription: 'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
+    description:
+      'Pregnancy-safe hand and feet treatment with soak, scrub and massage.',
+    shortDescription:
+      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '60 minutes',
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
@@ -166,10 +195,12 @@ export const spa14Treatments: Treatment[] = [
   {
     spaId: 14,
     name: 'Side by Side Massage/Facials',
-    description: 'Share the relaxation of a Swim Club treatment. Experience one of our massage or facial treatments together in our double treatment room.',
-    shortDescription: 'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
+    description:
+      'Share the relaxation of a Swim Club treatment. Experience one of our massage or facial treatments together in our double treatment room.',
+    shortDescription:
+      'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
     duration: '60 minutes',
     brand: undefined,
     category: 'Facial Treatments',
-  }
+  },
 ];

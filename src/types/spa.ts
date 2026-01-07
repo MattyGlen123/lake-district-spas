@@ -29,7 +29,7 @@ export interface AccessPolicy {
 export type TreatmentCategory =
   | 'Massage Therapies'
   | 'Facial Treatments'
-  | 'Body Treatments & Rituals'
+  | 'Body Treatments'
   | 'Hands & Feet Treatments';
 
 export interface Treatment {

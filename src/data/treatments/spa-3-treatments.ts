@@ -1,7 +1,7 @@
 import { Treatment } from '@/types/spa';
 
 export const spa3Treatments: Treatment[] = [
-{
+  {
     spaId: 3,
     name: 'Aquatherm Facial',
     description:
@@ -12,7 +12,7 @@ export const spa3Treatments: Treatment[] = [
     brand: 'Skeyndor',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Brimstone Power Facial',
     description:
@@ -23,7 +23,7 @@ export const spa3Treatments: Treatment[] = [
     brand: 'Skeyndor',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Brimstone Spa Collection',
     description:
@@ -32,9 +32,9 @@ export const spa3Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '50 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Celebration of Life Ritual',
     description:
@@ -43,9 +43,9 @@ export const spa3Treatments: Treatment[] = [
       'Multi-sensory wellness ritual combining complementary treatments for complete mind and body renewal.',
     duration: '90 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Eternal Facial',
     description:
@@ -56,7 +56,7 @@ export const spa3Treatments: Treatment[] = [
     brand: 'Skeyndor',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Fellwalker',
     description:
@@ -65,9 +65,9 @@ export const spa3Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '50 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Fifty Fifty',
     description:
@@ -76,9 +76,9 @@ export const spa3Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '50 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Hero',
     description:
@@ -87,9 +87,9 @@ export const spa3Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '50 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Hot Rocks',
     description:
@@ -98,9 +98,9 @@ export const spa3Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '50 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Mamabird',
     description:
@@ -109,9 +109,9 @@ export const spa3Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '50 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Mountain',
     description:
@@ -120,9 +120,9 @@ export const spa3Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '50 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Pure Alchemy Express Back, Neck & Shoulder Massage',
     description:
@@ -133,7 +133,7 @@ export const spa3Treatments: Treatment[] = [
     brand: 'Pure Alchemy',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 3,
     name: 'Rain Aromatherapy',
     description:
@@ -142,9 +142,9 @@ export const spa3Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '90 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Recovery Ritual',
     description:
@@ -153,9 +153,9 @@ export const spa3Treatments: Treatment[] = [
       'Targeted treatment combining massage, stretches and therapeutic seaweed wrap perfect for soothing tired muscles after exploring.',
     duration: '90 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Relax',
     description:
@@ -164,9 +164,9 @@ export const spa3Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '50 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Renew',
     description:
@@ -175,9 +175,9 @@ export const spa3Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '50 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Revival',
     description:
@@ -186,9 +186,9 @@ export const spa3Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '50 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Skeyndor Expert Cleanse Facial',
     description:
@@ -199,7 +199,7 @@ export const spa3Treatments: Treatment[] = [
     brand: 'Skeyndor',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Skeyndor Express Expert Cleanse Facial',
     description:
@@ -210,7 +210,7 @@ export const spa3Treatments: Treatment[] = [
     brand: 'Skeyndor',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Skeyndor Skin Scan & Introductory Facial',
     description:
@@ -221,7 +221,7 @@ export const spa3Treatments: Treatment[] = [
     brand: 'Skeyndor',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Skeyndor Skin Scanning Personalised Face Diagnosis',
     description:
@@ -232,7 +232,7 @@ export const spa3Treatments: Treatment[] = [
     brand: 'Skeyndor',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Spa Senses Signature Ritual - Activating',
     description:
@@ -241,9 +241,9 @@ export const spa3Treatments: Treatment[] = [
       'Multi-sensory wellness ritual combining complementary treatments for complete mind and body renewal.',
     duration: '100 minutes',
     brand: 'Spa Senses',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Spa Senses Signature Ritual - Detoxifying',
     description:
@@ -252,9 +252,9 @@ export const spa3Treatments: Treatment[] = [
       'Multi-sensory wellness ritual combining complementary treatments for complete mind and body renewal.',
     duration: '100 minutes',
     brand: 'Spa Senses',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Spa Senses Signature Ritual - Energising',
     description:
@@ -263,9 +263,9 @@ export const spa3Treatments: Treatment[] = [
       'Multi-sensory wellness ritual combining complementary treatments for complete mind and body renewal.',
     duration: '100 minutes',
     brand: 'Spa Senses',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Spa Senses Signature Ritual - Remineralising',
     description:
@@ -274,9 +274,9 @@ export const spa3Treatments: Treatment[] = [
       'Multi-sensory wellness ritual combining complementary treatments for complete mind and body renewal.',
     duration: '100 minutes',
     brand: 'Spa Senses',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Summit',
     description:
@@ -285,9 +285,9 @@ export const spa3Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '50 minutes',
     brand: 'Pure Alchemy',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 3,
     name: 'Timeless Facial',
     description:
@@ -297,5 +297,5 @@ export const spa3Treatments: Treatment[] = [
     duration: '90 minutes',
     brand: 'Skeyndor',
     category: 'Facial Treatments',
-  }
+  },
 ];

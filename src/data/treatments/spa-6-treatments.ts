@@ -1,7 +1,7 @@
 import { Treatment } from '@/types/spa';
 
 export const spa6Treatments: Treatment[] = [
-{
+  {
     spaId: 6,
     name: 'Biotec Facial',
     description:
@@ -12,7 +12,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 6,
     name: 'Body Nectar Nourish Wrap',
     description:
@@ -21,9 +21,9 @@ export const spa6Treatments: Treatment[] = [
       'Nourishing body wrap that hydrates skin and promotes detoxification while you relax in soothing warmth.',
     duration: '55 minutes',
     brand: 'ELEMIS',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 6,
     name: 'Couture Technology',
     description:
@@ -32,9 +32,9 @@ export const spa6Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '55 minutes',
     brand: 'ELEMIS',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 6,
     name: 'Couture Touch',
     description:
@@ -43,9 +43,9 @@ export const spa6Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '55 minutes',
     brand: 'ELEMIS',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 6,
     name: 'Deep Tissue Massage',
     description:
@@ -56,7 +56,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 6,
     name: 'Deep Tissue Massage',
     description:
@@ -67,7 +67,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 6,
     name: 'Deep Tissue Massage',
     description:
@@ -78,7 +78,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 6,
     name: 'ELEMIS Intensely Cleansing Salt Scrub',
     description:
@@ -87,9 +87,9 @@ export const spa6Treatments: Treatment[] = [
       'Invigorating salt and oil body scrub that detoxifies, exfoliates and deeply moisturizes skin for a silky-smooth finish.',
     duration: '25 minutes',
     brand: 'ELEMIS',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 6,
     name: 'Hot Stone Massage',
     description:
@@ -100,7 +100,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 6,
     name: 'Hot Stone Massage',
     description:
@@ -111,7 +111,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 6,
     name: 'Hot Stone Massage',
     description:
@@ -122,7 +122,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 6,
     name: 'Macdonald Signature Treatment',
     description:
@@ -131,9 +131,9 @@ export const spa6Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '85 minutes',
     brand: 'ELEMIS',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 6,
     name: 'Mens Freestyle Deep Tissue Massage',
     description:
@@ -144,7 +144,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 6,
     name: 'Peaceful Pregnancy Face and Body Experience',
     description:
@@ -155,7 +155,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 6,
     name: 'Pro-Glow Brilliance',
     description:
@@ -164,9 +164,9 @@ export const spa6Treatments: Treatment[] = [
       'Renewing body exfoliation that removes dead skin cells and leaves skin smooth, soft and glowing.',
     duration: '25 minutes',
     brand: 'ELEMIS',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 6,
     name: 'Pro-Glow Brilliance',
     description:
@@ -175,9 +175,9 @@ export const spa6Treatments: Treatment[] = [
       'Renewing body exfoliation that removes dead skin cells and leaves skin smooth, soft and glowing.',
     duration: '55 minutes',
     brand: 'ELEMIS',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 6,
     name: 'ishga Express Facial',
     description:
@@ -188,7 +188,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 6,
     name: 'ishga Neck, Back and Shoulder Massage',
     description:
@@ -198,5 +198,5 @@ export const spa6Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ishga',
     category: 'Massage Therapies',
-  }
+  },
 ];

@@ -1,7 +1,7 @@
 import { Treatment } from '@/types/spa';
 
 export const spa4Treatments: Treatment[] = [
-{
+  {
     spaId: 4,
     name: 'AHHHH! Leg and Foot Energiser',
     description:
@@ -12,7 +12,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£77',
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'All About the Glow',
     description:
@@ -21,9 +21,9 @@ export const spa4Treatments: Treatment[] = [
       'Renewing body exfoliation that removes dead skin cells and leaves skin smooth, soft and glowing.',
     duration: '60 minutes',
     brand: '£95',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Back to Life',
     description:
@@ -32,9 +32,9 @@ export const spa4Treatments: Treatment[] = [
       'Focused back treatment to relieve tension and soothe tired muscles.',
     duration: '45 minutes',
     brand: '£88',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Blissful Paraffin Wax Foot Wrap',
     description:
@@ -45,7 +45,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£35',
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Champagne & Truffles (60 mins)',
     description:
@@ -54,9 +54,9 @@ export const spa4Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '60 minutes',
     brand: '£121',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Champagne & Truffles (90 mins)',
     description:
@@ -65,9 +65,9 @@ export const spa4Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '90 minutes',
     brand: '£170',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Diamond Infusion Mask',
     description:
@@ -76,9 +76,9 @@ export const spa4Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '20 minutes',
     brand: '£35',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Drift Away (30 min back massage)',
     description:
@@ -89,7 +89,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£72',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 4,
     name: 'Drift Away (60 min full body)',
     description:
@@ -98,9 +98,9 @@ export const spa4Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '60 minutes',
     brand: '£99',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Drift Away (90 min full body, face & scalp)',
     description:
@@ -111,7 +111,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£140',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 4,
     name: 'Eye Massage Upgrade',
     description:
@@ -122,7 +122,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£15',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Foot Massage Upgrade',
     description:
@@ -133,7 +133,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£15',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 4,
     name: 'Hand Massage Upgrade',
     description:
@@ -144,7 +144,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£15',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 4,
     name: 'Healing Hands Paraffin Wax',
     description:
@@ -155,7 +155,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£35',
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Hot Oil Scalp Massage Upgrade',
     description:
@@ -166,7 +166,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£15',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 4,
     name: 'Light Relief',
     description:
@@ -175,9 +175,9 @@ export const spa4Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '75 minutes',
     brand: '£115',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'My Kinda Mood',
     description:
@@ -188,7 +188,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£215',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 4,
     name: 'New Beginnings (45 min back & scalp)',
     description:
@@ -197,9 +197,9 @@ export const spa4Treatments: Treatment[] = [
       'Focused back treatment to relieve tension and soothe tired muscles.',
     duration: '45 minutes',
     brand: '£85',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'New Beginnings (90 min full body, face & scalp)',
     description:
@@ -210,7 +210,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£170',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 4,
     name: 'Nourishing Foot Treatment',
     description:
@@ -221,7 +221,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£85',
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Nourishing Hand Treatment',
     description:
@@ -232,7 +232,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£85',
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Purification',
     description:
@@ -241,9 +241,9 @@ export const spa4Treatments: Treatment[] = [
       'Detoxifying treatment that cleanses and revitalizes body and skin for enhanced wellbeing.',
     duration: '60 minutes',
     brand: '£95',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Reflexology',
     description:
@@ -254,7 +254,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£80',
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Repose Aromatherapy Facial',
     description:
@@ -265,7 +265,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£115',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Rocks of the Mediterranean',
     description:
@@ -274,9 +274,9 @@ export const spa4Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '90 minutes',
     brand: '£170',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Sapphire Eye Revive',
     description:
@@ -285,9 +285,9 @@ export const spa4Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '20 minutes',
     brand: '£35',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'The Outer Glow',
     description:
@@ -296,9 +296,9 @@ export const spa4Treatments: Treatment[] = [
       'Top-to-toe buffing treatment that polishes skin to perfection with award-winning exfoliating scrubs for face and body.',
     duration: '60 minutes',
     brand: '£80',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'The Power Breakfast Facial',
     description:
@@ -309,7 +309,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£77',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'VIP Golden Truffle Experience',
     description:
@@ -318,9 +318,9 @@ export const spa4Treatments: Treatment[] = [
       'Ultimate luxury experience combining leg energizer, full-body scrub, anti-aging massage and champagne truffle facial.',
     duration: '120 minutes',
     brand: '£231',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Vitamin C Bubble Boost Mask',
     description:
@@ -329,9 +329,9 @@ export const spa4Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '20 minutes',
     brand: '£35',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Windows of the Soul',
     description:
@@ -340,9 +340,9 @@ export const spa4Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '30 minutes',
     brand: '£67',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 4,
     name: 'Work It Out (30 min back massage)',
     description:
@@ -353,7 +353,7 @@ export const spa4Treatments: Treatment[] = [
     brand: '£72',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 4,
     name: 'Work It Out (60 min full body)',
     description:
@@ -362,6 +362,6 @@ export const spa4Treatments: Treatment[] = [
       'Detoxifying treatment that cleanses and revitalizes body and skin for enhanced wellbeing.',
     duration: '60 minutes',
     brand: '£99',
-    category: 'Body Treatments & Rituals',
-  }
+    category: 'Body Treatments',
+  },
 ];

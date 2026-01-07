@@ -1,7 +1,7 @@
 import { Treatment } from '@/types/spa';
 
 export const spa7Treatments: Treatment[] = [
-{
+  {
     spaId: 7,
     name: 'Berry & Birch Head to Toe Massage',
     description:
@@ -12,7 +12,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'Berry & Birch',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 7,
     name: 'Berry & Birch Lost in the Clouds Massage',
     description:
@@ -23,7 +23,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'Berry & Birch',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 7,
     name: 'Berry & Birch Tailor Made Massage - 50',
     description:
@@ -34,7 +34,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'Berry & Birch',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 7,
     name: 'Berry & Birch Tension Trio Massage',
     description:
@@ -45,7 +45,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'Berry & Birch',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 7,
     name: 'ESPA Advanced LED Facial',
     description:
@@ -56,7 +56,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'ESPA Aromatherapy Massage',
     description:
@@ -67,7 +67,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 7,
     name: 'ESPA Deep Muscle Massage - 50',
     description:
@@ -78,7 +78,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 7,
     name: 'ESPA Detoxifying Salt and Oil Scrub',
     description:
@@ -87,9 +87,9 @@ export const spa7Treatments: Treatment[] = [
       'Invigorating salt and oil body scrub that detoxifies, exfoliates and deeply moisturizes skin for a silky-smooth finish.',
     duration: '50 minutes',
     brand: 'ESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'ESPA Glow from Within Facial',
     description:
@@ -100,7 +100,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'ESPA Inner Beauty Facial',
     description:
@@ -111,7 +111,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'ESPA Invigorating Salt and Oil Scrub',
     description:
@@ -120,9 +120,9 @@ export const spa7Treatments: Treatment[] = [
       'Invigorating salt and oil body scrub that detoxifies, exfoliates and deeply moisturizes skin for a silky-smooth finish.',
     duration: '50 minutes',
     brand: 'ESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 7,
     name: "ESPA Men's Deep Cleansing Facial",
     description:
@@ -133,7 +133,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'ESPA Positivity Massage',
     description:
@@ -144,7 +144,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 7,
     name: 'ESPA Pre Natal Relax and Restore',
     description:
@@ -153,9 +153,9 @@ export const spa7Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '50 minutes',
     brand: 'ESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'ESPA Regenerating Facial',
     description:
@@ -166,7 +166,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'ESPA Relaxing Salt and Oil Scrub',
     description:
@@ -175,9 +175,9 @@ export const spa7Treatments: Treatment[] = [
       'Invigorating salt and oil body scrub that detoxifies, exfoliates and deeply moisturizes skin for a silky-smooth finish.',
     duration: '50 minutes',
     brand: 'ESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'ESPA Restful Massage',
     description:
@@ -188,7 +188,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 7,
     name: 'Invigorating Foot Treatment',
     description:
@@ -199,7 +199,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'Radiance Reset Treatment Experience',
     description:
@@ -208,9 +208,9 @@ export const spa7Treatments: Treatment[] = [
       'Multi-sensory wellness ritual combining complementary treatments for complete mind and body renewal.',
     duration: '110 minutes',
     brand: 'ESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'Recovery Classic Facial',
     description:
@@ -221,7 +221,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'Recovery (Cancer Care)',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'Recovery Tailor Made Massage',
     description:
@@ -232,7 +232,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'Recovery (Cancer Care)',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 7,
     name: 'Reflexology',
     description:
@@ -243,7 +243,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'Restore & Re-sculpt Treatment Experience',
     description:
@@ -252,9 +252,9 @@ export const spa7Treatments: Treatment[] = [
       'Multi-sensory wellness ritual combining complementary treatments for complete mind and body renewal.',
     duration: '110 minutes',
     brand: 'ESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'The Festive Glow',
     description:
@@ -263,9 +263,9 @@ export const spa7Treatments: Treatment[] = [
       'Renewing body exfoliation that removes dead skin cells and leaves skin smooth, soft and glowing.',
     duration: '110 minutes',
     brand: 'ESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 7,
     name: 'The Sculpt and Soothe Treatment Experience',
     description: 'Includes: Full Body Scrub - Full Body Massage',
@@ -273,6 +273,6 @@ export const spa7Treatments: Treatment[] = [
       'Multi-sensory wellness ritual combining complementary treatments for complete mind and body renewal.',
     duration: '110 minutes',
     brand: 'ESPA',
-    category: 'Body Treatments & Rituals',
-  }
+    category: 'Body Treatments',
+  },
 ];

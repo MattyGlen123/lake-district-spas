@@ -76,7 +76,7 @@ export const spa9Treatments: Treatment[] = [
       'Invigorating salt-based body scrub that detoxifies, exfoliates and deeply moisturizes skin for a silky-smooth finish.',
     duration: '60 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 9,
@@ -203,12 +203,12 @@ export const spa9Treatments: Treatment[] = [
     spaId: 9,
     name: 'Cleansing Salt Scrub Only  Add On  30 Minutes',
     description:
-      'An invigorating rejuvenating body scrub, that leaves the skin silky and smooth. This treatment is a full body scrub to remove dead skin cells followed by a refreshing shower. There is an option to add on extra treatments such as full body massage to nourish the skin as the treatment doesn\'t include body moisturiser. This add on treatment is available in conjunction with any other body treatment only',
+      "An invigorating rejuvenating body scrub, that leaves the skin silky and smooth. This treatment is a full body scrub to remove dead skin cells followed by a refreshing shower. There is an option to add on extra treatments such as full body massage to nourish the skin as the treatment doesn't include body moisturiser. This add on treatment is available in conjunction with any other body treatment only",
     shortDescription:
       'Invigorating salt-based body scrub that detoxifies, exfoliates and deeply moisturizes skin for a silky-smooth finish.',
     duration: '30 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 9,
@@ -219,7 +219,7 @@ export const spa9Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '60 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 9,
@@ -230,7 +230,7 @@ export const spa9Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '60 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 9,
@@ -241,7 +241,7 @@ export const spa9Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '30 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 9,
@@ -252,7 +252,7 @@ export const spa9Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '30 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 9,
@@ -263,18 +263,17 @@ export const spa9Treatments: Treatment[] = [
       'Renewing body exfoliation that removes dead skin cells and leaves skin smooth, soft and glowing.',
     duration: '60 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 9,
     name: 'Gel Polish Removal',
-    description:
-      'Gellish gel polish removal',
+    description: 'Gellish gel polish removal',
     shortDescription:
       'Renewing body exfoliation that removes dead skin cells and leaves skin smooth, soft and glowing.',
     duration: '30 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 9,
@@ -285,6 +284,6 @@ export const spa9Treatments: Treatment[] = [
       'Treatment enhancement to deepen your relaxation and wellbeing.',
     duration: '30 minutes',
     brand: 'ELEMIS',
-    category: 'Body Treatments & Rituals',
-  }
+    category: 'Body Treatments',
+  },
 ];

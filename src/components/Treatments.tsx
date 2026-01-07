@@ -102,7 +102,7 @@ export default function Treatments({ spa }: TreatmentsProps) {
   const categoryOrder: TreatmentCategory[] = [
     'Massage Therapies',
     'Facial Treatments',
-    'Body Treatments & Rituals',
+    'Body Treatments',
     'Hands & Feet Treatments',
   ];
 

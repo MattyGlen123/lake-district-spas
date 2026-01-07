@@ -10,7 +10,7 @@ export const spa15Treatments: Treatment[] = [
       'Signature wellness ritual combining massage and facial treatments for complete mind and body renewal.',
     duration: '110 minutes',
     brand: 'ELEMIS',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 15,
@@ -137,7 +137,7 @@ export const spa15Treatments: Treatment[] = [
     spaId: 15,
     name: 'Elemis Indian Head Massage',
     description:
-      'A gentle and therapeutic massage technique aimed at relieving stress and tension and promoting general well-being. Part of Ayurveda medicine – the ancient Indian system of mind-body medicine aims to re-establish the body\'s natural balance by restoring and preserving physical, emotional and spiritual health.',
+      "A gentle and therapeutic massage technique aimed at relieving stress and tension and promoting general well-being. Part of Ayurveda medicine – the ancient Indian system of mind-body medicine aims to re-establish the body's natural balance by restoring and preserving physical, emotional and spiritual health.",
     shortDescription:
       'Soothing scalp and head massage to relieve mental stress and promote deep relaxation.',
     duration: '40 minutes',
@@ -164,7 +164,7 @@ export const spa15Treatments: Treatment[] = [
       'Invigorating salt-based body scrub that detoxifies, exfoliates and deeply moisturizes skin for a silky-smooth finish.',
     duration: '25 minutes',
     brand: 'ELEMIS',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 15,
@@ -176,5 +176,5 @@ export const spa15Treatments: Treatment[] = [
     duration: '65 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
-  }
+  },
 ];

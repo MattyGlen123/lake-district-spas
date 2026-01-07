@@ -1,7 +1,7 @@
 import { Treatment } from '@/types/spa';
 
 export const spa2Treatments: Treatment[] = [
-{
+  {
     spaId: 2,
     name: 'AAAHHH...& RELAX',
     description:
@@ -10,9 +10,9 @@ export const spa2Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '50 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Anti-Ageing Marine',
     description:
@@ -21,9 +21,9 @@ export const spa2Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '50 minutes',
     brand: 'VOYA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Anti-Ageing Restorative Facial',
     description:
@@ -34,7 +34,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'VOYA',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Champagne & Truffles Deluxe Treatment',
     description:
@@ -43,9 +43,9 @@ export const spa2Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '50 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Champagne & Truffles Deluxe Treatment (Extended)',
     description:
@@ -54,9 +54,9 @@ export const spa2Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '80 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Deep Tissue Massage',
     description:
@@ -67,7 +67,7 @@ export const spa2Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 2,
     name: 'Drift Away',
     description:
@@ -76,9 +76,9 @@ export const spa2Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '50 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Drift Away (Extended)',
     description:
@@ -87,9 +87,9 @@ export const spa2Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '80 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Feel Good Massage',
     description:
@@ -100,7 +100,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 2,
     name: 'Feel Good Massage (Extended)',
     description: 'Includes mini detox facial.',
@@ -110,7 +110,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 2,
     name: 'Glorious Mud',
     description:
@@ -119,9 +119,9 @@ export const spa2Treatments: Treatment[] = [
       'Detoxifying treatment that cleanses and revitalizes body and skin for enhanced wellbeing.',
     duration: '50 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Hand on Heart',
     description:
@@ -130,9 +130,9 @@ export const spa2Treatments: Treatment[] = [
       'Nurturing treatment combining back massage, facial and scalp work with Tui Na Chinese movements to calm and rebalance.',
     duration: '50 minutes',
     brand: 'Made for Life',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Hand on Heart (Extended)',
     description: 'Extended back, face and scalp treatment.',
@@ -140,9 +140,9 @@ export const spa2Treatments: Treatment[] = [
       'Nurturing treatment combining back massage, facial and scalp work with Tui Na Chinese movements to calm and rebalance.',
     duration: '80 minutes',
     brand: 'Made for Life',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Herbal Sleep Cocoon',
     description:
@@ -151,9 +151,9 @@ export const spa2Treatments: Treatment[] = [
       'Deeply calming body wrap with herbal ingredients, body brushing and scalp massage to rebalance body and promote restful sleep.',
     duration: '50 minutes',
     brand: 'VOYA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Herbal Sleep Cocoon (Extended)',
     description: 'Extended version with additional time for deeper relaxation.',
@@ -161,9 +161,9 @@ export const spa2Treatments: Treatment[] = [
       'Deeply calming body wrap with herbal ingredients, body brushing and scalp massage to rebalance body and promote restful sleep.',
     duration: '80 minutes',
     brand: 'VOYA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Indian Head Massage',
     description:
@@ -174,7 +174,7 @@ export const spa2Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 2,
     name: "It's All About the Glow",
     description:
@@ -183,9 +183,9 @@ export const spa2Treatments: Treatment[] = [
       'Renewing body exfoliation that removes dead skin cells and leaves skin smooth, soft and glowing.',
     duration: '50 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'My Kinda Skin',
     description:
@@ -194,9 +194,9 @@ export const spa2Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '50 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'New Beginnings',
     description:
@@ -205,9 +205,9 @@ export const spa2Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '50 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'New Beginnings (Extended)',
     description: 'Extended pregnancy massage.',
@@ -215,9 +215,9 @@ export const spa2Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '80 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Organic Lavender and Seaweed Sugar Glow',
     description:
@@ -226,9 +226,9 @@ export const spa2Treatments: Treatment[] = [
       'Gentle sugar-based exfoliation with seaweed extracts and aromatic oils that removes dead skin cells while healing and softening skin.',
     duration: '50 minutes',
     brand: 'VOYA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Organic Rebalance Ritual',
     description:
@@ -237,9 +237,9 @@ export const spa2Treatments: Treatment[] = [
       'Calming ritual beginning with meditation and chakra balancing with rose quartz crystals, followed by full-body massage.',
     duration: '50 minutes',
     brand: 'VOYA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Organic Rebalance Ritual (with foot scrub)',
     description:
@@ -248,9 +248,9 @@ export const spa2Treatments: Treatment[] = [
       'Renewing body exfoliation that removes dead skin cells and leaves skin smooth, soft and glowing.',
     duration: '80 minutes',
     brand: 'VOYA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Organic Seaweed Leaf Wrap',
     description:
@@ -259,9 +259,9 @@ export const spa2Treatments: Treatment[] = [
       'Detoxifying full-body wrap with organic seaweed leaves that provides powerful cleansing and skin-firming benefits.',
     duration: '80 minutes',
     brand: 'VOYA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: "Organic Walker's Recovery",
     description:
@@ -270,9 +270,9 @@ export const spa2Treatments: Treatment[] = [
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '50 minutes',
     brand: 'VOYA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Reflexology',
     description:
@@ -283,7 +283,7 @@ export const spa2Treatments: Treatment[] = [
     brand: undefined,
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Rocks of the Mediterranean',
     description:
@@ -292,9 +292,9 @@ export const spa2Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '70 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Soothe and Nurture Organic Facial',
     description:
@@ -305,7 +305,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Made for Life',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'The Total Glow Up',
     description:
@@ -314,9 +314,9 @@ export const spa2Treatments: Treatment[] = [
       'Renewing body exfoliation that removes dead skin cells and leaves skin smooth, soft and glowing.',
     duration: '80 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Touch Therapy - Deeply Relaxing Touch to Face or Body',
     description:
@@ -327,7 +327,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Made for Life',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Work it out Massage',
     description:
@@ -338,7 +338,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 2,
     name: 'Work it out Massage (Extended)',
     description: 'Extended detox massage.',
@@ -348,7 +348,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 2,
     name: 'Your Best You',
     description:
@@ -357,9 +357,9 @@ export const spa2Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '50 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 2,
     name: 'Your Best You (Extended)',
     description: 'Extended bespoke massage.',
@@ -367,6 +367,6 @@ export const spa2Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '80 minutes',
     brand: 'Temple Spa',
-    category: 'Body Treatments & Rituals',
-  }
+    category: 'Body Treatments',
+  },
 ];

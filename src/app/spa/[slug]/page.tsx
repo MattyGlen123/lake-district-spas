@@ -102,18 +102,14 @@ export default function SpaDetailPage({
         <QuickFactsBar spa={spa} />
         <BackButton />
 
-        <div className="container mx-auto px-4 md:px-8 py-8">
+        <div className="container mx-auto px-4 md:px-8 pt-8">
           <SpaIntroduction spa={spa} />
           <ThermalFacilities spa={spa} />
           <PoolFeatures spa={spa} />
           <Treatments spa={spa} />
         </div>
 
-        <div className="w-full bg-slate-50 py-12">
-          <div className="container mx-auto px-4 md:px-8">
-            <AccessPolicy spa={spa} />
-          </div>
-        </div>
+        <AccessPolicy spa={spa} />
 
         <BookVisitCTA spa={spa} />
         <SpaNavigation currentSpa={spa} />

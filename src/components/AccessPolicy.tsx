@@ -5,166 +5,71 @@ interface AccessPolicyProps {
   spa: Spa;
 }
 
+function getPolicyIcon(accessType?: string) {
+  switch (accessType) {
+    case 'hotel':
+      return <Bed className="h-5 w-5" />;
+    case 'day-pass':
+      return <CreditCard className="h-5 w-5" />;
+    case 'spa-hours':
+      return <Clock className="h-5 w-5" />;
+    case 'age-restriction':
+      return <ShieldAlert className="h-5 w-5" />;
+    case 'general':
+    default:
+      return <Info className="h-5 w-5" />;
+  }
+}
+
 export default function AccessPolicy({ spa }: AccessPolicyProps) {
   if (spa.accessPolicy.length === 0) {
     return null;
   }
 
-  // Filter policies by accessType
-  const hotelPolicies = spa.accessPolicy.filter(
-    (p) => p.accessType === 'hotel'
-  );
-  const dayPassPolicies = spa.accessPolicy.filter(
-    (p) => p.accessType === 'day-pass'
-  );
-  const hoursPolicies = spa.accessPolicy.filter(
-    (p) => p.accessType === 'spa-hours'
-  );
-  const generalPolicies = spa.accessPolicy.filter(
-    (p) => p.accessType === 'general'
-  );
-  const agePolicies = spa.accessPolicy.filter(
-    (p) => p.accessType === 'age-restriction'
-  );
-
   return (
-    <section
-      id="access"
-      className="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-sm"
-    >
-      {/* Main Header */}
-      <div className="flex items-center space-x-3 mb-8">
-        <CreditCard className="h-8 w-8 text-blue-600" />
-        <h2 className="text-3xl font-bold text-slate-900">Access & Bookings</h2>
-      </div>
-
-      {/* Subsections Container */}
-      <div className="space-y-10">
-        {/* Grid for first 4 sections */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* 1. Hotel Guest Policy */}
-          {hotelPolicies.length > 0 && (
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-                <span className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3">
-                  <Bed className="h-4 w-4" />
-                </span>
-                Hotel Guest Policy
-              </h3>
-              <div className="pl-4 md:pl-11 border-l-2 border-slate-100 ml-4">
-                {hotelPolicies.map((policy, idx) => (
-                  <div
-                    key={idx}
-                    className="mb-3 last:mb-0 flex items-start group"
-                  >
-                    <div className="h-2 w-2 rounded-full bg-blue-200 mt-2 mr-3 group-hover:bg-blue-500 transition-colors" />
-                    <p className="text-lg text-slate-900">
-                      <span className="font-semibold">{policy.name}:</span>{' '}
-                      <span className="text-slate-600">{policy.details}</span>
-                    </p>
-                  </div>
-                ))}
-              </div>
+    <div className="py-32 container mx-auto px-4 md:px-8">
+      <section id="access" className="container mx-auto">
+        <div className="flex flex-col md:flex-row gap-12">
+          {/* Left column - Intro */}
+          <div className="md:w-1/3">
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="h-px w-12 bg-amber-700 opacity-30" />
+              <span className="text-xs font-bold uppercase tracking-[0.4em] text-amber-700">
+                Policies
+              </span>
             </div>
-          )}
-
-          {/* 2. External Visitors & Day Passes */}
-          {dayPassPolicies.length > 0 && (
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-                <span className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3">
-                  <CreditCard className="h-4 w-4" />
-                </span>
-                Day Passes
-              </h3>
-              <div className="pl-4 md:pl-11 border-l-2 border-slate-100 ml-4">
-                {dayPassPolicies.map((policy, idx) => (
-                  <div
-                    key={idx}
-                    className="mb-3 last:mb-0 flex items-start group"
-                  >
-                    <div className="h-2 w-2 rounded-full bg-blue-200 mt-2 mr-3 group-hover:bg-blue-500 transition-colors" />
-                    <p className="text-lg text-slate-900">
-                      <span className="font-semibold">{policy.name}:</span>{' '}
-                      <span className="text-slate-600">{policy.details}</span>
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* 3. Operating Hours */}
-          {hoursPolicies.length > 0 && (
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-                <span className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3">
-                  <Clock className="h-4 w-4" />
-                </span>
-                Operating Hours
-              </h3>
-              <div className="pl-4 md:pl-11 border-l-2 border-slate-100 ml-4">
-                {hoursPolicies.map((policy, idx) => (
-                  <div
-                    key={idx}
-                    className="mb-3 last:mb-0 flex items-start group"
-                  >
-                    <div className="h-2 w-2 rounded-full bg-blue-200 mt-2 mr-3 group-hover:bg-blue-500 transition-colors" />
-                    <p className="text-lg text-slate-900">
-                      <span className="font-semibold">{policy.name}:</span>{' '}
-                      <span className="text-slate-600">{policy.details}</span>
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* 4. General Policies */}
-          {generalPolicies.length > 0 && (
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-                <span className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3">
-                  <Info className="h-4 w-4" />
-                </span>
-                General Policies
-              </h3>
-              <div className="pl-4 md:pl-11 border-l-2 border-slate-100 ml-4">
-                {generalPolicies.map((policy, idx) => (
-                  <div
-                    key={idx}
-                    className="mb-3 last:mb-0 flex items-start group"
-                  >
-                    <div className="h-2 w-2 rounded-full bg-blue-200 mt-2 mr-3 group-hover:bg-blue-500 transition-colors" />
-                    <p className="text-lg text-slate-900">
-                      <span className="font-semibold">{policy.name}:</span>{' '}
-                      <span className="text-slate-600">{policy.details}</span>
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* 5. Age Restrictions - Special Amber Styling */}
-        {agePolicies.length > 0 && (
-          <div className="bg-amber-50 rounded-2xl p-6 border border-amber-100">
-            <h3 className="text-lg font-bold text-amber-900 mb-2 flex items-center">
-              <ShieldAlert className="h-5 w-5 mr-2" />
-              Important Age Restrictions
-            </h3>
-            <div className="space-y-2">
-              {agePolicies.map((policy, idx) => (
-                <p key={idx} className="text-amber-900">
-                  <span className="font-semibold">{policy.name}:</span>{' '}
-                  <span className="text-amber-800">{policy.details}</span>
-                </p>
-              ))}
-            </div>
+            <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-4">
+              Access Details
+            </h2>
+            <p className="text-stone-500 text-sm font-light leading-relaxed">
+              Our directory helps you navigate the specific guest and public
+              policies of Lake District hotel spas.
+            </p>
           </div>
-        )}
-      </div>
-    </section>
+
+          {/* Right column - Policy cards */}
+          <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {spa.accessPolicy.map((policy, idx) => (
+              <div
+                key={idx}
+                className="flex items-start space-x-5 p-6 rounded-2xl bg-white border border-stone-200/60 shadow-sm"
+              >
+                <div className="p-2 bg-stone-50 text-amber-700 rounded-lg border border-stone-100">
+                  {getPolicyIcon(policy.accessType)}
+                </div>
+                <div>
+                  <h3 className="font-bold text-stone-800 text-sm mb-1 uppercase tracking-wider">
+                    {policy.name}
+                  </h3>
+                  <p className="text-stone-600 text-sm leading-relaxed font-light">
+                    {policy.details}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

@@ -49,7 +49,7 @@ export const spa12Treatments: Treatment[] = [
     spaId: 12,
     name: 'Vinohydra Facial',
     description:
-      'Restore your skin\'s natural beauty using the power of the grapevine. This deeply nourishing and hydrating facial is perfect for those with even the most delicate of skins. Our relaxing massage will ease your tensions, whilst our unique Grape Water rehydrates and soothes the skin leaving your complexion healthy, plumped, and glowing.',
+      "Restore your skin's natural beauty using the power of the grapevine. This deeply nourishing and hydrating facial is perfect for those with even the most delicate of skins. Our relaxing massage will ease your tensions, whilst our unique Grape Water rehydrates and soothes the skin leaving your complexion healthy, plumped, and glowing.",
     shortDescription:
       'Deeply hydrating facial that replenishes moisture and plumps skin for a fresh, dewy complexion.',
     duration: '50 minutes',
@@ -82,12 +82,12 @@ export const spa12Treatments: Treatment[] = [
     spaId: 12,
     name: 'TEMPLESPA The Body Detox',
     description:
-      'This heavenly treatment starts with lymphatic body-brushing, then warm vitamin and mineral rich purifying mud is smoothed all over the body. Once cocooned in this cosy wrap, you\'ll relax with a glorious face and scalp massage. Wallowing in mud never felt soooo good!',
+      "This heavenly treatment starts with lymphatic body-brushing, then warm vitamin and mineral rich purifying mud is smoothed all over the body. Once cocooned in this cosy wrap, you'll relax with a glorious face and scalp massage. Wallowing in mud never felt soooo good!",
     shortDescription:
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '50 minutes',
     brand: 'TEMPLESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 12,
@@ -98,7 +98,7 @@ export const spa12Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '50 minutes',
     brand: 'TEMPLESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 12,
@@ -109,7 +109,7 @@ export const spa12Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '80 minutes',
     brand: 'TEMPLESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 12,
@@ -120,7 +120,7 @@ export const spa12Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '35 minutes',
     brand: 'TEMPLESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 12,
@@ -131,7 +131,7 @@ export const spa12Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '80 minutes',
     brand: 'TEMPLESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 12,
@@ -139,7 +139,7 @@ export const spa12Treatments: Treatment[] = [
     description:
       'For those who are short on time but want a radiance boost. This facial will give your skin the glow you need from our Glycolic Peel Mask to leave your skin softened, complexion glowing, and the evenness of your skin tone is returned.',
     shortDescription:
-      'Tailored express facial customized to your skin type\'s unique needs for quick, targeted results.',
+      "Tailored express facial customized to your skin type's unique needs for quick, targeted results.",
     duration: '25 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
@@ -153,7 +153,7 @@ export const spa12Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '25 minutes',
     brand: 'TEMPLESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 12,
@@ -164,7 +164,7 @@ export const spa12Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '25 minutes',
     brand: 'TEMPLESPA',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 12,
@@ -197,7 +197,7 @@ export const spa12Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '10 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 12,
@@ -208,7 +208,7 @@ export const spa12Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '25 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 12,
@@ -219,7 +219,7 @@ export const spa12Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '40 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 12,
@@ -230,7 +230,7 @@ export const spa12Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '40 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 12,
@@ -241,7 +241,7 @@ export const spa12Treatments: Treatment[] = [
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '55 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
   {
     spaId: 12,
@@ -252,6 +252,6 @@ export const spa12Treatments: Treatment[] = [
       'Renewing body exfoliation that removes dead skin cells and leaves skin smooth, soft and glowing.',
     duration: '25 minutes',
     brand: undefined,
-    category: 'Body Treatments & Rituals',
-  }
+    category: 'Body Treatments',
+  },
 ];

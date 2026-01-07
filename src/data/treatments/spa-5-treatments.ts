@@ -1,7 +1,7 @@
 import { Treatment } from '@/types/spa';
 
 export const spa5Treatments: Treatment[] = [
-{
+  {
     spaId: 5,
     name: 'Aaahhh Leg And Foot Treatment - 30 Mins',
     description: '',
@@ -11,7 +11,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'All About The Glow - 60 Mins',
     description: '',
@@ -19,9 +19,9 @@ export const spa5Treatments: Treatment[] = [
       'Top-to-toe buffing treatment that polishes skin to perfection with award-winning exfoliating scrubs for face and body.',
     duration: '60 minutes',
     brand: 'TempleSpa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Brush With Heaven',
     description: '',
@@ -29,9 +29,9 @@ export const spa5Treatments: Treatment[] = [
       'Invigorating full-body treatment with skin brushing and nourishing products to boost circulation and leave skin silky smooth.',
     duration: '60 minutes',
     brand: 'TempleSpa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Champagne And Truffles Facial - 60 Mins',
     description: '',
@@ -41,7 +41,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Champagne And Truffles Facial - 90 Mins',
     description: '',
@@ -51,7 +51,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Detox Foot Ritual - 15 Minutes (ADD ON)',
     description: '',
@@ -61,7 +61,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Detox Foot Ritual - 30 Minutes (ADD ON)',
     description: '',
@@ -71,7 +71,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Drift Away Back Massage - 30 Mins',
     description: '',
@@ -81,7 +81,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 5,
     name: 'Drift Away Body Massage - 90 Mins',
     description: '',
@@ -91,7 +91,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 5,
     name: 'Drift Away Full Body Massage - 60 Mins',
     description: '',
@@ -101,7 +101,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 5,
     name: 'Glass Skin Facial',
     description: '',
@@ -111,7 +111,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Go Guy Facial',
     description: '',
@@ -121,7 +121,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Gua Sha & Lymphatic Flow Facial',
     description: '',
@@ -131,7 +131,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Hot Oil Scalp Sensation (ADD ON)',
     description: '',
@@ -141,7 +141,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 5,
     name: "I'll Be Back Treatment - 45 Mins",
     description: '',
@@ -149,9 +149,9 @@ export const spa5Treatments: Treatment[] = [
       'Revitalizing back treatment with exfoliation and purifying mud mask that deeply cleanses and hydrates skin.',
     duration: '45 minutes',
     brand: 'TempleSpa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Indulgent Hand Ritual - 15 Minutes (ADD ON)',
     description: '',
@@ -161,7 +161,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Indulgent Hand Ritual - 30 Minutes (ADD ON)',
     description: '',
@@ -171,7 +171,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Intense Eye Relief (ADD ON)',
     description: '',
@@ -179,9 +179,9 @@ export const spa5Treatments: Treatment[] = [
       'Rejuvenating spa treatment designed to relax body and mind, leaving you feeling renewed and restored.',
     duration: '15 minutes',
     brand: 'TempleSpa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Led Mask Add On',
     description: '',
@@ -189,9 +189,9 @@ export const spa5Treatments: Treatment[] = [
       'Rejuvenating spa treatment designed to relax body and mind, leaving you feeling renewed and restored.',
     duration: '15 minutes',
     brand: 'TempleSpa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'My Kinda Skin - 60 Mins',
     description: '',
@@ -199,9 +199,9 @@ export const spa5Treatments: Treatment[] = [
       'Rejuvenating spa treatment designed to relax body and mind, leaving you feeling renewed and restored.',
     duration: '60 minutes',
     brand: 'TempleSpa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Neck & Shoulder Hot Stone Therapy (ADD ON)',
     description: '',
@@ -209,9 +209,9 @@ export const spa5Treatments: Treatment[] = [
       'Rejuvenating spa treatment designed to relax body and mind, leaving you feeling renewed and restored.',
     duration: '15 minutes',
     brand: 'TempleSpa',
-    category: 'Body Treatments & Rituals',
+    category: 'Body Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'New Beginnings Pregnancy Massage',
     description: '',
@@ -221,7 +221,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 5,
     name: 'Repose Facial - 75 Mins',
     description: '',
@@ -231,7 +231,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Rosemary Hair Oil Scalp Massage',
     description: '',
@@ -241,7 +241,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 5,
     name: 'The Clean Girl Facial',
     description: '',
@@ -251,7 +251,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Facial Treatments',
   },
-{
+  {
     spaId: 5,
     name: 'Work It Out Massage - 30 Mins',
     description: '',
@@ -261,7 +261,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 5,
     name: 'Work It Out Massage - 60 Mins',
     description: '',
@@ -271,7 +271,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
   },
-{
+  {
     spaId: 5,
     name: 'Work It Out Massage - 90 Mins',
     description: '',
@@ -280,5 +280,5 @@ export const spa5Treatments: Treatment[] = [
     duration: '90 minutes',
     brand: 'TempleSpa',
     category: 'Massage Therapies',
-  }
+  },
 ];
