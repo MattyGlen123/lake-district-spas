@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Spa, accessLabelConfig } from '@/types/spa';
+import { Spa } from '@/types/spa';
 
 interface SpaHeroProps {
   spa: Spa;
@@ -11,20 +11,11 @@ interface SpaHeroProps {
 export default function SpaHero({ spa }: SpaHeroProps) {
   const [imageError, setImageError] = useState(false);
 
-  // Sort access labels: hotel badges first, then public (day passes)
-  const sortedAccessLabels = [...spa.accessLabels].sort((a, b) => {
-    const aCategory = accessLabelConfig[a].category;
-    const bCategory = accessLabelConfig[b].category;
-    if (aCategory === 'hotel' && bCategory === 'public') return -1;
-    if (aCategory === 'public' && bCategory === 'hotel') return 1;
-    return 0;
-  });
-
   return (
     <section className="container mx-auto px-4 mb-4 md:mb-12 lg:px-8">
-      <div className="relative rounded-2xl overflow-hidden aspect-[389/350] md:aspect-[389/250] lg:h-[500px] lg:w-full shadow-lg group">
+      <div className="relative rounded-t-2xl overflow-hidden aspect-[389/350] md:aspect-[389/250] lg:h-[500px] lg:w-full shadow-2xl">
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-900/70 via-stone-900/20 to-transparent z-10" />
 
         {/* Image */}
         {!imageError ? (
@@ -44,26 +35,10 @@ export default function SpaHero({ spa }: SpaHeroProps) {
           </div>
         )}
 
-        {/* Content Overlay */}
+        {/* Content Overlay - Bottom */}
         <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 z-20">
-          {/* Access Badges */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {sortedAccessLabels.map((label) => {
-              const config = accessLabelConfig[label];
-              return (
-                <div
-                  key={label}
-                  className="bg-white text-black px-2 py-1 rounded-lg text-sm inline-flex items-center gap-1"
-                >
-                  <span>{config.dot}</span>
-                  <span>{config.shortLabel}</span>
-                </div>
-              );
-            })}
-          </div>
-
           {/* Spa Name (H1) */}
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-2 text-white">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif tracking-tight mb-2 text-white">
             {spa.name}
           </h1>
         </div>
