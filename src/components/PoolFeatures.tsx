@@ -179,7 +179,7 @@ export default function PoolFeatures({ spa }: PoolFeaturesProps) {
 
         <p className="text-stone-500 leading-relaxed mb-8">{introText}</p>
 
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {spa.poolFeatures.map((pool: PoolFeature, idx: number) => (
             <div
               key={idx}
