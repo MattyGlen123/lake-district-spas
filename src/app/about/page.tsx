@@ -80,8 +80,8 @@ export default function AboutPage() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl grayscale opacity-70 border border-white/10">
                 <Image
-                  src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800"
-                  alt="Spa frustration"
+                  src="/images/lake-district-spas_massage-oil-treatment.jpg"
+                  alt="Professional spa therapist pouring aromatic massage oil during luxury treatment, hands performing skilled therapeutic massage techniques with natural oils, showcasing the high-quality wellness treatments and professional spa services"
                   width={800}
                   height={1000}
                   className="w-full h-full object-cover"
@@ -168,11 +168,11 @@ export default function AboutPage() {
                   Audience
                 </span>
                 <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-6 leading-tight">
-                  Who This Is For
+                  Who This For
                 </h2>
                 <p className="text-stone-500 font-light leading-relaxed">
                   A resource designed for everyone from the weekend wellness
-                  seeker to local spa enthusiasts.
+                  seekers to local spa enthusiasts.
                 </p>
               </div>
               <div className="md:w-2/3 space-y-12">

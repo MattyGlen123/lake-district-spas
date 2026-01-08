@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <>
       <header className="bg-background/95 backdrop-blur-sm shadow-sm">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo and Text - Left */}
             <Link href="/" className="flex items-center gap-3">
@@ -34,7 +34,7 @@ const Header = () => {
             {/* Menu Button - Right */}
             <button
               type="button"
-              className="p-2 text-stone-700"
+              className="p-3 bg-[#FAF9F6] rounded-full text-stone-400"
               onClick={() => setIsSideMenuOpen(true)}
               aria-label="Open menu"
             >
