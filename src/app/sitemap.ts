@@ -12,6 +12,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1.0,
   };
 
+  // About page entry
+  const aboutPage = {
+    url: `${baseUrl}/about`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  };
+
   // Spa pages entries
   const spaPages = spaData.map((spa) => ({
     url: `${baseUrl}/spa/${spa.url}`,
@@ -20,5 +28,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [homepage, ...spaPages];
+  return [homepage, aboutPage, ...spaPages];
 }
