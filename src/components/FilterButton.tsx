@@ -11,12 +11,14 @@ const FilterButton = ({ onClick, activeFilterCount }: FilterButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className="flex items-center gap-2 px-10 py-2 bg-background border border-border rounded-lg text-sm font-medium hover:border-primary/50 transition-colors"
+      className="flex items-center text-stone-400 cursor-pointer relative"
     >
-      <Filter className="w-4 h-4" />
-      <span>Filters</span>
+      <Filter className="h-4 w-4 mr-2" />
+      <span className="text-[13px] font-black uppercase tracking-widest">
+        Filters
+      </span>
       {activeFilterCount > 0 && (
-        <span className="ml-1 px-2 py-0.5 bg-primary text-primary-foreground rounded-full text-xs font-semibold">
+        <span className="ml-2 px-2 py-0.5 bg-amber-600 text-white text-[10px] font-bold rounded-full">
           {activeFilterCount}
         </span>
       )}

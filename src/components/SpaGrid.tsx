@@ -26,14 +26,14 @@ const SpaGrid = ({ spas }: SpaGridProps) => {
   }
 
   return (
-    <section className="py-8 md:py-12">
+    <section className="py-8 md:py-16 mb-20">
       <div className="container mx-auto px-4">
         {/* Heading */}
         <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">
           Explore {spas.length} {spas.length === 1 ? 'spa' : 'spas'}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
           {spas.map((spa) => (
             <SpaCard key={spa.id} spa={spa} />
           ))}

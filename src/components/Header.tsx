@@ -11,9 +11,9 @@ const Header = () => {
   return (
     <header className="bg-background/95 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 relative">
-          {/* Logo - Left */}
-          <Link href="/" className="flex items-center">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo and Text - Left */}
+          <Link href="/" className="flex items-center gap-3">
             <div className="p-1">
               <Image
                 src="/logo.svg"
@@ -24,14 +24,10 @@ const Header = () => {
                 priority
               />
             </div>
-          </Link>
-
-          {/* Centered Text */}
-          <div className="absolute left-1/2 transform -translate-x-1/2">
-            <span className="text-xl font-bold text-primary">
+            <span className="text-xl font-serif text-primary">
               Lake District Spas
             </span>
-          </div>
+          </Link>
 
           {/* Mobile Menu Button - Right (hidden for now, kept for future use) */}
           <button
@@ -46,9 +42,6 @@ const Header = () => {
               <Menu className="w-6 h-6" />
             )}
           </button>
-
-          {/* Spacer for desktop to balance layout */}
-          <div className="hidden md:block w-12" />
         </div>
 
         {/* Mobile Navigation - Empty for now, kept for future use */}

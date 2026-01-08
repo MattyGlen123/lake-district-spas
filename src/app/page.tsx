@@ -232,12 +232,22 @@ export default function Home() {
       <main>
         <Hero />
 
-        <div className="sticky top-0 z-20 mx-auto bg-gray-100 border-b border-gray-300">
-          <div className="mx-auto container flex justify-end px-4 py-3">
-            <FilterButton
-              onClick={handleOpenModal}
-              activeFilterCount={activeFilterCount}
-            />
+        <div className="sticky top-0 z-20 bg-white border-y border-stone-100">
+          <div className="container mx-auto px-4 py-6">
+            <div className="flex flex-row items-center justify-between gap-6">
+              {/* Filter Button */}
+              <FilterButton
+                onClick={handleOpenModal}
+                activeFilterCount={activeFilterCount}
+              />
+
+              {/* Spa Count */}
+              <div className="text-stone-500 text-[12px] font-bold uppercase tracking-widest whitespace-nowrap">
+                Showing{' '}
+                <span className="text-stone-900">{filteredSpas.length}</span>{' '}
+                {filteredSpas.length === 1 ? 'spa' : 'spas'}
+              </div>
+            </div>
           </div>
         </div>
 
