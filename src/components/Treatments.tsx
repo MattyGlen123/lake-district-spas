@@ -28,7 +28,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment }) => {
           <div className="flex-1">
             {/* Treatment Name with Brand */}
             <div className="flex items-baseline gap-2 mb-2 flex-wrap">
-              <h4 className="font-serif text-xl md:text-2xl text-stone-800">
+              <h4 className="font-serif text-xl text-stone-800">
                 {treatment.name}
               </h4>
               {treatment.brand && (
