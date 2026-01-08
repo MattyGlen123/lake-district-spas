@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import {
   ArrowRight,
@@ -33,7 +34,7 @@ export default function AboutPage() {
               Our Mission
             </span>
             <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-stone-900 leading-[1.1] mb-12">
-              Why we're building{' '}
+              Why we&apos;re building{' '}
               <span className="italic">Lake District Spas</span>
             </h1>
             <div className="h-px w-24 bg-amber-200 mx-auto mb-12" />
@@ -67,7 +68,7 @@ export default function AboutPage() {
                   The biggest frustration? Finding out whether spa access is
                   included with your hotel stay or costs extra. Major booking
                   platforms rarely make this clear - leaving you to discover
-                  hidden costs after you've already booked.
+                  hidden costs after you&apos;ve already booked.
                 </p>
                 <p>
                   Beyond access policies, treatment menus are often PDFs buried
@@ -78,9 +79,11 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl grayscale opacity-70 border border-white/10">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800"
                   alt="Spa frustration"
+                  width={800}
+                  height={1000}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -233,25 +236,25 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-8 text-emerald-100/70 font-light text-xl md:text-2xl leading-relaxed">
               <p>
-                I'm <span className="text-white font-medium">Mat</span>, and I
-                live in Penrith with my family, right on the doorstep of the
-                Lake District.
+                I&apos;m <span className="text-white font-medium">Mat</span>,
+                and I live in Penrith with my family, right on the doorstep of
+                the Lake District.
               </p>
               <p>
                 This site started from real frustration. My partner and her
                 friends regularly plan spa days together, and the same
                 complaints kept coming up:{' '}
                 <span className="italic text-white">
-                  "Why is it so hard to find out if the spa is actually
+                  &quot;Why is it so hard to find out if the spa is actually
                   included? What treatments do they offer? Can we even book as
-                  day visitors?"
+                  day visitors?&quot;
                 </span>
               </p>
               <p>
                 I realised that if experienced spa-goers were struggling to find
-                this information, first-time visitors didn't stand a chance.
-                Lake District Spas is my attempt to fix that. It's a
-                straightforward guide to help you find your perfect spa
+                this information, first-time visitors didn&apos;t stand a
+                chance. Lake District Spas is my attempt to fix that. It&apos;s
+                a straightforward guide to help you find your perfect spa
                 experience.
               </p>
             </div>
