@@ -29,6 +29,14 @@ const Footer = () => {
                   Home
                 </a>
               </li>
+              <li>
+                <a
+                  href="/about"
+                  className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                >
+                  About Us
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -42,9 +50,9 @@ const Footer = () => {
             </p>
             <a
               href="mailto:hello@lakedistrictspas.com"
-              className="text-sm text-primary hover:underline"
+              className="text-sm text-white hover:underline"
             >
-              hello@lakedistrictspas.com
+              contact@lakedistrictspas.com
             </a>
           </div>
         </div>
