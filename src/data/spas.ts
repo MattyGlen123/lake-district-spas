@@ -317,7 +317,7 @@ Swim Club access is complimentary for all hotel guests. Day memberships are avai
       outdoorPool: false,
       thermalSuite: false,
     },
-    agePolicy: '16+ for hot tub and sauna',
+    agePolicy: 'Family Friendly',
     relatedSpas: [2, 11],
   },
   {
@@ -858,7 +858,7 @@ Spa access is complimentary for all hotel guests, including pool, sauna, steam r
       outdoorPool: false,
       thermalSuite: true,
     },
-    agePolicy: 'Pool suitable for children',
+    agePolicy: 'Family Friendly',
     relatedSpas: [5, 13],
   },
   {
@@ -1132,7 +1132,7 @@ Complimentary pool and thermal suite access included for all hotel guests, with 
       outdoorPool: false,
       thermalSuite: true,
     },
-    agePolicy: '18+ for thermal suite',
+    agePolicy: 'Family Friendly',
     relatedSpas: [7, 10],
   },
   {

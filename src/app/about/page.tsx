@@ -236,8 +236,8 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-8 text-emerald-100/70 font-light text-xl md:text-2xl leading-relaxed">
               <p>
-                I&apos;m <span className="text-white font-medium">Mat</span>,
-                and I live in Penrith with my family, right on the doorstep of
+                I&apos;m <span className="text-white font-medium">Matthew</span>
+                , and I live in Penrith with my family, right on the doorstep of
                 the Lake District.
               </p>
               <p>

@@ -209,6 +209,12 @@ function validateIntroFacts(spa: Spa) {
     (intro.includes('treatment') ||
       intro.includes('treatments') ||
       intro.includes('some treatments'));
+  // Check if 18+ is mentioned for specific facilities (thermal suite) vs overall policy
+  const mentions18ForFacilities =
+    intro.includes('18+') &&
+    (intro.includes('thermal suite') ||
+      intro.includes('thermal facilities') ||
+      intro.includes('facilities remain 18+'));
   if (intro.includes('18+') || intro.includes('adults-only')) {
     const agePolicyLower = spa.agePolicy?.toLowerCase() || '';
     const has18Plus = agePolicyLower.includes('18+');
@@ -218,6 +224,18 @@ function validateIntroFacts(spa: Spa) {
     // Allow 18+ for treatments if overall policy is 16+
     if (mentions18ForTreatments && agePolicyLower.includes('16+')) {
       // This is valid - 16+ overall with 18+ for treatments
+    } else if (mentions18ForFacilities) {
+      // Check if accessPolicy mentions 18+ for facilities when agePolicy is Family Friendly
+      const has18PlusInAccessPolicy = spa.accessPolicy.some(
+        (p) =>
+          p.details.toLowerCase().includes('18+') ||
+          (p.name.toLowerCase().includes('age') &&
+            p.details.toLowerCase().includes('18+'))
+      );
+      if (!has18PlusInAccessPolicy && !has18Plus && !hasAdultsOnly) {
+        errors.push('Mentions 18+ for facilities but not found in agePolicy or access policy');
+      }
+      // If accessPolicy mentions it, allow Family Friendly agePolicy
     } else if (!has18Plus && !hasAdultsOnly) {
       errors.push('Mentions 18+/adults-only but agePolicy does not match');
     }
@@ -230,12 +248,6 @@ function validateIntroFacts(spa: Spa) {
   }
   // If 16+ is mentioned for specific facilities, check agePolicy and access policy mention it
   if (mentions16ForFacilities) {
-    // Validate agePolicy mentions 16+ (should include "16+" when facilities are 16+)
-    if (!spa.agePolicy || !spa.agePolicy.toLowerCase().includes('16+')) {
-      errors.push(
-        'Mentions 16+ for facilities but agePolicy does not include 16+'
-      );
-    }
     // Validate access policy mentions it
     const has16PlusInAccessPolicy = spa.accessPolicy.some(
       (p) =>
@@ -243,8 +255,15 @@ function validateIntroFacts(spa: Spa) {
         (p.name.toLowerCase().includes('age') &&
           p.details.toLowerCase().includes('16+'))
     );
+    // If accessPolicy mentions 16+, allow Family Friendly agePolicy
+    // Otherwise, require agePolicy to include 16+
     if (!has16PlusInAccessPolicy) {
-      errors.push('Mentions 16+ for facilities but not found in access policy');
+      const agePolicyLower = spa.agePolicy?.toLowerCase() || '';
+      if (!agePolicyLower.includes('16+')) {
+        errors.push(
+          'Mentions 16+ for facilities but agePolicy does not include 16+ and not found in access policy'
+        );
+      }
     }
   }
 
