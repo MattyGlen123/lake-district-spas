@@ -7,7 +7,7 @@ interface BookVisitCTAProps {
 
 export default function BookVisitCTA({ spa }: BookVisitCTAProps) {
   return (
-    <div className="bg-[#FAF9F6]">
+    <div className="bg-soft-cream">
       <div className="container mx-auto px-4 md:px-8 py-24">
         <section
           id="book"

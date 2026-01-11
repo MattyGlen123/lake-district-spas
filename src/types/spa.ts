@@ -79,6 +79,7 @@ export interface Spa {
   };
   agePolicy?: string;
   relatedSpas: number[];
+  treatmentBookingUrl?: string;
 }
 
 export const accessLabelConfig: Record<

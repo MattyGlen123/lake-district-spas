@@ -95,7 +95,7 @@ export default function AboutPage() {
         </section>
 
         {/* The Solution - Airy & List Oriented */}
-        <section className="bg-[#FAF9F6] py-32 border-b border-stone-100">
+        <section className="bg-soft-cream py-32 border-b border-stone-100">
           <div className="max-w-5xl mx-auto px-6">
             <div className="text-center mb-20">
               <span className="text-xs font-bold uppercase tracking-[0.4em] text-amber-700 block mb-6">

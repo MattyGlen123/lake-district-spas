@@ -9,16 +9,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        serif: ['Playfair Display', 'serif'],
+        sans: ['Inter', 'sans-serif'],
+      },
       colors: {
         'spa-green': '#22c55e',
         'spa-yellow': '#eab308',
         'spa-blue': '#3b82f6',
         'spa-red': '#ef4444',
         'spa-purple': '#a855f7',
+        'soft-cream': '#FAF9F6',
+        'mineral-sage': '#F6F7F6',
+        'warm-stone': '#F2F0ED',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: '#0d9488',
+          DEFAULT: '#064e3b', // Emerald 950
           foreground: 'hsl(var(--primary-foreground))',
         },
         muted: {

@@ -67,7 +67,7 @@ export default function ThermalFacilities({ spa }: ThermalFacilitiesProps) {
   return (
     <section
       id="thermal"
-      className="bg-[#F2F0ED] py-32 border-y border-stone-200/50 w-screen relative left-1/2 -translate-x-1/2"
+      className="bg-warm-stone py-32 border-y border-stone-200/50 w-screen relative left-1/2 -translate-x-1/2"
     >
       <div className="container mx-auto px-4 md:px-8">
         <div className="mb-6">

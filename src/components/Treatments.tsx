@@ -132,7 +132,7 @@ export default function Treatments({ spa }: TreatmentsProps) {
   return (
     <section
       id="treatments"
-      className="bg-[#F6F7F6] py-32 border-y border-stone-200/50 w-screen relative left-1/2 -translate-x-1/2"
+      className="bg-mineral-sage py-32 border-y border-stone-200/50 w-screen relative left-1/2 -translate-x-1/2"
     >
       <div className="container mx-auto px-4 md:px-8">
         {/* Centered Intro */}

@@ -1322,6 +1322,8 @@ Hotel guests must book spa access separately and day spa packages are available 
     },
     agePolicy: '16+',
     relatedSpas: [7, 16],
+    treatmentBookingUrl:
+      'https://applebymanor.onejourney.travel/spa/treatments',
   },
   {
     id: 12,
@@ -1406,6 +1408,8 @@ Complimentary spa access included for hotel guests, with day passes and annual m
     },
     agePolicy: '16+ only for spa',
     relatedSpas: [2, 9],
+    treatmentBookingUrl:
+      'https://www.northlakeshotel.co.uk/spa-treatments/treatments',
   },
   {
     id: 17,

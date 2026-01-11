@@ -232,7 +232,7 @@ export default function Home() {
       <main>
         <Hero />
 
-        <div className="sticky top-0 z-20 bg-white border-y bg-[#FAF9F6]">
+        <div className="sticky top-0 z-20 bg-soft-cream border-y border-stone-100">
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-row items-center justify-between gap-6">
               {/* Filter Button */}

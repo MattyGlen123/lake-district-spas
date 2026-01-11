@@ -53,7 +53,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
           </div>
 
           {/* Content */}
-          <div className="bg-[#F6F7F6] flex-grow overflow-y-auto px-8 py-10 space-y-12">
+          <div className="bg-mineral-sage flex-grow overflow-y-auto px-8 py-10 space-y-12">
             {/* Pages Section */}
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
