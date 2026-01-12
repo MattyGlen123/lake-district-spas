@@ -4,7 +4,7 @@ import Script from 'next/script';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import './globals.css';
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
@@ -57,7 +57,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfairDisplay.variable} ${inter.className}`}>
+      <body
+        className={`${inter.variable} ${playfairDisplay.variable} ${inter.className}`}
+      >
         {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics
