@@ -19,6 +19,30 @@ export const metadata: Metadata = {
   title: 'About - Lake District Spas',
   description:
     'Learn about Lake District Spas - why we built this directory and how we help you find the perfect spa experience.',
+  openGraph: {
+    title: 'About - Lake District Spas',
+    description:
+      'Learn about Lake District Spas - why we built this directory and how we help you find the perfect spa experience.',
+    type: 'website',
+    url: 'https://lakedistrictspas.co.uk/about',
+    images: [
+      {
+        url: 'https://lakedistrictspas.co.uk/images/lake-district-spas_hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'About Lake District Spas',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About - Lake District Spas',
+    description:
+      'Learn about Lake District Spas - why we built this directory and how we help you find the perfect spa experience.',
+    images: [
+      'https://lakedistrictspas.co.uk/images/lake-district-spas_hero.jpg',
+    ],
+  },
 };
 
 export default function AboutPage() {

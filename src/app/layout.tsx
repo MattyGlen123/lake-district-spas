@@ -33,6 +33,15 @@ export const metadata: Metadata = {
     description:
       'Know Before You Book - Compare spa access policies across 22 Lake District hotels',
     type: 'website',
+    url: 'https://lakedistrictspas.co.uk',
+    images: [
+      {
+        url: 'https://lakedistrictspas.co.uk/images/lake-district-spas_hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Lake District Spas - Complete Access Guide',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

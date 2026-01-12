@@ -20,6 +20,30 @@ export const metadata: Metadata = {
   title: 'Partnership Opportunities - Lake District Spas',
   description:
     'Partner with Lake District Spas to reach spa seekers ready to book. Featured listings, treatment integration, and SEO consulting services.',
+  openGraph: {
+    title: 'Partnership Opportunities - Lake District Spas',
+    description:
+      'Partner with Lake District Spas to reach spa seekers ready to book. Featured listings, treatment integration, and SEO consulting services.',
+    type: 'website',
+    url: 'https://lakedistrictspas.co.uk/partnership',
+    images: [
+      {
+        url: 'https://lakedistrictspas.co.uk/images/lake-district-spas_hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Partnership Opportunities - Lake District Spas',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Partnership Opportunities - Lake District Spas',
+    description:
+      'Partner with Lake District Spas to reach spa seekers ready to book. Featured listings, treatment integration, and SEO consulting services.',
+    images: [
+      'https://lakedistrictspas.co.uk/images/lake-district-spas_hero.jpg',
+    ],
+  },
 };
 
 export default function PartnershipPage() {

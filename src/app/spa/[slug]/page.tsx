@@ -60,6 +60,8 @@ export async function generateMetadata({
         {
           url: imageUrl,
           alt: spa.imageAlt || `${spa.name} - Lake District Spa`,
+          width: 1200,
+          height: 630,
         },
       ],
       locale: 'en_GB',
