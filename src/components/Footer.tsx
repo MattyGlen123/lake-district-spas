@@ -60,7 +60,7 @@ const Footer = () => {
               href="mailto:hello@lakedistrictspas.com"
               className="text-sm text-white hover:underline"
             >
-              contact@lakedistrictspas.com
+              contact@lakedistrictspas.co.uk
             </a>
           </div>
         </div>

@@ -341,7 +341,7 @@ export default function PartnershipPage() {
                 },
                 {
                   q: "How do I update my spa's information?",
-                  a: 'Simply use the contact form below or email contact@lakedistrictspas.com. We aim to update verified partner information within 24 hours of receiving the request.',
+                  a: 'Simply use the contact form below or email contact@lakedistrictspas.co.uk. We aim to update verified partner information within 24 hours of receiving the request.',
                 },
                 {
                   q: 'Do you take commission on bookings?',
@@ -399,7 +399,7 @@ export default function PartnershipPage() {
                     <p className="text-stone-500 text-sm font-light">
                       Direct access:{' '}
                       <span className="font-bold text-stone-900">
-                        contact@lakedistrictspas.com
+                        contact@lakedistrictspas.co.uk
                       </span>
                     </p>
                   </div>
@@ -408,7 +408,7 @@ export default function PartnershipPage() {
 
               <div className="md:col-span-7">
                 <form
-                  action="https://formspree.io/f/YOUR_FORM_ID"
+                  action="https://formspree.io/f/xbddjdzg"
                   method="POST"
                   className="space-y-6"
                 >

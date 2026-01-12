@@ -20,6 +20,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   };
 
+  // Partnership page entry
+  const partnershipPage = {
+    url: `${baseUrl}/partnership`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  };
+
   // Spa pages entries
   const spaPages = spaData.map((spa) => ({
     url: `${baseUrl}/spa/${spa.url}`,
@@ -28,5 +36,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [homepage, aboutPage, ...spaPages];
+  return [homepage, aboutPage, partnershipPage, ...spaPages];
 }
