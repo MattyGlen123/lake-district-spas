@@ -37,6 +37,14 @@ const Footer = () => {
                   About Us
                 </a>
               </li>
+              <li>
+                <a
+                  href="/partnership"
+                  className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                >
+                  Partnership
+                </a>
+              </li>
             </ul>
           </div>
 

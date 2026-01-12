@@ -161,6 +161,24 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
                   </div>
                 </div>
               ))}
+
+            {/* Footer Section with Partnership Link */}
+            <div className="px-0 py-6 border-t border-stone-100 space-y-3 mt-12">
+              <Link
+                href="/about"
+                onClick={onClose}
+                className="block text-center py-3 text-stone-700 text-sm font-medium"
+              >
+                About Us
+              </Link>
+              <Link
+                href="/partnership"
+                onClick={onClose}
+                className="block text-center py-3 bg-emerald-950 text-white rounded-2xl font-bold text-xs uppercase tracking-widest shadow-lg"
+              >
+                Partner With Us
+              </Link>
+            </div>
           </div>
         </div>
       </div>
