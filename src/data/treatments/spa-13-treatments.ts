@@ -11,6 +11,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£75',
   },
   {
     spaId: 13,
@@ -22,6 +23,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£50',
   },
   {
     spaId: 13,
@@ -33,6 +35,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£75',
   },
   {
     spaId: 13,
@@ -44,6 +47,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£50',
   },
   {
     spaId: 13,
@@ -55,6 +59,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£75',
   },
   {
     spaId: 13,
@@ -66,6 +71,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£50',
   },
   {
     spaId: 13,
@@ -77,6 +83,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£50',
   },
   {
     spaId: 13,
@@ -88,6 +95,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£45',
   },
   {
     spaId: 13,
@@ -99,6 +107,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£79',
   },
   {
     spaId: 13,
@@ -110,6 +119,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£40',
   },
   {
     spaId: 13,
@@ -121,6 +131,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£80',
   },
   {
     spaId: 13,
@@ -132,6 +143,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£70',
   },
   {
     spaId: 13,
@@ -143,6 +155,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£70',
   },
   {
     spaId: 13,
@@ -154,6 +167,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£15',
   },
   {
     spaId: 13,
@@ -165,6 +179,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£15',
   },
   {
     spaId: 13,
@@ -176,6 +191,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£20',
   },
   {
     spaId: 13,
@@ -187,6 +203,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£25',
   },
   {
     spaId: 13,
@@ -198,6 +215,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£30',
   },
   {
     spaId: 13,
@@ -207,6 +225,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£10',
   },
   {
     spaId: 13,
@@ -216,6 +235,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£15',
   },
   {
     spaId: 13,
@@ -226,6 +246,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£15',
   },
   {
     spaId: 13,
@@ -237,6 +258,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'OPI',
     category: 'Hands & Feet Treatments',
+    price: '£25',
   },
   {
     spaId: 13,
@@ -248,6 +270,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'OPI',
     category: 'Hands & Feet Treatments',
+    price: '£35',
   },
   {
     spaId: 13,
@@ -259,6 +282,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'OPI',
     category: 'Hands & Feet Treatments',
+    price: '£35',
   },
   {
     spaId: 13,
@@ -270,6 +294,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'OPI',
     category: 'Hands & Feet Treatments',
+    price: '£50',
   },
   {
     spaId: 13,
@@ -281,6 +306,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'OPI',
     category: 'Hands & Feet Treatments',
+    price: '£25',
   },
   {
     spaId: 13,
@@ -292,6 +318,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'OPI',
     category: 'Hands & Feet Treatments',
+    price: '£35',
   },
   {
     spaId: 13,
@@ -303,6 +330,7 @@ export const spa13Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'OPI',
     category: 'Hands & Feet Treatments',
+    price: '£35',
   },
   {
     spaId: 13,
@@ -314,5 +342,6 @@ export const spa13Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'OPI',
     category: 'Hands & Feet Treatments',
+    price: '£50',
   },
 ];

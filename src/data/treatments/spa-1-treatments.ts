@@ -11,6 +11,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ishga',
     category: 'Facial Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -22,6 +23,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ishga',
     category: 'Facial Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -33,6 +35,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ishga',
     category: 'Hands & Feet Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -44,6 +47,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ishga',
     category: 'Massage Therapies',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -55,6 +59,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ishga',
     category: 'Massage Therapies',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -66,6 +71,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ishga',
     category: 'Massage Therapies',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -77,6 +83,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ishga',
     category: 'Massage Therapies',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -99,6 +106,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -110,6 +118,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -121,6 +130,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -132,6 +142,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -143,6 +154,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -154,6 +166,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -165,6 +178,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -187,6 +201,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -198,6 +213,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: undefined,
     category: 'Hands & Feet Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -209,6 +225,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -220,6 +237,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ishga',
     category: 'Facial Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -231,6 +249,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ishga',
     category: 'Body Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -242,6 +261,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -253,6 +273,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ishga',
     category: 'Massage Therapies',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -264,6 +285,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ishga',
     category: 'Body Treatments',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -275,6 +297,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ishga',
     category: 'Massage Therapies',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -297,6 +320,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'ishga',
     category: 'Massage Therapies',
+    price: '£130',
   },
   {
     spaId: 1,
@@ -308,6 +332,7 @@ export const spa1Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£100',
   },
   {
     spaId: 1,
@@ -330,5 +355,6 @@ export const spa1Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£60',
   },
 ];

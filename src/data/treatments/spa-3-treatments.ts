@@ -11,6 +11,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Skeyndor',
     category: 'Facial Treatments',
+    price: '£175',
   },
   {
     spaId: 3,
@@ -22,6 +23,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Skeyndor',
     category: 'Facial Treatments',
+    price: '£175',
   },
   {
     spaId: 3,
@@ -33,6 +35,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Pure Alchemy',
     category: 'Body Treatments',
+    price: '£125 (£245 couples)',
   },
   {
     spaId: 3,
@@ -44,6 +47,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '90 minutes',
     brand: 'Pure Alchemy',
     category: 'Body Treatments',
+    price: '£200',
   },
   {
     spaId: 3,
@@ -55,6 +59,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '90 minutes',
     brand: 'Skeyndor',
     category: 'Facial Treatments',
+    price: '£225',
   },
   {
     spaId: 3,
@@ -66,6 +71,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Pure Alchemy',
     category: 'Body Treatments',
+    price: '£125 (£245 couples)',
   },
   {
     spaId: 3,
@@ -77,6 +83,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Pure Alchemy',
     category: 'Body Treatments',
+    price: '£125 (£245 couples)',
   },
   {
     spaId: 3,
@@ -88,6 +95,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Pure Alchemy',
     category: 'Body Treatments',
+    price: '£125 (£245 couples)',
   },
   {
     spaId: 3,
@@ -99,6 +107,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Pure Alchemy',
     category: 'Body Treatments',
+    price: '£125 (£245 couples)',
   },
   {
     spaId: 3,
@@ -110,6 +119,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Pure Alchemy',
     category: 'Body Treatments',
+    price: '£125 (£245 couples)',
   },
   {
     spaId: 3,
@@ -132,6 +142,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'Pure Alchemy',
     category: 'Massage Therapies',
+    price: '£65',
   },
   {
     spaId: 3,
@@ -143,6 +154,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '90 minutes',
     brand: 'Pure Alchemy',
     category: 'Body Treatments',
+    price: '£200',
   },
   {
     spaId: 3,
@@ -154,6 +166,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '90 minutes',
     brand: 'Pure Alchemy',
     category: 'Body Treatments',
+    price: '£200',
   },
   {
     spaId: 3,
@@ -165,6 +178,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Pure Alchemy',
     category: 'Body Treatments',
+    price: '£125 (£245 couples)',
   },
   {
     spaId: 3,
@@ -176,6 +190,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Pure Alchemy',
     category: 'Body Treatments',
+    price: '£125 (£245 couples)',
   },
   {
     spaId: 3,
@@ -187,6 +202,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Pure Alchemy',
     category: 'Body Treatments',
+    price: '£125 (£245 couples)',
   },
   {
     spaId: 3,
@@ -198,6 +214,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Skeyndor',
     category: 'Facial Treatments',
+    price: '£125',
   },
   {
     spaId: 3,
@@ -209,6 +226,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'Skeyndor',
     category: 'Facial Treatments',
+    price: '£65',
   },
   {
     spaId: 3,
@@ -220,6 +238,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Skeyndor',
     category: 'Facial Treatments',
+    price: '£125',
   },
   {
     spaId: 3,
@@ -242,6 +261,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '100 minutes',
     brand: 'Spa Senses',
     category: 'Body Treatments',
+    price: '£300 (£595 couples)',
   },
   {
     spaId: 3,
@@ -253,6 +273,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '100 minutes',
     brand: 'Spa Senses',
     category: 'Body Treatments',
+    price: '£300 (£595 couples)',
   },
   {
     spaId: 3,
@@ -264,6 +285,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '100 minutes',
     brand: 'Spa Senses',
     category: 'Body Treatments',
+    price: '£300 (£595 couples)',
   },
   {
     spaId: 3,
@@ -275,6 +297,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '100 minutes',
     brand: 'Spa Senses',
     category: 'Body Treatments',
+    price: '£300 (£595 couples)',
   },
   {
     spaId: 3,
@@ -286,6 +309,7 @@ export const spa3Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Pure Alchemy',
     category: 'Body Treatments',
+    price: '£125 (£245 couples)',
   },
   {
     spaId: 3,
@@ -297,5 +321,6 @@ export const spa3Treatments: Treatment[] = [
     duration: '90 minutes',
     brand: 'Skeyndor',
     category: 'Facial Treatments',
+    price: '£250',
   },
 ];

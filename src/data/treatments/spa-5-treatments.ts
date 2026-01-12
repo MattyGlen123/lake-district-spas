@@ -10,6 +10,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '45 minutes',
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
+    price: '£55',
   },
   {
     spaId: 5,
@@ -20,6 +21,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'TempleSpa',
     category: 'Body Treatments',
+    price: '£65',
   },
   {
     spaId: 5,
@@ -30,6 +32,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'TempleSpa',
     category: 'Body Treatments',
+    price: '£75',
   },
   {
     spaId: 5,
@@ -40,6 +43,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'TempleSpa',
     category: 'Facial Treatments',
+    price: '£75',
   },
   {
     spaId: 5,
@@ -50,6 +54,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '90 minutes',
     brand: 'TempleSpa',
     category: 'Facial Treatments',
+    price: '£115',
   },
   {
     spaId: 5,
@@ -60,6 +65,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '15 minutes',
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
+    price: '£15',
   },
   {
     spaId: 5,
@@ -70,6 +76,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
+    price: '£30',
   },
   {
     spaId: 5,
@@ -80,6 +87,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'TempleSpa',
     category: 'Massage Therapies',
+    price: '£65',
   },
   {
     spaId: 5,
@@ -90,6 +98,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '90 minutes',
     brand: 'TempleSpa',
     category: 'Massage Therapies',
+    price: '£120',
   },
   {
     spaId: 5,
@@ -100,6 +109,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'TempleSpa',
     category: 'Massage Therapies',
+    price: '£100',
   },
   {
     spaId: 5,
@@ -110,6 +120,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '45 minutes',
     brand: 'TempleSpa',
     category: 'Facial Treatments',
+    price: '£65',
   },
   {
     spaId: 5,
@@ -120,6 +131,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'TempleSpa',
     category: 'Facial Treatments',
+    price: '£65',
   },
   {
     spaId: 5,
@@ -130,6 +142,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '45 minutes',
     brand: 'TempleSpa',
     category: 'Facial Treatments',
+    price: '£65',
   },
   {
     spaId: 5,
@@ -140,6 +153,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '15 minutes',
     brand: 'TempleSpa',
     category: 'Massage Therapies',
+    price: '£15',
   },
   {
     spaId: 5,
@@ -160,6 +174,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '15 minutes',
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
+    price: '£15',
   },
   {
     spaId: 5,
@@ -170,6 +185,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
+    price: '£30',
   },
   {
     spaId: 5,
@@ -180,6 +196,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '15 minutes',
     brand: 'TempleSpa',
     category: 'Body Treatments',
+    price: '£15',
   },
   {
     spaId: 5,
@@ -190,6 +207,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '15 minutes',
     brand: 'TempleSpa',
     category: 'Body Treatments',
+    price: '£20',
   },
   {
     spaId: 5,
@@ -200,6 +218,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'TempleSpa',
     category: 'Body Treatments',
+    price: '£65',
   },
   {
     spaId: 5,
@@ -210,6 +229,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '15 minutes',
     brand: 'TempleSpa',
     category: 'Body Treatments',
+    price: '£15',
   },
   {
     spaId: 5,
@@ -220,6 +240,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'TempleSpa',
     category: 'Massage Therapies',
+    price: '£85',
   },
   {
     spaId: 5,
@@ -230,6 +251,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '75 minutes',
     brand: 'TempleSpa',
     category: 'Facial Treatments',
+    price: '£80',
   },
   {
     spaId: 5,
@@ -240,6 +262,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'TempleSpa',
     category: 'Massage Therapies',
+    price: '£65',
   },
   {
     spaId: 5,
@@ -250,6 +273,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '45 minutes',
     brand: 'TempleSpa',
     category: 'Facial Treatments',
+    price: '£65',
   },
   {
     spaId: 5,
@@ -260,6 +284,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'TempleSpa',
     category: 'Massage Therapies',
+    price: '£65',
   },
   {
     spaId: 5,
@@ -270,6 +295,7 @@ export const spa5Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'TempleSpa',
     category: 'Massage Therapies',
+    price: '£100',
   },
   {
     spaId: 5,
@@ -280,5 +306,6 @@ export const spa5Treatments: Treatment[] = [
     duration: '90 minutes',
     brand: 'TempleSpa',
     category: 'Massage Therapies',
+    price: '£120',
   },
 ];

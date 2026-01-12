@@ -11,6 +11,7 @@ export const spa16Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£60',
   },
   {
     spaId: 16,
@@ -22,6 +23,7 @@ export const spa16Treatments: Treatment[] = [
     duration: '75 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£100',
   },
   {
     spaId: 16,
@@ -33,6 +35,7 @@ export const spa16Treatments: Treatment[] = [
     duration: '75 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£95',
   },
   {
     spaId: 16,
@@ -44,6 +47,7 @@ export const spa16Treatments: Treatment[] = [
     duration: '75 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£95',
   },
   {
     spaId: 16,
@@ -55,6 +59,7 @@ export const spa16Treatments: Treatment[] = [
     duration: '75 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£85',
   },
   {
     spaId: 16,
@@ -66,6 +71,7 @@ export const spa16Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£50',
   },
   {
     spaId: 16,
@@ -77,6 +83,7 @@ export const spa16Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£45',
   },
   {
     spaId: 16,
@@ -88,6 +95,7 @@ export const spa16Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£55',
   },
   {
     spaId: 16,
@@ -99,6 +107,7 @@ export const spa16Treatments: Treatment[] = [
     duration: '75 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£90',
   },
   {
     spaId: 16,
@@ -110,6 +119,7 @@ export const spa16Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£50',
   },
   {
     spaId: 16,
@@ -121,6 +131,7 @@ export const spa16Treatments: Treatment[] = [
     duration: '40 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£90',
   },
   {
     spaId: 16,
@@ -132,6 +143,7 @@ export const spa16Treatments: Treatment[] = [
     duration: '45 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£20',
   },
   {
     spaId: 16,
@@ -143,6 +155,7 @@ export const spa16Treatments: Treatment[] = [
     duration: '45 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£60',
   },
   {
     spaId: 16,
@@ -154,5 +167,6 @@ export const spa16Treatments: Treatment[] = [
     duration: '45 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£60',
   },
 ];

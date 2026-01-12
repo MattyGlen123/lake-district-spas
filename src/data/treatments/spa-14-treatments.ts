@@ -11,6 +11,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£90',
   },
   {
     spaId: 14,
@@ -22,6 +23,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£90',
   },
   {
     spaId: 14,
@@ -32,6 +34,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£90',
   },
   {
     spaId: 14,
@@ -43,6 +46,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'land&water',
     category: 'Body Treatments',
+    price: '£90',
   },
   {
     spaId: 14,
@@ -54,6 +58,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£90',
   },
   {
     spaId: 14,
@@ -64,6 +69,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£90',
   },
   {
     spaId: 14,
@@ -86,6 +92,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
+    price: '£80',
   },
   {
     spaId: 14,
@@ -97,6 +104,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'land&water',
     category: 'Facial Treatments',
+    price: '£90',
   },
   {
     spaId: 14,
@@ -107,6 +115,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Facial Treatments',
+    price: '£50',
   },
   {
     spaId: 14,
@@ -117,6 +126,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£50',
   },
   {
     spaId: 14,
@@ -127,6 +137,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
+    price: '£45',
   },
   {
     spaId: 14,
@@ -137,6 +148,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
+    price: '£45',
   },
   {
     spaId: 14,
@@ -147,6 +159,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£50',
   },
   {
     spaId: 14,
@@ -158,6 +171,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '120 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£160',
   },
   {
     spaId: 14,
@@ -169,6 +183,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£90',
   },
   {
     spaId: 14,
@@ -180,6 +195,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'land&water',
     category: 'Facial Treatments',
+    price: '£90',
   },
   {
     spaId: 14,
@@ -191,6 +207,7 @@ export const spa14Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
+    price: '£80',
   },
   {
     spaId: 14,
@@ -202,5 +219,6 @@ export const spa14Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: undefined,
     category: 'Facial Treatments',
+    price: '£170',
   },
 ];

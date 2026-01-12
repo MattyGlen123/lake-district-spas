@@ -11,6 +11,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Berry & Birch',
     category: 'Massage Therapies',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -22,6 +23,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Berry & Birch',
     category: 'Massage Therapies',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -33,6 +35,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Berry & Birch',
     category: 'Massage Therapies',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -44,6 +47,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Berry & Birch',
     category: 'Massage Therapies',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -55,6 +59,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Facial Treatments',
+    price: '£130',
   },
   {
     spaId: 7,
@@ -66,6 +71,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Massage Therapies',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -77,6 +83,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Massage Therapies',
+    price: '£125',
   },
   {
     spaId: 7,
@@ -88,6 +95,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Body Treatments',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -99,6 +107,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Facial Treatments',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -110,6 +119,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Facial Treatments',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -121,6 +131,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Body Treatments',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -132,6 +143,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Facial Treatments',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -143,6 +155,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Massage Therapies',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -154,6 +167,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Body Treatments',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -165,6 +179,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Facial Treatments',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -176,6 +191,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Body Treatments',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -187,6 +203,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Massage Therapies',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -198,6 +215,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Hands & Feet Treatments',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -209,6 +227,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '110 minutes',
     brand: 'ESPA',
     category: 'Body Treatments',
+    price: '£220',
   },
   {
     spaId: 7,
@@ -220,6 +239,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Recovery (Cancer Care)',
     category: 'Facial Treatments',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -231,6 +251,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Recovery (Cancer Care)',
     category: 'Massage Therapies',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -242,6 +263,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ESPA',
     category: 'Hands & Feet Treatments',
+    price: '£110',
   },
   {
     spaId: 7,
@@ -253,6 +275,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '110 minutes',
     brand: 'ESPA',
     category: 'Body Treatments',
+    price: '£220',
   },
   {
     spaId: 7,
@@ -264,6 +287,7 @@ export const spa7Treatments: Treatment[] = [
     duration: '110 minutes',
     brand: 'ESPA',
     category: 'Body Treatments',
+    price: '£220',
   },
   {
     spaId: 7,
@@ -274,5 +298,6 @@ export const spa7Treatments: Treatment[] = [
     duration: '110 minutes',
     brand: 'ESPA',
     category: 'Body Treatments',
+    price: '£220',
   },
 ];

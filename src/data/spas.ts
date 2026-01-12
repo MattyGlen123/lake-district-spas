@@ -220,6 +220,9 @@ Unlike many Lake District spa hotels, spa access is not included with standard r
     },
     agePolicy: '16+',
     relatedSpas: [10, 15],
+    treatmentBookingUrl:
+      'https://englishlakes.co.uk/hotels/low-wood-bay/the-spa/spa-treatments/',
+    treatmentBookingPhone: '0330 4043 943',
   },
   {
     id: 14,

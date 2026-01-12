@@ -11,6 +11,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '110 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£120',
   },
   {
     spaId: 15,
@@ -22,6 +23,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£45',
   },
   {
     spaId: 15,
@@ -33,6 +35,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£70',
   },
   {
     spaId: 15,
@@ -44,6 +47,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Hands & Feet Treatments',
+    price: '£35',
   },
   {
     spaId: 15,
@@ -55,6 +59,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '55 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£80',
   },
   {
     spaId: 15,
@@ -66,6 +71,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£70',
   },
   {
     spaId: 15,
@@ -77,6 +83,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£45',
   },
   {
     spaId: 15,
@@ -88,6 +95,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£70',
   },
   {
     spaId: 15,
@@ -99,6 +107,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '55 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£70',
   },
   {
     spaId: 15,
@@ -110,6 +119,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '40 minutes',
     brand: 'Lava Shells',
     category: 'Massage Therapies',
+    price: '£60',
   },
   {
     spaId: 15,
@@ -121,6 +131,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '55 minutes',
     brand: 'Lava Shells',
     category: 'Massage Therapies',
+    price: '£80',
   },
   {
     spaId: 15,
@@ -132,6 +143,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '85 minutes',
     brand: 'Lava Shells',
     category: 'Massage Therapies',
+    price: '£95',
   },
   {
     spaId: 15,
@@ -143,6 +155,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '40 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£45',
   },
   {
     spaId: 15,
@@ -154,6 +167,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '85 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£90',
   },
   {
     spaId: 15,
@@ -165,6 +179,7 @@ export const spa15Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£45',
   },
   {
     spaId: 15,
@@ -176,5 +191,6 @@ export const spa15Treatments: Treatment[] = [
     duration: '65 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£70',
   },
 ];

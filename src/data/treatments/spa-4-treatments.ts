@@ -9,7 +9,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Revitalizing treatment for tired legs and feet with skin brushing, exfoliation and massage to relieve swelling and boost circulation.',
     duration: '45 minutes',
-    brand: '£77',
+    price: '£77',
+    brand: 'Temple Spa',
     category: 'Hands & Feet Treatments',
   },
   {
@@ -20,7 +21,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Renewing body exfoliation that removes dead skin cells and leaves skin smooth, soft and glowing.',
     duration: '60 minutes',
-    brand: '£95',
+    price: '£95',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -31,7 +33,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Focused back treatment to relieve tension and soothe tired muscles.',
     duration: '45 minutes',
-    brand: '£88',
+    price: '£88',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -42,7 +45,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Nourishing body wrap that hydrates skin and promotes detoxification while you relax in soothing warmth.',
     duration: '20 minutes',
-    brand: '£35',
+    price: '£35',
+    brand: 'Temple Spa',
     category: 'Hands & Feet Treatments',
   },
   {
@@ -53,7 +57,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '60 minutes',
-    brand: '£121',
+    price: '£121',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -64,7 +69,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '90 minutes',
-    brand: '£170',
+    price: '£170',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -75,7 +81,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '20 minutes',
-    brand: '£35',
+    price: '£35',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -86,7 +93,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Deeply relaxing massage with Mediterranean essential oils including frankincense, lavender and patchouli to calm frazzled nerves.',
     duration: '30 minutes',
-    brand: '£72',
+    price: '£72',
+    brand: 'Temple Spa',
     category: 'Massage Therapies',
   },
   {
@@ -97,7 +105,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
     duration: '60 minutes',
-    brand: '£99',
+    price: '£99',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -108,7 +117,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
     duration: '90 minutes',
-    brand: '£140',
+    price: '£140',
+    brand: 'Temple Spa',
     category: 'Massage Therapies',
   },
   {
@@ -119,7 +129,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
     duration: '15 minutes',
-    brand: '£15',
+    price: '£15',
+    brand: 'Temple Spa',
     category: 'Facial Treatments',
   },
   {
@@ -130,7 +141,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
     duration: '15 minutes',
-    brand: '£15',
+    price: '£15',
+    brand: 'Temple Spa',
     category: 'Massage Therapies',
   },
   {
@@ -141,7 +153,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
     duration: '15 minutes',
-    brand: '£15',
+    price: '£15',
+    brand: 'Temple Spa',
     category: 'Massage Therapies',
   },
   {
@@ -152,7 +165,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Nourishing hand treatment with exfoliation, mask and massage that softens skin and soothes tired hands and arms.',
     duration: '20 minutes',
-    brand: '£35',
+    price: '£35',
+    brand: 'Temple Spa',
     category: 'Hands & Feet Treatments',
   },
   {
@@ -163,7 +177,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
     duration: '15 minutes',
-    brand: '£15',
+    price: '£15',
+    brand: 'Temple Spa',
     category: 'Massage Therapies',
   },
   {
@@ -174,7 +189,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '75 minutes',
-    brand: '£115',
+    price: '£115',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -185,7 +201,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Personalized spa journey tailored to your mood combining aromatic full-body massage with customized prescription facial.',
     duration: '120 minutes',
-    brand: '£215',
+    price: '£215',
+    brand: 'Temple Spa',
     category: 'Massage Therapies',
   },
   {
@@ -196,7 +213,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Focused back treatment to relieve tension and soothe tired muscles.',
     duration: '45 minutes',
-    brand: '£85',
+    price: '£85',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -207,7 +225,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
     duration: '90 minutes',
-    brand: '£170',
+    price: '£170',
+    brand: 'Temple Spa',
     category: 'Massage Therapies',
   },
   {
@@ -218,7 +237,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Luxurious foot treatment with exfoliation, mask and massage that leaves feet soft, smooth and beautifully refreshed.',
     duration: '60 minutes',
-    brand: '£85',
+    price: '£85',
+    brand: 'Temple Spa',
     category: 'Hands & Feet Treatments',
   },
   {
@@ -229,7 +249,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Nourishing hand treatment with exfoliation, mask and massage that softens skin and soothes tired hands and arms.',
     duration: '60 minutes',
-    brand: '£85',
+    price: '£85',
+    brand: 'Temple Spa',
     category: 'Hands & Feet Treatments',
   },
   {
@@ -240,7 +261,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Detoxifying treatment that cleanses and revitalizes body and skin for enhanced wellbeing.',
     duration: '60 minutes',
-    brand: '£95',
+    price: '£95',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -251,7 +273,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Therapeutic pressure-point massage of feet, hands or ears that promotes deep relaxation, improves circulation and restores balance.',
     duration: '45 minutes',
-    brand: '£80',
+    price: '£80',
+    brand: 'Temple Spa',
     category: 'Hands & Feet Treatments',
   },
   {
@@ -262,7 +285,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Indulgent facial infused with Mediterranean essential oils to calm, hydrate and rejuvenate skin while promoting deep relaxation.',
     duration: '75 minutes',
-    brand: '£115',
+    price: '£115',
+    brand: 'Temple Spa',
     category: 'Facial Treatments',
   },
   {
@@ -273,7 +297,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '90 minutes',
-    brand: '£170',
+    price: '£170',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -284,7 +309,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '20 minutes',
-    brand: '£35',
+    price: '£35',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -295,7 +321,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Top-to-toe buffing treatment that polishes skin to perfection with award-winning exfoliating scrubs for face and body.',
     duration: '60 minutes',
-    brand: '£80',
+    price: '£80',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -306,7 +333,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Quick-results facial using natural ingredients like oats, honey and fruit juices for an instant pick-me-up glow.',
     duration: '45 minutes',
-    brand: '£77',
+    price: '£77',
+    brand: 'Temple Spa',
     category: 'Facial Treatments',
   },
   {
@@ -317,7 +345,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Ultimate luxury experience combining leg energizer, full-body scrub, anti-aging massage and champagne truffle facial.',
     duration: '120 minutes',
-    brand: '£231',
+    price: '£231',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -328,7 +357,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '20 minutes',
-    brand: '£35',
+    price: '£35',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -339,7 +369,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
     duration: '30 minutes',
-    brand: '£67',
+    price: '£67',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
   {
@@ -350,7 +381,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Detoxifying deep-tissue massage with body brushing and muscle-fitness techniques to boost circulation and release tension.',
     duration: '30 minutes',
-    brand: '£72',
+    price: '£72',
+    brand: 'Temple Spa',
     category: 'Massage Therapies',
   },
   {
@@ -361,7 +393,8 @@ export const spa4Treatments: Treatment[] = [
     shortDescription:
       'Detoxifying treatment that cleanses and revitalizes body and skin for enhanced wellbeing.',
     duration: '60 minutes',
-    brand: '£99',
+    price: '£99',
+    brand: 'Temple Spa',
     category: 'Body Treatments',
   },
 ];

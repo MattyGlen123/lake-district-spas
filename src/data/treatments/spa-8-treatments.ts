@@ -11,6 +11,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£70',
   },
 {
     spaId: 8,
@@ -22,6 +23,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£95',
   },
 {
     spaId: 8,
@@ -33,6 +35,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '10 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£20',
   },
 {
     spaId: 8,
@@ -44,6 +47,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '10 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£20',
   },
 {
     spaId: 8,
@@ -55,6 +59,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£95',
   },
 {
     spaId: 8,
@@ -66,6 +71,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£125',
   },
 {
     spaId: 8,
@@ -77,6 +83,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£70',
   },
 {
     spaId: 8,
@@ -88,6 +95,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£95',
   },
 {
     spaId: 8,
@@ -99,6 +107,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£70',
   },
 {
     spaId: 8,
@@ -110,6 +119,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£95',
   },
 {
     spaId: 8,
@@ -121,6 +131,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£70',
   },
 {
     spaId: 8,
@@ -132,6 +143,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£95',
   },
 {
     spaId: 8,
@@ -143,6 +155,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£95',
   },
 {
     spaId: 8,
@@ -154,6 +167,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CND Vinylux',
     category: 'Hands & Feet Treatments',
+    price: '£55',
   },
 {
     spaId: 8,
@@ -165,6 +179,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£100',
   },
 {
     spaId: 8,
@@ -176,6 +191,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CND Vinylux',
     category: 'Hands & Feet Treatments',
+    price: '£55',
   },
 {
     spaId: 8,
@@ -187,6 +203,7 @@ export const spa8Treatments: Treatment[] = [
     duration: '60 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£100',
   },
 {
     spaId: 8,
@@ -198,5 +215,6 @@ export const spa8Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£70',
   }
 ];

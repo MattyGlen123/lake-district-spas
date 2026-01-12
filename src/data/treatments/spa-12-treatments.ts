@@ -11,6 +11,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
+    price: '£89',
   },
   {
     spaId: 12,
@@ -22,6 +23,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
+    price: '£89',
   },
   {
     spaId: 12,
@@ -33,6 +35,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
+    price: '£85',
   },
   {
     spaId: 12,
@@ -44,6 +47,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
+    price: '£85',
   },
   {
     spaId: 12,
@@ -55,6 +59,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
+    price: '£85',
   },
   {
     spaId: 12,
@@ -66,6 +71,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'TEMPLESPA',
     category: 'Massage Therapies',
+    price: '£89',
   },
   {
     spaId: 12,
@@ -77,6 +83,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'TEMPLESPA',
     category: 'Massage Therapies',
+    price: '£89',
   },
   {
     spaId: 12,
@@ -88,6 +95,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
+    price: '£85',
   },
   {
     spaId: 12,
@@ -99,6 +107,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
+    price: '£85',
   },
   {
     spaId: 12,
@@ -110,6 +119,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
+    price: '£110',
   },
   {
     spaId: 12,
@@ -121,6 +131,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '35 minutes',
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
+    price: '£69',
   },
   {
     spaId: 12,
@@ -132,6 +143,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
+    price: '£110',
   },
   {
     spaId: 12,
@@ -143,6 +155,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
+    price: '£52',
   },
   {
     spaId: 12,
@@ -154,6 +167,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
+    price: '£52',
   },
   {
     spaId: 12,
@@ -165,6 +179,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
+    price: '£52',
   },
   {
     spaId: 12,
@@ -176,6 +191,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'TEMPLESPA',
     category: 'Massage Therapies',
+    price: '£52',
   },
   {
     spaId: 12,
@@ -187,6 +203,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£35',
   },
   {
     spaId: 12,
@@ -198,6 +215,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '10 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£16',
   },
   {
     spaId: 12,
@@ -209,6 +227,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£34',
   },
   {
     spaId: 12,
@@ -220,6 +239,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '40 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£40',
   },
   {
     spaId: 12,
@@ -231,6 +251,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '40 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£49',
   },
   {
     spaId: 12,
@@ -242,6 +263,7 @@ export const spa12Treatments: Treatment[] = [
     duration: '55 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£56',
   },
   {
     spaId: 12,
@@ -253,5 +275,6 @@ export const spa12Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: undefined,
     category: 'Body Treatments',
+    price: '£10',
   },
 ];

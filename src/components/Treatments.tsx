@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, Clock } from 'lucide-react';
+import { ChevronDown, Clock, Tag } from 'lucide-react';
 import { Spa, TreatmentCategory, Treatment } from '@/types/spa';
 import { getTreatmentsBySpaId } from '@/data/treatments/index';
 
@@ -38,12 +38,27 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment }) => {
               )}
             </div>
 
-            {/* Duration with Clock Icon */}
-            <div className="flex items-center gap-2">
-              <Clock className="h-4 w-4 text-stone-400" />
-              <span className="text-sm font-medium text-stone-500">
-                {treatment.duration}
-              </span>
+            {/* Duration with Clock Icon and Price */}
+            <div className="flex items-center gap-6 flex-wrap">
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4 text-stone-400" />
+                <span className="text-sm font-medium text-stone-500">
+                  {treatment.duration}
+                </span>
+              </div>
+              {treatment.price && (
+                <div className="text-xs font-black text-emerald-950">
+                  <div className="flex items-center gap-2">
+                    <Tag className="h-4 w-4 text-emerald-800" />
+                    <span className="text-sm font-medium text-emerald-800">
+                      From{' '}
+                      <span className="font-bold uppercase">
+                        {treatment.price}
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 

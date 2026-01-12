@@ -11,6 +11,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -22,6 +23,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'VOYA',
     category: 'Body Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -33,6 +35,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'VOYA',
     category: 'Facial Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -44,6 +47,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£120',
   },
   {
     spaId: 2,
@@ -55,6 +59,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£145',
   },
   {
     spaId: 2,
@@ -66,6 +71,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£110',
   },
   {
     spaId: 2,
@@ -77,6 +83,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -88,6 +95,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£145',
   },
   {
     spaId: 2,
@@ -99,6 +107,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Temple Spa',
     category: 'Massage Therapies',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -109,6 +118,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'Temple Spa',
     category: 'Massage Therapies',
+    price: '£145',
   },
   {
     spaId: 2,
@@ -120,6 +130,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -131,6 +142,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Made for Life',
     category: 'Body Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -141,6 +153,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'Made for Life',
     category: 'Body Treatments',
+    price: '£145',
   },
   {
     spaId: 2,
@@ -152,6 +165,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'VOYA',
     category: 'Body Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -162,6 +176,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'VOYA',
     category: 'Body Treatments',
+    price: '£145',
   },
   {
     spaId: 2,
@@ -173,6 +188,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '40 minutes',
     brand: undefined,
     category: 'Massage Therapies',
+    price: '£80',
   },
   {
     spaId: 2,
@@ -184,6 +200,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£120',
   },
   {
     spaId: 2,
@@ -195,6 +212,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -206,6 +224,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -216,6 +235,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£145',
   },
   {
     spaId: 2,
@@ -227,6 +247,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'VOYA',
     category: 'Body Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -238,6 +259,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'VOYA',
     category: 'Body Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -249,6 +271,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'VOYA',
     category: 'Body Treatments',
+    price: '£145',
   },
   {
     spaId: 2,
@@ -260,6 +283,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'VOYA',
     category: 'Body Treatments',
+    price: '£145',
   },
   {
     spaId: 2,
@@ -271,6 +295,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'VOYA',
     category: 'Body Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -282,6 +307,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: undefined,
     category: 'Hands & Feet Treatments',
+    price: '£110',
   },
   {
     spaId: 2,
@@ -293,6 +319,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '70 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£110',
   },
   {
     spaId: 2,
@@ -304,6 +331,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Made for Life',
     category: 'Facial Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -315,6 +343,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£145',
   },
   {
     spaId: 2,
@@ -326,6 +355,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Made for Life',
     category: 'Facial Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -337,6 +367,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Temple Spa',
     category: 'Massage Therapies',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -347,6 +378,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'Temple Spa',
     category: 'Massage Therapies',
+    price: '£145',
   },
   {
     spaId: 2,
@@ -358,6 +390,7 @@ export const spa2Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£105',
   },
   {
     spaId: 2,
@@ -368,5 +401,6 @@ export const spa2Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'Temple Spa',
     category: 'Body Treatments',
+    price: '£145',
   },
 ];

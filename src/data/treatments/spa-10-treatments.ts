@@ -11,6 +11,7 @@ export const spa10Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'CAUDALIE',
     category: 'Massage Therapies',
+    price: '£140',
   },
   {
     spaId: 10,
@@ -22,6 +23,7 @@ export const spa10Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Massage Therapies',
+    price: '£190',
   },
   {
     spaId: 10,
@@ -29,10 +31,11 @@ export const spa10Treatments: Treatment[] = [
     description:
       'This express treatment is made to meet the needs of every skin type. Your therapist will tailor the treatment to you, using products from our different CAUDALIE ranges.',
     shortDescription:
-      'Tailored express facial customized to your skin type\'s unique needs for quick, targeted results.',
+      "Tailored express facial customized to your skin type's unique needs for quick, targeted results.",
     duration: '25 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
+    price: '£65',
   },
   {
     spaId: 10,
@@ -44,6 +47,7 @@ export const spa10Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
+    price: '£100',
   },
   {
     spaId: 10,
@@ -55,6 +59,7 @@ export const spa10Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
+    price: '£90',
   },
   {
     spaId: 10,
@@ -66,6 +71,7 @@ export const spa10Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
+    price: '£90',
   },
   {
     spaId: 10,
@@ -77,6 +83,7 @@ export const spa10Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
+    price: '£90',
   },
   {
     spaId: 10,
@@ -88,6 +95,7 @@ export const spa10Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
+    price: '£90',
   },
   {
     spaId: 10,
@@ -99,6 +107,7 @@ export const spa10Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
+    price: '£90',
   },
   {
     spaId: 10,
@@ -110,6 +119,7 @@ export const spa10Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'CAUDALIE',
     category: 'Massage Therapies',
+    price: '£75',
   },
   {
     spaId: 10,
@@ -121,6 +131,7 @@ export const spa10Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'CAUDALIE',
     category: 'Massage Therapies',
+    price: '£70',
   },
   {
     spaId: 10,
@@ -132,6 +143,7 @@ export const spa10Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Massage Therapies',
+    price: '£95',
   },
   {
     spaId: 10,
@@ -143,6 +155,7 @@ export const spa10Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Massage Therapies',
+    price: '£95',
   },
   {
     spaId: 10,
@@ -154,5 +167,6 @@ export const spa10Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'CAUDALIE',
     category: 'Massage Therapies',
-  }
+    price: '£100',
+  },
 ];

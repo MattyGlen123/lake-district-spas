@@ -40,6 +40,7 @@ export interface Treatment {
   duration: string;
   brand?: string;
   category: TreatmentCategory;
+  price?: string;
 }
 
 export interface SpaAddress {
@@ -80,6 +81,7 @@ export interface Spa {
   agePolicy?: string;
   relatedSpas: number[];
   treatmentBookingUrl?: string;
+  treatmentBookingPhone?: string;
 }
 
 export const accessLabelConfig: Record<

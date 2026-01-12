@@ -11,6 +11,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '55 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£89',
   },
   {
     spaId: 6,
@@ -22,6 +23,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '55 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£69',
   },
   {
     spaId: 6,
@@ -33,6 +35,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '55 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£89',
   },
   {
     spaId: 6,
@@ -44,6 +47,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '55 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£85',
   },
   {
     spaId: 6,
@@ -55,6 +59,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£74',
   },
   {
     spaId: 6,
@@ -66,6 +71,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '55 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£94',
   },
   {
     spaId: 6,
@@ -77,6 +83,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '85 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£134',
   },
   {
     spaId: 6,
@@ -88,6 +95,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£59',
   },
   {
     spaId: 6,
@@ -99,6 +107,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£80',
   },
   {
     spaId: 6,
@@ -110,6 +119,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '55 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£100',
   },
   {
     spaId: 6,
@@ -121,6 +131,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '85 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£144',
   },
   {
     spaId: 6,
@@ -132,6 +143,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '85 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£139',
   },
   {
     spaId: 6,
@@ -143,6 +155,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '55 minutes',
     brand: 'ELEMIS',
     category: 'Massage Therapies',
+    price: '£94',
   },
   {
     spaId: 6,
@@ -154,6 +167,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '135 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
+    price: '£179',
   },
   {
     spaId: 6,
@@ -165,6 +179,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£59',
   },
   {
     spaId: 6,
@@ -176,6 +191,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '55 minutes',
     brand: 'ELEMIS',
     category: 'Body Treatments',
+    price: '£79',
   },
   {
     spaId: 6,
@@ -187,6 +203,7 @@ export const spa6Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ishga',
     category: 'Facial Treatments',
+    price: '£59',
   },
   {
     spaId: 6,
@@ -198,5 +215,6 @@ export const spa6Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'ishga',
     category: 'Massage Therapies',
+    price: '£74',
   },
 ];

@@ -9,6 +9,7 @@ export const spa17Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Tropic',
     category: 'Massage Therapies',
+    price: '£75',
   },
   {
     spaId: 17,
@@ -18,6 +19,7 @@ export const spa17Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'Tropic',
     category: 'Massage Therapies',
+    price: '£40',
   },
   {
     spaId: 17,
@@ -27,6 +29,7 @@ export const spa17Treatments: Treatment[] = [
     duration: '55 minutes',
     brand: 'Tropic',
     category: 'Massage Therapies',
+    price: '£80',
   },
   {
     spaId: 17,
@@ -36,6 +39,7 @@ export const spa17Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'Tropic',
     category: 'Massage Therapies',
+    price: '£40',
   },
   {
     spaId: 17,
@@ -45,6 +49,7 @@ export const spa17Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'Tropic',
     category: 'Massage Therapies',
+    price: '£35',
   },
   {
     spaId: 17,
@@ -54,6 +59,7 @@ export const spa17Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'Tropic',
     category: 'Massage Therapies',
+    price: '£40',
   },
   {
     spaId: 17,
@@ -63,6 +69,7 @@ export const spa17Treatments: Treatment[] = [
     duration: '35 minutes',
     brand: 'Tropic',
     category: 'Massage Therapies',
+    price: '£50',
   },
   {
     spaId: 17,
@@ -72,6 +79,7 @@ export const spa17Treatments: Treatment[] = [
     duration: '25 minutes',
     brand: 'Tropic',
     category: 'Facial Treatments',
+    price: '£40',
   },
   {
     spaId: 17,
@@ -81,6 +89,7 @@ export const spa17Treatments: Treatment[] = [
     duration: '50 minutes',
     brand: 'Tropic',
     category: 'Facial Treatments',
+    price: '£65',
   },
   {
     spaId: 17,
@@ -90,6 +99,7 @@ export const spa17Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Hands & Feet Treatments',
+    price: '£35',
   },
   {
     spaId: 17,
@@ -99,6 +109,7 @@ export const spa17Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: undefined,
     category: 'Hands & Feet Treatments',
+    price: '£35',
   },
   {
     spaId: 17,
@@ -108,6 +119,7 @@ export const spa17Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'Tropic',
     category: 'Hands & Feet Treatments',
+    price: '£35',
   },
   {
     spaId: 17,
@@ -117,5 +129,6 @@ export const spa17Treatments: Treatment[] = [
     duration: '30 minutes',
     brand: 'Tropic',
     category: 'Hands & Feet Treatments',
+    price: '£35',
   }
 ];
