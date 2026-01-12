@@ -589,7 +589,7 @@ Spa access is complimentary for all hotel guests from 2pm on arrival until midda
       country: 'GB',
     },
     metaDescription:
-      'Newby Bridge spa with outdoor Finnish sauna and cold plunge pool overlooking the River Leven. Traditional wellness experiences. Perfect for rejuvenating spa breaks.',
+      'Newby Bridge spa with outdoor Finnish sauna and cold plunge pool overlooking the River Leven. Traditional wellness experiences for rejuvenating breaks.',
     intro: `Swan Hotel Spa, known as Holte Spa, brings contemporary thermal wellness to Newby Bridge on the River Leven at the southern tip of Lake Windermere. The spa features a unique swim-through hydrotherapy pool connecting indoor relaxation with heated outdoor bathing, naturally filtered with minimal chlorine.
 
 Five thermal experiences include an authentic outdoor Finnish sauna with river views, indoor Finnish sauna, 100% humidity steam room, cold plunge pool for contrast therapy, and multi-sensory experience showers with tropical rain and monsoon effects. The 28 Temple Spa treatments include pregnancy-safe massage and Gua Sha facial techniques.
@@ -1061,7 +1061,7 @@ Complimentary spa access included for all hotel guests, with day spa packages av
       country: 'GB',
     },
     metaDescription:
-      "Historic Bowness spa overlooking Lake Windermere with traditional thermal facilities. Classic elegance in a prime location. Ideal for a day's relaxation by the lake.",
+      'Historic Bowness spa overlooking Lake Windermere with traditional thermal facilities. Classic elegance in a prime lakeside location.',
     intro: `The Macdonald Old England Hotel & Spa stands directly on Lake Windermere's shores in the heart of Bowness-on-Windermere. Among the Lake District's most historic hotels, it features private jetties with lakeside moorings providing exclusive water access. The 20m indoor pool offers panoramic Windermere views through floor-to-ceiling windows, positioning it as "the restaurant on the lake" for spa and dining experiences.
 
 The thermal suite combines traditional Finnish sauna with aromatherapy steam room, ice room for circulation-boosting cold therapy, and aromatherapy experience showers. The 20m lakeside pool maximises Windermere vistas while mature gardens extend down to the shoreline. Eight treatment rooms offer Elemis therapies.
@@ -1148,7 +1148,7 @@ Complimentary pool and thermal suite access included for all hotel guests, with 
       country: 'GB',
     },
     metaDescription:
-      'Grange-over-Sands spa with unique plunge tub experience (hot, warm, cold) and salt inhalation room. Therapeutic wellness facilities. Ideal for friends seeking relaxation.',
+      'Grange-over-Sands spa with unique plunge tub experience (hot, warm, cold) and salt inhalation room. Therapeutic wellness facilities.',
     intro: `This Grade II listed Victorian mansion overlooks Morecambe Bay from Grange-over-Sands at the southern gateway to the Lake District. Netherwood Hotel & Spa's signature feature is its plunge tub room, offering hot, warm and cold hydrotherapy circuits for therapeutic muscle relaxation and circulation. Adults-only throughout for a peaceful atmosphere.
 
 Five thermal facilities create a wellness journey: calming salt inhalation room for respiratory health, traditional dry heat sauna, aromatherapy steam room infused with lemongrass and citrus, refreshing ice fountain and thermal shower with massaging jets.

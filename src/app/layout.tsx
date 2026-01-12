@@ -19,7 +19,7 @@ const playfairDisplay = Playfair_Display({
 export const metadata: Metadata = {
   title: 'Lake District Spas 2025 - Complete Access Guide',
   description:
-    'Find your perfect Spa. Compare Lake District spas. Know before you book: Is the spa included with your room? Detailed thermal suite, pool and access policy information.',
+    'Find your perfect Lake District spa. Compare facilities, access policies, and thermal suites. Know before you book if spa access is included with your room.',
   keywords: [
     'lake district spas',
     'spa hotels lake district',
