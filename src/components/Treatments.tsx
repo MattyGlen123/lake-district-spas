@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, Clock, Tag } from 'lucide-react';
+import { ChevronDown, Clock, Tag, ExternalLink } from 'lucide-react';
 import { Spa, TreatmentCategory, Treatment } from '@/types/spa';
 import { getTreatmentsBySpaId } from '@/data/treatments/index';
 
@@ -11,9 +11,10 @@ interface TreatmentsProps {
 
 interface TreatmentCardProps {
   treatment: Treatment;
+  spa: Spa;
 }
 
-const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment }) => {
+const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -84,9 +85,42 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment }) => {
         >
           <div className="overflow-hidden">
             <div className="border-t border-stone-200 pt-4">
-              <p className="text-stone-600 leading-relaxed">
+              <p className="text-stone-600 leading-relaxed mb-4">
                 {treatment.shortDescription}
               </p>
+
+              {/* Booking Buttons */}
+              {(spa.treatmentBookingUrl || spa.treatmentBookingPhone) && (
+                <div
+                  className={`grid gap-6 ${
+                    spa.treatmentBookingUrl && spa.treatmentBookingPhone
+                      ? 'grid-cols-2'
+                      : 'grid-cols-1'
+                  }`}
+                >
+                  {spa.treatmentBookingUrl && (
+                    <a
+                      href={spa.treatmentBookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="px-6 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm flex items-center justify-center gap-2"
+                    >
+                      Book Now
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  )}
+                  {spa.treatmentBookingPhone && (
+                    <a
+                      href={`tel:${spa.treatmentBookingPhone}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="px-6 py-3 bg-emerald-950 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm flex items-center justify-center gap-2"
+                    >
+                      Call Now
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -179,12 +213,12 @@ export default function Treatments({ spa }: TreatmentsProps) {
             return (
               <div key={category}>
                 {/* Category Header with Divider */}
-                <div className="flex items-center gap-6 mb-12">
-                  <h3 className="text-[11px] font-black text-stone-400 uppercase tracking-[0.4em] whitespace-nowrap">
+                <div className="flex items-center gap-3 sm:gap-6 mb-12 flex-wrap">
+                  <h3 className="text-[11px] font-black text-stone-600 uppercase tracking-[0.4em] whitespace-nowrap flex-shrink-0">
                     {category}
                   </h3>
-                  <div className="h-px w-full bg-stone-200" />
-                  <span className="text-amber-700 text-[10px] font-black tracking-widest px-3 py-1 border border-stone-200 rounded-full whitespace-nowrap">
+                  <div className="h-px flex-1 min-w-[60px] bg-stone-200" />
+                  <span className="text-amber-700 text-[10px] font-black tracking-widest px-3 py-1 border border-stone-200 rounded-full whitespace-nowrap flex-shrink-0">
                     {treatments.length}{' '}
                     {treatments.length === 1 ? 'Treatment' : 'Treatments'}
                   </span>
@@ -193,7 +227,7 @@ export default function Treatments({ spa }: TreatmentsProps) {
                 {/* Treatment Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {treatments.map((treatment, idx) => (
-                    <TreatmentCard key={idx} treatment={treatment} />
+                    <TreatmentCard key={idx} treatment={treatment} spa={spa} />
                   ))}
                 </div>
               </div>

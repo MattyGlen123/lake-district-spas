@@ -102,6 +102,8 @@ Spa access is complimentary for suite bookings (2 hours per night), while standa
     },
     agePolicy: '18+',
     relatedSpas: [5, 2],
+    treatmentBookingPhone: '017687 87704',
+    treatmentBookingUrl: 'https://lodorefallsspa.try.be/',
   },
   {
     id: 7,
@@ -322,6 +324,8 @@ Swim Club access is complimentary for all hotel guests. Day memberships are avai
     },
     agePolicy: 'Family Friendly',
     relatedSpas: [2, 11],
+    treatmentBookingPhone: '01768 486442',
+    treatmentBookingUrl: 'https://another.place/the-lake/book/treatments',
   },
   {
     id: 2,
@@ -405,6 +409,9 @@ Spa access is complimentary for all hotel guests and Day spa packages are availa
     },
     agePolicy: '18+ to book spa experiences.',
     relatedSpas: [6, 9],
+    treatmentBookingPhone: '017687 88900',
+    treatmentBookingUrl:
+      'https://armathwaite.onejourney.travel/spa/treatments/',
   },
   {
     id: 3,
@@ -486,6 +493,9 @@ Spa access is complimentary for all Brimstone Hotel guests throughout their stay
     },
     agePolicy: 'Adults only',
     relatedSpas: [8, 13],
+    treatmentBookingPhone: '015394 38014',
+    treatmentBookingUrl:
+      'https://lllb.dbm.guestline.net/availability?hotel=LLLBRIM',
   },
   {
     id: 4,
@@ -578,6 +588,9 @@ Spa access is complimentary for all hotel guests from 2pm on arrival until midda
     },
     agePolicy: '16+',
     relatedSpas: [11, 2],
+    treatmentBookingPhone: '+44 1539 463550',
+    treatmentBookingUrl:
+      'https://online.premiersoftware.co.uk/Book-Online-3G-V2/index2.php?i=115df4aa99c472ae827a28b548e637fe&siteID=9',
   },
   {
     id: 5,
@@ -686,6 +699,9 @@ Spa access is complimentary for Splendid room bookings and above. Standard room 
     },
     agePolicy: '18+ (16-17 with parent/guardian)',
     relatedSpas: [9, 1],
+    treatmentBookingPhone: '01539 531681',
+    treatmentBookingUrl:
+      'https://theswan.onejourney.travel/spa/treatments?_gl=1*8sv6dw*_gcl_au*MTM2NjA5MTY1OC4xNzY2MzA4NjY5*_ga*MjAyODY1ODY2LjE3NjYzMDg2ODk.*_ga_4LJBV23LCJ*czE3NjgyMzE2NTAkbzgkZzEkdDE3NjgyMzE3MDIkajU0JGwwJGgw',
   },
   {
     id: 8,
@@ -779,6 +795,9 @@ Spa access is complimentary for all hotel guests throughout their stay. The spa 
     },
     agePolicy: 'Under 16 must be accompanied by an adult',
     relatedSpas: [3, 13],
+    treatmentBookingPhone: '015394 32385',
+    treatmentBookingUrl:
+      'https://home.shortcutssoftware.com/waterfallspa#/_h/sites/2659/details',
   },
   {
     id: 9,
@@ -863,6 +882,9 @@ Spa access is complimentary for all hotel guests, including pool, sauna, steam r
     },
     agePolicy: 'Family Friendly',
     relatedSpas: [5, 13],
+    treatmentBookingPhone: '015395 30001',
+    treatmentBookingUrl:
+      'https://lakesidehotel.onejourney.travel/spa/treatments',
   },
   {
     id: 11,
@@ -950,6 +972,7 @@ Spa access is complimentary for all hotel guests with no booking required. Day s
     },
     agePolicy: '18+',
     relatedSpas: [4, 12],
+    treatmentBookingPhone: '01539 435334',
   },
   {
     id: 10,
@@ -1050,6 +1073,7 @@ Complimentary spa access included for all hotel guests, with day spa packages av
     },
     agePolicy: '16+ only for spa facilities',
     relatedSpas: [7, 6],
+    treatmentBookingPhone: '015394 42137',
   },
   {
     id: 6,
@@ -1137,6 +1161,9 @@ Complimentary pool and thermal suite access included for all hotel guests, with 
     },
     agePolicy: 'Family Friendly',
     relatedSpas: [7, 10],
+    treatmentBookingUrl:
+      'https://www.macdonaldhotels.co.uk/old-england/spa-leisure/spa',
+    treatmentBookingPhone: '0344 879 9102',
   },
   {
     id: 16,
@@ -1237,6 +1264,9 @@ Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with
     },
     agePolicy: 'Adults only',
     relatedSpas: [17, 15],
+    treatmentBookingPhone: '01539 532 552',
+    treatmentBookingUrl:
+      'https://netherwood-hotel.onejourney.travel/spa/treatments',
   },
   {
     id: 15,
@@ -1325,6 +1355,7 @@ Hotel guests must book spa access separately and day spa packages are available 
     },
     agePolicy: '16+',
     relatedSpas: [7, 16],
+    treatmentBookingPhone: '017683 51571',
     treatmentBookingUrl:
       'https://applebymanor.onejourney.travel/spa/treatments',
   },
@@ -1411,6 +1442,7 @@ Complimentary spa access included for hotel guests, with day passes and annual m
     },
     agePolicy: '16+ only for spa',
     relatedSpas: [2, 9],
+    treatmentBookingPhone: '01768 868111',
     treatmentBookingUrl:
       'https://www.northlakeshotel.co.uk/spa-treatments/treatments',
   },
@@ -1478,6 +1510,7 @@ Spa access requires additional charge for hotel guests, though some overnight pa
     },
     agePolicy: undefined,
     relatedSpas: [16, 5],
+    treatmentBookingPhone: '+01539533666',
   },
   {
     id: 13,
@@ -1568,6 +1601,9 @@ Complimentary Cascades access included for all hotel guests, with 10% discount o
     },
     agePolicy: '18+',
     relatedSpas: [9, 3],
+    treatmentBookingPhone: '+44 (0)1539 531133',
+    treatmentBookingUrl:
+      'https://direct-book.com/properties/WhitewaterHotelSpaDirect',
   },
 ];
 
