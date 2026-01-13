@@ -155,8 +155,40 @@ Unlike many Lake District spa hotels, spa access is not included with standard r
     accessLabels: ['paid-for-guests', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_low-wood-bay.webp',
+        src: '/images/spas/low-wood-bay-spa/lake-district-spas_low-wood-bay.webp',
         alt: 'Spectacular infinity-edge vitality pool at Low Wood Bay Resort and Spa on the shores of Lake Windermere, featuring panoramic Lake District mountain views, traditional Lakeland dry stone walling, wooden sun loungers, and outdoor relaxation areas perfect for spa days',
+      },
+      {
+        src: '/images/spas/low-wood-bay-spa/lake-district-spas_low-wood-bay-couple-infinity-pool.webp',
+        alt: 'Romantic couple enjoying stunning infinity-edge vitality pool at Low Wood Bay Resort and Spa, gazing across Lake Windermere with panoramic Lake District mountain and woodland views, perfect for couples spa breaks and romantic getaways in Cumbria',
+      },
+      {
+        src: '/images/spas/low-wood-bay-spa/lake-district-spas_low-wood-bay-rooftop-deck.webp',
+        alt: 'Spectacular rooftop vitality pool deck at Low Wood Bay Resort and Spa on Lake Windermere shores, featuring traditional Lakeland dry stone walling, turquoise sun loungers, colorful flower displays, infinity pool, and breathtaking Lake District mountain and sailing marina views',
+      },
+      {
+        src: '/images/spas/low-wood-bay-spa/lake-district-spas_low-wood-bay-infrared-sauna.webp',
+        alt: 'Modern glass-walled infrared sauna at Low Wood Bay Resort and Spa featuring red therapeutic heat panels, natural wooden tiered benching, and contemporary wellness technology as part of five thermal experiences overlooking Lake Windermere in the Lake District',
+      },
+      {
+        src: '/images/spas/low-wood-bay-spa/lake-district-spas_low-wood-bay-back-massage.webp',
+        alt: 'Professional therapeutic back massage at Low Wood Bay Resort and Spa on Lake Windermere, skilled therapist performing relaxation treatment in treatment room with ambient lighting and natural wood accents, showcasing expert spa services in the Lake District',
+      },
+      {
+        src: '/images/spas/low-wood-bay-spa/lake-district-spas_low-wood-bay-herbal-lounge.webp',
+        alt: 'Unique Nordic-inspired herbal lounge at Low Wood Bay Resort and Spa featuring suspended wooden swing chairs, natural wood paneling with slatted ceiling design, central herbal feature, and contemporary Scandinavian wellness aesthetic on Lake Windermere, Lake District',
+      },
+      {
+        src: '/images/spas/low-wood-bay-spa/lake-district-spas_low-wood-bay-salt-sauna.webp',
+        alt: 'Glass-fronted Finnish sauna at Low Wood Bay Resort and Spa on Lake Windermere, guest relaxing on wooden benches with natural light and traditional sauna design, part of comprehensive five thermal experience facilities in the Lake District',
+      },
+      {
+        src: '/images/spas/low-wood-bay-spa/lake-district-spas_low-wood-bay-indoor-pool.webp',
+        alt: 'Serene indoor thermal pool at Low Wood Bay Resort and Spa featuring floor-to-ceiling windows with Lake Windermere views, modern minimalist design with grey stone walls, heated tranquil waters, and luxurious spa facilities in the Lake District',
+      },
+      {
+        src: '/images/spas/low-wood-bay-spa/lake-district-spas_low-wood-bay-thermal-pool.webp',
+        alt: 'Multi-level indoor thermal pool at Low Wood Bay Resort and Spa on Lake Windermere, featuring dramatic stepped design with turquoise lighting, concrete and wood architecture, hanging botanical displays, and contemporary spa facilities with Lakeland mountain views through floor-to-ceiling windows',
       },
     ],
     keyFeatures: [
