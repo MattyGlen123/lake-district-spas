@@ -311,8 +311,40 @@ Swim Club access is complimentary for all hotel guests. Day memberships are avai
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_another-place.jpg',
+        src: '/images/spas/another-place-the-lake/lake-district-spas_another-place.jpg',
         alt: 'Stunning infinity-edge pool at Another Place The Lake on the shores of Ullswater, featuring floor-to-ceiling glass walls with breathtaking Lake District mountain and valley views, modern minimalist design with exposed beams, and seamless indoor-outdoor spa experience in a luxury countryside retreat',
+      },
+      {
+        src: '/images/spas/another-place-the-lake/lake-district-spas_another-place-family-pool.jpg',
+        alt: 'Family-friendly pool experience at Another Place The Lake on Ullswater, parent and child enjoying warm waters with stunning Lake District mountain views through floor-to-ceiling glass, perfect for multi-generational spa breaks in Cumbria countryside',
+      },
+      {
+        src: '/images/spas/another-place-the-lake/lake-district-spas_another-place-hot-tub-morning.jpg',
+        alt: 'Tranquil morning hot tub experience at Another Place The Lake on Ullswater, guest enjoying panoramic Lake District fell views with morning mist, manicured gardens and mountain backdrop creating peaceful spa moment in Cumbria countryside',
+      },
+      {
+        src: '/images/spas/another-place-the-lake/lake-district-spas_another-place-infinity-pool-interior.jpg',
+        alt: 'Breathtaking infinity-edge pool at Another Place The Lake on Ullswater shores, featuring floor-to-ceiling glass walls with panoramic Lake District mountain views, modern minimalist design with natural stone and wood, perfect for romantic relaxation in a luxury Cumbrian countryside retreat',
+      },
+      {
+        src: '/images/spas/another-place-the-lake/lake-district-spas_another-place-wooden-sauna.jpg',
+        alt: 'Traditional wooden Finnish sauna at Another Place The Lake with panoramic countryside views through picture windows, natural pine interior creating authentic wellness experience overlooking Ullswater and Lake District fells in Cumbria',
+      },
+      {
+        src: '/images/spas/another-place-the-lake/lake-district-spas_another-place-infinity-pool-reflection.jpg',
+        alt: 'Mirror-like infinity pool at Another Place The Lake reflecting stunning Ullswater mountain landscape through floor-to-ceiling windows, featuring signature wooden Adirondack chairs and seamless indoor-outdoor connection in this award-winning Lake District spa',
+      },
+      {
+        src: '/images/spas/another-place-the-lake/lake-district-spas_another-place-treatment-room.jpg',
+        alt: 'Serene treatment room at Another Place The Lake spa on Ullswater, featuring sage green bespoke cabinetry with luxury white towels, professional massage bed, and warm ambient lighting creating intimate wellness experience in the Lake District',
+      },
+      {
+        src: '/images/spas/another-place-the-lake/lake-district-spas_another-place-pool-adirondack-chairs.jpg',
+        alt: 'Indoor infinity pool at Another Place The Lake featuring colorful wooden Adirondack chairs on poolside deck, floor-to-ceiling windows showcasing Ullswater and Lake District mountain views, modern luxury spa design perfect for romantic getaways in Cumbria',
+      },
+      {
+        src: '/images/spas/another-place-the-lake/lake-district-spas_another-place-outdoor-hot-tub.jpg',
+        alt: 'Private outdoor hot tub at Another Place The Lake overlooking Ullswater with dramatic Lake District fell views, traditional Lakeland dry stone walling, contemporary design with natural materials, exclusive adults-only spa retreat in Cumbria',
       },
     ],
     keyFeatures: [
