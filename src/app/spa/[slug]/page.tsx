@@ -6,6 +6,7 @@ import SpaHero from '@/components/SpaHero';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import QuickFactsBar from '@/components/QuickFactsBar';
 import SpaIntroduction from '@/components/SpaIntroduction';
+import JumpToSection from '@/components/JumpToSection';
 import BackButton from '@/components/BackButton';
 import ThermalFacilities from '@/components/ThermalFacilities';
 import PoolFeatures from '@/components/PoolFeatures';
@@ -106,6 +107,7 @@ export default function SpaDetailPage({
 
         <div className="container mx-auto px-4 md:px-8 pt-8">
           <SpaIntroduction spa={spa} />
+          <JumpToSection spa={spa} />
           <ThermalFacilities spa={spa} />
           <PoolFeatures spa={spa} />
           <Treatments spa={spa} />
