@@ -552,8 +552,44 @@ Spa access is complimentary for all Brimstone Hotel guests throughout their stay
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_brimstone-hotel.jpg',
+        src: '/images/spas/brimstone-hotel-spa/lake-district-spas_brimstone-hotel-outdoor-pool-sunset.jpg',
+        alt: 'Guest enjoying steaming outdoor hydrotherapy pool at Brimstone Hotel and Spa in Langdale at golden hour sunset, with Lakeland dry stone fireplace, thermal mist rising, and Lake District woodland creating magical Nordic spa experience in Cumbria',
+      },
+      {
+        src: '/images/spas/brimstone-hotel-spa/lake-district-spas_brimstone-hotel.jpg',
         alt: 'Unique swim-through hydrotherapy pool at Brimstone Hotel and Spa in Langdale featuring iridescent blue mosaic tiles, modern Nordic-inspired design with wooden accents and floor-to-ceiling windows, white heated loungers, and indoor-outdoor connectivity in the heart of the Lake District',
+      },
+      {
+        src: '/images/spas/brimstone-hotel-spa/lake-district-spas_brimstone-hotel-mineral-steam-bath.jpg',
+        alt: 'Intimate mineral steam relaxation room at Brimstone Hotel and Spa in Langdale, featuring sculptural heated loungers with Himalayan salt lamp centerpiece, copper-toned walls with dramatic ambient lighting creating tranquil thermal experience in the Lake District',
+      },
+      {
+        src: '/images/spas/brimstone-hotel-spa/lake-district-spas_brimstone-hotel-lava-sauna.jpg',
+        alt: 'Striking lava stone sauna at Brimstone Hotel and Spa in Langdale, featuring illuminated volcanic rocks in cage design with dramatic orange ambient lighting, tiered wooden benches, and innovative Nordic-inspired thermal therapy in the heart of the Lake District',
+      },
+      {
+        src: '/images/spas/brimstone-hotel-spa/lake-district-spas_brimstone-hotel-himalayan-salt-steam.jpg',
+        alt: 'Spectacular Himalayan salt steam therapy room at Brimstone Hotel and Spa in Langdale, featuring floor-to-ceiling backlit pink salt crystal panels creating golden amber glow, curved seating for respiratory wellness and detoxification in luxury Lake District spa',
+      },
+      {
+        src: '/images/spas/brimstone-hotel-spa/lake-district-spas_brimstone-hotel-waterfall-evening.jpg',
+        alt: 'Spectacular outdoor hydrotherapy pool at Brimstone Hotel and Spa in Langdale at twilight, featuring dramatic sculptural waterfall feature with underwater lighting and contemporary Nordic architecture surrounded by Lake District woodland, perfect for evening relaxation',
+      },
+      {
+        src: '/images/spas/brimstone-hotel-spa/lake-district-spas_brimstone-hotel-finnish-sauna.jpg',
+        alt: 'Traditional Finnish sauna at Brimstone Hotel and Spa in Langdale with natural timber construction, tiered benches, exposed beam ceiling, and panoramic windows overlooking Lake District countryside, combining authentic wellness with stunning natural views',
+      },
+      {
+        src: '/images/spas/brimstone-hotel-spa/lake-district-spas_brimstone-hotel-waterfall-fire-night.jpg',
+        alt: 'Dramatic nighttime outdoor spa experience at Brimstone Hotel and Spa in Langdale, featuring illuminated curved waterfall feature cascading into steaming hydrotherapy pool with integrated outdoor fireplace and Lakeland stone architecture under starlit Lake District sky',
+      },
+      {
+        src: '/images/spas/brimstone-hotel-spa/lake-district-spas_brimstone-hotel-facial-treatment.jpg',
+        alt: 'Luxurious facial massage treatment at Brimstone Hotel and Spa in Langdale, professional therapist performing rejuvenating head and face therapy with ambient candlelight and backlit salt wall creating serene spa atmosphere in the Lake District',
+      },
+      {
+        src: '/images/spas/brimstone-hotel-spa/lake-district-spas_brimstone-hotel-experience-shower.jpg',
+        alt: 'Dramatic chromotherapy experience shower at Brimstone Hotel and Spa in Langdale, featuring vibrant purple LED mood lighting with rainfall and overhead cascade features, dark wood paneling creating immersive sensory wellness experience in the Lake District',
       },
     ],
     keyFeatures: [
