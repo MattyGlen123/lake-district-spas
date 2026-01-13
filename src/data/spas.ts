@@ -447,8 +447,24 @@ Spa access is complimentary for all hotel guests and Day spa packages are availa
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_armathwaite-hall.jpg',
+        src: '/images/spas/armathwaite-hall-hotel-spa/lake-district-spas_armathwaite-hall.jpg',
         alt: 'Luxury thermal relaxation suite at Armathwaite Hall Hotel and Spa near Bassenthwaite Lake, featuring heated ceramic loungers with burnt orange throws, ambient candlelit atmosphere with green velvet curtains and contemporary design, offering award-winning spa facilities in a Lake District country estate setting',
+      },
+      {
+        src: '/images/spas/armathwaite-hall-hotel-spa/lake-district-spas_armathwaite-hall-outdoor-pool-champagne.jpg',
+        alt: 'Guest celebrating with champagne in outdoor hydrotherapy pool at Armathwaite Hall Hotel and Spa, surrounded by thermal steam and ancient woodland near Bassenthwaite Lake, perfect for special occasions and romantic spa breaks in the Lake District',
+      },
+      {
+        src: '/images/spas/armathwaite-hall-hotel-spa/lake-district-spas_armathwaite-hall-outdoor-hot-tub-couple.jpg',
+        alt: 'Romantic couple enjoying outdoor hydrotherapy pool at Armathwaite Hall Hotel and Spa with steaming thermal waters, celebrating with drinks surrounded by ancient Lake District woodland near Bassenthwaite Lake, perfect for couples spa breaks in Cumbria',
+      },
+      {
+        src: '/images/spas/armathwaite-hall-hotel-spa/lake-district-spas_armathwaite-hall-back-massage.jpeg',
+        alt: 'Professional therapeutic back massage at Armathwaite Hall Hotel and Spa near Bassenthwaite Lake, skilled therapist performing relaxation treatment with ambient purple mood lighting in luxury treatment room at this award-winning Lake District country estate spa',
+      },
+      {
+        src: '/images/spas/armathwaite-hall-hotel-spa/lake-district-spas_armathwaite-hall-indoor-pool.jpeg',
+        alt: 'Contemporary indoor swimming pool at Armathwaite Hall Hotel and Spa near Bassenthwaite Lake, featuring modern ambient lighting, floor-to-ceiling windows with garden views, decorative columns, and split-level design in historic Lake District country estate setting',
       },
     ],
     keyFeatures: [
