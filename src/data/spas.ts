@@ -22,9 +22,36 @@ The comprehensive thermal suite includes Finnish and herbal saunas with panorami
 Spa access is complimentary for suite bookings (2 hours per night), while standard room guests can add spa sessions for an additional fee. Day spa packages are also available for non-residents. Please note this is an 18+ spa due to the heat experiences.`,
     websiteUrl: 'https://lakedistrictspa.co.uk',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_lodore-falls-spa.jpg',
-    imageAlt:
-      'Luxurious 16-metre outdoor hydrotherapy pool at The Falls Spa at Lodore Falls Hotel in Borrowdale, featuring heated water with neck jets and underwater bubble loungers, surrounded by white sun loungers on slate decking with dramatic Lake District mountain views at sunset, spa access included with suite bookings',
+    images: [
+      {
+        src: '/images/spas/lodore-falls-spa/lake-district-spas_lodore-falls-spa.jpg',
+        alt: 'Luxurious 16-metre outdoor hydrotherapy pool at The Falls Spa at Lodore Falls Hotel in Borrowdale, featuring heated water with neck jets and underwater bubble loungers, surrounded by white sun loungers on slate decking with dramatic Lake District mountain views at sunset, spa access included with suite bookings',
+      },
+      {
+        src: '/images/spas/lodore-falls-spa/lake-district-spas_lodore-falls-aerial-view.jpg',
+        alt: 'Stunning aerial view of The Falls Spa at Lodore Falls Hotel in Borrowdale showing multi-level outdoor hydrotherapy pools, traditional Lakeland slate and stone architecture, manicured gardens with sun loungers, and dramatic Lake District mountain backdrop, showcasing the complete spa resort facilities',
+      },
+      {
+        src: '/images/spas/lodore-falls-spa/lake-district-spas_lodore-falls-laconium-salt-room.jpg',
+        alt: 'Luxurious thermal experience rooms at The Falls Spa at Lodore Falls Hotel in Borrowdale, featuring ambient purple-lit laconium with curved mosaic tile heated seating and illuminated Himalayan salt therapy room with warm golden lighting, part of award-winning 12-experience thermal suite in the Lake District',
+      },
+      {
+        src: '/images/spas/lodore-falls-spa/lake-district-spas_lodore-falls-rasul-treatment.jpg',
+        alt: 'Traditional rasul mud therapy experience at The Falls Spa at Lodore Falls Hotel, two guests enjoying mineral-rich clay body treatment in private rasul chamber with natural wood paneling and mosaic tile accents, exclusive couples spa treatment in Borrowdale, Lake District',
+      },
+      {
+        src: '/images/spas/lodore-falls-spa/lake-district-spas_lodore-falls-thermal-suite.jpg',
+        alt: 'Contemporary thermal suite relaxation area at The Falls Spa at Lodore Falls Hotel featuring heated ceramic loungers, glass-walled Finnish sauna, ambient purple mood lighting, and modern wellness design, part of comprehensive spa facilities included with room bookings in Borrowdale, Lake District',
+      },
+      {
+        src: '/images/spas/lodore-falls-spa/lake-district-spas_lodore-falls-deep-tissue-massage.jpg',
+        alt: 'Professional deep tissue massage treatment at The Falls Spa at Lodore Falls Hotel in Borrowdale, skilled therapist performing therapeutic bodywork in one of five luxury treatment rooms, showcasing expert spa services available at this award-winning Lake District destination spa',
+      },
+      {
+        src: '/images/spas/lodore-falls-spa/lake-district-spas_lodore-falls-relaxation-lounge.jpg',
+        alt: 'Elegant couples relaxation lounge at The Falls Spa at Lodore Falls Hotel featuring plush velvet loungers, white spa robes, textured grey stone feature wall with gold-accented round mirrors, and luxurious post-treatment relaxation space in this award-winning Borrowdale spa, Lake District',
+      },
+    ],
     keyFeatures: [
       'Infinity-edge outdoor hydrotherapy pool',
       'Finnish and herbal saunas',
@@ -126,9 +153,12 @@ The spa includes six thermal experiences: three saunas featuring the outdoor Fel
 Unlike many Lake District spa hotels, spa access is not included with standard room bookings - guests can add spa sessions separately (with 25% off Monday to Thursday). Day spa packages are available for non-residents from 10am to 8pm. This is a 16+ spa.`,
     websiteUrl: 'https://englishlakes.co.uk/hotels/low-wood-bay/the-spa/',
     accessLabels: ['paid-for-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_low-wood-bay.webp',
-    imageAlt:
-      'Spectacular infinity-edge vitality pool at Low Wood Bay Resort and Spa on the shores of Lake Windermere, featuring panoramic Lake District mountain views, traditional Lakeland dry stone walling, wooden sun loungers, and outdoor relaxation areas perfect for spa days',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_low-wood-bay.webp',
+        alt: 'Spectacular infinity-edge vitality pool at Low Wood Bay Resort and Spa on the shores of Lake Windermere, featuring panoramic Lake District mountain views, traditional Lakeland dry stone walling, wooden sun loungers, and outdoor relaxation areas perfect for spa days',
+      },
+    ],
     keyFeatures: [
       'Two outdoor infinity pools with lake views',
       'Three saunas including infrared and fellside sauna',
@@ -247,9 +277,12 @@ The pool uses UV-filtered, low-chlorine water and includes a shallow area for ch
 Swim Club access is complimentary for all hotel guests. Day memberships are available for non-residents. Family swim runs 9am to 6pm, with adult-only sessions 7am to 9am and 6pm to 9pm.`,
     websiteUrl: 'https://another.place/the-lake/swim-club/',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_another-place.jpg',
-    imageAlt:
-      'Stunning infinity-edge pool at Another Place The Lake on the shores of Ullswater, featuring floor-to-ceiling glass walls with breathtaking Lake District mountain and valley views, modern minimalist design with exposed beams, and seamless indoor-outdoor spa experience in a luxury countryside retreat',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_another-place.jpg',
+        alt: 'Stunning infinity-edge pool at Another Place The Lake on the shores of Ullswater, featuring floor-to-ceiling glass walls with breathtaking Lake District mountain and valley views, modern minimalist design with exposed beams, and seamless indoor-outdoor spa experience in a luxury countryside retreat',
+      },
+    ],
     keyFeatures: [
       'Indoor pool with views of Ullswater lake',
       'Outdoor Swedish hot tub overlooking the grounds',
@@ -348,9 +381,12 @@ The thermal suite includes a traditional Finnish sauna and an Amethyst Crystal C
 Spa access is complimentary for all hotel guests and Day spa packages are available for non-residents. This is an 18+ spa for bookings and treatments, though under-16s can use the facilities with adult supervision.`,
     websiteUrl: 'https://armathwaite-hall.com/spa',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_armathwaite-hall.jpg',
-    imageAlt:
-      'Luxury thermal relaxation suite at Armathwaite Hall Hotel and Spa near Bassenthwaite Lake, featuring heated ceramic loungers with burnt orange throws, ambient candlelit atmosphere with green velvet curtains and contemporary design, offering award-winning spa facilities in a Lake District country estate setting',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_armathwaite-hall.jpg',
+        alt: 'Luxury thermal relaxation suite at Armathwaite Hall Hotel and Spa near Bassenthwaite Lake, featuring heated ceramic loungers with burnt orange throws, ambient candlelit atmosphere with green velvet curtains and contemporary design, offering award-winning spa facilities in a Lake District country estate setting',
+      },
+    ],
     keyFeatures: [
       'Indoor swimming pool',
       'Outdoor infinity pools',
@@ -434,9 +470,12 @@ Five thermal facilities include a Finnish sauna, laconium for gentle heat, aroma
 
 Spa access is complimentary for all Brimstone Hotel guests throughout their stay. The spa is exclusive to hotel guests only – day passes are not available. This is an adults-only environment.`,
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_brimstone-hotel.jpg',
-    imageAlt:
-      'Unique swim-through hydrotherapy pool at Brimstone Hotel and Spa in Langdale featuring iridescent blue mosaic tiles, modern Nordic-inspired design with wooden accents and floor-to-ceiling windows, white heated loungers, and indoor-outdoor connectivity in the heart of the Lake District',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_brimstone-hotel.jpg',
+        alt: 'Unique swim-through hydrotherapy pool at Brimstone Hotel and Spa in Langdale featuring iridescent blue mosaic tiles, modern Nordic-inspired design with wooden accents and floor-to-ceiling windows, white heated loungers, and indoor-outdoor connectivity in the heart of the Lake District',
+      },
+    ],
     keyFeatures: [
       'Swim-through indoor/outdoor pool',
       'Finnish sauna, laconium and aroma steam room',
@@ -519,9 +558,12 @@ Spa access is complimentary for all hotel guests from 2pm on arrival until midda
     websiteUrl:
       'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa/',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_daffodil-hotel-and-spa.webp',
-    imageAlt:
-      'Contemporary hydrotherapy pool at Daffodil Hotel and Spa in Grasmere with dramatic blue and purple ambient lighting, cascade waterfall features, heated lounger seating, and modern minimalist design creating a tranquil Lake District wellness experience',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_daffodil-hotel-and-spa.webp',
+        alt: 'Contemporary hydrotherapy pool at Daffodil Hotel and Spa in Grasmere with dramatic blue and purple ambient lighting, cascade waterfall features, heated lounger seating, and modern minimalist design creating a tranquil Lake District wellness experience',
+      },
+    ],
     keyFeatures: [
       'Indoor hydrotherapy pool with cascade features',
       'Finnish sauna and steam room',
@@ -613,9 +655,12 @@ Five thermal experiences include an authentic outdoor Finnish sauna with river v
 Spa access is complimentary for Splendid room bookings and above. Standard room guests and day visitors can add two-hour spa sessions. This is an 18+ spa, though 16-17 year olds can visit with a parent or guardian.`,
     websiteUrl: 'https://swanhotel.com/spa/',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_swan-hotel.webp',
-    imageAlt:
-      'Illuminated outdoor hydrotherapy pool at Swan Hotel and Spa in Newby Bridge at twilight, featuring swim-through access connecting indoor relaxation areas with heated outdoor pool, blue underwater lighting, and glass walls showcasing integrated spa facilities in the Lake District',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_swan-hotel.webp',
+        alt: 'Illuminated outdoor hydrotherapy pool at Swan Hotel and Spa in Newby Bridge at twilight, featuring swim-through access connecting indoor relaxation areas with heated outdoor pool, blue underwater lighting, and glass walls showcasing integrated spa facilities in the Lake District',
+      },
+    ],
     keyFeatures: [
       'Unique indoor/outdoor swim-through pool',
       'Authentic outdoor Finnish sauna',
@@ -724,9 +769,12 @@ Thermal facilities include an infrared sauna for deep tissue relaxation, steam r
 Spa access is complimentary for all hotel guests throughout their stay. The spa is exclusive to hotel residents only and day passes are not available to the public.`,
     websiteUrl: 'https://www.hotelslakedistrict.com/waterfall-spa/',
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_salutation-hotel.jpg',
-    imageAlt:
-      'Elegant indoor pool at The Salutation Hotel and Spa in Ambleside featuring starlit fibre optic ceiling, suspended designer pod chairs, modern grey loungers, and sophisticated neutral colour palette creating a tranquil spa experience in the heart of the Lake District',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_salutation-hotel.jpg',
+        alt: 'Elegant indoor pool at The Salutation Hotel and Spa in Ambleside featuring starlit fibre optic ceiling, suspended designer pod chairs, modern grey loungers, and sophisticated neutral colour palette creating a tranquil spa experience in the heart of the Lake District',
+      },
+    ],
     keyFeatures: [
       'Indoor pool with starlit ceiling',
       'Outdoor hydrotherapy fountain spa',
@@ -820,9 +868,12 @@ Thermal facilities include a traditional sauna, steam room, and poolside jacuzzi
 Spa access is complimentary for all hotel guests, including pool, sauna, steam room and gym. Day spa experiences are available for non-residents. The pool welcomes children, making this a family-friendly wellness destination.`,
     websiteUrl: 'https://lakesidehotel.co.uk/spa',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_lakeside-hotel.webp',
-    imageAlt:
-      'Contemporary indoor pool at Lakeside Hotel Health Club and Spa on Lake Windermere, featuring distinctive teal and green mosaic tile columns, flowing wave-pattern ceiling design, and spacious swimming area with loungers overlooking the Lake District waterfront',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_lakeside-hotel.webp',
+        alt: 'Contemporary indoor pool at Lakeside Hotel Health Club and Spa on Lake Windermere, featuring distinctive teal and green mosaic tile columns, flowing wave-pattern ceiling design, and spacious swimming area with loungers overlooking the Lake District waterfront',
+      },
+    ],
     keyFeatures: [
       'Indoor pool overlooking Lake Windermere',
       'Traditional sauna and steam room',
@@ -908,9 +959,12 @@ Spa access is complimentary for all hotel guests with no booking required. Day s
     websiteUrl:
       'https://www.harbourhotels.co.uk/our-hotels/lake-district/rothay-garden-by-harbour-hotels/riverside-spa',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_rothay-garden-hotel.jpg',
-    imageAlt:
-      'Panoramic hydrotherapy pool at Rothay Garden Hotel and Riverside Spa in Grasmere, featuring curved floor-to-ceiling windows with dramatic Lake District fell views, dual cascade water features, bamboo-panelled walls, and intimate circular hot tub design surrounded by nature',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_rothay-garden-hotel.jpg',
+        alt: 'Panoramic hydrotherapy pool at Rothay Garden Hotel and Riverside Spa in Grasmere, featuring curved floor-to-ceiling windows with dramatic Lake District fell views, dual cascade water features, bamboo-panelled walls, and intimate circular hot tub design surrounded by nature',
+      },
+    ],
     keyFeatures: [
       'Hydrotherapy pool with riverside and fell views',
       'Infrared heated loungers',
@@ -995,9 +1049,12 @@ The 35ft indoor pool features atmospheric lighting and floor-to-ceiling windows 
 Complimentary spa access included for all hotel guests, with day spa packages available to non-residents. Pre-booking required. Spa facilities are 16+ only, though children may use the pool 10am-1pm.`,
     websiteUrl: 'https://beechhillhotel.co.uk/spa',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_beech-hill-hotel.jpg',
-    imageAlt:
-      'Botanical-inspired indoor pool at Beech Hill Hotel and Spa near Windermere, featuring natural woven pendant lights, cascading artificial greenery from ceiling, dark slate mosaic walls, turquoise heated pool, and contemporary nature-themed wellness design in the Lake District',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_beech-hill-hotel.jpg',
+        alt: 'Botanical-inspired indoor pool at Beech Hill Hotel and Spa near Windermere, featuring natural woven pendant lights, cascading artificial greenery from ceiling, dark slate mosaic walls, turquoise heated pool, and contemporary nature-themed wellness design in the Lake District',
+      },
+    ],
     keyFeatures: [
       'Indoor pool with Lake Windermere views',
       'Himalayan sauna and aromatic steam room',
@@ -1096,9 +1153,12 @@ The thermal suite combines traditional Finnish sauna with aromatherapy steam roo
 Complimentary pool and thermal suite access included for all hotel guests, with spa day packages available to non-residents. Children are welcome in the pool between 10am-5pm, though thermal suite facilities remain 18+ only.`,
     websiteUrl: 'https://macdonaldhotels.co.uk/old-england/spa-leisure/spa',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_old-england-hotel.jpg',
-    imageAlt:
-      'Modern indoor swimming pool at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring deep blue mosaic tiling, contemporary black and white interior design, underwater lighting, and heated pool facilities in a luxurious Lake District spa setting',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_old-england-hotel.jpg',
+        alt: 'Modern indoor swimming pool at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring deep blue mosaic tiling, contemporary black and white interior design, underwater lighting, and heated pool facilities in a luxurious Lake District spa setting',
+      },
+    ],
     keyFeatures: [
       'Indoor pool with Lake Windermere views',
       'Thermal suite with sauna, steam and ice room',
@@ -1186,9 +1246,12 @@ Five thermal facilities create a wellness journey: calming salt inhalation room 
 Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with day passes also available to non-residents. Robes, towels and slippers included. Ideal for wellness seekers wanting unique hydrotherapy circuits and therapeutic facilities in a coastal Victorian setting.`,
     websiteUrl: 'https://netherwood-hotel.co.uk/spa-fitness',
     accessLabels: ['paid-for-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_netherwood-hotel.webp',
-    imageAlt:
-      'Unique circular Kneipp footbath at Netherwood Hotel and Spa in Grange-over-Sands, featuring natural rope-wrapped wooden basin design with dual cascade water features, positioned against authentic Lakeland dry stone walling with designer loungers and orange accent cushions',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_netherwood-hotel.webp',
+        alt: 'Unique circular Kneipp footbath at Netherwood Hotel and Spa in Grange-over-Sands, featuring natural rope-wrapped wooden basin design with dual cascade water features, positioned against authentic Lakeland dry stone walling with designer loungers and orange accent cushions',
+      },
+    ],
     keyFeatures: [
       'Plunge tub room with hot, warm and cold tubs',
       'Salt inhalation room',
@@ -1289,9 +1352,12 @@ Thermal experiences include a traditional sauna, aromatherapy steam room, salt i
 Hotel guests must book spa access separately and day spa packages are available to the public. This is a 16+ spa, though some treatments require guests to be 18+.`,
     websiteUrl: 'https://applebymanor.co.uk/garden-spa',
     accessLabels: ['paid-for-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_appleby-manor.jpg',
-    imageAlt:
-      'Contemporary hydrotherapy pool at Appleby Manor Country House Hotel near Appleby-in-Westmorland, featuring dramatic blue LED underwater lighting, natural Lake District pebble stone border detail, modern wicker relaxation seating with tropical palms, and luxury spa facilities in the Eden Valley',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_appleby-manor.jpg',
+        alt: 'Contemporary hydrotherapy pool at Appleby Manor Country House Hotel near Appleby-in-Westmorland, featuring dramatic blue LED underwater lighting, natural Lake District pebble stone border detail, modern wicker relaxation seating with tropical palms, and luxury spa facilities in the Eden Valley',
+      },
+    ],
     keyFeatures: [
       'Hydrotherapy pool with underwater massage loungers',
       'Outdoor spa garden with hot tubs and fire pit',
@@ -1380,9 +1446,12 @@ The 13m indoor pool and whirlpool hot tub anchor the wellness facilities, comple
 Complimentary spa access included for hotel guests, with day passes and annual memberships available to non-residents. Designated family pool sessions welcome children during specific times, while adult-only periods maintain tranquil ambience.`,
     websiteUrl: 'https://northlakeshotel.com/spa-treatments',
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_north-lakes-hotel.jpg',
-    imageAlt:
-      'Tranquil thermal relaxation suite at North Lakes Hotel and Spa in Penrith, featuring heated ceramic loungers with plush robes, ambient mood lighting, Lake District landscape artwork, Japanese-inspired sliding screens, and peaceful spa environment for complete relaxation',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_north-lakes-hotel.jpg',
+        alt: 'Tranquil thermal relaxation suite at North Lakes Hotel and Spa in Penrith, featuring heated ceramic loungers with plush robes, ambient mood lighting, Lake District landscape artwork, Japanese-inspired sliding screens, and peaceful spa environment for complete relaxation',
+      },
+    ],
     keyFeatures: [
       'Indoor pool',
       'Separate male and female Finnish saunas',
@@ -1467,9 +1536,12 @@ The leisure suite features an indoor heated pool, jacuzzi hot tub, traditional s
 Spa access requires additional charge for hotel guests, though some overnight packages include complimentary facilities. Spa day packages available combining treatments with leisure suite access. The railway station location opposite the hotel provides exceptional accessibility for car-free visits. Two purpose-designed accessible bedrooms feature walk-in wet rooms.`,
     websiteUrl: 'https://grange-hotel.co.uk/the-spa/',
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_grange-hotel.jpg',
-    imageAlt:
-      'Luxury facial treatment at The Grange Boutique Hotel and Restaurant in Grange-over-Sands, featuring professional spa therapies with skilled hands performing rejuvenating skincare treatments in an intimate, serene environment overlooking Morecambe Bay in the southern Lake District',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_grange-hotel.jpg',
+        alt: 'Luxury facial treatment at The Grange Boutique Hotel and Restaurant in Grange-over-Sands, featuring professional spa therapies with skilled hands performing rejuvenating skincare treatments in an intimate, serene environment overlooking Morecambe Bay in the southern Lake District',
+      },
+    ],
     keyFeatures: ['Indoor pool', 'Traditional sauna and steam room', 'Jacuzzi'],
     thermalFacilities: [
       { name: 'Sauna', details: 'Traditional sauna' },
@@ -1533,9 +1605,12 @@ The indoor heated pool and outdoor jacuzzi overlook River Leven's flowing waters
 Complimentary Cascades access included for all hotel guests, with 10% discount on spa treatments. No day passes available to public, ensuring intimate atmosphere exclusively for hotel residents. Adults 18+ only throughout spa facilities.`,
     websiteUrl: 'https://whitewater-hotel.co.uk/spa-fitness/',
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
-    imageSrc: '/images/spas/lake-district-spas_whitewater-hotel.jpg',
-    imageAlt:
-      'Expansive leisure pool at Whitewater Hotel Country Club near Newby Bridge, featuring multi-level design with mosaic-tiled stepping stones, burgundy and cream decorative columns, spacious swimming area, and grand architectural poolside complex in the Lake District',
+    images: [
+      {
+        src: '/images/spas/lake-district-spas_whitewater-hotel.jpg',
+        alt: 'Expansive leisure pool at Whitewater Hotel Country Club near Newby Bridge, featuring multi-level design with mosaic-tiled stepping stones, burgundy and cream decorative columns, spacious swimming area, and grand architectural poolside complex in the Lake District',
+      },
+    ],
     keyFeatures: [
       'Outdoor jacuzzi overlooking River Leven',
       'Turkish Hamam aromatherapy steam room',

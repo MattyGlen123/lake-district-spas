@@ -22,8 +22,9 @@ describe('Spa Data Validation', () => {
         expect(spa.location).toBeDefined();
         expect(spa.websiteUrl).toBeDefined();
         expect(spa.accessLabels).toBeDefined();
-        expect(spa.imageSrc).toBeDefined();
-        expect(spa.imageAlt).toBeDefined();
+        expect(spa.images).toBeDefined();
+        expect(Array.isArray(spa.images)).toBe(true);
+        expect(spa.images.length).toBeGreaterThan(0);
         expect(spa.keyFeatures).toBeDefined();
         expect(spa.thermalFacilities).toBeDefined();
         expect(spa.poolFeatures).toBeDefined();
@@ -40,8 +41,8 @@ describe('Spa Data Validation', () => {
         expect(spa.url.trim().length).toBeGreaterThan(0);
         expect(spa.name.trim().length).toBeGreaterThan(0);
         expect(spa.location.trim().length).toBeGreaterThan(0);
-        expect(spa.imageSrc.trim().length).toBeGreaterThan(0);
-        expect(spa.imageAlt.trim().length).toBeGreaterThan(0);
+        expect(spa.images[0].src.trim().length).toBeGreaterThan(0);
+        expect(spa.images[0].alt.trim().length).toBeGreaterThan(0);
       });
     });
 
@@ -56,7 +57,11 @@ describe('Spa Data Validation', () => {
     it('each spa should have valid image URL format', () => {
       spaData.forEach((spa) => {
         // Images can be .jpg, .jpeg, .webp, or .png
-        expect(spa.imageSrc).toMatch(/^\/.*\.(jpg|jpeg|webp|png)$/);
+        spa.images.forEach((image) => {
+          expect(image.src).toMatch(/^\/.*\.(jpg|jpeg|webp|png)$/);
+          expect(image.alt).toBeDefined();
+          expect(typeof image.alt).toBe('string');
+        });
       });
     });
   });

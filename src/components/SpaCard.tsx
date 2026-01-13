@@ -27,10 +27,10 @@ const SpaCard = ({ spa }: SpaCardProps) => {
       <article className="space-y-6">
         {/* Image Container */}
         <div className="relative aspect-[7/6] rounded-[2rem] overflow-hidden shadow-sm border border-stone-100">
-          {!imageError ? (
+          {!imageError && spa.images[0] ? (
             <Image
-              src={spa.imageSrc}
-              alt={spa.imageAlt}
+              src={spa.images[0].src}
+              alt={spa.images[0].alt}
               fill
               className="object-cover"
               loading="lazy"

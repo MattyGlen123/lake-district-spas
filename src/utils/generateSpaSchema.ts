@@ -10,7 +10,7 @@ export function generateSpaSchema(spa: Spa) {
       '@type': 'HealthAndBeautyBusiness',
       name: spa.name,
       url: `${baseUrl}/spa/${spa.url}`,
-      image: `${baseUrl}${spa.imageSrc}`,
+      image: `${baseUrl}${spa.images[0]?.src || ''}`,
       description:
         spa.metaDescription || `Discover ${spa.name} in ${spa.location}`,
     };
@@ -57,7 +57,7 @@ export function generateSpaSchema(spa: Spa) {
     '@type': 'HealthAndBeautyBusiness',
     name: spa.name,
     url: `${baseUrl}/spa/${spa.url}`,
-    image: `${baseUrl}${spa.imageSrc}`,
+    image: `${baseUrl}${spa.images[0]?.src || ''}`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: spa.address.street,

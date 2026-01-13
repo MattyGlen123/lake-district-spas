@@ -18,10 +18,10 @@ export default function SpaHero({ spa }: SpaHeroProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900/70 via-stone-900/20 to-transparent z-10" />
 
         {/* Image */}
-        {!imageError ? (
+        {!imageError && spa.images[0] ? (
           <Image
-            src={spa.imageSrc}
-            alt={spa.imageAlt}
+            src={spa.images[0].src}
+            alt={spa.images[0].alt}
             fill
             className="w-full h-full object-cover"
             quality={85}

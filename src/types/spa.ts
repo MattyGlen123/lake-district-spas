@@ -51,6 +51,11 @@ export interface SpaAddress {
   country: string;
 }
 
+export interface SpaImage {
+  src: string;
+  alt: string;
+}
+
 export interface Spa {
   id: number;
   url: string;
@@ -61,8 +66,7 @@ export interface Spa {
   intro?: string;
   websiteUrl: string;
   accessLabels: AccessLabel[];
-  imageSrc: string;
-  imageAlt: string;
+  images: SpaImage[];
   keyFeatures: string[];
   thermalFacilities: ThermalFacility[];
   poolFeatures: PoolFeature[];

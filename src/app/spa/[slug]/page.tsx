@@ -43,7 +43,7 @@ export async function generateMetadata({
 
   const baseUrl = 'https://lakedistrictspas.co.uk';
   const pageUrl = `${baseUrl}/spa/${spa.url}`;
-  const imageUrl = `${baseUrl}${spa.imageSrc}`;
+  const imageUrl = `${baseUrl}${spa.images[0]?.src || ''}`;
   const title = `${spa.name} - Lake District Spas`;
   const description =
     spa.metaDescription ??
@@ -60,7 +60,7 @@ export async function generateMetadata({
       images: [
         {
           url: imageUrl,
-          alt: spa.imageAlt || `${spa.name} - Lake District Spa`,
+          alt: spa.images[0]?.alt || `${spa.name} - Lake District Spa`,
           width: 1200,
           height: 630,
         },
