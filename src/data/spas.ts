@@ -1740,8 +1740,20 @@ Complimentary spa access included for hotel guests, with day passes and annual m
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     images: [
       {
+        src: '/images/spas/north-lakes-hotel-spa/lake-district-spas_north-lakes-penrith-indoor-pool.jpg',
+        alt: 'Spectacular 13-metre indoor pool at North Lakes Hotel and Spa in Penrith featuring dramatic blue LED lighting, vaulted timber ceiling with exposed architectural beams creating cathedral-like atmosphere, contemporary white pendant lights, family-friendly swimming facilities near Ullswater in the Lake District',
+      },
+      {
         src: '/images/spas/north-lakes-hotel-spa/lake-district-spas_north-lakes-hotel.jpg',
         alt: 'Tranquil thermal relaxation suite at North Lakes Hotel and Spa in Penrith, featuring heated ceramic loungers with plush robes, ambient mood lighting, Lake District landscape artwork, Japanese-inspired sliding screens, and peaceful spa environment for complete relaxation',
+      },
+      {
+        src: '/images/spas/north-lakes-hotel-spa/lake-district-spas_north-lakes-penrith-couples-hot-tub.jpg',
+        alt: 'Romantic couples experience in whirlpool hot tub at North Lakes Hotel and Spa in Penrith, toasting with champagne in bubbling hydrotherapy spa with contemporary textured wall design and warm ambient lighting, perfect for celebration spa breaks near Ullswater in the Lake District',
+      },
+      {
+        src: '/images/spas/north-lakes-hotel-spa/lake-district-spas_north-lakes-penrith-facial-treatment.jpg',
+        alt: 'Luxurious Caudalie facial treatment at North Lakes Hotel and Spa in Penrith, professional therapist delivering gentle massage therapy in tranquil candlelit atmosphere with French luxury skincare products, wellness spa experience in hunting lodge-style hotel near Lake District National Park',
       },
     ],
     keyFeatures: [
