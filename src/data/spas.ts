@@ -1266,6 +1266,26 @@ Complimentary spa access included for all hotel guests, with day spa packages av
         src: '/images/spas/beech-hill-hotel-spa/lake-district-spas_beech-hill-hotel.jpg',
         alt: 'Botanical-inspired indoor pool at Beech Hill Hotel and Spa near Windermere, featuring natural woven pendant lights, cascading artificial greenery from ceiling, dark slate mosaic walls, turquoise heated pool, and contemporary nature-themed wellness design in the Lake District',
       },
+      {
+        src: '/images/spas/beech-hill-hotel-spa/lake-district-spas_beech-hill-windermere-vitality-spa-pool.jpg',
+        alt: 'Signature circular vitality spa pool at Beech Hill Hotel and Spa near Windermere featuring dramatic black iridescent mosaic tiles, elevated design with hydrotherapy jets, natural woven pendant lighting, contemporary slate accent walls, one of two outdoor vitality pools with panoramic Lake Windermere views',
+      },
+      {
+        src: '/images/spas/beech-hill-hotel-spa/lake-district-spas_beech-hill-windermere-pool-evening.jpg',
+        alt: 'Atmospheric 35-foot indoor pool at Beech Hill Hotel and Spa on Lake Windermere at dusk featuring dramatic blue LED lighting, contemporary thermal suite with views to Himalayan sauna and aromatic steam room, lakeside spa facilities with floor-to-ceiling windows in the Lake District',
+      },
+      {
+        src: '/images/spas/beech-hill-hotel-spa/lake-district-spas_beech-hill-windermere-himalayan-sauna.jpg',
+        alt: 'Himalayan salt sauna at Beech Hill Hotel and Spa on Lake Windermere featuring backlit pink and orange Himalayan salt crystal walls creating warm therapeutic glow, multi-level wooden benches, respiratory wellness and detoxification in lakeside thermal spa in the Lake District',
+      },
+      {
+        src: '/images/spas/beech-hill-hotel-spa/lake-district-spas_beech-hill-windermere-steam-room.jpg',
+        alt: 'Contemporary aromatic steam room at Beech Hill Hotel and Spa Windermere featuring dramatic blue ambient lighting, iridescent mosaic tile ergonomic bench, floor-to-ceiling windows overlooking indoor pool and thermal facilities on eastern shores of Lake Windermere',
+      },
+      {
+        src: '/images/spas/beech-hill-hotel-spa/lake-district-spas_beech-hill-windermere-facial-treatment.jpg',
+        alt: 'Relaxing facial massage treatment at Beech Hill Hotel and Spa near Windermere, professional therapist delivering gentle facial therapy with turquoise spa atmosphere, luxury skincare treatments on eastern shores of Lake Windermere in the Lake District',
+      },
     ],
     keyFeatures: [
       'Indoor pool with Lake Windermere views',
