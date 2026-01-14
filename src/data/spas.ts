@@ -1499,6 +1499,26 @@ Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with
         src: '/images/spas/netherwood-hotel-spa/lake-district-spas_netherwood-hotel.webp',
         alt: 'Unique circular Kneipp footbath at Netherwood Hotel and Spa in Grange-over-Sands, featuring natural rope-wrapped wooden basin design with dual cascade water features, positioned against authentic Lakeland dry stone walling with designer loungers and orange accent cushions',
       },
+      {
+        src: '/images/spas/netherwood-hotel-spa/lake-district-spas_netherwood-grange-plunge-tub-room.webp',
+        alt: 'Unique circular plunge tub hydrotherapy room at Netherwood Hotel and Spa Grange-over-Sands featuring dual natural rope-wrapped wooden basins with cascade water features for hot-warm-cold contrast therapy circuits, contemporary pink walls with designer pod chairs, adults-only thermal spa in southern Lake District',
+      },
+      {
+        src: '/images/spas/netherwood-hotel-spa/lake-district-spas_netherwood-grange-luxury-treatment.webp',
+        alt: 'Luxurious spa treatment at Netherwood Hotel and Spa in Grange-over-Sands, professional therapist delivering therapeutic massage with warm amber candlelit atmosphere, soft ambient lighting creating tranquil wellness experience in Grade II listed Victorian mansion overlooking Morecambe Bay',
+      },
+      {
+        src: '/images/spas/netherwood-hotel-spa/lake-district-spas_netherwood-grange-sauna-thermal-suite.webp',
+        alt: 'Contemporary thermal suite at Netherwood Hotel and Spa in Grange-over-Sands featuring traditional dry heat sauna with glass walls, natural timber construction, salt inhalation room visible through doorway, sophisticated wellness facilities in Victorian mansion overlooking Morecambe Bay',
+      },
+      {
+        src: '/images/spas/netherwood-hotel-spa/lake-district-spas_netherwood-grange-thermal-corridor.webp',
+        alt: 'Atmospheric thermal suite corridor at Netherwood Hotel and Spa Grange-over-Sands featuring dramatic purple LED lighting, glass-walled saunas with warm timber construction, contemporary spa design leading to salt inhalation room and aromatherapy steam facilities in adults-only Lake District wellness retreat',
+      },
+      {
+        src: '/images/spas/netherwood-hotel-spa/lake-district-spas_netherwood-grange-sauna-relaxation.webp',
+        alt: 'Peaceful sauna experience at Netherwood Hotel and Spa in Grange-over-Sands, guest relaxing in white spa robe in traditional dry heat sauna with natural timber benches and ambient lighting, contemporary glass-walled thermal facilities in Victorian Grade II listed mansion in southern Lake District',
+      },
     ],
     keyFeatures: [
       'Plunge tub room with hot, warm and cold tubs',
