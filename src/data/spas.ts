@@ -1390,6 +1390,22 @@ Complimentary pool and thermal suite access included for all hotel guests, with 
         src: '/images/spas/macdonald-old-england-hotel-spa/lake-district-spas_old-england-hotel.jpg',
         alt: 'Modern indoor swimming pool at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring deep blue mosaic tiling, contemporary black and white interior design, underwater lighting, and heated pool facilities in a luxurious Lake District spa setting',
       },
+      {
+        src: '/images/spas/macdonald-old-england-hotel-spa/lake-district-spas_old-england-bowness-couples-steam-room.jpg',
+        alt: 'Romantic couples experience in aromatherapy steam room at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring dramatic purple and pink ambient lighting creating intimate atmosphere, contemporary thermal suite perfect for romantic spa breaks on Lake Windermere in the Lake District',
+      },
+      {
+        src: '/images/spas/macdonald-old-england-hotel-spa/lake-district-spas_old-england-bowness-sauna-detox.webp',
+        alt: 'Relaxing detox treatment in traditional Finnish sauna at Macdonald Old England Hotel and Spa Bowness, guest enjoying thermal therapy with detoxifying face mask in warm wooden sauna, wellness spa experience overlooking Lake Windermere in the Lake District',
+      },
+      {
+        src: '/images/spas/macdonald-old-england-hotel-spa/lake-district-spas_old-england-bowness-back-massage.webp',
+        alt: 'Therapeutic back massage treatment at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, professional therapist delivering Elemis spa therapy in tranquil treatment room, luxury wellness experience in historic lakeside hotel on Lake Windermere in the Lake District',
+      },
+      {
+        src: '/images/spas/macdonald-old-england-hotel-spa/lake-district-spas_old-england-bowness-pool-relaxation.jpg',
+        alt: 'Peaceful floating relaxation in 20-metre indoor pool at Macdonald Old England Hotel and Spa Bowness-on-Windermere, turquoise heated pool with natural daylight and mature garden views visible through windows, tranquil spa experience on the shores of Lake Windermere in the Lake District',
+      },
     ],
     keyFeatures: [
       'Indoor pool with Lake Windermere views',
