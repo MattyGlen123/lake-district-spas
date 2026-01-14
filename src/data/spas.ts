@@ -48,7 +48,7 @@ Spa access is complimentary for suite bookings (2 hours per night), while standa
         alt: 'Professional deep tissue massage treatment at The Falls Spa at Lodore Falls Hotel in Borrowdale, skilled therapist performing therapeutic bodywork in one of five luxury treatment rooms, showcasing expert spa services available at this award-winning Lake District destination spa',
       },
       {
-        src: '/images/spas/lodore-falls-spa/lake-district-spas_lodore-falls-relaxation-lounge.jpg',
+        src: '/images/spas/lodore-falls-spa/lake-district-spas_lodore-falls-relaxation-lounge.jpeg',
         alt: 'Elegant couples relaxation lounge at The Falls Spa at Lodore Falls Hotel featuring plush velvet loungers, white spa robes, textured grey stone feature wall with gold-accented round mirrors, and luxurious post-treatment relaxation space in this award-winning Borrowdale spa, Lake District',
       },
     ],
@@ -676,7 +676,7 @@ Spa access is complimentary for all hotel guests from 2pm on arrival until midda
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_daffodil-hotel-and-spa.webp',
+        src: '/images/spas/daffodil-hotel-spa/lake-district-spas_daffodil-hotel-and-spa.webp',
         alt: 'Contemporary hydrotherapy pool at Daffodil Hotel and Spa in Grasmere with dramatic blue and purple ambient lighting, cascade waterfall features, heated lounger seating, and modern minimalist design creating a tranquil Lake District wellness experience',
       },
     ],
