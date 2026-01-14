@@ -1935,8 +1935,16 @@ Complimentary Cascades access included for all hotel guests, with 10% discount o
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     images: [
       {
+        src: '/images/spas/whitewater-hotel-leisure-club/lake-district-spas_whitewater-backbarrow-cascades-pool.jpg',
+        alt: 'Expansive Cascades leisure pool at Whitewater Hotel and Leisure Club in Backbarrow near Newby Bridge, featuring unique multi-level design with mosaic-tiled stepping stones across crystal-clear turquoise waters, distinctive burgundy decorative columns, vaulted ceiling with natural daylight, relaxation seating overlooking River Leven in the Lake District',
+      },
+      {
         src: '/images/spas/whitewater-hotel-leisure-club/lake-district-spas_whitewater-hotel.jpg',
         alt: 'Expansive leisure pool at Whitewater Hotel Country Club near Newby Bridge, featuring multi-level design with mosaic-tiled stepping stones, burgundy and cream decorative columns, spacious swimming area, and grand architectural poolside complex in the Lake District',
+      },
+      {
+        src: '/images/spas/whitewater-hotel-leisure-club/lake-district-spas_whitewater-backbarrow-pool-relaxation.jpg',
+        alt: 'Tranquil indoor heated swimming pool at Whitewater Hotel Country Club in Backbarrow on River Leven, featuring burgundy and cream mosaic columns, spacious pool area with wooden relaxation seating, vaulted ceiling creating bright airy atmosphere, adults-only exclusive spa facilities near Lake Windermere in the Lake District',
       },
     ],
     keyFeatures: [
