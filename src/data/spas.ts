@@ -676,8 +676,32 @@ Spa access is complimentary for all hotel guests from 2pm on arrival until midda
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/daffodil-hotel-spa/lake-district-spas_daffodil-hotel-and-spa.webp',
+        src: '/images/spas/daffodil-hotel-spa/lake-district-spas_daffodil-grasmere-hydrotherapy-pool.webp',
         alt: 'Contemporary hydrotherapy pool at Daffodil Hotel and Spa in Grasmere with dramatic blue and purple ambient lighting, cascade waterfall features, heated lounger seating, and modern minimalist design creating a tranquil Lake District wellness experience',
+      },
+      {
+        src: '/images/spas/daffodil-hotel-spa/lake-district-spas_daffodil-grasmere-finnish-sauna.webp',
+        alt: 'Traditional Finnish sauna at Daffodil Hotel and Spa in Grasmere village featuring warm golden lighting, multi-level wooden benches in natural timber construction, traditional bucket and ladle, creating authentic Scandinavian thermal experience in the heart of the Lake District',
+      },
+      {
+        src: '/images/spas/daffodil-hotel-spa/lake-district-spas_daffodil-grasmere-relaxation-lounge.webp',
+        alt: 'Tranquil thermal relaxation lounge at Daffodil Hotel and Spa Grasmere featuring multiple heated loungers with privacy curtains, ambient candlelit atmosphere, contemporary design with natural wood tones, peaceful adults-only sanctuary in Lake District village setting',
+      },
+      {
+        src: '/images/spas/daffodil-hotel-spa/lake-district-spas_daffodil-grasmere-treatment-room.webp',
+        alt: 'Intimate spa treatment room at Daffodil Hotel and Spa in Grasmere featuring modern treatment bed with warm ambient lighting, contemporary natural wood cabinetry, Germaine De Capuccini and Temple Spa products, creating luxurious wellness experience in the Lake District',
+      },
+      {
+        src: '/images/spas/daffodil-hotel-spa/lake-district-spas_daffodil-grasmere-pool-experience-showers.webp',
+        alt: 'Atmospheric 33-foot hydrotherapy pool at Daffodil Hotel and Spa Grasmere featuring multi-sensory experience showers with dramatic blue and purple LED lighting, cascade water features creating multiple levels of hydromassage, contemporary thermal suite in heart of Grasmere village',
+      },
+      {
+        src: '/images/spas/daffodil-hotel-spa/lake-district-spas_daffodil-grasmere-tepidarium.webp',
+        alt: 'Luxurious tepidarium at Daffodil Hotel and Spa in Grasmere featuring golden amber mosaic tile walls creating warm therapeutic atmosphere, ergonomic heated ceramic loungers for gentle warming heat therapy, contemporary thermal facility in Lake District adults-only spa',
+      },
+      {
+        src: '/images/spas/daffodil-hotel-spa/lake-district-spas_daffodil-grasmere-pool-cascade-features.webp',
+        alt: 'Spacious hydrotherapy pool at Daffodil Hotel and Spa in Grasmere village showcasing dramatic cascade waterfall features, architectural wave-form lounger, contemporary blue and purple ambient lighting, textured accent walls, 33-foot pool creating immersive wellness sanctuary in the Lake District',
       },
     ],
     keyFeatures: [
@@ -773,8 +797,32 @@ Spa access is complimentary for Splendid room bookings and above. Standard room 
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_swan-hotel.webp',
+        src: '/images/spas/swan-hotel-spa/lake-district-spas_swan-newby-bridge-spa-garden-falls.webp',
+        alt: 'Outdoor thermal spa garden at Swan Hotel Holte Spa in Newby Bridge featuring bubbling hydrotherapy pool with dramatic cascade waterfall features, wooden hot tub with dramatic Lake District fell views, spacious decking with loungers, and authentic Finnish sauna overlooking River Leven in Cumbria',
+      },
+      {
+        src: '/images/spas/swan-hotel-spa/lake-district-spas_swan-newby-bridge-swim-through-twilight.webp',
         alt: 'Illuminated outdoor hydrotherapy pool at Swan Hotel and Spa in Newby Bridge at twilight, featuring swim-through access connecting indoor relaxation areas with heated outdoor pool, blue underwater lighting, and glass walls showcasing integrated spa facilities in the Lake District',
+      },
+      {
+        src: '/images/spas/swan-hotel-spa/lake-district-spas_swan-newby-bridge-swim-through-dusk.webp',
+        alt: 'Unique indoor-outdoor swim-through pool at Swan Hotel and Spa Newby Bridge at dusk, featuring dramatic blue lighting illuminating heated hydrotherapy pool with cascade features, floor-to-ceiling glass walls connecting contemporary relaxation lounge with outdoor bathing, naturally filtered thermal waters at southern tip of Lake Windermere',
+      },
+      {
+        src: '/images/spas/swan-hotel-spa/lake-district-spas_swan-newby-bridge-temple-spa-treatment.webp',
+        alt: 'Relaxing Temple Spa back massage at Swan Hotel Holte Spa in Newby Bridge, professional therapist delivering therapeutic treatment in contemporary treatment room with nature-inspired wallpaper, pregnancy-safe massage options and Gua Sha facial techniques available on River Leven in the Lake District',
+      },
+      {
+        src: '/images/spas/swan-hotel-spa/lake-district-spas_swan-newby-bridge-relaxation-lounge.webp',
+        alt: 'Contemporary thermal spa relaxation lounge at Swan Hotel Holte Spa Newby Bridge featuring natural Lakeland stone flooring, modern designer furniture with colorful cushions, wooden sauna doors visible in sage green walls, floor-to-ceiling windows overlooking outdoor spa garden and heated hydrotherapy pool in the Lake District',
+      },
+      {
+        src: '/images/spas/swan-hotel-spa/lake-district-spas_swan-newby-bridge-outdoor-pool-lifestyle.webp',
+        alt: 'Relaxing in heated outdoor hydrotherapy pool at Swan Hotel and Spa Newby Bridge, guest enjoying cocktail in naturally filtered swim-through pool with minimal chlorine, contemporary adults-only spa atmosphere with white loungers and wooden decking on River Leven near Lake Windermere in Cumbria',
+      },
+      {
+        src: '/images/spas/swan-hotel-spa/lake-district-spas_swan-newby-bridge-steam-room.webp',
+        alt: 'Dramatic 100% humidity steam room at Swan Hotel Holte Spa in Newby Bridge, featuring contemporary dark mosaic tile walls with geometric pattern, theatrical overhead lighting creating moody atmosphere, heated stone bench for deep detoxification and relaxation in adults-only Lake District thermal spa',
       },
     ],
     keyFeatures: [
@@ -887,8 +935,28 @@ Spa access is complimentary for all hotel guests throughout their stay. The spa 
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_salutation-hotel.jpg',
+        src: '/images/spas/ambleside-salutation-hotel-spa/lake-district-spas_salutation-ambleside-indoor-pool.jpg',
         alt: 'Elegant indoor pool at The Salutation Hotel and Spa in Ambleside featuring starlit fibre optic ceiling, suspended designer pod chairs, modern grey loungers, and sophisticated neutral colour palette creating a tranquil spa experience in the heart of the Lake District',
+      },
+      {
+        src: '/images/spas/ambleside-salutation-hotel-spa/lake-district-spas_salutation-ambleside-elemis-treatment.jpg',
+        alt: 'Relaxing back massage treatment at Waterfall Spa in Ambleside Salutation Hotel featuring Elemis aromatherapy products, warm ambient lighting with golden glow, professional therapist performing therapeutic massage in tranquil treatment room in central Lake District location',
+      },
+      {
+        src: '/images/spas/ambleside-salutation-hotel-spa/lake-district-spas_salutation-ambleside-outdoor-fountain.jpg',
+        alt: 'Outdoor hydrotherapy fountain spa at Ambleside Salutation Hotel featuring multiple cascade water jets with amber mosaic tiling, surrounded by wooden decking and lush greenery, offering refreshing thermal experience in the heart of Ambleside village in the Lake District',
+      },
+      {
+        src: '/images/spas/ambleside-salutation-hotel-spa/lake-district-spas_salutation-ambleside-pool-pod-chairs.jpg',
+        alt: 'Elegant indoor pool at Waterfall Spa in Ambleside Salutation Hotel featuring starlit fibre optic ceiling creating magical atmosphere, four suspended designer wicker pod chairs, modern grey loungers, and sophisticated neutral colour palette in tranquil Lake District spa',
+      },
+      {
+        src: '/images/spas/ambleside-salutation-hotel-spa/lake-district-spas_salutation-ambleside-pool-reflection.jpg',
+        alt: 'Tranquil 13-metre heated pool at Waterfall Spa Ambleside with suspended wicker pod chairs perfectly reflected in still turquoise waters, starlit fibre optic ceiling creating ambient atmosphere, natural light from garden windows, exclusive hotel guest spa in central Ambleside',
+      },
+      {
+        src: '/images/spas/ambleside-salutation-hotel-spa/lake-district-spas_salutation-ambleside-pool-lounge.jpg',
+        alt: 'Sophisticated relaxation area at Waterfall Spa in Ambleside Salutation Hotel featuring suspended designer pod chairs, contemporary grey woven loungers, starlit ceiling with warm lighting, and 13-metre heated pool creating peaceful wellness sanctuary in the Lake District',
       },
     ],
     keyFeatures: [
@@ -986,8 +1054,24 @@ Spa access is complimentary for all hotel guests, including pool, sauna, steam r
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_lakeside-hotel.webp',
+        src: '/images/spas/lakeside-hotel-spa/lake-district-spas_lakeside-newby-bridge-indoor-pool.webp',
         alt: 'Contemporary indoor pool at Lakeside Hotel Health Club and Spa on Lake Windermere, featuring distinctive teal and green mosaic tile columns, flowing wave-pattern ceiling design, and spacious swimming area with loungers overlooking the Lake District waterfront',
+      },
+      {
+        src: '/images/spas/lakeside-hotel-spa/lake-district-spas_lakeside-newby-bridge-spa-treatment.webp',
+        alt: 'Therapeutic back massage treatment at Lakeside Hotel and Spa in Newby Bridge, professional therapist delivering relaxing spa therapy with soft candlelit ambiance, luxury wellness experience on the southern shores of Lake Windermere in the Lake District',
+      },
+      {
+        src: '/images/spas/lakeside-hotel-spa/lake-district-spas_lakeside-newby-bridge-pool-full-view.webp',
+        alt: 'Spacious 17-metre heated indoor pool at Lakeside Hotel and Spa Newby Bridge, featuring crystal-clear turquoise waters, teal mosaic columns, floor-to-ceiling windows with natural light, and contemporary relaxation area perfect for family-friendly wellness on Lake Windermere',
+      },
+      {
+        src: '/images/spas/lakeside-hotel-spa/lake-district-spas_lakeside-newby-bridge-pool-jets.webp',
+        alt: 'Dynamic water jet features at Lakeside Hotel and Spa indoor pool in Newby Bridge, powerful hydrotherapy jets creating energizing splash in crystal-clear heated pool with garden views, contemporary wellness facilities overlooking Lake Windermere in Cumbria',
+      },
+      {
+        src: '/images/spas/lakeside-hotel-spa/lake-district-spas_lakeside-newby-bridge-jacuzzi.webp',
+        alt: 'Relaxing poolside jacuzzi at Lakeside Hotel Health Club and Spa on Lake Windermere, family and friends enjoying bubbling hot tub with hydrotherapy jets, family-friendly wellness experience in Newby Bridge with 17-metre heated pool in background',
       },
     ],
     keyFeatures: [
@@ -1077,8 +1161,20 @@ Spa access is complimentary for all hotel guests with no booking required. Day s
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_rothay-garden-hotel.jpg',
+        src: '/images/spas/rothay-garden-by-harbour-hotels/lake-district-spas_rothay-garden-grasmere-hydrotherapy-pool.jpg',
         alt: 'Panoramic hydrotherapy pool at Rothay Garden Hotel and Riverside Spa in Grasmere, featuring curved floor-to-ceiling windows with dramatic Lake District fell views, dual cascade water features, bamboo-panelled walls, and intimate circular hot tub design surrounded by nature',
+      },
+      {
+        src: '/images/spas/rothay-garden-by-harbour-hotels/lake-district-spas_rothay-garden-grasmere-herbal-pine-sauna.jpg',
+        alt: 'Traditional herbal pine sauna at Rothay Garden Riverside Spa in Grasmere, featuring tiered wooden benches in warm honey-toned timber construction, ambient lighting creating peaceful atmosphere, part of contemporary wellness facilities in the Lake District',
+      },
+      {
+        src: '/images/spas/rothay-garden-by-harbour-hotels/lake-district-spas_rothay-garden-grasmere-hydrospa-cascade.jpg',
+        alt: 'HydroSpa hydrotherapy pool at Rothay Garden by Harbour Hotels in Grasmere village, featuring powerful cascade waterfall features into circular hot tub with sunken loungers, bamboo-textured walls, and expansive fell views through floor-to-ceiling windows in the heart of the Lake District',
+      },
+      {
+        src: '/images/spas/rothay-garden-by-harbour-hotels/lake-district-spas_rothay-garden-grasmere-infrared-loungers.jpg',
+        alt: 'Tranquil thermal relaxation suite at Rothay Garden Riverside Spa in Grasmere featuring heated infrared ceramic loungers with metallic mosaic cushions, ambient lighting, contemporary design overlooking riverside gardens, perfect for deep muscle relaxation and wellness in the Lake District',
       },
     ],
     keyFeatures: [
@@ -1167,7 +1263,7 @@ Complimentary spa access included for all hotel guests, with day spa packages av
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_beech-hill-hotel.jpg',
+        src: '/images/spas/beech-hill-hotel-spa/lake-district-spas_beech-hill-hotel.jpg',
         alt: 'Botanical-inspired indoor pool at Beech Hill Hotel and Spa near Windermere, featuring natural woven pendant lights, cascading artificial greenery from ceiling, dark slate mosaic walls, turquoise heated pool, and contemporary nature-themed wellness design in the Lake District',
       },
     ],
@@ -1271,7 +1367,7 @@ Complimentary pool and thermal suite access included for all hotel guests, with 
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_old-england-hotel.jpg',
+        src: '/images/spas/macdonald-old-england-hotel-spa/lake-district-spas_old-england-hotel.jpg',
         alt: 'Modern indoor swimming pool at Macdonald Old England Hotel and Spa in Bowness-on-Windermere, featuring deep blue mosaic tiling, contemporary black and white interior design, underwater lighting, and heated pool facilities in a luxurious Lake District spa setting',
       },
     ],
@@ -1364,7 +1460,7 @@ Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with
     accessLabels: ['paid-for-guests', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_netherwood-hotel.webp',
+        src: '/images/spas/netherwood-hotel-spa/lake-district-spas_netherwood-hotel.webp',
         alt: 'Unique circular Kneipp footbath at Netherwood Hotel and Spa in Grange-over-Sands, featuring natural rope-wrapped wooden basin design with dual cascade water features, positioned against authentic Lakeland dry stone walling with designer loungers and orange accent cushions',
       },
     ],
@@ -1470,7 +1566,7 @@ Hotel guests must book spa access separately and day spa packages are available 
     accessLabels: ['paid-for-guests', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_appleby-manor.jpg',
+        src: '/images/spas/appleby-manor-hotel-garden-spa/lake-district-spas_appleby-manor.jpg',
         alt: 'Contemporary hydrotherapy pool at Appleby Manor Country House Hotel near Appleby-in-Westmorland, featuring dramatic blue LED underwater lighting, natural Lake District pebble stone border detail, modern wicker relaxation seating with tropical palms, and luxury spa facilities in the Eden Valley',
       },
     ],
@@ -1564,7 +1660,7 @@ Complimentary spa access included for hotel guests, with day passes and annual m
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_north-lakes-hotel.jpg',
+        src: '/images/spas/north-lakes-hotel-spa/lake-district-spas_north-lakes-hotel.jpg',
         alt: 'Tranquil thermal relaxation suite at North Lakes Hotel and Spa in Penrith, featuring heated ceramic loungers with plush robes, ambient mood lighting, Lake District landscape artwork, Japanese-inspired sliding screens, and peaceful spa environment for complete relaxation',
       },
     ],
@@ -1654,7 +1750,7 @@ Spa access requires additional charge for hotel guests, though some overnight pa
     accessLabels: ['free-for-some-rooms', 'day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_grange-hotel.jpg',
+        src: '/images/spas/grange-hotel/lake-district-spas_grange-hotel.jpg',
         alt: 'Luxury facial treatment at The Grange Boutique Hotel and Restaurant in Grange-over-Sands, featuring professional spa therapies with skilled hands performing rejuvenating skincare treatments in an intimate, serene environment overlooking Morecambe Bay in the southern Lake District',
       },
     ],
@@ -1723,7 +1819,7 @@ Complimentary Cascades access included for all hotel guests, with 10% discount o
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     images: [
       {
-        src: '/images/spas/lake-district-spas_whitewater-hotel.jpg',
+        src: '/images/spas/whitewater-hotel-leisure-club/lake-district-spas_whitewater-hotel.jpg',
         alt: 'Expansive leisure pool at Whitewater Hotel Country Club near Newby Bridge, featuring multi-level design with mosaic-tiled stepping stones, burgundy and cream decorative columns, spacious swimming area, and grand architectural poolside complex in the Lake District',
       },
     ],

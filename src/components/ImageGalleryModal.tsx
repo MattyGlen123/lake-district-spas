@@ -88,7 +88,7 @@ const ImageGalleryModal = ({
   const hasError = imageErrors.has(currentIndex);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 md:p-6">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-0">
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-stone-900/40 backdrop-blur-md"
@@ -96,7 +96,7 @@ const ImageGalleryModal = ({
       />
 
       {/* Modal Container */}
-      <div className="relative w-full h-full md:h-[90vh] md:max-w-[1200px] bg-white md:rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col">
+      <div className="relative w-full h-full bg-white overflow-hidden flex flex-col">
         {/* Mobile: Sticky Close Button */}
         <button
           onClick={onClose}
@@ -105,18 +105,20 @@ const ImageGalleryModal = ({
           <X className="h-6 w-6" />
         </button>
 
-        {/* Desktop: Header with Badge and Close Button */}
-        <div className="hidden md:flex items-center justify-between p-6 border-b border-stone-100">
+        {/* Desktop: Fixed Index Badge (Top Left) */}
+        <div className="hidden md:block absolute top-6 left-6 z-30">
           <div className="px-4 py-2 border border-stone-300 bg-soft-cream text-stone rounded-full text-sm font-semibold">
             {currentIndex + 1} / {images.length}
           </div>
-          <button
-            onClick={onClose}
-            className="p-3 rounded-full bg-soft-cream text-stone-400 border border-stone-200"
-          >
-            <X className="h-6 w-6" />
-          </button>
         </div>
+
+        {/* Desktop: Fixed Close Button (Top Right) */}
+        <button
+          onClick={onClose}
+          className="hidden md:block absolute top-6 right-6 z-30 p-3 rounded-full bg-soft-cream text-stone-400 border border-stone-200"
+        >
+          <X className="h-6 w-6" />
+        </button>
 
         {/* Mobile: Scrollable Image List */}
         <div className="md:hidden flex-grow overflow-y-auto px-4 pt-8 pb-16 space-y-4">
@@ -151,12 +153,12 @@ const ImageGalleryModal = ({
         </div>
 
         {/* Desktop: Single Image View with Navigation */}
-        <div className="hidden md:flex flex-grow items-center justify-center p-8 relative min-h-0">
+        <div className="hidden md:flex flex-grow items-center justify-center p-8 md:p-16 relative min-h-0">
           {/* Previous Button */}
           {images.length > 1 && (
             <button
               onClick={goToPrevious}
-              className="absolute left-4 p-4 bg-white/90 backdrop-blur-md rounded-full border border-stone-200 text-stone-900 shadow-xl z-10"
+              className="absolute left-4 md:left-6 p-4 bg-soft-cream backdrop-blur-md rounded-full border border-stone-200 text-stone-900 shadow-xl z-10"
               aria-label="Previous image"
             >
               <ChevronLeft className="h-6 w-6" />
@@ -164,7 +166,7 @@ const ImageGalleryModal = ({
           )}
 
           {/* Image Container */}
-          <div className="relative w-full h-full min-h-0">
+          <div className="relative max-w-[1200px] max-h-[800px] w-full h-full min-h-0">
             {!hasError && currentImage ? (
               <Image
                 src={currentImage.src}
@@ -187,7 +189,7 @@ const ImageGalleryModal = ({
           {images.length > 1 && (
             <button
               onClick={goToNext}
-              className="absolute right-4 p-4 bg-white/90 backdrop-blur-md rounded-full border border-stone-200 text-stone-900 shadow-xl z-10"
+              className="absolute right-4 md:right-6 p-4 bg-soft-cream backdrop-blur-md rounded-full border border-stone-200 text-stone-900 shadow-xl z-10"
               aria-label="Next image"
             >
               <ChevronRight className="h-6 w-6" />
