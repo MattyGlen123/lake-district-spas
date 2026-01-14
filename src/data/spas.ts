@@ -1600,6 +1600,99 @@ Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with
       'https://netherwood-hotel.onejourney.travel/spa/treatments',
   },
   {
+    id: 17,
+    url: 'grange-hotel',
+    name: 'Grange Hotel',
+    location: 'Grange-over-Sands',
+    address: {
+      street: 'Station Road',
+      locality: 'Grange-over-Sands',
+      region: 'Cumbria',
+      postcode: 'LA11 6EJ',
+      country: 'GB',
+    },
+    metaDescription:
+      'Elegant Grange-over-Sands spa with thermal pool and traditional wellness facilities. Edwardian grandeur meets modern relaxation. Ideal for refined spa breaks.',
+    intro: `The Grange Hotel combines historical grandeur with boutique hotel elegance in Grange-over-Sands on Morecambe Bay's coastal edge. Set in landscaped gardens, this four-star property offers panoramic bay views and sits just 15 minutes from Lake Windermere, ideally positioned on the southern gateway to the Lake District National Park.
+
+The leisure suite features an indoor heated pool, jacuzzi hot tub, traditional sauna and steam room for thermal relaxation. Spa treatments use Tropic Skincare's natural, freshly-made formulations emphasizing botanical wellbeing. The elegant Carriages Restaurant provides five-course table d'hôte dining with local ingredients, complementing the boutique spa experience in Victorian surroundings.
+
+Spa access requires additional charge for hotel guests, though some overnight packages include complimentary facilities. Spa day packages available combining treatments with leisure suite access. The railway station location opposite the hotel provides exceptional accessibility for car-free visits. Two purpose-designed accessible bedrooms feature walk-in wet rooms.`,
+    websiteUrl: 'https://grange-hotel.co.uk/the-spa/',
+    accessLabels: ['free-for-some-rooms', 'day-passes-available'],
+    images: [
+      {
+        src: '/images/spas/grange-hotel/lake-district-spas_grange-hotel-grange-over-sands-pool.jpg',
+        alt: 'Elegant indoor heated pool at The Grange Boutique Hotel in Grange-over-Sands featuring sophisticated navy blue accent walls, classic terracotta tile flooring, contemporary wooden loungers with cream cushions, floor-to-ceiling windows with garden views, Victorian-era grandeur meets modern wellness on Morecambe Bay',
+      },
+      {
+        src: '/images/spas/grange-hotel/lake-district-spas_grange-hotel-grange-over-sands-pool-jacuzzi.jpg',
+        alt: 'Spacious leisure suite at The Grange Hotel in Grange-over-Sands showcasing heated indoor pool with integrated jacuzzi hot tub featuring iridescent blue mosaic tile accents, elegant navy walls, natural daylight flooding through French doors to landscaped gardens, boutique spa experience in historic Edwardian hotel',
+      },
+      {
+        src: '/images/spas/grange-hotel/lake-district-spas_grange-hotel-grange-over-sands-pool-amenities.jpg',
+        alt: 'Pristine poolside setting at The Grange Boutique Hotel in Grange-over-Sands with crystal-clear turquoise heated pool, luxury white spa robe and slippers awaiting guests on wooden lounger, classic terracotta flooring with elegant white columns, refined wellness experience overlooking Morecambe Bay',
+      },
+      {
+        src: '/images/spas/grange-hotel/lake-district-spas_grange-hotel-grange-over-sands-sauna.jpg',
+        alt: 'Traditional Finnish sauna at The Grange Hotel in Grange-over-Sands featuring natural timber construction with multi-level benches, warm ambient lighting creating golden glow, authentic wooden bucket with rolled spa towels and candlelit atmosphere, classic thermal therapy in historic Victorian hotel setting',
+      },
+      {
+        src: '/images/spas/grange-hotel/lake-district-spas_grange-hotel.jpg',
+        alt: 'Luxury facial treatment at The Grange Boutique Hotel and Restaurant in Grange-over-Sands, featuring professional spa therapies with skilled hands performing rejuvenating skincare treatments in an intimate, serene environment overlooking Morecambe Bay in the southern Lake District',
+      },
+      {
+        src: '/images/spas/grange-hotel/lake-district-spas_grange-hotel-grange-over-sands-treatment.jpg',
+        alt: 'Luxurious therapeutic back massage at The Grange Boutique Hotel and Restaurant spa in Grange-over-Sands, professional therapist delivering Tropic Skincare treatments with natural botanical formulations, intimate wellness experience in elegant Edwardian hotel overlooking Morecambe Bay near Lake District',
+      },
+      {
+        src: '/images/spas/grange-hotel/lake-district-spas_grange-hotel-grange-over-sands-steam-room.jpg',
+        alt: 'Atmospheric steam room at The Grange Hotel in Grange-over-Sands featuring iridescent silver and blue mosaic tile walls creating shimmering effect, ergonomic heated bench, dramatic overhead spotlight, 100% humidity thermal detoxification experience in boutique Victorian-era hotel on Morecambe Bay',
+      },
+    ],
+    keyFeatures: ['Indoor pool', 'Traditional sauna and steam room', 'Jacuzzi'],
+    thermalFacilities: [
+      { name: 'Sauna', details: 'Traditional sauna' },
+      { name: 'Steam Room', details: 'Steam room' },
+    ],
+    poolFeatures: [
+      { name: 'Indoor Pool', details: 'Heated indoor pool' },
+      { name: 'Jacuzzi', details: 'Jacuzzi' },
+    ],
+    accessPolicy: [
+      {
+        name: 'Hotel Guests',
+        details:
+          'Spa access additional charge (some overnight packages include access)',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Spa Day Packages',
+        details: 'Available with treatment and facility access',
+        accessType: 'general',
+      },
+      {
+        name: 'Amenities',
+        details: 'Robes and slippers provided',
+        accessType: 'general',
+      },
+    ],
+    facilities: {
+      infraredSauna: false,
+      coldPlunge: false,
+      sauna: true,
+      steamRoom: true,
+      iceRoom: false,
+      hotTub: true,
+      indoorPool: true,
+      outdoorPool: false,
+      thermalSuite: true,
+    },
+    agePolicy: undefined,
+    relatedSpas: [16, 5],
+    treatmentBookingPhone: '+01539533666',
+  },
+  {
     id: 15,
     url: 'appleby-manor-hotel-garden-spa',
     name: 'Appleby Manor Hotel & Garden Spa',
@@ -1818,75 +1911,6 @@ Complimentary spa access included for hotel guests, with day passes and annual m
     treatmentBookingPhone: '01768 868111',
     treatmentBookingUrl:
       'https://www.northlakeshotel.co.uk/spa-treatments/treatments',
-  },
-  {
-    id: 17,
-    url: 'grange-hotel',
-    name: 'Grange Hotel',
-    location: 'Grange-over-Sands',
-    address: {
-      street: 'Station Road',
-      locality: 'Grange-over-Sands',
-      region: 'Cumbria',
-      postcode: 'LA11 6EJ',
-      country: 'GB',
-    },
-    metaDescription:
-      'Elegant Grange-over-Sands spa with thermal pool and traditional wellness facilities. Edwardian grandeur meets modern relaxation. Ideal for refined spa breaks.',
-    intro: `The Grange Hotel combines historical grandeur with boutique hotel elegance in Grange-over-Sands on Morecambe Bay's coastal edge. Set in landscaped gardens, this four-star property offers panoramic bay views and sits just 15 minutes from Lake Windermere, ideally positioned on the southern gateway to the Lake District National Park.
-
-The leisure suite features an indoor heated pool, jacuzzi hot tub, traditional sauna and steam room for thermal relaxation. Spa treatments use Tropic Skincare's natural, freshly-made formulations emphasizing botanical wellbeing. The elegant Carriages Restaurant provides five-course table d'hôte dining with local ingredients, complementing the boutique spa experience in Victorian surroundings.
-
-Spa access requires additional charge for hotel guests, though some overnight packages include complimentary facilities. Spa day packages available combining treatments with leisure suite access. The railway station location opposite the hotel provides exceptional accessibility for car-free visits. Two purpose-designed accessible bedrooms feature walk-in wet rooms.`,
-    websiteUrl: 'https://grange-hotel.co.uk/the-spa/',
-    accessLabels: ['free-for-some-rooms', 'day-passes-available'],
-    images: [
-      {
-        src: '/images/spas/grange-hotel/lake-district-spas_grange-hotel.jpg',
-        alt: 'Luxury facial treatment at The Grange Boutique Hotel and Restaurant in Grange-over-Sands, featuring professional spa therapies with skilled hands performing rejuvenating skincare treatments in an intimate, serene environment overlooking Morecambe Bay in the southern Lake District',
-      },
-    ],
-    keyFeatures: ['Indoor pool', 'Traditional sauna and steam room', 'Jacuzzi'],
-    thermalFacilities: [
-      { name: 'Sauna', details: 'Traditional sauna' },
-      { name: 'Steam Room', details: 'Steam room' },
-    ],
-    poolFeatures: [
-      { name: 'Indoor Pool', details: 'Heated indoor pool' },
-      { name: 'Jacuzzi', details: 'Jacuzzi' },
-    ],
-    accessPolicy: [
-      {
-        name: 'Hotel Guests',
-        details:
-          'Spa access additional charge (some overnight packages include access)',
-        accessType: 'hotel',
-      },
-      {
-        name: 'Spa Day Packages',
-        details: 'Available with treatment and facility access',
-        accessType: 'general',
-      },
-      {
-        name: 'Amenities',
-        details: 'Robes and slippers provided',
-        accessType: 'general',
-      },
-    ],
-    facilities: {
-      infraredSauna: false,
-      coldPlunge: false,
-      sauna: true,
-      steamRoom: true,
-      iceRoom: false,
-      hotTub: true,
-      indoorPool: true,
-      outdoorPool: false,
-      thermalSuite: true,
-    },
-    agePolicy: undefined,
-    relatedSpas: [16, 5],
-    treatmentBookingPhone: '+01539533666',
   },
   {
     id: 13,
