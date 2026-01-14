@@ -1625,6 +1625,30 @@ Hotel guests must book spa access separately and day spa packages are available 
         src: '/images/spas/appleby-manor-hotel-garden-spa/lake-district-spas_appleby-manor.jpg',
         alt: 'Contemporary hydrotherapy pool at Appleby Manor Country House Hotel near Appleby-in-Westmorland, featuring dramatic blue LED underwater lighting, natural Lake District pebble stone border detail, modern wicker relaxation seating with tropical palms, and luxury spa facilities in the Eden Valley',
       },
+      {
+        src: '/images/spas/appleby-manor-hotel-garden-spa/lake-district-spas_appleby-manor-vitality-pool.jpg',
+        alt: 'Luxurious indoor vitality pool at Appleby Manor Garden Spa near Appleby-in-Westmorland featuring dramatic pink and orange LED lighting, white marble walls with cascade waterfall feature, natural pebble stone border, contemporary wellness design in historic Eden Valley country house hotel',
+      },
+      {
+        src: '/images/spas/appleby-manor-hotel-garden-spa/lake-district-spas_appleby-manor-spa-garden-hot-tub.jpg',
+        alt: 'Sheltered outdoor spa garden at Appleby Manor Hotel near Appleby-in-Westmorland featuring black mosaic hot tub with cascade water jets, contemporary landscaping with artificial grass and topiary, decorative lanterns, outdoor fire pit area, year-round alfresco hydrotherapy in the Eden Valley',
+      },
+      {
+        src: '/images/spas/appleby-manor-hotel-garden-spa/lake-district-spas_appleby-manor-traditional-sauna.jpg',
+        alt: 'Traditional wooden sauna at Appleby Manor Garden Spa in Appleby-in-Westmorland featuring natural timber construction with multi-level benches, modern glass door with countryside views, contemporary thermal facilities in 19th-century Eden Valley country house hotel near the Lake District',
+      },
+      {
+        src: '/images/spas/appleby-manor-hotel-garden-spa/lake-district-spas_appleby-manor-steam-room.jpg',
+        alt: 'Tranquil aromatherapy steam room at Appleby Manor Garden Spa near Appleby-in-Westmorland featuring stunning turquoise and teal mosaic tile walls with copper accent trim, multi-level ergonomic benches, wellness detoxification experience in historic country house spa in the Eden Valley',
+      },
+      {
+        src: '/images/spas/appleby-manor-hotel-garden-spa/lake-district-spas_appleby-manor-treatment-room.jpg',
+        alt: 'Intimate spa treatment room at Appleby Manor Hotel near Appleby-in-Westmorland featuring massage therapy bed with burgundy and gray linens, vintage-style cabinetry, warm ambient lighting, professional wellness treatments in Eden Valley country house spa near the Lake District',
+      },
+      {
+        src: '/images/spas/appleby-manor-hotel-garden-spa/lake-district-spas_appleby-manor-thermal-relaxation.jpg',
+        alt: 'Contemporary thermal relaxation area at Appleby Manor Garden Spa in Appleby-in-Westmorland featuring heated ergonomic loungers with textured gray finish, clean white subway tile walls with ambient LED lighting, tranquil rest area in Eden Valley country house spa near the Lake District',
+      },
     ],
     keyFeatures: [
       'Hydrotherapy pool with underwater massage loungers',
