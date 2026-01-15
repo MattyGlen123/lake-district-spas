@@ -15,6 +15,7 @@ The blog system uses MDX files stored in `content/blog/` with frontmatter metada
 ### 1. Create MDX File
 
 Create a new `.mdx` file in `content/blog/` with the following naming convention:
+
 - Use kebab-case: `my-blog-post-title.mdx`
 - The filename becomes the URL slug automatically
 
@@ -25,9 +26,9 @@ Create a new `.mdx` file in `content/blog/` with the following naming convention
 title: 'Your Blog Post Title'
 slug: your-blog-post-slug
 excerpt: 'A compelling 1-2 sentence summary that appears in listings and meta descriptions.'
-publishedAt: '2025-01-20'  # YYYY-MM-DD format
+publishedAt: '2025-01-20' # YYYY-MM-DD format
 author: 'Lake District Spas'
-category: guides  # One of: guides, comparisons, seasonal, facilities, locations
+category: guides # One of: guides, comparisons, seasonal, facilities, locations
 tags:
   - tag-1
   - tag-2
@@ -72,11 +73,13 @@ All blog images are stored in `public/images/blog/` directory.
 ### Image Naming Convention
 
 Follow this naming pattern:
+
 ```
 lake-district-spas_blog-[descriptive-name].jpg
 ```
 
 Examples:
+
 - `lake-district-spas_blog-outdoor-hot-tub-lakeside-morning.jpg`
 - `lake-district-spas_blog-infinity-pool-lake-view.jpg`
 - `lake-district-spas_blog-steam-room-luxury.jpg`
@@ -86,10 +89,12 @@ Examples:
 **All alt text for blog images is stored in `public/images/blog/images.json`.**
 
 This JSON file contains an array of objects with:
+
 - `name`: The image filename
 - `alt`: The descriptive alt text
 
 Example:
+
 ```json
 [
   {
@@ -118,6 +123,7 @@ Example:
 #### Featured Image (Hero)
 
 Set in frontmatter:
+
 ```yaml
 featuredImage: /images/blog/lake-district-spas_blog-image-name.jpg
 featuredImageAlt: 'Alt text for featured image'
@@ -126,6 +132,7 @@ featuredImageAlt: 'Alt text for featured image'
 #### Inline Images
 
 Use standard Markdown image syntax:
+
 ```markdown
 ![Image description](/images/blog/lake-district-spas_blog-image-name.jpg 'Alt text in quotes')
 ```
@@ -134,13 +141,15 @@ Use standard Markdown image syntax:
 
 ### Image Best Practices
 
-1. **Alt Text Style**: 
+1. **Alt Text Style**:
+
    - Be descriptive and specific
    - Include location context (Lake District)
    - Mention key visual elements
    - Follow the established style in `images.json`
 
 2. **Image Selection**:
+
    - Use one image as the hero (featuredImage)
    - Add 1-2 images throughout the article to break up content
    - Choose images that enhance the article's message
@@ -177,6 +186,7 @@ The MDX renderer includes custom components:
 ### Internal Linking
 
 Link to spas using:
+
 ```markdown
 [Armathwaite Hall](/spa/armathwaite-hall-hotel-spa)
 ```
@@ -202,6 +212,7 @@ Choose one of these categories:
 The `relatedSpas` field in frontmatter should include spa slugs (URLs) for spas mentioned in the article. The blog post page will automatically display a "Spas Mentioned in This Article" section with the first 2 spas.
 
 Example:
+
 ```yaml
 relatedSpas:
   - lodore-falls-spa
@@ -241,6 +252,7 @@ Update `publishedAt` to today's date (or past date) to make it visible. Posts ar
 ## Content Calendar
 
 Track planned posts in `data/blog-topics.json`. This file includes:
+
 - Topic ideas
 - Target keywords
 - Priority levels
@@ -343,4 +355,3 @@ blog.md (this file - root directory)
 ---
 
 _Last Updated: 2025-01-20_
-
