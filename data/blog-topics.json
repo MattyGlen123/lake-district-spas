@@ -1,0 +1,120 @@
+{
+  "topics": [
+    {
+      "id": "spa-access-guide",
+      "title": "Spa Access Included vs Extra Charge: Your Lake District Guide",
+      "slug": "spa-access-included-vs-extra-charge",
+      "targetKeyword": "lake district spa access",
+      "category": "guides",
+      "priority": 1,
+      "status": "published",
+      "relatedSpas": ["lodore-falls-spa", "low-wood-bay-spa", "armathwaite-hall-hotel-spa"],
+      "notes": "Addresses #1 pain point from user research"
+    },
+    {
+      "id": "first-spa-visit",
+      "title": "10 Things to Know Before Your First Lake District Spa Visit",
+      "slug": "first-lake-district-spa-visit",
+      "targetKeyword": "lake district spa tips",
+      "category": "guides",
+      "priority": 2,
+      "status": "planned",
+      "relatedSpas": [],
+      "notes": "Evergreen authority content for first-timers"
+    },
+    {
+      "id": "outdoor-vs-indoor",
+      "title": "Outdoor Hot Tubs vs Indoor Pools: Which Lake District Spa is Right for You?",
+      "slug": "outdoor-hot-tubs-vs-indoor-pools",
+      "targetKeyword": "lake district spa outdoor hot tub",
+      "category": "comparisons",
+      "priority": 3,
+      "status": "planned",
+      "relatedSpas": ["another-place-the-lake", "brimstone-hotel-spa"],
+      "notes": "Outdoor facilities mentioned 3x more in reviews - key differentiator"
+    },
+    {
+      "id": "spa-day-vs-overnight",
+      "title": "Lake District Spa Day vs Overnight: Which Should You Choose?",
+      "slug": "spa-day-vs-overnight-stay",
+      "targetKeyword": "lake district spa day",
+      "category": "guides",
+      "priority": 4,
+      "status": "planned",
+      "relatedSpas": [],
+      "notes": "Decision helper content"
+    },
+    {
+      "id": "anniversary-spas",
+      "title": "Best Lake District Spas for Anniversary Celebrations",
+      "slug": "anniversary-spa-breaks-lake-district",
+      "targetKeyword": "anniversary spa lake district",
+      "category": "seasonal",
+      "priority": 5,
+      "status": "planned",
+      "relatedSpas": ["armathwaite-hall-hotel-spa"],
+      "notes": "Occasion targeting for primary persona"
+    },
+    {
+      "id": "thermal-suites-explained",
+      "title": "Thermal Suites Explained: Your Guide to Lake District Spa Facilities",
+      "slug": "thermal-suites-explained",
+      "targetKeyword": "thermal suite spa",
+      "category": "facilities",
+      "priority": 6,
+      "status": "planned",
+      "relatedSpas": ["lodore-falls-spa", "armathwaite-hall-hotel-spa", "low-wood-bay-spa"],
+      "notes": "Educational authority content"
+    },
+    {
+      "id": "windermere-spas",
+      "title": "Complete Guide to Windermere Spas",
+      "slug": "windermere-spas-guide",
+      "targetKeyword": "windermere spa",
+      "category": "locations",
+      "priority": 7,
+      "status": "planned",
+      "relatedSpas": ["low-wood-bay-spa", "lakeside-hotel-spa", "beech-hill-hotel-spa"],
+      "notes": "Location content - 2,900 monthly searches"
+    },
+    {
+      "id": "couples-spa-guide",
+      "title": "The Couples Guide to Lake District Spas",
+      "slug": "couples-spa-guide-lake-district",
+      "targetKeyword": "couples spa lake district",
+      "category": "guides",
+      "priority": 8,
+      "status": "planned",
+      "relatedSpas": ["brimstone-hotel-spa"],
+      "notes": "Primary persona content - 1,000 monthly searches"
+    },
+    {
+      "id": "mothers-day-spa",
+      "title": "Mother's Day Spa Gifts: Lake District Guide",
+      "slug": "mothers-day-spa-gifts-lake-district",
+      "targetKeyword": "mothers day spa lake district",
+      "category": "seasonal",
+      "priority": 9,
+      "status": "planned",
+      "relatedSpas": [],
+      "notes": "Seasonal - peaks 100/100 in March. Publish by mid-Feb"
+    },
+    {
+      "id": "keswick-spas",
+      "title": "Spas Near Keswick: Your Complete Guide",
+      "slug": "keswick-spas-guide",
+      "targetKeyword": "keswick spa",
+      "category": "locations",
+      "priority": 10,
+      "status": "planned",
+      "relatedSpas": ["armathwaite-hall-hotel-spa", "lodore-falls-spa"],
+      "notes": "Location content - 720 monthly searches"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2025-01-14",
+    "publishingSchedule": "Monday and Thursday at 9am",
+    "targetPostsPerWeek": 2
+  }
+}
+
