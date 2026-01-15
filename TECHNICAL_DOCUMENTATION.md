@@ -48,6 +48,12 @@ Comprehensive technical documentation for AI review and development reference.
 - **ts-jest**: `^29.4.6`
 - **jest-environment-jsdom**: `^30.2.0`
 
+### Blog System
+
+- **next-mdx-remote**: MDX content rendering in Next.js App Router
+- **gray-matter**: Frontmatter parsing from MDX files
+- **reading-time**: Reading time calculation for posts
+
 ### Development Tools
 
 - **ESLint**: `^8` (with `eslint-config-next`)
@@ -69,6 +75,10 @@ lake-district-spas/
 │   │   ├── spa/
 │   │   │   └── [slug]/
 │   │   │       └── page.tsx   # Dynamic spa detail pages
+│   │   ├── blog/
+│   │   │   ├── page.tsx        # Blog listing page
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx   # Dynamic blog post pages
 │   │   ├── globals.css         # Global styles & Tailwind config
 │   │   └── sitemap.ts         # Dynamic sitemap generation
 │   ├── components/             # React components
@@ -100,9 +110,11 @@ lake-district-spas/
 │   │       ├── index.ts        # Treatment data aggregator
 │   │       └── spa-*-treatments.ts # Individual spa treatments
 │   ├── types/                  # TypeScript type definitions
-│   │   └── spa.ts              # Core Spa interface & types
+│   │   ├── spa.ts              # Core Spa interface & types
+│   │   └── blog.ts             # Blog post types & interfaces
 │   ├── lib/                    # Utility functions
-│   │   └── utils.ts            # Helper functions (getBadgeClasses, etc.)
+│   │   ├── utils.ts            # Helper functions (getBadgeClasses, etc.)
+│   │   └── blog.ts             # Blog utilities (getAllBlogPosts, etc.)
 │   ├── utils/                  # Additional utilities
 │   │   └── generateSpaSchema.ts # Schema generation
 │   └── __tests__/              # Test files
@@ -110,9 +122,18 @@ lake-district-spas/
 │       ├── filtering.test.ts   # Filter logic tests
 │       ├── spa-intro-validation.test.ts # Intro text validation
 │       └── utils.test.ts       # Utility function tests
+├── content/                    # Content files
+│   └── blog/                   # Blog MDX files
+│       ├── README.md           # Blog documentation
+│       └── *.mdx               # Blog post files
+├── data/                       # Data files
+│   └── blog-topics.json        # Blog content calendar
 ├── public/                     # Static assets
 │   ├── images/                 # Image assets
 │   │   ├── spas/               # Spa-specific images
+│   │   ├── blog/               # Blog images
+│   │   │   ├── images.json     # Blog image alt text
+│   │   │   └── *.jpg          # Blog image files
 │   │   └── *.jpg               # General images
 │   ├── logo.svg                # Site logo
 │   ├── favicon.*               # Favicon files
@@ -246,6 +267,35 @@ interface Treatment {
 }
 ```
 
+#### `BlogPostMeta` Interface
+
+```typescript
+interface BlogPostMeta {
+  title: string;
+  slug: string;
+  excerpt: string;
+  publishedAt: string;
+  updatedAt?: string;
+  author: string;
+  category: 'guides' | 'comparisons' | 'seasonal' | 'facilities' | 'locations';
+  tags: string[];
+  featuredImage?: string;
+  featuredImageAlt?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  relatedSpas?: string[]; // spa slugs for internal linking
+  readingTime?: string;
+}
+```
+
+#### `BlogPost` Interface
+
+```typescript
+interface BlogPost extends BlogPostMeta {
+  content: string; // MDX content
+}
+```
+
 ### Data Files
 
 #### `src/data/spas.ts`
@@ -260,6 +310,20 @@ interface Treatment {
 - **Structure**: Individual files per spa (`spa-1-treatments.ts`, etc.)
 - **Aggregator**: `index.ts` exports all treatments
 - **Format**: Array of `Treatment` objects grouped by spa ID
+
+#### `content/blog/`
+
+- **Structure**: MDX files with frontmatter metadata
+- **Format**: YAML frontmatter + Markdown/MDX content
+- **Naming**: Kebab-case slugs (e.g., `spa-access-guide.mdx`)
+- **Documentation**: See `blog.md` (root directory) for complete guide
+
+#### `public/images/blog/`
+
+- **Images**: Blog post images (`.jpg` files)
+- **Naming**: `lake-district-spas_blog-[descriptive-name].jpg`
+- **Alt Text**: Managed in `images.json` file
+- **Structure**: JSON array with `name` and `alt` fields
 
 ---
 
@@ -292,6 +356,29 @@ interface Treatment {
 - **Route**: `/about`
 - **Features**: Mission, problem/solution, target audience, creator story
 - **Design**: Luxury editorial layout
+
+#### Blog Listing Page (`src/app/blog/page.tsx`)
+
+- **Route**: `/blog`
+- **Features**:
+  - Displays all published blog posts in a grid
+  - Category filtering tabs
+  - Featured image, title, excerpt, date, reading time
+  - Responsive design (1 col mobile, 2 col tablet, 3 col desktop)
+- **Data**: Uses `getAllBlogPosts()` from `@/lib/blog`
+- **Filtering**: Category filter via URL query params
+
+#### Blog Post Page (`src/app/blog/[slug]/page.tsx`)
+
+- **Route**: `/blog/[slug]`
+- **Features**:
+  - MDX content rendering with custom components
+  - Table of contents sidebar (desktop only)
+  - Related posts section
+  - Related spas section (first 2 from `relatedSpas` field)
+  - JSON-LD structured data for SEO
+- **Components**: Custom MDX components for headings, links, images, tables
+- **Data**: Uses `getBlogPostBySlug()` from `@/lib/blog`
 
 ### Reusable Components
 
@@ -364,6 +451,8 @@ Defined in `tailwind.config.ts`:
 
 - `/` - Homepage with filtering
 - `/about` - About page
+- `/blog` - Blog listing page
+- `/blog/[slug]` - Dynamic blog post pages
 - `/spa/[slug]` - Dynamic spa detail pages
 
 ### Dynamic Routes
@@ -372,6 +461,11 @@ Defined in `tailwind.config.ts`:
 - **Slug Format**: Kebab-case (e.g., `lodore-falls-hotel-spa`)
 - **Metadata**: Generated dynamically per spa
 - **404 Handling**: Next.js default (spa not found)
+
+- **Pattern**: `/blog/[slug]`
+- **Slug Format**: Kebab-case (e.g., `spa-access-included-vs-extra-charge`)
+- **Metadata**: Generated dynamically per post from frontmatter
+- **404 Handling**: Next.js default (post not found)
 
 ### Navigation
 
@@ -445,6 +539,16 @@ Defined in `tailwind.config.ts`:
 - Fallback to placeholder div with text
 - Error state prevents infinite retry loops
 
+### Blog Image Management
+
+- **Location**: `public/images/blog/`
+- **Alt Text**: Centralized in `public/images/blog/images.json`
+- **Naming**: `lake-district-spas_blog-[descriptive-name].jpg`
+- **Usage**: 
+  - Featured images: Set in frontmatter `featuredImage` field
+  - Inline images: Standard Markdown image syntax in MDX
+- **Documentation**: See `content/blog/README.md` for complete guide
+
 ---
 
 ## Testing
@@ -509,10 +613,10 @@ npm run typecheck # TypeScript type checking
 ### Sitemap
 
 - **File**: `src/app/sitemap.ts`
-- **Routes**: Homepage, About page, all spa detail pages
+- **Routes**: Homepage, About page, all spa detail pages, all blog posts
 - **Format**: XML sitemap
 - **Update Frequency**: Monthly
-- **Priority**: Homepage (1.0), About (0.8), Spas (0.9)
+- **Priority**: Homepage (1.0), About (0.8), Spas (0.9), Blog (0.8)
 
 ### Open Graph & Twitter Cards
 
@@ -619,6 +723,14 @@ npm run typecheck # TypeScript type checking
 - **`getBadgeClasses()`**: Returns Tailwind classes for access label badges
 - **`cn()`**: Class name utility (likely from shadcn/ui)
 
+### `src/lib/blog.ts`
+
+- **`getAllBlogPosts()`**: Returns all published blog posts sorted by date
+- **`getBlogPostBySlug(slug)`**: Returns a single blog post by slug
+- **`getBlogPostsByCategory(category)`**: Returns posts filtered by category
+- **`getRelatedPosts(currentSlug, limit)`**: Returns related posts based on tags and category
+- **`getAllBlogSlugs()`**: Returns all blog post slugs for static generation
+
 ### Component Utilities
 
 - **Icon Mapping**: `getPolicyIcon()` in `AccessPolicy.tsx`
@@ -694,6 +806,29 @@ npm run dev
 3. Add image(s) to `public/images/spas/`
 4. Update `sitemap.ts` (automatic if using dynamic generation)
 5. Run tests to validate data
+
+### Adding a New Blog Post
+
+1. Create MDX file in `content/blog/` with frontmatter:
+   ```yaml
+   ---
+   title: 'Your Post Title'
+   slug: your-post-slug
+   excerpt: 'Post summary'
+   publishedAt: '2025-01-20'
+   author: 'Lake District Spas'
+   category: guides
+   tags: [tag1, tag2]
+   featuredImage: /images/blog/lake-district-spas_blog-image.jpg
+   featuredImageAlt: 'Alt text'
+   relatedSpas: [spa-slug-1, spa-slug-2]
+   ---
+   ```
+2. Add images to `public/images/blog/` following naming convention
+3. Add image entries to `public/images/blog/images.json` with alt text
+4. Write content in Markdown/MDX format
+5. Set `publishedAt` to current or past date to publish
+6. See `content/blog/README.md` for complete documentation
 
 ### Component Development
 
@@ -857,6 +992,7 @@ NEXT_PUBLIC_GA_MEASUREMENT_ID=your-ga-id
 
 - **Style Guide**: `STYLE_GUIDE.md`
 - **Technical Docs**: This file
+- **Blog Guide**: `blog.md` (blog post creation guide)
 - **README**: `README.md` (basic Next.js info)
 
 ---
@@ -909,6 +1045,101 @@ className = 'text-amber-600'; // Accent
 
 ---
 
-_Last Updated: 2024_
-_Version: 1.0_
+---
+
+## Blog System
+
+### Overview
+
+The blog system uses MDX files with frontmatter metadata, rendered server-side using `next-mdx-remote/rsc`. Posts are stored in `content/blog/` and automatically processed at build time.
+
+### Blog Dependencies
+
+- **next-mdx-remote**: Server-side MDX rendering for Next.js App Router
+- **gray-matter**: Parses YAML frontmatter from MDX files
+- **reading-time**: Calculates reading time for posts
+
+### Blog File Structure
+
+```
+content/blog/
+├── README.md              # Blog documentation
+└── *.mdx                  # Blog post files
+
+public/images/blog/
+├── images.json            # Alt text for all blog images
+└── *.jpg                  # Blog image files
+
+data/
+└── blog-topics.json       # Content calendar & topic planning
+```
+
+### Blog Types
+
+Defined in `src/types/blog.ts`:
+- `BlogPostMeta`: Frontmatter metadata interface
+- `BlogPost`: Full post with content
+- `BlogTopic`: Content calendar entry
+
+### Blog Utilities
+
+Located in `src/lib/blog.ts`:
+- `getAllBlogPosts()`: Returns published posts sorted by date
+- `getBlogPostBySlug(slug)`: Returns single post with content
+- `getBlogPostsByCategory(category)`: Filters by category
+- `getRelatedPosts(currentSlug, limit)`: Finds related posts by tags/category
+- `getAllBlogSlugs()`: Returns all slugs for static generation
+
+### Blog Image Management
+
+**Key Feature**: All blog image alt text is centralized in `public/images/blog/images.json`.
+
+**Image Naming Convention**:
+```
+lake-district-spas_blog-[descriptive-name].jpg
+```
+
+**Adding New Images**:
+1. Add image file to `public/images/blog/`
+2. Add entry to `images.json`:
+   ```json
+   {
+     "name": "lake-district-spas_blog-image-name.jpg",
+     "alt": "Descriptive alt text following established style"
+   }
+   ```
+3. Reference in MDX using standard Markdown image syntax
+
+**See `content/blog/README.md` for complete image usage guide.**
+
+### Blog MDX Components
+
+Custom components available in blog posts:
+- **Headings**: Auto-generate anchor links (H2, H3)
+- **Links**: Converts `/spa/...` links to Next.js Link components
+- **Images**: Uses Next.js Image component with optimization
+- **Blockquotes**: Styled with amber accent
+- **Tables**: Styled for comparison content
+- **SpaCard**: Can embed spa cards inline
+
+### Blog Categories
+
+- `guides`: How-to articles, tips, advice
+- `comparisons`: Comparing spas, facilities, features
+- `seasonal`: Time-sensitive content (holidays, events)
+- `facilities`: Educational content about spa facilities
+- `locations`: Location-specific guides
+
+### Blog SEO
+
+- Dynamic metadata generation from frontmatter
+- JSON-LD structured data (Article schema)
+- Open Graph and Twitter Card support
+- Automatic sitemap inclusion
+- Related posts and spas for internal linking
+
+---
+
+_Last Updated: 2025-01-20_
+_Version: 1.1_
 _For AI Review & Development Reference_
