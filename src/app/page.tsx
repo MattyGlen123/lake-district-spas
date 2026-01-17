@@ -225,8 +225,23 @@ export default function Home() {
     (selectedLocation !== 'All Locations' ? 1 : 0) +
     selectedFacilities.length;
 
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Lake District Spas',
+    url: 'https://lakedistrictspas.co.uk',
+    logo: 'https://lakedistrictspas.co.uk/logo.svg',
+    description:
+      'Complete guide to Lake District spas. Compare facilities, access policies, and thermal suites across spa hotels in the Lake District.',
+    sameAs: [],
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <Header />
 
       <main>
