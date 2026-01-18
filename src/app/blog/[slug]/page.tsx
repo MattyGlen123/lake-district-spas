@@ -1,3 +1,4 @@
+import React from 'react';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -10,7 +11,6 @@ import SpaCard from '@/components/SpaCard';
 import {
   getBlogPostBySlug,
   getAllBlogSlugs,
-  getRelatedPosts,
 } from '@/lib/blog';
 import { spaData } from '@/data/spas';
 import { BlogPostMeta } from '@/types/blog';
@@ -125,11 +125,24 @@ const mdxComponents = {
       </h3>
     );
   },
-  p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="text-stone-700 leading-relaxed mb-6" {...props}>
-      {children}
-    </p>
-  ),
+  p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => {
+    // Check if the paragraph only contains an image (figure element)
+    // If so, render without the paragraph wrapper to avoid hydration errors
+    const childrenArray = React.Children.toArray(children);
+    const hasOnlyFigure =
+      childrenArray.length === 1 &&
+      React.isValidElement(childrenArray[0]) &&
+      childrenArray[0].type === 'figure';
+    
+    if (hasOnlyFigure) {
+      return <>{children}</>;
+    }
+    return (
+      <p className="text-stone-700 leading-relaxed mb-6" {...props}>
+        {children}
+      </p>
+    );
+  },
   a: ({
     href,
     children,
@@ -184,17 +197,19 @@ const mdxComponents = {
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => {
     if (!src) return null;
+    // Use a span with block display - valid inside paragraphs
+    // This avoids hydration errors when MDX wraps images in paragraphs
     return (
-      <div className="my-8 rounded-xl overflow-hidden">
+      <span className="my-8 rounded-xl overflow-hidden block">
         <Image
           src={src}
           alt={alt || ''}
           width={typeof width === 'number' ? width : 1200}
           height={typeof height === 'number' ? height : 630}
-          className="w-full h-auto"
+          className="w-full h-auto rounded-xl"
           {...props}
         />
-      </div>
+      </span>
     );
   },
   blockquote: ({
@@ -297,13 +312,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     notFound();
   }
 
-  const relatedPosts = getRelatedPosts(post.slug, 3);
   const toc = generateTOC(post.content);
 
-  // Get spas mentioned in the article (limit to 2 most relevant)
+  // Get spas mentioned in the article (limit to 4 most relevant)
   const mentionedSpas: Spa[] = post.relatedSpas
     ? post.relatedSpas
-        .slice(0, 2)
+        .slice(0, 4)
         .map((slug) => spaData.find((s) => s.url === slug))
         .filter((s): s is Spa => s !== undefined)
     : [];
@@ -445,53 +459,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
           </div>
         </div>
-
-        {/* Related Posts */}
-        {relatedPosts.length > 0 && (
-          <div className="bg-soft-cream border-t border-stone-100 py-16">
-            <div className="container mx-auto px-4 md:px-8">
-              <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">
-                Related Articles
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {relatedPosts.map((relatedPost) => (
-                  <Link
-                    key={relatedPost.slug}
-                    href={`/blog/${relatedPost.slug}`}
-                    className="group block"
-                  >
-                    <article className="space-y-4">
-                      {relatedPost.featuredImage && (
-                        <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-sm border border-stone-100">
-                          <Image
-                            src={relatedPost.featuredImage}
-                            alt={
-                              relatedPost.featuredImageAlt || relatedPost.title
-                            }
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-300"
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                          />
-                        </div>
-                      )}
-                      <div className="space-y-2">
-                        <span className="text-xs font-bold uppercase tracking-widest text-amber-700">
-                          {categoryLabels[relatedPost.category]}
-                        </span>
-                        <h3 className="font-serif text-xl text-stone-900 group-hover:text-amber-700 transition-colors">
-                          {relatedPost.title}
-                        </h3>
-                        <p className="text-sm text-stone-600 line-clamp-2">
-                          {relatedPost.excerpt}
-                        </p>
-                      </div>
-                    </article>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* Related Spas Section */}
         {mentionedSpas.length > 0 && (

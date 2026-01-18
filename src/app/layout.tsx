@@ -17,7 +17,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Lake District Spas 2025 - Complete Access Guide',
+  title: 'Lake District Spas - Complete Access Guide',
   description:
     'Find your perfect Lake District spa. Compare facilities, access policies, and thermal suites. Know before you book if spa access is included with your room.',
   keywords: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     'lake district wellness',
   ],
   openGraph: {
-    title: 'Lake District Spas 2025 - Complete Guide',
+    title: 'Lake District Spas - Complete Guide',
     description:
       'Know Before You Book - Compare spa access policies across 22 Lake District hotels',
     type: 'website',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lake District Spas 2025 - Complete Guide',
+    title: 'Lake District Spas - Complete Guide',
     description:
       'Know Before You Book - Compare spa access policies across 22 Lake District hotels',
   },
