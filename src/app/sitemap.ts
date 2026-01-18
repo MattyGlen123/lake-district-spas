@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { spaData } from '@/data/spas';
+import { getAllBlogPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://lakedistrictspas.co.uk';
@@ -28,6 +29,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   };
 
+  // Blog listing page entry
+  const blogPage = {
+    url: `${baseUrl}/blog`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  };
+
+  // Blog post pages entries
+  const blogPosts = getAllBlogPosts().map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.publishedAt),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
   // Spa pages entries
   const spaPages = spaData.map((spa) => ({
     url: `${baseUrl}/spa/${spa.url}`,
@@ -36,5 +53,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [homepage, aboutPage, partnershipPage, ...spaPages];
+  return [homepage, aboutPage, partnershipPage, blogPage, ...blogPosts, ...spaPages];
 }
