@@ -6,18 +6,25 @@ import Footer from '@/components/Footer';
 import { getAllBlogPosts, getBlogPostsByCategory } from '@/lib/blog';
 import { BlogPostMeta } from '@/types/blog';
 
-export const metadata: Metadata = {
-  title: 'Lake District Spa Guides & Tips - Blog',
-  description:
-    'Expert guides, comparisons, and insider tips for planning your perfect Lake District spa break. Learn about facilities, access policies, and find the best spas for your needs.',
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  const baseUrl = 'https://lakedistrictspas.co.uk';
+
+  return {
     title: 'Lake District Spa Guides & Tips - Blog',
     description:
-      'Expert guides, comparisons, and insider tips for planning your perfect Lake District spa break.',
-    type: 'website',
-    url: 'https://lakedistrictspas.co.uk/blog',
-  },
-};
+      'Expert guides, comparisons, and insider tips for planning your perfect Lake District spa break. Learn about facilities, access policies, and find the best spas for your needs.',
+    alternates: {
+      canonical: `${baseUrl}/blog`,
+    },
+    openGraph: {
+      title: 'Lake District Spa Guides & Tips - Blog',
+      description:
+        'Expert guides, comparisons, and insider tips for planning your perfect Lake District spa break.',
+      type: 'website',
+      url: 'https://lakedistrictspas.co.uk/blog',
+    },
+  };
+}
 
 const categories: BlogPostMeta['category'][] = [
   'guides',
