@@ -1,9 +1,11 @@
 import { SpaDayPasses, DayPassOption } from '@/types/spa';
 import { spa1DayPasses } from './spa-1-day-passes';
+import { spa7DayPasses } from './spa-7-day-passes';
 
 // Map of spa IDs to their day passes
 const dayPassesBySpaId: Record<number, SpaDayPasses> = {
   1: spa1DayPasses,
+  7: spa7DayPasses,
 };
 
 /**

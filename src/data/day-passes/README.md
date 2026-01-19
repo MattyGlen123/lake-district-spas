@@ -37,6 +37,7 @@ Each day pass option includes:
 - **requiredNumbers**: Optional text indicating group size requirements (e.g., `"Requires 2 People"`, `"Group of 2–4 Guests"`)
 - **treatmentsIncluded**: Boolean indicating if treatments are included
 - **refreshmentsIncluded**: Boolean indicating if food/drinks are included
+- **mealIncluded**: Boolean indicating if a meal (lunch, afternoon tea, etc.) is included
 - **included**: Array of strings describing what's included in the package
 - **description**: Single sentence that sells the experience
 - **daysAvailable**: When the package is available (e.g., `'Monday - Sunday'`)
@@ -96,6 +97,7 @@ To add day passes for a new spa:
   requiredNumbers: 'Requires 2 People', // Optional - for group packages
   treatmentsIncluded: true,
   refreshmentsIncluded: true,
+  mealIncluded: true, // true if lunch/afternoon tea included, false if only drinks/snacks
   included: [
     '2 hours use of spa facilities',
     '1x 50 minute treatment of choice',

@@ -10,6 +10,7 @@ export const spa1DayPasses: SpaDayPasses = {
       spaDuration: 2,
       treatmentsIncluded: true,
       refreshmentsIncluded: true,
+      mealIncluded: false,
       included: [
         '2 hours use of spa facilities',
         '1x 50 minute treatment of choice',
@@ -31,6 +32,7 @@ export const spa1DayPasses: SpaDayPasses = {
       spaDuration: 2,
       treatmentsIncluded: true,
       refreshmentsIncluded: true,
+      mealIncluded: true,
       included: [
         '2 hours use of spa facilities',
         '1x 50 minute treatment of choice',
@@ -54,6 +56,7 @@ export const spa1DayPasses: SpaDayPasses = {
       requiredNumbers: "Requires 2 People",
       treatmentsIncluded: true,
       refreshmentsIncluded: true,
+      mealIncluded: true,
       included: [
         '2 hours spa access',
         'Use of the spa facilities and relaxation areas',
@@ -78,6 +81,7 @@ export const spa1DayPasses: SpaDayPasses = {
       spaDuration: 2,
       treatmentsIncluded: false,
       refreshmentsIncluded: true,
+      mealIncluded: false,
       included: [
         '2 hours spa access (6:45pm - 8:45pm)',
         'Use of thermal suite and relaxation areas',
@@ -101,6 +105,7 @@ export const spa1DayPasses: SpaDayPasses = {
       spaDuration: 2,
       treatmentsIncluded: true,
       refreshmentsIncluded: true,
+      mealIncluded: true,
       included: [
         '2 hours of spa access',
         'Glass of prosecco in the Champagne Bar',

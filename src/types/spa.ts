@@ -116,6 +116,9 @@ export interface DayPassOption {
   /** Whether refreshments (food/drinks) are included in the package */
   refreshmentsIncluded: boolean;
 
+  /** Whether a meal (lunch, afternoon tea, etc.) is included in the package */
+  mealIncluded: boolean;
+
   /** Array of what's included in the package */
   included: string[];
 
@@ -139,6 +142,9 @@ export interface DayPassOption {
 
   /** URL to the booking/purchase page */
   bookingUrl: string;
+
+  /** Optional URL to purchase gift vouchers for this package */
+  voucherUrl?: string;
 
   /** Date this information was last verified (ISO format YYYY-MM-DD) */
   lastVerified: string;
