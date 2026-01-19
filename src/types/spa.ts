@@ -88,6 +88,73 @@ export interface Spa {
   treatmentBookingPhone?: string;
 }
 
+/**
+ * Day Pass Option - Available spa day experiences for non-residents
+ */
+export interface DayPassOption {
+  /** Unique identifier for this day pass option */
+  id: string;
+
+  /** Package name as shown on spa website */
+  packageName: string;
+
+  /** Total price in GBP (for packages booked as a group, this is the total; for individual bookings, this is per person) */
+  priceGBP: number;
+
+  /** Price per person in GBP (optional - only used when priceGBP is a group total) */
+  pricePerPerson?: number;
+
+  /** Duration of spa facility access in hours (e.g., 2, 3, 4) */
+  spaDuration: number;
+
+  /** Optional text indicating group size requirements (e.g., "Requires 2 People", "Group of 2–4 Guests") */
+  requiredNumbers?: string;
+
+  /** Whether treatments are included in the package */
+  treatmentsIncluded: boolean;
+
+  /** Whether refreshments (food/drinks) are included in the package */
+  refreshmentsIncluded: boolean;
+
+  /** Array of what's included in the package */
+  included: string[];
+
+  /** Single sentence description that sells the experience */
+  description: string;
+
+  /** Days this package is available (e.g., "Monday - Sunday", "Weekdays only") */
+  daysAvailable: string;
+
+  /** Age restriction (e.g., "18+", "16+ only") */
+  ageRestriction: string;
+
+  /** Whether advance booking is required */
+  bookingRequired: boolean;
+
+  /** Phone number for bookings */
+  phoneBooking?: string;
+
+  /** URL to the day pass information page */
+  dayPassUrl: string;
+
+  /** URL to the booking/purchase page */
+  bookingUrl: string;
+
+  /** Date this information was last verified (ISO format YYYY-MM-DD) */
+  lastVerified: string;
+}
+
+/**
+ * Day Passes by Spa - Collection of all day pass options for a specific spa
+ */
+export interface SpaDayPasses {
+  /** Reference to the spa ID from spas.ts */
+  spaId: number;
+
+  /** Array of available day pass options */
+  options: DayPassOption[];
+}
+
 export const accessLabelConfig: Record<
   AccessLabel,
   {
