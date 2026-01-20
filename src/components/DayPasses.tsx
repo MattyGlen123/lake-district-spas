@@ -22,7 +22,7 @@ export default function DayPasses({ spa }: DayPassesProps) {
   return (
     <section
       id="day-passes"
-      className="bg-stone-400/30 py-32 border-y border-stone-100 scroll-mt-32 md:scroll-mt-48 w-screen relative left-1/2 -translate-x-1/2"
+      className="bg-amber-50/30 py-32 border-y border-stone-200 scroll-mt-32 md:scroll-mt-48 w-screen relative left-1/2 -translate-x-1/2"
     >
       <div className="container mx-auto px-4 md:px-8">
       <div className="h-px w-12 bg-amber-700 mb-6" />
