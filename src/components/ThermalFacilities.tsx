@@ -37,6 +37,8 @@ export default function ThermalFacilities({ spa }: ThermalFacilitiesProps) {
 
   // Generate highlight text
   let highlightText = '';
+  const isSingleFacility = totalFacilities === 1;
+  
   if (totalFacilities >= 8) {
     if (hasSauna && hasSteam && hasIce) {
       highlightText =
@@ -52,17 +54,30 @@ export default function ThermalFacilities({ spa }: ThermalFacilitiesProps) {
   } else if (hasSauna && hasSteam) {
     highlightText = 'Featuring both sauna and steam room experiences,';
   } else if (hasSauna) {
-    highlightText = 'With expertly maintained sauna facilities,';
+    highlightText = isSingleFacility 
+      ? 'With an expertly maintained sauna facility,'
+      : 'With expertly maintained sauna facilities,';
   } else if (hasSteam) {
-    highlightText = 'Featuring modern steam room experiences,';
+    highlightText = isSingleFacility
+      ? 'Featuring a modern steam room experience,'
+      : 'Featuring modern steam room experiences,';
   } else if (hasLaconium) {
-    highlightText = 'Including Roman-style thermal experiences,';
+    highlightText = isSingleFacility
+      ? 'Including a Roman-style thermal experience,'
+      : 'Including Roman-style thermal experiences,';
   } else {
-    highlightText = 'With thoughtfully designed thermal experiences,';
+    highlightText = isSingleFacility
+      ? 'With a thoughtfully designed thermal experience,'
+      : 'With thoughtfully designed thermal experiences,';
   }
 
   const suiteText =
     totalFacilities >= 8 ? 'comprehensive thermal suite' : 'thermal suite';
+  
+  const experienceText = isSingleFacility ? 'heat experience' : 'heat experiences';
+  const closingText = isSingleFacility 
+    ? 'this facility offers unique therapeutic benefits to help you unwind and rejuvenate.'
+    : 'each facility offers unique therapeutic benefits to help you unwind and rejuvenate.';
 
   return (
     <section
@@ -80,11 +95,10 @@ export default function ThermalFacilities({ spa }: ThermalFacilitiesProps) {
         <p className="text-stone-500 leading-relaxed mb-8">
           Experience {spa.name}&apos;s {suiteText} featuring{' '}
           <strong className="text-stone-700">
-            {totalFacilities} heat experiences
+            {totalFacilities} {experienceText}
           </strong>{' '}
           designed to promote relaxation, improve circulation, and enhance your
-          overall wellness journey. {highlightText} each facility offers unique
-          therapeutic benefits to help you unwind and rejuvenate.
+          overall wellness journey. {highlightText} {closingText}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
