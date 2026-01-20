@@ -13,7 +13,7 @@ export const spa7DayPasses: SpaDayPasses = {
       mealIncluded: true,
       included: [
         '3-hour thermal journey',
-        '50-minute spa treatment of choice (Berry & Birch massage, ESPA Aromatherapy, ESPA Restful, ESPA Inner Beauty Facial, or ESPA Pre Natal)',
+        '50-minute spa treatment of choice',
         '2-course lunch OR wood-fired afternoon tea at Blue Smoke on the Bay',
         'Robes and towels included',
       ],
@@ -75,7 +75,7 @@ export const spa7DayPasses: SpaDayPasses = {
       packageName: 'Sail & Spa Day',
       priceGBP: 360,
       pricePerPerson: 180,
-      requiredNumbers: '2 to 6 people',
+      requiredNumbers: 'Group of 2-6 Guests',
       spaDuration: 3,
       treatmentsIncluded: false,
       refreshmentsIncluded: true,
