@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { Spa } from '@/types/spa';
 import { getTreatmentsBySpaId } from '@/data/treatments/index';
+import { getDayPassOptionsBySpaId } from '@/data/day-passes';
 
 interface JumpToSectionProps {
   spa: Spa;
@@ -31,6 +32,16 @@ export default function JumpToSection({ spa }: JumpToSectionProps) {
       id: 'pools',
       label: 'Pools',
       icon: Waves,
+    });
+  }
+
+  // Day Passes
+  const dayPassOptions = getDayPassOptionsBySpaId(spa.id);
+  if (dayPassOptions && dayPassOptions.length > 0) {
+    jumpLinks.push({
+      id: 'day-passes',
+      label: 'Day Passes',
+      icon: Calendar,
     });
   }
 

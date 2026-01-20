@@ -10,6 +10,7 @@ import JumpToSection from '@/components/JumpToSection';
 import BackButton from '@/components/BackButton';
 import ThermalFacilities from '@/components/ThermalFacilities';
 import PoolFeatures from '@/components/PoolFeatures';
+import DayPasses from '@/components/DayPasses';
 import Treatments from '@/components/Treatments';
 import AccessPolicy from '@/components/AccessPolicy';
 import BookVisitCTA from '@/components/BookVisitCTA';
@@ -110,6 +111,7 @@ export default function SpaDetailPage({
           <JumpToSection spa={spa} />
           <ThermalFacilities spa={spa} />
           <PoolFeatures spa={spa} />
+          <DayPasses spa={spa} />
           <Treatments spa={spa} />
         </div>
 

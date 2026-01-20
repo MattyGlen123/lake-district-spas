@@ -75,7 +75,7 @@ export const spa7DayPasses: SpaDayPasses = {
       packageName: 'Sail & Spa Day',
       priceGBP: 360,
       pricePerPerson: 180,
-      requiredNumbers: 'Minimum 2 people, up to 6',
+      requiredNumbers: '2 to 6 people',
       spaDuration: 3,
       treatmentsIncluded: false,
       refreshmentsIncluded: true,
