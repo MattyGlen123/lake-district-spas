@@ -23,7 +23,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
       onClick={() => setIsExpanded(!isExpanded)}
       aria-expanded={isExpanded}
     >
-      <div className="p-6 md:p-8">
+      <div className="p-6">
         {/* Header - Always Visible */}
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1">
@@ -92,7 +92,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
               {/* Booking Buttons */}
               {(spa.treatmentBookingUrl || spa.treatmentBookingPhone) && (
                 <div
-                  className={`grid gap-6 ${
+                  className={`grid gap-2 ${
                     spa.treatmentBookingUrl && spa.treatmentBookingPhone
                       ? 'grid-cols-2'
                       : 'grid-cols-1'
@@ -104,17 +104,17 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="px-6 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm flex items-center justify-center gap-2"
+                      className="px-4 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm flex items-center justify-center gap-1"
                     >
                       Book Now
-                      <ExternalLink className="h-4 w-4" />
+                      <ExternalLink className="h-2 w-2" />
                     </a>
                   )}
                   {spa.treatmentBookingPhone && (
                     <a
                       href={`tel:${spa.treatmentBookingPhone}`}
                       onClick={(e) => e.stopPropagation()}
-                      className="px-6 py-3 bg-emerald-950 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm flex items-center justify-center gap-2"
+                      className="px-4 py-3 bg-emerald-950 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm flex items-center justify-center gap-2"
                     >
                       Call Now
                     </a>
