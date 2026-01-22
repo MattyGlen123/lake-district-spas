@@ -1,4 +1,4 @@
-import { Check, ExternalLink, Ticket, Users } from 'lucide-react';
+import { Check, ExternalLink, CreditCard, Users } from 'lucide-react';
 import { Spa } from '@/types/spa';
 import { getDayPassOptionsBySpaId } from '@/data/day-passes';
 
@@ -45,7 +45,7 @@ export default function DayPasses({ spa }: DayPassesProps) {
               <div className="flex items-start justify-between gap-3 mb-8">
                 <div className="flex flex-col items-start">
                   <div className="h-12 w-12 rounded-full bg-stone-50 flex items-center justify-center text-amber-700 border border-stone-200 flex-shrink-0">
-                    <Ticket className="h-6 w-6" strokeWidth={2} />
+                    <CreditCard className="h-6 w-6" strokeWidth={2} />
                   </div>
                 </div>
                 <div className="text-right space-y-0.5 flex-shrink-0">

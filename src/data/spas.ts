@@ -447,6 +447,10 @@ Spa access is complimentary for all hotel guests and Day spa packages are availa
     accessLabels: ['free-for-all-guests', 'day-passes-available'],
     images: [
       {
+        src: '/images/spas/armathwaite-hall-hotel-spa/lake-district-spas_armathwaite-hall-outdoor-infinity-pool-parkland.jpg',
+        alt: 'Guest relaxing in outdoor infinity pool at Armathwaite Hall Hotel and Spa near Bassenthwaite Lake, overlooking manicured parkland lawns and ancient woodland within 400-acre private deer park estate, luxury outdoor hydrotherapy experience in Lake District countryside setting',
+      },
+      {
         src: '/images/spas/armathwaite-hall-hotel-spa/lake-district-spas_armathwaite-hall.jpg',
         alt: 'Luxury thermal relaxation suite at Armathwaite Hall Hotel and Spa near Bassenthwaite Lake, featuring heated ceramic loungers with burnt orange throws, ambient candlelit atmosphere with green velvet curtains and contemporary design, offering award-winning spa facilities in a Lake District country estate setting',
       },
@@ -461,6 +465,10 @@ Spa access is complimentary for all hotel guests and Day spa packages are availa
       {
         src: '/images/spas/armathwaite-hall-hotel-spa/lake-district-spas_armathwaite-hall-back-massage.jpeg',
         alt: 'Professional therapeutic back massage at Armathwaite Hall Hotel and Spa near Bassenthwaite Lake, skilled therapist performing relaxation treatment with ambient purple mood lighting in luxury treatment room at this award-winning Lake District country estate spa',
+      },
+      {
+        src: '/images/spas/armathwaite-hall-hotel-spa/lake-district-spas_armathwaite-hall-hydrotherapy-vitality-pool.jpg',
+        alt: 'Multi-level hydrotherapy vitality pool at Armathwaite Hall Hotel and Spa near Bassenthwaite Lake, featuring dramatic blue LED underwater lighting with green gradient mosaic tiles, curved architectural design with chrome handrails, golden ambient ceiling lighting and purple accent walls, leading to Finnish sauna and thermal suite facilities in award-winning Lake District spa',
       },
       {
         src: '/images/spas/armathwaite-hall-hotel-spa/lake-district-spas_armathwaite-hall-indoor-pool.jpeg',
