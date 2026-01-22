@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lakedistrictspas.co.uk/sitemap.xml
+
