@@ -45,7 +45,8 @@ Each day pass option includes:
 - **bookingRequired**: Whether advance booking is required
 - **phoneBooking**: Optional phone number for bookings
 - **dayPassUrl**: URL to the day pass information page
-- **bookingUrl**: URL to the booking/purchase page
+- **bookingUrl**: Optional - URL to the booking/purchase page (not all spas have online booking systems)
+- **bookingEmail**: Optional - Email address for bookings (used when there's no online booking system)
 - **lastVerified**: Date in ISO format (YYYY-MM-DD) when information was last checked
 
 ## Benefits of This Structure
@@ -65,8 +66,8 @@ All day pass information includes a `lastVerified` date in ISO format (YYYY-MM-D
 **IMPORTANT**: Prices and availability should be periodically checked and updated. When updating:
 1. Verify information on the spa's official website
 2. Update the `lastVerified` date
-3. Check booking URLs still work
-4. Verify phone numbers are current
+3. Check booking URLs still work (if applicable)
+4. Verify booking emails and phone numbers are current
 5. Confirm pricing (especially for group packages vs individual)
 
 ## Adding New Day Passes
@@ -109,7 +110,8 @@ To add day passes for a new spa:
   bookingRequired: true,
   phoneBooking: '01234 567890', // Optional
   dayPassUrl: 'https://spa-website.com/day-pass',
-  bookingUrl: 'https://spa-website.com/book',
+  bookingUrl: 'https://spa-website.com/book', // Optional - use bookingEmail if no online booking system
+  bookingEmail: 'bookings@spa-website.com', // Optional - use when bookingUrl is not available
   lastVerified: '2025-01-19',
 }
 ```
@@ -119,6 +121,7 @@ To add day passes for a new spa:
 - Not all spas offer day passes - only create files for spas that do
 - Reference spa facilities from main spa data (don't duplicate)
 - Keep descriptions concise but compelling
-- Always include booking URLs and phone numbers where available
+- Always include booking URLs, booking emails, or phone numbers where available
+- Some spas don't have online booking systems - use `bookingEmail` instead of `bookingUrl` in those cases
 - For group packages, use `pricePerPerson` to show individual pricing
 - The `included` array should list all key benefits of the package

@@ -141,7 +141,10 @@ export interface DayPassOption {
   dayPassUrl: string;
 
   /** URL to the booking/purchase page */
-  bookingUrl: string;
+  bookingUrl?: string;
+
+  /** Email address for bookings */
+  bookingEmail ?: string;
 
   /** Optional URL to purchase gift vouchers for this package */
   voucherUrl?: string;

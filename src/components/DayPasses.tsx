@@ -1,4 +1,4 @@
-import { Check, ExternalLink, CreditCard, Users } from 'lucide-react';
+import { Check, ExternalLink, CreditCard, Users, Mail } from 'lucide-react';
 import { Spa } from '@/types/spa';
 import { getDayPassOptionsBySpaId } from '@/data/day-passes';
 
@@ -100,15 +100,25 @@ export default function DayPasses({ spa }: DayPassesProps) {
               </ul>
 
               <div className="mt-auto">
-                <a
-                  href={option.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-emerald-950 text-white px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
-                >
-                  <span className="leading-none">Book Pass</span>
-                  <ExternalLink className="h-2 w-2 self-start" />
-                </a>
+                {option.bookingUrl ? (
+                  <a
+                    href={option.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 bg-emerald-950 text-white px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
+                  >
+                    <span className="leading-none">Book Pass</span>
+                    <ExternalLink className="h-3 w-3 self-start" />
+                  </a>
+                ) : option.bookingEmail ? (
+                  <a
+                    href={`mailto:${option.bookingEmail}`}
+                    className="flex items-center justify-center gap-2 bg-emerald-950 text-white px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
+                  >
+                    <span className="leading-none">Email Us</span>
+                    <Mail className="h-3 w-3 self-start" />
+                  </a>
+                ) : null}
               </div>
             </article>
           ))}
