@@ -1166,7 +1166,7 @@ The HydroSpa hydrotherapy pool includes sunken loungers for passive relaxation, 
 Spa access is complimentary for all hotel guests with no booking required. Day spa experiences are available to the public. This is an 18+ spa for a peaceful, adults-only atmosphere.`,
     websiteUrl:
       'https://www.harbourhotels.co.uk/our-hotels/lake-district/rothay-garden-by-harbour-hotels/riverside-spa',
-    accessLabels: ['free-for-all-guests', 'day-passes-available'],
+    accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     images: [
       {
         src: '/images/spas/rothay-garden-by-harbour-hotels/lake-district-spas_rothay-garden-grasmere-hydrotherapy-pool.jpg',
@@ -1214,7 +1214,7 @@ Spa access is complimentary for all hotel guests with no booking required. Day s
       },
       {
         name: 'Day Passes',
-        details: 'Available to public',
+        details: 'Not Available',
         accessType: 'day-pass',
       },
       {
