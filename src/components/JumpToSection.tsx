@@ -77,7 +77,7 @@ export default function JumpToSection({ spa }: JumpToSectionProps) {
 
   return (
     <div className="bg-white border-y border-stone-200 mb-12 w-screen relative left-1/2 -translate-x-1/2">
-      <div className="max-w-5xl mx-auto pl-4">
+      <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between overflow-x-auto">
           <div className="flex items-center gap-2 mr-8 py-4 flex-shrink-0">
             <ChevronDown className="h-4 w-4 text-stone-800" />
