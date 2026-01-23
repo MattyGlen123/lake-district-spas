@@ -3,6 +3,7 @@ import { spa1DayPasses } from './spa-1-day-passes';
 import { spa2DayPasses } from './spa-2-day-passes';
 import { spa4DayPasses } from './spa-4-day-passes';
 import { spa5DayPasses } from './spa-5-day-passes';
+import { spa6DayPasses } from './spa-6-day-passes';
 import { spa7DayPasses } from './spa-7-day-passes';
 import { spa9DayPasses } from './spa-9-day-passes';
 import { spa10DayPasses } from './spa-10-day-passes';
@@ -14,6 +15,7 @@ const dayPassesBySpaId: Record<number, SpaDayPasses> = {
   2: spa2DayPasses,
   4: spa4DayPasses,
   5: spa5DayPasses,
+  6: spa6DayPasses,
   7: spa7DayPasses,
   9: spa9DayPasses,
   10: spa10DayPasses,
