@@ -1,4 +1,4 @@
-import { SpaDayPasses, DayPassOption } from '@/types/spa';
+import { SpaDayPasses, DayPassOption, Spa } from '@/types/spa';
 import { spa1DayPasses } from './spa-1-day-passes';
 import { spa2DayPasses } from './spa-2-day-passes';
 import { spa4DayPasses } from './spa-4-day-passes';
@@ -64,5 +64,35 @@ export function getSpasWithDayPasses(): number[] {
  */
 export function getAllDayPasses(): SpaDayPasses[] {
   return Object.values(dayPassesBySpaId);
+}
+
+/**
+ * Flattened day pass with parent spa data
+ */
+export interface DayPassWithSpa extends DayPassOption {
+  spa: Spa;
+}
+
+/**
+ * Get all day passes flattened with their parent spa data
+ * @param spaData - Array of all spa data
+ * @returns Array of day passes with parent spa info
+ */
+export function getAllDayPassesWithSpa(spaData: Spa[]): DayPassWithSpa[] {
+  const result: DayPassWithSpa[] = [];
+  
+  for (const spaDayPasses of Object.values(dayPassesBySpaId)) {
+    const spa = spaData.find((s) => s.id === spaDayPasses.spaId);
+    if (!spa) continue;
+    
+    for (const option of spaDayPasses.options) {
+      result.push({
+        ...option,
+        spa,
+      });
+    }
+  }
+  
+  return result;
 }
 

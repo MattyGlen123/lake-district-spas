@@ -82,6 +82,28 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
                   />
                 </Link>
                 <Link
+                  href="/spa-days"
+                  onClick={onClose}
+                  className="flex items-center justify-between p-4 rounded-2xl border border-transparent bg-white"
+                >
+                  <span
+                    className={`font-serif text-lg ${
+                      pathname === '/spa-days'
+                        ? 'text-amber-700'
+                        : 'text-stone-800'
+                    }`}
+                  >
+                    Day Passes
+                  </span>
+                  <ChevronRight
+                    className={`h-4 w-4 ${
+                      pathname === '/spa-days'
+                        ? 'text-amber-700'
+                        : 'text-stone-300'
+                    }`}
+                  />
+                </Link>
+                <Link
                   href="/about"
                   onClick={onClose}
                   className="flex items-center justify-between p-4 rounded-2xl border border-transparent bg-white"
