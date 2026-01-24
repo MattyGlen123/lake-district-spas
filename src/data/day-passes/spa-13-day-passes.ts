@@ -1,0 +1,108 @@
+import { SpaDayPasses } from '@/types/spa';
+
+export const spa13DayPasses: SpaDayPasses = {
+  spaId: 13, // Whitewater Hotel
+  options: [
+    {
+      id: 'whitewater-luxurious-spa-afternoon-tea',
+      packageName: 'Luxurious Spa With Afternoon Tea',
+      priceGBP: 60,
+      spaDuration: 4,
+      treatmentsIncluded: true,
+      refreshmentsIncluded: false,
+      mealIncluded: true,
+      included: [
+        '4-hour spa facilities access',
+        'Choice of one 30-minute treatment',
+        'Afternoon tea',
+        'Heated indoor pool and outdoor jacuzzi',
+        'Turkish Hamam steam room and sauna',
+      ],
+      description:
+        'Elevate your relaxation with a choice of treatment and afternoon tea, plus full access to our thermal suite.',
+      daysAvailable: 'Monday-Sunday',
+      ageRestriction: '18+',
+      bookingRequired: true,
+      dayPassUrl: 'https://www.whitewater-hotel.co.uk/spa-fitness/newby-bridge-spa/',
+      bookingUrl: 'https://whitewaterhotel.onejourney.travel/spa/days/6199',
+      lastVerified: '2026-01-22',
+    },
+    {
+      id: 'whitewater-pure-pampering',
+      packageName: 'Pure Pampering',
+      priceGBP: 90,
+      spaDuration: 4,
+      treatmentsIncluded: true,
+      refreshmentsIncluded: false,
+      mealIncluded: true,
+      included: [
+        '4-hour spa facilities access',
+        'Elemis full body massage (Swedish or Hot Stone)',
+        'Afternoon tea',
+        'Heated indoor pool and outdoor jacuzzi',
+        'Turkish Hamam steam room and sauna',
+      ],
+      description:
+        'Indulge in a full body massage of your choice with afternoon tea and complete spa access.',
+      daysAvailable: 'Monday-Sunday',
+      ageRestriction: '18+',
+      bookingRequired: true,
+      dayPassUrl: 'https://www.whitewater-hotel.co.uk/spa-fitness/newby-bridge-spa/',
+      bookingUrl: 'https://whitewaterhotel.onejourney.travel/spa/days/6201',
+      lastVerified: '2026-01-22',
+    },
+    {
+      id: 'whitewater-weekday-escape',
+      packageName: 'Weekday Escape',
+      priceGBP: 90,
+      spaDuration: 4,
+      treatmentsIncluded: true,
+      refreshmentsIncluded: false,
+      mealIncluded: true,
+      included: [
+        '4-hour spa facilities access',
+        'Two 30-minute treatments of choice',
+        'Afternoon tea or light lunch',
+        'Heated indoor pool and outdoor jacuzzi',
+        'Turkish Hamam steam room and sauna',
+      ],
+      description:
+        'Unwind midweek with two indulgent treatments and your choice of afternoon tea or light lunch.',
+      daysAvailable: 'Monday-Friday',
+      ageRestriction: '18+',
+      bookingRequired: true,
+      dayPassUrl: 'https://www.whitewater-hotel.co.uk/spa-fitness/newby-bridge-spa/',
+      bookingUrl: 'https://whitewaterhotel.onejourney.travel/spa/days/6200',
+      lastVerified: '2026-01-22',
+    },
+    {
+      id: 'whitewater-couples-retreat',
+      packageName: 'Couples Retreat',
+      priceGBP: 220,
+      pricePerPerson: 110,
+      spaDuration: 4,
+      requiredNumbers: 'Requires 2 people',
+      treatmentsIncluded: true,
+      refreshmentsIncluded: false,
+      mealIncluded: true,
+      included: [
+        '4-hour spa facilities access',
+        'Luxury Mud Rasul treatment per couple',
+        '30-minute Elemis back massage per person',
+        'Afternoon tea',
+        'Heated indoor pool and outdoor jacuzzi',
+        'Turkish Hamam steam room and sauna',
+      ],
+      description:
+        'Take a quiet getaway for two with Luxury Mud Rasul, back massages, and afternoon tea at Cascades Spa.',
+      daysAvailable: 'Monday-Sunday',
+      ageRestriction: '18+',
+      bookingRequired: true,
+      dayPassUrl: 'https://www.whitewater-hotel.co.uk/spa-fitness/newby-bridge-spa/',
+      bookingUrl: 'https://whitewaterhotel.onejourney.travel/spa/days/6202',
+      lastVerified: '2026-01-22',
+    },
+  ],
+};
+
+
