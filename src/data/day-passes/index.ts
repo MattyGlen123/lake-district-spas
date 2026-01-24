@@ -8,6 +8,7 @@ import { spa7DayPasses } from './spa-7-day-passes';
 import { spa9DayPasses } from './spa-9-day-passes';
 import { spa10DayPasses } from './spa-10-day-passes';
 import { spa14DayPasses } from './spa-14-day-passes';
+import { spa15DayPasses } from './spa-15-day-passes';
 import { spa16DayPasses } from './spa-16-day-passes';
 import { spa17DayPasses } from './spa-17-day-passes';
 
@@ -22,6 +23,7 @@ const dayPassesBySpaId: Record<number, SpaDayPasses> = {
   9: spa9DayPasses,
   10: spa10DayPasses,
   14: spa14DayPasses,
+  15: spa15DayPasses,
   16: spa16DayPasses,
   17: spa17DayPasses,
 };
