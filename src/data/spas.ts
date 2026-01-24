@@ -1939,7 +1939,7 @@ Complimentary spa access included for hotel guests, with day passes and annual m
 The indoor heated pool and outdoor jacuzzi overlook River Leven's flowing waters. The thermal circuit includes Turkish Hamam aromatherapy steam room, traditional sauna, and multi-sensory feature shower. Elemis spa treatments complete the wellness offering.
 
 Complimentary Cascades access included for all hotel guests, with 10% discount on spa treatments. No day passes available to public, ensuring intimate atmosphere exclusively for hotel residents. Adults 18+ only throughout spa facilities.`,
-    websiteUrl: 'https://whitewater-hotel.co.uk/spa-fitness/',
+    websiteUrl: 'https://whitewater-hotel.co.uk/spa-fitness/newby-bridge-spa/',
     accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     images: [
       {
