@@ -91,14 +91,8 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
 
               {/* Booking Buttons */}
               {(spa.treatmentBookingUrl || spa.treatmentBookingPhone) && (
-                <div
-                  className={`grid gap-2 ${
-                    spa.treatmentBookingUrl && spa.treatmentBookingPhone
-                      ? 'grid-cols-2'
-                      : 'grid-cols-1'
-                  }`}
-                >
-                  {spa.treatmentBookingUrl && (
+                <div className="grid gap-2 grid-cols-1">
+                  {spa.treatmentBookingUrl ? (
                     <a
                       href={spa.treatmentBookingUrl}
                       target="_blank"
@@ -109,8 +103,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
                       Book Now
                       <ExternalLink className="h-2 w-2" />
                     </a>
-                  )}
-                  {spa.treatmentBookingPhone && (
+                  ) : spa.treatmentBookingPhone ? (
                     <a
                       href={`tel:${spa.treatmentBookingPhone}`}
                       onClick={(e) => e.stopPropagation()}
@@ -118,7 +111,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
                     >
                       Call Now
                     </a>
-                  )}
+                  ) : null}
                 </div>
               )}
             </div>

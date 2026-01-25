@@ -46,7 +46,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
             <h2 className="font-serif text-3xl text-stone-900">Menu</h2>
             <button
               onClick={onClose}
-              className="p-3 bg-stone-50 rounded-full text-stone-400"
+              className="p-3 bg-stone-100 border border-stone-200 rounded-full text-stone-400"
             >
               <X className="h-6 w-6" />
             </button>

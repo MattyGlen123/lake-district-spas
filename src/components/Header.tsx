@@ -34,7 +34,7 @@ const Header = () => {
             {/* Menu Button - Right */}
             <button
               type="button"
-              className="p-3 bg-soft-cream rounded-full text-stone-400"
+              className="p-3 bg-stone-100 border border-stone-200 rounded-full text-stone-400"
               onClick={() => setIsSideMenuOpen(true)}
               aria-label="Open menu"
             >
