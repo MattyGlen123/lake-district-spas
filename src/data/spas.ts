@@ -531,7 +531,7 @@ Spa access is complimentary for all hotel guests and Day spa packages are availa
       outdoorPool: true,
       thermalSuite: true,
     },
-    agePolicy: '18+ to book spa experiences.',
+    agePolicy: '18+',
     relatedSpas: [6, 9],
     treatmentBookingPhone: '017687 88900',
     treatmentBookingUrl:
@@ -654,7 +654,7 @@ Spa access is complimentary for all Brimstone Hotel guests throughout their stay
       outdoorPool: true,
       thermalSuite: true,
     },
-    agePolicy: 'Adults only',
+    agePolicy: '18+',
     relatedSpas: [8, 13],
     treatmentBookingPhone: '015394 38014',
     treatmentBookingUrl:
@@ -1586,7 +1586,7 @@ Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with
       },
       {
         name: 'Age Restriction',
-        details: 'Adults only',
+        details: '18+',
         accessType: 'age-restriction',
       },
     ],
@@ -1601,7 +1601,7 @@ Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with
       outdoorPool: false,
       thermalSuite: true,
     },
-    agePolicy: 'Adults only',
+    agePolicy: '18+',
     relatedSpas: [17, 15],
     treatmentBookingPhone: '01539 532 552',
     treatmentBookingUrl:
