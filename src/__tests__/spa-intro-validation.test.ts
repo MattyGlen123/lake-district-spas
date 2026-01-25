@@ -120,10 +120,14 @@ function validateIntroFacts(spa: Spa) {
     }
   }
   if (intro.includes('hydrotherapy')) {
-    if (
-      !allPoolText.includes('hydrotherapy') &&
-      !allPoolText.includes('vitality')
-    ) {
+    // Allow hydrotherapy mention if it's in pool features, or if there are outdoor pools/hot tubs
+    // (hydrotherapy is a descriptive term that can apply to any pool/hot tub)
+    const hasHydrotherapyInFeatures =
+      allPoolText.includes('hydrotherapy') || allPoolText.includes('vitality');
+    const hasOutdoorPoolsOrHotTub =
+      spa.facilities.outdoorPool ||
+      poolNames.some((n) => n.includes('hot tub') || n.includes('hot-tub'));
+    if (!hasHydrotherapyInFeatures && !hasOutdoorPoolsOrHotTub) {
       errors.push('Mentions "hydrotherapy" but not in pool features');
     }
   }

@@ -1261,8 +1261,8 @@ Spa access is complimentary for all hotel guests with no booking required. Day s
       country: 'GB',
     },
     metaDescription:
-      'Windermere spa featuring two outdoor vitality pools on lakeside terrace. Panoramic lake views and thermal facilities. Perfect for romantic lakeside getaways.',
-    intro: `Built in the early 1900s on the eastern shore of Lake Windermere, Beech Hill Hotel & Spa sits in landscaped gardens with two private jetties offering direct access to England's largest lake. The signature feature is two outdoor vitality spa pools positioned on a lakeside terrace overlooking panoramic Windermere and fell views, rare among Lake District spas.
+      'Windermere spa featuring an outdoor hot tub on the terrace with lake views. Panoramic lake views and thermal facilities. Perfect for romantic lakeside getaways.',
+    intro: `Built in the early 1900s on the eastern shore of Lake Windermere, Beech Hill Hotel & Spa sits in landscaped gardens with two private jetties offering direct access to England's largest lake. The signature feature is an outdoor hot tub positioned on a lakeside terrace overlooking Windermere and fell views, rare among Lake District spas.
 
 The 35ft indoor pool features atmospheric lighting and floor-to-ceiling windows maximising lake vistas. Thermal facilities include a Himalayan sauna and aromatic steam room. Outside, the dual vitality spa pools on the dedicated terrace provide alfresco hydrotherapy with uninterrupted views. Secret gate access leads to the lakeshore for open water swimming from the private beach.
 
@@ -1276,7 +1276,7 @@ Complimentary spa access included for all hotel guests, with day spa packages av
       },
       {
         src: '/images/spas/beech-hill-hotel-spa/lake-district-spas_beech-hill-windermere-vitality-spa-pool.jpg',
-        alt: 'Signature circular vitality spa pool at Beech Hill Hotel and Spa near Windermere featuring dramatic black iridescent mosaic tiles, elevated design with hydrotherapy jets, natural woven pendant lighting, contemporary slate accent walls, one of two outdoor vitality pools with panoramic Lake Windermere views',
+        alt: 'Signature circular vitality spa pool at Beech Hill Hotel and Spa near Windermere featuring dramatic black iridescent mosaic tiles, elevated design with hydrotherapy jets, natural woven pendant lighting, contemporary slate accent walls, one of two vitality pools with panoramic Lake Windermere views',
       },
       {
         src: '/images/spas/beech-hill-hotel-spa/lake-district-spas_beech-hill-windermere-pool-evening.jpg',
@@ -1298,7 +1298,7 @@ Complimentary spa access included for all hotel guests, with day spa packages av
     keyFeatures: [
       'Indoor pool with Lake Windermere views',
       'Himalayan sauna and aromatic steam room',
-      'Two outdoor vitality spa pools on terrace',
+      'Outdoor hot tub on the terrace with lake views',
     ],
     thermalFacilities: [
       { name: 'Himalayan Sauna', details: 'Himalayan sauna' },
@@ -1311,8 +1311,8 @@ Complimentary spa access included for all hotel guests, with day spa packages av
           '35ft indoor pool with atmospheric lighting and Lake Windermere views',
       },
       {
-        name: 'Outdoor Vitality Spa Pools',
-        details: '2 outdoor vitality spa pools on spa terrace with lake views',
+        name: 'Outdoor Hot tub',
+        details: 'Outdoor hot tub on the terrace with lake views',
       },
     ],
     accessPolicy: [
@@ -1365,7 +1365,7 @@ Complimentary spa access included for all hotel guests, with day spa packages av
       iceRoom: false,
       hotTub: true,
       indoorPool: true,
-      outdoorPool: true,
+      outdoorPool: false,
       thermalSuite: true,
     },
     agePolicy: '16+ only for spa facilities',
