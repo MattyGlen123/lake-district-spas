@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { X } from 'lucide-react';
 import { Checkbox } from '@/components/ui/checkbox';
 import { facilityOptions } from '@/data/spas';
-import { DayPassWithSpa } from '@/data/day-passes';
 
 interface DayPassFiltersProps {
   isOpen: boolean;
