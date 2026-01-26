@@ -4,7 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin } from 'lucide-react';
-import { Spa, accessLabelConfig } from '@/types/spa';
+import { Spa } from '@/types/spa';
+import SpaAccessBadges from './SpaAccessBadges';
 
 interface SpaCardProps {
   spa: Spa;
@@ -12,15 +13,6 @@ interface SpaCardProps {
 
 const SpaCard = ({ spa }: SpaCardProps) => {
   const [imageError, setImageError] = useState(false);
-
-  // Sort access labels: hotel badges first, then public (day passes)
-  const sortedAccessLabels = [...spa.accessLabels].sort((a, b) => {
-    const aCategory = accessLabelConfig[a].category;
-    const bCategory = accessLabelConfig[b].category;
-    if (aCategory === 'hotel' && bCategory === 'public') return -1;
-    if (aCategory === 'public' && bCategory === 'hotel') return 1;
-    return 0;
-  });
 
   return (
     <Link href={`/spa/${spa.url}`} className="group block">
@@ -46,33 +38,7 @@ const SpaCard = ({ spa }: SpaCardProps) => {
           <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 via-transparent to-transparent opacity-60" />
 
           {/* Badges at bottom */}
-          <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-2">
-            {sortedAccessLabels.map((label) => {
-              const config = accessLabelConfig[label];
-              const badgeColorMap: Record<string, string> = {
-                'bg-spa-green':
-                  'bg-emerald-50 text-black border border-emerald-200',
-                'bg-spa-purple':
-                  'bg-purple-50 text-black border border-purple-200',
-                'bg-spa-yellow':
-                  'bg-amber-50 text-black border border-amber-200',
-                'bg-spa-red': 'bg-red-50 text-black border border-red-200',
-                'bg-spa-blue': 'bg-blue-50 text-black border border-blue-200',
-              };
-              const badgeClasses =
-                badgeColorMap[config.color] ||
-                'bg-white text-black border border-stone-200';
-
-              return (
-                <div
-                  key={label}
-                  className={`${badgeClasses} px-3 py-1.5 rounded-full text-xs font-semibold`}
-                >
-                  <span>{config.shortLabel}</span>
-                </div>
-              );
-            })}
-          </div>
+          <SpaAccessBadges accessLabels={spa.accessLabels} />
         </div>
 
         {/* Text Content */}

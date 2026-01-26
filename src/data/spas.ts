@@ -1308,11 +1308,11 @@ Complimentary spa access included for all hotel guests, with day spa packages av
       {
         name: 'Indoor Pool',
         details:
-          '35ft indoor pool with atmospheric lighting and Lake Windermere views',
+          '35ft indoor pool with atmospheric lighting',
       },
       {
         name: 'Outdoor Hot tub',
-        details: 'Outdoor hot tub on the terrace with lake views',
+        details: 'Outdoor hot tub on the terrace with views of Lake Windermere',
       },
     ],
     accessPolicy: [

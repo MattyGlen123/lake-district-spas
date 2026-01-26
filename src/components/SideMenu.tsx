@@ -6,10 +6,45 @@ import Link from 'next/link';
 import { X, MapPin, ChevronRight } from 'lucide-react';
 import { spaData } from '@/data/spas';
 import { Spa } from '@/types/spa';
+import { getLocationPagePath } from '@/lib/locationPages';
 
 interface SideMenuProps {
   isOpen: boolean;
   onClose: () => void;
+}
+
+interface LocationHeaderProps {
+  location: string;
+  pathname: string;
+  onClose: () => void;
+}
+
+function LocationHeader({ location, pathname, onClose }: LocationHeaderProps) {
+  const locationPath = getLocationPagePath(location);
+  const isActive = locationPath ? pathname === locationPath : false;
+
+  return (
+    <>
+      <MapPin className="h-4 w-4 text-amber-600 opacity-60" />
+      {locationPath ? (
+        <Link
+          href={locationPath}
+          onClick={onClose}
+          className={`text-[11px] font-black uppercase tracking-[0.3em] ${
+            isActive
+              ? 'text-amber-700'
+              : 'text-stone-400 hover:text-amber-600'
+          }`}
+        >
+          {location}
+        </Link>
+      ) : (
+        <h3 className="text-[11px] font-black uppercase tracking-[0.3em] text-stone-400">
+          {location}
+        </h3>
+      )}
+    </>
+  );
 }
 
 const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
@@ -198,10 +233,11 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
                 <div key={location} className="space-y-6">
                   {/* Location Header */}
                   <div className="flex items-center space-x-4">
-                    <MapPin className="h-4 w-4 text-amber-600 opacity-60" />
-                    <h3 className="text-[11px] font-black uppercase tracking-[0.3em] text-stone-400">
-                      {location}
-                    </h3>
+                    <LocationHeader
+                      location={location}
+                      pathname={pathname}
+                      onClose={onClose}
+                    />
                     <div className="h-px flex-grow bg-stone-100" />
                   </div>
 

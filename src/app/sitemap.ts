@@ -45,6 +45,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   };
 
+  // Location pages entries
+  const locationPages = [
+    {
+      url: `${baseUrl}/spas-in-windermere`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+  ];
+
   // Blog post pages entries
   const blogPosts = getAllBlogPosts().map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
@@ -61,5 +71,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [homepage, aboutPage, partnershipPage, spaDaysPage, blogPage, ...blogPosts, ...spaPages];
+  return [
+    homepage,
+    aboutPage,
+    partnershipPage,
+    spaDaysPage,
+    blogPage,
+    ...blogPosts,
+    ...spaPages,
+    ...locationPages,
+  ];
 }
