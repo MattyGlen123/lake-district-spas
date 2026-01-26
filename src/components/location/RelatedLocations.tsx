@@ -13,7 +13,7 @@ interface RelatedLocationsProps {
 }
 
 export default function RelatedLocations({
-  currentLocation,
+  currentLocation: _currentLocation,
   locations,
 }: RelatedLocationsProps) {
   return (
