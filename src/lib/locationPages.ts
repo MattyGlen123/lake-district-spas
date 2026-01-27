@@ -9,6 +9,7 @@ export const locationPageSlugs: Record<string, string> = {
   Backbarrow: 'backbarrow',
   Bassenthwaite: 'bassenthwaite',
   Borrowdale: 'borrowdale',
+  'Grange-over-Sands': 'grange-over-sands',
   // Add more locations as pages are created:
   // 'Keswick': 'keswick',
   // 'Bowness-on-Windermere': 'bowness-on-windermere',
