@@ -1938,9 +1938,9 @@ Complimentary spa access included for hotel guests, with day passes and annual m
 
 The indoor heated pool and outdoor jacuzzi overlook River Leven's flowing waters. The thermal circuit includes Turkish Hamam aromatherapy steam room, traditional sauna, and multi-sensory feature shower. Elemis spa treatments complete the wellness offering.
 
-Complimentary Cascades access included for all hotel guests, with 10% discount on spa treatments. No day passes available to public, ensuring intimate atmosphere exclusively for hotel residents. Adults 18+ only throughout spa facilities.`,
+Complimentary Cascades access included for all hotel guests, with 10% discount on spa treatments. Day passes are available to public with Adults 18+ only throughout spa facilities.`,
     websiteUrl: 'https://whitewater-hotel.co.uk/spa-fitness/newby-bridge-spa/',
-    accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
     images: [
       {
         src: '/images/spas/whitewater-hotel-leisure-club/lake-district-spas_whitewater-backbarrow-cascades-pool.jpg',
@@ -1983,12 +1983,12 @@ Complimentary Cascades access included for all hotel guests, with 10% discount o
     accessPolicy: [
       {
         name: 'Hotel Guests',
-        details: 'Free spa access included, 10% discount on treatments',
+        details: 'Free spa access included',
         accessType: 'hotel',
       },
       {
         name: 'Day Passes',
-        details: 'Not available to public',
+        details: 'Day passes available',
         accessType: 'day-pass',
       },
       {
@@ -1998,7 +1998,7 @@ Complimentary Cascades access included for all hotel guests, with 10% discount o
       },
       {
         name: 'Age Restriction',
-        details: '18+ only (no one under 18 allowed for spa treatments)',
+        details: '18+',
         accessType: 'age-restriction',
       },
       {

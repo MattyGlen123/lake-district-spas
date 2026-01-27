@@ -187,18 +187,25 @@ function validateIntroFacts(spa: Spa) {
         intro.includes('hotel guests only') ||
         intro.includes('exclusively for hotel'))) ||
     intro.includes('exclusive to hotel guests');
-  if (mentionsDayPass && !dayPassNotAvailable) {
+  // Check for "no day passes available to public" - this means hotel guests can get day passes but public cannot
+  const dayPassNotAvailableToPublic =
+    intro.includes('no day pass') &&
+    (intro.includes('to public') || intro.includes('to the public'));
+  if (mentionsDayPass && !dayPassNotAvailable && !dayPassNotAvailableToPublic) {
     if (!spa.accessLabels.includes('day-passes-available')) {
       errors.push('Mentions day passes but day-passes-available not set');
     }
   }
-  if (dayPassNotAvailable) {
+  // Only error if explicitly says no day passes at all (not just "to public")
+  if (dayPassNotAvailable && !dayPassNotAvailableToPublic) {
     if (spa.accessLabels.includes('day-passes-available')) {
       errors.push(
         'Mentions day passes not available but day-passes-available is set'
       );
     }
   }
+  // If says "no day passes to public" but has day-passes-available, that's valid
+  // (day passes might be available to hotel guests or through packages)
 
   // Validate age policy if mentioned (handles 16+, 18+, adults-only)
   // Check if 16+ is mentioned for specific facilities (hot tub, sauna) vs overall policy
