@@ -28,7 +28,7 @@ export default function LocationHero({
           </span>
         </div>
 
-        <h1 className="font-serif text-5xl md:text-8xl text-stone-900 tracking-tight leading-[1.1] mb-8">
+        <h1 className="font-serif text-5xl md:text-7xl text-stone-900 tracking-tight leading-[1.1] mb-8">
           {titleLine1} <br />
           <span className="italic font-medium text-emerald-950">{titleLine2}</span>
         </h1>

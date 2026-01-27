@@ -34,7 +34,7 @@ export default function RelatedLocations({
           {locations.map((location) => (
             <Link
               key={location.slug}
-              href={`/spas-in-${location.slug}/`}
+              href={`/location/spas-in-${location.slug}/`}
               className="group bg-white rounded-2xl p-6 border border-stone-200 shadow-sm"
             >
               <div className="flex items-start justify-between">

@@ -4,6 +4,8 @@
  */
 export const locationPageSlugs: Record<string, string> = {
   Windermere: 'windermere',
+  Ambleside: 'ambleside',
+  'Appleby-in-Westmorland': 'appleby-in-westmorland',
   // Add more locations as pages are created:
   // 'Keswick': 'keswick',
   // 'Bowness-on-Windermere': 'bowness-on-windermere',
@@ -25,6 +27,6 @@ export function getLocationPageSlug(location: string): string | null {
  */
 export function getLocationPagePath(location: string): string | null {
   const slug = getLocationPageSlug(location);
-  return slug ? `/spas-in-${slug}` : null;
+  return slug ? `/location/spas-in-${slug}` : null;
 }
 

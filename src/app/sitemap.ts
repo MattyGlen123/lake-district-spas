@@ -48,7 +48,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Location pages entries
   const locationPages = [
     {
-      url: `${baseUrl}/spas-in-windermere`,
+      url: `${baseUrl}/location/spas-in-windermere`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/location/spas-in-ambleside`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/location/spas-in-appleby-in-westmorland`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
