@@ -65,33 +65,33 @@ Spa access is complimentary for suite bookings (2 hours per night), while standa
       },
       {
         name: 'Herbal Sauna',
-        details: '65-75°C infused with herbs',
+        details: 'Sauna at 65-75°C infused with herbs',
       },
       { name: 'Laconium', details: 'Roman bath style' },
       {
         name: 'Aroma Steam Room',
-        details: '45°C at 95% humidity, essential oils',
+        details: 'Aroma Steam room at 45°C at 95% humidity, essential oils',
       },
       {
         name: 'Salt Steam Room',
-        details: '40°C at 95% humidity, halotherapy',
+        details: 'Salt Steam room at 40°C at 95% humidity, halotherapy',
       },
-      { name: 'Heated Loungers', details: 'Relaxation in thermal suite' },
+      { name: 'Heated Loungers', details: 'Heated loungers in thermal suite' },
       {
         name: 'Ice Fountain',
-        details: 'Cool down post-sauna, boost circulation',
+        details: 'Ice Fountain to cool down post-sauna, boost circulation',
       },
-      { name: 'Cold Drench Bucket', details: 'Outdoor cool down after sauna' },
+      { name: 'Cold Drench Bucket', details: 'Cold Drench outdoor cool down after sauna' },
       {
         name: 'Experience Showers',
-        details: 'Forest Rinse, Tropical Rain, Thermal Sensation',
+        details: 'Experience Showers with Forest Rinse, Tropical Rain, Thermal Sensation',
       },
     ],
     poolFeatures: [
       {
         name: 'Infinity-Edge Vitality Pool',
         details:
-          'Underwater bubble loungers, volcano fountain, hydromassage neck jets',
+          'Infinity pool with Underwater bubble loungers, volcano fountain, hydromassage neck jets',
       },
     ],
     accessPolicy: [
