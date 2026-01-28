@@ -9,7 +9,7 @@ import { spaData } from '@/data/spas';
 export const metadata: Metadata = {
   title: 'Spas in Ambleside | Lake District Spas',
   description:
-    "Discover the exclusive spa in Ambleside, the Lake District's walking capital. Waterfall Spa offers intimate wellness for hotel guests in the heart of the village.",
+    "Discover the exclusive spa in Ambleside, the Lake District's walking capital. Waterfall Spa offers intimate wellness for hotel guests.",
 };
 
 // Filter spas for Ambleside

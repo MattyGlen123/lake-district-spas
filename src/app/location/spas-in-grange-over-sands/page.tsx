@@ -10,7 +10,7 @@ import { spaData } from '@/data/spas';
 export const metadata: Metadata = {
   title: 'Spas in Grange-over-Sands | Lake District Spas',
   description:
-    'Discover spa experiences in Grange-over-Sands, an Edwardian coastal town on Morecambe Bay. Two Victorian spa hotels offer pools, thermal suites and treatments with sweeping bay views.',
+    'Discover spas in Grange-over-Sands, an Edwardian coastal town on Morecambe Bay. Two Victorian spa hotels offer pools, thermal suites and treatments with bay views.',
 };
 
 // Filter spas for Grange-over-Sands

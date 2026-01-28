@@ -10,7 +10,7 @@ import { spaData } from '@/data/spas';
 export const metadata: Metadata = {
   title: 'Spas in Penrith | Lake District Spas',
   description:
-    "Discover the North Lakes Hotel & Spa in Penrith, the gateway to Ullswater and the northern Lake District. Pool, thermal facilities and Caudalie treatments just off the M6.",
+    'Discover North Lakes Hotel & Spa in Penrith, gateway to Ullswater and the northern Lake District. Pool, thermal facilities and Caudalie treatments just off the M6.',
 };
 
 // Filter spas for Penrith

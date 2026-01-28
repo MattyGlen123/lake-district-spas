@@ -10,7 +10,7 @@ import { spaData } from '@/data/spas';
 export const metadata: Metadata = {
   title: 'Spas in Borrowdale | Lake District Spas',
   description:
-    "Discover spa experiences in Borrowdale, one of the Lake District's most dramatic valleys. The Falls Spa at Lodore Falls Hotel features a 16-metre infinity pool overlooking Derwentwater.",
+    "Discover Borrowdale spas in the Lake District's most dramatic valley. Lodore Falls Hotel features a 16-metre infinity pool overlooking Derwentwater.",
 };
 
 // Filter spas for Borrowdale

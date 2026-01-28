@@ -10,7 +10,7 @@ import { spaData } from '@/data/spas';
 export const metadata: Metadata = {
   title: 'Spas in Bassenthwaite | Lake District Spas',
   description:
-    'Discover Armathwaite Hall Spa on Bassenthwaite Lake. Outdoor infinity pools, Amethyst Crystal Cave steam room, and 400 acres of private deer park in the northern Lake District.',
+    'Discover Armathwaite Hall Spa on Bassenthwaite Lake. Outdoor infinity pools, Amethyst Crystal Cave steam room, and 400 acres of deer park in the northern Lake District.',
 };
 
 // Filter spas for Bassenthwaite
