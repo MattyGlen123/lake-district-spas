@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { X, MapPin, ChevronRight } from 'lucide-react';
@@ -31,9 +31,7 @@ function LocationHeader({ location, pathname, onClose }: LocationHeaderProps) {
           href={locationPath}
           onClick={onClose}
           className={`text-[11px] font-black uppercase tracking-[0.3em] ${
-            isActive
-              ? 'text-amber-700'
-              : 'text-stone-400 hover:text-amber-600'
+            isActive ? 'text-amber-700' : 'text-stone-400'
           }`}
         >
           {location}
@@ -49,6 +47,21 @@ function LocationHeader({ location, pathname, onClose }: LocationHeaderProps) {
 
 const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
   const pathname = usePathname();
+
+  // Disable body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      // Save the current overflow value
+      const originalOverflow = document.body.style.overflow;
+      // Disable scrolling
+      document.body.style.overflow = 'hidden';
+      
+      // Cleanup: restore original overflow when menu closes
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isOpen]);
 
   // Group spas by location
   const groupedSpas = useMemo(() => {
