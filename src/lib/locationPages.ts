@@ -7,6 +7,7 @@ export const locationPageSlugs: Record<string, string> = {
   Ambleside: 'ambleside',
   'Appleby-in-Westmorland': 'appleby-in-westmorland',
   Backbarrow: 'backbarrow',
+  'Newby Bridge': 'newby-bridge',
   Bassenthwaite: 'bassenthwaite',
   Borrowdale: 'borrowdale',
   'Grange-over-Sands': 'grange-over-sands',
