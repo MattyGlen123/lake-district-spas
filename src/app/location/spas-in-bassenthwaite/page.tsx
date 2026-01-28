@@ -40,7 +40,7 @@ The treatment menu spans 34 experiences, with thoughtful touches that acknowledg
 Spa access comes complimentary for hotel guests, while day visitors can choose from packages starting at £70 for a morning Sunrise Spa through to full-day experiences with treatments and lunch. For couples seeking the combination of country house grandeur and contemporary wellness, Bassenthwaite offers something the busier central Lakes cannot match: space, silence, and the rare pleasure of deer grazing outside your window.`;
 
 const relatedLocations = [
-  { name: 'Keswick', slug: 'keswick', distance: '6 miles south' },
+  { name: 'Ullswater', slug: 'ullswater', distance: '20 miles east' },
   { name: 'Borrowdale', slug: 'borrowdale', distance: '10 miles south' },
   { name: 'Penrith', slug: 'penrith', distance: '18 miles east' },
 ];

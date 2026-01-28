@@ -40,7 +40,7 @@ Unlike the busier Lake District destinations, Appleby rewards those willing to v
 const relatedLocations = [
   { name: 'Penrith', slug: 'penrith', distance: '12 miles north' },
   { name: 'Ullswater', slug: 'ullswater', distance: '15 miles northwest' },
-  { name: 'Kendal', slug: 'kendal', distance: '20 miles southwest' },
+  { name: 'Bassenthwaite', slug: 'bassenthwaite', distance: '30 miles northwest' },
 ];
 
 export default function ApplebySpasPage() {
