@@ -1608,6 +1608,129 @@ Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with
       'https://netherwood-hotel.onejourney.travel/spa/treatments',
   },
   {
+    id: 18,
+    url: 'lakes-hotel-spa',
+    name: 'Lakes Hotel & Spa',
+    location: 'Bowness-on-Windermere',
+    address: {
+      street: 'Lake Road',
+      locality: 'Bowness-on-Windermere',
+      region: 'Cumbria',
+      postcode: 'LA23 3HH',
+      country: 'GB',
+    },
+    metaDescription:
+      'Bowness spa with indoor pool, two feature hot tubs, sauna, steam room and cold plunge pool. Elemis treatments and poolside bar with views of Lake Windermere.',
+    intro: `Lakes Hotel & Spa offers one of the most unique spa experiences in the Lake District, featuring atmospheric mood lighting and a poolside bar where guests can enjoy prosecco while relaxing. The spa centres around a main pool with water features and a signature "secret button" that makes the entire pool bubble.
+  
+  The thermal facilities include two feature hot tubs, a traditional sauna, steam room, cold plunge pool, and poolside showers. Treatment rooms offer Elemis products with therapies ranging from deep tissue massage to BIOTEC facial technology treatments.
+  
+  Spa access is complimentary for all hotel and apartment guests. The spa operates extended hours from 8am to 10:30pm, with family-friendly swimming available until 2pm for children aged 16 and under (supervised). After 2pm, the spa becomes an adults-only environment.`,
+    websiteUrl: 'https://lakeshotel.co.uk/spa/',
+    accessLabels: ["free-for-all-guests", "no-day-passes-available"],
+    images: [
+      {
+        src: '/images/spas/lakes-hotel-spa/lake-district-spas_lakes-hotel-bowness-main-pool-evening.jpg',
+        alt: 'Atmospheric main swimming pool at Lakes Hotel and Spa in Bowness-on-Windermere at dusk featuring dramatic blue LED mood lighting, contemporary iridescent mosaic architectural columns, signature bubble pool with secret button feature, extended evening hours creating moody Lake District spa experience',
+      },
+      {
+        src: '/images/spas/lakes-hotel-spa/lake-district-spas_lakes-hotel-bowness-hot-tubs-poolside-bar.jpg',
+        alt: 'Signature dual feature hot tubs at Lakes Hotel and Spa Bowness-on-Windermere at blue hour, dramatic blue LED underwater lighting with iridescent mosaic columns, poolside bar visible in background with warm amber lighting, unique prosecco poolside bar experience near Lake Windermere in the Lake District',
+      },
+      {
+        src: '/images/spas/lakes-hotel-spa/lake-district-spas_lakes-hotel-bowness-poolside-pod-evening.jpg',
+        alt: 'Atmospheric poolside cocoon pod at Lakes Hotel and Spa in Bowness-on-Windermere featuring dramatic blue and purple mood lighting, contemporary woven pod seating with cushions beside turquoise pool waters with cascade features, unique evening spa ambiance in Lake District hotel spa',
+      },
+      {
+        src: '/images/spas/lakes-hotel-spa/lake-district-spas_lakes-hotel-bowness-elemis-facial-treatment.jpg',
+        alt: 'Relaxing Elemis facial treatment at Lakes Hotel and Spa in Bowness-on-Windermere, professional therapist performing gentle facial massage therapy with warm candlelit atmosphere and red flower petals, luxury skincare treatments near Lake Windermere in the Lake District',
+      },
+    ],
+    keyFeatures: [
+      'Two feature hot tubs',
+      'Poolside bar with prosecco',
+      'Family-friendly morning swimming',
+    ],
+    thermalFacilities: [
+      {
+        name: 'Sauna',
+        details: 'Traditional sauna for deep heat relaxation',
+      },
+      {
+        name: 'Steam Room',
+        details: 'Steam room for detoxification and respiratory benefits',
+      },
+      {
+        name: 'Cold Plunge Pool',
+        details: 'Cold plunge pool for contrast therapy and circulation',
+      },
+      {
+        name: 'Poolside Showers',
+        details: 'Refreshing poolside showers',
+      },
+    ],
+    poolFeatures: [
+      {
+        name: 'Main Pool',
+        details:
+          'Indoor pool with water features and signature bubble function activated by secret button',
+      },
+      {
+        name: 'Feature Hot Tubs',
+        details:
+          'Two feature hot tubs for relaxation with atmospheric mood lighting',
+      },
+    ],
+    accessPolicy: [
+      {
+        name: 'Hotel Guests',
+        details: 'Free spa access for all hotel and apartment guests',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Passes',
+        details: 'Spa days not available',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Pre-booking',
+        details: 'Treatments require advance booking',
+        accessType: 'general',
+      },
+      {
+        name: 'Age Restriction',
+        details:
+          'Under 16s welcome 8am-2pm (supervised). Adults only after 2pm',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Spa Hours',
+        details: '8am-10:30pm (last pool entry 9:30pm)',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Child Policy',
+        details: 'Maximum 6 children in pool at one time, must be supervised by adult 18+',
+        accessType: 'age-restriction',
+      },
+    ],
+    facilities: {
+      infraredSauna: false,
+      sauna: true,
+      steamRoom: true,
+      iceRoom: false,
+      hotTub: true,
+      indoorPool: true,
+      outdoorPool: false,
+      thermalSuite: true,
+      coldPlunge: true,
+    },
+    agePolicy: 'Kids welcome from 8am-2pm.<br/> Adults only after 2pm.',
+    relatedSpas: [6, 7],
+    treatmentBookingPhone: '015394 42211',
+    treatmentBookingUrl: 'https://lakeshotel.co.uk/spa/treatments/',
+  },
+  {
     id: 17,
     url: 'grange-hotel',
     name: 'Grange Hotel',

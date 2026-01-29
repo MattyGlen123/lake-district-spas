@@ -65,7 +65,12 @@ export default function QuickFactsBar({ spa }: QuickFactsBarProps) {
                 Age Policy
               </p>
               <p className="text-sm font-semibold text-stone-800">
-                {spa.agePolicy}
+                {spa.agePolicy.split(/<br\s*\/?>/i).map((line, index, array) => (
+                  <span key={index}>
+                    {line}
+                    {index < array.length - 1 && <br />}
+                  </span>
+                ))}
               </p>
             </div>
           </div>

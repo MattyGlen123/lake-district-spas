@@ -8,10 +8,10 @@ describe('Spa Data Validation', () => {
     });
 
     it('should have unique spas', () => {
-      expect(spaData.length).toBe(17);
+      expect(spaData.length).toBe(18);
       const ids = spaData.map((spa) => spa.id);
       const uniqueIds = new Set(ids);
-      expect(uniqueIds.size).toBe(17);
+      expect(uniqueIds.size).toBe(18);
     });
 
     it('each spa should have all required fields', () => {
@@ -274,11 +274,11 @@ describe('Spa Data Validation', () => {
       expect(uniqueUrls.size).toBe(urls.length);
     });
 
-    it('should have sequential numeric IDs from 1 to 17', () => {
+    it('should have sequential numeric IDs from 1 to 18', () => {
       const ids = spaData.map((spa) => spa.id).sort((a, b) => a - b);
       expect(ids[0]).toBe(1);
-      expect(ids[ids.length - 1]).toBe(17);
-      expect(ids.length).toBe(17);
+      expect(ids[ids.length - 1]).toBe(18);
+      expect(ids.length).toBe(18);
       // Check they're sequential
       ids.forEach((id, index) => {
         expect(id).toBe(index + 1);
@@ -293,7 +293,7 @@ describe('Spa Data Validation', () => {
         spa.relatedSpas.forEach((relatedId) => {
           expect(typeof relatedId).toBe('number');
           expect(relatedId).toBeGreaterThanOrEqual(1);
-          expect(relatedId).toBeLessThanOrEqual(17);
+          expect(relatedId).toBeLessThanOrEqual(18);
           expect(relatedId).not.toBe(spa.id); // Should not reference itself
           // Verify the related spa exists
           const relatedSpa = spaData.find((s) => s.id === relatedId);

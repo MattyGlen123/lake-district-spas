@@ -346,7 +346,8 @@ describe('Spa Filtering Logic', () => {
 
       result.forEach((spa) => {
         expect(spa.facilities.sauna).toBe(true);
-        expect(spa.facilities.iceRoom).toBe(true);
+        // iceRoom filter uses OR logic (iceRoom OR coldPlunge)
+        expect(spa.facilities.iceRoom || spa.facilities.coldPlunge).toBe(true);
         expect(spa.facilities.hotTub).toBe(true);
       });
     });
@@ -534,10 +535,11 @@ describe('Spa Filtering Logic', () => {
 
       // If we get results, all spas should have all facilities
       // Note: For pools, OR logic applies - spa needs either indoorPool OR outdoorPool
+      // Note: For iceRoom, OR logic applies - spa needs either iceRoom OR coldPlunge
       result.forEach((spa) => {
         const poolFilters = ['indoorPool', 'outdoorPool'];
         const otherFacilities = allFacilities.filter(
-          (f) => !poolFilters.includes(f)
+          (f) => !poolFilters.includes(f) && f !== 'iceRoom'
         );
 
         // Check pools with OR logic
@@ -550,6 +552,11 @@ describe('Spa Filtering Logic', () => {
             return spa.facilities[poolKey];
           });
           expect(hasAnyPool).toBe(true);
+        }
+
+        // Check iceRoom with OR logic (iceRoom OR coldPlunge)
+        if (allFacilities.includes('iceRoom')) {
+          expect(spa.facilities.iceRoom || spa.facilities.coldPlunge).toBe(true);
         }
 
         // Check other facilities with AND logic
@@ -660,7 +667,8 @@ describe('Spa Filtering Logic', () => {
       result.forEach((spa) => {
         expect(spa.facilities.sauna).toBe(true);
         expect(spa.facilities.steamRoom).toBe(true);
-        expect(spa.facilities.iceRoom).toBe(true);
+        // iceRoom filter uses OR logic (iceRoom OR coldPlunge)
+        expect(spa.facilities.iceRoom || spa.facilities.coldPlunge).toBe(true);
       });
     });
 
