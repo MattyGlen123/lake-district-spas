@@ -131,6 +131,11 @@ Spa access is complimentary for suite bookings (2 hours per night), while standa
     relatedSpas: [5, 2],
     treatmentBookingPhone: '017687 87704',
     treatmentBookingUrl: 'https://lodorefallsspa.try.be/',
+    spaAccessForHotelGuest: {
+      durationHours: 2,
+      weekdayPriceGBP: 35,
+      weekendPriceGBP: 40,
+    },
   },
   {
     id: 7,

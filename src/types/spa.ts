@@ -26,6 +26,15 @@ export interface AccessPolicy {
     | 'spa-hours';
 }
 
+export interface SpaAccessForHotelGuest {
+  /** Duration of spa access in hours (e.g., 2, 3, 4) */
+  durationHours?: number;
+  /** Price per person for weekday access (Monday-Thursday) */
+  weekdayPriceGBP?: number;
+  /** Price per person for weekend access (Friday-Sunday) */
+  weekendPriceGBP?: number;
+}
+
 export type TreatmentCategory =
   | 'Massage Therapies'
   | 'Facial Treatments'
@@ -86,6 +95,7 @@ export interface Spa {
   relatedSpas: number[];
   treatmentBookingUrl?: string;
   treatmentBookingPhone?: string;
+  spaAccessForHotelGuest?: SpaAccessForHotelGuest;
 }
 
 /**

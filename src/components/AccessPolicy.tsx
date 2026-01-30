@@ -27,9 +27,8 @@ export default function AccessPolicy({ spa }: AccessPolicyProps) {
   }
 
   return (
-    <div className="py-32 container mx-auto px-4 md:px-8">
-      <section id="access" className="container mx-auto">
-        <div className="flex flex-col md:flex-row gap-12">
+    <section id="access" className="py-32">
+      <div className="flex flex-col md:flex-row gap-12">
           {/* Left column - Intro */}
           <div className="md:w-1/3">
             <div className="flex items-center space-x-4 mb-6">
@@ -44,6 +43,20 @@ export default function AccessPolicy({ spa }: AccessPolicyProps) {
             <p className="text-stone-500 text-sm font-light leading-relaxed">
               Our directory helps you navigate the specific guest and public
               policies of Lake District hotel spas.
+              {spa.url === 'lodore-falls-spa' && (
+                <>
+                  {' '}
+                  For detailed information about spa access, time slots, and
+                  booking procedures, see our{' '}
+                  <a
+                    href="#faq"
+                    className="text-stone-900 font-semibold underline"
+                  >
+                    FAQs
+                  </a>
+                  .
+                </>
+              )}
             </p>
           </div>
 
@@ -69,7 +82,6 @@ export default function AccessPolicy({ spa }: AccessPolicyProps) {
             ))}
           </div>
         </div>
-      </section>
-    </div>
+    </section>
   );
 }

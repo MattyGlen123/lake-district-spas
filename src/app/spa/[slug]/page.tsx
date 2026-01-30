@@ -16,9 +16,12 @@ import AccessPolicy from '@/components/AccessPolicy';
 import BookVisitCTA from '@/components/BookVisitCTA';
 import SpaNavigation from '@/components/SpaNavigation';
 import RelatedSpas from '@/components/RelatedSpas';
+import FAQs, { generateFAQSchema } from '@/components/FAQs';
+import { HelpCircle } from 'lucide-react';
 import { Spa } from '@/types/spa';
 import { spaData } from '@/data/spas';
 import { generateSpaSchema } from '@/utils/generateSpaSchema';
+import { getFAQsBySpaId } from '@/data/faqs';
 
 // Generate static params for all spas at build time
 export async function generateStaticParams() {
@@ -91,6 +94,10 @@ export default function SpaDetailPage({
   }
 
   const schemaData = generateSpaSchema(spa);
+  
+  // Get FAQs for this spa
+  const faqs = getFAQsBySpaId(spa.id);
+  const faqSchema = faqs.length > 0 ? generateFAQSchema(faqs) : null;
 
   return (
     <div className="min-h-screen bg-background">
@@ -98,6 +105,12 @@ export default function SpaDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <Header />
 
       <main>
@@ -113,13 +126,24 @@ export default function SpaDetailPage({
           <PoolFeatures spa={spa} />
           <DayPasses spa={spa} />
           <Treatments spa={spa} />
+          <AccessPolicy spa={spa} />
         </div>
-
-        <AccessPolicy spa={spa} />
 
         <BookVisitCTA spa={spa} />
         <SpaNavigation currentSpa={spa} />
         <RelatedSpas spa={spa} />
+        
+        {faqs.length > 0 && (
+          <div className="container mx-auto px-4 md:px-8">
+            <FAQs
+              id="faq"
+              title="Expert Guidance"
+              subtitle="Common questions about navigating the Lake District's premier wellness retreats."
+              icon={HelpCircle}
+              faqs={faqs}
+            />
+          </div>
+        )}
       </main>
 
       <Footer />

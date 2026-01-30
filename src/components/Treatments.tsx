@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { ChevronDown, Clock, Tag, ExternalLink } from 'lucide-react';
 import { Spa, TreatmentCategory, Treatment } from '@/types/spa';
 import { getTreatmentsBySpaId } from '@/data/treatments/index';
+import { getFAQsBySpaId } from '@/data/faqs';
 
 interface TreatmentsProps {
   spa: Spa;
@@ -171,6 +173,10 @@ export default function Treatments({ spa }: TreatmentsProps) {
     brandText = `, featuring ${brands[0]} products`;
   }
 
+  // Check if spa has FAQs
+  const spaFAQs = getFAQsBySpaId(spa.id);
+  const hasFAQs = spaFAQs.length > 0;
+
   return (
     <section
       id="treatments"
@@ -185,16 +191,28 @@ export default function Treatments({ spa }: TreatmentsProps) {
           <h2 className="font-serif text-5xl md:text-6xl text-stone-900 mb-8 leading-tight">
             Treatments
           </h2>
-          <div className="h-px w-24 bg-amber-200 mx-auto mb-10" />
-          <p className="text-stone-600 text-lg md:text-xl font-light leading-relaxed">
+          <div className="h-px w-24 bg-amber-300 mx-auto mb-10" />
+          <p className="text-stone-600 text-lg font-light leading-relaxed">
             Explore {spa.name}&apos;s curated menu of{' '}
-            <strong className="text-stone-800">
+            
               {totalTreatments} luxury therapies across {categoryCount}{' '}
               categories
               {brandText}
-            </strong>
+            
             . From rejuvenating massages to revitalizing facial treatments, each
             experience is designed to restore balance and enhance wellbeing.
+            {hasFAQs && (
+              <>
+                {' '}Book in advance, see our{' '}
+                <Link
+                  href="#faq"
+                  className="text-stone-900 underline"
+                >
+                  FAQs
+                </Link>
+                {' '}for details.
+              </>
+            )}
           </p>
         </div>
 

@@ -5,10 +5,12 @@ import {
   ShieldCheck,
   Calendar,
   ChevronDown,
+  HelpCircle,
 } from 'lucide-react';
 import { Spa } from '@/types/spa';
 import { getTreatmentsBySpaId } from '@/data/treatments/index';
 import { getDayPassOptionsBySpaId } from '@/data/day-passes';
+import { getFAQsBySpaId } from '@/data/faqs';
 
 interface JumpToSectionProps {
   spa: Spa;
@@ -70,6 +72,16 @@ export default function JumpToSection({ spa }: JumpToSectionProps) {
     label: 'Book',
     icon: Calendar,
   });
+
+  // FAQs
+  const spaFAQs = getFAQsBySpaId(spa.id);
+  if (spaFAQs.length > 0) {
+    jumpLinks.push({
+      id: 'faq',
+      label: 'FAQs',
+      icon: HelpCircle,
+    });
+  }
 
   if (jumpLinks.length === 0) {
     return null;
