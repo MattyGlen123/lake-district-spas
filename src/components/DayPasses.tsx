@@ -40,7 +40,8 @@ export default function DayPasses({ spa }: DayPassesProps) {
           {dayPassOptions.map((option) => (
             <article
               key={option.id}
-              className="bg-white py-6 px-4 rounded-3xl border border-stone-200 shadow-lg flex flex-col"
+              id={option.id}
+              className="bg-white py-6 px-4 rounded-3xl border border-stone-200 shadow-lg flex flex-col scroll-mt-32"
             >
               <div className="flex items-start justify-between gap-3 mb-8">
                 <div className="flex flex-col items-start">

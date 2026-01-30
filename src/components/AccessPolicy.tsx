@@ -1,5 +1,6 @@
 import { CreditCard, Bed, Clock, Info, ShieldAlert } from 'lucide-react';
 import { Spa } from '@/types/spa';
+import { getFAQsBySpaId } from '@/data/faqs';
 
 interface AccessPolicyProps {
   spa: Spa;
@@ -43,14 +44,14 @@ export default function AccessPolicy({ spa }: AccessPolicyProps) {
             <p className="text-stone-500 text-sm font-light leading-relaxed">
               Our directory helps you navigate the specific guest and public
               policies of Lake District hotel spas.
-              {spa.url === 'lodore-falls-spa' && (
+              {getFAQsBySpaId(spa.id).length > 0 && (
                 <>
                   {' '}
                   For detailed information about spa access, time slots, and
                   booking procedures, see our{' '}
                   <a
                     href="#faq"
-                    className="text-stone-900 font-semibold underline"
+                    className="text-stone-900 underline"
                   >
                     FAQs
                   </a>

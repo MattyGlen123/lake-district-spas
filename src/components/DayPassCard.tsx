@@ -15,7 +15,10 @@ export default function DayPassCard({ dayPass, spa }: DayPassCardProps) {
     });
 
   return (
-    <article className="bg-white rounded-3xl border border-stone-200 shadow-lg flex flex-col overflow-hidden">
+    <article
+      id={dayPass.id}
+      className="bg-white rounded-3xl border border-stone-200 shadow-lg flex flex-col overflow-hidden scroll-mt-32"
+    >
       {/* Spa Header */}
       <Link
         href={`/spa/${spa.url}`}

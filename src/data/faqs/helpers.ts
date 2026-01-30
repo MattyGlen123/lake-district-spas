@@ -1,5 +1,6 @@
 import { Spa } from '@/types/spa';
 import { getTreatmentsBySpaId } from '@/data/treatments';
+import { getDayPassOptionsBySpaId } from '@/data/day-passes';
 
 /**
  * Get spa access duration in hours for hotel guests
@@ -130,5 +131,60 @@ export function getTreatmentBrandsText(spaId: number, maxBrands: number = 2): st
  */
 export function getAgePolicy(spa: Spa): string | null {
   return spa.agePolicy ?? null;
+}
+
+/**
+ * Get a day pass option by its ID
+ * @param spaId - The spa ID
+ * @param dayPassId - The day pass ID
+ * @returns Day pass option, or null if not found
+ */
+export function getDayPassById(spaId: number, dayPassId: string) {
+  const dayPasses = getDayPassOptionsBySpaId(spaId);
+  return dayPasses.find((pass) => pass.id === dayPassId) || null;
+}
+
+/**
+ * Get formatted price for a day pass (uses pricePerPerson if available, otherwise priceGBP)
+ * @param spaId - The spa ID
+ * @param dayPassId - The day pass ID
+ * @returns Formatted price string (e.g., "£140"), or null if not found
+ */
+export function getDayPassPrice(spaId: number, dayPassId: string): string | null {
+  const dayPass = getDayPassById(spaId, dayPassId);
+  if (!dayPass) return null;
+  
+  const price = dayPass.pricePerPerson ?? dayPass.priceGBP;
+  return `£${price}`;
+}
+
+/**
+ * Get formatted duration for a day pass
+ * @param spaId - The spa ID
+ * @param dayPassId - The day pass ID
+ * @returns Formatted duration string (e.g., "2 hour", "3 hour"), or null if not found
+ */
+export function getDayPassDuration(spaId: number, dayPassId: string): string | null {
+  const dayPass = getDayPassById(spaId, dayPassId);
+  if (!dayPass) return null;
+  
+  return `${dayPass.spaDuration} hour${dayPass.spaDuration !== 1 ? 's' : ''}`;
+}
+
+/**
+ * Get formatted treatment duration from treatment data
+ * @param spaId - The spa ID
+ * @param treatmentName - Partial name to match (e.g., "50 minute" treatments)
+ * @returns Formatted duration string (e.g., "50 minute"), or null if not found
+ */
+export function getTreatmentDuration(spaId: number, treatmentName: string): string | null {
+  const treatments = getTreatmentsBySpaId(spaId);
+  const treatment = treatments.find((t) => 
+    t.name.toLowerCase().includes(treatmentName.toLowerCase()) ||
+    t.duration.toLowerCase().includes(treatmentName.toLowerCase())
+  );
+  
+  if (!treatment) return null;
+  return treatment.duration;
 }
 
