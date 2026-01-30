@@ -15,9 +15,9 @@ export const locationPageSlugs: Record<string, string> = {
   'Great Langdale': 'great-langdale',
   Penrith: 'penrith',
   Ullswater: 'ullswater',
+  'Bowness-on-Windermere': 'bowness-on-windermere',
   // Add more locations as pages are created:
   // 'Keswick': 'keswick',
-  // 'Bowness-on-Windermere': 'bowness-on-windermere',
   // etc.
 };
 
