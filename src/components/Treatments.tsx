@@ -92,9 +92,20 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
               </p>
 
               {/* Booking Buttons */}
-              {(spa.treatmentBookingUrl || spa.treatmentBookingPhone) && (
+              {(treatment.bookingUrl || spa.treatmentBookingUrl || spa.treatmentBookingPhone) && (
                 <div className="grid gap-2 grid-cols-1">
-                  {spa.treatmentBookingUrl ? (
+                  {treatment.bookingUrl ? (
+                    <a
+                      href={treatment.bookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="px-4 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm flex items-center justify-center gap-1"
+                    >
+                      Book Now
+                      <ExternalLink className="h-2 w-2" />
+                    </a>
+                  ) : spa.treatmentBookingUrl ? (
                     <a
                       href={spa.treatmentBookingUrl}
                       target="_blank"
@@ -214,6 +225,19 @@ export default function Treatments({ spa }: TreatmentsProps) {
               </>
             )}
           </p>
+          {spa.treatmentBookingUrl && (
+            <div className="mt-8">
+              <a
+                href={spa.treatmentBookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm"
+              >
+                Book Treatment
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
+          )}
         </div>
 
         {/* Categories */}

@@ -50,6 +50,7 @@ export interface Treatment {
   brand?: string;
   category: TreatmentCategory;
   price?: string;
+  bookingUrl?: string;
 }
 
 export interface SpaAddress {

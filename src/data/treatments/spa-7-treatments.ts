@@ -12,6 +12,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'Berry & Birch',
     category: 'Massage Therapies',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f83b8e718cf1947f02560c/berry-birch-head-to-toe-massage',
   },
   {
     spaId: 7,
@@ -24,6 +25,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'Berry & Birch',
     category: 'Massage Therapies',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f83c8a84d54aaf0e0f1fcd/berry-birch-lost-in-the-clouds-massage',
   },
   {
     spaId: 7,
@@ -36,6 +38,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'Berry & Birch',
     category: 'Massage Therapies',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f83dcee9b9b4728f057a8f/berry-birch-tailor-made-massage-50',
   },
   {
     spaId: 7,
@@ -48,6 +51,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'Berry & Birch',
     category: 'Massage Therapies',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f84059294918447f0c7ae2/berry-birch-tension-trio-massage',
   },
   {
     spaId: 7,
@@ -60,6 +64,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Facial Treatments',
     price: '£130',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f840e51301666bd502a477/espa-advanced-led-facial',
   },
   {
     spaId: 7,
@@ -72,6 +77,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Massage Therapies',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f8419bcab9d917b30e95e2/espa-aromatherapy-massage',
   },
   {
     spaId: 7,
@@ -84,6 +90,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Massage Therapies',
     price: '£125',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f842bd529e731b990237b9/espa-deep-muscle-massage-50',
   },
   {
     spaId: 7,
@@ -96,6 +103,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Body Treatments',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f8467817e1056cf40726f9/espa-detoxifying-salt-and-oil-scrub',
   },
   {
     spaId: 7,
@@ -108,6 +116,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Facial Treatments',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f847304fdc4cf26204b033/espa-glow-from-within-facial',
   },
   {
     spaId: 7,
@@ -120,6 +129,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Facial Treatments',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f84c38a79af2131b08b2c2/espa-inner-beauty-facial',
   },
   {
     spaId: 7,
@@ -132,6 +142,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Body Treatments',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f84e13a556911f850452a8/espa-invigorating-salt-and-oil-scrub',
   },
   {
     spaId: 7,
@@ -144,6 +155,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Facial Treatments',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f850c1994e977a6a0d517a/espa-mens-deep-cleansing-facial',
   },
   {
     spaId: 7,
@@ -156,6 +168,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Massage Therapies',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f85288ae18ebed36099cb8/espa-positivity-massage',
   },
   {
     spaId: 7,
@@ -168,6 +181,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Body Treatments',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f85326b678cdcdd1037ed7/espa-pre-natal-relax-and-restore',
   },
   {
     spaId: 7,
@@ -180,6 +194,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Facial Treatments',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f853fe6403857f1a0cdc32/espa-regenerating-facial',
   },
   {
     spaId: 7,
@@ -192,6 +207,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Body Treatments',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f8548dc0bb09f51a0c6fd3/espa-relaxing-salt-and-oil-scrub',
   },
   {
     spaId: 7,
@@ -204,6 +220,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Massage Therapies',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/65f855241e462285530c3da4/espa-restful-massage',
   },
   {
     spaId: 7,
@@ -216,6 +233,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Hands & Feet Treatments',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/6692534fd68ca4693a011f72/invigorating-foot-treatment',
   },
   {
     spaId: 7,
@@ -228,6 +246,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Body Treatments',
     price: '£220',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/6878b4eadbbbdda380039f05/radiance-reset-treatment-experience',
   },
   {
     spaId: 7,
@@ -240,6 +259,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'Recovery (Cancer Care)',
     category: 'Facial Treatments',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/660fbfb0f315ee6103077c01/recovery-classic-facial',
   },
   {
     spaId: 7,
@@ -252,6 +272,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'Recovery (Cancer Care)',
     category: 'Massage Therapies',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/660fb4ddce553c7b2d0ab9d9/recovery-tailor-made-massage',
   },
   {
     spaId: 7,
@@ -264,6 +285,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Hands & Feet Treatments',
     price: '£110',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/6692563c4528b529bf0c9dc6/reflexology',
   },
   {
     spaId: 7,
@@ -276,6 +298,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Body Treatments',
     price: '£220',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/6878b7eaa438cbfc2302b036/restore-re-sculpt-treatment-experience',
   },
   {
     spaId: 7,
@@ -288,6 +311,7 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Body Treatments',
     price: '£220',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/6914aa6b3c6364f94c077597/the-festive-glow',
   },
   {
     spaId: 7,
@@ -299,5 +323,6 @@ export const spa7Treatments: Treatment[] = [
     brand: 'ESPA',
     category: 'Body Treatments',
     price: '£220',
+    bookingUrl: 'https://lowwoodbayresortandspa.try.be/items/6878bc4696f06a07790f7bcb/the-sculpt-and-soothe-treatment-experience',
   },
 ];
