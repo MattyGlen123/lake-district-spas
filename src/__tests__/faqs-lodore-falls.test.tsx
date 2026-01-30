@@ -708,13 +708,13 @@ describe('Lodore Falls FAQs - Generated Content', () => {
   describe('FAQ Edge Cases', () => {
     it('should handle spa with missing spaAccessForHotelGuest gracefully', () => {
       // Create a mock spa without spaAccessForHotelGuest
-      const mockSpa = { ...lodoreFallsSpa };
-      delete (mockSpa as any).spaAccessForHotelGuest;
+      const { spaAccessForHotelGuest, ...mockSpaWithoutAccess } = lodoreFallsSpa;
+      const mockSpa = mockSpaWithoutAccess as Spa;
       
       // Should not throw
-      expect(() => getSpa1FAQs(mockSpa as Spa)).not.toThrow();
+      expect(() => getSpa1FAQs(mockSpa)).not.toThrow();
       
-      const faqs = getSpa1FAQs(mockSpa as Spa);
+      const faqs = getSpa1FAQs(mockSpa);
       expect(faqs.length).toBe(5);
     });
 
