@@ -31,10 +31,26 @@ export default function DayPasses({ spa }: DayPassesProps) {
           Day Passes
         </h2>
 
-        <p className="text-stone-500 leading-relaxed mb-8 max-w-3xl">
+        <p className="text-stone-500 leading-relaxed mb-4 max-w-3xl">
           Explore our curated day packages designed for those seeking a temporary
           sanctuary in the Lakes.
         </p>
+
+        {spa.dayPassBookingUrl && (
+          <div className="mb-8">
+            <a
+              href={spa.dayPassBookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-emerald-950 text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
+            >
+              <span className="leading-none">Book Day Pass</span>
+              <ExternalLink className="h-3 w-3 self-start" />
+            </a>
+          </div>
+        )}
+
+        
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-10">
           {dayPassOptions.map((option) => (

@@ -95,6 +95,7 @@ export interface Spa {
   agePolicy?: string;
   relatedSpas: number[];
   treatmentBookingUrl?: string;
+  dayPassBookingUrl?: string;
   treatmentBookingPhone?: string;
   spaAccessForHotelGuest?: SpaAccessForHotelGuest;
 }

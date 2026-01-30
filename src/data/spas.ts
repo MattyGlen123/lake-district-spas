@@ -292,6 +292,7 @@ Unlike many Lake District spa hotels, spa access is not included with standard r
     treatmentBookingUrl:
       'https://englishlakes.co.uk/hotels/low-wood-bay/the-spa/spa-treatments/',
     treatmentBookingPhone: '0330 4043 943',
+    dayPassBookingUrl: 'https://lowwoodbayresortandspa.try.be/',
   },
   {
     id: 14,
