@@ -136,6 +136,7 @@ Spa access is complimentary for suite bookings (2 hours per night), while standa
       weekdayPriceGBP: 35,
       weekendPriceGBP: 40,
     },
+    dayPassBookingUrl: 'https://lodorefallsspa.try.be/',
   },
   {
     id: 7,
