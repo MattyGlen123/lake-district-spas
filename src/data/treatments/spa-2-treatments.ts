@@ -12,7 +12,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£120',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62828',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/62828',
   },
   {
     spaId: 2,
@@ -25,7 +25,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£145',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/48568',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/48568',
   },
   {
     spaId: 2,
@@ -38,7 +38,7 @@ export const spa2Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£110',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62079',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/62079',
   },
   {
     spaId: 2,
@@ -51,7 +51,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£105',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25037',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/25037',
   },
   {
     spaId: 2,
@@ -64,7 +64,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£145',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62826',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/62826',
   },
   {
     spaId: 2,
@@ -77,7 +77,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Massage Therapies',
     price: '£105',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62076',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/62076',
   },
   {
     spaId: 2,
@@ -89,7 +89,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Massage Therapies',
     price: '£145',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62077',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/62077',
   },
   {
     spaId: 2,
@@ -102,7 +102,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£105',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25038',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/25038',
   },
   {
     spaId: 2,
@@ -115,7 +115,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Made for Life',
     category: 'Body Treatments',
     price: '£105',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25054',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/25054',
   },
   {
     spaId: 2,
@@ -127,7 +127,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Made for Life',
     category: 'Body Treatments',
     price: '£145',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62827',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/62827',
   },
   {
     spaId: 2,
@@ -140,7 +140,7 @@ export const spa2Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£80',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/48391',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/48391',
   },
   {
     spaId: 2,
@@ -153,7 +153,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£120',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62830',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/62830',
   },
   {
     spaId: 2,
@@ -166,7 +166,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£105',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25048',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/25048',
   },
   {
     spaId: 2,
@@ -179,7 +179,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£105',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25049',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/25049',
   },
   {
     spaId: 2,
@@ -192,7 +192,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'VOYA',
     category: 'Body Treatments',
     price: '£105',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25072',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/25072',
   },
   {
     spaId: 2,
@@ -205,7 +205,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'VOYA',
     category: 'Body Treatments',
     price: '£105',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62818',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/62818',
   },
   {
     spaId: 2,
@@ -218,7 +218,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'VOYA',
     category: 'Body Treatments',
     price: '£145',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62816',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/62816',
   },
   {
     spaId: 2,
@@ -231,7 +231,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'VOYA',
     category: 'Body Treatments',
     price: '£145',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/47635',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/47635',
   },
   {
     spaId: 2,
@@ -244,7 +244,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'VOYA',
     category: 'Body Treatments',
     price: '£105',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25076',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/25076',
   },
   {
     spaId: 2,
@@ -257,7 +257,7 @@ export const spa2Treatments: Treatment[] = [
     brand: undefined,
     category: 'Hands & Feet Treatments',
     price: '£110',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62078',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/62078',
   },
   {
     spaId: 2,
@@ -270,7 +270,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£110',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/47634',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/47634',
   },
   {
     spaId: 2,
@@ -283,7 +283,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Made for Life',
     category: 'Facial Treatments',
     price: '£105',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25070',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/25070',
   },
   {
     spaId: 2,
@@ -296,7 +296,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£145',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62812',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/62812',
   },
   {
     spaId: 2,
@@ -309,7 +309,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Made for Life',
     category: 'Facial Treatments',
     price: '£105',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25055',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/25055',
   },
   {
     spaId: 2,
@@ -322,7 +322,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Massage Therapies',
     price: '£105',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25053',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/25053',
   },
   {
     spaId: 2,
@@ -334,7 +334,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Massage Therapies',
     price: '£145',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62833',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/62833',
   },
   {
     spaId: 2,
@@ -346,6 +346,6 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£145',
-    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62832',
+    bookingUrl: 'https://armathwaite.onejourney.travel/spa/treatments/62832',
   },
 ];

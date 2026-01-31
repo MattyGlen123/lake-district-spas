@@ -544,6 +544,7 @@ Spa access is complimentary for all hotel guests and Day spa packages are availa
     treatmentBookingPhone: '017687 88900',
     treatmentBookingUrl:
       'https://armathwaite.onejourney.travel/spa/treatments/',
+    dayPassBookingUrl: 'https://armathwaite.onejourney.travel/spa/days/',
   },
   {
     id: 3,
