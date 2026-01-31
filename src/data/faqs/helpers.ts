@@ -188,3 +188,47 @@ export function getTreatmentDuration(spaId: number, treatmentName: string): stri
   return treatment.duration;
 }
 
+/**
+ * Get treatment price by treatment name
+ * @param spaId - The spa ID
+ * @param treatmentName - Partial name to match (e.g., "Fell Walkers Massage")
+ * @returns Formatted price string (e.g., "£90"), or null if not found
+ */
+export function getTreatmentPrice(spaId: number, treatmentName: string): string | null {
+  const treatments = getTreatmentsBySpaId(spaId);
+  const treatment = treatments.find((t) => 
+    t.name.toLowerCase().includes(treatmentName.toLowerCase())
+  );
+  
+  if (!treatment || !treatment.price) return null;
+  return treatment.price;
+}
+
+/**
+ * Generate a URL-friendly ID from a treatment name
+ * @param treatmentName - The treatment name (e.g., "Fell Walkers Massage")
+ * @returns URL-friendly ID (e.g., "fell-walkers-massage")
+ */
+export function getTreatmentId(treatmentName: string): string {
+  return treatmentName
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+/**
+ * Get treatment ID by treatment name for a specific spa
+ * @param spaId - The spa ID
+ * @param treatmentName - Partial name to match (e.g., "Fell Walkers Massage")
+ * @returns Treatment ID string (e.g., "fell-walkers-massage"), or null if not found
+ */
+export function getTreatmentIdByName(spaId: number, treatmentName: string): string | null {
+  const treatments = getTreatmentsBySpaId(spaId);
+  const treatment = treatments.find((t) => 
+    t.name.toLowerCase().includes(treatmentName.toLowerCase())
+  );
+  
+  if (!treatment) return null;
+  return getTreatmentId(treatment.name);
+}
+

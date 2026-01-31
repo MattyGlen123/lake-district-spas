@@ -3,42 +3,6 @@ import { Treatment } from '@/types/spa';
 export const spa2Treatments: Treatment[] = [
   {
     spaId: 2,
-    name: 'AAAHHH...& RELAX',
-    description:
-      'Instant relief for tired, overworked legs and feet. Skin brushing to eliminate excess fluids, warm oil massage and invigorating foot rub. Finishes with deeply relaxing back massage.',
-    shortDescription:
-      'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
-    duration: '50 minutes',
-    brand: 'Temple Spa',
-    category: 'Body Treatments',
-    price: '£105',
-  },
-  {
-    spaId: 2,
-    name: 'Anti-Ageing Marine',
-    description:
-      'Facial treatment that brightens, firms, hydrates, reduces appearance of fine lines and decongests eye area. Combines relaxing and decongesting lymphatic massage movements with seaweed eye masks.',
-    shortDescription:
-      'Deeply relaxing treatment designed to soothe body and mind, leaving you feeling renewed and restored.',
-    duration: '50 minutes',
-    brand: 'VOYA',
-    category: 'Body Treatments',
-    price: '£105',
-  },
-  {
-    spaId: 2,
-    name: 'Anti-Ageing Restorative Facial',
-    description:
-      "Targeted anti-ageing facial suitable for all skin types. Uses VOYA's finest organic ingredients combined with anti-oxidant algae complexes and restorative blend of aromatherapy oils. Stimulates collagen production and reduces appearance of fine lines and wrinkles.",
-    shortDescription:
-      'Revitalizing facial treatment that reduces fine lines and stimulates collagen production for a youthful, radiant complexion.',
-    duration: '50 minutes',
-    brand: 'VOYA',
-    category: 'Facial Treatments',
-    price: '£105',
-  },
-  {
-    spaId: 2,
     name: 'Champagne & Truffles Deluxe Treatment',
     description:
       'Créme de la créme of radiance facials. Luxury facial with award winning truffle formulas, deep double-cleansing ritual, glycolic oxygen resurfacing peel, skin-destressing alginate mask and cold stone therapy.',
@@ -48,6 +12,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£120',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62828',
   },
   {
     spaId: 2,
@@ -60,6 +25,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£145',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/48568',
   },
   {
     spaId: 2,
@@ -72,6 +38,7 @@ export const spa2Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£110',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62079',
   },
   {
     spaId: 2,
@@ -84,6 +51,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£105',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25037',
   },
   {
     spaId: 2,
@@ -96,6 +64,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£145',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62826',
   },
   {
     spaId: 2,
@@ -108,6 +77,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Massage Therapies',
     price: '£105',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62076',
   },
   {
     spaId: 2,
@@ -119,6 +89,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Massage Therapies',
     price: '£145',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62077',
   },
   {
     spaId: 2,
@@ -131,6 +102,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£105',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25038',
   },
   {
     spaId: 2,
@@ -143,6 +115,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Made for Life',
     category: 'Body Treatments',
     price: '£105',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25054',
   },
   {
     spaId: 2,
@@ -154,29 +127,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Made for Life',
     category: 'Body Treatments',
     price: '£145',
-  },
-  {
-    spaId: 2,
-    name: 'Herbal Sleep Cocoon',
-    description:
-      "Body wrap offering unique sensory experience of pure relaxation. Rebalances body, hydrates skin and calms mind for perfect night's sleep. Includes body brushing, herbal wrap, scalp massage and sound bath therapy.",
-    shortDescription:
-      'Deeply calming body wrap with herbal ingredients, body brushing and scalp massage to rebalance body and promote restful sleep.',
-    duration: '50 minutes',
-    brand: 'VOYA',
-    category: 'Body Treatments',
-    price: '£105',
-  },
-  {
-    spaId: 2,
-    name: 'Herbal Sleep Cocoon (Extended)',
-    description: 'Extended version with additional time for deeper relaxation.',
-    shortDescription:
-      'Deeply calming body wrap with herbal ingredients, body brushing and scalp massage to rebalance body and promote restful sleep.',
-    duration: '80 minutes',
-    brand: 'VOYA',
-    category: 'Body Treatments',
-    price: '£145',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62827',
   },
   {
     spaId: 2,
@@ -189,6 +140,7 @@ export const spa2Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£80',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/48391',
   },
   {
     spaId: 2,
@@ -201,6 +153,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£120',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62830',
   },
   {
     spaId: 2,
@@ -213,6 +166,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£105',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25048',
   },
   {
     spaId: 2,
@@ -225,17 +179,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£105',
-  },
-  {
-    spaId: 2,
-    name: 'New Beginnings (Extended)',
-    description: 'Extended pregnancy massage.',
-    shortDescription:
-      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
-    duration: '80 minutes',
-    brand: 'Temple Spa',
-    category: 'Body Treatments',
-    price: '£145',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25049',
   },
   {
     spaId: 2,
@@ -248,6 +192,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'VOYA',
     category: 'Body Treatments',
     price: '£105',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25072',
   },
   {
     spaId: 2,
@@ -260,6 +205,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'VOYA',
     category: 'Body Treatments',
     price: '£105',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62818',
   },
   {
     spaId: 2,
@@ -272,6 +218,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'VOYA',
     category: 'Body Treatments',
     price: '£145',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62816',
   },
   {
     spaId: 2,
@@ -284,6 +231,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'VOYA',
     category: 'Body Treatments',
     price: '£145',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/47635',
   },
   {
     spaId: 2,
@@ -296,6 +244,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'VOYA',
     category: 'Body Treatments',
     price: '£105',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25076',
   },
   {
     spaId: 2,
@@ -308,6 +257,7 @@ export const spa2Treatments: Treatment[] = [
     brand: undefined,
     category: 'Hands & Feet Treatments',
     price: '£110',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62078',
   },
   {
     spaId: 2,
@@ -320,6 +270,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£110',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/47634',
   },
   {
     spaId: 2,
@@ -332,6 +283,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Made for Life',
     category: 'Facial Treatments',
     price: '£105',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25070',
   },
   {
     spaId: 2,
@@ -344,6 +296,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£145',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62812',
   },
   {
     spaId: 2,
@@ -356,6 +309,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Made for Life',
     category: 'Facial Treatments',
     price: '£105',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25055',
   },
   {
     spaId: 2,
@@ -368,6 +322,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Massage Therapies',
     price: '£105',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/25053',
   },
   {
     spaId: 2,
@@ -379,18 +334,7 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Massage Therapies',
     price: '£145',
-  },
-  {
-    spaId: 2,
-    name: 'Your Best You',
-    description:
-      'Unique top-to-toe bespoke massage. Choose warm or cool treatment. Gentle, calming massage with healing stones, rhythmic stretching and lymphatic drainage massage.',
-    shortDescription:
-      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
-    duration: '50 minutes',
-    brand: 'Temple Spa',
-    category: 'Body Treatments',
-    price: '£105',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62833',
   },
   {
     spaId: 2,
@@ -402,5 +346,6 @@ export const spa2Treatments: Treatment[] = [
     brand: 'Temple Spa',
     category: 'Body Treatments',
     price: '£145',
+    bookingUrl: 'https://www.spabreaks.com/spa/treatments/62832',
   },
 ];

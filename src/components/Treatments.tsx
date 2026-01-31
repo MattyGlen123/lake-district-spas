@@ -19,9 +19,16 @@ interface TreatmentCardProps {
 const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  // Generate URL-friendly ID from treatment name
+  const treatmentId = treatment.name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
   return (
     <div
-      className="bg-white border border-stone-200 rounded-3xl transition-all cursor-pointer overflow-hidden shadow-sm"
+      id={treatmentId}
+      className="bg-white border border-stone-200 rounded-3xl transition-all cursor-pointer overflow-hidden shadow-sm scroll-mt-32"
       onClick={() => setIsExpanded(!isExpanded)}
       aria-expanded={isExpanded}
     >

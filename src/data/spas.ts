@@ -430,6 +430,7 @@ Swim Club access is complimentary for all hotel guests. Day memberships are avai
     relatedSpas: [2, 11],
     treatmentBookingPhone: '01768 486442',
     treatmentBookingUrl: 'https://another.place/the-lake/book/treatments',
+    dayPassBookingUrl: 'https://another.place/the-lake/book/treatments',
   },
   {
     id: 2,

@@ -3,11 +3,13 @@ import { Spa } from '@/types/spa';
 import { spaData } from '@/data/spas';
 import { getSpa1FAQs } from './spa-1-faqs';
 import { getSpa7FAQs } from './spa-7-faqs';
+import { getSpa14FAQs } from './spa-14-faqs';
 
 // Map of spa IDs to their FAQ generator functions
 const faqGeneratorsBySpaId: Record<number, (spa: Spa) => FAQ[]> = {
   1: getSpa1FAQs,
   7: getSpa7FAQs,
+  14: getSpa14FAQs,
 };
 
 // Cache for generated FAQs
