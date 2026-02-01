@@ -667,7 +667,7 @@ Spa access is complimentary for all Brimstone Hotel guests throughout their stay
     relatedSpas: [8, 13],
     treatmentBookingPhone: '015394 38014',
     treatmentBookingUrl:
-      'https://lllb.dbm.guestline.net/availability?hotel=LLLBRIM',
+      'https://www.brimstonehotel.co.uk/spa-leisure/spa-therapies/',
   },
   {
     id: 4,
