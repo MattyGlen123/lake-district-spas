@@ -3,6 +3,7 @@ import { Spa } from '@/types/spa';
 import { spaData } from '@/data/spas';
 import { getSpa1FAQs } from './spa-1-faqs';
 import { getSpa2FAQs } from './spa-2-faqs';
+import { getSpa3FAQs } from './spa-3-faqs';
 import { getSpa7FAQs } from './spa-7-faqs';
 import { getSpa14FAQs } from './spa-14-faqs';
 
@@ -10,6 +11,7 @@ import { getSpa14FAQs } from './spa-14-faqs';
 const faqGeneratorsBySpaId: Record<number, (spa: Spa) => FAQ[]> = {
   1: getSpa1FAQs,
   2: getSpa2FAQs,
+  3: getSpa3FAQs,
   7: getSpa7FAQs,
   14: getSpa14FAQs,
 };
