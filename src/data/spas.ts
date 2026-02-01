@@ -927,7 +927,8 @@ Spa access is complimentary for Splendid room bookings and above. Standard room 
     relatedSpas: [9, 1],
     treatmentBookingPhone: '01539 531681',
     treatmentBookingUrl:
-      'https://theswan.onejourney.travel/spa/treatments?_gl=1*8sv6dw*_gcl_au*MTM2NjA5MTY1OC4xNzY2MzA4NjY5*_ga*MjAyODY1ODY2LjE3NjYzMDg2ODk.*_ga_4LJBV23LCJ*czE3NjgyMzE2NTAkbzgkZzEkdDE3NjgyMzE3MDIkajU0JGwwJGgw',
+      'https://theswan.onejourney.travel/spa/treatments',
+    dayPassBookingUrl: 'https://theswan.onejourney.travel/spa/days/',
   },
   {
     id: 8,

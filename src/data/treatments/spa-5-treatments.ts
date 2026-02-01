@@ -11,6 +11,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
     price: '£55',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/56927',
   },
   {
     spaId: 5,
@@ -22,6 +23,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Body Treatments',
     price: '£65',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/56928',
   },
   {
     spaId: 5,
@@ -33,6 +35,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Body Treatments',
     price: '£75',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/69182',
   },
   {
     spaId: 5,
@@ -44,6 +47,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Facial Treatments',
     price: '£75',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/56929',
   },
   {
     spaId: 5,
@@ -55,6 +59,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Facial Treatments',
     price: '£115',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/56930',
   },
   {
     spaId: 5,
@@ -66,6 +71,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
     price: '£15',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/57186',
   },
   {
     spaId: 5,
@@ -77,6 +83,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
     price: '£30',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/57184',
   },
   {
     spaId: 5,
@@ -88,6 +95,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
     price: '£65',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/56931',
   },
   {
     spaId: 5,
@@ -99,6 +107,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
     price: '£120',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/56932',
   },
   {
     spaId: 5,
@@ -110,6 +119,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
     price: '£100',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/56902',
   },
   {
     spaId: 5,
@@ -121,6 +131,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Facial Treatments',
     price: '£65',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/60873',
   },
   {
     spaId: 5,
@@ -132,6 +143,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Facial Treatments',
     price: '£65',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/56933',
   },
   {
     spaId: 5,
@@ -143,6 +155,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Facial Treatments',
     price: '£65',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/60874',
   },
   {
     spaId: 5,
@@ -154,6 +167,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
     price: '£15',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/57187',
   },
   {
     spaId: 5,
@@ -164,6 +178,8 @@ export const spa5Treatments: Treatment[] = [
     duration: '45 minutes',
     brand: 'TempleSpa',
     category: 'Body Treatments',
+    price: '£65',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/56934',
   },
   {
     spaId: 5,
@@ -175,6 +191,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
     price: '£15',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/57188',
   },
   {
     spaId: 5,
@@ -186,6 +203,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Hands & Feet Treatments',
     price: '£30',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/57189',
   },
   {
     spaId: 5,
@@ -197,6 +215,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Body Treatments',
     price: '£15',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/57185',
   },
   {
     spaId: 5,
@@ -208,6 +227,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Body Treatments',
     price: '£20',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/57028',
   },
   {
     spaId: 5,
@@ -219,6 +239,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Body Treatments',
     price: '£65',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/56903',
   },
   {
     spaId: 5,
@@ -230,6 +251,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Body Treatments',
     price: '£15',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/57190',
   },
   {
     spaId: 5,
@@ -241,17 +263,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
     price: '£85',
-  },
-  {
-    spaId: 5,
-    name: 'Repose Facial - 75 Mins',
-    description: '',
-    shortDescription:
-      'Indulgent facial infused with Mediterranean essential oils to calm, hydrate and rejuvenate skin while promoting deep relaxation.',
-    duration: '75 minutes',
-    brand: 'TempleSpa',
-    category: 'Facial Treatments',
-    price: '£80',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/60952',
   },
   {
     spaId: 5,
@@ -263,6 +275,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
     price: '£65',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/69598',
   },
   {
     spaId: 5,
@@ -274,6 +287,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Facial Treatments',
     price: '£65',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/60875',
   },
   {
     spaId: 5,
@@ -285,6 +299,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
     price: '£65',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/56937',
   },
   {
     spaId: 5,
@@ -296,6 +311,7 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
     price: '£100',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/56938',
   },
   {
     spaId: 5,
@@ -307,5 +323,55 @@ export const spa5Treatments: Treatment[] = [
     brand: 'TempleSpa',
     category: 'Massage Therapies',
     price: '£120',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/56939',
+  },
+  // NEW TREATMENTS DISCOVERED IN HTML - Holte brand treatments
+  {
+    spaId: 5,
+    name: 'Bespoke Holte Massage',
+    description: '',
+    shortDescription:
+      'Customized massage treatment tailored to individual needs and preferences for ultimate relaxation and therapeutic benefits.',
+    duration: '60 minutes',
+    brand: 'Holte',
+    category: 'Massage Therapies',
+    price: '£100',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/155807',
+  },
+  {
+    spaId: 5,
+    name: 'Holte Calm & Comfort Facial',
+    description: '',
+    shortDescription:
+      'Soothing facial treatment designed to calm sensitive skin and provide deep comfort with gentle, nourishing products.',
+    duration: '45 minutes',
+    brand: 'Holte',
+    category: 'Facial Treatments',
+    price: '£75',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/155796',
+  },
+  {
+    spaId: 5,
+    name: 'Holte Glow',
+    description: '',
+    shortDescription:
+      'Comprehensive treatment combining body and facial work to enhance natural radiance and leave skin glowing from head to toe.',
+    duration: '90 minutes',
+    brand: 'Holte',
+    category: 'Body Treatments',
+    price: '£130',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/140099',
+  },
+  {
+    spaId: 5,
+    name: 'Holte Premium Age-defy Facial',
+    description: '',
+    shortDescription:
+      'Advanced anti-aging facial treatment targeting fine lines and firmness with premium products and specialized techniques.',
+    duration: '60 minutes',
+    brand: 'Holte',
+    category: 'Facial Treatments',
+    price: '£95',
+    bookingUrl: 'https://theswan.onejourney.travel/spa/treatments/155785',
   },
 ];
