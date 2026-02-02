@@ -29,7 +29,7 @@
       "targetKeyword": "lake district spa outdoor hot tub",
       "category": "comparisons",
       "priority": 3,
-      "status": "planned",
+      "status": "published",
       "relatedSpas": ["another-place-the-lake", "brimstone-hotel-spa"],
       "notes": "Outdoor facilities mentioned 3x more in reviews - key differentiator"
     },
@@ -73,7 +73,7 @@
       "targetKeyword": "windermere spa",
       "category": "locations",
       "priority": 7,
-      "status": "planned",
+      "status": "published",
       "relatedSpas": ["low-wood-bay-spa", "lakeside-hotel-spa", "beech-hill-hotel-spa"],
       "notes": "Location content - 2,900 monthly searches"
     },
@@ -95,7 +95,7 @@
       "targetKeyword": "mothers day spa lake district",
       "category": "seasonal",
       "priority": 9,
-      "status": "planned",
+      "status": "published",
       "relatedSpas": [],
       "notes": "Seasonal - peaks 100/100 in March. Publish by mid-Feb"
     },

@@ -15,6 +15,7 @@ import {
 import { spaData } from '@/data/spas';
 import { BlogPostMeta } from '@/types/blog';
 import { Spa } from '@/types/spa';
+import { getDayPassPrice } from '@/data/faqs/helpers';
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
@@ -283,6 +284,24 @@ const mdxComponents = {
         <SpaCard spa={spa} />
       </div>
     );
+  },
+  SpaAccessPrice: ({ spaSlug }: { spaSlug: string }) => {
+    const spa = spaData.find((s) => s.url === spaSlug);
+    if (!spa?.spaAccessForHotelGuest) return null;
+    const { weekdayPriceGBP, weekendPriceGBP } = spa.spaAccessForHotelGuest;
+    if (!weekdayPriceGBP || !weekendPriceGBP) return null;
+    return (
+      <span>
+        £{weekdayPriceGBP} on weekdays or £{weekendPriceGBP} on weekends
+      </span>
+    );
+  },
+  DayPassPrice: ({ spaSlug, dayPassId }: { spaSlug: string; dayPassId: string }) => {
+    const spa = spaData.find((s) => s.url === spaSlug);
+    if (!spa) return null;
+    const price = getDayPassPrice(spa.id, dayPassId);
+    if (!price) return null;
+    return <span>{price}</span>;
   },
 };
 

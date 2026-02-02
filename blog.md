@@ -182,6 +182,79 @@ The MDX renderer includes custom components:
 - **Links**: Automatically converts `/spa/...` links to Next.js Link components
 - **Images**: Uses Next.js Image component with optimization
 - **SpaCard**: Can embed spa cards using `<SpaCard spaSlug="spa-slug" />`
+- **SpaAccessPrice**: Displays dynamic spa access prices (weekday/weekend)
+- **DayPassPrice**: Displays dynamic day pass prices
+
+### Dynamic Pricing
+
+**IMPORTANT: Never hardcode prices in blog articles.** Always use the dynamic price components to ensure prices stay up-to-date automatically when spa data changes.
+
+#### SpaAccessPrice Component
+
+Use this component to display spa access prices for hotel guests (weekday and weekend rates):
+
+```markdown
+Standard room guests pay <SpaAccessPrice spaSlug="lodore-falls-spa" /> for a two-hour session.
+```
+
+This will automatically display: "£35 on weekdays or £40 on weekends" (or whatever the current prices are in the spa data).
+
+**When to use:**
+- Displaying spa access prices for hotel guests
+- Mentioning weekday vs weekend pricing differences
+- Any reference to `spaAccessForHotelGuest` pricing
+
+**Props:**
+- `spaSlug` (required): The spa's URL slug (e.g., `"lodore-falls-spa"`)
+
+#### DayPassPrice Component
+
+Use this component to display day pass package prices:
+
+```markdown
+Day spa packages start at <DayPassPrice spaSlug="lodore-falls-spa" dayPassId="lodore-falls-twilight-spa" /> for the Twilight Spa.
+```
+
+This will automatically display: "£75" (or whatever the current price is for that day pass).
+
+**When to use:**
+- Displaying day pass package prices
+- Mentioning specific spa day packages
+- Any reference to day pass pricing
+
+**Props:**
+- `spaSlug` (required): The spa's URL slug (e.g., `"lodore-falls-spa"`)
+- `dayPassId` (required): The day pass ID from the day passes data (e.g., `"lodore-falls-twilight-spa"`)
+
+**Finding Day Pass IDs:**
+
+Day pass IDs can be found in the spa's day passes data file:
+- `src/data/day-passes/spa-{id}-day-passes.ts`
+- Look for the `id` field in each day pass option
+- Common patterns: `{spa-slug}-{package-name}` (e.g., `"low-wood-bay-twilight-thermal"`)
+
+#### Examples
+
+**Spa Access Pricing:**
+```markdown
+Guests in standard rooms can add spa access for <SpaAccessPrice spaSlug="lodore-falls-spa" />.
+```
+
+**Day Pass Pricing:**
+```markdown
+The Twilight Thermal Journey costs <DayPassPrice spaSlug="low-wood-bay-spa" dayPassId="low-wood-bay-twilight-thermal" />.
+```
+
+**Multiple Prices:**
+```markdown
+Day passes start from <DayPassPrice spaSlug="low-wood-bay-spa" dayPassId="low-wood-bay-twilight-thermal" /> for evening access, or <DayPassPrice spaSlug="low-wood-bay-spa" dayPassId="low-wood-bay-weekday-thermal-only" /> for a three-hour weekday session.
+```
+
+**Best Practices:**
+1. **Always use components** - Never write prices like "£35" or "£75" directly in the text
+2. **Verify day pass IDs** - Check the day passes data file to ensure the ID exists
+3. **Test rendering** - Preview your article to ensure prices display correctly
+4. **Fallback gracefully** - If a price isn't found, the component returns null (nothing displays), so verify your data is correct
 
 ### Internal Linking
 
@@ -242,6 +315,8 @@ Create the MDX file with a future `publishedAt` date to keep it hidden until rea
 - Verify spa slugs are correct
 - Ensure images display properly
 - Review alt text for accuracy
+- Verify all prices use dynamic components (no hardcoded prices)
+- Test that price components render correctly
 
 ### 4. Publish
 
@@ -271,6 +346,7 @@ Track planned posts in `data/blog-topics.json`. This file includes:
 5. **Internal Links**: Link to relevant spas and other blog posts
 6. **Alt Text**: Descriptive alt text for all images
 7. **Related Spas**: Include relevant spa slugs for internal linking
+8. **Dynamic Pricing**: Always use price components instead of hardcoding prices
 
 ---
 
@@ -354,4 +430,4 @@ blog.md (this file - root directory)
 
 ---
 
-_Last Updated: 2025-01-20_
+_Last Updated: 2026-02-03_
