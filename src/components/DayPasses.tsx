@@ -1,6 +1,7 @@
 import { Check, ExternalLink, CreditCard, Users, Mail } from 'lucide-react';
 import { Spa } from '@/types/spa';
 import { getDayPassOptionsBySpaId } from '@/data/day-passes';
+import { appendUtmParams } from '@/lib/utils';
 
 interface DayPassesProps {
   spa: Spa;
@@ -39,9 +40,11 @@ export default function DayPasses({ spa }: DayPassesProps) {
         {spa.dayPassBookingUrl && (
           <div className="mb-8">
             <a
-              href={spa.dayPassBookingUrl}
+              href={appendUtmParams(spa.dayPassBookingUrl, 'all-day-passes')}
               target="_blank"
               rel="noopener noreferrer"
+              data-spa-id={spa.url}
+              data-click-intent="all-day-passes"
               className="inline-flex items-center justify-center gap-2 bg-emerald-950 text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
             >
               <span className="leading-none">Book Day Pass</span>
@@ -97,9 +100,12 @@ export default function DayPasses({ spa }: DayPassesProps) {
               <p className="text-stone-600 text-base md:text-sm font-light mb-6">
                 {option.description}{' '}
                   <a
-                  href={option.dayPassUrl}
+                  href={appendUtmParams(option.dayPassUrl, 'specific-product-click')}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-spa-id={spa.url}
+                  data-click-intent="specific-product-click"
+                  data-product-name={option.packageName}
                   className="underline"
                 >
                   More info{' '}
@@ -119,9 +125,12 @@ export default function DayPasses({ spa }: DayPassesProps) {
               <div className="mt-auto">
                 {option.bookingUrl ? (
                   <a
-                    href={option.bookingUrl}
+                    href={appendUtmParams(option.bookingUrl, 'specific-product-click')}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-spa-id={spa.url}
+                    data-click-intent="specific-product-click"
+                    data-product-name={option.packageName}
                     className="flex items-center justify-center gap-2 bg-emerald-950 text-white px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
                   >
                     <span className="leading-none">Book Pass</span>
@@ -129,7 +138,10 @@ export default function DayPasses({ spa }: DayPassesProps) {
                   </a>
                 ) : option.bookingEmail ? (
                   <a
-                    href={`mailto:${option.bookingEmail}`}
+                    href={appendUtmParams(`mailto:${option.bookingEmail}`, 'specific-product-click')}
+                    data-spa-id={spa.url}
+                    data-click-intent="specific-product-click"
+                    data-product-name={option.packageName}
                     className="flex items-center justify-center gap-2 bg-emerald-950 text-white px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
                   >
                     <span className="leading-none">Email Us</span>

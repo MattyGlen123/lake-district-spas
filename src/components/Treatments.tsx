@@ -6,6 +6,7 @@ import { ChevronDown, Clock, Tag, ExternalLink } from 'lucide-react';
 import { Spa, TreatmentCategory, Treatment } from '@/types/spa';
 import { getTreatmentsBySpaId } from '@/data/treatments/index';
 import { getFAQsBySpaId } from '@/data/faqs';
+import { appendUtmParams } from '@/lib/utils';
 
 interface TreatmentsProps {
   spa: Spa;
@@ -103,10 +104,13 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
                 <div className="grid gap-2 grid-cols-1">
                   {treatment.bookingUrl ? (
                     <a
-                      href={treatment.bookingUrl}
+                      href={appendUtmParams(treatment.bookingUrl, 'specific-product-click')}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
+                      data-spa-id={spa.url}
+                      data-click-intent="specific-product-click"
+                      data-product-name={treatment.name}
                       className="px-4 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm flex items-center justify-center gap-1"
                     >
                       Book Now
@@ -114,10 +118,13 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
                     </a>
                   ) : spa.treatmentBookingUrl ? (
                     <a
-                      href={spa.treatmentBookingUrl}
+                      href={appendUtmParams(spa.treatmentBookingUrl, 'specific-product-click')}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
+                      data-spa-id={spa.url}
+                      data-click-intent="specific-product-click"
+                      data-product-name={treatment.name}
                       className="px-4 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm flex items-center justify-center gap-1"
                     >
                       Book Now
@@ -125,8 +132,11 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
                     </a>
                   ) : spa.treatmentBookingPhone ? (
                     <a
-                      href={`tel:${spa.treatmentBookingPhone}`}
+                      href={appendUtmParams(`tel:${spa.treatmentBookingPhone}`, 'specific-product-click')}
                       onClick={(e) => e.stopPropagation()}
+                      data-spa-id={spa.url}
+                      data-click-intent="specific-product-click"
+                      data-product-name={treatment.name}
                       className="px-4 py-3 bg-emerald-950 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm flex items-center justify-center gap-2"
                     >
                       Call Now
@@ -235,9 +245,11 @@ export default function Treatments({ spa }: TreatmentsProps) {
           {spa.treatmentBookingUrl && (
             <div className="mt-8">
               <a
-                href={spa.treatmentBookingUrl}
+                href={appendUtmParams(spa.treatmentBookingUrl, 'all-treatments')}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-spa-id={spa.url}
+                data-click-intent="all-treatments"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm"
               >
                 Book Treatment

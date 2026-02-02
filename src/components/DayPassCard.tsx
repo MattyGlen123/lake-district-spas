@@ -1,6 +1,7 @@
 import { Check, ExternalLink, CreditCard, Users, Mail, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { DayPassOption, Spa } from '@/types/spa';
+import { appendUtmParams } from '@/lib/utils';
 
 interface DayPassCardProps {
   dayPass: DayPassOption;
@@ -80,9 +81,12 @@ export default function DayPassCard({ dayPass, spa }: DayPassCardProps) {
         <p className="text-stone-600 text-base md:text-sm font-light mb-6">
           {dayPass.description}{' '}
           <a
-            href={dayPass.dayPassUrl}
+            href={appendUtmParams(dayPass.dayPassUrl, 'specific-product-click')}
             target="_blank"
             rel="noopener noreferrer"
+            data-spa-id={spa.url}
+            data-click-intent="specific-product-click"
+            data-product-name={dayPass.packageName}
             className="underline"
           >
             More info{' '}
@@ -102,9 +106,12 @@ export default function DayPassCard({ dayPass, spa }: DayPassCardProps) {
         <div className="mt-auto">
           {dayPass.bookingUrl ? (
             <a
-              href={dayPass.bookingUrl}
+              href={appendUtmParams(dayPass.bookingUrl, 'specific-product-click')}
               target="_blank"
               rel="noopener noreferrer"
+              data-spa-id={spa.url}
+              data-click-intent="specific-product-click"
+              data-product-name={dayPass.packageName}
               className="flex items-center justify-center gap-2 bg-emerald-950 text-white px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
             >
               <span className="leading-none">Book Pass</span>
@@ -112,7 +119,10 @@ export default function DayPassCard({ dayPass, spa }: DayPassCardProps) {
             </a>
           ) : dayPass.bookingEmail ? (
             <a
-              href={`mailto:${dayPass.bookingEmail}`}
+              href={appendUtmParams(`mailto:${dayPass.bookingEmail}`, 'specific-product-click')}
+              data-spa-id={spa.url}
+              data-click-intent="specific-product-click"
+              data-product-name={dayPass.packageName}
               className="flex items-center justify-center gap-2 bg-emerald-950 text-white px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
             >
               <span className="leading-none">Email Us</span>
