@@ -1055,6 +1055,7 @@ Spa access is complimentary for all hotel guests throughout their stay. The spa 
     treatmentBookingPhone: '015394 32385',
     treatmentBookingUrl:
       'https://home.shortcutssoftware.com/waterfallspa#/_h/sites/2659/details',
+    hotelBookingUrl: 'https://www.hotelslakedistrict.com/',
   },
   {
     id: 9,

@@ -41,7 +41,7 @@ export default function BookVisitCTA({ spa }: BookVisitCTAProps) {
               
               {/* Booking Buttons Grid */}
               {hasAnyBooking ? (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="flex flex-wrap justify-center gap-4">
                   {/* Book a Stay */}
                   {hasHotelBooking && (
                     <a
