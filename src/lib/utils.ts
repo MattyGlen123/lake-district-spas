@@ -25,6 +25,9 @@ function mapClickIntentToUtmContent(clickIntent: string): string {
     'all-treatments': 'treatments-booking',
     'all-day-passes': 'day-passes-booking',
     'specific-product-click': 'product-booking',
+    'book-stay': 'book-stay',
+    'book-day-pass': 'book-day-pass',
+    'book-treatment': 'book-treatment',
   };
   return intentMap[clickIntent] || clickIntent;
 }

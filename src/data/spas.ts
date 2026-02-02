@@ -137,6 +137,7 @@ Spa access is complimentary for suite bookings (2 hours per night), while standa
       weekendPriceGBP: 40,
     },
     dayPassBookingUrl: 'https://lodorefallsspa.try.be/',
+    hotelBookingUrl: 'https://www.lakedistricthotels.net/lodorefalls/',
   },
   {
     id: 7,
@@ -294,6 +295,7 @@ Unlike many Lake District spa hotels, spa access is not included with standard r
       'https://englishlakes.co.uk/hotels/low-wood-bay/the-spa/spa-treatments/',
     treatmentBookingPhone: '0330 4043 943',
     dayPassBookingUrl: 'https://lowwoodbayresortandspa.try.be/',
+    hotelBookingUrl: 'https://englishlakes.co.uk/hotels/low-wood-bay/',
   },
   {
     id: 14,
@@ -431,6 +433,7 @@ Swim Club access is complimentary for all hotel guests. Day memberships are avai
     treatmentBookingPhone: '01768 486442',
     treatmentBookingUrl: 'https://another.place/the-lake/book/treatments',
     dayPassBookingUrl: 'https://another.place/the-lake/book/treatments',
+    hotelBookingUrl: 'https://another.place/the-lake/',
   },
   {
     id: 2,
@@ -545,6 +548,7 @@ Spa access is complimentary for all hotel guests and Day spa packages are availa
     treatmentBookingUrl:
       'https://armathwaite.onejourney.travel/spa/treatments/',
     dayPassBookingUrl: 'https://armathwaite.onejourney.travel/spa/days/',
+    hotelBookingUrl: 'https://www.armathwaite-hall.com/',
   },
   {
     id: 3,
@@ -668,6 +672,7 @@ Spa access is complimentary for all Brimstone Hotel guests throughout their stay
     treatmentBookingPhone: '015394 38014',
     treatmentBookingUrl:
       'https://www.brimstonehotel.co.uk/spa-leisure/spa-therapies/',
+    hotelBookingUrl: 'https://www.brimstonehotel.co.uk/',
   },
   {
     id: 4,
@@ -790,6 +795,7 @@ Spa access is complimentary for all hotel guests from 2pm on arrival until midda
     treatmentBookingPhone: '+44 1539 463550',
     treatmentBookingUrl:
       'https://online.premiersoftware.co.uk/Book-Online-3G-V2/index2.php?i=115df4aa99c472ae827a28b548e637fe&siteID=9',
+    hotelBookingUrl: 'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/',
   },
   {
     id: 5,
@@ -929,6 +935,7 @@ Spa access is complimentary for Splendid room bookings and above. Standard room 
     treatmentBookingUrl:
       'https://theswan.onejourney.travel/spa/treatments',
     dayPassBookingUrl: 'https://theswan.onejourney.travel/spa/days/',
+    hotelBookingUrl: 'https://swanhotel.com/',
   },
   {
     id: 8,
