@@ -1502,6 +1502,8 @@ Complimentary pool and thermal suite access included for all hotel guests, with 
     treatmentBookingUrl:
       'https://www.macdonaldhotels.co.uk/old-england/spa-leisure/spa',
     treatmentBookingPhone: '0344 879 9102',
+    dayPassBookingUrl: 'https://www.macdonaldhotels.co.uk/old-england/book/spa/day/my-morning-retreat-spa-day',
+    hotelBookingUrl: 'https://www.macdonaldhotels.co.uk/old-england/book/accommodation/hotel/old-england',
   },
   {
     id: 16,

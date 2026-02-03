@@ -9,6 +9,7 @@ import { getSpa5FAQs } from './spa-5-faqs';
 import { getSpa7FAQs } from './spa-7-faqs';
 import { getSpa8FAQs } from './spa-8-faqs';
 import { getSpa9FAQs } from './spa-9-faqs';
+import { getSpa10FAQs } from './spa-10-faqs';
 import { getSpa11FAQs } from './spa-11-faqs';
 import { getSpa14FAQs } from './spa-14-faqs';
 
@@ -22,6 +23,7 @@ const faqGeneratorsBySpaId: Record<number, (spa: Spa) => FAQ[]> = {
   7: getSpa7FAQs,
   8: getSpa8FAQs, // Ambleside Salutation Hotel & Spa
   9: getSpa9FAQs, // Lakeside Hotel & Spa
+  10: getSpa10FAQs, // Beech Hill Hotel & Spa
   11: getSpa11FAQs, // Rothay Garden by Harbour Hotels
   14: getSpa14FAQs,
 };
