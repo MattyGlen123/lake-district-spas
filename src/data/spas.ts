@@ -1267,6 +1267,7 @@ Spa access is complimentary for all hotel guests with no booking required. Day s
     agePolicy: '18+',
     relatedSpas: [4, 12],
     treatmentBookingPhone: '01539 435334',
+    hotelBookingUrl: 'https://booking.eu.guestline.app/BHGROTHAY/availability',
   },
   {
     id: 10,
@@ -1391,6 +1392,7 @@ Complimentary spa access included for all hotel guests, with day spa packages av
     agePolicy: '16+ only for spa facilities',
     relatedSpas: [7, 6],
     treatmentBookingPhone: '015394 42137',
+    hotelBookingUrl: 'https://booking.eu.guestline.app/BEECHHILL/availability',
   },
   {
     id: 6,
