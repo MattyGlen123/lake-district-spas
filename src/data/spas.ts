@@ -1162,6 +1162,8 @@ Spa access is complimentary for all hotel guests, including pool, sauna, steam r
     treatmentBookingPhone: '015395 30001',
     treatmentBookingUrl:
       'https://lakesidehotel.onejourney.travel/spa/treatments',
+    dayPassBookingUrl: 'https://lakesidehotel.onejourney.travel/spa/days',
+    hotelBookingUrl: 'https://lakesidehotel.onejourney.travel/rooms',
   },
   {
     id: 11,
