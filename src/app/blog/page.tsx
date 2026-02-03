@@ -6,6 +6,10 @@ import Footer from '@/components/Footer';
 import { getAllBlogPosts, getBlogPostsByCategory } from '@/lib/blog';
 import { BlogPostMeta } from '@/types/blog';
 
+// Force static generation with ISR (revalidate every hour)
+// This ensures the page is pre-rendered at build time and regenerated periodically
+export const revalidate = 3600; // Revalidate every hour (3600 seconds)
+
 export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = 'https://lakedistrictspas.co.uk';
 
