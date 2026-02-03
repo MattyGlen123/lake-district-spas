@@ -23,7 +23,42 @@ export default function GoogleAnalytics({
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}', {
               page_path: window.location.pathname,
+              transport_type: 'beacon'
             });
+          `,
+        }}
+      />
+      <Script
+        id="spa-outbound-click-tracker"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              // Ensure dataLayer exists
+              window.dataLayer = window.dataLayer || [];
+              
+              // Event delegation: listen for clicks on document
+              document.addEventListener('click', function(e) {
+                // Find the closest element with data-spa-id attribute
+                const btn = e.target.closest('[data-spa-id]');
+                
+                if (btn) {
+                  // Extract data attributes
+                  const spaId = btn.dataset.spaId || '';
+                  const clickIntent = btn.dataset.clickIntent || '';
+                  const productName = btn.dataset.productName || 'none';
+                  
+                  // Push custom event to dataLayer with parameters at top level
+                  // Parameters are at top level so GA4 can see them immediately
+                  window.dataLayer.push({
+                    event: 'spa_outbound_click',
+                    spa_id: spaId,
+                    click_intent: clickIntent,
+                    product_name: productName
+                  });
+                }
+              });
+            })();
           `,
         }}
       />
