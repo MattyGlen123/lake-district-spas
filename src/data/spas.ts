@@ -1500,9 +1500,9 @@ Complimentary pool and thermal suite access included for all hotel guests, with 
     agePolicy: 'Family Friendly',
     relatedSpas: [7, 10],
     treatmentBookingUrl:
-      'https://www.macdonaldhotels.co.uk/old-england/spa-leisure/spa',
+      'https://macdonaldoldengland.onejourney.travel/spa/treatments',
     treatmentBookingPhone: '0344 879 9102',
-    dayPassBookingUrl: 'https://www.macdonaldhotels.co.uk/old-england/book/spa/day/my-morning-retreat-spa-day',
+    dayPassBookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/days',
     hotelBookingUrl: 'https://www.macdonaldhotels.co.uk/old-england/book/accommodation/hotel/old-england',
   },
   {

@@ -12,6 +12,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£89',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67668',
   },
   {
     spaId: 6,
@@ -24,6 +25,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Body Treatments',
     price: '£69',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67669',
   },
   {
     spaId: 6,
@@ -36,6 +38,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Body Treatments',
     price: '£89',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67670',
   },
   {
     spaId: 6,
@@ -48,6 +51,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Body Treatments',
     price: '£85',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67671',
   },
   {
     spaId: 6,
@@ -60,6 +64,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£74',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67687',
   },
   {
     spaId: 6,
@@ -72,6 +77,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£94',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67674',
   },
   {
     spaId: 6,
@@ -84,6 +90,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£134',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67675',
   },
   {
     spaId: 6,
@@ -96,6 +103,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Body Treatments',
     price: '£59',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67692',
   },
   {
     spaId: 6,
@@ -108,6 +116,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£80',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67696',
   },
   {
     spaId: 6,
@@ -120,6 +129,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£100',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67672',
   },
   {
     spaId: 6,
@@ -132,6 +142,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£144',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67673',
   },
   {
     spaId: 6,
@@ -144,6 +155,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Body Treatments',
     price: '£139',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67683',
   },
   {
     spaId: 6,
@@ -156,6 +168,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£94',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67674', // Same booking URL as general Deep Tissue Massage 55min
   },
   {
     spaId: 6,
@@ -168,6 +181,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£179',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67676',
   },
   {
     spaId: 6,
@@ -180,6 +194,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Body Treatments',
     price: '£59',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67688',
   },
   {
     spaId: 6,
@@ -192,6 +207,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Body Treatments',
     price: '£79',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67678',
   },
   {
     spaId: 6,
@@ -204,6 +220,7 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Facial Treatments',
     price: '£59',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67689',
   },
   {
     spaId: 6,
@@ -216,5 +233,6 @@ export const spa6Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Massage Therapies',
     price: '£74',
+    bookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/treatments/67690',
   },
 ];
