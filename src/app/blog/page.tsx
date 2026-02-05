@@ -25,7 +25,22 @@ export async function generateMetadata(): Promise<Metadata> {
       description:
         'Expert guides, comparisons, and insider tips for planning your perfect Lake District spa break.',
       type: 'website',
-      url: 'https://lakedistrictspas.co.uk/blog',
+      url: `${baseUrl}/blog`,
+      images: [
+        {
+          url: `${baseUrl}/images/lake-district-spas_hero.jpg`,
+          width: 1200,
+          height: 630,
+          alt: 'Lake District Spa Guides & Tips - Blog',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Lake District Spa Guides & Tips - Blog',
+      description:
+        'Expert guides, comparisons, and insider tips for planning your perfect Lake District spa break.',
+      images: [`${baseUrl}/images/lake-district-spas_hero.jpg`],
     },
   };
 }
