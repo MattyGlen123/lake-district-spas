@@ -9,7 +9,7 @@ import FeaturedTreatments from '@/components/FeaturedTreatments';
 export const metadata = {
   title: 'Couples Spa Guide - Lake District | Romantic Spa Retreats',
   description:
-    'Outdoor infinity pools with fell views, lakeside hot tubs, and thermal suites designed for reconnection. Our curated selection of the Lake District\'s most romantic spa hotels.',
+    'Outdoor infinity pools, lakeside hot tubs, and thermal suites designed for reconnection. Discover our curated selection of the Lake District\'s most romantic spa hotels.',
 };
 
 export default function CouplesSpaPage() {
