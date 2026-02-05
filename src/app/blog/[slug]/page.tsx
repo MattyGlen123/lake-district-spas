@@ -49,7 +49,7 @@ export async function generateMetadata({
   const description = post.seoDescription || post.excerpt;
 
   return {
-    title: `${title} - Lake District Spas`,
+    title,
     description,
     openGraph: {
       title,
