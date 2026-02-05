@@ -16,14 +16,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Lake District Spa Guides & Tips - Blog',
     description:
-      'Expert guides, comparisons, and insider tips for planning your perfect Lake District spa break. Learn about facilities, access policies, and find the best spas for your needs.',
+      'Expert guides, comparisons, and insider tips to plan your perfect Lake District spa break, from facilities and access policies to the best spas.',
     alternates: {
       canonical: `${baseUrl}/blog`,
     },
     openGraph: {
       title: 'Lake District Spa Guides & Tips - Blog',
       description:
-        'Expert guides, comparisons, and insider tips for planning your perfect Lake District spa break.',
+        'Expert guides, comparisons, and insider tips to plan your perfect Lake District spa break.',
       type: 'website',
       url: `${baseUrl}/blog`,
       images: [
@@ -39,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary_large_image',
       title: 'Lake District Spa Guides & Tips - Blog',
       description:
-        'Expert guides, comparisons, and insider tips for planning your perfect Lake District spa break.',
+        'Expert guides, comparisons, and insider tips to plan your perfect Lake District spa break.',
       images: [`${baseUrl}/images/lake-district-spas_hero.jpg`],
     },
   };
