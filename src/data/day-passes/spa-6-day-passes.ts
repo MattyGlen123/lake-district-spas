@@ -5,7 +5,7 @@ export const spa6DayPasses: SpaDayPasses = {
   options: [
     {
       id: 'old-england-morning-retreat-weekday',
-      packageName: 'My Morning Retreat',
+      packageName: 'My Morning Retreat - Weekday',
       priceGBP: 109,
       spaDuration: 3,
       treatmentsIncluded: true,
@@ -28,7 +28,7 @@ export const spa6DayPasses: SpaDayPasses = {
     },
     {
       id: 'old-england-morning-retreat-weekend',
-      packageName: 'My Morning Retreat',
+      packageName: 'My Morning Retreat - Weekend',
       priceGBP: 109,
       spaDuration: 3,
       treatmentsIncluded: true,
@@ -51,7 +51,7 @@ export const spa6DayPasses: SpaDayPasses = {
     },
     {
       id: 'old-england-afternoon-escape-weekday',
-      packageName: 'My Afternoon Escape',
+      packageName: 'My Afternoon Escape - Weekday',
       priceGBP: 109,
       spaDuration: 3,
       treatmentsIncluded: true,
@@ -74,7 +74,7 @@ export const spa6DayPasses: SpaDayPasses = {
     },
     {
       id: 'old-england-afternoon-escape-weekend',
-      packageName: 'My Afternoon Escape',
+      packageName: 'My Afternoon Escape - Weekend',
       priceGBP: 109,
       spaDuration: 3,
       treatmentsIncluded: true,
@@ -97,7 +97,7 @@ export const spa6DayPasses: SpaDayPasses = {
     },
     {
       id: 'old-england-time-for-me-weekday',
-      packageName: 'My Time For Me Spa Day',
+      packageName: 'My Time For Me Spa Day - Weekday',
       priceGBP: 70,
       spaDuration: 4,
       treatmentsIncluded: true,
@@ -119,7 +119,7 @@ export const spa6DayPasses: SpaDayPasses = {
     },
     {
       id: 'old-england-time-for-me-weekend',
-      packageName: 'My Time For Me Spa Day',
+      packageName: 'My Time For Me Spa Day - Weekend',
       priceGBP: 70,
       spaDuration: 4,
       treatmentsIncluded: true,
