@@ -1630,6 +1630,8 @@ Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with
     treatmentBookingPhone: '01539 532 552',
     treatmentBookingUrl:
       'https://netherwood-hotel.onejourney.travel/spa/treatments',
+    dayPassBookingUrl: 'https://netherwood-hotel.onejourney.travel/spa/days',
+    hotelBookingUrl: 'https://booking.eu.guestline.app/IHNETHER/availability',
   },
   {
     id: 18,
