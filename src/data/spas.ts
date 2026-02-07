@@ -1755,6 +1755,7 @@ Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with
     relatedSpas: [6, 7],
     treatmentBookingPhone: '015394 42211',
     treatmentBookingUrl: 'https://lakeshotel.co.uk/spa/treatments/',
+    dayPassBookingUrl: 'https://booking.eu.guestline.app/BURN/availability?hotel=BURNSIDE',
   },
   {
     id: 17,

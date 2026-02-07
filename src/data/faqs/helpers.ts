@@ -172,6 +172,32 @@ export function getDayPassDuration(spaId: number, dayPassId: string): string | n
 }
 
 /**
+ * Get booking URL for a day pass (prefers bookingUrl, falls back to dayPassUrl)
+ * @param spaId - The spa ID
+ * @param dayPassId - The day pass ID
+ * @returns Booking URL string, or null if not found
+ */
+export function getDayPassBookingUrl(spaId: number, dayPassId: string): string | null {
+  const dayPass = getDayPassById(spaId, dayPassId);
+  if (!dayPass) return null;
+  
+  return dayPass.bookingUrl || dayPass.dayPassUrl || null;
+}
+
+/**
+ * Get package name for a day pass
+ * @param spaId - The spa ID
+ * @param dayPassId - The day pass ID
+ * @returns Package name string, or null if not found
+ */
+export function getDayPassPackageName(spaId: number, dayPassId: string): string | null {
+  const dayPass = getDayPassById(spaId, dayPassId);
+  if (!dayPass) return null;
+  
+  return dayPass.packageName;
+}
+
+/**
  * Get formatted treatment duration from treatment data
  * @param spaId - The spa ID
  * @param treatmentName - Partial name to match (e.g., "50 minute" treatments)

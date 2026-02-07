@@ -15,7 +15,14 @@ import {
 import { spaData } from '@/data/spas';
 import { BlogPostMeta } from '@/types/blog';
 import { Spa } from '@/types/spa';
-import { getDayPassPrice } from '@/data/faqs/helpers';
+import {
+  getDayPassPrice,
+  getDayPassDuration,
+  getSpaAccessDurationText,
+  getSpaAccessDurationHyphenated,
+  getDayPassBookingUrl,
+  getDayPassPackageName,
+} from '@/data/faqs/helpers';
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
@@ -302,6 +309,49 @@ const mdxComponents = {
     const price = getDayPassPrice(spa.id, dayPassId);
     if (!price) return null;
     return <span>{price}</span>;
+  },
+  SpaAccessDuration: ({ spaSlug }: { spaSlug: string }) => {
+    const spa = spaData.find((s) => s.url === spaSlug);
+    if (!spa) return null;
+    const duration = getSpaAccessDurationText(spa);
+    if (!duration) return null;
+    return <span>{duration}</span>;
+  },
+  SpaAccessDurationHyphenated: ({ spaSlug }: { spaSlug: string }) => {
+    const spa = spaData.find((s) => s.url === spaSlug);
+    if (!spa) return null;
+    const duration = getSpaAccessDurationHyphenated(spa);
+    if (!duration) return null;
+    return <span>{duration}</span>;
+  },
+  DayPassDuration: ({ spaSlug, dayPassId }: { spaSlug: string; dayPassId: string }) => {
+    const spa = spaData.find((s) => s.url === spaSlug);
+    if (!spa) return null;
+    const duration = getDayPassDuration(spa.id, dayPassId);
+    if (!duration) return null;
+    return <span>{duration}</span>;
+  },
+  DayPassLink: ({ spaSlug, dayPassId, children }: { spaSlug: string; dayPassId: string; children?: React.ReactNode }) => {
+    const spa = spaData.find((s) => s.url === spaSlug);
+    if (!spa) return children || null;
+    const bookingUrl = getDayPassBookingUrl(spa.id, dayPassId);
+    const packageName = getDayPassPackageName(spa.id, dayPassId);
+    const displayText = children || packageName || dayPassId;
+    
+    if (!bookingUrl) {
+      return <span>{displayText}</span>;
+    }
+    
+    return (
+      <a
+        href={bookingUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-emerald-950 underline hover:text-emerald-800 font-medium"
+      >
+        {displayText}
+      </a>
+    );
   },
 };
 
