@@ -69,12 +69,17 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfairDisplay.variable} ${inter.className}`}
       >
-        {/* Google Analytics */}
-        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
-          <GoogleAnalytics
-            GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-55LJRB7F"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
           />
-        )}
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+        <GoogleAnalytics/>
         {/* Ahrefs Analytics */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"

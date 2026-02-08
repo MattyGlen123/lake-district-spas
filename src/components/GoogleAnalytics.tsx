@@ -2,53 +2,41 @@
 
 import Script from 'next/script';
 
-export default function GoogleAnalytics({
-  GA_MEASUREMENT_ID,
-}: {
-  GA_MEASUREMENT_ID: string;
-}) {
+export default function GoogleAnalytics() {
   return (
     <>
+      {/* Google Tag Manager - handles GA4 config + all event tags */}
       <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-      />
-      <Script
-        id="google-analytics"
+        id="google-tag-manager"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}', {
-              page_path: window.location.pathname
-            });
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-55LJRB7F');
           `,
         }}
       />
+
+      {/* Spa outbound click tracker */}
       <Script
         id="spa-outbound-click-tracker"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             (function() {
-              // Ensure dataLayer exists
               window.dataLayer = window.dataLayer || [];
-              
-              // Event delegation: listen for clicks on document
+
               document.addEventListener('click', function(e) {
-                // Find the closest element with data-spa-id attribute
-                const btn = e.target.closest('[data-spa-id]');
-                
+                var btn = e.target.closest('[data-spa-id]');
+
                 if (btn) {
-                  // Extract data attributes
-                  const spaId = btn.dataset.spaId || '';
-                  const clickIntent = btn.dataset.clickIntent || '';
-                  const productName = btn.dataset.productName || 'none';
-                  
-                  // Push custom event to dataLayer with parameters at top level
-                  // Parameters are at top level so GA4 can see them immediately
+                  var spaId = btn.dataset.spaId || '';
+                  var clickIntent = btn.dataset.clickIntent || '';
+                  var productName = btn.dataset.productName || 'none';
+
                   window.dataLayer.push({
                     event: 'spa_outbound_click',
                     spa_id: spaId,
