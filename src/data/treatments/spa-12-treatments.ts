@@ -12,6 +12,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
     price: '£89',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d85757ee68e534ab053f65/resveratrol-facial',
   },
   {
     spaId: 12,
@@ -24,6 +25,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
     price: '£89',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d85757ee68e534ab053f63/premier-cru-facial',
   },
   {
     spaId: 12,
@@ -36,6 +38,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
     price: '£85',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d8575bee68e534ab053f83/vinoperfect-radiance-facial',
   },
   {
     spaId: 12,
@@ -48,6 +51,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
     price: '£85',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d8575bee68e534ab053f85/vinopure-facial',
   },
   {
     spaId: 12,
@@ -60,6 +64,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
     price: '£85',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d8575bee68e534ab053f87/vinohydra-facial',
   },
   {
     spaId: 12,
@@ -72,6 +77,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'TEMPLESPA',
     category: 'Massage Therapies',
     price: '£89',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d85758ee68e534ab053f6f/temple-spa-my-kind-of-massage',
   },
   {
     spaId: 12,
@@ -84,6 +90,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'TEMPLESPA',
     category: 'Massage Therapies',
     price: '£89',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d85759ee68e534ab053f75/temple-spa-new-beginnings',
   },
   {
     spaId: 12,
@@ -96,6 +103,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
     price: '£85',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d85758ee68e534ab053f69/temple-spa-the-body-detox',
   },
   {
     spaId: 12,
@@ -108,6 +116,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
     price: '£85',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d85758ee68e534ab053f6b/temple-spa-back-to-life',
   },
   {
     spaId: 12,
@@ -120,6 +129,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
     price: '£110',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d8575aee68e534ab053f7d/temple-spa-the-ultimate-glow',
   },
   {
     spaId: 12,
@@ -132,6 +142,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
     price: '£69',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d8575aee68e534ab053f7b/temple-spa-soul-soother',
   },
   {
     spaId: 12,
@@ -143,7 +154,8 @@ export const spa12Treatments: Treatment[] = [
     duration: '80 minutes',
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
-    price: '£110',
+    price: '£105',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d8575aee68e534ab053f7f/temple-spa-your-best-you',
   },
   {
     spaId: 12,
@@ -156,6 +168,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'CAUDALIE',
     category: 'Facial Treatments',
     price: '£52',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d85756ee68e534ab053f5f/caudalie-express-d-vine-facial',
   },
   {
     spaId: 12,
@@ -168,6 +181,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
     price: '£52',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d85758ee68e534ab053f6d/temple-spa-leg-and-foot-energiser',
   },
   {
     spaId: 12,
@@ -180,6 +194,7 @@ export const spa12Treatments: Treatment[] = [
     brand: 'TEMPLESPA',
     category: 'Body Treatments',
     price: '£52',
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d85759ee68e534ab053f77/temple-spa-outer-glow-25-mins',
   },
   {
     spaId: 12,
@@ -192,6 +207,11 @@ export const spa12Treatments: Treatment[] = [
     brand: 'TEMPLESPA',
     category: 'Massage Therapies',
     price: '£52',
+    // ⚠️ ISSUE: Listed as "or" but these are TWO separate bookable treatments on website
+    // Option 1: Shoulder and Scalp
+    bookingUrl: 'https://northlakeshotel.try.be/items/66d8575aee68e534ab053f79/temple-spa-shoulder-and-scalp-massage',
+    // Option 2: Back Massage (separate booking)
+    // bookingUrl: 'https://northlakeshotel.try.be/items/66d85757ee68e534ab053f67/temple-spa-back-massage',
   },
   {
     spaId: 12,
@@ -204,6 +224,7 @@ export const spa12Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£35',
+    bookingUrl: 'https://northlakeshotel.try.be/items/673c6dc9f0e2cc8f820b1a19/wave-touch-massage',
   },
   {
     spaId: 12,

@@ -2075,6 +2075,8 @@ Complimentary spa access included for hotel guests, with day passes and annual m
     treatmentBookingPhone: '01768 868111',
     treatmentBookingUrl:
       'https://www.northlakeshotel.co.uk/spa-treatments/treatments',
+    dayPassBookingUrl: 'https://www.northlakeshotel.co.uk/spa-treatments/spa-days-breaks',
+    hotelBookingUrl: 'https://www.northlakeshotel.co.uk/rooms-suites',
   },
   {
     id: 13,
