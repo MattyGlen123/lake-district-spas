@@ -12,6 +12,7 @@ export const spa15Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Body Treatments',
     price: '£120',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61388',
   },
   {
     spaId: 15,
@@ -24,6 +25,7 @@ export const spa15Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£45',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61390',
   },
   {
     spaId: 15,
@@ -32,10 +34,11 @@ export const spa15Treatments: Treatment[] = [
       'Hydrate, Lift & Firm. Improve skin firmness, whilst reducing the look of fine lines and wrinkles with our clinically proven formulas and skin lifting massage techniques. After just one treatment from the complexion looks supremely hydrated, lifted and firmer.',
     shortDescription:
       'Hydrating anti-aging facial that improves firmness while reducing fine lines and wrinkles.',
-    duration: '60 minutes',
+    duration: '50 minutes',
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£70',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61398', // Matched on name + price (duration mismatch)
   },
   {
     spaId: 15,
@@ -48,6 +51,7 @@ export const spa15Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Hands & Feet Treatments',
     price: '£35',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61392',
   },
   {
     spaId: 15,
@@ -60,6 +64,7 @@ export const spa15Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£80',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61395',
   },
   {
     spaId: 15,
@@ -72,6 +77,7 @@ export const spa15Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£70',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61396',
   },
   {
     spaId: 15,
@@ -84,6 +90,7 @@ export const spa15Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£45',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61399',
   },
   {
     spaId: 15,
@@ -96,6 +103,7 @@ export const spa15Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£70',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61402',
   },
   {
     spaId: 15,
@@ -108,6 +116,7 @@ export const spa15Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£70',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61408',
   },
   {
     spaId: 15,
@@ -120,6 +129,7 @@ export const spa15Treatments: Treatment[] = [
     brand: 'Lava Shells',
     category: 'Massage Therapies',
     price: '£60',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61414',
   },
   {
     spaId: 15,
@@ -132,6 +142,7 @@ export const spa15Treatments: Treatment[] = [
     brand: 'Lava Shells',
     category: 'Massage Therapies',
     price: '£80',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61415',
   },
   {
     spaId: 15,
@@ -144,6 +155,7 @@ export const spa15Treatments: Treatment[] = [
     brand: 'Lava Shells',
     category: 'Massage Therapies',
     price: '£95',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61416',
   },
   {
     spaId: 15,
@@ -156,6 +168,7 @@ export const spa15Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£45',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61413',
   },
   {
     spaId: 15,
@@ -168,6 +181,7 @@ export const spa15Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£90',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61411',
   },
   {
     spaId: 15,
@@ -180,6 +194,7 @@ export const spa15Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Body Treatments',
     price: '£45',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61418',
   },
   {
     spaId: 15,
@@ -192,5 +207,6 @@ export const spa15Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£70',
+    bookingUrl: 'https://applebymanor.onejourney.travel/spa/treatments/61422',
   },
 ];

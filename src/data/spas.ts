@@ -1866,7 +1866,7 @@ Spa access requires additional charge for hotel guests, though some overnight pa
       "Appleby Manor's outdoor spa garden with hot tubs, fire pit, and scenic grounds. Traditional spa facilities. Perfect for groups and special celebrations.",
     intro: `The Garden Spa at Appleby Manor Hotel offers contemporary wellness in the Eden Valley on the edge of the Lake District, near Appleby-in-Westmorland. Set within a 19th-century country house hotel with views toward Appleby Castle, the spa features an indoor vitality pool with underwater massage loungers, volcano pads, and shoulder cannons for targeted hydrotherapy.
 
-Thermal experiences include a traditional sauna, aromatherapy steam room, salt inhalation room for respiratory benefits, and rain sky experience showers. The sheltered outdoor spa garden features hot tubs and an open fire pit for year-round relaxation, plus a private hot tub is available for hire with panoramic countryside views.
+Thermal experiences include a traditional sauna, aromatherapy steam room, salt inhalation room for respiratory benefits, and rain sky experience showers. The sheltered outdoor spa garden features a hot tub and open fire pit for year-round relaxation, plus a private hot tub is available for hire with a glass of bubbly (additional cost).
 
 Hotel guests must book spa access separately and day spa packages are available to the public. This is a 16+ spa, though some treatments require guests to be 18+.`,
     websiteUrl: 'https://applebymanor.co.uk/garden-spa',
@@ -1926,7 +1926,11 @@ Hotel guests must book spa access separately and day spa packages are available 
       },
       {
         name: 'Outdoor Hot Tub',
-        details: 'Outdoor spa baths in sheltered spa garden with fire pit',
+        details: 'Hot tub in the spa garden',
+      },
+      {
+        name: 'Private Hire Hot Tub',
+        details: 'Private hot tub with a glass of bubbly (additional cost)',
       },
     ],
     accessPolicy: [
@@ -1967,6 +1971,8 @@ Hotel guests must book spa access separately and day spa packages are available 
     treatmentBookingPhone: '017683 51571',
     treatmentBookingUrl:
       'https://applebymanor.onejourney.travel/spa/treatments',
+    dayPassBookingUrl: 'https://applebymanor.onejourney.travel/spa/days',
+    hotelBookingUrl: 'https://appleby-manor.rezcontrol.com/',
   },
   {
     id: 12,
