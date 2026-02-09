@@ -23,11 +23,11 @@ export function getSpa18FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Spa treatments are available at an additional cost and require advance booking. For full details on access policies, see the{' '}
-          <Link href="#access" className="text-stone-900 font-semibold underline">
+          <Link href="#access" className="underline">
             spa access information
           </Link>{' '}
           section. You can also browse available{' '}
-          <Link href="#treatments" className="text-stone-900 font-semibold underline">
+          <Link href="#treatments" className="underline">
             treatments and prices
           </Link>
           .
@@ -48,11 +48,11 @@ export function getSpa18FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           For families, the morning sessions offer a great opportunity to enjoy the pool and hot tubs together before heading out to explore Bowness village, which is just a five minute walk from the hotel. For full details, see the{' '}
-          <Link href="#access" className="text-stone-900 font-semibold underline">
+          <Link href="#access" className="underline">
             access information
           </Link>{' '}
           section, or explore other{' '}
-          <Link href="/" className="text-stone-900 font-semibold underline">
+          <Link href="/" className="underline">
             Lake District spas
           </Link>{' '}
           with different age policies.
@@ -73,11 +73,11 @@ export function getSpa18FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           If you&apos;re looking for a spa day experience in the Lake District without an overnight stay, several other spas in the area do offer day visitor packages. You can compare options on our{' '}
-          <Link href="/" className="text-stone-900 font-semibold underline">
+          <Link href="/" className="underline">
             homepage
           </Link>
           . For booking a stay at {spa.name}, see the{' '}
-          <Link href="#book" className="text-stone-900 font-semibold underline">
+          <Link href="#book" className="underline">
             booking section
           </Link>
           .
@@ -98,11 +98,11 @@ export function getSpa18FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Treatment rooms offer {brandsText || 'Elemis'} therapies including BIOTEC facial technology treatments that use microcurrent, ultrasonic, LED, and oxygen infusion technology for advanced skincare results. For full details on thermal facilities, see the{' '}
-          <Link href="#thermal" className="text-stone-900 font-semibold underline">
+          <Link href="#thermal" className="underline">
             thermal facilities
           </Link>{' '}
           section. Browse all available{' '}
-          <Link href="#treatments" className="text-stone-900 font-semibold underline">
+          <Link href="#treatments" className="underline">
             treatments and prices
           </Link>
           .
@@ -123,11 +123,11 @@ export function getSpa18FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Spa access is complimentary for all hotel and apartment guests with no time restrictions, and the spa is open from 8am to 10:30pm daily. For an overview of everything available, see the{' '}
-          <Link href="#thermal" className="text-stone-900 font-semibold underline">
+          <Link href="#thermal" className="underline">
             thermal facilities
           </Link>{' '}
           and{' '}
-          <Link href="#access" className="text-stone-900 font-semibold underline">
+          <Link href="#access" className="underline">
             access information
           </Link>{' '}
           sections.

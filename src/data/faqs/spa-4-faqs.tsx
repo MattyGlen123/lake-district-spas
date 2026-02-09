@@ -58,11 +58,11 @@ export function getSpa4FAQs(spa: Spa): FAQ[] {
             </>
           )}
           If you&apos;d like to book a treatment during your stay, it&apos;s best to reserve in advance as appointments can fill up, especially at weekends. For full details on{' '}
-          <Link href="#treatments" className="text-stone-900 underline">
+          <Link href="#treatments" className="underline">
             treatments
           </Link>
           {' '}and{' '}
-          <Link href="#thermal" className="text-stone-900 underline">
+          <Link href="#thermal" className="underline">
             facilities
           </Link>
           , see the relevant sections.
@@ -75,7 +75,7 @@ export function getSpa4FAQs(spa: Spa): FAQ[] {
       answer: (
         <>
           Yes, {spa.name} offers the{' '}
-          <Link href="#daffodil-afternoon-bliss" className="text-stone-900 underline">
+          <Link href="#daffodil-afternoon-bliss" className="underline">
             Afternoon Bliss
           </Link>{' '}
           package ({afternoonBlissPrice || '£70'} per person) which combines 3 hours of spa access with a full afternoon tea served in the lake view Dining Room overlooking Grasmere. This is one of the most popular spa day options and a wonderful way to spend an afternoon in the Lake District.
@@ -85,11 +85,11 @@ export function getSpa4FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           If you prefer lunch instead of afternoon tea, the{' '}
-          <Link href="#daffodil-simply-spa-time" className="text-stone-900 underline">
+          <Link href="#daffodil-simply-spa-time" className="underline">
             Simply Spa Time
           </Link>{' '}
           package ({simplySpaTimePrice || '£60'}) offers 2 hours of spa access with a 2 course lunch. Booking is required for all spa day packages. For all options, see the{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             day passes section
           </Link>
           .
@@ -105,15 +105,15 @@ export function getSpa4FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           For spa facilities only, prices start at {facilitiesWeekdayPrice || '£35'} for 3 hours Monday to Thursday, or {facilitiesWeekendPrice || '£45'} Friday to Sunday and bank holidays. The{' '}
-          <Link href="#daffodil-twilight-spa" className="text-stone-900 underline">
+          <Link href="#daffodil-twilight-spa" className="underline">
             Twilight Spa
           </Link>{' '}
           ({twilightSpaPrice || '£40'}) offers 2 hours of evening access from 4pm with a glass of prosecco. For spa with dining, the{' '}
-          <Link href="#daffodil-simply-spa-time" className="text-stone-900 underline">
+          <Link href="#daffodil-simply-spa-time" className="underline">
             Simply Spa Time
           </Link>{' '}
           ({simplySpaTimePrice || '£60'}) includes 2 course lunch, while{' '}
-          <Link href="#daffodil-afternoon-bliss" className="text-stone-900 underline">
+          <Link href="#daffodil-afternoon-bliss" className="underline">
             Afternoon Bliss
           </Link>{' '}
           ({afternoonBlissPrice || '£70'}) features full afternoon tea with lake views.
@@ -121,7 +121,7 @@ export function getSpa4FAQs(spa: Spa): FAQ[] {
           <br />
           Full spa days with treatments start at {itsAllGoodWeekdayPrice || '£170'} for the It&apos;s All Good package (facial, back massage, spa access, and lunch). All packages include use of the hydrotherapy pool, sauna, steam room, and relaxation lounge. The spa is{' '}
           {agePolicy ? `for guests aged ${agePolicy} only` : 'adults only'}. For booking details, see the{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             day passes section
           </Link>
           .
@@ -137,26 +137,26 @@ export function getSpa4FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Popular treatments include the{' '}
-          <Link href={driftAwayId ? `#${driftAwayId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={driftAwayId ? `#${driftAwayId}` : '#treatments'} className="underline">
             Drift Away massage
           </Link>{' '}
           (from {driftAway30Price || '£72'} for {driftAway30Duration || '30 minutes'} back massage, up to {driftAway90Price || '£140'} for {driftAway90Duration || '90 minutes'} full body with face and scalp), the{' '}
-          <Link href={powerBreakfastFacialId ? `#${powerBreakfastFacialId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={powerBreakfastFacialId ? `#${powerBreakfastFacialId}` : '#treatments'} className="underline">
             Power Breakfast Facial
           </Link>{' '}
           ({powerBreakfastFacialPrice || '£77'}, {powerBreakfastFacialDuration || '45 minutes'}) for quick results, and the luxurious{' '}
-          <Link href={champagneTrufflesId ? `#${champagneTrufflesId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={champagneTrufflesId ? `#${champagneTrufflesId}` : '#treatments'} className="underline">
             Champagne and Truffles facial
           </Link>{' '}
           (from {champagneTrufflesPrice || '£121'}). For the ultimate indulgence, the{' '}
-          <Link href={vipGoldenTruffleId ? `#${vipGoldenTruffleId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={vipGoldenTruffleId ? `#${vipGoldenTruffleId}` : '#treatments'} className="underline">
             VIP Golden Truffle Experience
           </Link>{' '}
           ({vipGoldenTrufflePrice || '£231'}, {vipGoldenTruffleDuration || '2 hours'}) combines full body exfoliation, anti ageing massage, and deluxe facial.
           <br />
           <br />
           The spa also offers pregnancy safe treatments through the New Beginnings range, reflexology, and various express treatments that can enhance any spa visit. Quick {upgradeDuration || '15 minute'} upgrades like hot oil scalp massage or eye massage are available from {upgradePrice || '£15'} to add to your main treatment. For the full menu, see the{' '}
-          <Link href="#treatments" className="text-stone-900 underline">
+          <Link href="#treatments" className="underline">
             treatments section
           </Link>
           .
@@ -175,11 +175,11 @@ export function getSpa4FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           For spa treatments, advance booking is recommended for both hotel guests and day visitors. Popular treatments and weekend appointments fill up quickly. You can book treatments when making your room reservation, or contact the spa team separately. See the{' '}
-          <Link href="#treatments" className="text-stone-900 underline">
+          <Link href="#treatments" className="underline">
             treatments
           </Link>{' '}
           and{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             day passes
           </Link>{' '}
           sections for booking information.

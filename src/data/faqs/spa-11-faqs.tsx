@@ -21,7 +21,7 @@ export function getSpa11FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Because the spa is exclusively for hotel guests (no day passes are sold), you&apos;ll find a peaceful, uncrowded atmosphere. For full details on spa facilities, see the{' '}
-          <Link href="#thermal" className="text-stone-900 underline">
+          <Link href="#thermal" className="underline">
             thermal facilities section
           </Link>
           .
@@ -42,7 +42,7 @@ export function getSpa11FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           For Lake District spas that do offer day passes, see our{' '}
-          <Link href="/" className="text-stone-900 underline">
+          <Link href="/" className="underline">
             spa directory
           </Link>{' '}
           where you can filter by day pass availability.
@@ -63,7 +63,7 @@ export function getSpa11FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Note that if you&apos;d like spa treatments, these are delivered in room and do need to be booked in advance by contacting the hotel directly. For access policy details, see the{' '}
-          <Link href="#access" className="text-stone-900 underline">
+          <Link href="#access" className="underline">
             spa access information
           </Link>
           .
@@ -84,7 +84,7 @@ export function getSpa11FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           If you&apos;re travelling with children, they are welcome to stay at the hotel and enjoy Grasmere village and the surrounding Lake District, but won&apos;t be able to access the spa facilities. For couples seeking a romantic spa break, see our{' '}
-          <Link href="/couples-spa-lake-district" className="text-stone-900 underline">
+          <Link href="/couples-spa-lake-district" className="underline">
             couples spa guide
           </Link>
           .
@@ -105,11 +105,11 @@ export function getSpa11FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           The spa&apos;s intimate size and hotel guests only policy means facilities rarely feel crowded. Many guests find it the perfect way to unwind after a day exploring Grasmere and the surrounding fells. For the complete facility list, see the{' '}
-          <Link href="#thermal" className="text-stone-900 underline">
+          <Link href="#thermal" className="underline">
             thermal facilities
           </Link>{' '}
           and{' '}
-          <Link href="#pool" className="text-stone-900 underline">
+          <Link href="#pool" className="underline">
             pool features
           </Link>{' '}
           sections above.

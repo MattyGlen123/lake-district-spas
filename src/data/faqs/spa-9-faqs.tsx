@@ -24,26 +24,26 @@ export function getSpa9FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           The most affordable option is the{' '}
-          <Link href="#lakeside-steam-and-swim" className="text-stone-900 underline">
+          <Link href="#lakeside-steam-and-swim" className="underline">
             Steam And Swim
           </Link>{' '}
           package ({steamSwimPrice || '£30'}) which gives you {steamSwimDuration || '3 hours'} of access to the 17 metre heated pool, sauna, steam room and jacuzzi. For evening visits, the{' '}
-          <Link href="#lakeside-twilight-swim-steam" className="text-stone-900 underline">
+          <Link href="#lakeside-twilight-swim-steam" className="underline">
             Twilight Swim & Steam
           </Link>{' '}
           ({twilightPrice || '£30'}) includes a glass of fizz on arrival. If you want treatments included, the{' '}
-          <Link href="#lakeside-seasonal-spa-day" className="text-stone-900 underline">
+          <Link href="#lakeside-seasonal-spa-day" className="underline">
             Seasonal Spa Day
           </Link>{' '}
           ({seasonalPrice || '£90'}) offers full day access with a 45 minute treatment.
           <br />
           <br />
           For groups of 4 or more, the{' '}
-          <Link href="#lakeside-group-spa-day" className="text-stone-900 underline">
+          <Link href="#lakeside-group-spa-day" className="underline">
             Group Spa Day
           </Link>{' '}
           starts from {groupPrice || '£85'} per person. View all packages in the{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             Day Spa Packages section
           </Link>.
         </>
@@ -63,15 +63,15 @@ export function getSpa9FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           It&apos;s worth noting that {spa.name} is a hotel wellness facility rather than a destination thermal spa. If you&apos;re looking for an extensive thermal suite with multiple heat experiences, consider{' '}
-          <Link href="/spa/lodore-falls-spa" className="text-stone-900 underline">
+          <Link href="/spa/lodore-falls-spa" className="underline">
             Lodore Falls
           </Link>{' '}
           or{' '}
-          <Link href="/spa/low-wood-bay-spa" className="text-stone-900 underline">
+          <Link href="/spa/low-wood-bay-spa" className="underline">
             Low Wood Bay
           </Link>
           . For full facility details, see the{' '}
-          <Link href="#thermal" className="text-stone-900 underline">
+          <Link href="#thermal" className="underline">
             Thermal Facilities section
           </Link>.
         </>
@@ -91,15 +91,15 @@ export function getSpa9FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           If you&apos;re seeking a quieter, adults only spa experience, you may prefer{' '}
-          <Link href="/spa/lodore-falls-spa" className="text-stone-900 underline">
+          <Link href="/spa/lodore-falls-spa" className="underline">
             Lodore Falls
           </Link>{' '}
           (18 and over) or{' '}
-          <Link href="/spa/brimstone-hotel-spa" className="text-stone-900 underline">
+          <Link href="/spa/brimstone-hotel-spa" className="underline">
             Brimstone Spa
           </Link>{' '}
           (18 and over). For more family friendly options, see our{' '}
-          <Link href="/" className="text-stone-900 underline">
+          <Link href="/" className="underline">
             homepage
           </Link>.
         </>
@@ -119,7 +119,7 @@ export function getSpa9FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Access to the spa garden is included with all spa day packages and hotel guest spa access. It&apos;s particularly atmospheric on cooler days when you can contrast the crisp outdoor air with the warmth of the fire pit and heat domes. For more details on what&apos;s included, see the{' '}
-          <Link href="#thermal" className="text-stone-900 underline">
+          <Link href="#thermal" className="underline">
             Thermal Facilities section
           </Link>.
         </>
@@ -133,7 +133,7 @@ export function getSpa9FAQs(spa: Spa): FAQ[] {
       answer: (
         <>
           Yes, the{' '}
-          <Link href="#lakeside-afternoon-tea-spa-day" className="text-stone-900 underline">
+          <Link href="#lakeside-afternoon-tea-spa-day" className="underline">
             Afternoon Tea Spa Day
           </Link>{' '}
           ({afternoonTeaPrice || '£150'}) combines {afternoonTeaDuration || '3 hours'} of spa access with a 60 minute treatment and traditional afternoon tea in the Lake View restaurant. You&apos;ll also receive tea or coffee with morning pastries on arrival.
@@ -143,11 +143,11 @@ export function getSpa9FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           If you prefer lunch instead of afternoon tea, the{' '}
-          <Link href="#lakeside-revitalising-spa-day" className="text-stone-900 underline">
+          <Link href="#lakeside-revitalising-spa-day" className="underline">
             Revitalising Spa Day
           </Link>{' '}
           ({revitalisingPrice || '£135'}) offers full day spa access, a 60 minute treatment and a 2 course lunch in the Conservatory. Book directly through the{' '}
-          <Link href="#book" className="text-stone-900 underline">
+          <Link href="#book" className="underline">
             spa booking page
           </Link>.
         </>

@@ -38,7 +38,7 @@ export function getSpa5FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Day visitors should book thermal access or{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             spa day packages
           </Link>{' '}
           online in advance. For quieter times, consider weekday twilight sessions (Monday through Thursday, 6pm to 8pm), which tend to be less crowded than daytime slots.
@@ -57,14 +57,14 @@ export function getSpa5FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           The spa is open from 10am to 8pm daily. Complimentary access includes all{' '}
-          <Link href="#thermal" className="text-stone-900 underline">
+          <Link href="#thermal" className="underline">
             thermal facilities
           </Link>
           , including the indoor and outdoor hydrotherapy pool, Finnish saunas, steam room, cold plunge pool, and experience showers.
           <br />
           <br />
           Important: Even if your room includes spa access, you should still{' '}
-          <Link href="#faq" className="text-stone-900 underline">
+          <Link href="#faq" className="underline">
             book your spa time slot in advance
           </Link>{' '}
           to guarantee entry, as the spa frequently reaches capacity.
@@ -83,40 +83,40 @@ export function getSpa5FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Budget options: The{' '}
-          <Link href="#swan-twilight-sessions-weekday" className="text-stone-900 underline">
+          <Link href="#swan-twilight-sessions-weekday" className="underline">
             Twilight Session
           </Link>{' '}
           starts at {twilightWeekdayPrice || '£35'} (Monday through Thursday, 6pm to 8pm) or {twilightWeekendPrice || '£55'} (Saturday and Sunday, 6pm to 8pm). These provide {twilightDuration || '2 hours'} of thermal access at quieter times.
           <br />
           <br />
           Best value: The{' '}
-          <Link href="#swan-thermal-access-afternoon-tea" className="text-stone-900 underline">
+          <Link href="#swan-thermal-access-afternoon-tea" className="underline">
             Thermal Access plus Afternoon Tea
           </Link>{' '}
           package costs {afternoonTeaPrice || '£65'} and is consistently praised in guest reviews as amazing value for money. You&apos;ll get {afternoonTeaDuration || '2 hours'} of{' '}
-          <Link href="#thermal" className="text-stone-900 underline">
+          <Link href="#thermal" className="underline">
             thermal access
           </Link>{' '}
           plus a full afternoon tea service.
           <br />
           <br />
           Premium options: For a more indulgent experience, the{' '}
-          <Link href="#swan-winter-glow-spa-day" className="text-stone-900 underline">
+          <Link href="#swan-winter-glow-spa-day" className="underline">
             Winter Glow Spa Day
           </Link>{' '}
           ({winterGlowPrice || '£150'}) and{' '}
-          <Link href="#swan-champagne-truffle-spa-day" className="text-stone-900 underline">
+          <Link href="#swan-champagne-truffle-spa-day" className="underline">
             Champagne Truffle Spa Day
           </Link>{' '}
           ({champagneTrufflePrice || '£150'}) include treatments and refreshments. The{' '}
-          <Link href="#swan-full-works-spa-day" className="text-stone-900 underline">
+          <Link href="#swan-full-works-spa-day" className="underline">
             Full Works package
           </Link>{' '}
           ({fullWorksPrice || '£225'}) offers the complete spa day experience with extended thermal access ({fullWorksDuration || '3 hours'}), treatments, and a meal.
           <br />
           <br />
           Hotel guests: If you&apos;re staying in a Splendid room or above, complimentary{' '}
-          <Link href="#access" className="text-stone-900 underline">
+          <Link href="#access" className="underline">
             spa access
           </Link>{' '}
           is included with your room, so you won&apos;t need to purchase a day pass.
@@ -147,7 +147,7 @@ export function getSpa5FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           The spa operates an adults only policy (guests aged 16 to 17 are welcome when accompanied by a parent or guardian). Access is available from 10am to 8pm daily through{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             spa day packages
           </Link>{' '}
           or complimentary for hotel guests in Splendid rooms and above.
@@ -186,7 +186,7 @@ export function getSpa5FAQs(spa: Spa): FAQ[] {
           The spa is open from 10am to 8pm daily. Day visitors receive{' '}
           {durationText && <>{durationText} </>}
           time slots for thermal access. Swimwear is required, and towels and robes are provided. Remember to{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             book in advance
           </Link>
           , as the thermal suite frequently reaches capacity.

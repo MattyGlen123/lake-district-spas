@@ -544,10 +544,10 @@ describe('Lodore Falls FAQs - Generated Content', () => {
         const { container } = render(<>{faq.answer}</>);
         const links = container.querySelectorAll('a');
         links.forEach((link) => {
-          // Links should have underline class
+          // Links should have underline class only (no text color or font weight)
           expect(link.className).toContain('underline');
-          // Links should have text-stone-900 class
-          expect(link.className).toContain('text-stone-900');
+          expect(link.className).not.toContain('text-stone-900');
+          expect(link.className).not.toContain('font-semibold');
         });
       });
     });

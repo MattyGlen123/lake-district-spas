@@ -39,33 +39,33 @@ export function getSpa2FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           For the best value, the{' '}
-          <Link href="#armathwaite-sunrise-weekday" className="text-stone-900 underline">
+          <Link href="#armathwaite-sunrise-weekday" className="underline">
             Sunrise Spa
           </Link>{' '}
           ({sunriseWeekday || '£70'} weekdays, {sunriseWeekend || '£80'} weekends) offers morning spa access, or the{' '}
-          <Link href="#armathwaite-sunset-weekday" className="text-stone-900 underline">
+          <Link href="#armathwaite-sunset-weekday" className="underline">
             Sunset Spa
           </Link>{' '}
           ({sunsetWeekday || '£70'} weekdays) provides evening access. Both include full use of spa facilities, robes, and towels.
           <br />
           <br />
           For a half day experience, the{' '}
-          <Link href="#armathwaite-escape-weekday" className="text-stone-900 underline">
+          <Link href="#armathwaite-escape-weekday" className="underline">
             Escape Half Day
           </Link>{' '}
           ({escapeWeekday || '£140'} to {escapeWeekend || '£150'}) includes a 55 minute treatment. The popular{' '}
-          <Link href="#armathwaite-sereni-tea-weekday" className="text-stone-900 underline">
+          <Link href="#armathwaite-sereni-tea-weekday" className="underline">
             Sereni Tea
           </Link>{' '}
           ({sereniTeaWeekday || '£160'} to {sereniTeaWeekend || '£170'}) combines spa access with afternoon tea. For the ultimate experience, the{' '}
-          <Link href="#armathwaite-serenity-weekday" className="text-stone-900 underline">
+          <Link href="#armathwaite-serenity-weekday" className="underline">
             Serenity Full Day
           </Link>{' '}
           ({serenityWeekday || '£190'} to {serenityWeekend || '£200'}) includes a treatment plus lunch or afternoon tea. Specialist packages like the Mother To Be ({motherToBeWeekday || '£150'} weekdays) cater to specific needs.
           <br />
           <br />
           All packages include access to the indoor pool, outdoor infinity pools, outdoor hot tub, Finnish sauna, Amethyst Crystal Cave steam room, and relaxation areas. For full details, see the{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             spa day packages section
           </Link>
           .
@@ -82,18 +82,18 @@ export function getSpa2FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Inside, you&apos;ll find the Amethyst Crystal Cave, a distinctive steam room experience unique to Armathwaite Hall. The thermal facilities also include a Finnish sauna and a 16 metre indoor swimming pool. The{' '}
-          <Link href="#thermal" className="text-stone-900 underline">
+          <Link href="#thermal" className="underline">
             thermal facilities section
           </Link>{' '}
           has full details of all heat experiences available.
           <br />
           <br />
           For treatments, the spa offers an exclusive{' '}
-          <Link href={walkersRecoveryId ? `#${walkersRecoveryId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={walkersRecoveryId ? `#${walkersRecoveryId}` : '#treatments'} className="underline">
             Organic Walker&apos;s Recovery
           </Link>{' '}
           massage only available at {spa.name}, specifically designed for guests exploring the Lake District fells. Treatments use{brandsText ? ` ${brandsText}` : ' Temple Spa, VOYA, and Made for Life'} products. The setting itself is remarkable: a lakeside position on the shores of Bassenthwaite Lake within a 400 acre private deer park. For treatment options, see the{' '}
-          <Link href="#treatments" className="text-stone-900 underline">
+          <Link href="#treatments" className="underline">
             treatments section
           </Link>
           .
@@ -113,11 +113,11 @@ export function getSpa2FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Outside of the family swimming time, the spa and pool areas are reserved for guests {agePolicy || '18 and over'}. If you&apos;re visiting with children, the hotel&apos;s 400 acre grounds offer plenty to explore, including a deer park and wildlife. You could book spa treatments or a spa day during times when children are enjoying the estate or alternative activities. For full access details, see the{' '}
-          <Link href="#access" className="text-stone-900 underline">
+          <Link href="#access" className="underline">
             spa access information
           </Link>
           . For other Lake District spas with different age policies, see our{' '}
-          <Link href="/" className="text-stone-900 underline">
+          <Link href="/" className="underline">
             homepage
           </Link>
           .
@@ -134,18 +134,18 @@ export function getSpa2FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Spa treatments are not included in your room rate and must be booked separately. Popular treatments include massages, facials, and body therapies using{brandsText ? ` ${brandsText}` : ' Temple Spa, VOYA, and Made for Life'} products. The exclusive{' '}
-          <Link href={walkersRecoveryId ? `#${walkersRecoveryId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={walkersRecoveryId ? `#${walkersRecoveryId}` : '#treatments'} className="underline">
             Organic Walker&apos;s Recovery
           </Link>{' '}
           treatment is particularly popular with guests who have been exploring the fells.
           <br />
           <br />
           If you&apos;re not staying at the hotel, you can visit as a day guest by booking one of the{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             spa day packages
           </Link>{' '}
           starting from {sunriseWeekday || '£70'}. All spa access, whether for hotel guests or day visitors, must be pre booked due to limited capacity. The spa operates an {agePolicy || '18 and over'} policy for bookings. For full details, see the{' '}
-          <Link href="#access" className="text-stone-900 underline">
+          <Link href="#access" className="underline">
             access information section
           </Link>
           .
@@ -159,7 +159,7 @@ export function getSpa2FAQs(spa: Spa): FAQ[] {
       answer: (
         <>
           Yes, the{' '}
-          <Link href="#armathwaite-sereni-tea-weekday" className="text-stone-900 underline">
+          <Link href="#armathwaite-sereni-tea-weekday" className="underline">
             Sereni Tea spa day
           </Link>{' '}
           ({sereniTeaWeekday || '£160'} weekdays, {sereniTeaWeekend || '£170'} weekends) is specifically designed to combine spa relaxation with a traditional afternoon tea experience. This popular package is ideal for celebrations, birthdays, and special occasions.
@@ -169,11 +169,11 @@ export function getSpa2FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           If you prefer to include a spa treatment as well as afternoon tea, the{' '}
-          <Link href="#armathwaite-serenity-weekday" className="text-stone-900 underline">
+          <Link href="#armathwaite-serenity-weekday" className="underline">
             Serenity Full Day
           </Link>{' '}
           ({serenityWeekday || '£190'} to {serenityWeekend || '£200'}) includes a 55 minute treatment plus your choice of lunch or afternoon tea. Both packages are popular for special occasions and should be booked in advance, especially for weekend dates. See all{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             spa day packages
           </Link>{' '}
           for the full range of options.

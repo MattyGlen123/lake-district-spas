@@ -33,19 +33,19 @@ export function getSpa6FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Eight treatment rooms offer {brandsText || 'Elemis'} therapies, from{' '}
-          <Link href={ishgaExpressFacialId ? `#${ishgaExpressFacialId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={ishgaExpressFacialId ? `#${ishgaExpressFacialId}` : '#treatments'} className="underline">
             express 25 minute facials
           </Link>{' '}
           to{' '}
-          <Link href={macdonaldSignatureId ? `#${macdonaldSignatureId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={macdonaldSignatureId ? `#${macdonaldSignatureId}` : '#treatments'} className="underline">
             signature 85 minute experiences
           </Link>
           . The spa is located within a historic lakeside hotel with private jetties and mature gardens extending down to the shoreline. While the thermal facilities focus on traditional heat experiences rather than outdoor pools or hot tubs, the unique lakeside pool views and central Bowness location set this spa apart. For full facility details, see the{' '}
-          <Link href="#thermal" className="text-stone-900 underline">
+          <Link href="#thermal" className="underline">
             thermal facilities
           </Link>{' '}
           and{' '}
-          <Link href="#treatments" className="text-stone-900 underline">
+          <Link href="#treatments" className="underline">
             treatments
           </Link>{' '}
           sections.
@@ -61,19 +61,19 @@ export function getSpa6FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           The most affordable option is the{' '}
-          <Link href="#old-england-time-for-me-weekend" className="text-stone-900 underline">
+          <Link href="#old-england-time-for-me-weekend" className="underline">
             My Time For Me package
           </Link>{' '}
           at {timeForMePrice || '£70'}, which includes 4 hours of spa access plus a 25 minute {brandsText || 'Elemis'} treatment. For a more complete experience, the{' '}
-          <Link href="#old-england-morning-retreat-weekend" className="text-stone-900 underline">
+          <Link href="#old-england-morning-retreat-weekend" className="underline">
             My Morning Retreat
           </Link>{' '}
           ({morningRetreatPrice || '£109'}) offers 3 hours of spa access, a 25 minute treatment, and a 2 course lunch in the Lakeside Restaurant with views across Lake Windermere. Alternatively, the{' '}
-          <Link href="#old-england-afternoon-escape-weekend" className="text-stone-900 underline">
+          <Link href="#old-england-afternoon-escape-weekend" className="underline">
             My Afternoon Escape
           </Link>{' '}
           ({afternoonEscapePrice || '£109'}) swaps lunch for afternoon tea. Prices are the same on weekdays and weekends. Pre booking is required for all spa day packages. For current availability and booking, see the{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             spa day packages
           </Link>{' '}
           section.
@@ -89,7 +89,7 @@ export function getSpa6FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           However, the thermal suite facilities are restricted to guests aged 18 and over only. This includes the Finnish sauna, aromatherapy steam room, ice room, and experience showers. The age restriction ensures these heat experiences remain safe and the environment stays tranquil for adult guests. If you&apos;re seeking a quieter pool experience without children, consider visiting before 10am or after 5pm when the pool is adults only. For families wanting dedicated spa time while children enjoy other activities, the hotel&apos;s central Bowness location offers easy access to boat trips, shops, and Lake Windermere attractions. For access details, see the{' '}
-          <Link href="#access" className="text-stone-900 underline">
+          <Link href="#access" className="underline">
             spa access information
           </Link>{' '}
           section.
@@ -105,7 +105,7 @@ export function getSpa6FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           The pool and gym are open from 7am to 6:30pm daily, giving you flexibility to visit before breakfast or fit in a swim around your day&apos;s activities. The thermal suite includes a Finnish sauna, aromatherapy steam room, ice room, and experience showers. Children can use the pool between 10am and 5pm, while the thermal facilities remain adults only throughout the day. If you want spa treatments during your stay, these are charged separately and advance booking is recommended to secure your preferred time. For day visitors who are not staying at the hotel, spa day packages start from {timeForMePrice || '£70'}. See the{' '}
-          <Link href="#access" className="text-stone-900 underline">
+          <Link href="#access" className="underline">
             spa access information
           </Link>{' '}
           for full details.
@@ -121,11 +121,11 @@ export function getSpa6FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Robes and slippers are available to hire for £10 if you want to relax on the terrace overlooking the lake. This is optional but recommended if you plan to move between the spa and outdoor terrace areas. All packages include at least one 25 minute {brandsText || 'Elemis or ishga'} treatment, with options ranging from{' '}
-          <Link href={ishgaExpressFacialId ? `#${ishgaExpressFacialId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={ishgaExpressFacialId ? `#${ishgaExpressFacialId}` : '#treatments'} className="underline">
             express facials
           </Link>{' '}
           to neck, back and shoulder massages. The Morning Retreat and Afternoon Escape packages also include a meal (2 course lunch or afternoon tea respectively). Lockers, showers, and hair styling facilities are available in the changing rooms. For package options and booking, see the{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             spa day packages
           </Link>{' '}
           section.

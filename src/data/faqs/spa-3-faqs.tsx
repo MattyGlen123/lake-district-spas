@@ -29,11 +29,11 @@ export function getSpa3FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           If you&apos;re looking to experience {spa.name}, the only option is to book a stay at the hotel. Spa access is complimentary for all hotel guests regardless of room type. To book your stay, visit the{' '}
-          <Link href="#book" className="text-stone-900 underline">
+          <Link href="#book" className="underline">
             booking section
           </Link>
           . For spas that do offer day passes in the Lake District, see our{' '}
-          <Link href="/" className="text-stone-900 underline">
+          <Link href="/" className="underline">
             homepage
           </Link>
           .
@@ -52,7 +52,7 @@ export function getSpa3FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           The thermal facilities include a Finnish sauna, laconium for gentle heat therapy, aromatic steam room, ice room for contrast therapy, and multi sensory experience showers. Towels and robes are provided. For full details on the facilities, see the{' '}
-          <Link href="#thermal" className="text-stone-900 underline">
+          <Link href="#thermal" className="underline">
             thermal facilities section
           </Link>
           .
@@ -71,11 +71,11 @@ export function getSpa3FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           The location in the heart of walking country makes {spa.name} particularly popular with hikers, and the signature{' '}
-          <Link href={fellwalkerId ? `#${fellwalkerId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={fellwalkerId ? `#${fellwalkerId}` : '#treatments'} className="underline">
             Fellwalker
           </Link>{' '}
           treatment is designed specifically for soothing tired muscles after mountain adventures. For more Lake District spa options, see our{' '}
-          <Link href="/" className="text-stone-900 underline">
+          <Link href="/" className="underline">
             homepage
           </Link>
           .
@@ -91,18 +91,18 @@ export function getSpa3FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Treatments are organised into categories including facial treatments (from £65 for an express facial to £250 for the Timeless anti ageing facial), body treatments (£125 to £300 for couples), and massage therapies. The signature{' '}
-          <Link href={fellwalkerId ? `#${fellwalkerId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={fellwalkerId ? `#${fellwalkerId}` : '#treatments'} className="underline">
             Fellwalker
           </Link>{' '}
           treatment ({fellwalkerPrice || '£125'}, 50 minutes) is designed specifically for walkers and hikers, focusing on feet, back, and legs to soothe muscles after exploring the fells. For couples, the{' '}
-          <Link href={spaSensesId ? `#${spaSensesId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={spaSensesId ? `#${spaSensesId}` : '#treatments'} className="underline">
             Spa Senses Signature Rituals
           </Link>{' '}
           (from £300 per person, 100 minutes) offer multi sensory experiences including full body exfoliation, private steam, wraps, and choice of facial or massage.
           <br />
           <br />
           Express treatments (25 minutes, £65) are available Monday to Thursday between 10am and 4pm only. Due to the spa&apos;s intimate size, advance booking is recommended for all treatments. To view the full treatment menu or book, see the{' '}
-          <Link href="#treatments" className="text-stone-900 underline">
+          <Link href="#treatments" className="underline">
             treatments section
           </Link>.
         </>
@@ -120,7 +120,7 @@ export function getSpa3FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           For families seeking spa experiences where children are welcome, some Lake District spas offer dedicated family swim times or have facilities suitable for younger guests. For alternative options, browse our{' '}
-          <Link href="/" className="text-stone-900 underline">
+          <Link href="/" className="underline">
             Lake District spa directory
           </Link>{' '}
           to find spas with different age policies.

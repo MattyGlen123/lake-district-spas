@@ -30,14 +30,14 @@ export function getSpa16FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           The plunge tub room allows you to move between temperatures in a therapeutic sequence, similar to traditional Scandinavian bathing rituals. Combined with the{' '}
-          <Link href="#thermal" className="text-stone-900 font-semibold underline">
+          <Link href="#thermal" className="underline">
             {thermalCount || 5} thermal facilities
           </Link>
           {' '}including a salt inhalation room and aromatherapy steam room, the spa offers a comprehensive wellness experience without a conventional pool. Many guests find this hydrotherapy focused approach more beneficial for muscle recovery and relaxation than simple swimming.
           <br />
           <br />
           If you&apos;re specifically looking for a Lake District spa with a swimming pool, you may want to explore{' '}
-          <Link href="/" className="text-stone-900 underline">
+          <Link href="/" className="underline">
             other options
           </Link>
           . However, if you&apos;re interested in therapeutic water experiences and unique wellness facilities, {spa.name}&apos;s plunge tub circuits offer something you won&apos;t find elsewhere in the region.
@@ -53,37 +53,37 @@ export function getSpa16FAQs(spa: Spa): FAQ[] {
       answer: (
         <>
           Spa day prices at {spa.name} start from {thermal60Price || '£20'} for a{' '}
-          <Link href="#netherwood-thermal-60min" className="text-stone-900 underline">
+          <Link href="#netherwood-thermal-60min" className="underline">
             60 minute Thermal Journey
           </Link>
           , making it one of the more affordable spa day options in the Lake District. Longer sessions are available at {thermal90Price || '£25'} for{' '}
-          <Link href="#netherwood-thermal-90min" className="text-stone-900 underline">
+          <Link href="#netherwood-thermal-90min" className="underline">
             90 minutes
           </Link>
           {' '}or {thermal150Price || '£40'} for{' '}
-          <Link href="#netherwood-thermal-150min" className="text-stone-900 underline">
+          <Link href="#netherwood-thermal-150min" className="underline">
             2.5 hours
           </Link>
           {' '}of thermal facilities access.
           <br />
           <br />
           For a more complete spa day experience, the{' '}
-          <Link href="#netherwood-half-day-spa" className="text-stone-900 underline">
+          <Link href="#netherwood-half-day-spa" className="underline">
             Half Day Spa Package
           </Link>
           {' '}({halfDayPrice || '£55'}) includes 90 minutes of thermal journey access plus soup and sandwich lunch. The{' '}
-          <Link href="#netherwood-spa-relaxation" className="text-stone-900 underline">
+          <Link href="#netherwood-spa-relaxation" className="underline">
             Spa Relaxation Package
           </Link>
           {' '}({relaxationPrice || '£75'}) adds a 25 minute treatment and glass of prosecco. Couples can enjoy the{' '}
-          <Link href="#netherwood-couples-unwind" className="text-stone-900 underline">
+          <Link href="#netherwood-couples-unwind" className="underline">
             Couples Unwind Package
           </Link>
           {' '}({couplesPrice || '£160'} for two) with treatments, prosecco, and cream tea.
           <br />
           <br />
           All spa day packages include robes, towels, and slippers. View all{' '}
-          <Link href="#day-passes" className="text-stone-900 font-semibold underline">
+          <Link href="#day-passes" className="underline">
             spa day packages and prices
           </Link>
           {' '}to find the right option for your visit.
@@ -102,22 +102,22 @@ export function getSpa16FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Hotel guests can book Thermal Journey sessions from {thermal60Price || '£20'} for{' '}
-          <Link href="#netherwood-thermal-60min" className="text-stone-900 underline">
+          <Link href="#netherwood-thermal-60min" className="underline">
             60 minutes
           </Link>
           {' '}up to {thermal150Price || '£40'} for{' '}
-          <Link href="#netherwood-thermal-150min" className="text-stone-900 underline">
+          <Link href="#netherwood-thermal-150min" className="underline">
             2.5 hours
           </Link>
           . The Thermal Journey operates daily from 10am to 5:30pm, with{' '}
-          <Link href="#treatments" className="text-stone-900 underline">
+          <Link href="#treatments" className="underline">
             treatment bookings
           </Link>
           {' '}available until 6pm. All sessions include robes, towels, and slippers, so you don&apos;t need to bring your own.
           <br />
           <br />
           We recommend booking your spa time when you reserve your room, as slots can fill up especially at weekends. For full details on access policies and pricing, see the{' '}
-          <Link href="#access" className="text-stone-900 font-semibold underline">
+          <Link href="#access" className="underline">
             Spa Access Information
           </Link>
           {' '}section.
@@ -139,7 +139,7 @@ export function getSpa16FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           The combination of hydrotherapy circuits and salt therapy makes {spa.name} particularly suited for guests seeking therapeutic wellness benefits rather than simply a relaxing swim. Explore all{' '}
-          <Link href="#thermal" className="text-stone-900 font-semibold underline">
+          <Link href="#thermal" className="underline">
             thermal facilities
           </Link>
           {' '}to plan your visit.
@@ -161,7 +161,7 @@ export function getSpa16FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           You can book spa sessions directly through the{' '}
-          <Link href="#book" className="text-stone-900 font-semibold underline">
+          <Link href="#book" className="underline">
             booking section
           </Link>
           {' '}on this page or contact the spa by phone. If you&apos;re staying overnight, consider booking your spa time when you make your room reservation to secure your preferred slot.

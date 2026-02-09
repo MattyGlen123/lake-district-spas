@@ -25,11 +25,11 @@ export function getSpa17FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           If you&apos;d prefer a standalone spa visit without an overnight stay, {spa.name} also offers{' '}
-          <Link href="#day-passes" className="text-stone-900 font-semibold underline">
+          <Link href="#day-passes" className="underline">
             spa day packages
           </Link>{' '}
           starting from {lazyDaysPrice || '£25'} per person. For full details on access policies, see the{' '}
-          <Link href="#access" className="text-stone-900 font-semibold underline">
+          <Link href="#access" className="underline">
             spa access information
           </Link>{' '}
           section.
@@ -50,11 +50,11 @@ export function getSpa17FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Booking is required in advance via email. For full package details and booking information, see the{' '}
-          <Link href="#day-passes" className="text-stone-900 font-semibold underline">
+          <Link href="#day-passes" className="underline">
             spa day packages
           </Link>{' '}
           section. You can also browse all available{' '}
-          <Link href="#treatments" className="text-stone-900 font-semibold underline">
+          <Link href="#treatments" className="underline">
             treatments and prices
           </Link>
           .
@@ -75,11 +75,11 @@ export function getSpa17FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Dedicated treatment rooms offer therapies using {brandsText || 'Tropic Skincare'}, a brand known for natural, freshly made botanical formulations. Treatments range from express facials and massages through to full body aromatherapy sessions. For a full list, see the{' '}
-          <Link href="#treatments" className="text-stone-900 font-semibold underline">
+          <Link href="#treatments" className="underline">
             treatments and prices
           </Link>{' '}
           section, or explore the{' '}
-          <Link href="#thermal" className="text-stone-900 font-semibold underline">
+          <Link href="#thermal" className="underline">
             thermal facilities
           </Link>{' '}
           in detail.
@@ -100,7 +100,7 @@ export function getSpa17FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Both packages are available for guests aged 18 and over and require advance booking via email. The Spa Day Package runs Sunday to Thursday, while Lazy Days for Locals is available seven days a week. See the{' '}
-          <Link href="#day-passes" className="text-stone-900 font-semibold underline">
+          <Link href="#day-passes" className="underline">
             spa day packages
           </Link>{' '}
           section for full details and booking information.
@@ -121,11 +121,11 @@ export function getSpa17FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Hotel parking is available but spaces are limited, so arriving by train can actually be more convenient than driving. For a complete overview of the hotel location and how to plan your visit, see the{' '}
-          <Link href="#access" className="text-stone-900 font-semibold underline">
+          <Link href="#access" className="underline">
             access information
           </Link>{' '}
           section, or explore other{' '}
-          <Link href="/" className="text-stone-900 font-semibold underline">
+          <Link href="/" className="underline">
             Lake District spas
           </Link>
           .

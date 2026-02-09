@@ -47,7 +47,7 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           For details on what&apos;s included, see the{' '}
-          <Link href="#thermal" className="text-stone-900 underline">
+          <Link href="#thermal" className="underline">
             pool and facilities section
           </Link>
           .
@@ -60,11 +60,11 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
       answer: (
         <>
           Day membership at {spa.name} Swim Club starts from {dayMembershipTreatmentPrice || '£110'} per person with the{' '}
-          <Link href="#another-place-day-membership-treatment" className="text-stone-900 underline">
+          <Link href="#another-place-day-membership-treatment" className="underline">
             Day Membership with Treatment
           </Link>
           . This includes full day access to the 20 metre lake view pool, outdoor hot tub, sauna, and cardio room, plus a {treatment60Min || '60 minute'} treatment of your choice. For {dayMembershipLunchPrice || '£120'} per person, you can add a one course lunch in the hotel restaurant with the{' '}
-          <Link href="#another-place-day-membership-lunch" className="text-stone-900 underline">
+          <Link href="#another-place-day-membership-lunch" className="underline">
             Day Membership with Treatment & Lunch
           </Link>
           .
@@ -74,11 +74,11 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           For locals, {spa.name} also offers limited 6 and 12 month memberships giving ongoing access to the pool, hot tub, sauna, and cardio room. View all{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             day pass options
           </Link>{' '}
           or{' '}
-          <Link href="#book" className="text-stone-900 underline">
+          <Link href="#book" className="underline">
             book directly
           </Link>
           .
@@ -97,7 +97,7 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Only spa treatments require separate booking and payment. The hot tub and sauna are restricted to guests aged 16 and over. For full details, see the{' '}
-          <Link href="#access" className="text-stone-900 underline">
+          <Link href="#access" className="underline">
             access information section
           </Link>
           .
@@ -116,7 +116,7 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           {spa.name} also offers a separate Ofsted registered Kids Zone with supervised sessions, arts and crafts, campfire cooking, and outdoor activities, giving parents time to enjoy the spa while children are entertained. For adults only spa alternatives in the Lake District, browse our{' '}
-          <Link href="/" className="text-stone-900 underline">
+          <Link href="/" className="underline">
             full spa directory
           </Link>
           .
@@ -129,33 +129,33 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
       answer: (
         <>
           {spa.name} Swim Club offers 18 spa treatments using{brandsText ? ` ${brandsText}` : ' land&water products'}, a brand developed with their sister hotel Watergate Bay in Cornwall. The signature treatment is the{' '}
-          <Link href={fellWalkersId ? `#${fellWalkersId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={fellWalkersId ? `#${fellWalkersId}` : '#treatments'} className="underline">
             Fell Walkers Massage
           </Link>
           {' '}({fellWalkersPrice || '£90'}, {treatment60Min || '60 minutes'}), designed specifically for tired legs after a day hiking in the Lake District fells. It includes a foot soak and scrub, legs wrapped in heated towels, leg and foot massage, and neck and scalp massage.
           <br />
           <br />
           Other popular options include{' '}
-          <Link href={fullBodyMassageId ? `#${fullBodyMassageId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={fullBodyMassageId ? `#${fullBodyMassageId}` : '#treatments'} className="underline">
             full body massage
           </Link>
           {' '}({fullBodyMassagePrice || '£90'}), the{' '}
-          <Link href={drenchFacialId ? `#${drenchFacialId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={drenchFacialId ? `#${drenchFacialId}` : '#treatments'} className="underline">
             land&water drench facial
           </Link>
           {' '}({drenchFacialPrice || '£90'}), and{' '}
-          <Link href={worksId ? `#${worksId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={worksId ? `#${worksId}` : '#treatments'} className="underline">
             The Works
           </Link>
           {' '}({worksPrice || '£160'}, {treatment120Min || '120 minutes'}) which combines body brush, salt scrub, wrap, mini facial, and full body massage for the ultimate experience. Pregnancy safe treatments are available including adapted massage and facial options.
           <br />
           <br />
           For couples,{' '}
-          <Link href={sideBySideId ? `#${sideBySideId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={sideBySideId ? `#${sideBySideId}` : '#treatments'} className="underline">
             side by side massage or facial treatments
           </Link>
           {' '}({sideBySidePrice || '£170'}) are available in the double treatment room. Most treatments can be booked online, though The Works and 30 minute treatments require booking through guest services directly. See all{' '}
-          <Link href="#treatments" className="text-stone-900 underline">
+          <Link href="#treatments" className="underline">
             treatment options
           </Link>
           .

@@ -29,7 +29,7 @@ export function getSpa1FAQs(spa: Spa): FAQ[] {
         <br />
         <br />
         You can book spa treatments when making your room reservation online, by calling the hotel directly, or by contacting the spa team. Booking early gives you the best choice of treatment times and allows you to coordinate your spa experience with your chosen spa access time slot{durationHyphenated ? ` (as the spa operates on a ${durationHyphenated} timed booking system)` : ''}. If you&apos;re planning a special occasion visit or have specific therapist requests, advance booking is particularly important. Walk-in treatments may occasionally be available, but relying on this risks missing out on your preferred experiences during your stay. For more details,{' '}
-        <Link href="#treatments" className="text-stone-900 font-semibold underline">
+        <Link href="#treatments" className="underline">
           browse our treatments
         </Link>{' '}
         section.
@@ -58,7 +58,7 @@ export function getSpa1FAQs(spa: Spa): FAQ[] {
           </>
         )}
         {' '}If spa access is a priority for your visit, consider upgrading to a suite room to enjoy complimentary access{priceRange ? `, or factor the additional cost into your budget when booking a standard room` : ''}. For full details on access policies, see the{' '}
-        <Link href="#access" className="text-stone-900 font-semibold underline">
+        <Link href="#access" className="underline">
           Spa Access Information section
         </Link>.
       </>
@@ -85,11 +85,11 @@ export function getSpa1FAQs(spa: Spa): FAQ[] {
           </>
         )}
         The time slot system helps prevent overcrowding and maintains the tranquil atmosphere the spa is known for. While some guests wish for unlimited access{durationText ? `, the majority find ${durationText} sufficient to enjoy the full spa experience` : ''}. For the specific time slots available,{' '}
-        <Link href="#faq-4" className="text-stone-900 font-semibold underline">
+        <Link href="#faq-4" className="underline">
           see the next FAQ
         </Link>
         . For more information about the facilities, visit the{' '}
-        <Link href="#thermal" className="text-stone-900 font-semibold underline">
+        <Link href="#thermal" className="underline">
           facilities section
         </Link>
         .
@@ -109,11 +109,11 @@ export function getSpa1FAQs(spa: Spa): FAQ[] {
         <br />
         <br />
         Availability varies depending on season and day of the week, with weekend slots filling up faster than weekday sessions. Book your preferred time slot as early as possible, especially if visiting during school holidays, bank holiday weekends, or peak summer months (July-August). For more details about the{' '}
-        <Link href="#thermal" className="text-stone-900 font-semibold underline">
+        <Link href="#thermal" className="underline">
           facilities
         </Link>{' '}
         or{' '}
-        <Link href="#day-passes" className="text-stone-900 font-semibold underline">
+        <Link href="#day-passes" className="underline">
           day passes
         </Link>
         , see the relevant sections.
@@ -133,7 +133,7 @@ export function getSpa1FAQs(spa: Spa): FAQ[] {
         <br />
         <br />
         For families seeking spa experiences, you might consider booking treatments or spa access during times when other family members can enjoy alternative activities, or look into family-friendly spa facilities elsewhere in the Lake District that offer dedicated family sessions with different age policies. For more spa options in the Lake District, see our{' '}
-        <Link href="/" className="text-stone-900 font-semibold underline">
+        <Link href="/" className="underline">
           homepage
         </Link>
         .

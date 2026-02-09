@@ -33,7 +33,7 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
           If you are looking for a Lake District spa day without an overnight
           stay, several other spas in the area do offer day pass packages.
           Browse our{' '}
-          <Link href="/" className="text-stone-900 underline">
+          <Link href="/" className="underline">
             full spa directory
           </Link>{' '}
           to find options.
@@ -66,14 +66,14 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
           treatment list and pricing, see the{' '}
           <Link
             href="#treatments"
-            className="text-stone-900 underline"
+            className="underline"
           >
             treatments section
           </Link>
           . To explore the thermal facilities in more detail, visit the{' '}
           <Link
             href="#thermal"
-            className="text-stone-900 underline"
+            className="underline"
           >
             facilities section
           </Link>
@@ -87,7 +87,7 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
       answer: (
         <>
           The{' '}
-          <Link href={walkersLegMassageId ? `#${walkersLegMassageId}` : '#treatments'} className="text-stone-900 underline">
+          <Link href={walkersLegMassageId ? `#${walkersLegMassageId}` : '#treatments'} className="underline">
             Walkers Leg Massage
           </Link>{' '}
           is a specialist treatment at the Waterfall Spa
@@ -111,14 +111,14 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
           options and facials, in the{' '}
           <Link
             href="#treatments"
-            className="text-stone-900 underline"
+            className="underline"
           >
             treatments section
           </Link>
           . To book your stay and treatment together, visit the{' '}
           <Link
             href="#book"
-            className="text-stone-900 underline"
+            className="underline"
           >
             booking section
           </Link>
@@ -151,14 +151,14 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
           details on the full range of spa facilities available, see the{' '}
           <Link
             href="#thermal"
-            className="text-stone-900 underline"
+            className="underline"
           >
             facilities section
           </Link>
           . For general access policies, see the{' '}
           <Link
             href="#access"
-            className="text-stone-900 underline"
+            className="underline"
           >
             spa access information
           </Link>
@@ -192,7 +192,7 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
           availability early through the{' '}
           <Link
             href="#book"
-            className="text-stone-900 underline"
+            className="underline"
           >
             booking section
           </Link>
@@ -200,7 +200,7 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
           guests, see the{' '}
           <Link
             href="#thermal"
-            className="text-stone-900 underline"
+            className="underline"
           >
             facilities section
           </Link>

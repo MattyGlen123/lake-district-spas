@@ -337,7 +337,7 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
 6. **Schema Text**: Always provide `schemaText` for SEO - it should be a concise, plain text version with dynamic values.
 7. **Length**: Full answers should be 150-250 words; schema text can be shorter.
 8. **Formatting**: Use `<br />` tags for paragraph breaks in JSX answers.
-9. **Link Styling**: Use `className="text-stone-900 underline"` for internal links (note: `font-semibold` has been removed).
+9. **Link Styling**: Use `className="underline"` for internal links (no text color or font weight classes).
 10. **Not All Spas Need FAQs**: Only create FAQ files for spas that have researched, specific FAQs.
 11. **Function-Based FAQs**: Export a function that accepts a `Spa` object, not a static array.
 12. **Fallback Values**: Always provide fallback values when using helpers (e.g., `{treatmentPrice || '£90'}`).

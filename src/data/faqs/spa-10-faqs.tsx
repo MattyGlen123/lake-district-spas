@@ -23,7 +23,7 @@ export function getSpa10FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Spa days are available to non residents but require advance booking. The spa has a maximum of 6 guests at any time, ensuring a peaceful experience. For full package details, see the{' '}
-          <Link href="#day-passes" className="text-stone-900 underline">
+          <Link href="#day-passes" className="underline">
             spa day packages section
           </Link>
           .
@@ -44,7 +44,7 @@ export function getSpa10FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           If you&apos;re visiting with children, you could enjoy family swim time together in the morning, then take turns using the spa facilities while the other parent supervises. For spas with different age policies, see our{' '}
-          <Link href="/" className="text-stone-900 underline">
+          <Link href="/" className="underline">
             full spa directory
           </Link>
           .
@@ -65,11 +65,11 @@ export function getSpa10FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Inside, you&apos;ll find a 35 foot swimming pool with atmospheric lighting and floor to ceiling windows maximising the lake views, plus a Himalayan sauna and aromatic steam room. For the complete facilities list, see the{' '}
-          <Link href="#thermal" className="text-stone-900 underline">
+          <Link href="#thermal" className="underline">
             thermal facilities
           </Link>{' '}
           and{' '}
-          <Link href="#pool" className="text-stone-900 underline">
+          <Link href="#pool" className="underline">
             pool features
           </Link>{' '}
           sections.
@@ -90,7 +90,7 @@ export function getSpa10FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Early booking is recommended, especially for weekends and the popular Rejuvenate Spa Day package. You can book by emailing reservations@beechhillhotel.co.uk or calling the hotel directly. For booking information, see the{' '}
-          <Link href="#access" className="text-stone-900 underline">
+          <Link href="#access" className="underline">
             spa access information
           </Link>
           .
@@ -111,7 +111,7 @@ export function getSpa10FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Spa treatments using the CAUDALIE range are available at extra cost and can be booked in advance. The hotel offers everything from 25 minute express treatments to 50 minute luxury facials and massages. For treatment options, see the{' '}
-          <Link href="#treatments" className="text-stone-900 underline">
+          <Link href="#treatments" className="underline">
             spa treatments section
           </Link>
           .
