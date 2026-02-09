@@ -2180,7 +2180,9 @@ Complimentary Cascades access included for all hotel guests, with 10% discount o
     relatedSpas: [9, 3],
     treatmentBookingPhone: '+44 (0)1539 531133',
     treatmentBookingUrl:
-      'https://direct-book.com/properties/WhitewaterHotelSpaDirect',
+      'https://whitewaterhotel.onejourney.travel/spa/treatments',
+    dayPassBookingUrl: 'https://whitewaterhotel.onejourney.travel/spa/days',
+    hotelBookingUrl: 'https://whitewater-hotel.co.uk/spa-fitness/newby-bridge-spa/'
   },
 ];
 
