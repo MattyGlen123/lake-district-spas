@@ -52,6 +52,93 @@ describe('Spa Outbound Click Tracker', () => {
   });
 
   /**
+   * Execute the click tracker script with custom location
+   * This simulates what happens when the Script component loads
+   */
+  function initializeClickTrackerWithLocation(customHostname: string = 'localhost') {
+    // Initialize dataLayer if it doesn't exist (matching the actual script)
+    const win = window as WindowWithDataLayer;
+    win.dataLayer = win.dataLayer || [];
+    
+    // Remove existing handler if any
+    if (clickHandler) {
+      document.removeEventListener('click', clickHandler);
+    }
+    
+    // Helper function to check if URL is external (http/https to different domain)
+    function isExternalUrl(url: string, originalHref?: string): boolean {
+      if (!url) return false;
+      
+      // Check original href attribute first - if it's relative, it's internal
+      if (originalHref && !originalHref.startsWith('http://') && !originalHref.startsWith('https://') && !originalHref.startsWith('mailto:') && !originalHref.startsWith('tel:')) {
+        return false;
+      }
+      
+      // Skip relative URLs (internal links) - check the resolved URL
+      if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        return false;
+      }
+      
+      try {
+        const urlObj = new URL(url);
+        const currentHost = customHostname;
+        const linkHost = urlObj.hostname;
+        // Check if it's external (different domain)
+        return linkHost !== currentHost && linkHost !== 'www.' + currentHost && 'www.' + linkHost !== currentHost;
+      } catch {
+        return false;
+      }
+    }
+
+    // Helper function to check if URL is a protocol handler (mailto, tel)
+    function isProtocolHandler(url: string): boolean {
+      if (!url) return false;
+      return url.startsWith('mailto:') || url.startsWith('tel:');
+    }
+    
+    // Create the click handler (matching actual implementation)
+    clickHandler = function(e: Event) {
+      const target = e.target as HTMLElement;
+      const link = target.closest('a') as HTMLAnchorElement;
+      
+      if (!link || !link.href) return;
+      
+      // Use the resolved href (absolute URL) for external check
+      const href = link.href;
+      const originalHref = link.getAttribute('href') || '';
+      
+      // Track external URLs OR protocol handlers (mailto, tel)
+      const isExternal = isExternalUrl(href, originalHref);
+      const isProtocol = isProtocolHandler(href);
+      
+      if (!isExternal && !isProtocol) return;
+      
+      // Get spa ID from data attribute (required)
+      const spaId = link.dataset.spaId || '';
+      
+      // Only fire event if we have a valid spa ID
+      if (!spaId) return;
+      
+      // Get other data attributes if available
+      const clickIntent = link.dataset.clickIntent || 'external-link';
+      const productName = link.dataset.productName || 'none';
+      
+      // Fire the event for external links or protocol handlers with spa context
+      if (win.dataLayer) {
+        win.dataLayer.push({
+          event: 'spa_outbound_click',
+          spa_id: spaId,
+          click_intent: clickIntent,
+          product_name: productName
+        });
+      }
+    };
+    
+    // Add the event listener
+    document.addEventListener('click', clickHandler);
+  }
+
+  /**
    * Execute the click tracker script
    * This simulates what happens when the Script component loads
    */
@@ -65,16 +152,58 @@ describe('Spa Outbound Click Tracker', () => {
       document.removeEventListener('click', clickHandler);
     }
     
-    // Create the click handler
+    // Helper function to check if URL is external (http/https to different domain)
+    function isExternalUrl(url: string): boolean {
+      if (!url) return false;
+      // Skip relative URLs (internal links)
+      if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        return false;
+      }
+      try {
+        const urlObj = new URL(url, window.location.origin);
+        const currentHost = window.location.hostname;
+        const linkHost = urlObj.hostname;
+        // Check if it's external (different domain)
+        return linkHost !== currentHost && linkHost !== 'www.' + currentHost && 'www.' + linkHost !== currentHost;
+      } catch {
+        return false;
+      }
+    }
+
+    // Helper function to check if URL is a protocol handler (mailto, tel)
+    function isProtocolHandler(url: string): boolean {
+      if (!url) return false;
+      return url.startsWith('mailto:') || url.startsWith('tel:');
+    }
+    
+    // Create the click handler (matching actual implementation)
     clickHandler = function(e: Event) {
       const target = e.target as HTMLElement;
-      const btn = target.closest('[data-spa-id]');
+      const link = target.closest('a') as HTMLAnchorElement;
       
-      if (btn && win.dataLayer) {
-        const spaId = (btn as HTMLElement).dataset.spaId || '';
-        const clickIntent = (btn as HTMLElement).dataset.clickIntent || '';
-        const productName = (btn as HTMLElement).dataset.productName || 'none';
-        
+      if (!link || !link.href) return;
+      
+      // Use the resolved href (absolute URL) for external check
+      const href = link.href;
+      
+      // Track external URLs OR protocol handlers (mailto, tel)
+      const isExternal = isExternalUrl(href);
+      const isProtocol = isProtocolHandler(href);
+      
+      if (!isExternal && !isProtocol) return;
+      
+      // Get spa ID from data attribute (required)
+      const spaId = link.dataset.spaId || '';
+      
+      // Only fire event if we have a valid spa ID
+      if (!spaId) return;
+      
+      // Get other data attributes if available
+      const clickIntent = link.dataset.clickIntent || 'external-link';
+      const productName = link.dataset.productName || 'none';
+      
+      // Fire the event for external links or protocol handlers with spa context
+      if (win.dataLayer) {
         win.dataLayer.push({
           event: 'spa_outbound_click',
           spa_id: spaId,
@@ -113,13 +242,14 @@ describe('Spa Outbound Click Tracker', () => {
       initializeClickTracker();
     });
 
-    it('should detect clicks on elements with data-spa-id', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'lodore-falls-spa');
-      button.setAttribute('data-click-intent', 'book-stay');
-      document.body.appendChild(button);
+    it('should detect clicks on external links with data-spa-id', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'https://example.com/book';
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
       expect(mockDataLayerPush).toHaveBeenCalledTimes(1);
       expect(mockDataLayerPush).toHaveBeenCalledWith({
@@ -129,23 +259,24 @@ describe('Spa Outbound Click Tracker', () => {
         product_name: 'none',
       });
 
-      document.body.removeChild(button);
+      document.body.removeChild(link);
     });
 
-    it('should find closest parent with data-spa-id when clicking nested elements', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'lodore-falls-spa');
-      button.setAttribute('data-click-intent', 'book-day-pass');
+    it('should find closest parent anchor with data-spa-id when clicking nested elements', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-day-pass');
+      link.href = 'https://example.com/book-day-pass';
 
       const icon = document.createElement('span');
       icon.textContent = 'Icon';
-      button.appendChild(icon);
+      link.appendChild(icon);
 
       const text = document.createElement('span');
       text.textContent = 'Book Spa Day';
-      button.appendChild(text);
+      link.appendChild(text);
 
-      document.body.appendChild(button);
+      document.body.appendChild(link);
 
       // Click on the nested text element
       text.click();
@@ -158,17 +289,18 @@ describe('Spa Outbound Click Tracker', () => {
         product_name: 'none',
       });
 
-      document.body.removeChild(button);
+      document.body.removeChild(link);
     });
 
     it('should extract all data attributes correctly', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'armathwaite-hall-spa');
-      button.setAttribute('data-click-intent', 'specific-product-click');
-      button.setAttribute('data-product-name', 'Full Body Massage');
-      document.body.appendChild(button);
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'armathwaite-hall-spa');
+      link.setAttribute('data-click-intent', 'specific-product-click');
+      link.setAttribute('data-product-name', 'Full Body Massage');
+      link.href = 'https://example.com/book-treatment';
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
       expect(mockDataLayerPush).toHaveBeenCalledWith({
         event: 'spa_outbound_click',
@@ -177,17 +309,18 @@ describe('Spa Outbound Click Tracker', () => {
         product_name: 'Full Body Massage',
       });
 
-      document.body.removeChild(button);
+      document.body.removeChild(link);
     });
 
     it('should use default "none" for missing product_name', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'lodore-falls-spa');
-      button.setAttribute('data-click-intent', 'all-treatments');
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'all-treatments');
+      link.href = 'https://example.com/treatments';
       // product_name not set
-      document.body.appendChild(button);
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
       expect(mockDataLayerPush).toHaveBeenCalledWith({
         event: 'spa_outbound_click',
@@ -196,66 +329,73 @@ describe('Spa Outbound Click Tracker', () => {
         product_name: 'none',
       });
 
-      document.body.removeChild(button);
+      document.body.removeChild(link);
     });
 
     it('should not trigger for elements without data-spa-id', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-click-intent', 'book-treatment');
-      // spa_id not set - element won't be found by closest('[data-spa-id]')
-      document.body.appendChild(button);
+      const link = document.createElement('a');
+      link.setAttribute('data-click-intent', 'book-treatment');
+      link.href = 'https://example.com/book';
+      // spa_id not set
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
-      // Should not trigger because closest('[data-spa-id]') returns null
+      // Should not trigger because data-spa-id is required
       expect(mockDataLayerPush).not.toHaveBeenCalled();
 
-      document.body.removeChild(button);
+      document.body.removeChild(link);
     });
 
-    it('should use empty string for missing click_intent', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'lodore-falls-spa');
+    it('should use default "external-link" for missing click_intent', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.href = 'https://example.com/book';
       // click_intent not set
-      document.body.appendChild(button);
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
       expect(mockDataLayerPush).toHaveBeenCalledWith({
         event: 'spa_outbound_click',
         spa_id: 'lodore-falls-spa',
-        click_intent: '',
+        click_intent: 'external-link',
         product_name: 'none',
       });
+
+      document.body.removeChild(link);
+    });
+
+    it('should not trigger for clicks on non-anchor elements (buttons, divs, etc.)', () => {
+      const button = document.createElement('button');
+      button.setAttribute('data-spa-id', 'lodore-falls-spa');
+      button.setAttribute('data-click-intent', 'book-stay');
+      button.textContent = 'Regular Button';
+      document.body.appendChild(button);
+
+      button.click();
+
+      // Should not trigger because we only track <a> tags
+      expect(mockDataLayerPush).not.toHaveBeenCalled();
 
       document.body.removeChild(button);
     });
 
-    it('should not trigger for clicks outside elements with data-spa-id', () => {
-      const regularButton = document.createElement('button');
-      regularButton.textContent = 'Regular Button';
-      document.body.appendChild(regularButton);
-
-      regularButton.click();
-
-      expect(mockDataLayerPush).not.toHaveBeenCalled();
-
-      document.body.removeChild(regularButton);
-    });
-
     it('should handle multiple clicks correctly', () => {
-      const button1 = document.createElement('a');
-      button1.setAttribute('data-spa-id', 'lodore-falls-spa');
-      button1.setAttribute('data-click-intent', 'book-stay');
-      document.body.appendChild(button1);
+      const link1 = document.createElement('a');
+      link1.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link1.setAttribute('data-click-intent', 'book-stay');
+      link1.href = 'https://example.com/book-stay';
+      document.body.appendChild(link1);
 
-      const button2 = document.createElement('a');
-      button2.setAttribute('data-spa-id', 'armathwaite-hall-spa');
-      button2.setAttribute('data-click-intent', 'book-day-pass');
-      document.body.appendChild(button2);
+      const link2 = document.createElement('a');
+      link2.setAttribute('data-spa-id', 'armathwaite-hall-spa');
+      link2.setAttribute('data-click-intent', 'book-day-pass');
+      link2.href = 'https://example.com/book-day-pass';
+      document.body.appendChild(link2);
 
-      button1.click();
-      button2.click();
+      link1.click();
+      link2.click();
 
       expect(mockDataLayerPush).toHaveBeenCalledTimes(2);
       expect(mockDataLayerPush).toHaveBeenNthCalledWith(1, {
@@ -271,8 +411,8 @@ describe('Spa Outbound Click Tracker', () => {
         product_name: 'none',
       });
 
-      document.body.removeChild(button1);
-      document.body.removeChild(button2);
+      document.body.removeChild(link1);
+      document.body.removeChild(link2);
     });
   });
 
@@ -282,13 +422,13 @@ describe('Spa Outbound Click Tracker', () => {
     });
 
     it('should handle Book Stay button click', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'lodore-falls-spa');
-      button.setAttribute('data-click-intent', 'book-stay');
-      button.href = 'https://example.com/book';
-      document.body.appendChild(button);
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'https://example.com/book';
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
       expect(mockDataLayerPush).toHaveBeenCalledWith({
         event: 'spa_outbound_click',
@@ -297,16 +437,17 @@ describe('Spa Outbound Click Tracker', () => {
         product_name: 'none',
       });
 
-      document.body.removeChild(button);
+      document.body.removeChild(link);
     });
 
     it('should handle Book Spa Day button click', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'lodore-falls-spa');
-      button.setAttribute('data-click-intent', 'book-day-pass');
-      document.body.appendChild(button);
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-day-pass');
+      link.href = 'https://example.com/book-day-pass';
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
       expect(mockDataLayerPush).toHaveBeenCalledWith({
         event: 'spa_outbound_click',
@@ -315,16 +456,17 @@ describe('Spa Outbound Click Tracker', () => {
         product_name: 'none',
       });
 
-      document.body.removeChild(button);
+      document.body.removeChild(link);
     });
 
     it('should handle Book Treatment button click', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'lodore-falls-spa');
-      button.setAttribute('data-click-intent', 'book-treatment');
-      document.body.appendChild(button);
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-treatment');
+      link.href = 'https://example.com/book-treatment';
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
       expect(mockDataLayerPush).toHaveBeenCalledWith({
         event: 'spa_outbound_click',
@@ -333,17 +475,18 @@ describe('Spa Outbound Click Tracker', () => {
         product_name: 'none',
       });
 
-      document.body.removeChild(button);
+      document.body.removeChild(link);
     });
 
     it('should handle specific product click (treatment card)', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'lodore-falls-spa');
-      button.setAttribute('data-click-intent', 'specific-product-click');
-      button.setAttribute('data-product-name', 'Deep Tissue Massage');
-      document.body.appendChild(button);
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'specific-product-click');
+      link.setAttribute('data-product-name', 'Deep Tissue Massage');
+      link.href = 'https://example.com/book-treatment';
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
       expect(mockDataLayerPush).toHaveBeenCalledWith({
         event: 'spa_outbound_click',
@@ -352,17 +495,18 @@ describe('Spa Outbound Click Tracker', () => {
         product_name: 'Deep Tissue Massage',
       });
 
-      document.body.removeChild(button);
+      document.body.removeChild(link);
     });
 
     it('should handle specific product click (day pass card)', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'lodore-falls-spa');
-      button.setAttribute('data-click-intent', 'specific-product-click');
-      button.setAttribute('data-product-name', 'Falls Renew Spa Experience');
-      document.body.appendChild(button);
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'specific-product-click');
+      link.setAttribute('data-product-name', 'Falls Renew Spa Experience');
+      link.href = 'https://example.com/book-day-pass';
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
       expect(mockDataLayerPush).toHaveBeenCalledWith({
         event: 'spa_outbound_click',
@@ -371,16 +515,17 @@ describe('Spa Outbound Click Tracker', () => {
         product_name: 'Falls Renew Spa Experience',
       });
 
-      document.body.removeChild(button);
+      document.body.removeChild(link);
     });
 
     it('should handle section-level CTA clicks (all-treatments)', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'lodore-falls-spa');
-      button.setAttribute('data-click-intent', 'all-treatments');
-      document.body.appendChild(button);
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'all-treatments');
+      link.href = 'https://example.com/treatments';
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
       expect(mockDataLayerPush).toHaveBeenCalledWith({
         event: 'spa_outbound_click',
@@ -389,16 +534,17 @@ describe('Spa Outbound Click Tracker', () => {
         product_name: 'none',
       });
 
-      document.body.removeChild(button);
+      document.body.removeChild(link);
     });
 
     it('should handle section-level CTA clicks (all-day-passes)', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'lodore-falls-spa');
-      button.setAttribute('data-click-intent', 'all-day-passes');
-      document.body.appendChild(button);
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'all-day-passes');
+      link.href = 'https://example.com/day-passes';
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
       expect(mockDataLayerPush).toHaveBeenCalledWith({
         event: 'spa_outbound_click',
@@ -407,7 +553,7 @@ describe('Spa Outbound Click Tracker', () => {
         product_name: 'none',
       });
 
-      document.body.removeChild(button);
+      document.body.removeChild(link);
     });
   });
 
@@ -417,13 +563,14 @@ describe('Spa Outbound Click Tracker', () => {
     });
 
     it('should push event with correct structure to dataLayer', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'lodore-falls-spa');
-      button.setAttribute('data-click-intent', 'book-stay');
-      button.setAttribute('data-product-name', 'Test Product');
-      document.body.appendChild(button);
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.setAttribute('data-product-name', 'Test Product');
+      link.href = 'https://example.com/book';
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
       const callArgs = mockDataLayerPush.mock.calls[0][0];
       
@@ -438,16 +585,17 @@ describe('Spa Outbound Click Tracker', () => {
         'product_name',
       ]);
 
-      document.body.removeChild(button);
+      document.body.removeChild(link);
     });
 
     it('should have parameters at top level (not nested)', () => {
-      const button = document.createElement('a');
-      button.setAttribute('data-spa-id', 'lodore-falls-spa');
-      button.setAttribute('data-click-intent', 'book-stay');
-      document.body.appendChild(button);
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'https://example.com/book';
+      document.body.appendChild(link);
 
-      button.click();
+      link.click();
 
       const callArgs = mockDataLayerPush.mock.calls[0][0];
       
@@ -457,7 +605,266 @@ describe('Spa Outbound Click Tracker', () => {
       expect(callArgs.product_name).toBe('none');
       expect(callArgs.params).toBeUndefined();
 
+      document.body.removeChild(link);
+    });
+  });
+
+  describe('External URL validation', () => {
+    beforeEach(() => {
+      // Use custom location for these tests
+      initializeClickTrackerWithLocation('lakedistrictspas.co.uk');
+    });
+
+    it('should track external links (different domain)', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'https://example.com/book';
+      document.body.appendChild(link);
+
+      link.click();
+
+      expect(mockDataLayerPush).toHaveBeenCalledTimes(1);
+      expect(mockDataLayerPush).toHaveBeenCalledWith({
+        event: 'spa_outbound_click',
+        spa_id: 'lodore-falls-spa',
+        click_intent: 'book-stay',
+        product_name: 'none',
+      });
+
+      document.body.removeChild(link);
+    });
+
+    it('should not track internal links (same domain)', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'https://lakedistrictspas.co.uk/spa/lodore-falls-spa';
+      document.body.appendChild(link);
+
+      link.click();
+
+      expect(mockDataLayerPush).not.toHaveBeenCalled();
+
+      document.body.removeChild(link);
+    });
+
+    it('should not track relative internal links', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = '/spa/lodore-falls-spa';
+      document.body.appendChild(link);
+
+      link.click();
+
+      expect(mockDataLayerPush).not.toHaveBeenCalled();
+
+      document.body.removeChild(link);
+    });
+
+    it('should handle www subdomain correctly (same domain)', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'https://www.lakedistrictspas.co.uk/spa/lodore-falls-spa';
+      document.body.appendChild(link);
+
+      link.click();
+
+      expect(mockDataLayerPush).not.toHaveBeenCalled();
+
+      document.body.removeChild(link);
+    });
+
+    it('should handle www subdomain correctly (external domain)', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'https://www.example.com/book';
+      document.body.appendChild(link);
+
+      link.click();
+
+      expect(mockDataLayerPush).toHaveBeenCalledTimes(1);
+
+      document.body.removeChild(link);
+    });
+  });
+
+  describe('Protocol handler links (mailto, tel)', () => {
+    beforeEach(() => {
+      initializeClickTracker();
+    });
+
+    it('should track mailto links with data-spa-id', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'mailto:info@example.com';
+      document.body.appendChild(link);
+
+      link.click();
+
+      expect(mockDataLayerPush).toHaveBeenCalledTimes(1);
+      expect(mockDataLayerPush).toHaveBeenCalledWith({
+        event: 'spa_outbound_click',
+        spa_id: 'lodore-falls-spa',
+        click_intent: 'book-stay',
+        product_name: 'none',
+      });
+
+      document.body.removeChild(link);
+    });
+
+    it('should track tel links with data-spa-id', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'tel:+441234567890';
+      document.body.appendChild(link);
+
+      link.click();
+
+      expect(mockDataLayerPush).toHaveBeenCalledTimes(1);
+      expect(mockDataLayerPush).toHaveBeenCalledWith({
+        event: 'spa_outbound_click',
+        spa_id: 'lodore-falls-spa',
+        click_intent: 'book-stay',
+        product_name: 'none',
+      });
+
+      document.body.removeChild(link);
+    });
+
+    it('should not track mailto links without data-spa-id', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'mailto:info@example.com';
+      // data-spa-id not set
+      document.body.appendChild(link);
+
+      link.click();
+
+      expect(mockDataLayerPush).not.toHaveBeenCalled();
+
+      document.body.removeChild(link);
+    });
+
+    it('should not track tel links without data-spa-id', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'tel:+441234567890';
+      // data-spa-id not set
+      document.body.appendChild(link);
+
+      link.click();
+
+      expect(mockDataLayerPush).not.toHaveBeenCalled();
+
+      document.body.removeChild(link);
+    });
+  });
+
+  describe('Anchor tag requirement', () => {
+    beforeEach(() => {
+      initializeClickTracker();
+    });
+
+    it('should only track anchor tags, not buttons', () => {
+      const button = document.createElement('button');
+      button.setAttribute('data-spa-id', 'lodore-falls-spa');
+      button.setAttribute('data-click-intent', 'book-stay');
+      document.body.appendChild(button);
+
+      button.click();
+
+      expect(mockDataLayerPush).not.toHaveBeenCalled();
+
       document.body.removeChild(button);
+    });
+
+    it('should only track anchor tags, not divs', () => {
+      const div = document.createElement('div');
+      div.setAttribute('data-spa-id', 'lodore-falls-spa');
+      div.setAttribute('data-click-intent', 'book-stay');
+      div.setAttribute('role', 'button');
+      div.style.cursor = 'pointer';
+      document.body.appendChild(div);
+
+      div.click();
+
+      expect(mockDataLayerPush).not.toHaveBeenCalled();
+
+      document.body.removeChild(div);
+    });
+
+    it('should track anchor tags with external links', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'https://example.com/book';
+      document.body.appendChild(link);
+
+      link.click();
+
+      expect(mockDataLayerPush).toHaveBeenCalledTimes(1);
+
+      document.body.removeChild(link);
+    });
+  });
+
+  describe('Required data-spa-id attribute', () => {
+    beforeEach(() => {
+      initializeClickTracker();
+    });
+
+    it('should not track external links without data-spa-id', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'https://example.com/book';
+      // data-spa-id not set
+      document.body.appendChild(link);
+
+      link.click();
+
+      expect(mockDataLayerPush).not.toHaveBeenCalled();
+
+      document.body.removeChild(link);
+    });
+
+    it('should not track external links with empty data-spa-id', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', '');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'https://example.com/book';
+      document.body.appendChild(link);
+
+      link.click();
+
+      expect(mockDataLayerPush).not.toHaveBeenCalled();
+
+      document.body.removeChild(link);
+    });
+
+    it('should track external links with valid data-spa-id', () => {
+      const link = document.createElement('a');
+      link.setAttribute('data-spa-id', 'lodore-falls-spa');
+      link.setAttribute('data-click-intent', 'book-stay');
+      link.href = 'https://example.com/book';
+      document.body.appendChild(link);
+
+      link.click();
+
+      expect(mockDataLayerPush).toHaveBeenCalledTimes(1);
+      expect(mockDataLayerPush).toHaveBeenCalledWith({
+        event: 'spa_outbound_click',
+        spa_id: 'lodore-falls-spa',
+        click_intent: 'book-stay',
+        product_name: 'none',
+      });
+
+      document.body.removeChild(link);
     });
   });
 });

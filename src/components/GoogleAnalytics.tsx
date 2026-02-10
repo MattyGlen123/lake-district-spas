@@ -29,21 +29,60 @@ export default function GoogleAnalytics() {
             (function() {
               window.dataLayer = window.dataLayer || [];
 
-              document.addEventListener('click', function(e) {
-                var btn = e.target.closest('[data-spa-id]');
-
-                if (btn) {
-                  var spaId = btn.dataset.spaId || '';
-                  var clickIntent = btn.dataset.clickIntent || '';
-                  var productName = btn.dataset.productName || 'none';
-
-                  window.dataLayer.push({
-                    event: 'spa_outbound_click',
-                    spa_id: spaId,
-                    click_intent: clickIntent,
-                    product_name: productName
-                  });
+              // Helper function to check if URL is external (http/https to different domain)
+              function isExternalUrl(url) {
+                if (!url) return false;
+                // Skip relative URLs (internal links)
+                if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                  return false;
                 }
+                try {
+                  var urlObj = new URL(url, window.location.origin);
+                  var currentHost = window.location.hostname;
+                  var linkHost = urlObj.hostname;
+                  // Check if it's external (different domain)
+                  return linkHost !== currentHost && linkHost !== 'www.' + currentHost && 'www.' + linkHost !== currentHost;
+                } catch {
+                  return false;
+                }
+              }
+
+              // Helper function to check if URL is a protocol handler (mailto, tel)
+              function isProtocolHandler(url) {
+                if (!url) return false;
+                return url.startsWith('mailto:') || url.startsWith('tel:');
+              }
+
+              document.addEventListener('click', function(e) {
+                var link = e.target.closest('a');
+                if (!link || !link.href) return;
+
+                // Use the resolved href (absolute URL) for external check
+                var href = link.href;
+                
+                // Track external URLs OR protocol handlers (mailto, tel)
+                var isExternal = isExternalUrl(href);
+                var isProtocol = isProtocolHandler(href);
+                
+                if (!isExternal && !isProtocol) return;
+
+                // Get spa ID from data attribute (required)
+                var spaId = link.dataset.spaId || '';
+                
+                // Only fire event if we have a valid spa ID
+                if (!spaId) return;
+
+                // Get other data attributes if available
+                var clickIntent = link.dataset.clickIntent || 'external-link';
+                var productName = link.dataset.productName || 'none';
+
+                // Fire the event for external links or protocol handlers with spa context
+                window.dataLayer.push({
+                  event: 'spa_outbound_click',
+                  spa_id: spaId,
+                  click_intent: clickIntent,
+                  product_name: productName
+                });
               });
             })();
           `,

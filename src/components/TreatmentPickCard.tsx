@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Clock, Tag, MapPin, ExternalLink } from 'lucide-react';
 import { Treatment, Spa } from '@/types/spa';
+import { appendUtmParams } from '@/lib/utils';
 
 interface TreatmentPickCardProps {
   treatment: Treatment;
@@ -69,9 +70,12 @@ export default function TreatmentPickCard({
         {/* Booking Button */}
         {spa.treatmentBookingUrl ? (
           <a
-            href={spa.treatmentBookingUrl}
+            href={appendUtmParams(spa.treatmentBookingUrl, 'specific-product-click')}
             target="_blank"
             rel="noopener noreferrer"
+            data-spa-id={spa.url}
+            data-click-intent="specific-product-click"
+            data-product-name={treatment.name}
             className="mx-auto max-w-[200px] flex items-center justify-center gap-1 px-4 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm"
           >
             Book Now
@@ -79,7 +83,10 @@ export default function TreatmentPickCard({
           </a>
         ) : spa.treatmentBookingPhone ? (
           <a
-            href={`tel:${spa.treatmentBookingPhone}`}
+            href={appendUtmParams(`tel:${spa.treatmentBookingPhone}`, 'specific-product-click')}
+            data-spa-id={spa.url}
+            data-click-intent="specific-product-click"
+            data-product-name={treatment.name}
             className="flex items-center justify-center gap-2 px-4 py-3 bg-emerald-950 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm"
           >
             Call Now

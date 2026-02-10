@@ -23,6 +23,7 @@ import {
   getDayPassBookingUrl,
   getDayPassPackageName,
 } from '@/data/faqs/helpers';
+import { appendUtmParams } from '@/lib/utils';
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
@@ -344,9 +345,12 @@ const mdxComponents = {
     
     return (
       <a
-        href={bookingUrl}
+        href={appendUtmParams(bookingUrl, 'specific-product-click')}
         target="_blank"
         rel="noopener noreferrer"
+        data-spa-id={spa.url}
+        data-click-intent="specific-product-click"
+        data-product-name={packageName || dayPassId}
         className="text-emerald-950 underline hover:text-emerald-800 font-medium"
       >
         {displayText}
