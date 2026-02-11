@@ -22,6 +22,13 @@ import {
   getSpaAccessDurationHyphenated,
   getDayPassBookingUrl,
   getDayPassPackageName,
+  getTreatmentBookingUrl,
+  getTreatmentName,
+  getTreatmentIdByName,
+  getTreatmentPrice,
+  getTreatmentCouplesPrice,
+  getTreatmentIndividualPrice,
+  getDayPassPricePerPerson,
 } from '@/data/faqs/helpers';
 import { appendUtmParams } from '@/lib/utils';
 
@@ -311,6 +318,30 @@ const mdxComponents = {
     if (!price) return null;
     return <span>{price}</span>;
   },
+  DayPassPricePerPerson: ({ spaSlug, dayPassId }: { spaSlug: string; dayPassId: string }) => {
+    const spa = spaData.find((s) => s.url === spaSlug);
+    if (!spa) return null;
+    const price = getDayPassPricePerPerson(spa.id, dayPassId);
+    if (!price) return null;
+    return <span>{price}</span>;
+  },
+  TreatmentPrice: ({ spaSlug, treatmentName, variant }: { spaSlug: string; treatmentName: string; variant?: 'individual' | 'couples' }) => {
+    const spa = spaData.find((s) => s.url === spaSlug);
+    if (!spa) return null;
+    const priceString = getTreatmentPrice(spa.id, treatmentName);
+    if (!priceString) return null;
+    
+    if (variant === 'couples') {
+      const couplesPrice = getTreatmentCouplesPrice(priceString);
+      if (couplesPrice) return <span>{couplesPrice}</span>;
+    } else if (variant === 'individual') {
+      const individualPrice = getTreatmentIndividualPrice(priceString);
+      if (individualPrice) return <span>{individualPrice}</span>;
+    }
+    
+    // Default: return full price string
+    return <span>{priceString}</span>;
+  },
   SpaAccessDuration: ({ spaSlug }: { spaSlug: string }) => {
     const spa = spaData.find((s) => s.url === spaSlug);
     if (!spa) return null;
@@ -356,6 +387,46 @@ const mdxComponents = {
         {displayText}
       </a>
     );
+  },
+  TreatmentLink: ({ spaSlug, treatmentName, children }: { spaSlug: string; treatmentName: string; children?: React.ReactNode }) => {
+    const spa = spaData.find((s) => s.url === spaSlug);
+    if (!spa) return children || null;
+    const bookingUrl = getTreatmentBookingUrl(spa.id, treatmentName, spa);
+    const fullTreatmentName = getTreatmentName(spa.id, treatmentName);
+    const treatmentId = getTreatmentIdByName(spa.id, treatmentName);
+    const displayText = children || fullTreatmentName || treatmentName;
+    
+    // If we have a booking URL, link to it
+    if (bookingUrl) {
+      return (
+        <a
+          href={appendUtmParams(bookingUrl, 'specific-product-click')}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-spa-id={spa.url}
+          data-click-intent="specific-product-click"
+          data-product-name={fullTreatmentName || treatmentName}
+          className="text-emerald-950 underline hover:text-emerald-800 font-medium"
+        >
+          {displayText}
+        </a>
+      );
+    }
+    
+    // Otherwise, link to the treatment on the spa page
+    if (treatmentId) {
+      return (
+        <Link
+          href={`/spa/${spa.url}#${treatmentId}`}
+          className="text-emerald-950 underline hover:text-emerald-800 font-medium"
+        >
+          {displayText}
+        </Link>
+      );
+    }
+    
+    // Fallback: just show the text
+    return <span>{displayText}</span>;
   },
 };
 

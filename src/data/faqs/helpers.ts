@@ -258,3 +258,92 @@ export function getTreatmentIdByName(spaId: number, treatmentName: string): stri
   return getTreatmentId(treatment.name);
 }
 
+/**
+ * Get treatment booking URL by treatment name for a specific spa
+ * @param spaId - The spa ID
+ * @param treatmentName - Partial name to match (e.g., "Fellwalker")
+ * @returns Treatment booking URL, or spa's treatment booking URL, or null if not found
+ */
+export function getTreatmentBookingUrl(spaId: number, treatmentName: string, spa?: Spa): string | null {
+  const treatments = getTreatmentsBySpaId(spaId);
+  const treatment = treatments.find((t) => 
+    t.name.toLowerCase().includes(treatmentName.toLowerCase())
+  );
+  
+  // If treatment has its own booking URL, use that
+  if (treatment?.bookingUrl) {
+    return treatment.bookingUrl;
+  }
+  
+  // Otherwise, use spa's treatment booking URL
+  if (spa?.treatmentBookingUrl) {
+    return spa.treatmentBookingUrl;
+  }
+  
+  return null;
+}
+
+/**
+ * Get treatment name by partial name match for a specific spa
+ * @param spaId - The spa ID
+ * @param treatmentName - Partial name to match (e.g., "Fellwalker")
+ * @returns Full treatment name, or null if not found
+ */
+export function getTreatmentName(spaId: number, treatmentName: string): string | null {
+  const treatments = getTreatmentsBySpaId(spaId);
+  const treatment = treatments.find((t) => 
+    t.name.toLowerCase().includes(treatmentName.toLowerCase())
+  );
+  
+  if (!treatment) return null;
+  return treatment.name;
+}
+
+/**
+ * Extract couples price from treatment price string
+ * @param priceString - Price string like "£300 (£595 couples)" or "£125 (£245 couples)"
+ * @returns Couples price string (e.g., "£595"), or null if not found
+ */
+export function getTreatmentCouplesPrice(priceString: string): string | null {
+  const couplesMatch = priceString.match(/\(£(\d+)\s+couples?\)/i);
+  if (couplesMatch) {
+    return `£${couplesMatch[1]}`;
+  }
+  return null;
+}
+
+/**
+ * Extract individual price from treatment price string
+ * @param priceString - Price string like "£300 (£595 couples)" or "£125"
+ * @returns Individual price string (e.g., "£300" or "£125"), or null if not found
+ */
+export function getTreatmentIndividualPrice(priceString: string): string | null {
+  const individualMatch = priceString.match(/£(\d+)/);
+  if (individualMatch) {
+    return `£${individualMatch[1]}`;
+  }
+  return null;
+}
+
+/**
+ * Get day pass price per person
+ * @param spaId - The spa ID
+ * @param dayPassId - The day pass ID
+ * @returns Formatted price per person string (e.g., "£110"), or null if not found
+ */
+export function getDayPassPricePerPerson(spaId: number, dayPassId: string): string | null {
+  const dayPass = getDayPassById(spaId, dayPassId);
+  if (!dayPass) return null;
+  
+  if (dayPass.pricePerPerson) {
+    return `£${dayPass.pricePerPerson}`;
+  }
+  
+  // If no pricePerPerson, calculate from priceGBP (assuming it's for 2 people if requiredNumbers exists)
+  if (dayPass.requiredNumbers && dayPass.priceGBP) {
+    return `£${Math.round(dayPass.priceGBP / 2)}`;
+  }
+  
+  return null;
+}
+

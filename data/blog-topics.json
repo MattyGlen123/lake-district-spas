@@ -45,15 +45,15 @@
       "notes": "Decision helper content"
     },
     {
-      "id": "anniversary-spas",
-      "title": "Best Lake District Spas for Anniversary Celebrations",
-      "slug": "anniversary-spa-breaks-lake-district",
-      "targetKeyword": "anniversary spa lake district",
-      "category": "seasonal",
+      "id": "spa-resort-couples-getaway-spas",
+      "title": "Best Spa Resort Couples Getaway",
+      "slug": "spa-resort-couples-getaway",
+      "targetKeyword": "spa resort couples getaway",
+      "category": "guides",
       "priority": 5,
       "status": "planned",
-      "relatedSpas": ["armathwaite-hall-hotel-spa"],
-      "notes": "Occasion targeting for primary persona"
+      "relatedSpas": ["swan-hotel-spa", "brimstone-hotel-spa", "netherwood-hotel-spa", "whitewater-hotel-leisure-club"],
+      "notes": "Occasion targeting for primary persona couples."
     },
     {
       "id": "thermal-suites-explained",
@@ -106,7 +106,7 @@
       "targetKeyword": "keswick spa",
       "category": "locations",
       "priority": 10,
-      "status": "planned",
+      "status": "published",
       "relatedSpas": ["armathwaite-hall-hotel-spa", "lodore-falls-spa"],
       "notes": "Location content - 720 monthly searches"
     }

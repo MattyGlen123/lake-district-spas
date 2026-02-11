@@ -184,6 +184,8 @@ The MDX renderer includes custom components:
 - **SpaCard**: Can embed spa cards using `<SpaCard spaSlug="spa-slug" />`
 - **SpaAccessPrice**: Displays dynamic spa access prices (weekday/weekend)
 - **DayPassPrice**: Displays dynamic day pass prices
+- **DayPassLink**: Links named spa day packages directly to their booking URLs with tracking
+- **TreatmentLink**: Links named treatments directly to booking URLs or the correct treatment card on the spa page
 
 ### Dynamic Pricing
 
@@ -265,6 +267,43 @@ Link to spas using:
 ```
 
 The MDX renderer automatically converts these to proper Next.js links.
+
+### Treatment and Day Pass Links
+
+Use the custom link components whenever you name a **specific spa day package** or **specific treatment** so users can click straight through and tracking works correctly.
+
+- **DayPassLink (for named day packages)**:
+
+  ```markdown
+  Couples wanting a full experience with treatment should consider the <DayPassLink spaSlug="lodore-falls-spa" dayPassId="lodore-falls-derwent-delight">Derwent Delight for 2</DayPassLink>, priced at <DayPassPrice spaSlug="lodore-falls-spa" dayPassId="lodore-falls-derwent-delight" /> total.
+  ```
+
+  - **What it does**: Links the package name to the correct external booking URL with UTM tracking, and uses the ID to find the right package.
+  - **When to use**: Any time you mention a day pass by name (e.g., "Twilight Spa", "Escape Half Day", "Thermal Journey").
+  - **Props**:
+    - `spaSlug` (required): Spa URL slug, e.g. `"lodore-falls-spa"`, `"swan-hotel-spa"`.
+    - `dayPassId` (required): Day pass ID from `src/data/day-passes/spa-{id}-day-passes.ts`.
+
+- **TreatmentLink (for named treatments)**:
+
+  ```markdown
+  For couples, the <TreatmentLink spaSlug="brimstone-hotel-spa" treatmentName="Spa Senses Signature Ritual">Spa Senses Signature Rituals</TreatmentLink> run 100 minutes and cost £595 for two. The signature <TreatmentLink spaSlug="brimstone-hotel-spa" treatmentName="Fellwalker">Fellwalker</TreatmentLink> treatment targets feet, back, and legs after a morning on the fells.
+  ```
+
+  - **What it does**:
+    - Looks up the treatment by partial name match in `src/data/treatments/spa-{id}-treatments.ts`.
+    - If the treatment has a `bookingUrl`, links directly to that with tracking.
+    - Otherwise links to the treatment card anchor on the spa page (`/spa/{spa-slug}#{treatment-id}`).
+  - **When to use**: Any time you mention a specific treatment by name (e.g., "Fellwalker", "Champagne and Truffles Facial").
+  - **Props**:
+    - `spaSlug` (required): Spa URL slug, e.g. `"brimstone-hotel-spa"`.
+    - `treatmentName` (required): A string that uniquely matches the treatment name (case-insensitive, partial match is fine, but keep it specific).
+
+**Best practices for DayPassLink and TreatmentLink:**
+1. Always use these components instead of plain text when naming a specific package or treatment.
+2. Copy `dayPassId` values directly from the day passes data files to avoid typos.
+3. For treatments, copy the exact treatment name (or a distinctive part of it) from the treatments data file.
+4. Preview the article to confirm links render and go to the expected booking page or treatment section.
 
 ---
 
@@ -430,4 +469,4 @@ blog.md (this file - root directory)
 
 ---
 
-_Last Updated: 2026-02-03_
+_Last Updated: 2026-02-11_
