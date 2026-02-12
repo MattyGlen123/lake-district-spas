@@ -1,4 +1,4 @@
-# CLAUDE.md
+.claude/skills/# CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
@@ -76,6 +76,7 @@ See `STYLE_GUIDE.md` for full reference. Key rules:
 ## Adding Data
 
 ### New Spa
+
 1. Add entry to `src/data/spas.ts` with unique `id` and `url` slug.
 2. Create treatment file `src/data/treatments/spa-{id}-treatments.ts` and register in `index.ts`.
 3. Create day pass file `src/data/day-passes/spa-{id}-day-passes.ts` (if applicable) and register in `index.ts`.
@@ -83,6 +84,7 @@ See `STYLE_GUIDE.md` for full reference. Key rules:
 5. Run tests — spa data validation and intro text tests will catch issues.
 
 ### New Blog Post
+
 1. Create `content/blog/{slug}.mdx` with required frontmatter (see `blog.md`).
 2. Add images to `public/images/blog/` and register alt text in `images.json`.
 3. Use dynamic price components, not hardcoded prices.
@@ -91,12 +93,18 @@ See `STYLE_GUIDE.md` for full reference. Key rules:
 ## Testing
 
 Tests in `src/__tests__/` validate:
+
 - Spa data structure completeness and required fields.
 - Intro text accuracy (facility counts, age policies, access labels must match data).
 - Filtering logic (multi-filter AND/OR combinations).
 - Utility functions and schema generation.
 - Blog price component rendering.
 - Outbound click tracking.
+
+## Content Directories
+
+- **`.claude/content-in/`** — Input materials. Place files here as source context for AI agents to read. Keep contributions and source materials in this folder.
+- **`.claude/content-out/`** — Agent output. AI-generated content goes here, kept separate from the input to prevent self-biasing on previous output. Agents should write their work here.
 
 ## Key Documentation
 
