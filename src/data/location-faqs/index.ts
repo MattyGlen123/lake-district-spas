@@ -1,11 +1,12 @@
 import { FAQ } from '@/components/FAQs';
 import { Spa } from '@/types/spa';
 import { spaData } from '@/data/spas';
+import { getWindermereFAQs } from './windermere-faqs';
 
 // Map of location names to their FAQ generator functions
 // Add new locations here as FAQ files are created
 const faqGeneratorsByLocation: Record<string, (spas: Spa[]) => FAQ[]> = {
-  // 'Windermere': getWindermereFAQs,
+  Windermere: getWindermereFAQs,
 };
 
 // Cache for generated FAQs
