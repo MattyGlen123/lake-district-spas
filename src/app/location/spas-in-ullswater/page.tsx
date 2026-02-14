@@ -23,6 +23,9 @@ const heroContent = {
   titleLine2: 'Ullswater',
   description:
     "England's most beautiful lake, where Wordsworth found his daffodils and a contemporary lakeside hotel invites you to swim in the water rather than just look at it.",
+  imageSrc: '/images/locations/ullswater-lake-district-spa-breaks.jpg',
+  imageAlt:
+    'Ullswater stretching into the distance between steep green fells with a wooded headland jutting into the calm blue water, fell reflections mirrored on the still lake surface on a clear summer evening in the Lake District',
 };
 
 const introContent = `Ullswater winds for nine miles through the northern Lake District, its elongated Z-shape carved by three glaciers that retreated ten thousand years ago. Many consider it England's most beautiful lake, Wordsworth certainly thought so, describing it as "the happiest combination of beauty and grandeur which any of the Lakes affords". It was here at Glencoyne Bay in April 1802 that he and his sister Dorothy encountered the daffodils that would inspire the most famous poem in the English language. Those same daffodils still bloom each spring along the shoreline.

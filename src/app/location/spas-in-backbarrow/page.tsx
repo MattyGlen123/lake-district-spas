@@ -1,11 +1,14 @@
 import { Metadata } from 'next';
+import { HelpCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import LocationHero from '@/components/location/LocationHero';
 import LocationIntro from '@/components/location/LocationIntro';
 import LocationFeaturedSpas from '@/components/location/LocationFeaturedSpas';
 import RelatedLocations from '@/components/location/RelatedLocations';
+import FAQs, { generateFAQSchema } from '@/components/FAQs';
 import { spaData } from '@/data/spas';
+import { getLocationFAQs } from '@/data/location-faqs';
 
 export const metadata: Metadata = {
   title: 'Spas in Backbarrow | Lake District Spas',
@@ -16,6 +19,7 @@ export const metadata: Metadata = {
 // Filter spas for Backbarrow
 // Backbarrow spa: Whitewater Hotel & Leisure Club (id: 13)
 const backbarrowSpas = spaData.filter((spa) => spa.location === 'Backbarrow');
+const faqs = getLocationFAQs('Backbarrow');
 
 const heroContent = {
   badge: 'Backbarrow Spa',
@@ -54,6 +58,27 @@ export default function BackbarrowSpasPage() {
           sectionLabel={`${backbarrowSpas.length} ${backbarrowSpas.length === 1 ? 'Spa' : 'Spas'} in Backbarrow`}
           sectionTitle="Riverside Spa"
         />
+        {faqs.length > 0 && (
+          <div className="container mx-auto px-4 md:px-8">
+            <FAQs
+              id="faq"
+              title="Common Questions"
+              subtitle="Frequently asked questions about spas in Backbarrow."
+              icon={HelpCircle}
+              faqs={faqs}
+            />
+          </div>
+        )}
+
+        {faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(generateFAQSchema(faqs)),
+            }}
+          />
+        )}
+
         <RelatedLocations
           currentLocation="Backbarrow"
           locations={relatedLocations}

@@ -25,6 +25,9 @@ const heroContent = {
   titleLine2: 'Newby Bridge',
   description:
     "Where Lake Windermere meets the River Leven, two spa hotels offer a quieter gateway to the southern Lakes with steam trains, lake cruises and fell walks on the doorstep.",
+  imageSrc: '/images/locations/newby-bridge-lake-district-spa-breaks.jpg',
+  imageAlt:
+    'Water cascading over a broad weir on the River Leven at Newby Bridge with a traditional stone arch bridge beyond, surrounded by lush green woodland and gentle fells at the southern tip of Lake Windermere',
 };
 
 const introContent = `Newby Bridge sits at the point where England's largest lake empties into the River Leven, a small hamlet that takes its name from the five arched stone bridge built here in 1651. This is the quieter end of Windermere, away from the crowds of Bowness and Ambleside, yet perfectly positioned as a gateway to the southern Lake District. Steam trains on the Lakeside and Haverthwaite Railway pull into the station on their way to the lakeside pier, where cruises depart northward up the full length of Windermere.

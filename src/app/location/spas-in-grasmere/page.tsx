@@ -23,6 +23,9 @@ const heroContent = {
   titleLine2: 'Grasmere',
   description:
     "Wordsworth's beloved village in the heart of the Lakes, where two spa hotels offer relaxation between literary pilgrimages and classic fell walks.",
+  imageSrc: '/images/locations/grasmere-lake-district-spa-breaks.jpg',
+  imageAlt:
+    'Aerial view of Grasmere village beside its lake with a tree-covered island in the foreground, green fields and mature woodland leading up to rounded Lakeland fells under a clear summer sky in the Lake District',
 };
 
 const introContent = `Grasmere sits in a bowl of fells at the geographic heart of the Lake District, a village that William Wordsworth famously called "the loveliest spot that man hath found". Visitors come for the literary pilgrimage, the cottage, the museum, his grave in St Oswald's churchyard, but they stay for the landscape that inspired him.

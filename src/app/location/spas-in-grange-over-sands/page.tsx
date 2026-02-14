@@ -25,6 +25,9 @@ const heroContent = {
   titleLine2: 'Grange-over-Sands',
   description:
     "An Edwardian coastal town on the edge of Morecambe Bay, where two Victorian spa hotels offer relaxation with sweeping views across the sands to the Lakeland fells.",
+  imageSrc: '/images/locations/grange-over-sands-lake-district-spa-breaks.jpg',
+  imageAlt:
+    'Sweeping view across the sandy channels and tidal flats of Morecambe Bay at low tide from Grange-over-Sands, with gentle green hills and rocky headlands visible across the estuary on a calm evening',
 };
 
 const introContent = `Grange-over-Sands occupies a unique position on the Cartmel Peninsula, where the Lake District meets Morecambe Bay. This elegant Edwardian town grew up around its railway station, which brought Victorian visitors seeking the mild climate and sea air. The famous promenade still curves along the edge of the salt marshes, backed by ornamental gardens planted with palms and semi-tropical shrubs, a legacy of those gentler winters that made this corner of Cumbria a favoured retreat.

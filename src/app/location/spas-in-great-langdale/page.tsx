@@ -25,6 +25,9 @@ const heroContent = {
   titleLine2: 'Great Langdale',
   description:
     "The Lake District's premier walking valley, where the Langdale Pikes dominate the skyline and one exceptional spa rewards tired legs after days on the fells.",
+  imageSrc: '/images/locations/great-langdale-lake-district-spa-breaks.jpg',
+  imageAlt:
+    'Stunning view down Great Langdale valley with steep craggy fells rising either side, patchwork green fields divided by dry stone walls and scattered farmsteads stretching toward the Langdale Pikes under dramatic clouds',
 };
 
 const introContent = `Great Langdale is where the Lake District gets serious. The valley runs west from Ambleside beneath some of the most dramatic mountain scenery in England, the Langdale Pikes rise in a sudden vertical surge from the valley floor, their rocky summits instantly recognisable from as far away as Windermere's eastern shore. Walkers have been coming here for generations, drawn by terrain that Alfred Wainwright described as stirring both imagination and emotion.

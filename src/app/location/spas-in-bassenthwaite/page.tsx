@@ -25,6 +25,9 @@ const heroContent = {
   titleLine2: 'Bassenthwaite',
   description:
     "Country estate grandeur on England's only true lake. A 400-acre deer park, outdoor infinity pools, and an Amethyst Crystal Cave steam room await.",
+  imageSrc: '/images/locations/bassenthwaite-lake-district-spa-breaks.jpg',
+  imageAlt:
+    'Dramatic fell reflected in the mirror-still waters of Bassenthwaite Lake on a clear summer day, with native woodland along the shoreline in the northern Lake District near Keswick',
 };
 
 const introContent = `Bassenthwaite Lake holds a quiet distinction: it is the only body of water in the Lake District officially named a lake, the others being meres, waters and tarns. This northern reach of the national park trades the busier shores of Windermere for something more secluded, ancient woodland, osprey nesting sites, and the kind of stillness that draws those seeking genuine escape.

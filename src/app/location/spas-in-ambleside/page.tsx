@@ -1,10 +1,13 @@
 import { Metadata } from 'next';
+import { HelpCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import LocationHero from '@/components/location/LocationHero';
 import LocationIntro from '@/components/location/LocationIntro';
 import LocationFeaturedSpas from '@/components/location/LocationFeaturedSpas';
+import FAQs, { generateFAQSchema } from '@/components/FAQs';
 import { spaData } from '@/data/spas';
+import { getLocationFAQs } from '@/data/location-faqs';
 
 export const metadata: Metadata = {
   title: 'Spas in Ambleside | Lake District Spas',
@@ -15,6 +18,7 @@ export const metadata: Metadata = {
 // Filter spas for Ambleside
 // Ambleside spa: Ambleside Salutation Hotel & Spa (id: 8)
 const amblesideSpas = spaData.filter((spa) => spa.location === 'Ambleside');
+const faqs = getLocationFAQs('Ambleside');
 
 const heroContent = {
   badge: 'Ambleside Spa',
@@ -22,6 +26,9 @@ const heroContent = {
   titleLine2: 'Ambleside',
   description:
     "The Lake District's walking capital meets village wellness. An intimate spa retreat in the heart of one of Lakeland's most beloved villages.",
+  imageSrc: '/images/locations/ambleside-lake-district-spa-breaks.jpg',
+  imageAlt:
+    'Panoramic summer view across green fields and dry stone walls toward Ambleside village nestled beside the lake, with Lakeland fells rising on both sides of the valley in the Lake District National Park',
 };
 
 const introContent = `Ambleside sits where lake meets fell, a slate-grey village at the head of Windermere that has drawn walkers and romantics for generations. The fells rise directly from the village streets, including Loughrigg, Wansfell, and the Fairfield Horseshoe, making this the natural base for couples who want to combine spa relaxation with Lakeland exploration.
@@ -47,6 +54,27 @@ export default function AmblesideSpasPage() {
           sectionLabel={`${amblesideSpas.length} ${amblesideSpas.length === 1 ? 'Spa' : 'Spas'} in Ambleside`}
           sectionTitle="Village Spa"
         />
+
+        {faqs.length > 0 && (
+          <div className="container mx-auto px-4 md:px-8">
+            <FAQs
+              id="faq"
+              title="Common Questions"
+              subtitle="Frequently asked questions about spas in Ambleside."
+              icon={HelpCircle}
+              faqs={faqs}
+            />
+          </div>
+        )}
+
+        {faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(generateFAQSchema(faqs)),
+            }}
+          />
+        )}
       </main>
 
       <Footer />

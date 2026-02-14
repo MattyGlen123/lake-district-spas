@@ -23,6 +23,9 @@ const heroContent = {
   titleLine2: 'Borrowdale',
   description:
     "One of the Lake District's most dramatic valleys, home to an infinity-edge spa overlooking Derwentwater and the fells beyond.",
+  imageSrc: '/images/locations/borrowdale-valley-lake-district-spa-breaks.jpg',
+  imageAlt:
+    'Traditional wooden gate and dry stone wall opening onto wildflower meadows in Borrowdale valley, with steep green fells and wooded hillsides rising into summer clouds in the heart of the Lake District',
 };
 
 const introContent = `Borrowdale cuts deep into the heart of the Lake District, a glacier-carved valley where towering fells rise steeply from the shores of Derwentwater. This is walking country at its finest, ancient oakwoods cloak the lower slopes, the River Derwent winds through valley-bottom meadows, and at the Jaws of Borrowdale the landscape narrows dramatically between Castle Crag and King's How. It's a place that has drawn visitors since Georgian times, when the Picturesque movement sent tourists in search of wild, romantic scenery.

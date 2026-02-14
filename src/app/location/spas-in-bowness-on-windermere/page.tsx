@@ -23,6 +23,9 @@ const heroContent = {
   titleLine1: 'Spas in',
   titleLine2: 'Bowness-on-Windermere',
   description: "The Lake District's beating heart, where lake cruises depart and two very different spas await. Historic lakeside elegance or poolside prosecco - Bowness offers both.",
+  imageSrc: '/images/locations/bowness-on-windermere-lake-district-spa-breaks.jpg',
+  imageAlt:
+    'Aerial view of a tree-covered island surrounded by calm blue water on Lake Windermere near Bowness, with wooded shores and rolling Lakeland fells stretching into the distance on a summer morning',
 };
 
 const introContent = `Bowness-on-Windermere sits at the centre of everything. The piers here have launched lake cruises since Victorian times, ferrying visitors to Ambleside, Lakeside and the islands that dot England's largest lake. The village itself bustles with independent shops, restaurants and the World of Beatrix Potter attraction. This is the Lake District at its most accessible. Trains connect to Windermere station a mile uphill, coaches arrive daily, and the A591 brings traffic from every direction.

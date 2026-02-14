@@ -23,6 +23,9 @@ const heroContent = {
   titleLine2: 'Penrith',
   description:
     'The historic market town on the edge of the Lake District, where a four star spa hotel offers easy access to Ullswater and the northern fells from the doorstep of the M6.',
+  imageSrc: '/images/locations/penrith-lake-district-spa-breaks.jpg',
+  imageAlt:
+    'Wide panoramic view from the hilltop above Penrith looking west across the Eden Valley toward the northern Lake District fells and a distant lake, with green farmland and the town visible below on a summer day',
 };
 
 const introContent = `Penrith occupies an unusual position, a substantial market town sitting just outside the Lake District National Park boundary, yet serving as the gateway to Ullswater and the northern fells. The town's history runs deeper than most visitors realise. In the 9th and 10th centuries this was the capital of Cumbria, a semi independent state that formed part of the Kingdom of Strathclyde. The ruins of Penrith Castle, begun in 1399 and later a royal fortress for Richard Duke of Gloucester, stand opposite the railway station.
