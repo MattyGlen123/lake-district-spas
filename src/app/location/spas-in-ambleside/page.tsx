@@ -8,6 +8,7 @@ import LocationFeaturedSpas from '@/components/location/LocationFeaturedSpas';
 import FAQs, { generateFAQSchema } from '@/components/FAQs';
 import { spaData } from '@/data/spas';
 import { getLocationFAQs } from '@/data/location-faqs';
+import RelatedLocations from '@/components/location/RelatedLocations';
 
 export const metadata: Metadata = {
   title: 'Spas in Ambleside | Lake District Spas',
@@ -41,6 +42,12 @@ The thermal facilities include an infrared sauna for deep tissue relaxation, par
 
 For couples seeking a Lake District escape that balances activity with indulgence, Ambleside delivers. Walk to Rydal Water in the morning, lunch in the village, spa in the afternoon, dinner at one of the excellent local restaurants. The compact geography means everything is within reach without needing a car.`;
 
+const relatedLocations = [
+  { name: 'Windermere', slug: 'windermere', distance: '6 miles south' },
+  { name: 'Grasmere', slug: 'grasmere', distance: '4 miles north' },
+  { name: 'Great Langdale', slug: 'great-langdale', distance: '5 miles west' },
+];
+
 export default function AmblesideSpasPage() {
   return (
     <div className="min-h-screen bg-background">
@@ -56,14 +63,16 @@ export default function AmblesideSpasPage() {
         />
 
         {faqs.length > 0 && (
-          <div className="container mx-auto px-4 md:px-8">
-            <FAQs
-              id="faq"
-              title="Common Questions"
-              subtitle="Frequently asked questions about spas in Ambleside."
-              icon={HelpCircle}
-              faqs={faqs}
-            />
+          <div className="bg-[#FAF9F6]"> 
+            <div className="container mx-auto px-4 md:px-8">
+              <FAQs
+                id="faq"
+                title="Common Questions"
+                subtitle="Frequently asked questions about spas in Ambleside."
+                icon={HelpCircle}
+                faqs={faqs}
+              />
+            </div>
           </div>
         )}
 
@@ -75,6 +84,11 @@ export default function AmblesideSpasPage() {
             }}
           />
         )}
+        <RelatedLocations
+          currentLocation="Ambleside"
+          locations={relatedLocations}
+          backgroundColor={faqs.length > 0 ? 'bg-white' : undefined}
+        />
       </main>
 
       <Footer />

@@ -10,14 +10,16 @@ interface RelatedLocation {
 interface RelatedLocationsProps {
   currentLocation: string;
   locations: RelatedLocation[];
+  backgroundColor?: string;
 }
 
 export default function RelatedLocations({
   currentLocation: _currentLocation,
   locations,
+  backgroundColor = 'bg-[#F6F7F6]',
 }: RelatedLocationsProps) {
   return (
-    <section className="bg-[#F6F7F6] py-20">
+    <section className={`${backgroundColor} py-20`}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center space-x-4 mb-6">
           <div className="h-px w-12 bg-amber-700 opacity-30" />

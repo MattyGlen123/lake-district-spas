@@ -27,6 +27,8 @@ const heroContent = {
   titleLine2: 'Backbarrow',
   description:
     "Riverside wellness where the River Leven flows from Windermere to the sea. An intimate spa retreat featuring a Rasul Mud Temple and outdoor jacuzzi overlooking the water.",
+  imageSrc: '/images/locations/backbarrow-lake-district-spa-breaks.jpg',
+  imageAlt: 'The River Leven flowing over rocky shallows beneath a footbridge at Backbarrow, with dense green woodland rising steeply on both banks in the Leven Valley south of Lake Windermere in the Lake District',
 };
 
 const introContent = `Backbarrow sits where the River Leven begins its journey from Lake Windermere to Morecambe Bay, a quiet hamlet that most visitors pass without stopping. Once an industrial village, its 17th-century blast furnace produced iron for centuries. Today it offers something rarer: riverside tranquility just a mile from England's largest lake, yet entirely removed from the tourist bustle.
