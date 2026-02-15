@@ -4,6 +4,7 @@ import { spaData } from '@/data/spas';
 import { getAmblesideFAQs } from './ambleside-faqs';
 import { getApplebyInWestmorlandFAQs } from './appleby-in-westmorland-faqs';
 import { getBackbarrowFAQs } from './backbarrow-faqs';
+import { getBassenthwaiteFAQs } from './bassenthwaite-faqs';
 import { getWindermereFAQs } from './windermere-faqs';
 
 // Map of location names to their FAQ generator functions
@@ -12,6 +13,7 @@ const faqGeneratorsByLocation: Record<string, (spas: Spa[]) => FAQ[]> = {
   Ambleside: getAmblesideFAQs,
   'Appleby-in-Westmorland': getApplebyInWestmorlandFAQs,
   Backbarrow: getBackbarrowFAQs,
+  Bassenthwaite: getBassenthwaiteFAQs,
   Windermere: getWindermereFAQs,
 };
 

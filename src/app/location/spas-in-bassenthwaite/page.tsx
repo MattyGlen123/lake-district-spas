@@ -5,6 +5,9 @@ import LocationHero from '@/components/location/LocationHero';
 import LocationIntro from '@/components/location/LocationIntro';
 import LocationFeaturedSpas from '@/components/location/LocationFeaturedSpas';
 import RelatedLocations from '@/components/location/RelatedLocations';
+import { HelpCircle } from 'lucide-react';
+import FAQs, { generateFAQSchema } from '@/components/FAQs';
+import { getLocationFAQs } from '@/data/location-faqs';
 import { spaData } from '@/data/spas';
 
 export const metadata: Metadata = {
@@ -42,6 +45,8 @@ The treatment menu spans 34 experiences, with thoughtful touches that acknowledg
 
 Spa access comes complimentary for hotel guests, while day visitors can choose from packages starting at £70 for a morning Sunrise Spa through to full-day experiences with treatments and lunch. For couples seeking the combination of country house grandeur and contemporary wellness, Bassenthwaite offers something the busier central Lakes cannot match: space, silence, and the rare pleasure of deer grazing outside your window.`;
 
+const faqs = getLocationFAQs('Bassenthwaite');
+
 const relatedLocations = [
   { name: 'Ullswater', slug: 'ullswater', distance: '20 miles east' },
   { name: 'Borrowdale', slug: 'borrowdale', distance: '10 miles south' },
@@ -61,12 +66,29 @@ export default function BassenthwaiteSpasPage() {
           sectionLabel={`${bassenthwaiteSpas.length} ${bassenthwaiteSpas.length === 1 ? 'Spa' : 'Spas'} in Bassenthwaite`}
           sectionTitle="Country Estate Spa"
         />
+        {faqs.length > 0 && (
+          <div className="container mx-auto px-4 md:px-8">
+            <FAQs
+              id="faq"
+              title="Common Questions"
+              subtitle="Frequently asked questions about spas in Bassenthwaite."
+              icon={HelpCircle}
+              faqs={faqs}
+            />
+          </div>
+        )}
         <RelatedLocations
           currentLocation="Bassenthwaite"
           locations={relatedLocations}
         />
       </main>
 
+      {faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+        />
+      )}
       <Footer />
     </div>
   );
