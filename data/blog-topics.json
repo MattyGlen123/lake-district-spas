@@ -8,7 +8,11 @@
       "category": "guides",
       "priority": 1,
       "status": "published",
-      "relatedSpas": ["lodore-falls-spa", "low-wood-bay-spa", "armathwaite-hall-hotel-spa"],
+      "relatedSpas": [
+        "lodore-falls-spa",
+        "low-wood-bay-spa",
+        "armathwaite-hall-hotel-spa"
+      ],
       "notes": "Addresses #1 pain point from user research"
     },
     {
@@ -52,7 +56,12 @@
       "category": "guides",
       "priority": 5,
       "status": "planned",
-      "relatedSpas": ["swan-hotel-spa", "brimstone-hotel-spa", "netherwood-hotel-spa", "whitewater-hotel-leisure-club"],
+      "relatedSpas": [
+        "swan-hotel-spa",
+        "brimstone-hotel-spa",
+        "netherwood-hotel-spa",
+        "whitewater-hotel-leisure-club"
+      ],
       "notes": "Occasion targeting for primary persona couples."
     },
     {
@@ -63,7 +72,11 @@
       "category": "facilities",
       "priority": 6,
       "status": "planned",
-      "relatedSpas": ["lodore-falls-spa", "armathwaite-hall-hotel-spa", "low-wood-bay-spa"],
+      "relatedSpas": [
+        "lodore-falls-spa",
+        "armathwaite-hall-hotel-spa",
+        "low-wood-bay-spa"
+      ],
       "notes": "Educational authority content"
     },
     {
@@ -74,7 +87,11 @@
       "category": "locations",
       "priority": 7,
       "status": "published",
-      "relatedSpas": ["low-wood-bay-spa", "lakeside-hotel-spa", "beech-hill-hotel-spa"],
+      "relatedSpas": [
+        "low-wood-bay-spa",
+        "lakeside-hotel-spa",
+        "beech-hill-hotel-spa"
+      ],
       "notes": "Location content - 2,900 monthly searches"
     },
     {
@@ -109,6 +126,56 @@
       "status": "published",
       "relatedSpas": ["armathwaite-hall-hotel-spa", "lodore-falls-spa"],
       "notes": "Location content - 720 monthly searches"
+    },
+    {
+      "id": "wordsworth-hotel-spa-renovation",
+      "title": "Wordsworth Hotel & Spa Grasmere: Renovation Update & What to Expect",
+      "slug": "wordsworth-hotel-spa-grasmere-renovation",
+      "targetKeyword": "wordsworth hotel and spa grasmere",
+      "secondaryKeywords": [
+        "the wordsworth hotel and spa grasmere",
+        "wordsworth spa grasmere"
+      ],
+      "category": "spa-updates",
+      "priority": 11,
+      "status": "planned",
+      "searchVolume": "5,000/mo (Low competition)",
+      "relatedSpas": [],
+      "notes": "Massive low-comp opportunity. Hotel closed Oct 2024 for multi-million pound renovation by Inn Collection Group. Expedia shows closed until Jan 2026 but dates subject to change. Previously had 'The W Spa' with pool, spa pool, sauna, gym, and Oxley's treatment rooms. Cover: current renovation status, what the spa offered before, what's changing, expected reopening timeline, and 3-4 alternative Grasmere-area spas. Update page when hotel reopens and create full spa detail page at that point. This is a capture-and-hold strategy — rank now while competitors show outdated info."
+    },
+    {
+      "id": "grasmere-spas-guide",
+      "title": "Spas in Grasmere: Your Complete Guide to This Lake District Village",
+      "slug": "grasmere-spas-guide",
+      "targetKeyword": "grasmere spa",
+      "secondaryKeywords": [
+        "spa grasmere",
+        "spa hotels grasmere",
+        "grasmere lake district spa"
+      ],
+      "category": "locations",
+      "priority": 13,
+      "status": "planned",
+      "searchVolume": "Not in current dataset but location page pattern proven",
+      "relatedSpas": [],
+      "notes": "Follows your successful location page pattern (Windermere, Keswick, etc). Grasmere is a gap in your current coverage and the Wordsworth renovation article will drive related searches. Cover: Wordsworth (renovation status), any other Grasmere options, nearby alternatives in Ambleside/Keswick. Natural internal linking to Wordsworth renovation post and Keswick spas guide."
+    },
+    {
+      "id": "spas-near-penrith",
+      "title": "Spas Near Penrith: Lake District & North Cumbria Options",
+      "slug": "spas-near-penrith",
+      "targetKeyword": "spa penrith cumbria",
+      "secondaryKeywords": [
+        "spa near penrith",
+        "penrith spa",
+        "spa days penrith"
+      ],
+      "category": "locations",
+      "priority": 14,
+      "status": "planned",
+      "searchVolume": "500/mo (Medium competition — but location page pattern works)",
+      "relatedSpas": [],
+      "notes": "500/mo medium competition but your location page approach has proven effective. Penrith is the M6 J40 gateway to the Lakes — covers North Lakes Hotel, Center Parcs Whinfell (Aqua Sana), and spas accessible within 30 mins. Also your local area which gives authentic local knowledge advantage. Could capture 'aqua sana cumbria' (500/mo Low comp) searches too with a section on Center Parcs."
     }
   ],
   "metadata": {
@@ -117,4 +184,3 @@
     "targetPostsPerWeek": 2
   }
 }
-
