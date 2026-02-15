@@ -16,22 +16,18 @@ export function getBassenthwaiteFAQs(spas: Spa[]): FAQ[] {
   // Day pass prices
   const sunriseWeekdayPrice = getDayPassPrice(2, 'armathwaite-sunrise-weekday');
   const sunsetWeekdayPrice = getDayPassPrice(2, 'armathwaite-sunset-weekday');
-  const escapeWeekdayPrice = getDayPassPrice(2, 'armathwaite-escape-weekday');
   const serenityWeekdayPrice = getDayPassPrice(2, 'armathwaite-serenity-weekday');
   const serenityWeekendPrice = getDayPassPrice(2, 'armathwaite-serenity-weekend');
   const sereniTeaWeekdayPrice = getDayPassPrice(2, 'armathwaite-sereni-tea-weekday');
 
   // Durations
   const sunriseDuration = getDayPassDuration(2, 'armathwaite-sunrise-weekday');
-  const serenityDuration = getDayPassDuration(2, 'armathwaite-serenity-weekday');
 
   // Treatment and facility values
   const brandsText = armathwaite ? getTreatmentBrandsText(armathwaite.id) : null;
   const thermalCount = armathwaite ? getThermalFacilitiesCount(armathwaite) : null;
   const walkersRecoveryPrice = getTreatmentPrice(2, "Organic Walker's Recovery");
   const walkersRecoveryId = getTreatmentIdByName(2, "Organic Walker's Recovery");
-  const herbalSleepCocoonPrice = getTreatmentPrice(2, 'Herbal Sleep Cocoon');
-  const herbalSleepCocoonId = getTreatmentIdByName(2, 'Herbal Sleep Cocoon');
 
   return [
     // FAQ 1: bassenthwaite lake things to do

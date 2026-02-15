@@ -5,6 +5,9 @@ import LocationHero from '@/components/location/LocationHero';
 import LocationIntro from '@/components/location/LocationIntro';
 import LocationFeaturedSpas from '@/components/location/LocationFeaturedSpas';
 import RelatedLocations from '@/components/location/RelatedLocations';
+import { HelpCircle } from 'lucide-react';
+import FAQs, { generateFAQSchema } from '@/components/FAQs';
+import { getLocationFAQs } from '@/data/location-faqs';
 import { spaData } from '@/data/spas';
 
 export const metadata: Metadata = {
@@ -40,8 +43,14 @@ Suite guests enjoy two hours of complimentary spa access per night of their stay
 
 Day spa packages are also available for non-residents, making this an accessible retreat even without an overnight stay. For those seeking a spa escape surrounded by some of England's most celebrated mountain scenery, Borrowdale delivers a dramatic backdrop that few locations can match.`;
 
+const faqs = getLocationFAQs('Borrowdale');
+
 const relatedLocations = [
-  { name: 'Bassenthwaite', slug: 'bassenthwaite', distance: '8 miles northwest' },
+  {
+    name: 'Bassenthwaite',
+    slug: 'bassenthwaite',
+    distance: '8 miles northwest',
+  },
   { name: 'Ullswater', slug: 'ullswater', distance: '12 miles east' },
   { name: 'Grasmere', slug: 'grasmere', distance: '7 miles south' },
 ];
@@ -59,14 +68,35 @@ export default function BorrowdaleSpasPage() {
           sectionLabel={`${borrowdaleSpas.length} ${borrowdaleSpas.length === 1 ? 'Spa' : 'Spas'} in Borrowdale`}
           sectionTitle="Valley Spa"
         />
+        {faqs.length > 0 && (
+          <div className="bg-[#FAF9F6]">
+            <div className="container mx-auto px-4 md:px-8">
+              <FAQs
+                id="faq"
+                title="Common Questions"
+                subtitle="Frequently asked questions about spas in Borrowdale."
+                icon={HelpCircle}
+                faqs={faqs}
+              />
+            </div>
+          </div>
+        )}
         <RelatedLocations
           currentLocation="Borrowdale"
           locations={relatedLocations}
+          backgroundColor={'bg-white'}
         />
+        {faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(generateFAQSchema(faqs)),
+            }}
+          />
+        )}
       </main>
 
       <Footer />
     </div>
   );
 }
-

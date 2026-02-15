@@ -26,9 +26,10 @@ const heroContent = {
   titleLine1: 'Spas in',
   titleLine2: 'Backbarrow',
   description:
-    "Riverside wellness where the River Leven flows from Windermere to the sea. An intimate spa retreat featuring a Rasul Mud Temple and outdoor jacuzzi overlooking the water.",
+    'Riverside wellness where the River Leven flows from Windermere to the sea. An intimate spa retreat featuring a Rasul Mud Temple and outdoor jacuzzi overlooking the water.',
   imageSrc: '/images/locations/backbarrow-lake-district-spa-breaks.jpg',
-  imageAlt: 'The River Leven flowing over rocky shallows beneath a footbridge at Backbarrow, with dense green woodland rising steeply on both banks in the Leven Valley south of Lake Windermere in the Lake District',
+  imageAlt:
+    'The River Leven flowing over rocky shallows beneath a footbridge at Backbarrow, with dense green woodland rising steeply on both banks in the Leven Valley south of Lake Windermere in the Lake District',
 };
 
 const introContent = `Backbarrow sits where the River Leven begins its journey from Lake Windermere to Morecambe Bay, a quiet hamlet that most visitors pass without stopping. Once an industrial village, its 17th-century blast furnace produced iron for centuries. Today it offers something rarer: riverside tranquility just a mile from England's largest lake, yet entirely removed from the tourist bustle.
@@ -44,7 +45,11 @@ Backbarrow works particularly well as part of a southern Lakes itinerary. Newby 
 const relatedLocations = [
   { name: 'Newby Bridge', slug: 'newby-bridge', distance: '1 mile north' },
   { name: 'Windermere', slug: 'windermere', distance: '6 miles north' },
-  { name: 'Grange-over-Sands', slug: 'grange-over-sands', distance: '8 miles south' },
+  {
+    name: 'Grange-over-Sands',
+    slug: 'grange-over-sands',
+    distance: '8 miles south',
+  },
 ];
 
 export default function BackbarrowSpasPage() {
@@ -61,15 +66,23 @@ export default function BackbarrowSpasPage() {
           sectionTitle="Riverside Spa"
         />
         {faqs.length > 0 && (
-          <div className="container mx-auto px-4 md:px-8">
-            <FAQs
-              id="faq"
-              title="Common Questions"
-              subtitle="Frequently asked questions about spas in Backbarrow."
-              icon={HelpCircle}
-              faqs={faqs}
+          <>
+            <div className="container mx-auto px-4 md:px-8">
+              <FAQs
+                id="faq"
+                title="Common Questions"
+                subtitle="Frequently asked questions about spas in Backbarrow."
+                icon={HelpCircle}
+                faqs={faqs}
+              />
+            </div>
+
+            <RelatedLocations
+              currentLocation="Backbarrow"
+              locations={relatedLocations}
+              backgroundColor={'bg-white'}
             />
-          </div>
+          </>
         )}
 
         {faqs.length > 0 && (
@@ -80,15 +93,9 @@ export default function BackbarrowSpasPage() {
             }}
           />
         )}
-
-        <RelatedLocations
-          currentLocation="Backbarrow"
-          locations={relatedLocations}
-        />
       </main>
 
       <Footer />
     </div>
   );
 }
-

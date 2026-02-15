@@ -67,30 +67,34 @@ export default function BassenthwaiteSpasPage() {
           sectionTitle="Country Estate Spa"
         />
         {faqs.length > 0 && (
-          <div className="container mx-auto px-4 md:px-8">
-            <FAQs
-              id="faq"
-              title="Common Questions"
-              subtitle="Frequently asked questions about spas in Bassenthwaite."
-              icon={HelpCircle}
-              faqs={faqs}
-            />
+          <div className="bg-[#FAF9F6]">
+            <div className="container mx-auto px-4 md:px-8">
+              <FAQs
+                id="faq"
+                title="Common Questions"
+                subtitle="Frequently asked questions about spas in Bassenthwaite."
+                icon={HelpCircle}
+                faqs={faqs}
+              />
+            </div>
           </div>
         )}
         <RelatedLocations
           currentLocation="Bassenthwaite"
           locations={relatedLocations}
+          backgroundColor={'bg-white'}
         />
       </main>
 
       {faqs.length > 0 && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateFAQSchema(faqs)),
+          }}
         />
       )}
       <Footer />
     </div>
   );
 }
-

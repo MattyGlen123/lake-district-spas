@@ -29,7 +29,8 @@ const heroContent = {
   titleLine2: 'Appleby-in-Westmorland',
   description:
     'Eden Valley tranquility on the edge of the Lake District. A country house spa escape where outdoor hot tubs meet fire pits and historic England awaits.',
-  imageSrc: '/images/locations/appleby-in-westmorland-lake-district-spa-breaks.jpg',
+  imageSrc:
+    '/images/locations/appleby-in-westmorland-lake-district-spa-breaks.jpg',
   imageAlt:
     'Historic sandstone bridge spanning the River Eden at Appleby-in-Westmorland on a summer evening, with mature trees lining the riverbanks and traditional stone buildings of the market town visible beyond in the Eden Valley',
 };
@@ -47,7 +48,11 @@ Unlike the busier Lake District destinations, Appleby rewards those willing to v
 const relatedLocations = [
   { name: 'Penrith', slug: 'penrith', distance: '12 miles north' },
   { name: 'Ullswater', slug: 'ullswater', distance: '15 miles northwest' },
-  { name: 'Bassenthwaite', slug: 'bassenthwaite', distance: '30 miles northwest' },
+  {
+    name: 'Bassenthwaite',
+    slug: 'bassenthwaite',
+    distance: '30 miles northwest',
+  },
 ];
 
 export default function ApplebySpasPage() {
@@ -78,6 +83,7 @@ export default function ApplebySpasPage() {
         <RelatedLocations
           currentLocation="Appleby-in-Westmorland"
           locations={relatedLocations}
+          backgroundColor={faqs.length > 0 ? 'bg-white' : undefined}
         />
 
         {faqs.length > 0 && (
@@ -94,4 +100,3 @@ export default function ApplebySpasPage() {
     </div>
   );
 }
-
