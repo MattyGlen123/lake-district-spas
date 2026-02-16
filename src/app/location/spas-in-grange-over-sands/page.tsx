@@ -5,6 +5,9 @@ import LocationHero from '@/components/location/LocationHero';
 import LocationIntro from '@/components/location/LocationIntro';
 import LocationFeaturedSpas from '@/components/location/LocationFeaturedSpas';
 import RelatedLocations from '@/components/location/RelatedLocations';
+import { HelpCircle } from 'lucide-react';
+import FAQs, { generateFAQSchema } from '@/components/FAQs';
+import { getLocationFAQs } from '@/data/location-faqs';
 import { spaData } from '@/data/spas';
 
 export const metadata: Metadata = {
@@ -40,6 +43,8 @@ Netherwood Hotel & Spa takes a different approach, housing its adults-only therm
 
 Both hotels sit within easy reach of the railway station, making Grange-over-Sands one of the most accessible spa destinations in the region for car-free visitors. The Furness Line connects to Lancaster and the West Coast Main Line, placing London just three hours away, yet the pace here feels entirely removed from city life.`;
 
+const faqs = getLocationFAQs('Grange-over-Sands');
+
 const relatedLocations = [
   { name: 'Newby Bridge', slug: 'newby-bridge', distance: '8 miles north' },
   { name: 'Backbarrow', slug: 'backbarrow', distance: '6 miles north' },
@@ -59,6 +64,23 @@ export default function GrangeOverSandsSpasPage() {
           sectionLabel={`${grangeOverSandsSpas.length} ${grangeOverSandsSpas.length === 1 ? 'Spa' : 'Spas'} in Grange-over-Sands`}
           sectionTitle="Coastal Spas"
         />
+        {faqs.length > 0 && (
+          <div className="container mx-auto px-4 md:px-8">
+            <FAQs
+              id="faq"
+              title="Common Questions"
+              subtitle="Frequently asked questions about spas in Grange-over-Sands."
+              icon={HelpCircle}
+              faqs={faqs}
+            />
+          </div>
+        )}
+        {faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+          />
+        )}
         <RelatedLocations
           currentLocation="Grange-over-Sands"
           locations={relatedLocations}
