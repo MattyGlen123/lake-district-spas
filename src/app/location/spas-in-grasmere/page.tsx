@@ -5,6 +5,9 @@ import LocationHero from '@/components/location/LocationHero';
 import LocationIntro from '@/components/location/LocationIntro';
 import LocationFeaturedSpas from '@/components/location/LocationFeaturedSpas';
 import RelatedLocations from '@/components/location/RelatedLocations';
+import { HelpCircle } from 'lucide-react';
+import FAQs, { generateFAQSchema } from '@/components/FAQs';
+import { getLocationFAQs } from '@/data/location-faqs';
 import { spaData } from '@/data/spas';
 
 export const metadata: Metadata = {
@@ -38,6 +41,8 @@ Rothay Garden by Harbour Hotels takes a different approach, nestled in two acres
 
 For visitors combining spa time with walking, Grasmere offers an ideal base. The classic circuit around the lake takes under an hour, while the path to Easedale Tarn and back fills a morning. More ambitious routes climb Helm Crag's rocky howff or traverse to Fairfield. After a day on the fells, both spas provide a compelling reason to linger.`;
 
+const faqs = getLocationFAQs('Grasmere');
+
 const relatedLocations = [
   { name: 'Ambleside', slug: 'ambleside', distance: '4 miles south' },
   { name: 'Windermere', slug: 'windermere', distance: '9 miles south' },
@@ -59,9 +64,29 @@ export default function GrasmereSpasPage() {
           } in Grasmere`}
           sectionTitle="Village Spas"
         />
+        {faqs.length > 0 && (
+          <div className="bg-[#FAF9F6]">
+          <div className="container mx-auto px-4 md:px-8">
+            <FAQs
+              id="faq"
+              title="Common Questions"
+              subtitle="Frequently asked questions about spas in Grasmere."
+              icon={HelpCircle}
+              faqs={faqs}
+            />
+          </div>
+          </div>
+        )}
+        {faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+          />
+        )}
         <RelatedLocations
           currentLocation="Grasmere"
           locations={relatedLocations}
+          backgroundColor={'bg-white'}
         />
       </main>
 
