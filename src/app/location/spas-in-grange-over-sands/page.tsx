@@ -65,14 +65,16 @@ export default function GrangeOverSandsSpasPage() {
           sectionTitle="Coastal Spas"
         />
         {faqs.length > 0 && (
-          <div className="container mx-auto px-4 md:px-8">
-            <FAQs
-              id="faq"
-              title="Common Questions"
-              subtitle="Frequently asked questions about spas in Grange-over-Sands."
-              icon={HelpCircle}
-              faqs={faqs}
-            />
+          <div className="bg-[#FAF9F6]">
+            <div className="container mx-auto px-4 md:px-8">
+              <FAQs
+                id="faq"
+                title="Common Questions"
+                subtitle="Frequently asked questions about spas in Grange-over-Sands."
+                icon={HelpCircle}
+                faqs={faqs}
+              />
+            </div>
           </div>
         )}
         {faqs.length > 0 && (
@@ -84,6 +86,7 @@ export default function GrangeOverSandsSpasPage() {
         <RelatedLocations
           currentLocation="Grange-over-Sands"
           locations={relatedLocations}
+          backgroundColor={'bg-white'}
         />
       </main>
 
