@@ -6,6 +6,7 @@ import { getApplebyInWestmorlandFAQs } from './appleby-in-westmorland-faqs';
 import { getBackbarrowFAQs } from './backbarrow-faqs';
 import { getBassenthwaiteFAQs } from './bassenthwaite-faqs';
 import { getBorrowdaleFAQs } from './borrowdale-faqs';
+import { getBownessOnWindermereFAQs } from './bowness-on-windermere-faqs';
 import { getWindermereFAQs } from './windermere-faqs';
 
 // Map of location names to their FAQ generator functions
@@ -16,6 +17,7 @@ const faqGeneratorsByLocation: Record<string, (spas: Spa[]) => FAQ[]> = {
   Backbarrow: getBackbarrowFAQs,
   Bassenthwaite: getBassenthwaiteFAQs,
   Borrowdale: getBorrowdaleFAQs,
+  'Bowness-on-Windermere': getBownessOnWindermereFAQs,
   Windermere: getWindermereFAQs,
 };
 

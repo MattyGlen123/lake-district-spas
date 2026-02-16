@@ -5,25 +5,31 @@ import LocationHero from '@/components/location/LocationHero';
 import LocationIntro from '@/components/location/LocationIntro';
 import LocationFeaturedSpas from '@/components/location/LocationFeaturedSpas';
 import RelatedLocations from '@/components/location/RelatedLocations';
+import { HelpCircle } from 'lucide-react';
+import FAQs, { generateFAQSchema } from '@/components/FAQs';
+import { getLocationFAQs } from '@/data/location-faqs';
 import { spaData } from '@/data/spas';
 
 export const metadata: Metadata = {
   title: 'Spas in Bowness-on-Windermere | Lake District Spas',
-  description: 'Discover two spas in Bowness-on-Windermere at the heart of Lake Windermere. Historic lakeside elegance at the Old England or poolside prosecco at the Lakes Hotel.',
+  description:
+    'Discover two spas in Bowness-on-Windermere at the heart of Lake Windermere. Historic lakeside elegance at the Old England or poolside prosecco at the Lakes Hotel.',
 };
 
 // Filter spas for Bowness-on-Windermere
 // Bowness spas: Lakes Hotel & Spa (id: 18), Macdonald Old England Hotel & Spa (id: 6)
-const bownessSpas = spaData.filter(spa => 
-  spa.location === 'Bowness-on-Windermere'
+const bownessSpas = spaData.filter(
+  (spa) => spa.location === 'Bowness-on-Windermere'
 );
 
 const heroContent = {
   badge: 'Bowness-on-Windermere Spas',
   titleLine1: 'Spas in',
   titleLine2: 'Bowness-on-Windermere',
-  description: "The Lake District's beating heart, where lake cruises depart and two very different spas await. Historic lakeside elegance or poolside prosecco - Bowness offers both.",
-  imageSrc: '/images/locations/bowness-on-windermere-lake-district-spa-breaks.jpg',
+  description:
+    "The Lake District's beating heart, where lake cruises depart and two very different spas await. Historic lakeside elegance or poolside prosecco - Bowness offers both.",
+  imageSrc:
+    '/images/locations/bowness-on-windermere-lake-district-spa-breaks.jpg',
   imageAlt:
     'Aerial view of a tree-covered island surrounded by calm blue water on Lake Windermere near Bowness, with wooded shores and rolling Lakeland fells stretching into the distance on a summer morning',
 };
@@ -38,6 +44,8 @@ The Lakes Hotel & Spa takes an entirely different approach. This is spa as theat
 
 The village location means a trip to the spa slots easily into wider Lake District plans. Walk the shoreline promenade, take a cruise to Ambleside, explore Beatrix Potter's world, then return for thermal relaxation as the sun sets over the fells. Bowness puts you at the heart of the action while offering genuine retreat.`;
 
+const faqs = getLocationFAQs('Bowness-on-Windermere');
+
 const relatedLocations = [
   { name: 'Windermere', slug: 'windermere', distance: '1 mile north' },
   { name: 'Ambleside', slug: 'ambleside', distance: '5 miles north' },
@@ -48,7 +56,7 @@ export default function BownessSpasPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main>
         <LocationHero {...heroContent} />
         <LocationIntro content={introContent} />
@@ -57,11 +65,35 @@ export default function BownessSpasPage() {
           sectionLabel={`${bownessSpas.length} ${bownessSpas.length === 1 ? 'Spa' : 'Spas'} in Bowness-on-Windermere`}
           sectionTitle="Bowness-on-Windermere Spas"
         />
-        <RelatedLocations currentLocation="Bowness-on-Windermere" locations={relatedLocations} />
+        {faqs.length > 0 && (
+          <div className="bg-[#FAF9F6]">
+            <div className="container mx-auto px-4 md:px-8">
+              <FAQs
+                id="faq"
+                title="Common Questions"
+                subtitle="Frequently asked questions about spas in Bowness-on-Windermere."
+                icon={HelpCircle}
+                faqs={faqs}
+              />
+            </div>
+          </div>
+        )}
+        {faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(generateFAQSchema(faqs)),
+            }}
+          />
+        )}
+        <RelatedLocations
+          currentLocation="Bowness-on-Windermere"
+          locations={relatedLocations}
+          backgroundColor={'bg-white'}
+        />
       </main>
 
       <Footer />
     </div>
   );
 }
-
