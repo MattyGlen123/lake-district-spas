@@ -5,6 +5,9 @@ import LocationHero from '@/components/location/LocationHero';
 import LocationIntro from '@/components/location/LocationIntro';
 import LocationFeaturedSpas from '@/components/location/LocationFeaturedSpas';
 import RelatedLocations from '@/components/location/RelatedLocations';
+import { HelpCircle } from 'lucide-react';
+import FAQs, { generateFAQSchema } from '@/components/FAQs';
+import { getLocationFAQs } from '@/data/location-faqs';
 import { spaData } from '@/data/spas';
 
 export const metadata: Metadata = {
@@ -16,6 +19,7 @@ export const metadata: Metadata = {
 // Filter spas for Ullswater
 // Ullswater spa: Another Place, The Lake (id: 14)
 const ullswaterSpas = spaData.filter((spa) => spa.location === 'Ullswater');
+const faqs = getLocationFAQs('Ullswater');
 
 const heroContent = {
   badge: 'Ullswater Spas',
@@ -60,9 +64,29 @@ export default function UllswaterSpasPage() {
           } in Ullswater`}
           sectionTitle="Lakeside Spa"
         />
+        {faqs.length > 0 && (
+          <div className="bg-[#FAF9F6]">
+            <div className="container mx-auto px-4 md:px-8">
+              <FAQs
+                id="faq"
+                title="Common Questions"
+                subtitle="Frequently asked questions about spas in Ullswater."
+                icon={HelpCircle}
+                faqs={faqs}
+              />
+            </div>
+          </div>
+        )}
+        {faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+          />
+        )}
         <RelatedLocations
           currentLocation="Ullswater"
           locations={relatedLocations}
+          backgroundColor={'bg-white'}
         />
       </main>
 

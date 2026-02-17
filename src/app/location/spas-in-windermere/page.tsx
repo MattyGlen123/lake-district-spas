@@ -89,6 +89,7 @@ export default function WindermereSpasPage() {
         <RelatedLocations
           currentLocation="Windermere"
           locations={relatedLocations}
+          backgroundColor={'bg-white'}
         />
       </main>
 

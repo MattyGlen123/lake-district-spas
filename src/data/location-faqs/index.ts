@@ -11,6 +11,7 @@ import { getGrangeOverSandsFAQs } from './grange-over-sands-faqs';
 import { getGrasmereFAQs } from './grasmere-faqs';
 import { getGreatLangdaleFAQs } from './great-langdale-faqs';
 import { getNewbyBridgeFAQs } from './newby-bridge-faqs';
+import { getUllswaterFAQs } from './ullswater-faqs';
 import { getWindermereFAQs } from './windermere-faqs';
 
 // Map of location names to their FAQ generator functions
@@ -26,6 +27,7 @@ const faqGeneratorsByLocation: Record<string, (spas: Spa[]) => FAQ[]> = {
   Grasmere: getGrasmereFAQs,
   'Great Langdale': getGreatLangdaleFAQs,
   'Newby Bridge': getNewbyBridgeFAQs,
+  Ullswater: getUllswaterFAQs,
   Windermere: getWindermereFAQs,
 };
 

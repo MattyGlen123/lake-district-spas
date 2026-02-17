@@ -69,19 +69,22 @@ export default function NewbyBridgeSpasPage() {
           sectionTitle="Riverside and Lakeside Spas"
         />
         {faqs.length > 0 && (
-          <div className="container mx-auto px-4 md:px-8">
-            <FAQs
-              id="faq"
-              title="Common Questions"
-              subtitle="Frequently asked questions about spas in Newby Bridge."
-              icon={HelpCircle}
-              faqs={faqs}
-            />
+          <div className="bg-[#FAF9F6]">
+            <div className="container mx-auto px-4 md:px-8">
+              <FAQs
+                id="faq"
+                title="Common Questions"
+                subtitle="Frequently asked questions about spas in Newby Bridge."
+                icon={HelpCircle}
+                faqs={faqs}
+              />
+            </div>
           </div>
         )}
         <RelatedLocations
           currentLocation="Newby Bridge"
           locations={relatedLocations}
+          backgroundColor={'bg-white'}
         />
         {faqs.length > 0 && (
           <script
