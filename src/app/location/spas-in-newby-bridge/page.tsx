@@ -5,6 +5,9 @@ import LocationHero from '@/components/location/LocationHero';
 import LocationIntro from '@/components/location/LocationIntro';
 import LocationFeaturedSpas from '@/components/location/LocationFeaturedSpas';
 import RelatedLocations from '@/components/location/RelatedLocations';
+import { HelpCircle } from 'lucide-react';
+import FAQs, { generateFAQSchema } from '@/components/FAQs';
+import { getLocationFAQs } from '@/data/location-faqs';
 import { spaData } from '@/data/spas';
 
 export const metadata: Metadata = {
@@ -38,6 +41,8 @@ A short distance up the shore, the Lakeside Hotel occupies a prime position dire
 
 The location suits walkers seeking a quieter base. Gummer's How rises directly behind the hamlet, offering one of the finest viewpoints over the length of Windermere for relatively little effort. The combination of accessible spa facilities, lake cruises, heritage railways and easy road access from the M6 makes Newby Bridge particularly appealing for both short breaks and family visits.`;
 
+const faqs = getLocationFAQs('Newby Bridge');
+
 const relatedLocations = [
   { name: 'Windermere', slug: 'windermere', distance: '8 miles north' },
   {
@@ -63,10 +68,29 @@ export default function NewbyBridgeSpasPage() {
           } in Newby Bridge`}
           sectionTitle="Riverside and Lakeside Spas"
         />
+        {faqs.length > 0 && (
+          <div className="container mx-auto px-4 md:px-8">
+            <FAQs
+              id="faq"
+              title="Common Questions"
+              subtitle="Frequently asked questions about spas in Newby Bridge."
+              icon={HelpCircle}
+              faqs={faqs}
+            />
+          </div>
+        )}
         <RelatedLocations
           currentLocation="Newby Bridge"
           locations={relatedLocations}
         />
+        {faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(generateFAQSchema(faqs)),
+            }}
+          />
+        )}
       </main>
 
       <Footer />
