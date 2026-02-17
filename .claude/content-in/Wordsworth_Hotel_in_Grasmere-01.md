@@ -1,1 +1,0 @@
-The Wordsworth Hotel and Spa in Grasmere is being renovated. I want you to search the website for information. When is it due to open? Who's take over it? is it part of a hotel group? What facilities is it expected to have?  
