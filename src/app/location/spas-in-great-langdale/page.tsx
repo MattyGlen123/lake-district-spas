@@ -5,6 +5,9 @@ import LocationHero from '@/components/location/LocationHero';
 import LocationIntro from '@/components/location/LocationIntro';
 import LocationFeaturedSpas from '@/components/location/LocationFeaturedSpas';
 import RelatedLocations from '@/components/location/RelatedLocations';
+import { HelpCircle } from 'lucide-react';
+import FAQs, { generateFAQSchema } from '@/components/FAQs';
+import { getLocationFAQs } from '@/data/location-faqs';
 import { spaData } from '@/data/spas';
 
 export const metadata: Metadata = {
@@ -36,6 +39,8 @@ Brimstone Spa occupies the 35-acre Langdale Estate, a former Victorian gunpowder
 
 Crucially for walkers, the estate includes a fully stocked bootroom where guests can borrow quality walking gear, boots, waterproofs, everything needed for a day on the fells. The arrangement works both ways, spend the morning climbing Harrison Stickle, then the afternoon recovering in the thermal suite. Brimstone Spa is exclusive to guests of the Langdale Estate, staying at the Langdale Hotel, Brimstone Hotel or self-catering lodges, so there is no day spa option here. The tradeoff is a quieter, more considered experience that matches the valley's character, remote, dramatic, and earned rather than easily accessed.`;
 
+const faqs = getLocationFAQs('Great Langdale');
+
 const relatedLocations = [
   { name: 'Ambleside', slug: 'ambleside', distance: '5 miles east' },
   { name: 'Grasmere', slug: 'grasmere', distance: '7 miles northeast' },
@@ -57,6 +62,23 @@ export default function GreatLangdaleSpasPage() {
           } in Great Langdale`}
           sectionTitle="Valley Spa"
         />
+        {faqs.length > 0 && (
+          <div className="container mx-auto px-4 md:px-8">
+            <FAQs
+              id="faq"
+              title="Common Questions"
+              subtitle="Frequently asked questions about spas in Great Langdale."
+              icon={HelpCircle}
+              faqs={faqs}
+            />
+          </div>
+        )}
+        {faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+          />
+        )}
         <RelatedLocations
           currentLocation="Great Langdale"
           locations={relatedLocations}
