@@ -25,7 +25,7 @@ Comprehensive technical documentation for AI review and development reference.
 
 - **Tailwind CSS**: `^4` (v4 with PostCSS)
 - **tw-animate-css**: `^1.4.0` (Animation utilities)
-- **Custom Design System**: Luxury editorial theme (see `STYLE_GUIDE.md`)
+- **Custom Design System**: Luxury editorial theme (see `docs/STYLE_GUIDE.md`)
 
 ### UI Components
 
@@ -316,7 +316,7 @@ interface BlogPost extends BlogPostMeta {
 - **Structure**: MDX files with frontmatter metadata
 - **Format**: YAML frontmatter + Markdown/MDX content
 - **Naming**: Kebab-case slugs (e.g., `spa-access-guide.mdx`)
-- **Documentation**: See `blog.md` (root directory) for complete guide
+- **Documentation**: See `docs/blog.md` for complete guide
 
 #### `public/images/blog/`
 
@@ -417,7 +417,7 @@ interface BlogPost extends BlogPostMeta {
 
 ### Design System
 
-See `STYLE_GUIDE.md` for complete design system documentation.
+See `docs/STYLE_GUIDE.md` for complete design system documentation.
 
 **Key Points**:
 
@@ -832,7 +832,7 @@ npm run dev
 
 ### Component Development
 
-- Follow design system in `STYLE_GUIDE.md`
+- Follow design system in `docs/STYLE_GUIDE.md`
 - Use Tailwind utility classes
 - No hover effects (static states)
 - Use serif font for headings (`font-serif`)
@@ -990,9 +990,9 @@ NEXT_PUBLIC_GA_MEASUREMENT_ID=your-ga-id
 
 ### Documentation
 
-- **Style Guide**: `STYLE_GUIDE.md`
+- **Style Guide**: `docs/STYLE_GUIDE.md`
 - **Technical Docs**: This file
-- **Blog Guide**: `blog.md` (blog post creation guide)
+- **Blog Guide**: `docs/blog.md` (blog post creation guide)
 - **README**: `README.md` (basic Next.js info)
 
 ---

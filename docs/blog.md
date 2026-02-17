@@ -464,7 +464,7 @@ public/
 data/
 └── blog-topics.json (content calendar)
 
-blog.md (this file - root directory)
+docs/blog.md (this file)
 ```
 
 ---

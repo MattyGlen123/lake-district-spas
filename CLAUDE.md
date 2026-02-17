@@ -45,7 +45,7 @@ Pre-commit hook (Husky) runs `typecheck` then `test` — both must pass.
 
 ### Blog System
 
-- MDX files in `content/blog/` with YAML frontmatter (see `blog.md` for full spec).
+- MDX files in `content/blog/` with YAML frontmatter (see `docs/blog.md` for full spec).
 - Blog utilities in `src/lib/blog.ts`: `getAllBlogPosts()`, `getBlogPostBySlug()`, `getRelatedPosts()`.
 - Blog images in `public/images/blog/` with alt text centralized in `public/images/blog/images.json`.
 - **Never hardcode prices in blog posts** — use `<SpaAccessPrice>`, `<DayPassPrice>`, `<DayPassLink>`, `<TreatmentLink>` MDX components.
@@ -65,7 +65,7 @@ Pre-commit hook (Husky) runs `typecheck` then `test` — both must pass.
 
 ## Design System
 
-See `STYLE_GUIDE.md` for full reference. Key rules:
+See `docs/STYLE_GUIDE.md` for full reference. Key rules:
 
 - **Typography**: Playfair Display (`font-serif`) for headings, Inter (`font-sans`) for body.
 - **Colors**: Emerald 950 primary (`#064e3b`), Amber 600/700 accent, Stone palette for neutrals. Custom backgrounds: `bg-soft-cream` (#FAF9F6), `bg-mineral-sage` (#F6F7F6), `bg-warm-stone` (#F2F0ED).
@@ -85,7 +85,7 @@ See `STYLE_GUIDE.md` for full reference. Key rules:
 
 ### New Blog Post
 
-1. Create `content/blog/{slug}.mdx` with required frontmatter (see `blog.md`).
+1. Create `content/blog/{slug}.mdx` with required frontmatter (see `docs/blog.md`).
 2. Add images to `public/images/blog/` and register alt text in `images.json`.
 3. Use dynamic price components, not hardcoded prices.
 4. `publishedAt` must be today or past to appear.
@@ -108,8 +108,8 @@ Tests in `src/__tests__/` validate:
 
 ## Key Documentation
 
-- `TECHNICAL_DOCUMENTATION.md` — Full tech stack, data structures, component architecture.
-- `STYLE_GUIDE.md` — Design system, typography, colors, component patterns.
-- `blog.md` — Blog post creation guide with MDX component docs.
-- `src/data/treatments/README.md` — Treatment data structure.
-- `src/data/day-passes/README.md` — Day pass data structure.
+- `docs/TECHNICAL_DOCUMENTATION.md` — Full tech stack, data structures, component architecture.
+- `docs/STYLE_GUIDE.md` — Design system, typography, colors, component patterns.
+- `docs/blog.md` — Blog post creation guide with MDX component docs.
+- `docs/treatments.md` — Treatment data structure.
+- `docs/day-passes.md` — Day pass data structure.
