@@ -8,10 +8,8 @@ import { ChevronRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SpaCard from '@/components/SpaCard';
-import {
-  getBlogPostBySlug,
-  getAllBlogSlugs,
-} from '@/lib/blog';
+import FeaturedArticles from '@/components/FeaturedArticles';
+import { getBlogPostBySlug, getAllBlogSlugs } from '@/lib/blog';
 import { spaData } from '@/data/spas';
 import { BlogPostMeta } from '@/types/blog';
 import { Spa } from '@/types/spa';
@@ -149,7 +147,7 @@ const mdxComponents = {
       childrenArray.length === 1 &&
       React.isValidElement(childrenArray[0]) &&
       childrenArray[0].type === 'figure';
-    
+
     if (hasOnlyFigure) {
       return <>{children}</>;
     }
@@ -311,26 +309,46 @@ const mdxComponents = {
       </span>
     );
   },
-  DayPassPrice: ({ spaSlug, dayPassId }: { spaSlug: string; dayPassId: string }) => {
+  DayPassPrice: ({
+    spaSlug,
+    dayPassId,
+  }: {
+    spaSlug: string;
+    dayPassId: string;
+  }) => {
     const spa = spaData.find((s) => s.url === spaSlug);
     if (!spa) return null;
     const price = getDayPassPrice(spa.id, dayPassId);
     if (!price) return null;
     return <span>{price}</span>;
   },
-  DayPassPricePerPerson: ({ spaSlug, dayPassId }: { spaSlug: string; dayPassId: string }) => {
+  DayPassPricePerPerson: ({
+    spaSlug,
+    dayPassId,
+  }: {
+    spaSlug: string;
+    dayPassId: string;
+  }) => {
     const spa = spaData.find((s) => s.url === spaSlug);
     if (!spa) return null;
     const price = getDayPassPricePerPerson(spa.id, dayPassId);
     if (!price) return null;
     return <span>{price}</span>;
   },
-  TreatmentPrice: ({ spaSlug, treatmentName, variant }: { spaSlug: string; treatmentName: string; variant?: 'individual' | 'couples' }) => {
+  TreatmentPrice: ({
+    spaSlug,
+    treatmentName,
+    variant,
+  }: {
+    spaSlug: string;
+    treatmentName: string;
+    variant?: 'individual' | 'couples';
+  }) => {
     const spa = spaData.find((s) => s.url === spaSlug);
     if (!spa) return null;
     const priceString = getTreatmentPrice(spa.id, treatmentName);
     if (!priceString) return null;
-    
+
     if (variant === 'couples') {
       const couplesPrice = getTreatmentCouplesPrice(priceString);
       if (couplesPrice) return <span>{couplesPrice}</span>;
@@ -338,7 +356,7 @@ const mdxComponents = {
       const individualPrice = getTreatmentIndividualPrice(priceString);
       if (individualPrice) return <span>{individualPrice}</span>;
     }
-    
+
     // Default: return full price string
     return <span>{priceString}</span>;
   },
@@ -356,24 +374,38 @@ const mdxComponents = {
     if (!duration) return null;
     return <span>{duration}</span>;
   },
-  DayPassDuration: ({ spaSlug, dayPassId }: { spaSlug: string; dayPassId: string }) => {
+  DayPassDuration: ({
+    spaSlug,
+    dayPassId,
+  }: {
+    spaSlug: string;
+    dayPassId: string;
+  }) => {
     const spa = spaData.find((s) => s.url === spaSlug);
     if (!spa) return null;
     const duration = getDayPassDuration(spa.id, dayPassId);
     if (!duration) return null;
     return <span>{duration}</span>;
   },
-  DayPassLink: ({ spaSlug, dayPassId, children }: { spaSlug: string; dayPassId: string; children?: React.ReactNode }) => {
+  DayPassLink: ({
+    spaSlug,
+    dayPassId,
+    children,
+  }: {
+    spaSlug: string;
+    dayPassId: string;
+    children?: React.ReactNode;
+  }) => {
     const spa = spaData.find((s) => s.url === spaSlug);
     if (!spa) return children || null;
     const bookingUrl = getDayPassBookingUrl(spa.id, dayPassId);
     const packageName = getDayPassPackageName(spa.id, dayPassId);
     const displayText = children || packageName || dayPassId;
-    
+
     if (!bookingUrl) {
       return <span>{displayText}</span>;
     }
-    
+
     return (
       <a
         href={appendUtmParams(bookingUrl, 'specific-product-click')}
@@ -388,14 +420,22 @@ const mdxComponents = {
       </a>
     );
   },
-  TreatmentLink: ({ spaSlug, treatmentName, children }: { spaSlug: string; treatmentName: string; children?: React.ReactNode }) => {
+  TreatmentLink: ({
+    spaSlug,
+    treatmentName,
+    children,
+  }: {
+    spaSlug: string;
+    treatmentName: string;
+    children?: React.ReactNode;
+  }) => {
     const spa = spaData.find((s) => s.url === spaSlug);
     if (!spa) return children || null;
     const bookingUrl = getTreatmentBookingUrl(spa.id, treatmentName, spa);
     const fullTreatmentName = getTreatmentName(spa.id, treatmentName);
     const treatmentId = getTreatmentIdByName(spa.id, treatmentName);
     const displayText = children || fullTreatmentName || treatmentName;
-    
+
     // If we have a booking URL, link to it
     if (bookingUrl) {
       return (
@@ -412,7 +452,7 @@ const mdxComponents = {
         </a>
       );
     }
-    
+
     // Otherwise, link to the treatment on the spa page
     if (treatmentId) {
       return (
@@ -424,7 +464,7 @@ const mdxComponents = {
         </Link>
       );
     }
-    
+
     // Fallback: just show the text
     return <span>{displayText}</span>;
   },
@@ -606,7 +646,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
         {/* Related Spas Section */}
         {mentionedSpas.length > 0 && (
-          <section className="bg-slate-50 py-32">
+          <section className="bg-slate-50 pt-32 pb-16">
             <div className="container mx-auto px-4 md:px-8">
               {/* Section Heading */}
               <div className="mb-16">
@@ -639,6 +679,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
           </section>
         )}
+
+        <FeaturedArticles excludeSlug={post.slug} useWhiteBackground />
       </main>
 
       <Footer />
