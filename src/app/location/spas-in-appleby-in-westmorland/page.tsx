@@ -46,12 +46,13 @@ The thermal journey includes traditional sauna, aromatherapy steam room, and a s
 Unlike the busier Lake District destinations, Appleby rewards those willing to venture beyond the obvious. Day spa packages welcome visitors from £45, making this an accessible escape for couples seeking relaxation without the crowds. Combine it with a walk along the river to the Millennium Bridge, lunch in one of the town's coaching inns, and you have a day that feels genuinely restorative rather than simply scenic.`;
 
 const relatedLocations = [
-  { name: 'Penrith', slug: 'penrith', distance: '12 miles north' },
-  { name: 'Ullswater', slug: 'ullswater', distance: '15 miles northwest' },
+  { name: 'Penrith', slug: 'penrith', distance: '12 miles north', image: '/images/locations/penrith-lake-district-spa-breaks.jpg' },
+  { name: 'Ullswater', slug: 'ullswater', distance: '15 miles northwest', image: '/images/locations/ullswater-lake-district-spa-breaks.jpg' },
   {
     name: 'Bassenthwaite',
     slug: 'bassenthwaite',
     distance: '30 miles northwest',
+    image: '/images/locations/bassenthwaite-lake-district-spa-breaks.jpg',
   },
 ];
 

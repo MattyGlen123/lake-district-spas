@@ -50,9 +50,10 @@ const relatedLocations = [
     name: 'Bassenthwaite',
     slug: 'bassenthwaite',
     distance: '8 miles northwest',
+    image: '/images/locations/bassenthwaite-lake-district-spa-breaks.jpg',
   },
-  { name: 'Ullswater', slug: 'ullswater', distance: '12 miles east' },
-  { name: 'Grasmere', slug: 'grasmere', distance: '7 miles south' },
+  { name: 'Ullswater', slug: 'ullswater', distance: '12 miles east', image: '/images/locations/ullswater-lake-district-spa-breaks.jpg' },
+  { name: 'Grasmere', slug: 'grasmere', distance: '7 miles south', image: '/images/locations/grasmere-lake-district-spa-breaks.jpg' },
 ];
 
 export default function BorrowdaleSpasPage() {

@@ -35,12 +35,13 @@ The North Lakes Hotel & Spa sits just off the M6, a position that makes it one o
 The location works well for those wanting to combine spa time with exploration. Ullswater lies just ten minutes away by car, with the Ullswater Steamers running between Pooley Bridge, Howtown and Glenridding. For walkers, Helvellyn rises to 950 metres at the southern end of the lake, England's third highest peak and home to the famous Striding Edge scramble.`
 
 const relatedLocations = [
-  { name: 'Ullswater', slug: 'ullswater', distance: '6 miles west' },
-  { name: 'Borrowdale', slug: 'borrowdale', distance: '17 miles west' },
+  { name: 'Ullswater', slug: 'ullswater', distance: '6 miles west', image: '/images/locations/ullswater-lake-district-spa-breaks.jpg' },
+  { name: 'Borrowdale', slug: 'borrowdale', distance: '17 miles west', image: '/images/locations/borrowdale-valley-lake-district-spa-breaks.jpg' },
   {
     name: 'Appleby-in-Westmorland',
     slug: 'appleby-in-westmorland',
     distance: '13 miles southeast',
+    image: '/images/locations/appleby-in-westmorland-lake-district-spa-breaks.jpg',
   },
 ];
 

@@ -42,9 +42,9 @@ Crucially for walkers, the estate includes a fully stocked bootroom where guests
 const faqs = getLocationFAQs('Great Langdale');
 
 const relatedLocations = [
-  { name: 'Ambleside', slug: 'ambleside', distance: '5 miles east' },
-  { name: 'Grasmere', slug: 'grasmere', distance: '7 miles northeast' },
-  { name: 'Windermere', slug: 'windermere', distance: '10 miles southeast' },
+  { name: 'Ambleside', slug: 'ambleside', distance: '5 miles east', image: '/images/locations/ambleside-lake-district-spa-breaks.jpg' },
+  { name: 'Grasmere', slug: 'grasmere', distance: '7 miles northeast', image: '/images/locations/grasmere-lake-district-spa-breaks.jpg' },
+  { name: 'Windermere', slug: 'windermere', distance: '10 miles southeast', image: '/images/locations/windermere-lake-district-spa-breaks.jpg' },
 ];
 
 export default function GreatLangdaleSpasPage() {

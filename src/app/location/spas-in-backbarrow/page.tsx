@@ -43,12 +43,13 @@ Day spa packages welcome visitors alongside hotel guests, with Elemis treatments
 Backbarrow works particularly well as part of a southern Lakes itinerary. Newby Bridge lies a mile north with its historic bridge and lake steamers. The market town of Ulverston, birthplace of Stan Laurel, sits a few miles south, while Cartmel and its famous priory are within easy reach. It's a quieter corner of the Lake District that rewards those who venture beyond the honeypot villages.`;
 
 const relatedLocations = [
-  { name: 'Newby Bridge', slug: 'newby-bridge', distance: '1 mile north' },
-  { name: 'Windermere', slug: 'windermere', distance: '6 miles north' },
+  { name: 'Newby Bridge', slug: 'newby-bridge', distance: '1 mile north', image: '/images/locations/newby-bridge-lake-district-spa-breaks.jpg' },
+  { name: 'Windermere', slug: 'windermere', distance: '6 miles north', image: '/images/locations/windermere-lake-district-spa-breaks.jpg' },
   {
     name: 'Grange-over-Sands',
     slug: 'grange-over-sands',
     distance: '8 miles south',
+    image: '/images/locations/grange-over-sands-lake-district-spa-breaks.jpg',
   },
 ];
 

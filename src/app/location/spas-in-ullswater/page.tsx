@@ -39,14 +39,14 @@ Another Place, The Lake occupies 18 acres of parkland at Watermillock on the wes
 Hotel guests have complimentary access to Swim Club throughout their stay. Day visitors can book memberships that include pool, hot tub and sauna. Three restaurants provide fuel, Rampsbeck for contemporary dining with lake views, The Living Space for all-day casual eating, and The Glasshouse for wood-fired pizza in a Victorian-style lakeside building. Families benefit from an Ofsted-registered Kids' Zone included free for guests.`
 
 const relatedLocations = [
-  { name: 'Penrith', slug: 'penrith', distance: '5 miles northeast' },
-  { name: 'Borrowdale', slug: 'borrowdale', distance: '20 miles west' },
+  { name: 'Penrith', slug: 'penrith', distance: '5 miles northeast', image: '/images/locations/penrith-lake-district-spa-breaks.jpg' },
+  { name: 'Borrowdale', slug: 'borrowdale', distance: '20 miles west', image: '/images/locations/borrowdale-valley-lake-district-spa-breaks.jpg' },
   {
     name: 'Appleby-in-Westmorland',
     slug: 'appleby-in-westmorland',
     distance: '18 miles southeast',
+    image: '/images/locations/appleby-in-westmorland-lake-district-spa-breaks.jpg',
   },
-  
 ];
 
 export default function UllswaterSpasPage() {

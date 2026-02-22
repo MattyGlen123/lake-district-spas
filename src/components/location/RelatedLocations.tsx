@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin } from 'lucide-react';
 
@@ -5,6 +6,7 @@ interface RelatedLocation {
   name: string;
   slug: string;
   distance: string;
+  image?: string;
 }
 
 interface RelatedLocationsProps {
@@ -37,16 +39,28 @@ export default function RelatedLocations({
             <Link
               key={location.slug}
               href={`/location/spas-in-${location.slug}/`}
-              className="group bg-white rounded-2xl p-6 border border-stone-200 shadow-sm"
+              className="group bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm"
             >
-              <div className="flex items-start justify-between">
+              {location.image && (
+                <div className="relative aspect-[3/2] overflow-hidden">
+                  <Image
+                    src={location.image}
+                    alt={`Spa breaks in ${location.name}, Lake District`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                </div>
+              )}
+              <div className="flex items-start justify-between p-5">
                 <div>
                   <h3 className="font-serif text-xl text-stone-900 mb-1">
                     {location.name}
                   </h3>
                   <p className="text-sm text-stone-500">{location.distance}</p>
                 </div>
-                <MapPin className="h-5 w-5 text-amber-600" />
+                <MapPin className="h-5 w-5 text-amber-600 shrink-0" />
               </div>
             </Link>
           ))}
@@ -55,4 +69,3 @@ export default function RelatedLocations({
     </section>
   );
 }
-

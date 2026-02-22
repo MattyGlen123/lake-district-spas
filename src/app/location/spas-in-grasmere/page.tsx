@@ -44,9 +44,9 @@ For visitors combining spa time with walking, Grasmere offers an ideal base. The
 const faqs = getLocationFAQs('Grasmere');
 
 const relatedLocations = [
-  { name: 'Ambleside', slug: 'ambleside', distance: '4 miles south' },
-  { name: 'Windermere', slug: 'windermere', distance: '9 miles south' },
-  { name: 'Borrowdale', slug: 'borrowdale', distance: '8 miles north' },
+  { name: 'Ambleside', slug: 'ambleside', distance: '4 miles south', image: '/images/locations/ambleside-lake-district-spa-breaks.jpg' },
+  { name: 'Windermere', slug: 'windermere', distance: '9 miles south', image: '/images/locations/windermere-lake-district-spa-breaks.jpg' },
+  { name: 'Borrowdale', slug: 'borrowdale', distance: '8 miles north', image: '/images/locations/borrowdale-valley-lake-district-spa-breaks.jpg' },
 ];
 
 export default function GrasmereSpasPage() {

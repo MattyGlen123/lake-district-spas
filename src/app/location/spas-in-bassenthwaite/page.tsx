@@ -48,9 +48,9 @@ Spa access comes complimentary for hotel guests, while day visitors can choose f
 const faqs = getLocationFAQs('Bassenthwaite');
 
 const relatedLocations = [
-  { name: 'Ullswater', slug: 'ullswater', distance: '20 miles east' },
-  { name: 'Borrowdale', slug: 'borrowdale', distance: '10 miles south' },
-  { name: 'Penrith', slug: 'penrith', distance: '18 miles east' },
+  { name: 'Ullswater', slug: 'ullswater', distance: '20 miles east', image: '/images/locations/ullswater-lake-district-spa-breaks.jpg' },
+  { name: 'Borrowdale', slug: 'borrowdale', distance: '10 miles south', image: '/images/locations/borrowdale-valley-lake-district-spa-breaks.jpg' },
+  { name: 'Penrith', slug: 'penrith', distance: '18 miles east', image: '/images/locations/penrith-lake-district-spa-breaks.jpg' },
 ];
 
 export default function BassenthwaiteSpasPage() {

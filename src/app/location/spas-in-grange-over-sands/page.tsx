@@ -46,9 +46,9 @@ Both hotels sit within easy reach of the railway station, making Grange-over-San
 const faqs = getLocationFAQs('Grange-over-Sands');
 
 const relatedLocations = [
-  { name: 'Newby Bridge', slug: 'newby-bridge', distance: '8 miles north' },
-  { name: 'Backbarrow', slug: 'backbarrow', distance: '6 miles north' },
-  { name: 'Windermere', slug: 'windermere', distance: '10 miles north' },
+  { name: 'Newby Bridge', slug: 'newby-bridge', distance: '8 miles north', image: '/images/locations/newby-bridge-lake-district-spa-breaks.jpg' },
+  { name: 'Backbarrow', slug: 'backbarrow', distance: '6 miles north', image: '/images/locations/backbarrow-lake-district-spa-breaks.jpg' },
+  { name: 'Windermere', slug: 'windermere', distance: '10 miles north', image: '/images/locations/windermere-lake-district-spa-breaks.jpg' },
 ];
 
 export default function GrangeOverSandsSpasPage() {

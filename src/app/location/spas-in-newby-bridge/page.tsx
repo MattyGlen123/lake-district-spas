@@ -44,13 +44,14 @@ The location suits walkers seeking a quieter base. Gummer's How rises directly b
 const faqs = getLocationFAQs('Newby Bridge');
 
 const relatedLocations = [
-  { name: 'Windermere', slug: 'windermere', distance: '8 miles north' },
+  { name: 'Windermere', slug: 'windermere', distance: '8 miles north', image: '/images/locations/windermere-lake-district-spa-breaks.jpg' },
   {
     name: 'Grange-over-Sands',
     slug: 'grange-over-sands',
     distance: '6 miles south',
+    image: '/images/locations/grange-over-sands-lake-district-spa-breaks.jpg',
   },
-  { name: 'Backbarrow', slug: 'backbarrow', distance: '1 mile west' },
+  { name: 'Backbarrow', slug: 'backbarrow', distance: '1 mile west', image: '/images/locations/backbarrow-lake-district-spa-breaks.jpg' },
 ];
 
 export default function NewbyBridgeSpasPage() {

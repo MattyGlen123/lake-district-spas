@@ -47,9 +47,9 @@ The village location means a trip to the spa slots easily into wider Lake Distri
 const faqs = getLocationFAQs('Bowness-on-Windermere');
 
 const relatedLocations = [
-  { name: 'Windermere', slug: 'windermere', distance: '1 mile north' },
-  { name: 'Ambleside', slug: 'ambleside', distance: '5 miles north' },
-  { name: 'Newby Bridge', slug: 'newby-bridge', distance: '7 miles south' },
+  { name: 'Windermere', slug: 'windermere', distance: '1 mile north', image: '/images/locations/windermere-lake-district-spa-breaks.jpg' },
+  { name: 'Ambleside', slug: 'ambleside', distance: '5 miles north', image: '/images/locations/ambleside-lake-district-spa-breaks.jpg' },
+  { name: 'Newby Bridge', slug: 'newby-bridge', distance: '7 miles south', image: '/images/locations/newby-bridge-lake-district-spa-breaks.jpg' },
 ];
 
 export default function BownessSpasPage() {

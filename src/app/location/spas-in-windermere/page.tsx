@@ -47,9 +47,10 @@ const relatedLocations = [
     name: 'Bowness on Windermere',
     slug: 'bowness-on-windermere',
     distance: '1 mile south',
+    image: '/images/locations/bowness-on-windermere-lake-district-spa-breaks.jpg',
   },
-  { name: 'Ambleside', slug: 'ambleside', distance: '6 miles north' },
-  { name: 'Newby Bridge', slug: 'newby-bridge', distance: '6 miles south' },
+  { name: 'Ambleside', slug: 'ambleside', distance: '6 miles north', image: '/images/locations/ambleside-lake-district-spa-breaks.jpg' },
+  { name: 'Newby Bridge', slug: 'newby-bridge', distance: '6 miles south', image: '/images/locations/newby-bridge-lake-district-spa-breaks.jpg' },
 ];
 
 export default function WindermereSpasPage() {

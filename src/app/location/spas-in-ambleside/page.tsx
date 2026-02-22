@@ -43,9 +43,9 @@ The thermal facilities include an infrared sauna for deep tissue relaxation, par
 For couples seeking a Lake District escape that balances activity with indulgence, Ambleside delivers. Walk to Rydal Water in the morning, lunch in the village, spa in the afternoon, dinner at one of the excellent local restaurants. The compact geography means everything is within reach without needing a car.`;
 
 const relatedLocations = [
-  { name: 'Windermere', slug: 'windermere', distance: '6 miles south' },
-  { name: 'Grasmere', slug: 'grasmere', distance: '4 miles north' },
-  { name: 'Great Langdale', slug: 'great-langdale', distance: '5 miles west' },
+  { name: 'Windermere', slug: 'windermere', distance: '6 miles south', image: '/images/locations/windermere-lake-district-spa-breaks.jpg' },
+  { name: 'Grasmere', slug: 'grasmere', distance: '4 miles north', image: '/images/locations/grasmere-lake-district-spa-breaks.jpg' },
+  { name: 'Great Langdale', slug: 'great-langdale', distance: '5 miles west', image: '/images/locations/great-langdale-lake-district-spa-breaks.jpg' },
 ];
 
 export default function AmblesideSpasPage() {
