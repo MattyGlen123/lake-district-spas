@@ -26,7 +26,10 @@ export function getAmblesideFAQs(spas: Spa[]): FAQ[] {
   // Nearby spa day pass prices (for reference in answers)
   const lwbTwilightPrice = getDayPassPrice(7, 'low-wood-bay-twilight-thermal');
   const lwbRechargePrice = getDayPassPrice(7, 'low-wood-bay-recharge-spa');
-  const daffodilWeekdayPrice = getDayPassPrice(4, 'daffodil-spa-facilities-weekday');
+  const daffodilWeekdayPrice = getDayPassPrice(
+    4,
+    'daffodil-spa-facilities-weekday'
+  );
 
   return [
     {
@@ -47,9 +50,9 @@ export function getAmblesideFAQs(spas: Spa[]): FAQ[] {
           poolside hot tub.
           <br />
           <br />
-          Spa access is complimentary for all hotel guests throughout their stay,
-          with no time slots or extra charges. The spa is open from 8am to 8pm
-          daily. The{' '}
+          Spa access is complimentary for all hotel guests throughout their
+          stay, with no time slots or extra charges. The spa is open from 8am to
+          8pm daily. The{' '}
           <Link
             href={`/spa/${salutation?.url || 'ambleside-salutation-hotel-spa'}#treatments`}
             className="underline"
@@ -68,17 +71,11 @@ export function getAmblesideFAQs(spas: Spa[]): FAQ[] {
           <br />
           <br />
           For more options within a short drive, see{' '}
-          <Link
-            href="/location/spas-in-windermere"
-            className="underline"
-          >
+          <Link href="/location/spas-in-windermere" className="underline">
             spas in Windermere
           </Link>{' '}
           and{' '}
-          <Link
-            href="/location/spas-in-grasmere"
-            className="underline"
-          >
+          <Link href="/location/spas-in-grasmere" className="underline">
             spas in Grasmere
           </Link>
           , both under 15 minutes away.
@@ -99,8 +96,8 @@ export function getAmblesideFAQs(spas: Spa[]): FAQ[] {
           </Link>{' '}
           is exclusively for hotel guests and does not offer spa day passes to
           non residents. To use the spa, you need to book an overnight stay at
-          the hotel. The upside is that spa access comes included free with every
-          room booking.
+          the hotel. The upside is that spa access comes included free with
+          every room booking.
           <br />
           <br />
           If you want a spa day without an overnight stay, the nearest options
@@ -108,14 +105,15 @@ export function getAmblesideFAQs(spas: Spa[]): FAQ[] {
           <Link href="/spa/low-wood-bay-spa" className="underline">
             Low Wood Bay Spa
           </Link>{' '}
-          in Windermere (4 miles south) offers{' '}
+          in Windermere (4 miles south) includes a Resort Leisure Area (indoor
+          pool, Infrared sauna, jacuzzi, and steam room) free for hotel guests
+          during restricted hours. Their{' '}
           <Link href="/spa/low-wood-bay-spa#day-passes" className="underline">
-            day packages
+            day passes for the full thermal spa
           </Link>{' '}
-          from{' '}
-          {lwbTwilightPrice || '£60'} for a twilight thermal session, or from{' '}
-          {lwbRechargePrice || '£175'} for a full spa day with treatment and
-          lunch.{' '}
+          start from {lwbTwilightPrice || '£60'} for a twilight thermal session,
+          or from {lwbRechargePrice || '£175'} for a full spa day with treatment
+          and lunch.{' '}
           <Link href="/spa/daffodil-hotel-spa" className="underline">
             Daffodil Hotel Spa
           </Link>{' '}
@@ -130,7 +128,7 @@ export function getAmblesideFAQs(spas: Spa[]): FAQ[] {
           .
         </>
       ),
-      schemaText: `The Waterfall Spa at ${salutation?.name || 'Ambleside Salutation Hotel & Spa'} is exclusively for hotel guests and does not offer spa day passes. To use the spa you need to book an overnight stay, though spa access is included free with every room. The nearest spa day options are Low Wood Bay Spa in Windermere (4 miles south) with day packages from ${lwbTwilightPrice || '£60'}, and Daffodil Hotel Spa in Grasmere (4 miles north) with spa access from ${daffodilWeekdayPrice || '£35'} on weekdays. Both are 16+ facilities.`,
+      schemaText: `The Waterfall Spa at ${salutation?.name || 'Ambleside Salutation Hotel & Spa'} is exclusively for hotel guests and does not offer spa day passes. To use the spa you need to book an overnight stay, though spa access is included free with every room. The nearest options are Low Wood Bay Spa in Windermere (4 miles south) — hotel guests get the Resort Leisure Area (indoor pool, Infrared sauna, jacuzzi, steam room) free during restricted hours, with full thermal spa day packages from ${lwbTwilightPrice || '£60'} — and Daffodil Hotel Spa in Grasmere (4 miles north) with spa access from ${daffodilWeekdayPrice || '£35'} on weekdays. Both are 16+ facilities.`,
     },
     {
       question: 'What spas are near Ambleside?',
@@ -209,10 +207,10 @@ export function getAmblesideFAQs(spas: Spa[]): FAQ[] {
             Brimstone Spa
           </Link>{' '}
           on the Langdale Estate is a separate property with its own adults only
-          spa, featuring a unique swim through pool connecting indoor and outdoor
-          spaces, five thermal facilities, and 27 Pure Alchemy treatments
-          inspired by Lake District natural elements. Spa access is for hotel
-          guests only.
+          spa, featuring a unique swim through pool connecting indoor and
+          outdoor spaces, five thermal facilities, and 27 Pure Alchemy
+          treatments inspired by Lake District natural elements. Spa access is
+          for hotel guests only.
           <br />
           <br />
           If you are staying in Ambleside and want to use the Brimstone Spa, you

@@ -78,12 +78,15 @@ export function getWindermereFAQs(spas: Spa[]): FAQ[] {
           <br />
           <br />
           The key difference for many visitors is access policy. Beech Hill
-          includes complimentary spa access for all hotel guests, while Low Wood
-          Bay charges separately for spa use. If spa access as part of your room
-          rate matters, Beech Hill is the better fit. If you want the largest
-          facilities and outdoor pools, Low Wood Bay is the clear choice. Both
-          are {lwbAgePolicy || '16+'} for spa facilities. For more spas nearby,
-          see{' '}
+          includes complimentary spa access for all hotel guests. Low Wood Bay
+          includes its Resort Leisure Area (indoor pool, Infrared sauna,
+          jacuzzi, and steam room) free for hotel guests during restricted
+          morning and evening hours, but the main Outdoor Spa and Indoor Thermal
+          Spa cost extra as a paid thermal journey. If full spa access included
+          in your room rate matters, Beech Hill is the better fit. If you want
+          the largest facilities and outdoor pools, Low Wood Bay is the clear
+          choice. Both are {lwbAgePolicy || '16+'} for spa facilities. For more
+          spas nearby, see{' '}
           <Link
             href="/location/spas-in-bowness-on-windermere"
             className="underline"
@@ -93,7 +96,7 @@ export function getWindermereFAQs(spas: Spa[]): FAQ[] {
           , just a few minutes down the road.
         </>
       ),
-      schemaText: `Windermere has two spa hotels on the shores of England's largest lake. ${lowWoodBay?.name || 'Low Wood Bay Spa'} is the larger resort with two outdoor infinity pools, ${lwbThermalCount || 6} thermal experiences, and watersports on the lake. ${beechHill?.name || 'Beech Hill Hotel & Spa'} is smaller and more intimate with a maximum of 6 guests, an outdoor hot tub on the lakeside terrace, and a private beach. Beech Hill includes complimentary spa access for hotel guests, while Low Wood Bay charges separately. Both are ${lwbAgePolicy || '16+'} for spa facilities.`,
+      schemaText: `Windermere has two spa hotels on the shores of England's largest lake. ${lowWoodBay?.name || 'Low Wood Bay Spa'} is the larger resort with two outdoor infinity pools, ${lwbThermalCount || 8} thermal experiences, and watersports on the lake. ${beechHill?.name || 'Beech Hill Hotel & Spa'} is smaller and more intimate with a maximum of 6 guests, an outdoor hot tub on the lakeside terrace, and a private beach. Beech Hill includes complimentary spa access for all hotel guests. Low Wood Bay includes its Resort Leisure Area (indoor pool, Infrared sauna, jacuzzi, steam room) free for hotel guests during restricted hours, with the main Outdoor Spa and Indoor Thermal Spa available as a paid thermal journey. Both are ${lwbAgePolicy || '16+'} for spa facilities.`,
     },
     {
       question: 'Which Windermere spas have lake views?',

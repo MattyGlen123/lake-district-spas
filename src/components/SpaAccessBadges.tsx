@@ -20,6 +20,7 @@ export default function SpaAccessBadges({
     'bg-spa-green': 'bg-emerald-50 text-black border border-emerald-200',
     'bg-spa-purple': 'bg-purple-50 text-black border border-purple-200',
     'bg-spa-yellow': 'bg-amber-50 text-black border border-amber-200',
+    'bg-spa-orange': 'bg-orange-50 text-black border border-orange-200',
     'bg-spa-red': 'bg-red-50 text-black border border-red-200',
     'bg-spa-blue': 'bg-blue-50 text-black border border-blue-200',
   };

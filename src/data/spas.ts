@@ -81,10 +81,14 @@ Spa access is complimentary for suite bookings (2 hours per night), while standa
         name: 'Ice Fountain',
         details: 'Ice Fountain to cool down post-sauna, boost circulation',
       },
-      { name: 'Cold Drench Bucket', details: 'Cold Drench outdoor cool down after sauna' },
+      {
+        name: 'Cold Drench Bucket',
+        details: 'Cold Drench outdoor cool down after sauna',
+      },
       {
         name: 'Experience Showers',
-        details: 'Experience Showers with Forest Rinse, Tropical Rain, Thermal Sensation',
+        details:
+          'Experience Showers with Forest Rinse, Tropical Rain, Thermal Sensation',
       },
     ],
     poolFeatures: [
@@ -152,14 +156,12 @@ Spa access is complimentary for suite bookings (2 hours per night), while standa
       country: 'GB',
     },
     metaDescription:
-      "Windermere's premium spa with two outdoor infinity pools and stunning lake views. Three saunas including infrared cabin. Perfect for luxurious girls' getaways.",
-    intro: `The Spa at Low Wood Bay offers one of the Lake District's most impressive spa settings, featuring two outdoor infinity pools with panoramic views across Lake Windermere to the Langdale Pikes. Located on the lake's eastern shore near Ambleside, Low Wood Bay Resort & Spa combines extensive thermal facilities with direct waterfront access.
+      "Windermere's premium spa with a complimentary leisure pool for hotel guests, plus a paid thermal journey with two outdoor infinity pools and stunning lake views. 16+ only.",
+    intro: `Low Wood Bay Resort & Spa sits on the eastern shore of Lake Windermere near Ambleside, combining one of the Lake District's largest spa offerings with direct waterfront access and watersports on England's largest lake. Two heated outdoor infinity pools gaze across to the Langdale Pikes, and the Outdoor Spa's elevated hot tubs and Fellside Sauna with its traditional log burner make the most of the landscape in all weathers.
 
-The spa includes six thermal experiences: three saunas featuring the outdoor Fellside Sauna with fell views, a dry salt sauna, and an infrared cabin for deep tissue relaxation. The coconut steam room and herbal lounge provide gentler heat options, while multiple outdoor hot tubs are perfect for evening stargazing.
-
-Unlike many Lake District spa hotels, spa access is not included with standard room bookings - guests can add spa sessions separately (with 25% off Monday to Thursday). Day spa packages are available for non-residents from 10am to 8pm. This is a 16+ spa.`,
+Hotel guests have complimentary use of the Resort Leisure Area, an indoor swimming pool, infrared sauna, jacuzzi, and steam room, available each morning until 10am and again from 5:30pm. Full access to all facilities is purchased via the day passes, this includes the outdoor and indoor spas. The outdoor and indoor infinity pools, dry salt sauna, steam cabin, herbal lounge with suspended loungers, and outdoor hot tubs. Treatments draw on Berry & Birch and ESPA ranges, with packages that pair spa time with paddleboarding, kayaking, or a private yacht charter on Windermere.`,
     websiteUrl: 'https://englishlakes.co.uk/hotels/low-wood-bay/the-spa/',
-    accessLabels: ['paid-for-guests', 'day-passes-available'],
+    accessLabels: ['partial-for-guests', 'day-passes-available'],
     images: [
       {
         src: '/images/spas/low-wood-bay-spa/lake-district-spas_low-wood-bay.webp',
@@ -199,62 +201,94 @@ Unlike many Lake District spa hotels, spa access is not included with standard r
       },
     ],
     keyFeatures: [
-      'Two outdoor infinity pools with lake views',
-      'Three saunas including infrared and fellside sauna',
-      'Indoor thermal and vitality pool',
-      'Multiple outdoor hot tubs',
+      'Resort leisure area for all hotel guests',
+      'Two infinity pools with Lake Windermere views',
+      'Wide range of thermal experiences including outdoor sauna and hot tubs',
     ],
     thermalFacilities: [
       {
-        name: 'Dry Salt Sauna',
-        details: 'Indoor dry salt sauna with therapeutic benefits',
+        name: 'Infrared Sauna',
+        details: 'Infrared Sauna (complimentary for hotel guests)',
       },
       {
-        name: 'Infrared Sauna',
-        details: 'Infrared sauna for deep tissue relaxation',
+        name: 'Steam Room',
+        details: 'Steam Room (complimentary for hotel guests)',
       },
       {
         name: 'Fellside Sauna',
-        details: 'Outdoor sauna with panoramic Lake District views',
+        details: 'Outdoor sauna with views across Lake Windermere.',
       },
-      { name: 'Coconut Steam Room', details: 'Coconut-infused steam room' },
-      { name: 'Herbal Lounge', details: 'Gentle herbal infusion lounge' },
+      {
+        name: 'Dry Salt Sauna',
+        details: 'Sauna with Himalayan salt bricks',
+      },
+      {
+        name: 'Steam Cabin',
+        details: 'Coconut infused steam room',
+      },
+      {
+        name: 'Herbal Lounge',
+        details: 'Gently heated lounge with calming herbs.',
+      },
+      {
+        name: 'Mud Room',
+        details: 'Mineral mud room with aromatic steam. (Additional cost)',
+      },
       {
         name: 'Experience Showers',
-        details: 'Multi-sensory shower experiences (indoor and outdoor)',
+        details: 'Sensory experience showers',
       },
     ],
     poolFeatures: [
       {
         name: 'Indoor Swimming Pool',
-        details: 'Indoor thermal & vitality pool with bubble spa features',
+        details: 'Indoor Swimming Pool (complimentary for hotel guests)',
       },
       {
-        name: 'Outdoor Infinity Pools',
-        details:
-          'Two heated outdoor infinity pools with stunning Lake Windermere views',
+        name: 'Indoor Hot Tub',
+        details: 'Indoor Hot Tub (complimentary for hotel guests)',
       },
       {
-        name: 'Jacuzzi/Hot Tubs',
+        name: 'Outdoor Infinity Pool',
         details:
-          'Multiple outdoor jacuzzis and hot tubs, perfect for star gazing',
+          'Outdoor infinity pool with panoramic views across Lake Windermere',
+      },
+      {
+        name: 'Vitality Pool',
+        details: 'Outdoor pool with massage jets and seating areas',
+      },
+      {
+        name: 'Outdoor Hot Tubs',
+        details: 'Outdoor hot tubs with views across the Cumbrian landscape',
+      },
+      {
+        name: 'Indoor Infinity Pool',
+        details: 'Indoor infinity pool with lake and fell views',
       },
     ],
     accessPolicy: [
       {
-        name: 'Hotel Guests',
-        details: 'Spa access NOT included unless booking spa break package',
+        name: 'Hotel Guests: Leisure Area',
+        details:
+          'Resort Leisure Area (indoor pool, Infrared sauna, jacuzzi, steam room) included free for all hotel guests during opening hours',
         accessType: 'hotel',
       },
       {
-        name: 'Guest Discount',
+        name: 'Leisure Area Hours',
         details:
-          'Book spa day or treatment separately with 25% discount Mon-Thu',
+          'Open 7:30am to 10:00am (all guests) and 5:30pm to 8:00pm (adults only).',
+        accessType: 'spa-hours',
+      },
+      {
+        name: 'Hotel Guest Discount',
+        details:
+          '25% off thermal journey (Outdoor Spa + Indoor Thermal Spa) when booked separately, Monday to Thursday',
         accessType: 'general',
       },
       {
         name: 'Day Passes',
-        details: 'Available for public, various packages 10am-8pm',
+        details:
+          'Thermal journey (Outdoor Spa + Indoor Thermal Spa) available for public, various packages.',
         accessType: 'day-pass',
       },
       {
@@ -264,12 +298,12 @@ Unlike many Lake District spa hotels, spa access is not included with standard r
       },
       {
         name: 'Spa Hours',
-        details: 'Treatments 9:30am-7:30pm and Spa Days 10am-8pm',
+        details: 'Treatments 9:30am–7:30pm and spa days 10am–8pm',
         accessType: 'spa-hours',
       },
       {
         name: 'Footwear',
-        details: 'No slippers provided - bring flip flops or purchase on-site',
+        details: 'No slippers provided, bring flip flops or purchase on-site',
         accessType: 'general',
       },
       {
@@ -795,7 +829,8 @@ Spa access is complimentary for all hotel guests from 2pm on arrival until midda
     treatmentBookingPhone: '+44 1539 463550',
     treatmentBookingUrl:
       'https://online.premiersoftware.co.uk/Book-Online-3G-V2/index2.php?i=115df4aa99c472ae827a28b548e637fe&siteID=9',
-    hotelBookingUrl: 'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/',
+    hotelBookingUrl:
+      'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/',
   },
   {
     id: 5,
@@ -932,8 +967,7 @@ Spa access is complimentary for Splendid room bookings and above. Standard room 
     agePolicy: '18+ (16-17 with parent/guardian)',
     relatedSpas: [9, 1],
     treatmentBookingPhone: '01539 531681',
-    treatmentBookingUrl:
-      'https://theswan.onejourney.travel/spa/treatments',
+    treatmentBookingUrl: 'https://theswan.onejourney.travel/spa/treatments',
     dayPassBookingUrl: 'https://theswan.onejourney.travel/spa/days/',
     hotelBookingUrl: 'https://swanhotel.com/',
   },
@@ -1328,8 +1362,7 @@ Complimentary spa access included for all hotel guests, with day spa packages av
     poolFeatures: [
       {
         name: 'Indoor Pool',
-        details:
-          '35ft indoor pool with atmospheric lighting',
+        details: '35ft indoor pool with atmospheric lighting',
       },
       {
         name: 'Outdoor Hot tub',
@@ -1503,7 +1536,8 @@ Complimentary pool and thermal suite access included for all hotel guests, with 
       'https://macdonaldoldengland.onejourney.travel/spa/treatments',
     treatmentBookingPhone: '0344 879 9102',
     dayPassBookingUrl: 'https://macdonaldoldengland.onejourney.travel/spa/days',
-    hotelBookingUrl: 'https://www.macdonaldhotels.co.uk/old-england/book/accommodation/hotel/old-england',
+    hotelBookingUrl:
+      'https://www.macdonaldhotels.co.uk/old-england/book/accommodation/hotel/old-england',
   },
   {
     id: 16,
@@ -1653,7 +1687,7 @@ Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with
   
   Spa access is complimentary for all hotel and apartment guests. The spa operates extended hours from 8am to 10:30pm, with family-friendly swimming available until 2pm for children aged 16 and under (supervised). After 2pm, the spa becomes an adults-only environment.`,
     websiteUrl: 'https://lakeshotel.co.uk/spa/',
-    accessLabels: ["free-for-all-guests", "no-day-passes-available"],
+    accessLabels: ['free-for-all-guests', 'no-day-passes-available'],
     images: [
       {
         src: '/images/spas/lakes-hotel-spa/lake-district-spas_lakes-hotel-bowness-main-pool-evening.jpg',
@@ -1736,7 +1770,8 @@ Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with
       },
       {
         name: 'Child Policy',
-        details: 'Maximum 6 children in pool at one time, must be supervised by adult 18+',
+        details:
+          'Maximum 6 children in pool at one time, must be supervised by adult 18+',
         accessType: 'age-restriction',
       },
     ],
@@ -1755,7 +1790,8 @@ Hotel guests pay separately for Thermal Journey access (daily 10am-5:30pm), with
     relatedSpas: [6, 7],
     treatmentBookingPhone: '015394 42211',
     treatmentBookingUrl: 'https://lakeshotel.co.uk/spa/treatments/',
-    dayPassBookingUrl: 'https://booking.eu.guestline.app/BURN/availability?hotel=BURNSIDE',
+    dayPassBookingUrl:
+      'https://booking.eu.guestline.app/BURN/availability?hotel=BURNSIDE',
   },
   {
     id: 17,
@@ -2075,7 +2111,8 @@ Complimentary spa access included for hotel guests, with day passes and annual m
     treatmentBookingPhone: '01768 868111',
     treatmentBookingUrl:
       'https://www.northlakeshotel.co.uk/spa-treatments/treatments',
-    dayPassBookingUrl: 'https://www.northlakeshotel.co.uk/spa-treatments/spa-days-breaks',
+    dayPassBookingUrl:
+      'https://www.northlakeshotel.co.uk/spa-treatments/spa-days-breaks',
     hotelBookingUrl: 'https://www.northlakeshotel.co.uk/rooms-suites',
   },
   {
@@ -2182,7 +2219,8 @@ Complimentary Cascades access included for all hotel guests, with 10% discount o
     treatmentBookingUrl:
       'https://whitewaterhotel.onejourney.travel/spa/treatments',
     dayPassBookingUrl: 'https://whitewaterhotel.onejourney.travel/spa/days',
-    hotelBookingUrl: 'https://whitewater-hotel.co.uk/spa-fitness/newby-bridge-spa/'
+    hotelBookingUrl:
+      'https://whitewater-hotel.co.uk/spa-fitness/newby-bridge-spa/',
   },
 ];
 

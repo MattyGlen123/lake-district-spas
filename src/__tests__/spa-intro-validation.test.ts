@@ -168,7 +168,9 @@ function validateIntroFacts(spa: Spa) {
   if (mentionsComplimentary) {
     const hasFreeAccess = spa.accessLabels.some(
       (label) =>
-        label === 'free-for-all-guests' || label === 'free-for-some-rooms'
+        label === 'free-for-all-guests' ||
+        label === 'free-for-some-rooms' ||
+        label === 'partial-for-guests'
     );
     if (!hasFreeAccess) {
       errors.push('Mentions complimentary/included but no free access labels');

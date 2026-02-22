@@ -93,6 +93,7 @@ const FilterModal = ({
                   'free-for-all-guests',
                   'free-for-some-rooms',
                   'paid-for-guests',
+                  'partial-for-guests',
                   'no-day-passes-available',
                   'day-passes-available',
                 ] as AccessLabel[]

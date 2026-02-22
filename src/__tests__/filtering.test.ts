@@ -130,6 +130,21 @@ describe('Spa Filtering Logic', () => {
       });
     });
 
+    it('should filter by "partial-for-guests" access label', () => {
+      const result = filterSpas(
+        spaData,
+        ['partial-for-guests'],
+        'All Locations',
+        []
+      );
+
+      result.forEach((spa) => {
+        expect(spa.accessLabels).toContain('partial-for-guests');
+      });
+      // Low Wood Bay (id 7) should be the only spa with this label
+      expect(result.some((spa) => spa.id === 7)).toBe(true);
+    });
+
     it('should filter by "day-passes-available" access label', () => {
       const result = filterSpas(
         spaData,
@@ -210,6 +225,7 @@ describe('Spa Filtering Logic', () => {
         'free-for-all-guests',
         'free-for-some-rooms',
         'paid-for-guests',
+        'partial-for-guests',
         'no-day-passes-available',
         'day-passes-available',
       ];
@@ -503,6 +519,7 @@ describe('Spa Filtering Logic', () => {
           'free-for-all-guests',
           'free-for-some-rooms',
           'paid-for-guests',
+          'partial-for-guests',
           'no-day-passes-available',
           'day-passes-available',
         ];

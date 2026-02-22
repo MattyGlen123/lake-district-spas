@@ -2,6 +2,7 @@ export type AccessLabel =
   | 'free-for-all-guests'
   | 'free-for-some-rooms'
   | 'paid-for-guests'
+  | 'partial-for-guests'
   | 'day-passes-available'
   | 'no-day-passes-available';
 
@@ -157,7 +158,7 @@ export interface DayPassOption {
   bookingUrl?: string;
 
   /** Email address for bookings */
-  bookingEmail ?: string;
+  bookingEmail?: string;
 
   /** Optional URL to purchase gift vouchers for this package */
   voucherUrl?: string;
@@ -210,6 +211,14 @@ export const accessLabelConfig: Record<
     color: 'bg-spa-yellow',
     dot: '🟡',
     badgeText: 'SPA COSTS EXTRA FOR HOTEL GUESTS',
+    category: 'hotel',
+  },
+  'partial-for-guests': {
+    label: 'Partial spa access for hotel guests',
+    shortLabel: 'Partial for hotel guests',
+    color: 'bg-spa-orange',
+    dot: '🟠',
+    badgeText: 'LEISURE AREA INCLUDED FOR HOTEL GUESTS',
     category: 'hotel',
   },
   'no-day-passes-available': {
