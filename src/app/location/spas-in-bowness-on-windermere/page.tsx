@@ -13,7 +13,7 @@ import { spaData } from '@/data/spas';
 export const metadata: Metadata = {
   title: 'Spas in Bowness-on-Windermere | Lake District Spas',
   description:
-    'Discover two spas in Bowness-on-Windermere at the heart of Lake Windermere. Historic lakeside elegance at the Old England or poolside prosecco at the Lakes Hotel.',
+    'Two spas in Bowness-on-Windermere at the heart of Lake Windermere. Historic lakeside elegance at the Old England or poolside prosecco at the Lakes Hotel.',
 };
 
 // Filter spas for Bowness-on-Windermere

@@ -156,7 +156,7 @@ Spa access is complimentary for suite bookings (2 hours per night), while standa
       country: 'GB',
     },
     metaDescription:
-      "Windermere's premium spa with a complimentary leisure pool for hotel guests, plus a paid thermal journey with two outdoor infinity pools and stunning lake views. 16+ only.",
+      "Windermere's premium spa with a free leisure pool for hotel guests, plus a paid thermal journey with two outdoor infinity pools and stunning lake views.",
     intro: `Low Wood Bay Resort & Spa sits on the eastern shore of Lake Windermere near Ambleside, combining one of the Lake District's largest spa offerings with direct waterfront access and watersports on England's largest lake. Two heated outdoor infinity pools gaze across to the Langdale Pikes, and the Outdoor Spa's elevated hot tubs and Fellside Sauna with its traditional log burner make the most of the landscape in all weathers.
 
 Hotel guests have complimentary use of the Resort Leisure Area, an indoor swimming pool, infrared sauna, jacuzzi, and steam room, available each morning until 10am and again from 5:30pm. Full access to all facilities is purchased via the day passes, this includes the outdoor and indoor spas. The outdoor and indoor infinity pools, dry salt sauna, steam cabin, herbal lounge with suspended loungers, and outdoor hot tubs. Treatments draw on Berry & Birch and ESPA ranges, with packages that pair spa time with paddleboarding, kayaking, or a private yacht charter on Windermere.`,

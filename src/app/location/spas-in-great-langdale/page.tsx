@@ -13,7 +13,7 @@ import { spaData } from '@/data/spas';
 export const metadata: Metadata = {
   title: 'Spas in Great Langdale | Lake District Spas',
   description:
-    "Discover Brimstone Spa in Great Langdale, the Lake District's premier walking valley. Seven thermal experiences beneath the Langdale Pikes, exclusive to estate guests.",
+    "Brimstone Spa in Great Langdale, the Lake District's premier walking valley. Seven thermal experiences beneath the Langdale Pikes, exclusive to estate guests.",
 };
 
 // Filter spas for Great Langdale

@@ -29,6 +29,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   };
 
+  // Couples Spa Guide page entry
+  const couplesSpaPage = {
+    url: `${baseUrl}/couples-spa-lake-district`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  };
+
   // Spa Days page entry
   const spaDaysPage = {
     url: `${baseUrl}/spa-days`,
@@ -147,6 +155,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     homepage,
     aboutPage,
     partnershipPage,
+    couplesSpaPage,
     spaDaysPage,
     blogPage,
     ...blogPosts,

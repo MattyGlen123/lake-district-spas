@@ -11,7 +11,7 @@ import { spaData } from '@/data/spas';
 import { getLocationFAQs } from '@/data/location-faqs';
 
 export const metadata: Metadata = {
-  title: 'Spas in Appleby-in-Westmorland | Lake District Spas',
+  title: 'Spas in Appleby-in-Westmorland - Lake District Spas',
   description:
     'Discover the Garden Spa at Appleby Manor in the Eden Valley. Outdoor hot tubs, fire pit, and country house tranquility on the edge of the Lake District.',
 };

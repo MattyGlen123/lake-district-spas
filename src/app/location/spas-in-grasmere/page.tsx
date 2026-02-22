@@ -13,7 +13,7 @@ import { spaData } from '@/data/spas';
 export const metadata: Metadata = {
   title: 'Spas in Grasmere | Lake District Spas',
   description:
-    "Discover spas in Grasmere, Wordsworth's beloved Lake District village. Two spa hotels offer thermal pools, saunas and treatments between literary sites and fell walks.",
+    "Spas in Grasmere, Wordsworth's beloved Lake District village. Two spa hotels with thermal pools, saunas and treatments between literary sites and fell walks.",
 };
 
 // Filter spas for Grasmere

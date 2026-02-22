@@ -13,7 +13,7 @@ import { spaData } from '@/data/spas';
 export const metadata: Metadata = {
   title: 'Spas in Newby Bridge | Lake District Spas',
   description:
-    'Discover spas in Newby Bridge at the southern tip of Lake Windermere. Outdoor thermal bathing, indoor pools and Elemis treatments where the lake meets the River Leven.',
+    'Spas in Newby Bridge at the southern tip of Lake Windermere. Outdoor thermal bathing, indoor pools and Elemis treatments where lake meets the River Leven.',
 };
 
 // Filter spas for Newby Bridge
