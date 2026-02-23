@@ -3,15 +3,21 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin } from 'lucide-react';
+import { MapPin, Ticket, Sparkles } from 'lucide-react';
 import { Spa } from '@/types/spa';
 import SpaAccessBadges from './SpaAccessBadges';
 
 interface SpaCardProps {
   spa: Spa;
+  lowestDayPassPrice?: number | null;
+  lowestTreatmentPrice?: number | null;
 }
 
-const SpaCard = ({ spa }: SpaCardProps) => {
+const SpaCard = ({
+  spa,
+  lowestDayPassPrice,
+  lowestTreatmentPrice,
+}: SpaCardProps) => {
   const [imageError, setImageError] = useState(false);
 
   return (
@@ -57,6 +63,29 @@ const SpaCard = ({ spa }: SpaCardProps) => {
             <h3 className="font-serif text-3xl text-stone-900 leading-[1.2]">
               {spa.name}
             </h3>
+
+            {/* Day Pass Price */}
+            {lowestDayPassPrice != null && (
+              <div className="flex items-center gap-1.5 text-stone-500 mb-0">
+                <Ticket className="h-4 w-4 text-amber-600" strokeWidth={1.5} />
+                <span className="text-xs">
+                  Day Passes From <strong>£{lowestDayPassPrice}</strong>
+                </span>
+              </div>
+            )}
+
+            {/* Treatment Price */}
+            {lowestTreatmentPrice != null && (
+              <div className="flex items-center gap-1.5 text-stone-500 mt-1.5">
+                <Sparkles
+                  className="h-4 w-4 text-amber-600"
+                  strokeWidth={1.5}
+                />
+                <span className="text-xs">
+                  Treatments From <strong>£{lowestTreatmentPrice}</strong>
+                </span>
+              </div>
+            )}
 
             {/* Key Features with amber dots */}
             <ul className="space-y-2.5">

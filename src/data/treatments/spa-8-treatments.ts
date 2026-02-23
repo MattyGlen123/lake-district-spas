@@ -1,7 +1,7 @@
 import { Treatment } from '@/types/spa';
 
 export const spa8Treatments: Treatment[] = [
-{
+  {
     spaId: 8,
     name: 'DEEP TISSUE TENSION-EASE MASSAGE',
     description:
@@ -13,7 +13,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Massage Therapies',
     price: '£70',
   },
-{
+  {
     spaId: 8,
     name: 'DEEP TISSUE TENSION-EASE MASSAGE',
     description:
@@ -25,9 +25,9 @@ export const spa8Treatments: Treatment[] = [
     category: 'Massage Therapies',
     price: '£95',
   },
-{
+  {
     spaId: 8,
-    name: 'ELEMIS EXPERT™ COLLAGEN EYE BOOST',
+    name: 'ELEMIS EXPERT™ COLLAGEN EYE BOOST (ADD ON)',
     description:
       'Brighten, Hydrate & Revitalise. Elevate your facial experience with our targeted eye treatment add on, specially designed to brighten, hydrate, and revitalise.',
     shortDescription:
@@ -37,7 +37,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Facial Treatments',
     price: '£20',
   },
-{
+  {
     spaId: 8,
     name: 'ELEMIS EXPERT™ RESTORATIVE HEAD MASSAGE',
     description:
@@ -49,7 +49,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Massage Therapies',
     price: '£20',
   },
-{
+  {
     spaId: 8,
     name: 'ELEMIS EXPERT™ TOUCH DEFINE FACIAL',
     description:
@@ -61,7 +61,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Facial Treatments',
     price: '£95',
   },
-{
+  {
     spaId: 8,
     name: 'ELEMIS EXPERT™ TOUCH DEFINE FACIAL',
     description:
@@ -73,7 +73,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Facial Treatments',
     price: '£125',
   },
-{
+  {
     spaId: 8,
     name: 'ELEMIS EXPERT™ TOUCH NOURISH FACIAL',
     description:
@@ -85,7 +85,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Facial Treatments',
     price: '£70',
   },
-{
+  {
     spaId: 8,
     name: 'ELEMIS EXPERT™ TOUCH NOURISH FACIAL',
     description:
@@ -97,7 +97,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Facial Treatments',
     price: '£95',
   },
-{
+  {
     spaId: 8,
     name: 'ELEMIS EXPERT™ TOUCH RENEW FACIAL',
     description:
@@ -109,7 +109,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Facial Treatments',
     price: '£70',
   },
-{
+  {
     spaId: 8,
     name: 'ELEMIS EXPERT™ TOUCH RENEW FACIAL',
     description:
@@ -121,7 +121,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Facial Treatments',
     price: '£95',
   },
-{
+  {
     spaId: 8,
     name: 'ELEMIS EXPERT™ TOUCH REVEAL FACIAL',
     description:
@@ -133,7 +133,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Facial Treatments',
     price: '£70',
   },
-{
+  {
     spaId: 8,
     name: 'ELEMIS EXPERT™ TOUCH REVEAL FACIAL',
     description:
@@ -145,7 +145,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Facial Treatments',
     price: '£95',
   },
-{
+  {
     spaId: 8,
     name: 'HOT STONES MASSAGE',
     description:
@@ -157,7 +157,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Massage Therapies',
     price: '£95',
   },
-{
+  {
     spaId: 8,
     name: 'Manicure',
     description:
@@ -169,7 +169,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Hands & Feet Treatments',
     price: '£55',
   },
-{
+  {
     spaId: 8,
     name: 'PEACEFUL PREGNANCY MASSAGE',
     description:
@@ -181,7 +181,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Massage Therapies',
     price: '£100',
   },
-{
+  {
     spaId: 8,
     name: 'Pedicure',
     description:
@@ -193,7 +193,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Hands & Feet Treatments',
     price: '£55',
   },
-{
+  {
     spaId: 8,
     name: 'SIGNATURE MASSAGE',
     description:
@@ -205,7 +205,7 @@ export const spa8Treatments: Treatment[] = [
     category: 'Massage Therapies',
     price: '£100',
   },
-{
+  {
     spaId: 8,
     name: 'WALKERS LEG MASSAGE',
     description:
@@ -216,5 +216,5 @@ export const spa8Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£70',
-  }
+  },
 ];

@@ -29,6 +29,7 @@ import {
   getDayPassPricePerPerson,
 } from '@/data/faqs/helpers';
 import { appendUtmParams } from '@/lib/utils';
+import { getLowestDayPassPrice, getLowestTreatmentPrice } from '@/lib/prices';
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
@@ -294,7 +295,11 @@ const mdxComponents = {
     if (!spa) return null;
     return (
       <div className="my-8">
-        <SpaCard spa={spa} />
+        <SpaCard
+          spa={spa}
+          lowestDayPassPrice={getLowestDayPassPrice(spa.id)}
+          lowestTreatmentPrice={getLowestTreatmentPrice(spa.id)}
+        />
       </div>
     );
   },
@@ -673,7 +678,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               {/* Spa Cards Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8">
                 {mentionedSpas.map((spa) => (
-                  <SpaCard key={spa.id} spa={spa} />
+                  <SpaCard
+                    key={spa.id}
+                    spa={spa}
+                    lowestDayPassPrice={getLowestDayPassPrice(spa.id)}
+                    lowestTreatmentPrice={getLowestTreatmentPrice(spa.id)}
+                  />
                 ))}
               </div>
             </div>

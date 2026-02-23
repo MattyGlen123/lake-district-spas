@@ -7,51 +7,10 @@ import { Images, ArrowRight, Ticket, Sparkles } from 'lucide-react';
 import { Spa } from '@/types/spa';
 import ImageGalleryModal from '@/components/ImageGalleryModal';
 import SpaAccessBadges from '@/components/SpaAccessBadges';
-import { getDayPassOptionsBySpaId } from '@/data/day-passes';
-import { getTreatmentsBySpaId } from '@/data/treatments';
+import { getLowestDayPassPrice, getLowestTreatmentPrice } from '@/lib/prices';
 
 interface FeaturedSpaProps {
   spa: Spa;
-}
-
-/**
- * Get the lowest day pass price for a spa
- * Uses priceGBP from all available day pass options
- */
-function getLowestDayPassPrice(spaId: number): number | null {
-  const dayPassOptions = getDayPassOptionsBySpaId(spaId);
-  if (!dayPassOptions || dayPassOptions.length === 0) {
-    return null;
-  }
-
-  const prices = dayPassOptions.map((option) => option.priceGBP);
-  return Math.min(...prices);
-}
-
-/**
- * Get the lowest treatment price for a spa
- * Parses price strings (e.g., '£105') to extract numeric values
- */
-function getLowestTreatmentPrice(spaId: number): number | null {
-  const treatments = getTreatmentsBySpaId(spaId);
-  if (!treatments || treatments.length === 0) {
-    return null;
-  }
-
-  const prices = treatments
-    .filter((treatment) => treatment.price) // Only treatments with prices
-    .map((treatment) => {
-      // Parse price string like '£105' or '£110' to number
-      const priceStr = treatment.price!.replace(/[£,]/g, ''); // Remove £ and commas
-      return parseFloat(priceStr);
-    })
-    .filter((price) => !isNaN(price)); // Filter out invalid prices
-
-  if (prices.length === 0) {
-    return null;
-  }
-
-  return Math.min(...prices);
 }
 
 export default function FeaturedSpa({ spa }: FeaturedSpaProps) {
@@ -133,7 +92,7 @@ export default function FeaturedSpa({ spa }: FeaturedSpaProps) {
                   Thermal Facilities
                 </h4>
                 <ul className="space-y-2.5">
-                  {spa.thermalFacilities.map((facility, idx) => (
+                  {spa.thermalFacilities.slice(0, 4).map((facility, idx) => (
                     <li
                       key={idx}
                       className="flex items-start text-stone-600 text-sm leading-relaxed"
@@ -153,7 +112,7 @@ export default function FeaturedSpa({ spa }: FeaturedSpaProps) {
                   Pool Features
                 </h4>
                 <ul className="space-y-2.5">
-                  {spa.poolFeatures.map((pool, idx) => (
+                  {spa.poolFeatures.slice(0, 4).map((pool, idx) => (
                     <li
                       key={idx}
                       className="flex items-start text-stone-600 text-sm leading-relaxed"
@@ -245,7 +204,7 @@ export default function FeaturedSpa({ spa }: FeaturedSpaProps) {
                   Thermal Facilities
                 </h4>
                 <ul className="space-y-2.5">
-                  {spa.thermalFacilities.map((facility, idx) => (
+                  {spa.thermalFacilities.slice(0, 4).map((facility, idx) => (
                     <li
                       key={idx}
                       className="flex items-start text-stone-600 text-sm leading-relaxed"
@@ -265,7 +224,7 @@ export default function FeaturedSpa({ spa }: FeaturedSpaProps) {
                   Pool Features
                 </h4>
                 <ul className="space-y-2.5">
-                  {spa.poolFeatures.map((pool, idx) => (
+                  {spa.poolFeatures.slice(0, 4).map((pool, idx) => (
                     <li
                       key={idx}
                       className="flex items-start text-stone-600 text-sm leading-relaxed"

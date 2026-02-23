@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { Spa } from '@/types/spa';
 import { spaData } from '@/data/spas';
+import { getLowestDayPassPrice, getLowestTreatmentPrice } from '@/lib/prices';
 
 interface RelatedSpasProps {
   spa: Spa;
@@ -45,7 +46,12 @@ export default function RelatedSpas({ spa }: RelatedSpasProps) {
         {/* Spa Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8">
           {relatedSpas.map((relatedSpa) => (
-            <SpaCard key={relatedSpa.id} spa={relatedSpa} />
+            <SpaCard
+              key={relatedSpa.id}
+              spa={relatedSpa}
+              lowestDayPassPrice={getLowestDayPassPrice(relatedSpa.id)}
+              lowestTreatmentPrice={getLowestTreatmentPrice(relatedSpa.id)}
+            />
           ))}
         </div>
       </div>

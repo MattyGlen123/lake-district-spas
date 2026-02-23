@@ -2,6 +2,7 @@
 
 import SpaCard from './SpaCard';
 import { Spa } from '@/types/spa';
+import { getLowestDayPassPrice, getLowestTreatmentPrice } from '@/lib/prices';
 
 interface SpaGridProps {
   spas: Spa[];
@@ -35,7 +36,12 @@ const SpaGrid = ({ spas }: SpaGridProps) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
           {spas.map((spa) => (
-            <SpaCard key={spa.id} spa={spa} />
+            <SpaCard
+              key={spa.id}
+              spa={spa}
+              lowestDayPassPrice={getLowestDayPassPrice(spa.id)}
+              lowestTreatmentPrice={getLowestTreatmentPrice(spa.id)}
+            />
           ))}
         </div>
       </div>

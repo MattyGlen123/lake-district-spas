@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import SpaCard from './SpaCard';
 import { spaData } from '@/data/spas';
 import { Spa } from '@/types/spa';
+import { getLowestDayPassPrice, getLowestTreatmentPrice } from '@/lib/prices';
 
 export default function FeaturedSpas() {
   // Filter spas by IDs: 2, 1, 7, 5
@@ -46,7 +47,12 @@ export default function FeaturedSpas() {
         {/* Spa Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {featuredSpas.map((spa: Spa) => (
-            <SpaCard key={spa.id} spa={spa} />
+            <SpaCard
+              key={spa.id}
+              spa={spa}
+              lowestDayPassPrice={getLowestDayPassPrice(spa.id)}
+              lowestTreatmentPrice={getLowestTreatmentPrice(spa.id)}
+            />
           ))}
         </div>
       </div>
