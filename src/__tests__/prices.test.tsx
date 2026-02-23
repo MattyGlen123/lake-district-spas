@@ -10,12 +10,7 @@ import { Treatment } from '@/types/spa';
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: ({
-    fill: _fill,
-    ...props
-  }: React.ImgHTMLAttributes<HTMLImageElement> & { fill?: boolean }) => (
-    <img {...props} />
-  ),
+  default: () => <span data-testid="next-image-mock" />,
 }));
 
 jest.mock('next/link', () => ({
@@ -35,6 +30,21 @@ jest.mock('next/link', () => ({
 }));
 
 describe('Price utilities', () => {
+  async function getLowestTreatmentPriceWithMockedTreatments(
+    mockedTreatments: Treatment[]
+  ): Promise<(spaId: number) => number | null> {
+    jest.doMock('@/data/treatments', () => {
+      const actual = jest.requireActual('@/data/treatments');
+      return {
+        ...actual,
+        getTreatmentsBySpaId: () => mockedTreatments,
+      };
+    });
+
+    const pricesModule = await import('@/lib/prices');
+    return pricesModule.getLowestTreatmentPrice;
+  }
+
   afterEach(() => {
     jest.restoreAllMocks();
     jest.resetModules();
@@ -66,7 +76,7 @@ describe('Price utilities', () => {
     expect(getLowestTreatmentPrice(spaId)).toBe(expected);
   });
 
-  it('getLowestTreatmentPrice returns null when treatments exist but none include price', () => {
+  it('getLowestTreatmentPrice returns null when treatments exist but none include price', async () => {
     const treatmentsWithoutPrice: Treatment[] = [
       {
         spaId: 999,
@@ -86,27 +96,16 @@ describe('Price utilities', () => {
       },
     ];
 
-    jest.isolateModules(() => {
-      jest.doMock('@/data/treatments', () => {
-        const actual = jest.requireActual('@/data/treatments');
-        return {
-          ...actual,
-          getTreatmentsBySpaId: () => treatmentsWithoutPrice,
-        };
-      });
-
-      const { getLowestTreatmentPrice: getLowestTreatmentPriceWithMock } =
-        require('@/lib/prices');
-
-      expect(getLowestTreatmentPriceWithMock(999)).toBeNull();
-    });
+    const getLowestTreatmentPriceWithMock =
+      await getLowestTreatmentPriceWithMockedTreatments(treatmentsWithoutPrice);
+    expect(getLowestTreatmentPriceWithMock(999)).toBeNull();
   });
 
   it('getLowestTreatmentPrice returns null when no treatments exist', () => {
     expect(getLowestTreatmentPrice(11)).toBeNull();
   });
 
-  it('getLowestTreatmentPrice handles comma-formatted prices', () => {
+  it('getLowestTreatmentPrice handles comma-formatted prices', async () => {
     const commaFormattedTreatments: Treatment[] = [
       {
         spaId: 998,
@@ -128,23 +127,12 @@ describe('Price utilities', () => {
       },
     ];
 
-    jest.isolateModules(() => {
-      jest.doMock('@/data/treatments', () => {
-        const actual = jest.requireActual('@/data/treatments');
-        return {
-          ...actual,
-          getTreatmentsBySpaId: () => commaFormattedTreatments,
-        };
-      });
-
-      const { getLowestTreatmentPrice: getLowestTreatmentPriceWithMock } =
-        require('@/lib/prices');
-
-      expect(getLowestTreatmentPriceWithMock(998)).toBe(950);
-    });
+    const getLowestTreatmentPriceWithMock =
+      await getLowestTreatmentPriceWithMockedTreatments(commaFormattedTreatments);
+    expect(getLowestTreatmentPriceWithMock(998)).toBe(950);
   });
 
-  it('getLowestTreatmentPrice ignores add-ons marked in treatment names', () => {
+  it('getLowestTreatmentPrice ignores add-ons marked in treatment names', async () => {
     const treatmentsWithAddOns: Treatment[] = [
       {
         spaId: 997,
@@ -166,23 +154,12 @@ describe('Price utilities', () => {
       },
     ];
 
-    jest.isolateModules(() => {
-      jest.doMock('@/data/treatments', () => {
-        const actual = jest.requireActual('@/data/treatments');
-        return {
-          ...actual,
-          getTreatmentsBySpaId: () => treatmentsWithAddOns,
-        };
-      });
-
-      const { getLowestTreatmentPrice: getLowestTreatmentPriceWithMock } =
-        require('@/lib/prices');
-
-      expect(getLowestTreatmentPriceWithMock(997)).toBe(85);
-    });
+    const getLowestTreatmentPriceWithMock =
+      await getLowestTreatmentPriceWithMockedTreatments(treatmentsWithAddOns);
+    expect(getLowestTreatmentPriceWithMock(997)).toBe(85);
   });
 
-  it('getLowestTreatmentPrice ignores add-ons marked in descriptions', () => {
+  it('getLowestTreatmentPrice ignores add-ons marked in descriptions', async () => {
     const treatmentsWithDescriptionOnlyAddOnFlags: Treatment[] = [
       {
         spaId: 996,
@@ -205,23 +182,14 @@ describe('Price utilities', () => {
       },
     ];
 
-    jest.isolateModules(() => {
-      jest.doMock('@/data/treatments', () => {
-        const actual = jest.requireActual('@/data/treatments');
-        return {
-          ...actual,
-          getTreatmentsBySpaId: () => treatmentsWithDescriptionOnlyAddOnFlags,
-        };
-      });
-
-      const { getLowestTreatmentPrice: getLowestTreatmentPriceWithMock } =
-        require('@/lib/prices');
-
-      expect(getLowestTreatmentPriceWithMock(996)).toBe(80);
-    });
+    const getLowestTreatmentPriceWithMock =
+      await getLowestTreatmentPriceWithMockedTreatments(
+        treatmentsWithDescriptionOnlyAddOnFlags
+      );
+    expect(getLowestTreatmentPriceWithMock(996)).toBe(80);
   });
 
-  it('getLowestTreatmentPrice returns null when only add-ons exist', () => {
+  it('getLowestTreatmentPrice returns null when only add-ons exist', async () => {
     const addOnOnlyTreatments: Treatment[] = [
       {
         spaId: 995,
@@ -244,20 +212,9 @@ describe('Price utilities', () => {
       },
     ];
 
-    jest.isolateModules(() => {
-      jest.doMock('@/data/treatments', () => {
-        const actual = jest.requireActual('@/data/treatments');
-        return {
-          ...actual,
-          getTreatmentsBySpaId: () => addOnOnlyTreatments,
-        };
-      });
-
-      const { getLowestTreatmentPrice: getLowestTreatmentPriceWithMock } =
-        require('@/lib/prices');
-
-      expect(getLowestTreatmentPriceWithMock(995)).toBeNull();
-    });
+    const getLowestTreatmentPriceWithMock =
+      await getLowestTreatmentPriceWithMockedTreatments(addOnOnlyTreatments);
+    expect(getLowestTreatmentPriceWithMock(995)).toBeNull();
   });
 
   it('getLowestTreatmentPrice uses non-add-on minimums for affected spa datasets', () => {
