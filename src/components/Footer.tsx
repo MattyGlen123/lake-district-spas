@@ -45,6 +45,30 @@ const Footer = () => {
                   Partnership
                 </a>
               </li>
+              <li>
+                <a
+                  href="/blog"
+                  className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/couples-spa-lake-district"
+                  className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                >
+                  Couples Spa Guide
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/spa-days"
+                  className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                >
+                  Day Passes
+                </a>
+              </li>
             </ul>
           </div>
 
