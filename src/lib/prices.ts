@@ -1,5 +1,19 @@
 import { getDayPassOptionsBySpaId } from '@/data/day-passes';
 import { getTreatmentsBySpaId } from '@/data/treatments';
+import { Treatment } from '@/types/spa';
+
+function isAddOnTreatment(treatment: Pick<Treatment, 'name' | 'description'>): boolean {
+  const normalizedText = `${treatment.name} ${treatment.description}`
+    .toLowerCase()
+    .trim();
+
+  return (
+    /\badd[\s-]*on\b/i.test(normalizedText) ||
+    normalizedText.includes('combined with your main treatment') ||
+    normalizedText.includes('cannot be taken on its own') ||
+    normalizedText.includes('in conjunction with')
+  );
+}
 
 /**
  * Get the lowest day pass price for a spa.
@@ -27,7 +41,7 @@ export function getLowestTreatmentPrice(spaId: number): number | null {
   }
 
   const prices = treatments
-    .filter((treatment) => treatment.price) // Only treatments with prices
+    .filter((treatment) => treatment.price && !isAddOnTreatment(treatment))
     .map((treatment) => {
       // Parse price string like '£105' or '£110' to number
       const priceStr = treatment.price!.replace(/[£,]/g, ''); // Remove £ and commas

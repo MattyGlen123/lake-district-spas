@@ -123,7 +123,7 @@ export const spa4Treatments: Treatment[] = [
   },
   {
     spaId: 4,
-    name: 'Eye Massage Upgrade',
+    name: 'Eye Massage Upgrade (ADD ON)',
     description:
       'A 15-minute addition to enhance any treatment. Focused pressure point massage around the eye area to reduce tension and puffiness.',
     shortDescription:
@@ -135,7 +135,7 @@ export const spa4Treatments: Treatment[] = [
   },
   {
     spaId: 4,
-    name: 'Foot Massage Upgrade',
+    name: 'Foot Massage Upgrade (ADD ON)',
     description:
       'A 15-minute addition to enhance any treatment. Relaxing massage of feet and lower legs to promote circulation and relaxation.',
     shortDescription:
@@ -147,7 +147,7 @@ export const spa4Treatments: Treatment[] = [
   },
   {
     spaId: 4,
-    name: 'Hand Massage Upgrade',
+    name: 'Hand Massage Upgrade (ADD ON)',
     description:
       'A 15-minute addition to enhance any treatment. Soothing massage of hands and lower arms with moisturising cream.',
     shortDescription:
@@ -171,7 +171,7 @@ export const spa4Treatments: Treatment[] = [
   },
   {
     spaId: 4,
-    name: 'Hot Oil Scalp Massage Upgrade',
+    name: 'Hot Oil Scalp Massage Upgrade (ADD ON)',
     description:
       'A 15-minute addition to enhance any treatment. Warm oil scalp massage to promote relaxation and nourish the scalp.',
     shortDescription:

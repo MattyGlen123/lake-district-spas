@@ -143,6 +143,128 @@ describe('Price utilities', () => {
       expect(getLowestTreatmentPriceWithMock(998)).toBe(950);
     });
   });
+
+  it('getLowestTreatmentPrice ignores add-ons marked in treatment names', () => {
+    const treatmentsWithAddOns: Treatment[] = [
+      {
+        spaId: 997,
+        name: 'Eye Boost (ADD ON)',
+        description: 'Targeted eye enhancement.',
+        shortDescription: 'Eye add-on',
+        duration: '15 minutes',
+        category: 'Facial Treatments',
+        price: '£20',
+      },
+      {
+        spaId: 997,
+        name: 'Signature Facial',
+        description: 'Standalone facial treatment.',
+        shortDescription: 'Signature facial',
+        duration: '60 minutes',
+        category: 'Facial Treatments',
+        price: '£85',
+      },
+    ];
+
+    jest.isolateModules(() => {
+      jest.doMock('@/data/treatments', () => {
+        const actual = jest.requireActual('@/data/treatments');
+        return {
+          ...actual,
+          getTreatmentsBySpaId: () => treatmentsWithAddOns,
+        };
+      });
+
+      const { getLowestTreatmentPrice: getLowestTreatmentPriceWithMock } =
+        require('@/lib/prices');
+
+      expect(getLowestTreatmentPriceWithMock(997)).toBe(85);
+    });
+  });
+
+  it('getLowestTreatmentPrice ignores add-ons marked in descriptions', () => {
+    const treatmentsWithDescriptionOnlyAddOnFlags: Treatment[] = [
+      {
+        spaId: 996,
+        name: 'LED Energy Mask',
+        description:
+          'This treatment cannot be taken on its own, it is available in conjunction with a facial.',
+        shortDescription: 'LED enhancement',
+        duration: '20 minutes',
+        category: 'Facial Treatments',
+        price: '£20',
+      },
+      {
+        spaId: 996,
+        name: 'Elemis Nourish Facial',
+        description: 'Standalone facial treatment.',
+        shortDescription: 'Nourishing facial',
+        duration: '60 minutes',
+        category: 'Facial Treatments',
+        price: '£80',
+      },
+    ];
+
+    jest.isolateModules(() => {
+      jest.doMock('@/data/treatments', () => {
+        const actual = jest.requireActual('@/data/treatments');
+        return {
+          ...actual,
+          getTreatmentsBySpaId: () => treatmentsWithDescriptionOnlyAddOnFlags,
+        };
+      });
+
+      const { getLowestTreatmentPrice: getLowestTreatmentPriceWithMock } =
+        require('@/lib/prices');
+
+      expect(getLowestTreatmentPriceWithMock(996)).toBe(80);
+    });
+  });
+
+  it('getLowestTreatmentPrice returns null when only add-ons exist', () => {
+    const addOnOnlyTreatments: Treatment[] = [
+      {
+        spaId: 995,
+        name: 'Head Massage (ADD ON)',
+        description: 'Combined with your main treatment only.',
+        shortDescription: 'Head massage add-on',
+        duration: '15 minutes',
+        category: 'Massage Therapies',
+        price: '£20',
+      },
+      {
+        spaId: 995,
+        name: 'Eye Boost',
+        description:
+          'This treatment cannot be taken on its own, it is available in conjunction with any facial.',
+        shortDescription: 'Eye add-on',
+        duration: '15 minutes',
+        category: 'Facial Treatments',
+        price: '£20',
+      },
+    ];
+
+    jest.isolateModules(() => {
+      jest.doMock('@/data/treatments', () => {
+        const actual = jest.requireActual('@/data/treatments');
+        return {
+          ...actual,
+          getTreatmentsBySpaId: () => addOnOnlyTreatments,
+        };
+      });
+
+      const { getLowestTreatmentPrice: getLowestTreatmentPriceWithMock } =
+        require('@/lib/prices');
+
+      expect(getLowestTreatmentPriceWithMock(995)).toBeNull();
+    });
+  });
+
+  it('getLowestTreatmentPrice uses non-add-on minimums for affected spa datasets', () => {
+    expect(getLowestTreatmentPrice(5)).toBe(55);
+    expect(getLowestTreatmentPrice(8)).toBe(55);
+    expect(getLowestTreatmentPrice(9)).toBe(10);
+  });
 });
 
 describe('SpaCard price rendering', () => {
