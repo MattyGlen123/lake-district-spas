@@ -2,7 +2,7 @@ import { Users, Ticket, Waves } from 'lucide-react';
 
 export default function FeatureSpotlights() {
   return (
-    <section className="pb-32 border-b border-stone-100">
+    <section className="py-16 border-b border-stone-100">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1: Adults-Only Tranquility */}
@@ -14,8 +14,8 @@ export default function FeatureSpotlights() {
               Adults-Only Tranquility
             </h3>
             <p className="text-stone-500 text-base font-light leading-relaxed flex-grow">
-              Our curated couples retreats maintain strict adults-only
-              policies to ensure an uninterrupted atmosphere of calm.
+              Our curated couples retreats maintain strict adults-only policies
+              to ensure an uninterrupted atmosphere of calm.
             </p>
           </div>
 
@@ -29,7 +29,8 @@ export default function FeatureSpotlights() {
             </h3>
             <p className="text-stone-500 text-base font-light leading-relaxed flex-grow">
               All four featured spas offer day passes, so you can enjoy a
-              romantic spa experience together without booking an overnight stay.
+              romantic spa experience together without booking an overnight
+              stay.
             </p>
           </div>
 
@@ -43,8 +44,7 @@ export default function FeatureSpotlights() {
             </h3>
             <p className="text-stone-500 text-base font-light leading-relaxed flex-grow">
               From infinity pools overlooking the fells to riverside
-              swim-through pools, outdoor Finnish saunas, and lakeside hot
-              tubs.
+              swim-through pools, outdoor Finnish saunas, and lakeside hot tubs.
             </p>
           </div>
         </div>
@@ -52,4 +52,3 @@ export default function FeatureSpotlights() {
     </section>
   );
 }
-

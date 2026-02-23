@@ -55,7 +55,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
       const originalOverflow = document.body.style.overflow;
       // Disable scrolling
       document.body.style.overflow = 'hidden';
-      
+
       // Cleanup: restore original overflow when menu closes
       return () => {
         document.body.style.overflow = originalOverflow;
@@ -65,11 +65,14 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
 
   // Group spas by location
   const groupedSpas = useMemo(() => {
-    return spaData.reduce((acc, spa) => {
-      if (!acc[spa.location]) acc[spa.location] = [];
-      acc[spa.location].push(spa);
-      return acc;
-    }, {} as Record<string, Spa[]>);
+    return spaData.reduce(
+      (acc, spa) => {
+        if (!acc[spa.location]) acc[spa.location] = [];
+        acc[spa.location].push(spa);
+        return acc;
+      },
+      {} as Record<string, Spa[]>
+    );
   }, []);
 
   return (
@@ -106,7 +109,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <h3 className="text-[12px] font-black uppercase tracking-[0.3em] text-stone-400">
-                  Pages
+                  Main Pages
                 </h3>
                 <div className="h-px flex-grow bg-stone-100" />
               </div>
@@ -141,7 +144,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
                         : 'text-stone-800'
                     }`}
                   >
-                    Day Passes
+                    All Day Passes
                   </span>
                   <ChevronRight
                     className={`h-4 w-4 ${
@@ -168,57 +171,6 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
                   <ChevronRight
                     className={`h-4 w-4 ${
                       pathname === '/couples-spa-lake-district'
-                        ? 'text-amber-700'
-                        : 'text-stone-300'
-                    }`}
-                  />
-                </Link>
-                <Link
-                  href="/about"
-                  onClick={onClose}
-                  className="flex items-center justify-between p-4 rounded-2xl border border-transparent bg-white"
-                >
-                  <span
-                    className={`font-serif text-lg ${
-                      pathname === '/about'
-                        ? 'text-amber-700'
-                        : 'text-stone-800'
-                    }`}
-                  >
-                    About Us
-                  </span>
-                  <ChevronRight
-                    className={`h-4 w-4 ${
-                      pathname === '/about'
-                        ? 'text-amber-700'
-                        : 'text-stone-300'
-                    }`}
-                  />
-                </Link>
-                <Link
-                  href="/partnership"
-                  onClick={onClose}
-                  className="flex items-center justify-between p-4 rounded-2xl border border-transparent bg-white"
-                >
-                  <span className="font-serif text-lg">Partnership</span>
-                </Link>
-                <Link
-                  href="/blog"
-                  onClick={onClose}
-                  className="flex items-center justify-between p-4 rounded-2xl border border-transparent bg-white"
-                >
-                  <span
-                    className={`font-serif text-lg ${
-                      pathname === '/blog' || pathname.startsWith('/blog/')
-                        ? 'text-amber-700'
-                        : 'text-stone-800'
-                    }`}
-                  >
-                    Blog
-                  </span>
-                  <ChevronRight
-                    className={`h-4 w-4 ${
-                      pathname === '/blog' || pathname.startsWith('/blog/')
                         ? 'text-amber-700'
                         : 'text-stone-300'
                     }`}
@@ -283,6 +235,60 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
                   </div>
                 </div>
               ))}
+
+            {/* Bottom Links */}
+            <div className="space-y-3">
+              <h3 className="text-[12px] font-black uppercase tracking-[0.3em] text-stone-400">
+                Other Pages
+              </h3>
+              <Link
+                href="/about"
+                onClick={onClose}
+                className="flex items-center justify-between p-4 rounded-2xl border border-transparent bg-white"
+              >
+                <span
+                  className={`font-serif text-lg ${
+                    pathname === '/about' ? 'text-amber-700' : 'text-stone-800'
+                  }`}
+                >
+                  About Us
+                </span>
+                <ChevronRight
+                  className={`h-4 w-4 ${
+                    pathname === '/about' ? 'text-amber-700' : 'text-stone-300'
+                  }`}
+                />
+              </Link>
+              <Link
+                href="/partnership"
+                onClick={onClose}
+                className="flex items-center justify-between p-4 rounded-2xl border border-transparent bg-white"
+              >
+                <span className="font-serif text-lg">Partnership</span>
+              </Link>
+              <Link
+                href="/blog"
+                onClick={onClose}
+                className="flex items-center justify-between p-4 rounded-2xl border border-transparent bg-white"
+              >
+                <span
+                  className={`font-serif text-lg ${
+                    pathname === '/blog' || pathname.startsWith('/blog/')
+                      ? 'text-amber-700'
+                      : 'text-stone-800'
+                  }`}
+                >
+                  Blog
+                </span>
+                <ChevronRight
+                  className={`h-4 w-4 ${
+                    pathname === '/blog' || pathname.startsWith('/blog/')
+                      ? 'text-amber-700'
+                      : 'text-stone-300'
+                  }`}
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

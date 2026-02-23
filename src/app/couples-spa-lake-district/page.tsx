@@ -18,7 +18,10 @@ export default function CouplesSpaPage() {
       <Header />
 
       <main>
-        <CouplesSpaHero />
+        <CouplesSpaHero
+          backgroundImage="/images/blog/lake-district-spas_blog-relaxation-lounge-evening.jpg"
+          backgroundImageAlt="Evening relaxation lounge at a Lake District spa"
+        />
         <FeatureSpotlights />
         <FeaturedSpas />
         <CouplesDayPasses />
