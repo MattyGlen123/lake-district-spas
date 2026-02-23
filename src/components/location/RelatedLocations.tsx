@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin } from 'lucide-react';
+import { ChevronRight, MapPin } from 'lucide-react';
 
 interface RelatedLocation {
   name: string;
@@ -30,9 +30,18 @@ export default function RelatedLocations({
           </span>
         </div>
 
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">
-          Explore More of the Lake District
-        </h2>
+        <div className="mb-8 md:flex md:items-end md:justify-between">
+          <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-4 md:mb-0">
+            Explore More of the Lake District
+          </h2>
+          <Link
+            href="/locations"
+            className="inline-flex items-center text-sm font-semibold text-stone-900"
+          >
+            View All Locations
+            <ChevronRight className="h-4 w-4 ml-1" />
+          </Link>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {locations.map((location) => (
