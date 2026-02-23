@@ -69,6 +69,14 @@ const Footer = () => {
                   Day Passes
                 </a>
               </li>
+              <li>
+                <a
+                  href="/locations"
+                  className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                >
+                  All Locations
+                </a>
+              </li>
             </ul>
           </div>
 

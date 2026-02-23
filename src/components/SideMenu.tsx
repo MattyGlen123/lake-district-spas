@@ -179,8 +179,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
               </div>
             </div>
 
-            {/* Spa Index Section */}
-            <div className="space-y-6">
+            <div className="mb-6">
               <div>
                 <h3 className="text-[12px] font-black uppercase tracking-[0.3em] text-stone-400">
                   Spa Index
@@ -190,6 +189,14 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
                 </p>
               </div>
             </div>
+
+            <Link
+              href="/locations"
+              onClick={onClose}
+              className="flex items-center justify-between p-4 rounded-2xl border border-transparent bg-white"
+            >
+              <span className="font-serif text-lg">All Locations</span>
+            </Link>
 
             {/* Location Groups */}
             {Object.entries(groupedSpas)
@@ -235,7 +242,6 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
                   </div>
                 </div>
               ))}
-
             {/* Bottom Links */}
             <div className="space-y-3">
               <h3 className="text-[12px] font-black uppercase tracking-[0.3em] text-stone-400">

@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import SpaFilterSection from '@/components/SpaFilterSection';
 import FeaturedArticles from '@/components/FeaturedArticles';
+import FeaturedLocations from '@/components/FeaturedLocations';
 import Footer from '@/components/Footer';
 
 const organizationSchema = {
@@ -28,6 +29,7 @@ export default function Home() {
         <Hero />
         <SpaFilterSection />
         <FeaturedArticles />
+        <FeaturedLocations />
       </main>
 
       <Footer />
