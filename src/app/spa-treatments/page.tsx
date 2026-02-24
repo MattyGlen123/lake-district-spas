@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import Image from 'next/image';
 import { Sparkles } from 'lucide-react';
 import Header from '@/components/Header';
@@ -46,23 +46,12 @@ export default function SpaTreatmentsPage() {
     isOpen: isFilterModalOpen,
     activeFilters: filters,
     draftFilters: tempFilters,
-    setActiveFilters: setFilters,
     setDraftFilters: setTempFilters,
     openDraft: handleOpenModal,
     closeDraft: handleCloseModal,
     applyDraft: handleApplyFilters,
     resetBoth: resetBothFilters,
-  } = useDraftFilters(buildInitialTreatmentFilters([]));
-
-  // Initialise filter state once spa list is ready
-  useEffect(() => {
-    if (availableSpas.length > 0 && filters.spas.length === 0) {
-      const initial = buildInitialTreatmentFilters(availableSpas);
-      setFilters(initial);
-      setTempFilters(initial);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [availableSpas]);
+  } = useDraftFilters(buildInitialTreatmentFilters(availableSpas));
 
   const filteredTreatments = useMemo(
     () => filterTreatments(allTreatments, filters),

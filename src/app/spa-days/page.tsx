@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import Image from 'next/image';
 import { Ticket } from 'lucide-react';
 import Header from '@/components/Header';
@@ -55,41 +55,23 @@ export default function SpaDaysPage() {
   }, [allDayPasses]);
 
   const initialFilters = useMemo(
-    () => createDefaultDayPassFilters(500, []),
-    []
+    () =>
+      createDefaultDayPassFilters(
+        maxPrice,
+        availableSpas.map((spa) => spa.id)
+      ),
+    [maxPrice, availableSpas]
   );
   const {
     isOpen: isFilterModalOpen,
     activeFilters: filters,
     draftFilters: tempFilters,
-    setActiveFilters: setFilters,
     setDraftFilters: setTempFilters,
     openDraft: handleOpenModal,
     closeDraft: handleCloseModal,
     applyDraft: handleApplyFilters,
     resetBoth: resetBothFilters,
   } = useDraftFilters(initialFilters);
-
-  // Initialize filter state
-  useEffect(() => {
-    const computedMaxPrice =
-      allDayPasses.length > 0
-        ? Math.ceil(Math.max(...allDayPasses.map((pass) => pass.priceGBP), 0) / 50) * 50
-        : 500;
-    const computedSpaIds =
-      allDayPasses.length > 0
-        ? Array.from(new Set(allDayPasses.map((pass) => pass.spa.id)))
-        : [];
-    const nextInitial = createDefaultDayPassFilters(computedMaxPrice, computedSpaIds);
-
-    if (tempFilters.maxPrice === 0 || tempFilters.spas.length === 0) {
-      setTempFilters(nextInitial);
-    }
-    if (filters.maxPrice === 0 || filters.spas.length === 0) {
-      setFilters(nextInitial);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [allDayPasses]);
 
   // Filter logic
   const filteredDayPasses = useMemo(
