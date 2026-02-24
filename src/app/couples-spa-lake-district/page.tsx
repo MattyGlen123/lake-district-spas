@@ -24,7 +24,20 @@ export default function CouplesSpaPage() {
         />
         <FeatureSpotlights />
         <FeaturedSpas />
-        <CouplesDayPasses />
+        <CouplesDayPasses
+          featuredDayPassIds={[
+            'armathwaite-sunset-weekday',
+            'lodore-falls-derwent-delight',
+            'low-wood-bay-hideaway-retreat',
+            'swan-champagne-truffle-spa-day',
+          ]}
+          heading="Couples Day Experiences"
+          eyebrowLabel="Spontaneous Romance"
+          description="Experience a romantic spa day without booking an overnight stay. Each of our featured spas offers day passes perfect for couples."
+          ctaLabel="Browse all day passes"
+          ctaVariant="link"
+          background="bg-white"
+        />
         <FeaturedTreatments />
       </main>
 

@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import SpaFilterSection from '@/components/SpaFilterSection';
 import FeaturedArticles from '@/components/FeaturedArticles';
 import FeaturedLocations from '@/components/FeaturedLocations';
+import CouplesDayPasses from '@/components/CouplesDayPasses';
 import Footer from '@/components/Footer';
 
 const organizationSchema = {
@@ -30,6 +31,20 @@ export default function Home() {
         <SpaFilterSection />
         <FeaturedArticles />
         <FeaturedLocations />
+        <CouplesDayPasses
+          featuredDayPassIds={[
+            'armathwaite-escape-weekend',
+            'swan-champagne-truffle-spa-day',
+            'netherwood-spa-relaxation',
+            'north-lakes-simple-ritual-weekday',
+          ]}
+          heading="Spa Day Experiences"
+          eyebrowLabel="Featured Day Passes"
+          description="Explore hand-picked day passes from some of the Lake District's finest spas, no overnight stay required."
+          ctaLabel="See All Day Passes"
+          ctaVariant="button"
+          background="bg-stone-50"
+        />
       </main>
 
       <Footer />

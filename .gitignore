@@ -41,4 +41,5 @@ yarn-error.log*
 next-env.d.ts
 
 .claude/contents-in/*
+.claude/archive/*
 content/blog-topics.json
