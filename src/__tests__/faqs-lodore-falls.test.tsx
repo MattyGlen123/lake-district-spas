@@ -531,12 +531,12 @@ describe('Lodore Falls FAQs - Generated Content', () => {
       expect(dayPassesLink).toBeTruthy();
     });
 
-    it('FAQ #5 should contain link to homepage', () => {
+    it('FAQ #5 should contain link to spas page', () => {
       const faq = faqs[4];
       const { container } = render(<>{faq.answer}</>);
       const link = container.querySelector('a[href="/spas"]');
       expect(link).toBeTruthy();
-      expect(link?.textContent).toMatch(/homepage/i);
+      expect(link?.textContent).toMatch(/spas\s*page/i);
     });
 
     it('all internal links should have correct styling classes', () => {
