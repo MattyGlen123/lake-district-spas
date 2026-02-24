@@ -225,6 +225,10 @@ describe('spa-treatments page', () => {
     });
   });
 
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   const getCardNames = () =>
     screen
       .getAllByTestId('treatment-card')
@@ -335,5 +339,15 @@ describe('spa-treatments page', () => {
       'data-name',
       pageTwoFirstName
     );
+  });
+
+  it('does not auto-scroll to the results grid on render or pagination', () => {
+    render(<SpaTreatmentsPage />);
+
+    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as jest.Mock;
+    expect(scrollIntoViewMock).not.toHaveBeenCalled();
+
+    fireEvent.click(screen.getByRole('button', { name: '2' }));
+    expect(scrollIntoViewMock).not.toHaveBeenCalled();
   });
 });

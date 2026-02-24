@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 import { Ticket } from 'lucide-react';
 import Header from '@/components/Header';
@@ -25,7 +25,6 @@ import {
 
 export default function SpaDaysPage() {
   const allDayPasses = useMemo(() => getAllDayPassesWithSpa(spaData), []);
-  const gridRef = useRef<HTMLDivElement>(null);
 
   // Filter state
   const [sortBy, setSortBy] = useState<DayPassSortOption>('price-high-low');
@@ -115,7 +114,6 @@ export default function SpaDaysPage() {
     items: sortedDayPasses,
     itemsPerPage,
     resetDeps: [filters, sortBy],
-    scrollRef: gridRef,
   });
 
   // Calculate temp filtered count (for modal display)
@@ -241,7 +239,7 @@ export default function SpaDaysPage() {
         </section>
 
         {/* Filter Bar */}
-        <div className="sticky top-0 z-20 bg-soft-cream border-y border-stone-100" ref={gridRef}>
+        <div className="sticky top-0 z-20 bg-soft-cream border-y border-stone-100">
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
               {/* Mobile: Filter and Sort Row */}

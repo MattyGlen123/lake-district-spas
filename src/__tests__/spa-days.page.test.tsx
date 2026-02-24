@@ -303,6 +303,10 @@ describe('spa-days page', () => {
     });
   });
 
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   const getCardPrices = () =>
     screen
       .getAllByTestId('day-pass-card')
@@ -427,5 +431,15 @@ describe('spa-days page', () => {
 
     fireEvent.click(screen.getAllByRole('button', { name: 'Price: High to Low' })[0]);
     expect(getCardPrices()[0]).toBe(240);
+  });
+
+  it('does not auto-scroll to the results grid on render or pagination', () => {
+    render(<SpaDaysPage />);
+
+    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as jest.Mock;
+    expect(scrollIntoViewMock).not.toHaveBeenCalled();
+
+    fireEvent.click(screen.getByRole('button', { name: '2' }));
+    expect(scrollIntoViewMock).not.toHaveBeenCalled();
   });
 });

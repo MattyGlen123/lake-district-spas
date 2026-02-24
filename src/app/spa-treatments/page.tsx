@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 import { Sparkles } from 'lucide-react';
 import Header from '@/components/Header';
@@ -27,7 +27,6 @@ import {
 
 export default function SpaTreatmentsPage() {
   const allTreatments = useMemo(() => getAllTreatmentsWithSpa(spaData), []);
-  const gridRef = useRef<HTMLDivElement>(null);
 
   const availableSpas = useMemo(() => {
     const spaMap = new Map<number, string>();
@@ -91,7 +90,6 @@ export default function SpaTreatmentsPage() {
     items: sortedTreatments,
     itemsPerPage,
     resetDeps: [filters, sortBy],
-    scrollRef: gridRef,
   });
 
   const activeFilterCount =
@@ -180,10 +178,7 @@ export default function SpaTreatmentsPage() {
         </section>
 
         {/* Sticky Filter Bar */}
-        <div
-          className="sticky top-0 z-20 bg-soft-cream border-y border-stone-100"
-          ref={gridRef}
-        >
+        <div className="sticky top-0 z-20 bg-soft-cream border-y border-stone-100">
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
               {/* Mobile: Filter and Sort Row */}
