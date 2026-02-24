@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { Sparkles } from 'lucide-react';
 import Header from '@/components/Header';
@@ -27,6 +27,7 @@ import {
 
 export default function SpaTreatmentsPage() {
   const allTreatments = useMemo(() => getAllTreatmentsWithSpa(spaData), []);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const availableSpas = useMemo(() => {
     const spaMap = new Map<number, string>();
@@ -138,6 +139,25 @@ export default function SpaTreatmentsPage() {
     setTempFilters((prev) => ({ ...prev, spas: [] }));
   };
 
+  const scrollToGridTop = () => {
+    gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    scrollToGridTop();
+  };
+
+  const handlePreviousPage = () => {
+    goToPreviousPage();
+    scrollToGridTop();
+  };
+
+  const handleNextPage = () => {
+    goToNextPage();
+    scrollToGridTop();
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -176,6 +196,8 @@ export default function SpaTreatmentsPage() {
             <div className="h-px w-24 bg-white/40 mx-auto" />
           </div>
         </section>
+
+        <div ref={gridRef} className="scroll-mt-24" />
 
         {/* Sticky Filter Bar */}
         <div className="sticky top-0 z-20 bg-soft-cream border-y border-stone-100">
@@ -260,9 +282,9 @@ export default function SpaTreatmentsPage() {
                   currentPage={currentPage}
                   totalPages={totalPages}
                   pageTokens={pageTokens}
-                  onPageChange={setCurrentPage}
-                  onPreviousPage={goToPreviousPage}
-                  onNextPage={goToNextPage}
+                  onPageChange={handlePageChange}
+                  onPreviousPage={handlePreviousPage}
+                  onNextPage={handleNextPage}
                 />
               </div>
             )}

@@ -341,13 +341,36 @@ describe('spa-treatments page', () => {
     );
   });
 
-  it('does not auto-scroll to the results grid on render or pagination', () => {
+  it('does not auto-scroll on initial render', () => {
     render(<SpaTreatmentsPage />);
 
     const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as jest.Mock;
     expect(scrollIntoViewMock).not.toHaveBeenCalled();
+  });
 
+  it('scrolls to results when a page number is clicked', () => {
+    render(<SpaTreatmentsPage />);
+
+    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as jest.Mock;
     fireEvent.click(screen.getByRole('button', { name: '2' }));
-    expect(scrollIntoViewMock).not.toHaveBeenCalled();
+
+    expect(scrollIntoViewMock).toHaveBeenCalledTimes(1);
+    expect(scrollIntoViewMock).toHaveBeenLastCalledWith({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  });
+
+  it('scrolls to results when next page is clicked', () => {
+    render(<SpaTreatmentsPage />);
+
+    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as jest.Mock;
+    fireEvent.click(screen.getByRole('button', { name: 'Next page' }));
+
+    expect(scrollIntoViewMock).toHaveBeenCalledTimes(1);
+    expect(scrollIntoViewMock).toHaveBeenLastCalledWith({
+      behavior: 'smooth',
+      block: 'start',
+    });
   });
 });

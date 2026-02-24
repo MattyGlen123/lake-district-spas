@@ -1,13 +1,12 @@
 'use client';
 
-import { RefObject, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { PageToken, getPageTokens } from '@/lib/listing/pageTokens';
 
 interface UsePaginationOptions<T> {
   items: T[];
   itemsPerPage: number;
   resetDeps: unknown[];
-  scrollRef?: RefObject<HTMLElement>;
 }
 
 interface UsePaginationResult<T> {
@@ -24,7 +23,6 @@ export function usePagination<T>({
   items,
   itemsPerPage,
   resetDeps,
-  scrollRef,
 }: UsePaginationOptions<T>): UsePaginationResult<T> {
   const [currentPage, setCurrentPageState] = useState(1);
 
@@ -60,12 +58,6 @@ export function usePagination<T>({
     setCurrentPageState(1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, resetDeps);
-
-  useEffect(() => {
-    if (scrollRef?.current) {
-      scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, [currentPage, scrollRef]);
 
   return {
     currentPage,

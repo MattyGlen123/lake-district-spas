@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { Ticket } from 'lucide-react';
 import Header from '@/components/Header';
@@ -25,6 +25,7 @@ import {
 
 export default function SpaDaysPage() {
   const allDayPasses = useMemo(() => getAllDayPassesWithSpa(spaData), []);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   // Filter state
   const [sortBy, setSortBy] = useState<DayPassSortOption>('price-high-low');
@@ -194,6 +195,25 @@ export default function SpaDaysPage() {
     setTempFilters((prev) => ({ ...prev, spas: [] }));
   };
 
+  const scrollToGridTop = () => {
+    gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    scrollToGridTop();
+  };
+
+  const handlePreviousPage = () => {
+    goToPreviousPage();
+    scrollToGridTop();
+  };
+
+  const handleNextPage = () => {
+    goToNextPage();
+    scrollToGridTop();
+  };
+
   // Calculate active filter count
   const activeFilterCount = countActiveDayPassFilters(
     filters,
@@ -237,6 +257,8 @@ export default function SpaDaysPage() {
             <div className="h-px w-24 bg-white/40 mx-auto" />
           </div>
         </section>
+
+        <div ref={gridRef} className="scroll-mt-24" />
 
         {/* Filter Bar */}
         <div className="sticky top-0 z-20 bg-soft-cream border-y border-stone-100">
@@ -314,9 +336,9 @@ export default function SpaDaysPage() {
                   currentPage={currentPage}
                   totalPages={totalPages}
                   pageTokens={pageTokens}
-                  onPageChange={setCurrentPage}
-                  onPreviousPage={goToPreviousPage}
-                  onNextPage={goToNextPage}
+                  onPageChange={handlePageChange}
+                  onPreviousPage={handlePreviousPage}
+                  onNextPage={handleNextPage}
                   previousNextClassName="px-4 py-2 rounded-full bg-emerald-950 text-white font-bold text-xs uppercase tracking-widest disabled:opacity-50 disabled:cursor-not-allowed hover:bg-emerald-900 transition-colors"
                 />
               </div>
