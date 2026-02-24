@@ -1,6 +1,6 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import SpaFilterSection from '@/components/SpaFilterSection';
+import HomepageFeaturedSpas from '@/components/HomepageFeaturedSpas';
 import FeaturedArticles from '@/components/FeaturedArticles';
 import FeaturedLocations from '@/components/FeaturedLocations';
 import CouplesDayPasses from '@/components/CouplesDayPasses';
@@ -28,7 +28,7 @@ export default function Home() {
 
       <main>
         <Hero />
-        <SpaFilterSection />
+        <HomepageFeaturedSpas />
         <FeaturedArticles />
         <FeaturedLocations />
         <CouplesDayPasses

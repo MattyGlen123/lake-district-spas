@@ -17,13 +17,28 @@ export function getSpa13FAQs(spa: Spa): FAQ[] {
   const agePolicy = getAgePolicy(spa);
 
   // Day pass prices
-  const afternoonTeaPrice = getDayPassPrice(spa.id, 'whitewater-luxurious-spa-afternoon-tea');
-  const purePamperingPrice = getDayPassPrice(spa.id, 'whitewater-pure-pampering');
-  const weekdayEscapePrice = getDayPassPrice(spa.id, 'whitewater-weekday-escape');
-  const couplesRetreatPrice = getDayPassPrice(spa.id, 'whitewater-couples-retreat');
+  const afternoonTeaPrice = getDayPassPrice(
+    spa.id,
+    'whitewater-luxurious-spa-afternoon-tea'
+  );
+  const purePamperingPrice = getDayPassPrice(
+    spa.id,
+    'whitewater-pure-pampering'
+  );
+  const weekdayEscapePrice = getDayPassPrice(
+    spa.id,
+    'whitewater-weekday-escape'
+  );
+  const couplesRetreatPrice = getDayPassPrice(
+    spa.id,
+    'whitewater-couples-retreat'
+  );
 
   // Day pass durations
-  const spaDuration = getDayPassDuration(spa.id, 'whitewater-luxurious-spa-afternoon-tea');
+  const spaDuration = getDayPassDuration(
+    spa.id,
+    'whitewater-luxurious-spa-afternoon-tea'
+  );
 
   // Treatment durations
   const treatment30Min = getTreatmentDuration(spa.id, '30 minute');
@@ -38,29 +53,43 @@ export function getSpa13FAQs(spa: Spa): FAQ[] {
           <Link href="#day-passes" className="underline">
             Spa day packages
           </Link>{' '}
-          at {spa.name} start from {afternoonTeaPrice || '£60'} per person, with every package including a spa treatment, afternoon tea, and {spaDuration || '4 hours'} of full spa facilities access. All packages are for adults aged {agePolicy || '18 and over'} only.
+          at {spa.name} start from {afternoonTeaPrice || '£60'} per person, with
+          every package including a spa treatment, afternoon tea, and{' '}
+          {spaDuration || '4 hours'} of full spa facilities access. All packages
+          are for adults aged {agePolicy || '18 and over'} only.
           <br />
           <br />
           The{' '}
-          <Link href="#whitewater-luxurious-spa-afternoon-tea" className="underline">
+          <Link
+            href="#whitewater-luxurious-spa-afternoon-tea"
+            className="underline"
+          >
             Luxurious Spa With Afternoon Tea
           </Link>{' '}
-          ({afternoonTeaPrice || '£60'}) includes a {treatment30Min || '30 minute'} treatment of your choice plus afternoon tea. The{' '}
+          ({afternoonTeaPrice || '£60'}) includes a{' '}
+          {treatment30Min || '30 minute'} treatment of your choice plus
+          afternoon tea. The{' '}
           <Link href="#whitewater-pure-pampering" className="underline">
             Pure Pampering
           </Link>{' '}
-          package ({purePamperingPrice || '£90'}) upgrades to a full body Elemis massage with afternoon tea. For midweek visitors, the{' '}
+          package ({purePamperingPrice || '£90'}) upgrades to a full body Elemis
+          massage with afternoon tea. For midweek visitors, the{' '}
           <Link href="#whitewater-weekday-escape" className="underline">
             Weekday Escape
           </Link>{' '}
-          ({weekdayEscapePrice || '£90'}, Monday to Friday) offers two {treatment30Min || '30 minute'} treatments plus afternoon tea or light lunch.
+          ({weekdayEscapePrice || '£90'}, Monday to Friday) offers two{' '}
+          {treatment30Min || '30 minute'} treatments plus afternoon tea or light
+          lunch.
           <br />
           <br />
           For couples, the{' '}
           <Link href="#whitewater-couples-retreat" className="underline">
             Couples Retreat
           </Link>{' '}
-          ({couplesRetreatPrice || '£110'} per person) includes a luxury Rasul Mud Temple experience, back massages, and afternoon tea. Every package includes use of the heated indoor pool, outdoor jacuzzi, Turkish Hamam steam room, and sauna. For the full list of packages, see the{' '}
+          ({couplesRetreatPrice || '£110'} per person) includes a luxury Rasul
+          Mud Temple experience, back massages, and afternoon tea. Every package
+          includes use of the heated indoor pool, outdoor jacuzzi, Turkish Hamam
+          steam room, and sauna. For the full list of packages, see the{' '}
           <Link href="#day-passes" className="underline">
             day passes section
           </Link>
@@ -75,13 +104,24 @@ export function getSpa13FAQs(spa: Spa): FAQ[] {
       question: `What is the Rasul Mud Temple at ${spa.name}?`,
       answer: (
         <>
-          The Rasul Mud Temple at {spa.name} is an Arabian inspired steam room experience and the first of its kind in the Lake District. It uses mineral rich muds applied to different areas of the body, combined with therapeutic steam, to deeply cleanse and revitalise the skin. The treatment takes {rasulDuration || '45 minutes'} and is a genuinely unique wellness experience.
+          The Rasul Mud Temple at {spa.name} is an Arabian inspired steam room
+          experience and the first of its kind in the Lake District. It uses
+          mineral rich muds applied to different areas of the body, combined
+          with therapeutic steam, to deeply cleanse and revitalise the skin. The
+          treatment takes {rasulDuration || '45 minutes'} and is a genuinely
+          unique wellness experience.
           <br />
           <br />
-          During the session, several types of mud specific to different parts of the body are applied to the skin. You then enter the Rasul steam room where the muds work together with the steaming heat to draw out impurities and nourish the skin. The experience finishes with a refreshing shower. Guests often describe feeling completely revitalised afterwards, with noticeably softer and cleaner skin.
+          During the session, several types of mud specific to different parts
+          of the body are applied to the skin. You then enter the Rasul steam
+          room where the muds work together with the steaming heat to draw out
+          impurities and nourish the skin. The experience finishes with a
+          refreshing shower. Guests often describe feeling completely
+          revitalised afterwards, with noticeably softer and cleaner skin.
           <br />
           <br />
-          The Rasul Mud Temple is available as a standalone treatment or as part of the{' '}
+          The Rasul Mud Temple is available as a standalone treatment or as part
+          of the{' '}
           <Link href="#whitewater-couples-retreat" className="underline">
             Couples Retreat
           </Link>{' '}
@@ -100,17 +140,27 @@ export function getSpa13FAQs(spa: Spa): FAQ[] {
       question: `Is spa access included with my room at ${spa.name}?`,
       answer: (
         <>
-          Yes, complimentary access to the Cascades spa facilities is included for all hotel guests at {spa.name}, regardless of room type. This means you can use the heated indoor swimming pool, outdoor jacuzzi overlooking River Leven, traditional sauna, Turkish Hamam aromatherapy steam room, and multi sensory feature shower at no extra cost during your stay.
+          Yes, complimentary access to the Cascades spa facilities is included
+          for all hotel guests at {spa.name}, regardless of room type. This
+          means you can use the heated indoor swimming pool, outdoor jacuzzi
+          overlooking River Leven, traditional sauna, Turkish Hamam aromatherapy
+          steam room, and multi sensory feature shower at no extra cost during
+          your stay.
           <br />
           <br />
           Hotel guests also receive a 10% discount on all{' '}
           <Link href="#treatments" className="underline">
             spa treatments
           </Link>
-          , which use {brandsText || 'Elemis products'}. Robes and towels are provided when you arrive at the spa. There is no need to pre book your spa access as a hotel guest, though treatments should be booked in advance to secure your preferred time.
+          , which use {brandsText || 'Elemis products'}. Robes and towels are
+          provided when you arrive at the spa. There is no need to pre book your
+          spa access as a hotel guest, though treatments should be booked in
+          advance to secure your preferred time.
           <br />
           <br />
-          If you&apos;re not staying at the hotel, day pass packages are also available starting from {afternoonTeaPrice || '£60'} per person. For full details, see the{' '}
+          If you&apos;re not staying at the hotel, day pass packages are also
+          available starting from {afternoonTeaPrice || '£60'} per person. For
+          full details, see the{' '}
           <Link href="#access" className="underline">
             spa access information
           </Link>{' '}
@@ -129,19 +179,30 @@ export function getSpa13FAQs(spa: Spa): FAQ[] {
       question: `Can children use the spa at ${spa.name}?`,
       answer: (
         <>
-          No, the Cascades spa facilities at {spa.name} are for adults aged {agePolicy || '18 and over'} only. This applies to all spa areas including the swimming pool, outdoor jacuzzi, sauna, Turkish Hamam steam room, and feature shower. The age restriction is in place to maintain a peaceful, relaxing environment for all spa guests.
+          No, the Cascades spa facilities at {spa.name} are for adults aged{' '}
+          {agePolicy || '18 and over'} only. This applies to all spa areas
+          including the swimming pool, outdoor jacuzzi, sauna, Turkish Hamam
+          steam room, and feature shower. The age restriction is in place to
+          maintain a peaceful, relaxing environment for all spa guests.
           <br />
           <br />
-          Families are welcome to stay at the hotel and enjoy its other amenities. The hotel&apos;s riverside location in Backbarrow offers easy access to family friendly activities in the area. Fell Foot Park on Lake Windermere is a short drive away, the Lakeside and Haverthwaite steam railway runs nearby, and the market town of Ulverston is around 15 minutes by car. There are also plenty of scenic walking trails directly from the hotel along River Leven.
+          Families are welcome to stay at the hotel and enjoy its other
+          amenities. The hotel&apos;s riverside location in Backbarrow offers
+          easy access to family friendly activities in the area. Fell Foot Park
+          on Lake Windermere is a short drive away, the Lakeside and
+          Haverthwaite steam railway runs nearby, and the market town of
+          Ulverston is around 15 minutes by car. There are also plenty of scenic
+          walking trails directly from the hotel along River Leven.
           <br />
           <br />
           For more details on spa policies, see the{' '}
           <Link href="#access" className="underline">
             spa access information
           </Link>
-          . To browse other Lake District spas with different age policies, visit our{' '}
-          <Link href="/" className="underline">
-            homepage
+          . To browse other Lake District spas with different age policies,
+          visit our{' '}
+          <Link href="/spas" className="underline">
+            Spas page
           </Link>
           .
         </>
@@ -154,13 +215,26 @@ export function getSpa13FAQs(spa: Spa): FAQ[] {
       question: `What thermal facilities does ${spa.name} have?`,
       answer: (
         <>
-          The Cascades spa at {spa.name} has {thermalCount || 4} thermal facilities alongside the heated indoor pool and outdoor jacuzzi. The thermal circuit includes a traditional sauna, a Turkish Hamam aromatherapy steam room (an aromatic alternative to a standard steam room), and a multi sensory feature shower. The spa also has the Rasul Mud Temple, an Arabian steam room experience available at additional cost and the first of its kind in the Lake District.
+          The Cascades spa at {spa.name} has {thermalCount || 4} thermal
+          facilities alongside the heated indoor pool and outdoor jacuzzi. The
+          thermal circuit includes a traditional sauna, a Turkish Hamam
+          aromatherapy steam room (an aromatic alternative to a standard steam
+          room), and a multi sensory feature shower. The spa also has the Rasul
+          Mud Temple, an Arabian steam room experience available at additional
+          cost and the first of its kind in the Lake District.
           <br />
           <br />
-          The outdoor jacuzzi overlooks River Leven and is a highlight for many guests, offering a peaceful setting to relax with views of the riverside and surrounding woodland. The heated indoor swimming pool is a generous size and stays warm throughout the year. All spa facilities are for adults aged {agePolicy || '18 and over'} only, and robes and towels are provided.
+          The outdoor jacuzzi overlooks River Leven and is a highlight for many
+          guests, offering a peaceful setting to relax with views of the
+          riverside and surrounding woodland. The heated indoor swimming pool is
+          a generous size and stays warm throughout the year. All spa facilities
+          are for adults aged {agePolicy || '18 and over'} only, and robes and
+          towels are provided.
           <br />
           <br />
-          For hotel guests, access to all facilities (except the Rasul Mud Temple) is complimentary. To learn more about the Rasul experience, see{' '}
+          For hotel guests, access to all facilities (except the Rasul Mud
+          Temple) is complimentary. To learn more about the Rasul experience,
+          see{' '}
           <Link href="#faq-2" className="underline">
             the Rasul Mud Temple FAQ above
           </Link>
@@ -175,5 +249,3 @@ export function getSpa13FAQs(spa: Spa): FAQ[] {
     },
   ];
 }
-
-

@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -37,6 +39,15 @@ const Hero = () => {
           >
             Compare spas facilities and access policies
           </p>
+          <div className="mt-8">
+            <Link
+              href="/spas"
+              className="inline-flex items-center justify-center px-8 py-4 bg-amber-600 text-white font-bold text-xs uppercase tracking-widest rounded-full shadow-sm"
+            >
+              See All Spas
+              <ArrowRight className="h-4 w-4 ml-2" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

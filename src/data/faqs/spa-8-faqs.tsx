@@ -1,14 +1,14 @@
 import { FAQ } from '@/components/FAQs';
 import Link from 'next/link';
 import { Spa } from '@/types/spa';
-import {
-  getTreatmentBrandsText,
-  getTreatmentIdByName,
-} from './helpers';
+import { getTreatmentBrandsText, getTreatmentIdByName } from './helpers';
 
 export function getSpa8FAQs(spa: Spa): FAQ[] {
   const brandsText = getTreatmentBrandsText(spa.id);
-  const walkersLegMassageId = getTreatmentIdByName(spa.id, 'WALKERS LEG MASSAGE');
+  const walkersLegMassageId = getTreatmentIdByName(
+    spa.id,
+    'WALKERS LEG MASSAGE'
+  );
 
   return [
     {
@@ -18,8 +18,8 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
           No, the Waterfall Spa at {spa.name} is exclusively available to hotel
           guests and does not offer day passes or walk in spa visits. This is
           actually one of the advantages of staying here, as the spa remains
-          peaceful and uncrowded throughout your visit, giving you the freedom to
-          use the facilities at your own pace.
+          peaceful and uncrowded throughout your visit, giving you the freedom
+          to use the facilities at your own pace.
           <br />
           <br />
           As a hotel guest, your spa access is included with every room booking
@@ -33,8 +33,8 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
           If you are looking for a Lake District spa day without an overnight
           stay, several other spas in the area do offer day pass packages.
           Browse our{' '}
-          <Link href="/" className="underline">
-            full spa directory
+          <Link href="/spas" className="underline">
+            Spas page
           </Link>{' '}
           to find options.
         </>
@@ -55,26 +55,19 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
           <br />
           Unlike many Lake District spa hotels that charge separately for spa
           access or limit you to timed sessions, all facilities at the Waterfall
-          Spa are available to every guest throughout your stay. There is no need
-          to pre book a spa time slot, and you can return to use the facilities
-          as often as you like.
+          Spa are available to every guest throughout your stay. There is no
+          need to pre book a spa time slot, and you can return to use the
+          facilities as often as you like.
           <br />
           <br />
-          The spa also offers a full menu of{' '}
-          {brandsText || 'Elemis'} treatments including massages, facials, and
-          body treatments, which can be booked separately. For the complete
-          treatment list and pricing, see the{' '}
-          <Link
-            href="#treatments"
-            className="underline"
-          >
+          The spa also offers a full menu of {brandsText || 'Elemis'} treatments
+          including massages, facials, and body treatments, which can be booked
+          separately. For the complete treatment list and pricing, see the{' '}
+          <Link href="#treatments" className="underline">
             treatments section
           </Link>
           . To explore the thermal facilities in more detail, visit the{' '}
-          <Link
-            href="#thermal"
-            className="underline"
-          >
+          <Link href="#thermal" className="underline">
             facilities section
           </Link>
           .
@@ -87,15 +80,20 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
       answer: (
         <>
           The{' '}
-          <Link href={walkersLegMassageId ? `#${walkersLegMassageId}` : '#treatments'} className="underline">
+          <Link
+            href={
+              walkersLegMassageId ? `#${walkersLegMassageId}` : '#treatments'
+            }
+            className="underline"
+          >
             Walkers Leg Massage
           </Link>{' '}
-          is a specialist treatment at the Waterfall Spa
-          designed specifically for guests who have been exploring the Lake
-          District fells on foot. Using {brandsText || 'Elemis'} products, this
-          focused massage targets tired and aching legs after a day of hiking,
-          fell walking, or trail running. It is one of the few spa treatments in
-          the Lake District created specifically with walkers in mind.
+          is a specialist treatment at the Waterfall Spa designed specifically
+          for guests who have been exploring the Lake District fells on foot.
+          Using {brandsText || 'Elemis'} products, this focused massage targets
+          tired and aching legs after a day of hiking, fell walking, or trail
+          running. It is one of the few spa treatments in the Lake District
+          created specifically with walkers in mind.
           <br />
           <br />
           {spa.name} is ideally placed for this treatment thanks to its central
@@ -109,17 +107,11 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
           This treatment should be booked in advance as availability is limited.
           You can view the full range of spa treatments, including other massage
           options and facials, in the{' '}
-          <Link
-            href="#treatments"
-            className="underline"
-          >
+          <Link href="#treatments" className="underline">
             treatments section
           </Link>
           . To book your stay and treatment together, visit the{' '}
-          <Link
-            href="#book"
-            className="underline"
-          >
+          <Link href="#book" className="underline">
             booking section
           </Link>
           .
@@ -149,17 +141,11 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
           If you are planning a family stay and want everyone to be able to
           enjoy the spa, {spa.name} is a strong choice in Ambleside. For more
           details on the full range of spa facilities available, see the{' '}
-          <Link
-            href="#thermal"
-            className="underline"
-          >
+          <Link href="#thermal" className="underline">
             facilities section
           </Link>
           . For general access policies, see the{' '}
-          <Link
-            href="#access"
-            className="underline"
-          >
+          <Link href="#access" className="underline">
             spa access information
           </Link>
           .
@@ -190,18 +176,12 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
           Guest reviews consistently highlight these rooms as a standout
           feature. If a private spa experience is important to you, check
           availability early through the{' '}
-          <Link
-            href="#book"
-            className="underline"
-          >
+          <Link href="#book" className="underline">
             booking section
           </Link>
           . For information on the shared spa facilities available to all
           guests, see the{' '}
-          <Link
-            href="#thermal"
-            className="underline"
-          >
+          <Link href="#thermal" className="underline">
             facilities section
           </Link>
           .
@@ -211,4 +191,3 @@ export function getSpa8FAQs(spa: Spa): FAQ[] {
     },
   ];
 }
-

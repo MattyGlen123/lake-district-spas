@@ -37,7 +37,7 @@ export function getSpa16FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           If you&apos;re specifically looking for a Lake District spa with a swimming pool, you may want to explore{' '}
-          <Link href="/" className="underline">
+          <Link href="/spas" className="underline">
             other options
           </Link>
           . However, if you&apos;re interested in therapeutic water experiences and unique wellness facilities, {spa.name}&apos;s plunge tub circuits offer something you won&apos;t find elsewhere in the region.

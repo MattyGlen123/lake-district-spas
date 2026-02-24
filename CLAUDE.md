@@ -35,7 +35,8 @@ Pre-commit hook (Husky) runs `typecheck` then `test` — both must pass.
 
 ### Pages (App Router)
 
-- `/` — Homepage with multi-filter (access labels, location, facilities). Client component with `useState`.
+- `/` — Homepage with featured spas section (6 hand-picked spas) and hub links to other sections.
+- `/spas` — Full spa listing with filtering (access labels, location, facilities), sorting, and pagination. Client component using `spa-catalog.ts` utilities.
 - `/spa/[slug]` — Dynamic spa detail pages. Uses `generateStaticParams` from `spaData`.
 - `/spa-days` — Spa day passes page with advanced filtering.
 - `/blog` — Blog listing with category filtering.

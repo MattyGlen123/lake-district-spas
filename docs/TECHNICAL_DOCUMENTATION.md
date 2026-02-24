@@ -69,7 +69,10 @@ lake-district-spas/
 ├── src/
 │   ├── app/                    # Next.js App Router
 │   │   ├── layout.tsx         # Root layout with fonts & analytics
-│   │   ├── page.tsx            # Homepage with filtering
+│   │   ├── page.tsx            # Homepage (featured spas + hub links)
+│   │   ├── spas/
+│   │   │   ├── layout.tsx      # /spas SEO metadata
+│   │   │   └── page.tsx        # Full spa listing with filter/sort/pagination
 │   │   ├── about/
 │   │   │   └── page.tsx        # About page
 │   │   ├── spa/
@@ -334,12 +337,22 @@ interface BlogPost extends BlogPostMeta {
 #### Homepage (`src/app/page.tsx`)
 
 - **Features**:
-  - Filtering by access labels, location, facilities
-  - Filter modal with backdrop blur
-  - Sticky filter bar with count
-  - Dynamic spa grid
-- **State Management**: Client component with `useState` for filters
-- **Data**: Filters `spaData` based on selected criteria
+  - Featured spas section (`HomepageFeaturedSpas`) — 6 hand-picked spas with CTA to `/spas`
+  - Hub links to spa days, treatments, locations, and blog
+- **State Management**: Server component (no client-side state)
+- **Data**: Static — featured spa IDs hardcoded in `HomepageFeaturedSpas.tsx`
+
+#### Spas Listing Page (`src/app/spas/page.tsx`)
+
+- **Route**: `/spas`
+- **Features**:
+  - Hero section with background image
+  - Filtering by access labels, location, facilities (via `FilterModal`)
+  - Sort by name A–Z / Z–A / location
+  - Sticky filter bar with results count and sort menu
+  - Paginated spa grid (12 per page)
+- **State Management**: Client component using `useDraftFilters` and `usePagination` hooks
+- **Data**: Filters and sorts `spaData` via `src/lib/spa-catalog.ts`
 
 #### Spa Detail Page (`src/app/spa/[slug]/page.tsx`)
 
@@ -388,10 +401,15 @@ interface BlogPost extends BlogPostMeta {
 - **`Footer.tsx`**: Site footer
 - **`SideMenu.tsx`**: Right-side drawer menu with spa index
 
+#### Homepage Components
+
+- **`HomepageFeaturedSpas.tsx`**: 6 hand-picked spa cards with style-guide section header and CTA link to `/spas`
+
 #### Filtering Components
 
 - **`FilterButton.tsx`**: Minimal editorial filter trigger
 - **`FilterModal.tsx`**: Custom modal with backdrop blur, filter options
+- **`src/lib/spa-catalog.ts`**: Filter/sort utilities for the `/spas` page (`applyFilters`, `sortSpas`, `countActiveFilters`, `createDefaultSpaFilters`, `spaSortOptions`)
 
 #### Display Components
 
@@ -449,7 +467,8 @@ Defined in `tailwind.config.ts`:
 
 ### Routes
 
-- `/` - Homepage with filtering
+- `/` - Homepage (featured spas hub)
+- `/spas` - Full spa listing with filter, sort, pagination
 - `/about` - About page
 - `/blog` - Blog listing page
 - `/blog/[slug]` - Dynamic blog post pages
@@ -480,7 +499,8 @@ Defined in `tailwind.config.ts`:
 
 ### Client-Side State
 
-- **Homepage Filters**: `useState` for selected filters
+- **Spas Page Filters**: `useDraftFilters` hook (draft/active filter pattern)
+- **Spas Page Pagination**: `usePagination` hook
 - **Filter Modal**: `useState` for open/closed state
 - **Side Menu**: `useState` for open/closed state
 - **Treatment Cards**: `useState` for expanded/collapsed state

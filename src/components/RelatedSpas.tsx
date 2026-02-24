@@ -34,7 +34,7 @@ export default function RelatedSpas({ spa }: RelatedSpasProps) {
               Similar Spas to Explore
             </h2>
             <Link
-              href="/"
+              href="/spas"
               className="text-stone-900 font-semibold flex items-center text-sm"
             >
               View All

@@ -69,7 +69,7 @@ export default function FeaturedTreatments() {
             </div>
             <div className="flex-shrink-0 mt-6 md:mt-0">
               <Link
-                href="/"
+                href="/spas"
                 className="inline-flex items-center text-emerald-900 font-semibold text-sm"
               >
                 Browse all spas

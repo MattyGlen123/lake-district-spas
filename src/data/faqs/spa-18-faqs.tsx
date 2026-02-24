@@ -52,7 +52,7 @@ export function getSpa18FAQs(spa: Spa): FAQ[] {
             access information
           </Link>{' '}
           section, or explore other{' '}
-          <Link href="/" className="underline">
+          <Link href="/spas" className="underline">
             Lake District spas
           </Link>{' '}
           with different age policies.
@@ -73,7 +73,7 @@ export function getSpa18FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           If you&apos;re looking for a spa day experience in the Lake District without an overnight stay, several other spas in the area do offer day visitor packages. You can compare options on our{' '}
-          <Link href="/" className="underline">
+          <Link href="/spas" className="underline">
             homepage
           </Link>
           . For booking a stay at {spa.name}, see the{' '}

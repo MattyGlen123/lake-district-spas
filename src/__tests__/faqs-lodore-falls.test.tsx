@@ -534,7 +534,7 @@ describe('Lodore Falls FAQs - Generated Content', () => {
     it('FAQ #5 should contain link to homepage', () => {
       const faq = faqs[4];
       const { container } = render(<>{faq.answer}</>);
-      const link = container.querySelector('a[href="/"]');
+      const link = container.querySelector('a[href="/spas"]');
       expect(link).toBeTruthy();
       expect(link?.textContent).toMatch(/homepage/i);
     });

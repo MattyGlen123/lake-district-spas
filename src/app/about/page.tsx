@@ -292,7 +292,7 @@ export default function AboutPage() {
               Ready to find your sanctuary?
             </h2>
             <Link
-              href="/"
+              href="/spas"
               className="inline-flex items-center justify-center px-10 py-5 bg-stone-900 text-stone-50 font-bold rounded-full shadow-xl uppercase tracking-widest text-xs"
             >
               Explore the Directory

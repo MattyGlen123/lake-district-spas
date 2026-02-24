@@ -666,7 +666,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     Spas Mentioned in This Article
                   </h2>
                   <Link
-                    href="/"
+                    href="/spas"
                     className="text-stone-900 font-semibold flex items-center text-sm"
                   >
                     View All

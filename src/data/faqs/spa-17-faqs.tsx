@@ -125,7 +125,7 @@ export function getSpa17FAQs(spa: Spa): FAQ[] {
             access information
           </Link>{' '}
           section, or explore other{' '}
-          <Link href="/" className="underline">
+          <Link href="/spas" className="underline">
             Lake District spas
           </Link>
           .
