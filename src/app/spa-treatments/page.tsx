@@ -2,49 +2,28 @@
 
 import { useState, useMemo, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FilterButton from '@/components/FilterButton';
 import TreatmentFilters, {
   PriceBracket,
-  CATEGORY_GROUPS,
-  ALL_CATEGORY_GROUP_LABELS,
 } from '@/components/TreatmentFilters';
 import TreatmentPickCard from '@/components/TreatmentPickCard';
-import {
-  getAllTreatmentsWithSpa,
-  parseTreatmentPrice,
-} from '@/data/treatments';
+import { getAllTreatmentsWithSpa } from '@/data/treatments';
 import { spaData } from '@/data/spas';
+import SortMenu from '@/components/listing/SortMenu';
+import PaginationControls from '@/components/listing/PaginationControls';
+import { useDraftFilters } from '@/hooks/listing/useDraftFilters';
+import { usePagination } from '@/hooks/listing/usePagination';
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-
-type SortOption = 'name-asc' | 'price-low-high' | 'price-high-low';
-
-const sortOptions: { value: SortOption; label: string }[] = [
-  { value: 'name-asc', label: 'A–Z' },
-  { value: 'price-low-high', label: 'Price: Low to High' },
-  { value: 'price-high-low', label: 'Price: High to Low' },
-];
-
-function matchesPriceBracket(price: string, bracket: PriceBracket): boolean {
-  const n = parseTreatmentPrice(price);
-  switch (bracket) {
-    case 'under-75':
-      return n < 75;
-    case '75-100':
-      return n >= 75 && n <= 100;
-    case '100-150':
-      return n > 100 && n <= 150;
-    case '150-plus':
-      return n > 150;
-  }
-}
+  TreatmentSortOption,
+  buildInitialTreatmentFilters,
+  countActiveTreatmentFilters,
+  filterTreatments,
+  sortTreatments,
+  treatmentSortOptions,
+} from '@/lib/treatment-catalog';
 
 export default function SpaTreatmentsPage() {
   const allTreatments = useMemo(() => getAllTreatmentsWithSpa(spaData), []);
@@ -60,158 +39,66 @@ export default function SpaTreatmentsPage() {
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [allTreatments]);
 
-  const buildInitialFilters = (spas: { id: number; name: string }[]) => ({
-    priceBrackets: [] as PriceBracket[],
-    categories: [...ALL_CATEGORY_GROUP_LABELS],
-    spas: spas.map((s) => s.id),
-  });
-
-  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
-  const [sortBy, setSortBy] = useState<SortOption>('name-asc');
-  const [currentPage, setCurrentPage] = useState(1);
+  const [sortBy, setSortBy] = useState<TreatmentSortOption>('name-asc');
   const itemsPerPage = 12;
 
-  const [filters, setFilters] = useState(() => buildInitialFilters([]));
-  const [tempFilters, setTempFilters] = useState(() => buildInitialFilters([]));
+  const {
+    isOpen: isFilterModalOpen,
+    activeFilters: filters,
+    draftFilters: tempFilters,
+    setActiveFilters: setFilters,
+    setDraftFilters: setTempFilters,
+    openDraft: handleOpenModal,
+    closeDraft: handleCloseModal,
+    applyDraft: handleApplyFilters,
+    resetBoth: resetBothFilters,
+  } = useDraftFilters(buildInitialTreatmentFilters([]));
 
   // Initialise filter state once spa list is ready
   useEffect(() => {
     if (availableSpas.length > 0 && filters.spas.length === 0) {
-      const initial = buildInitialFilters(availableSpas);
+      const initial = buildInitialTreatmentFilters(availableSpas);
       setFilters(initial);
       setTempFilters(initial);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [availableSpas]);
 
-  // Core filter function — reused for both active and temp counts
-  function applyFilters(f: {
-    priceBrackets: PriceBracket[];
-    categories: string[];
-    spas: number[];
-  }) {
-    return allTreatments.filter((t) => {
-      // Price bracket (OR across selected brackets; no filter if none selected)
-      if (f.priceBrackets.length > 0) {
-        if (!t.price) return false;
-        const matchesAny = f.priceBrackets.some((b) =>
-          matchesPriceBracket(t.price!, b)
-        );
-        if (!matchesAny) return false;
-      }
-
-      // Category (OR across selected groups; always at least one selected)
-      if (f.categories.length < ALL_CATEGORY_GROUP_LABELS.length) {
-        const allowedCategories = CATEGORY_GROUPS.filter((g) =>
-          f.categories.includes(g.label)
-        ).flatMap((g) => g.categories);
-        if (!allowedCategories.includes(t.category)) return false;
-      }
-
-      // Spas (OR)
-      if (f.spas.length > 0 && !f.spas.includes(t.spa.id)) return false;
-
-      return true;
-    });
-  }
-
   const filteredTreatments = useMemo(
-    () => applyFilters(filters),
+    () => filterTreatments(allTreatments, filters),
     [allTreatments, filters]
   );
 
   const tempFilteredCount = useMemo(
-    () => applyFilters(tempFilters).length,
+    () => filterTreatments(allTreatments, tempFilters).length,
     [allTreatments, tempFilters]
   );
 
-  const sortedTreatments = useMemo(() => {
-    const sorted = [...filteredTreatments];
-    switch (sortBy) {
-      case 'name-asc':
-        return sorted.sort((a, b) => a.name.localeCompare(b.name));
-      case 'price-low-high':
-        return sorted.sort(
-          (a, b) =>
-            parseTreatmentPrice(a.price ?? '0') -
-            parseTreatmentPrice(b.price ?? '0')
-        );
-      case 'price-high-low':
-        return sorted.sort(
-          (a, b) =>
-            parseTreatmentPrice(b.price ?? '0') -
-            parseTreatmentPrice(a.price ?? '0')
-        );
-      default:
-        return sorted;
-    }
-  }, [filteredTreatments, sortBy]);
+  const sortedTreatments = useMemo(
+    () => sortTreatments(filteredTreatments, sortBy),
+    [filteredTreatments, sortBy]
+  );
 
-  const totalPages = Math.ceil(sortedTreatments.length / itemsPerPage);
-
-  const paginatedTreatments = useMemo(() => {
-    const start = (currentPage - 1) * itemsPerPage;
-    return sortedTreatments.slice(start, start + itemsPerPage);
-  }, [sortedTreatments, currentPage]);
-
-  // Reset to page 1 when filters or sort change
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [filters, sortBy]);
-
-  // Scroll to top of grid when page changes
-  useEffect(() => {
-    if (gridRef.current) {
-      gridRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, [currentPage]);
+  const {
+    currentPage,
+    totalPages,
+    paginatedItems: paginatedTreatments,
+    pageTokens,
+    setCurrentPage,
+    goToPreviousPage,
+    goToNextPage,
+  } = usePagination({
+    items: sortedTreatments,
+    itemsPerPage,
+    resetDeps: [filters, sortBy],
+    scrollRef: gridRef,
+  });
 
   const activeFilterCount =
-    (filters.priceBrackets.length > 0 ? 1 : 0) +
-    (filters.categories.length < ALL_CATEGORY_GROUP_LABELS.length ? 1 : 0) +
-    (filters.spas.length < availableSpas.length ? 1 : 0);
-
-  // Pagination page numbers
-  const getPageNumbers = (): (number | string)[] => {
-    const pages: (number | string)[] = [];
-    if (totalPages <= 7) {
-      for (let i = 1; i <= totalPages; i++) pages.push(i);
-    } else {
-      pages.push(1);
-      if (currentPage > 3) pages.push('...');
-      for (
-        let i = Math.max(2, currentPage - 1);
-        i <= Math.min(totalPages - 1, currentPage + 1);
-        i++
-      ) {
-        pages.push(i);
-      }
-      if (currentPage < totalPages - 2) pages.push('...');
-      pages.push(totalPages);
-    }
-    return pages;
-  };
-
-  // Modal handlers
-  const handleOpenModal = () => {
-    setTempFilters(filters);
-    setIsFilterModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setTempFilters(filters);
-    setIsFilterModalOpen(false);
-  };
-
-  const handleApplyFilters = () => {
-    setFilters(tempFilters);
-    setIsFilterModalOpen(false);
-  };
+    countActiveTreatmentFilters(filters, availableSpas.length);
 
   const handleClearFilters = () => {
-    const cleared = buildInitialFilters(availableSpas);
-    setTempFilters(cleared);
-    setFilters(cleared);
+    resetBothFilters(buildInitialTreatmentFilters(availableSpas));
   };
 
   // Temp filter change handlers
@@ -252,9 +139,6 @@ export default function SpaTreatmentsPage() {
   const handleDeselectAllSpas = () => {
     setTempFilters((prev) => ({ ...prev, spas: [] }));
   };
-
-  const currentSortLabel =
-    sortOptions.find((o) => o.value === sortBy)?.label ?? 'Sort';
 
   return (
     <div className="min-h-screen bg-background">
@@ -308,25 +192,11 @@ export default function SpaTreatmentsPage() {
                   onClick={handleOpenModal}
                   activeFilterCount={activeFilterCount}
                 />
-                <DropdownMenu>
-                  <DropdownMenuTrigger className="flex items-center gap-2 text-stone-700 text-sm font-medium hover:text-stone-900">
-                    <span>{currentSortLabel}</span>
-                    <ChevronRight className="h-4 w-4 rotate-90" />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="min-w-[200px]">
-                    {sortOptions.map((option) => (
-                      <DropdownMenuItem
-                        key={option.value}
-                        onClick={() => setSortBy(option.value)}
-                        className={
-                          sortBy === option.value ? 'bg-stone-100' : ''
-                        }
-                      >
-                        {option.label}
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                <SortMenu
+                  value={sortBy}
+                  options={treatmentSortOptions}
+                  onChange={setSortBy}
+                />
               </div>
 
               {/* Desktop: Three Column Layout */}
@@ -351,25 +221,11 @@ export default function SpaTreatmentsPage() {
                 </div>
 
                 <div className="flex-shrink-0">
-                  <DropdownMenu>
-                    <DropdownMenuTrigger className="flex items-center gap-2 text-stone-700 text-sm font-medium hover:text-stone-900">
-                      <span>{currentSortLabel}</span>
-                      <ChevronRight className="h-4 w-4 rotate-90" />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="min-w-[200px]">
-                      {sortOptions.map((option) => (
-                        <DropdownMenuItem
-                          key={option.value}
-                          onClick={() => setSortBy(option.value)}
-                          className={
-                            sortBy === option.value ? 'bg-stone-100' : ''
-                          }
-                        >
-                          {option.label}
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+                  <SortMenu
+                    value={sortBy}
+                    options={treatmentSortOptions}
+                    onChange={setSortBy}
+                  />
                 </div>
               </div>
             </div>
@@ -405,52 +261,14 @@ export default function SpaTreatmentsPage() {
             {/* Pagination */}
             {totalPages > 1 && (
               <div className="container mx-auto px-4 md:px-8 pb-16">
-                <div className="flex items-center justify-center gap-2">
-                  <button
-                    onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                    disabled={currentPage === 1}
-                    className="px-4 py-2 rounded-full bg-emerald-950 text-white font-bold text-xs uppercase tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    <ChevronLeft className="h-4 w-4" />
-                  </button>
-
-                  {getPageNumbers().map((page, index) => {
-                    if (page === '...') {
-                      return (
-                        <span
-                          key={`ellipsis-${index}`}
-                          className="px-2 text-stone-400"
-                        >
-                          ...
-                        </span>
-                      );
-                    }
-                    const pageNum = page as number;
-                    return (
-                      <button
-                        key={pageNum}
-                        onClick={() => setCurrentPage(pageNum)}
-                        className={`px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest transition-colors ${
-                          currentPage === pageNum
-                            ? 'bg-emerald-950 text-white underline'
-                            : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
-                        }`}
-                      >
-                        {pageNum}
-                      </button>
-                    );
-                  })}
-
-                  <button
-                    onClick={() =>
-                      setCurrentPage((p) => Math.min(totalPages, p + 1))
-                    }
-                    disabled={currentPage === totalPages}
-                    className="px-4 py-2 rounded-full bg-emerald-950 text-white font-bold text-xs uppercase tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    <ChevronRight className="h-4 w-4" />
-                  </button>
-                </div>
+                <PaginationControls
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  pageTokens={pageTokens}
+                  onPageChange={setCurrentPage}
+                  onPreviousPage={goToPreviousPage}
+                  onNextPage={goToNextPage}
+                />
               </div>
             )}
           </>
