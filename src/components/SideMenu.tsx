@@ -155,6 +155,28 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
                   />
                 </Link>
                 <Link
+                  href="/spa-treatments"
+                  onClick={onClose}
+                  className="flex items-center justify-between p-4 rounded-2xl border border-transparent bg-white"
+                >
+                  <span
+                    className={`font-serif text-lg ${
+                      pathname === '/spa-treatments'
+                        ? 'text-amber-700'
+                        : 'text-stone-800'
+                    }`}
+                  >
+                    All Treatments
+                  </span>
+                  <ChevronRight
+                    className={`h-4 w-4 ${
+                      pathname === '/spa-treatments'
+                        ? 'text-amber-700'
+                        : 'text-stone-300'
+                    }`}
+                  />
+                </Link>
+                <Link
                   href="/couples-spa-lake-district"
                   onClick={onClose}
                   className="flex items-center justify-between p-4 rounded-2xl border border-transparent bg-white"

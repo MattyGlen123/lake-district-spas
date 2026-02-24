@@ -45,6 +45,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   };
 
+  // Spa Treatments page entry
+  const spaTreatmentsPage = {
+    url: `${baseUrl}/spa-treatments`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  };
+
   // Locations listing page entry
   const locationsPage = {
     url: `${baseUrl}/locations`,
@@ -165,6 +173,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     partnershipPage,
     couplesSpaPage,
     spaDaysPage,
+    spaTreatmentsPage,
     locationsPage,
     blogPage,
     ...blogPosts,

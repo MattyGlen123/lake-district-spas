@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { Ticket, ChevronLeft, ChevronRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -463,26 +464,34 @@ export default function SpaDaysPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative pt-24 pb-20 overflow-hidden bg-white">
-          <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
+        <section className="relative pt-24 pb-20 overflow-hidden min-h-[560px] md:min-h-[680px] flex items-center">
+          <Image
+            src="/images/pages/ullswater-shoreline-lake-district-spa-breaks.jpg"
+            alt="Clear water lapping over pebbles on the shore of Ullswater looking across the calm lake toward wooded banks and gentle rounded fells under a bright blue summer sky in the eastern Lake District National Park"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="max-w-5xl mx-auto px-6 relative z-10 text-center w-full">
             <div className="flex justify-center mb-8">
-              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-amber-50 border border-amber-100 text-[10px] font-black uppercase tracking-[0.3em] text-amber-900 shadow-sm">
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[10px] font-black uppercase tracking-[0.3em] text-white shadow-sm">
                 <Ticket className="h-3 w-3 mr-2" />
                 Lake District Day Spa Directory
               </span>
             </div>
 
-            <h1 className="font-serif text-5xl md:text-8xl text-stone-900 tracking-tight leading-[1.1] mb-8">
+            <h1 className="font-serif text-5xl md:text-8xl text-white tracking-tight leading-[1.1] mb-8">
               The Day Pass <br />
-              <span className="italic font-medium text-emerald-950">Collection</span>
+              <span className="italic font-medium text-white/90">Collection</span>
             </h1>
 
-            <p className="max-w-2xl mx-auto text-stone-500 text-lg md:text-xl font-light leading-relaxed mb-12 italic">
+            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-light leading-relaxed mb-12 italic">
               Browse and compare luxury day spa packages from the finest hotels in the Lake
               District. All in one place, with clear pricing and inclusions.
             </p>
 
-            <div className="h-px w-24 bg-amber-200 mx-auto" />
+            <div className="h-px w-24 bg-white/40 mx-auto" />
           </div>
         </section>
 

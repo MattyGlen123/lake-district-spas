@@ -13,7 +13,7 @@ export default function TreatmentPickCard({
   spa,
 }: TreatmentPickCardProps) {
   return (
-    <article className="bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden">
+    <article className="bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden flex flex-col">
       {/* Spa Header */}
       <Link
         href={`/spa/${spa.url}`}
@@ -29,7 +29,7 @@ export default function TreatmentPickCard({
       </Link>
 
       {/* Treatment Content */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-1">
         {/* Treatment Name with Brand */}
         <div className="mb-4">
           <div className="flex items-baseline gap-2 mb-2 flex-wrap">
@@ -76,7 +76,7 @@ export default function TreatmentPickCard({
             data-spa-id={spa.url}
             data-click-intent="specific-product-click"
             data-product-name={treatment.name}
-            className="mx-auto max-w-[200px] flex items-center justify-center gap-1 px-4 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm"
+            className="mt-auto w-full flex items-center justify-center gap-1 px-4 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm"
           >
             Book Now
             <ExternalLink className="h-2 w-2" />
@@ -87,7 +87,7 @@ export default function TreatmentPickCard({
             data-spa-id={spa.url}
             data-click-intent="specific-product-click"
             data-product-name={treatment.name}
-            className="flex items-center justify-center gap-2 px-4 py-3 bg-emerald-950 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm"
+            className="mt-auto w-full flex items-center justify-center gap-2 px-4 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm"
           >
             Call Now
           </a>

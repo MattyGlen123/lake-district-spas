@@ -1,4 +1,4 @@
-import { Treatment } from '@/types/spa';
+import { Treatment, Spa } from '@/types/spa';
 import { spa1Treatments } from './spa-1-treatments';
 import { spa2Treatments } from './spa-2-treatments';
 import { spa3Treatments } from './spa-3-treatments';
@@ -53,4 +53,41 @@ export function getTreatmentsBySpaId(spaId: number): Treatment[] {
  */
 export function getAllTreatments(): Treatment[] {
   return Object.values(treatmentsBySpaId).flat();
+}
+
+/**
+ * Flattened treatment with parent spa data
+ */
+export interface TreatmentWithSpa extends Treatment {
+  spa: Spa;
+}
+
+/**
+ * Parse a treatment price string (e.g. "£100") to a number.
+ * Returns 0 if parsing fails.
+ */
+export function parseTreatmentPrice(price: string): number {
+  return parseInt(price.replace(/[£,\s]/g, ''), 10) || 0;
+}
+
+/**
+ * Get all treatments flattened with their parent spa data.
+ * Only returns treatments that have a price value.
+ * @param spaData - Array of all spa data
+ * @returns Array of treatments with parent spa info
+ */
+export function getAllTreatmentsWithSpa(spaData: Spa[]): TreatmentWithSpa[] {
+  const result: TreatmentWithSpa[] = [];
+
+  for (const [spaIdStr, treatments] of Object.entries(treatmentsBySpaId)) {
+    const spa = spaData.find((s) => s.id === Number(spaIdStr));
+    if (!spa) continue;
+
+    for (const treatment of treatments) {
+      if (!treatment.price) continue;
+      result.push({ ...treatment, spa });
+    }
+  }
+
+  return result;
 }
