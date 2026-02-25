@@ -37,7 +37,7 @@ const Hero = () => {
             className="text-sm md:text-base text-primary-foreground/80"
             style={{ animationDelay: '0.2s' }}
           >
-            Compare spas facilities and access policies
+            Compare spa facilities and access policies
           </p>
           <div className="mt-8">
             <Link
