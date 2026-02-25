@@ -28,6 +28,7 @@ export interface BlogTopic {
   priority: number;
   status: 'planned' | 'in-progress' | 'published';
   relatedSpas: string[];
+  relatedTreatments?: string[]; // composite keys: "spaId:treatmentName"
   notes?: string;
 }
 

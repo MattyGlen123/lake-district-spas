@@ -1087,8 +1087,7 @@ Spa access is complimentary for all hotel guests throughout their stay. The spa 
     agePolicy: 'Under 16 must be accompanied by an adult',
     relatedSpas: [3, 13],
     treatmentBookingPhone: '015394 32385',
-    treatmentBookingUrl:
-      'https://home.shortcutssoftware.com/waterfallspa#/_h/sites/2659/details',
+    treatmentBookingUrl: 'https://home.shortcutssoftware.com/waterfallspa/',
     hotelBookingUrl: 'https://www.hotelslakedistrict.com/',
   },
   {

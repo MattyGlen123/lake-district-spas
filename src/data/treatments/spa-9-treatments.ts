@@ -12,8 +12,7 @@ export const spa9Treatments: Treatment[] = [
     brand: undefined,
     category: 'Facial Treatments',
     price: '£20',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62627',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62627',
   },
   {
     spaId: 9,
@@ -26,8 +25,7 @@ export const spa9Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£20',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62630',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62630',
   },
   {
     spaId: 9,
@@ -40,8 +38,7 @@ export const spa9Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£185',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62618',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62618',
   },
   {
     spaId: 9,
@@ -54,8 +51,7 @@ export const spa9Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£125',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62620',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62620',
   },
   {
     spaId: 9,
@@ -68,8 +64,7 @@ export const spa9Treatments: Treatment[] = [
     brand: undefined,
     category: 'Body Treatments',
     price: '£90',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62612',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62612',
   },
   {
     spaId: 9,
@@ -82,8 +77,7 @@ export const spa9Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£110',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62616',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62616',
   },
   {
     spaId: 9,
@@ -96,8 +90,7 @@ export const spa9Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£85',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62619',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62619',
   },
   {
     spaId: 9,
@@ -110,8 +103,7 @@ export const spa9Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£110',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62622',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62622',
   },
   {
     spaId: 9,
@@ -124,8 +116,7 @@ export const spa9Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£80',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62621',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62621',
   },
   {
     spaId: 9,
@@ -138,8 +129,7 @@ export const spa9Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£90',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62624',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62624',
   },
   {
     spaId: 9,
@@ -152,8 +142,7 @@ export const spa9Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£88',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62623',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62623',
   },
   {
     spaId: 9,
@@ -166,8 +155,7 @@ export const spa9Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£88',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62617',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62617',
   },
   {
     spaId: 9,
@@ -180,8 +168,7 @@ export const spa9Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£110',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62635',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62635',
   },
   {
     spaId: 9,
@@ -194,8 +181,7 @@ export const spa9Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£68',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62636',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62636',
   },
   {
     spaId: 9,
@@ -208,8 +194,7 @@ export const spa9Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£75',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62615',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62615',
   },
   {
     spaId: 9,
@@ -222,8 +207,7 @@ export const spa9Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£85',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62613',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62613',
   },
   {
     spaId: 9,
@@ -236,8 +220,7 @@ export const spa9Treatments: Treatment[] = [
     brand: undefined,
     category: 'Body Treatments',
     price: '£35',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62614',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62614',
   },
   {
     spaId: 9,
@@ -250,8 +233,7 @@ export const spa9Treatments: Treatment[] = [
     brand: undefined,
     category: 'Body Treatments',
     price: '£55',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62631',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62631',
   },
   {
     spaId: 9,
@@ -264,8 +246,7 @@ export const spa9Treatments: Treatment[] = [
     brand: undefined,
     category: 'Body Treatments',
     price: '£55',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62634',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62634',
   },
   {
     spaId: 9,
@@ -278,8 +259,7 @@ export const spa9Treatments: Treatment[] = [
     brand: undefined,
     category: 'Body Treatments',
     price: '£35',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62632',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62632',
   },
   {
     spaId: 9,
@@ -292,8 +272,7 @@ export const spa9Treatments: Treatment[] = [
     brand: undefined,
     category: 'Body Treatments',
     price: '£35',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62633',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62633',
   },
   {
     spaId: 9,
@@ -306,8 +285,7 @@ export const spa9Treatments: Treatment[] = [
     brand: undefined,
     category: 'Body Treatments',
     price: '£45',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62629',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62629',
   },
   {
     spaId: 9,
@@ -319,8 +297,7 @@ export const spa9Treatments: Treatment[] = [
     brand: undefined,
     category: 'Body Treatments',
     price: '£10',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/62628',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/62628',
   },
   {
     spaId: 9,
@@ -333,7 +310,6 @@ export const spa9Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Body Treatments',
     price: '£20',
-    bookingUrl:
-      'https://lakesidehotel.onejourney.travel/spa/treatments/spa/treatments/63171',
+    bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/treatments/63171',
   },
 ];

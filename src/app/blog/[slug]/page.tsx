@@ -24,6 +24,7 @@ import {
   getTreatmentName,
   getTreatmentIdByName,
   getTreatmentPrice,
+  getTreatmentDuration,
   getTreatmentCouplesPrice,
   getTreatmentIndividualPrice,
   getDayPassPricePerPerson,
@@ -364,6 +365,19 @@ const mdxComponents = {
 
     // Default: return full price string
     return <span>{priceString}</span>;
+  },
+  TreatmentDuration: ({
+    spaSlug,
+    treatmentName,
+  }: {
+    spaSlug: string;
+    treatmentName: string;
+  }) => {
+    const spa = spaData.find((s) => s.url === spaSlug);
+    if (!spa) return null;
+    const duration = getTreatmentDuration(spa.id, treatmentName);
+    if (!duration) return null;
+    return <span>{duration}</span>;
   },
   SpaAccessDuration: ({ spaSlug }: { spaSlug: string }) => {
     const spa = spaData.find((s) => s.url === spaSlug);
