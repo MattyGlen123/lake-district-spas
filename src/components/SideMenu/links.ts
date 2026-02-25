@@ -12,6 +12,7 @@ export const COLLECTION_LINKS: {
     match: '/spa-treatments',
   },
   { href: '/spa-days', label: 'Day Passes', match: '/spa-days' },
+  { href: '/locations', label: 'Locations', match: '/locations' },
 ];
 
 export const PAGES_LINKS: {
@@ -25,14 +26,13 @@ export const PAGES_LINKS: {
     label: 'Couples Spa Guide',
     match: '/couples-spa-lake-district',
   },
-  { href: '/locations', label: 'All Locations', match: '/locations' },
-  { href: '/about', label: 'About Us', match: '/about' },
-  { href: '/partnership', label: 'Partnership', match: '/partnership' },
   {
     href: '/blog',
     label: 'Blog',
     match: (p) => p === '/blog' || p.startsWith('/blog/'),
   },
+  { href: '/about', label: 'About Us', match: '/about' },
+  { href: '/partnership', label: 'Partnership', match: '/partnership' },
 ];
 
 export function isPathActive(match: PathMatch, pathname: string): boolean {

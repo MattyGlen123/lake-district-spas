@@ -142,12 +142,14 @@ export default function SpasPage() {
 
             <h1 className="font-serif text-5xl md:text-8xl text-white tracking-tight leading-[1.1] mb-8">
               The Spa <br />
-              <span className="italic font-medium text-white/90">Collection</span>
+              <span className="italic font-medium text-white/90">
+                Collection
+              </span>
             </h1>
 
             <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-light leading-relaxed mb-12 italic">
-              Browse and compare all Lake District spa hotels — filter by facilities, location, and
-              access type.
+              Browse and compare all Lake District spa hotels. Filter by
+              facilities, location, and access type.
             </p>
 
             <div className="h-px w-24 bg-white/40 mx-auto" />
@@ -184,7 +186,10 @@ export default function SpasPage() {
 
                 <div className="flex-1 flex justify-center">
                   <div className="text-stone-500 text-[12px] font-bold uppercase tracking-widest whitespace-nowrap">
-                    Showing <span className="text-stone-900">{filteredSpas.length}</span>{' '}
+                    Showing{' '}
+                    <span className="text-stone-900">
+                      {filteredSpas.length}
+                    </span>{' '}
                     {filteredSpas.length === 1 ? 'spa' : 'spas'}
                   </div>
                 </div>
@@ -207,7 +212,8 @@ export default function SpasPage() {
             {/* Results Count — mobile only, above grid */}
             <div className="md:hidden container mx-auto px-4 pt-8 pb-4">
               <div className="text-stone-500 text-[12px] font-bold uppercase tracking-widest">
-                Showing <span className="text-stone-900">{filteredSpas.length}</span>{' '}
+                Showing{' '}
+                <span className="text-stone-900">{filteredSpas.length}</span>{' '}
                 {filteredSpas.length === 1 ? 'spa' : 'spas'}
               </div>
             </div>
@@ -235,7 +241,9 @@ export default function SpasPage() {
           </>
         ) : (
           <div className="container mx-auto px-4 md:px-8 py-20 text-center">
-            <p className="text-stone-500 text-lg mb-4">No spas match your filters</p>
+            <p className="text-stone-500 text-lg mb-4">
+              No spas match your filters
+            </p>
             <button
               onClick={handleClearFilters}
               className="text-amber-700 underline hover:text-amber-800"

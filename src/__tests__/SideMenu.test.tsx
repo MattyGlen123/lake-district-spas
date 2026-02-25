@@ -49,6 +49,10 @@ describe('SideMenu', () => {
         'href',
         '/spa-days'
       );
+      expect(screen.getByRole('link', { name: 'Locations' })).toHaveAttribute(
+        'href',
+        '/locations'
+      );
     });
 
     it('collapses Collection section when header is clicked', () => {
@@ -84,9 +88,6 @@ describe('SideMenu', () => {
       expect(
         screen.getByRole('link', { name: 'Couples Spa Guide' })
       ).toHaveAttribute('href', '/couples-spa-lake-district');
-      expect(
-        screen.getByRole('link', { name: 'All Locations' })
-      ).toHaveAttribute('href', '/locations');
       expect(screen.getByRole('link', { name: 'About Us' })).toHaveAttribute(
         'href',
         '/about'
