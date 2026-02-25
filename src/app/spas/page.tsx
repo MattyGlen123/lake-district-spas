@@ -126,8 +126,8 @@ export default function SpasPage() {
         {/* Hero Section */}
         <section className="relative pt-24 pb-20 overflow-hidden min-h-[560px] md:min-h-[680px] flex items-center">
           <Image
-            src="/images/pages/ullswater-shoreline-lake-district-spa-breaks.jpg"
-            alt="Clear water lapping over pebbles on the shore of Ullswater looking across the calm lake toward wooded banks and gentle rounded fells under a bright blue summer sky in the eastern Lake District National Park"
+            src="/images/pages/ullswater-aerial-lake-district-spa-breaks.jpg"
+            alt="Aerial view of Ullswater stretching between wooded shores and green farmland with a wooden jetty in the foreground, rounded fells and valleys of the eastern Lake District rising under a hazy summer sky"
             fill
             className="object-cover"
             priority

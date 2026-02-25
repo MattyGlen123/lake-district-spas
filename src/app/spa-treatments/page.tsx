@@ -155,8 +155,8 @@ export default function SpaTreatmentsPage() {
         {/* Hero Section */}
         <section className="relative pt-24 pb-20 overflow-hidden min-h-[560px] md:min-h-[680px] flex items-center">
           <Image
-            src="/images/pages/ullswater-shoreline-lake-district-spa-breaks.jpg"
-            alt="Clear water lapping over pebbles on the shore of Ullswater looking across the calm lake toward wooded banks and gentle rounded fells under a bright blue summer sky in the eastern Lake District National Park"
+            src="/images/pages/windermere-aerial-lake-district-spa-breaks.jpg"
+            alt="Aerial view looking north along Lake Windermere with sunlight glinting off the deep blue water, wooded shorelines curving into the distance and green Lakeland fells rising beyond on a clear summer afternoon"
             fill
             className="object-cover"
             priority
