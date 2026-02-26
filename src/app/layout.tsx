@@ -17,7 +17,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Lake District Spas — Hotels, Day Passes & Treatments Guide',
+  title: 'Lake District Spas | Hotels, Day Passes & Treatments Guide',
   description:
     'Find your perfect Lake District spa. Compare facilities, access policies, and thermal suites. Know before you book if spa access is included with your room.',
   keywords: [
@@ -79,7 +79,7 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <GoogleAnalytics/>
+        <GoogleAnalytics />
         {/* Ahrefs Analytics */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
