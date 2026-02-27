@@ -25,7 +25,9 @@ erDiagram
     Treatment {
         number spaId FK
         string name
-        TreatmentCategory category "Massage | Facial | Body | Hands and Feet"
+        string description
+        string shortDescription
+        TreatmentCategory category "Massage Therapies | Facial Treatments | Body Treatments | Hands & Feet Treatments"
         string duration
         string price
         string brand
@@ -34,25 +36,31 @@ erDiagram
 
     DayPassOption {
         string id PK
-        number spaId FK
         string packageName
         number priceGBP
         number pricePerPerson
         number spaDuration
+        string requiredNumbers
         boolean treatmentsIncluded
         boolean refreshmentsIncluded
         boolean mealIncluded
         string[] included
+        string description
         string daysAvailable
         string ageRestriction
+        boolean bookingRequired
+        string phoneBooking
+        string dayPassUrl
+        string bookingUrl
+        string bookingEmail
+        string voucherUrl
         string lastVerified
     }
 
     FAQ {
-        number spaId FK
         string question
-        string answer
-        string answerHtml
+        string answer "string or ReactNode"
+        string schemaText "optional — plain text for Schema.org"
     }
 
     LocationFAQ {
