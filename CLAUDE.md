@@ -24,25 +24,32 @@ Pre-commit hook (Husky) runs `typecheck` then `test` — both must pass.
 
 ## Architecture
 
+> Compressed diagrams are in `.claude/diagrams/`. Load them at session start for accurate context without file-read overhead.
+>
+> | File | Covers |
+> |------|--------|
+> | `00-overview.md` | System-wide — data, libs, pages |
+> | `01-data-layer.md` | Spa entity model and relationships |
+> | `02-page-routing.md` | App Router URL structure |
+> | `03-component-hierarchy.md` | Spa detail page component tree |
+> | `04-data-flow.md` | How data flows from TS files to pages |
+> | `05-blog-system.md` | MDX pipeline and blog utilities |
+> | `06-filtering-logic.md` | Filter/sort/paginate flow |
+> | `07-location-pages.md` | Location page structure and data flow |
+
 ### Data Layer (no backend — all local TypeScript)
 
-- **`src/data/spas.ts`** — Central spa database (~22 spas). Exported as `spaData`. Each spa has an `id` (number), `url` (slug), facilities, images, access policies, related spas.
-- **`src/data/treatments/`** — One file per spa (`spa-{id}-treatments.ts`). Access via `getTreatmentsBySpaId(id)` or `getAllTreatments()` from the index.
-- **`src/data/day-passes/`** — One file per spa (`spa-{id}-day-passes.ts`). Access via `getDayPassesBySpaId(id)` or `getDayPassOptionsBySpaId(id)` from the index.
-- **`src/data/faqs/`** — FAQ generation helpers per spa.
-- **`src/types/spa.ts`** — Core types: `Spa`, `Treatment`, `DayPass`, `AccessLabel`, etc.
-- **`src/types/blog.ts`** — Blog types: `BlogPostMeta`, `BlogPost`.
+See `.claude/diagrams/01-data-layer.md` for the full entity model. Key access patterns:
+
+- **`spaData`** — exported array from `src/data/spas.ts`. ~22 spas, each with `id` and `url` (slug).
+- **`getTreatmentsBySpaId(id)`** — `src/data/treatments/index.ts`
+- **`getDayPassesBySpaId(id)`** — `src/data/day-passes/index.ts`
+- **`getFAQsBySpaId(id)`** — `src/data/faqs/index.ts`
+- **`src/types/spa.ts`** — Core types: `Spa`, `Treatment`, `DayPassOption`, `AccessLabel`.
 
 ### Pages (App Router)
 
-- `/` — Homepage with featured spas section (6 hand-picked spas) and hub links to other sections.
-- `/spas` — Full spa listing with filtering (access labels, location, facilities), sorting, and pagination. Client component using `spa-catalog.ts` utilities.
-- `/spa/[slug]` — Dynamic spa detail pages. Uses `generateStaticParams` from `spaData`.
-- `/spa-days` — Spa day passes page with advanced filtering.
-- `/blog` — Blog listing with category filtering.
-- `/blog/[slug]` — MDX blog posts. Uses `next-mdx-remote/rsc`.
-- `/[location]` — 13 location pages (Windermere, Ambleside, Borrowdale, etc.) via `src/lib/locationPages.ts`.
-- `/about` — About page.
+See `.claude/diagrams/02-page-routing.md` for full URL structure. All pages are statically generated. `/spas` is the only `'use client'` page (filter/sort/paginate). Location pages are 13 individual static folders under `src/app/location/`.
 
 ### Blog System
 

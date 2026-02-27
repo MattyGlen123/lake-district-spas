@@ -1,0 +1,50 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Ensure claude CLI is on PATH (covers global npm installs)
+export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
+
+# Skip if only diagram files changed — prevents an infinite loop when
+# this hook commits updated diagrams and triggers itself again.
+CHANGED_NON_DIAGRAM=$(git diff HEAD~1 --name-only 2>/dev/null | grep -v "^\.claude/diagrams/")
+if [ -z "$CHANGED_NON_DIAGRAM" ]; then
+  exit 0
+fi
+
+# Bail gracefully if claude CLI is not installed
+if ! command -v claude > /dev/null 2>&1; then
+  echo "post-commit: claude CLI not found — skipping diagram review"
+  exit 0
+fi
+
+CHANGED_FILES=$(git diff HEAD~1 --name-only 2>/dev/null)
+
+echo ""
+echo "post-commit: reviewing diagrams..."
+
+claude -p "The following files were just committed to this repository. Review each diagram in .claude/diagrams/ and update any whose content is now inaccurate. Only edit diagrams where the committed changes directly affect their accuracy — do not touch diagrams that are still correct, and do not modify any other files.
+
+Changed files:
+$CHANGED_FILES
+
+Diagram update rules:
+- 00-overview.md: new pages, data sources, or libraries added/removed
+- 01-data-layer.md: src/types/spa.ts fields changed, or a data collection added/removed
+- 02-page-routing.md: routes added, renamed, or restructured
+- 03-component-hierarchy.md: components added to or removed from the spa detail page
+- 04-data-flow.md: data sources wired to new pages, or static generation patterns changed
+- 05-blog-system.md: MDX components, frontmatter fields, or blog utility functions changed
+- 06-filtering-logic.md: filter dimensions, sort options, or pagination behaviour changed
+- 07-location-pages.md: new location page added, or locationPages.ts structure changed" \
+  --dangerously-skip-permissions 2>&1
+
+# If any diagrams were updated, commit them as a follow-up
+if ! git diff --quiet .claude/diagrams/; then
+  git add .claude/diagrams/
+  git commit -m "chore: update diagrams
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
+  echo "post-commit: diagrams updated and committed."
+else
+  echo "post-commit: no diagram updates needed."
+fi
