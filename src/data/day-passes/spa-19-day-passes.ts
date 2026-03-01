@@ -25,7 +25,7 @@ export const spa19DayPasses: SpaDayPasses = {
       ageRestriction: '16+',
       bookingRequired: true,
       dayPassUrl: 'https://www.underscar.co.uk/spa/',
-      bookingUrl: 'https://underscar.try.be/',
+      bookingUrl: 'https://underscar.try.be/items/65b4f16e90dd65ddf90f8f26/twilight-spa-experience',
       lastVerified: '2026-02-28',
     },
     {
@@ -53,7 +53,7 @@ export const spa19DayPasses: SpaDayPasses = {
       ageRestriction: '16+',
       bookingRequired: true,
       dayPassUrl: 'https://www.underscar.co.uk/spa/',
-      bookingUrl: 'https://underscar.try.be/',
+      bookingUrl: 'https://underscar.try.be/items/6581b78cd738b4eec60662d7/harmonie-half-spa-day',
       lastVerified: '2026-02-28',
     },
     {
@@ -81,7 +81,7 @@ export const spa19DayPasses: SpaDayPasses = {
       ageRestriction: '16+',
       bookingRequired: true,
       dayPassUrl: 'https://www.underscar.co.uk/spa/',
-      bookingUrl: 'https://underscar.try.be/',
+      bookingUrl: 'https://underscar.try.be/items/657242904ea5689b6c06e573/serenity-half-spa-day',
       lastVerified: '2026-02-28',
     },
     {
@@ -110,7 +110,7 @@ export const spa19DayPasses: SpaDayPasses = {
       ageRestriction: '16+',
       bookingRequired: true,
       dayPassUrl: 'https://www.underscar.co.uk/spa/',
-      bookingUrl: 'https://underscar.try.be/',
+      bookingUrl: 'https://underscar.try.be/items/65723dc3210eadd5d500250c/mindfulness-half-spa-day',
       lastVerified: '2026-02-28',
     },
     {
@@ -137,7 +137,7 @@ export const spa19DayPasses: SpaDayPasses = {
       ageRestriction: '16+',
       bookingRequired: true,
       dayPassUrl: 'https://www.underscar.co.uk/spa/',
-      bookingUrl: 'https://underscar.try.be/',
+      bookingUrl: 'https://underscar.try.be/items/65724105e24a2fe9550692e6/wellbeing-full-spa-day',
       lastVerified: '2026-02-28',
     },
     {
@@ -164,7 +164,7 @@ export const spa19DayPasses: SpaDayPasses = {
       ageRestriction: '16+',
       bookingRequired: true,
       dayPassUrl: 'https://www.underscar.co.uk/spa/',
-      bookingUrl: 'https://underscar.try.be/',
+      bookingUrl: 'https://underscar.try.be/items/657626bf1363da0fcf0b156f/peaceful-full-spa-day',
       lastVerified: '2026-02-28',
     },
     {
@@ -191,7 +191,7 @@ export const spa19DayPasses: SpaDayPasses = {
       ageRestriction: '16+',
       bookingRequired: true,
       dayPassUrl: 'https://www.underscar.co.uk/spa/',
-      bookingUrl: 'https://underscar.try.be/',
+      bookingUrl: 'https://underscar.try.be/items/65785b1f4e416d55710c20f2/reflection-full-spa-day',
       lastVerified: '2026-02-28',
     },
   ],

@@ -12,7 +12,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '30 minutes',
     price: '£60',
     category: 'Massage Therapies',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/657241c372c9e51236026536/back-neck-and-shoulder-massage',
   },
   {
     spaId: 19,
@@ -24,7 +24,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '60 minutes',
     price: '£80',
     category: 'Massage Therapies',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/657229fa0ef476166505b1e6/full-body-massage',
   },
   {
     spaId: 19,
@@ -36,7 +36,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '60 minutes',
     price: '£85',
     category: 'Massage Therapies',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6575ecc44c7f39c7a40fe914/deep-tissue-massage',
   },
   {
     spaId: 19,
@@ -48,7 +48,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '30 minutes',
     price: '£65',
     category: 'Massage Therapies',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/65761954ab7edf818601b833/hot-stone-massage-30-minutes',
   },
   {
     spaId: 19,
@@ -60,7 +60,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '60 minutes',
     price: '£85',
     category: 'Massage Therapies',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/65761f432b390463510a5e4c/hot-stone-massage',
   },
   {
     spaId: 19,
@@ -72,7 +72,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '60 minutes',
     price: '£90',
     category: 'Massage Therapies',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6575f0ca9831c5e3940a8126/aromatherapy-massage',
   },
   {
     spaId: 19,
@@ -84,7 +84,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '90 minutes',
     price: '£120',
     category: 'Massage Therapies',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6575e9641cea580b850f1285/aromatherapy-massage-including-face-and-scalp',
   },
   {
     spaId: 19,
@@ -96,7 +96,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '45 minutes',
     price: '£65',
     category: 'Massage Therapies',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6576182da969f2978902643d/indian-head-massage',
   },
   {
     spaId: 19,
@@ -108,7 +108,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '60 minutes',
     price: '£90',
     category: 'Massage Therapies',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/684721459f4366af900baec1/body-bliss-lymphatic-drainage-massage-60-minutes',
   },
   {
     spaId: 19,
@@ -120,7 +120,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '30 minutes',
     price: '£60',
     category: 'Massage Therapies',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6717a47c2bdb49d01404604b/walkers-leg-massage',
   },
   {
     spaId: 19,
@@ -132,7 +132,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '30 minutes',
     price: '£65',
     category: 'Massage Therapies',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/657976ccbfda668acc038003/cinnamon-back-massage',
   },
   {
     spaId: 19,
@@ -144,7 +144,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '60 minutes',
     price: '£85',
     category: 'Massage Therapies',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6579777a946af32b8e07c4a2/cinnamon-body-massage',
   },
 
   // Facial Treatments - Germaine de Capuccini
@@ -159,7 +159,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£65',
     brand: 'Germaine de Capuccini',
     category: 'Facial Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6572343b93dfeca4a30caeb2/spa-prescriptive-express-facial-so-delicate',
   },
   {
     spaId: 19,
@@ -172,7 +172,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£65',
     brand: 'Germaine de Capuccini',
     category: 'Facial Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/657233fd162415b5e208ebea/spa-prescriptive-express-facial-deeply-hydrating',
   },
   {
     spaId: 19,
@@ -185,7 +185,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£65',
     brand: 'Germaine de Capuccini',
     category: 'Facial Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/65723421162415b5e208ebf1/spa-prescriptive-express-facial-royal-jelly',
   },
   {
     spaId: 19,
@@ -198,7 +198,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£90',
     brand: 'Germaine de Capuccini',
     category: 'Facial Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6572317dadd962eeb2015499/spa-prescriptive-facial-so-delicate',
   },
   {
     spaId: 19,
@@ -211,7 +211,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£90',
     brand: 'Germaine de Capuccini',
     category: 'Facial Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/65722ea964493fb1df00a176/spa-prescriptive-facial-deeply-hydrating',
   },
   {
     spaId: 19,
@@ -224,7 +224,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£90',
     brand: 'Germaine de Capuccini',
     category: 'Facial Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6572313ab721cc79e0029e92/spa-prescriptive-facial-royal-jelly',
   },
   {
     spaId: 19,
@@ -237,7 +237,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£90',
     brand: 'Germaine de Capuccini',
     category: 'Facial Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/65722f1b82557d9db704d496/skin-zen-rose-honey-harmony-facial',
   },
   {
     spaId: 19,
@@ -250,7 +250,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£115',
     brand: 'Germaine de Capuccini',
     category: 'Facial Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6572397be26579e09a06d842/timexpert-radiance-c-illuminating-advanced-facial',
   },
   {
     spaId: 19,
@@ -263,7 +263,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£120',
     brand: 'Germaine de Capuccini',
     category: 'Facial Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6888a314c9c3aaf3ff05a5c2/timexpert-wrink-less-pro-collagen-facial',
   },
   {
     spaId: 19,
@@ -276,7 +276,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£120',
     brand: 'Germaine de Capuccini',
     category: 'Facial Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/657239d4aaf793ea170da4c9/timexpert-rides-neo-age-advanced-therapy-facial',
   },
   {
     spaId: 19,
@@ -289,7 +289,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£120',
     brand: 'Germaine de Capuccini',
     category: 'Facial Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/669f7a4bee0d7f237c0d5299/hydraluronic-time-expert-advanced-facial',
   },
   {
     spaId: 19,
@@ -302,7 +302,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£90',
     brand: 'Germaine de Capuccini',
     category: 'Facial Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6575f1b9f821e853f3000362/for-men-energy-facial',
   },
 
   // Body Treatments
@@ -317,7 +317,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£90',
     brand: 'NEOM Organics',
     category: 'Body Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/65723c5f5cba8d801a043749/neom-de-stress-1-hour',
   },
   {
     spaId: 19,
@@ -330,7 +330,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£90',
     brand: 'NEOM Organics',
     category: 'Body Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/65723b3f3fca2d5435033e06/neom-mood-boost-1-hour',
   },
   {
     spaId: 19,
@@ -343,7 +343,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£90',
     brand: 'NEOM Organics',
     category: 'Body Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/65723c827c58cb41cc0b4632/neom-sleep-1-hour',
   },
   {
     spaId: 19,
@@ -355,7 +355,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '60 minutes',
     price: '£90',
     category: 'Body Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/65787da932db6fef3e07f172/reflexology',
   },
   {
     spaId: 19,
@@ -368,7 +368,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£120',
     brand: 'Germaine de Capuccini',
     category: 'Body Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/65787f8164ad6ee44701e233/sperience-moments-serenity',
   },
   {
     spaId: 19,
@@ -381,7 +381,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£120',
     brand: 'Germaine de Capuccini',
     category: 'Body Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6578818f26b6d404e0092ca2/sperience-moments-detox',
   },
   {
     spaId: 19,
@@ -394,7 +394,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£120',
     brand: 'Germaine de Capuccini',
     category: 'Body Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/65788223c813f8dd42023123/sperience-moments-energise',
   },
   {
     spaId: 19,
@@ -406,7 +406,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '60 minutes',
     price: '£105',
     category: 'Body Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/657883194abb72f05708d906/sperience-chocolate-sensation',
   },
   {
     spaId: 19,
@@ -418,7 +418,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '90 minutes',
     price: '£120',
     category: 'Body Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/66127a7226a698616407c2b6/baobab-pregnancy-treatment',
   },
 
   // Hands & Feet Treatments
@@ -433,7 +433,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£35',
     brand: 'The Gel Bottle',
     category: 'Hands & Feet Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6574ad68426ce7a75c0eb564/gel-mini-manicure',
   },
   {
     spaId: 19,
@@ -446,7 +446,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£60',
     brand: 'The Gel Bottle',
     category: 'Hands & Feet Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6574b07455303dc25b041893/gel-luxury-manicure',
   },
   {
     spaId: 19,
@@ -459,7 +459,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£35',
     brand: 'The Gel Bottle',
     category: 'Hands & Feet Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6574af67d2b6b575bc0e5c33/gel-mini-pedicure',
   },
   {
     spaId: 19,
@@ -472,7 +472,7 @@ export const spa19Treatments: Treatment[] = [
     price: '£60',
     brand: 'The Gel Bottle',
     category: 'Hands & Feet Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6574afd8caf7ad9a9a07856b/gel-luxury-pedicure',
   },
   {
     spaId: 19,
@@ -484,7 +484,7 @@ export const spa19Treatments: Treatment[] = [
     duration: '30 minutes',
     price: '£55',
     category: 'Hands & Feet Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6575ec34dbbb87ea850b5e9a/aroma-hand-spa',
   },
   {
     spaId: 19,
@@ -496,6 +496,6 @@ export const spa19Treatments: Treatment[] = [
     duration: '30 minutes',
     price: '£55',
     category: 'Hands & Feet Treatments',
-    bookingUrl: 'https://underscar.try.be/',
+    bookingUrl: 'https://underscar.try.be/items/6578a64d7d2b9355570a0418/aroma-foot-spa',
   },
 ];
