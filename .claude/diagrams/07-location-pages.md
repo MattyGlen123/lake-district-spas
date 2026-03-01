@@ -15,11 +15,11 @@ flowchart TD
 
     spaData["spaData"] --> |"filter: spa.location === locationName"| localSpas["Spas at this location"]
 
-    localSpas --> LocationPage["src/app/location/spas-in-*/page.tsx\n13 individual static page folders"]
+    localSpas --> LocationPage["src/app/location/spas-in-*/page.tsx\n14 individual static page folders"]
     metadata --> LocationPage
     locationFaqs["src/data/location-faqs/\ngetLocationFAQs(location)"] --> LocationPage
 
-    LocationPage --> |"static build"| rendered["13 URLs:\n/location/spas-in-windermere\n/location/spas-in-ambleside\n... etc"]
+    LocationPage --> |"static build"| rendered["14 URLs:\n/location/spas-in-windermere\n/location/spas-in-keswick\n... etc"]
 
     getPath --> |"used in SideMenu + internal links\nreturns null if no page exists yet"| internalLinks["Internal linking\nSideMenu/links.ts, spa cards"]
 ```

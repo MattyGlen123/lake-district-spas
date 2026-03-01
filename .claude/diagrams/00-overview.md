@@ -27,7 +27,7 @@ graph TD
         spaTreatments[/spa-treatments — Treatments]
         blog[/blog — Blog list]
         blogPost[/blog/:slug — MDX post]
-        location[/location/spas-in-:slug — 13 location pages]
+        location[/location/spas-in-:slug — 14 location pages]
         locations[/locations — Location hub]
         couples[/couples-spa-lake-district]
     end
