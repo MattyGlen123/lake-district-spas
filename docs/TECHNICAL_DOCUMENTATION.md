@@ -337,10 +337,10 @@ interface BlogPost extends BlogPostMeta {
 #### Homepage (`src/app/page.tsx`)
 
 - **Features**:
-  - Featured spas section (`HomepageFeaturedSpas`) — 6 hand-picked spas with CTA to `/spas`
+  - Featured spas section (`FeaturedSpasGrid`) — 6 hand-picked spas with CTA to `/spas`
   - Hub links to spa days, treatments, locations, and blog
 - **State Management**: Server component (no client-side state)
-- **Data**: Static — featured spa IDs hardcoded in `HomepageFeaturedSpas.tsx`
+- **Data**: Static — featured spa IDs hardcoded in `FeaturedSpasGrid.tsx`
 
 #### Spas Listing Page (`src/app/spas/page.tsx`)
 
@@ -403,7 +403,7 @@ interface BlogPost extends BlogPostMeta {
 
 #### Homepage Components
 
-- **`HomepageFeaturedSpas.tsx`**: 6 hand-picked spa cards with style-guide section header and CTA link to `/spas`
+- **`FeaturedSpasGrid.tsx`**: 6 hand-picked spa cards with style-guide section header and CTA link to `/spas`
 
 #### Filtering Components
 

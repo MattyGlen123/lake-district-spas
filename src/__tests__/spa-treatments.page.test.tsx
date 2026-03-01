@@ -214,6 +214,9 @@ jest.mock('@/data/treatments', () => ({
   __esModule: true,
   getAllTreatmentsWithSpa: jest.fn(() => mockTreatments),
   parseTreatmentPrice: jest.fn((price: string) => parsePounds(price)),
+  getTreatmentsBySpaId: jest.fn((spaId: number) =>
+    mockTreatments.filter((t) => t.spaId === spaId).map((t) => ({ ...t, price: t.price }))
+  ),
 }));
 
 describe('spa-treatments page', () => {

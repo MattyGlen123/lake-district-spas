@@ -12,6 +12,7 @@ import { getAllDayPassesWithSpa } from '@/data/day-passes';
 import { spaData } from '@/data/spas';
 import SortMenu from '@/components/listing/SortMenu';
 import PaginationControls from '@/components/listing/PaginationControls';
+import FeaturedSpasGrid from '@/components/FeaturedSpasGrid';
 import { useDraftFilters } from '@/hooks/listing/useDraftFilters';
 import { usePagination } from '@/hooks/listing/usePagination';
 import {
@@ -367,6 +368,8 @@ export default function SpaDaysPage() {
           onSelectAllSpas={handleSelectAllSpas}
           onDeselectAllSpas={handleDeselectAllSpas}
         />
+
+        <FeaturedSpasGrid spaIds={[5, 9, 14]} />
       </main>
 
       <Footer />

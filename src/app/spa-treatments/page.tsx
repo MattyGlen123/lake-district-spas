@@ -6,14 +6,13 @@ import { Sparkles } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FilterButton from '@/components/FilterButton';
-import TreatmentFilters, {
-  PriceBracket,
-} from '@/components/TreatmentFilters';
+import TreatmentFilters, { PriceBracket } from '@/components/TreatmentFilters';
 import TreatmentPickCard from '@/components/TreatmentPickCard';
 import { getAllTreatmentsWithSpa } from '@/data/treatments';
 import { spaData } from '@/data/spas';
 import SortMenu from '@/components/listing/SortMenu';
 import PaginationControls from '@/components/listing/PaginationControls';
+import FeaturedSpasGrid from '@/components/FeaturedSpasGrid';
 import { useDraftFilters } from '@/hooks/listing/useDraftFilters';
 import { usePagination } from '@/hooks/listing/usePagination';
 import {
@@ -82,8 +81,10 @@ export default function SpaTreatmentsPage() {
     resetDeps: [filters, sortBy],
   });
 
-  const activeFilterCount =
-    countActiveTreatmentFilters(filters, availableSpas.length);
+  const activeFilterCount = countActiveTreatmentFilters(
+    filters,
+    availableSpas.length
+  );
 
   const handleClearFilters = () => {
     resetBothFilters(buildInitialTreatmentFilters(availableSpas));
@@ -308,6 +309,11 @@ export default function SpaTreatmentsPage() {
           onSpaChange={handleTempSpaChange}
           onSelectAllSpas={handleSelectAllSpas}
           onDeselectAllSpas={handleDeselectAllSpas}
+        />
+
+        <FeaturedSpasGrid
+          spaIds={[1, 2, 7]}
+          backgroundClassName="bg-soft-cream"
         />
       </main>
 

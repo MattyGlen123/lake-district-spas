@@ -1,6 +1,6 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import HomepageFeaturedSpas from '@/components/HomepageFeaturedSpas';
+import FeaturedSpasGrid from '@/components/FeaturedSpasGrid';
 import FeaturedArticles from '@/components/FeaturedArticles';
 import FeaturedLocations from '@/components/FeaturedLocations';
 import CouplesDayPasses from '@/components/CouplesDayPasses';
@@ -28,7 +28,7 @@ export default function Home() {
 
       <main>
         <Hero />
-        <HomepageFeaturedSpas />
+        <FeaturedSpasGrid spaIds={[1, 2, 5, 7, 9, 14]} />
         <FeaturedArticles />
         <FeaturedLocations />
         <CouplesDayPasses

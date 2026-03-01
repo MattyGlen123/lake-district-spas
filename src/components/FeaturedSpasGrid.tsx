@@ -5,15 +5,22 @@ import { spaData } from '@/data/spas';
 import { Spa } from '@/types/spa';
 import { getLowestDayPassPrice, getLowestTreatmentPrice } from '@/lib/prices';
 
-const featuredSpaIds = [1, 2, 5, 7, 9, 14];
+interface FeaturedSpasGridProps {
+  spaIds: number[];
+  /** Tailwind background class, e.g. `bg-stone-50`, `bg-soft-cream`. Defaults to `bg-white`. */
+  backgroundClassName?: string;
+}
 
-export default function HomepageFeaturedSpas() {
+export default function FeaturedSpasGrid({
+  spaIds,
+  backgroundClassName = 'bg-white',
+}: FeaturedSpasGridProps) {
   const featuredSpas = spaData
-    .filter((spa: Spa) => featuredSpaIds.includes(spa.id))
-    .sort((a: Spa, b: Spa) => featuredSpaIds.indexOf(a.id) - featuredSpaIds.indexOf(b.id));
+    .filter((spa: Spa) => spaIds.includes(spa.id))
+    .sort((a: Spa, b: Spa) => spaIds.indexOf(a.id) - spaIds.indexOf(b.id));
 
   return (
-    <section className="py-32 bg-white">
+    <section className={`py-32 ${backgroundClassName}`}>
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
         <div className="mb-12">

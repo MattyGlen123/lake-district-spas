@@ -292,6 +292,10 @@ jest.mock('@/components/DayPassFilters', () => ({
 jest.mock('@/data/day-passes', () => ({
   __esModule: true,
   getAllDayPassesWithSpa: jest.fn(() => mockDayPasses),
+  getDayPassOptionsBySpaId: jest.fn((spaId: number) => {
+    const options = mockDayPasses.filter((p) => p.spa.id === spaId);
+    return options.map((p) => ({ ...p, priceGBP: p.priceGBP }));
+  }),
 }));
 
 describe('spa-days page', () => {
