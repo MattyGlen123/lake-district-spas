@@ -21,7 +21,7 @@ graph TD
 
     subgraph Pages["App Router — all statically generated"]
         home[/ — Homepage]
-        spasPage[/spas — Listing + filter + sort + paginate]
+        spasPage[/spas — Listing + filter + sort]
         spaDetail[/spa/:slug — Spa detail]
         spaDays[/spa-days — Day passes]
         spaTreatments[/spa-treatments — Treatments]

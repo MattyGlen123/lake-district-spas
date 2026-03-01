@@ -14,7 +14,7 @@ flowchart TD
     faqIndex --> spaDetail
 
     spaData --> |"applyFilters + sortSpas"| spaCatalog["spa-catalog.ts"]
-    spaCatalog --> |"usePagination"| spasPage["SpasPage\n/spas — client component"]
+    spaCatalog --> spasPage["SpasPage\n/spas — server component + client island"]
 
     spaData --> |"filter: spa.location === name"| locationPage["LocationPage\n/location/spas-in-*"]
     locationFaqIndex --> locationPage
