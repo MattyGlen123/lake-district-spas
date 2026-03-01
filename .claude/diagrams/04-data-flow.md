@@ -21,6 +21,9 @@ flowchart TD
 
     spaData --> |"first 6 hand-picked IDs"| homepage["Homepage\n/"]
 
+    spaData --> |"FeaturedSpasGrid — hand-picked IDs"| spaDaysPage["SpaDaysPage\n/spa-days — client component"]
+    spaData --> |"FeaturedSpasGrid — hand-picked IDs"| spaTreatmentsPage["SpaTreatmentsPage\n/spa-treatments — client component"]
+
     spaData --> |"generateStaticParams at build"| buildTime["Static Generation\nnpm run build"]
 
     blogMDX["content/blog/*.mdx"] --> |"gray-matter + readingTime"| blogLib["blog.ts"]

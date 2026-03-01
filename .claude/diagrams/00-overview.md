@@ -36,6 +36,8 @@ graph TD
     spas --> spasPage
     spas --> home
     spas --> location
+    spas --> spaDays
+    spas --> spaTreatments
     treatments --> spaDetail
     dayPasses --> spaDetail
     dayPasses --> spaDays
