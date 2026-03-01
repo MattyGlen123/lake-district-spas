@@ -6,9 +6,10 @@ export interface SpaFiltersState {
   facilities: string[];
 }
 
-export type SpaSortOption = 'name-asc' | 'name-desc' | 'location-asc';
+export type SpaSortOption = 'featured' | 'name-asc' | 'name-desc' | 'location-asc';
 
 export const spaSortOptions: { value: SpaSortOption; label: string }[] = [
+  { value: 'featured', label: 'Featured' },
   { value: 'name-asc', label: 'Name: A–Z' },
   { value: 'name-desc', label: 'Name: Z–A' },
   { value: 'location-asc', label: 'Location: A–Z' },
@@ -75,16 +76,21 @@ export function countActiveFilters(filters: SpaFiltersState): number {
 }
 
 export function sortSpas(spas: Spa[], sortBy: SpaSortOption): Spa[] {
-  return [...spas].sort((a, b) => {
-    switch (sortBy) {
-      case 'name-asc':
-        return a.name.localeCompare(b.name);
-      case 'name-desc':
-        return b.name.localeCompare(a.name);
-      case 'location-asc':
-        return a.location.localeCompare(b.location) || a.name.localeCompare(b.name);
-      default:
-        return 0;
-    }
-  });
+  switch (sortBy) {
+    case 'featured':
+      return [...spas];
+    default:
+      return [...spas].sort((a, b) => {
+        switch (sortBy) {
+          case 'name-asc':
+            return a.name.localeCompare(b.name);
+          case 'name-desc':
+            return b.name.localeCompare(a.name);
+          case 'location-asc':
+            return a.location.localeCompare(b.location) || a.name.localeCompare(b.name);
+          default:
+            return 0;
+        }
+      });
+  }
 }
