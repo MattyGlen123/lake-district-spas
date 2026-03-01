@@ -16,9 +16,13 @@ npm run lint         # ESLint for .ts/.tsx/.js/.jsx
 npm test             # Vitest run once
 npm run test:watch   # Vitest watch mode
 npm run test:coverage # Vitest with coverage
+npm run test:e2e     # Playwright E2E tests
+npm run test:e2e:ui  # Playwright UI mode
 ```
 
-Run a single test file: `npx vitest run src/__tests__/filtering.test.ts`
+Run a single Vitest file: `npx vitest run src/__tests__/filtering.test.ts`
+
+E2E: Run `npx playwright install` once to download browsers. Dev server must be running (`npm run dev`) or Playwright will start it. Tests live in `e2e/`.
 
 Pre-commit hook (Husky) runs `typecheck` then `test` — both must pass.
 
@@ -100,7 +104,7 @@ See `docs/STYLE_GUIDE.md` for full reference. Key rules:
 
 ## Testing
 
-Tests in `src/__tests__/` validate:
+**Unit/Integration** (Vitest): Tests in `src/__tests__/` validate:
 
 - Spa data structure completeness and required fields.
 - Intro text accuracy (facility counts, age policies, access labels must match data).
@@ -108,6 +112,8 @@ Tests in `src/__tests__/` validate:
 - Utility functions and schema generation.
 - Blog price component rendering.
 - Outbound click tracking.
+
+**E2E** (Playwright): Tests in `e2e/` run in real browsers. Config: `playwright.config.ts`. Run `npx playwright install` once to download browsers.
 
 ## Content Directories
 
