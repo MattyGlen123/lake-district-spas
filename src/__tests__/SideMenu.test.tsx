@@ -1,22 +1,23 @@
 import React from 'react';
+import { vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import SideMenu from '@/components/SideMenu';
 import { spaData } from '@/data/spas';
 
-const mockPathname = jest.fn(() => '/');
-jest.mock('next/navigation', () => ({
+const mockPathname = vi.fn(() => '/');
+vi.mock('next/navigation', () => ({
   usePathname: () => mockPathname(),
 }));
 
 describe('SideMenu', () => {
   const defaultProps = {
     isOpen: true,
-    onClose: jest.fn(),
+    onClose: vi.fn(),
   };
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     mockPathname.mockReturnValue('/');
   });
 
@@ -139,7 +140,7 @@ describe('SideMenu', () => {
 
   describe('onClose callback', () => {
     it('calls onClose when close button is clicked', () => {
-      const onClose = jest.fn();
+      const onClose = vi.fn();
       render(<SideMenu isOpen={true} onClose={onClose} />);
 
       const header = screen.getByText('Menu').parentElement;
@@ -151,7 +152,7 @@ describe('SideMenu', () => {
     });
 
     it('calls onClose when a menu link is clicked', () => {
-      const onClose = jest.fn();
+      const onClose = vi.fn();
       render(<SideMenu {...defaultProps} onClose={onClose} />);
 
       fireEvent.click(screen.getByRole('link', { name: 'Spas' }));
@@ -160,7 +161,7 @@ describe('SideMenu', () => {
     });
 
     it('calls onClose when backdrop is clicked', () => {
-      const onClose = jest.fn();
+      const onClose = vi.fn();
       const { container } = render(<SideMenu isOpen={true} onClose={onClose} />);
 
       const backdrop = container.querySelector('.backdrop-blur-sm');
@@ -201,18 +202,18 @@ describe('SideMenu', () => {
     it('sets body overflow to hidden when menu opens', () => {
       expect(document.body.style.overflow).toBe('');
 
-      const { rerender } = render(<SideMenu isOpen={false} onClose={jest.fn()} />);
+      const { rerender } = render(<SideMenu isOpen={false} onClose={vi.fn()} />);
       expect(document.body.style.overflow).toBe('');
 
-      rerender(<SideMenu isOpen={true} onClose={jest.fn()} />);
+      rerender(<SideMenu isOpen={true} onClose={vi.fn()} />);
       expect(document.body.style.overflow).toBe('hidden');
     });
 
     it('restores body overflow when menu closes', () => {
-      const { rerender } = render(<SideMenu isOpen={true} onClose={jest.fn()} />);
+      const { rerender } = render(<SideMenu isOpen={true} onClose={vi.fn()} />);
       expect(document.body.style.overflow).toBe('hidden');
 
-      rerender(<SideMenu isOpen={false} onClose={jest.fn()} />);
+      rerender(<SideMenu isOpen={false} onClose={vi.fn()} />);
       expect(document.body.style.overflow).toBe('');
     });
   });

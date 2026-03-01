@@ -1,4 +1,5 @@
 import React from 'react';
+import { vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { spaData } from '@/data/spas';
@@ -8,12 +9,12 @@ import { getLowestDayPassPrice, getLowestTreatmentPrice } from '@/lib/prices';
 import SpaCard from '@/components/SpaCard';
 import { Treatment } from '@/types/spa';
 
-jest.mock('next/image', () => ({
+vi.mock('next/image', () => ({
   __esModule: true,
   default: () => <span data-testid="next-image-mock" />,
 }));
 
-jest.mock('next/link', () => ({
+vi.mock('next/link', () => ({
   __esModule: true,
   default: ({
     href,
@@ -29,26 +30,35 @@ jest.mock('next/link', () => ({
   ),
 }));
 
+const mockedTreatmentsRef = vi.hoisted(() => ({ current: null as Treatment[] | null }));
+
+vi.doMock('@/data/treatments', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@/data/treatments')>();
+  return {
+    ...actual,
+    getTreatmentsBySpaId: (spaId: number) => {
+      if (mockedTreatmentsRef.current !== null) {
+        return mockedTreatmentsRef.current;
+      }
+      return actual.getTreatmentsBySpaId(spaId);
+    },
+  };
+});
+
 describe('Price utilities', () => {
   async function getLowestTreatmentPriceWithMockedTreatments(
     mockedTreatments: Treatment[]
   ): Promise<(spaId: number) => number | null> {
-    jest.doMock('@/data/treatments', () => {
-      const actual = jest.requireActual('@/data/treatments');
-      return {
-        ...actual,
-        getTreatmentsBySpaId: () => mockedTreatments,
-      };
-    });
-
+    mockedTreatmentsRef.current = mockedTreatments;
+    vi.resetModules();
     const pricesModule = await import('@/lib/prices');
     return pricesModule.getLowestTreatmentPrice;
   }
 
   afterEach(() => {
-    jest.restoreAllMocks();
-    jest.resetModules();
-    jest.dontMock('@/data/treatments');
+    mockedTreatmentsRef.current = null;
+    vi.restoreAllMocks();
+    vi.resetModules();
   });
 
   it('getLowestDayPassPrice returns the minimum day pass price for a spa with day passes', () => {

@@ -13,12 +13,12 @@ npm run dev          # Dev server at localhost:3000
 npm run build        # Production build
 npm run typecheck    # TypeScript check (no emit)
 npm run lint         # ESLint for .ts/.tsx/.js/.jsx
-npm test             # Jest tests (single worker)
-npm run test:watch   # Jest watch mode
-npm run test:coverage # Jest with coverage
+npm test             # Vitest run once
+npm run test:watch   # Vitest watch mode
+npm run test:coverage # Vitest with coverage
 ```
 
-Run a single test file: `npx jest src/__tests__/filtering.test.ts --maxWorkers=1`
+Run a single test file: `npx vitest run src/__tests__/filtering.test.ts`
 
 Pre-commit hook (Husky) runs `typecheck` then `test` — both must pass.
 
@@ -69,7 +69,7 @@ See `.claude/diagrams/02-page-routing.md` for full URL structure. All pages are 
 
 ### Path Alias
 
-`@/*` maps to `./src/*` (configured in tsconfig and jest).
+`@/*` maps to `./src/*` (configured in tsconfig and vitest).
 
 ## Design System
 

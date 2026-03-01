@@ -1,4 +1,5 @@
 import React from 'react';
+import { vi } from 'vitest';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import SpaDaysPage from '@/app/spa-days/page';
 
@@ -192,22 +193,22 @@ const calculateExpectedCount = (state: FilterState) =>
     return true;
   }).length;
 
-jest.mock('next/image', () => ({
+vi.mock('next/image', () => ({
   __esModule: true,
   default: () => <span data-testid="next-image-mock" />,
 }));
 
-jest.mock('@/components/Header', () => ({
+vi.mock('@/components/Header', () => ({
   __esModule: true,
   default: () => <header data-testid="header-mock" />,
 }));
 
-jest.mock('@/components/Footer', () => ({
+vi.mock('@/components/Footer', () => ({
   __esModule: true,
   default: () => <footer data-testid="footer-mock" />,
 }));
 
-jest.mock('@/components/ui/dropdown-menu', () => ({
+vi.mock('@/components/ui/dropdown-menu', () => ({
   __esModule: true,
   DropdownMenu: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   DropdownMenuTrigger: ({
@@ -226,7 +227,7 @@ jest.mock('@/components/ui/dropdown-menu', () => ({
   }) => <button onClick={onClick}>{children}</button>,
 }));
 
-jest.mock('@/components/DayPassCard', () => ({
+vi.mock('@/components/DayPassCard', () => ({
   __esModule: true,
   default: ({
     dayPass,
@@ -247,7 +248,7 @@ jest.mock('@/components/DayPassCard', () => ({
   ),
 }));
 
-jest.mock('@/components/DayPassFilters', () => ({
+vi.mock('@/components/DayPassFilters', () => ({
   __esModule: true,
   default: ({
     isOpen,
@@ -289,10 +290,10 @@ jest.mock('@/components/DayPassFilters', () => ({
   },
 }));
 
-jest.mock('@/data/day-passes', () => ({
+vi.mock('@/data/day-passes', () => ({
   __esModule: true,
-  getAllDayPassesWithSpa: jest.fn(() => mockDayPasses),
-  getDayPassOptionsBySpaId: jest.fn((spaId: number) => {
+  getAllDayPassesWithSpa: vi.fn(() => mockDayPasses),
+  getDayPassOptionsBySpaId: vi.fn((spaId: number) => {
     const options = mockDayPasses.filter((p) => p.spa.id === spaId);
     return options.map((p) => ({ ...p, priceGBP: p.priceGBP }));
   }),
@@ -300,15 +301,15 @@ jest.mock('@/data/day-passes', () => ({
 
 describe('spa-days page', () => {
   beforeAll(() => {
-    window.scrollTo = jest.fn();
+    window.scrollTo = vi.fn();
     Object.defineProperty(HTMLElement.prototype, 'scrollIntoView', {
       writable: true,
-      value: jest.fn(),
+      value: vi.fn(),
     });
   });
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   const getCardPrices = () =>
@@ -440,14 +441,14 @@ describe('spa-days page', () => {
   it('does not auto-scroll on initial render', () => {
     render(<SpaDaysPage />);
 
-    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as jest.Mock;
+    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as ReturnType<typeof vi.fn>;
     expect(scrollIntoViewMock).not.toHaveBeenCalled();
   });
 
   it('scrolls to results when a page number is clicked', () => {
     render(<SpaDaysPage />);
 
-    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as jest.Mock;
+    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as ReturnType<typeof vi.fn>;
     fireEvent.click(screen.getByRole('button', { name: '2' }));
 
     expect(scrollIntoViewMock).toHaveBeenCalledTimes(1);
@@ -460,7 +461,7 @@ describe('spa-days page', () => {
   it('scrolls to results when next page is clicked', () => {
     render(<SpaDaysPage />);
 
-    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as jest.Mock;
+    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as ReturnType<typeof vi.fn>;
     fireEvent.click(screen.getByRole('button', { name: 'Next page' }));
 
     expect(scrollIntoViewMock).toHaveBeenCalledTimes(1);

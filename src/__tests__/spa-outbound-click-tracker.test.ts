@@ -15,15 +15,17 @@ interface WindowWithDataLayer extends Window {
   dataLayer?: DataLayerItem[];
 }
 
+import { vi } from 'vitest';
+
 describe('Spa Outbound Click Tracker', () => {
   let dataLayer: DataLayerItem[];
-  let mockDataLayerPush: jest.Mock;
+  let mockDataLayerPush: ReturnType<typeof vi.fn>;
   let clickHandler: ((e: Event) => void) | null = null;
 
   beforeEach(() => {
     // Reset dataLayer before each test
     dataLayer = [];
-    mockDataLayerPush = jest.fn((item) => {
+    mockDataLayerPush = vi.fn((item: DataLayerItem) => {
       // Directly push to the array, not through the mock to avoid circular reference
       Array.prototype.push.call(dataLayer, item);
     });
@@ -48,7 +50,7 @@ describe('Spa Outbound Click Tracker', () => {
     }
     // Clean up
     delete (window as WindowWithDataLayer).dataLayer;
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   /**

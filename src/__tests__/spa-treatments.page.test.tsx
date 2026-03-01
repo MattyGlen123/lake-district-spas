@@ -1,4 +1,5 @@
 import React from 'react';
+import { vi } from 'vitest';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import SpaTreatmentsPage from '@/app/spa-treatments/page';
 import { TreatmentCategory } from '@/types/spa';
@@ -88,22 +89,22 @@ const mockTreatments: TestTreatment[] = [
 
 const parsePounds = (value: string) => Number(value.replace(/[^\d]/g, ''));
 
-jest.mock('next/image', () => ({
+vi.mock('next/image', () => ({
   __esModule: true,
   default: () => <span data-testid="next-image-mock" />,
 }));
 
-jest.mock('@/components/Header', () => ({
+vi.mock('@/components/Header', () => ({
   __esModule: true,
   default: () => <header data-testid="header-mock" />,
 }));
 
-jest.mock('@/components/Footer', () => ({
+vi.mock('@/components/Footer', () => ({
   __esModule: true,
   default: () => <footer data-testid="footer-mock" />,
 }));
 
-jest.mock('@/components/ui/dropdown-menu', () => ({
+vi.mock('@/components/ui/dropdown-menu', () => ({
   __esModule: true,
   DropdownMenu: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   DropdownMenuTrigger: ({
@@ -122,7 +123,7 @@ jest.mock('@/components/ui/dropdown-menu', () => ({
   }) => <button onClick={onClick}>{children}</button>,
 }));
 
-jest.mock('@/components/TreatmentPickCard', () => ({
+vi.mock('@/components/TreatmentPickCard', () => ({
   __esModule: true,
   default: ({
     treatment,
@@ -142,7 +143,7 @@ jest.mock('@/components/TreatmentPickCard', () => ({
   ),
 }));
 
-jest.mock('@/components/TreatmentFilters', () => {
+vi.mock('@/components/TreatmentFilters', () => {
   return {
     __esModule: true,
     CATEGORY_GROUPS: [
@@ -210,26 +211,26 @@ jest.mock('@/components/TreatmentFilters', () => {
   };
 });
 
-jest.mock('@/data/treatments', () => ({
+vi.mock('@/data/treatments', () => ({
   __esModule: true,
-  getAllTreatmentsWithSpa: jest.fn(() => mockTreatments),
-  parseTreatmentPrice: jest.fn((price: string) => parsePounds(price)),
-  getTreatmentsBySpaId: jest.fn((spaId: number) =>
+  getAllTreatmentsWithSpa: vi.fn(() => mockTreatments),
+  parseTreatmentPrice: vi.fn((price: string) => parsePounds(price)),
+  getTreatmentsBySpaId: vi.fn((spaId: number) =>
     mockTreatments.filter((t) => t.spaId === spaId).map((t) => ({ ...t, price: t.price }))
   ),
 }));
 
 describe('spa-treatments page', () => {
   beforeAll(() => {
-    window.scrollTo = jest.fn();
+    window.scrollTo = vi.fn();
     Object.defineProperty(HTMLElement.prototype, 'scrollIntoView', {
       writable: true,
-      value: jest.fn(),
+      value: vi.fn(),
     });
   });
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   const getCardNames = () =>
@@ -347,14 +348,14 @@ describe('spa-treatments page', () => {
   it('does not auto-scroll on initial render', () => {
     render(<SpaTreatmentsPage />);
 
-    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as jest.Mock;
+    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as ReturnType<typeof vi.fn>;
     expect(scrollIntoViewMock).not.toHaveBeenCalled();
   });
 
   it('scrolls to results when a page number is clicked', () => {
     render(<SpaTreatmentsPage />);
 
-    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as jest.Mock;
+    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as ReturnType<typeof vi.fn>;
     fireEvent.click(screen.getByRole('button', { name: '2' }));
 
     expect(scrollIntoViewMock).toHaveBeenCalledTimes(1);
@@ -367,7 +368,7 @@ describe('spa-treatments page', () => {
   it('scrolls to results when next page is clicked', () => {
     render(<SpaTreatmentsPage />);
 
-    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as jest.Mock;
+    const scrollIntoViewMock = HTMLElement.prototype.scrollIntoView as ReturnType<typeof vi.fn>;
     fireEvent.click(screen.getByRole('button', { name: 'Next page' }));
 
     expect(scrollIntoViewMock).toHaveBeenCalledTimes(1);

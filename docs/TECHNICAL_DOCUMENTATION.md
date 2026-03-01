@@ -42,11 +42,10 @@ Comprehensive technical documentation for AI review and development reference.
 
 ### Testing
 
-- **Jest**: `^30.2.0`
+- **Vitest**: `^4.0.18`
 - **React Testing Library**: `^16.3.1`
-- **@testing-library/jest-dom**: `^6.9.1`
-- **ts-jest**: `^29.4.6`
-- **jest-environment-jsdom**: `^30.2.0`
+- **@testing-library/jest-dom**: `^6.9.1` (DOM matchers)
+- **jsdom**: For DOM environment in tests
 
 ### Blog System
 
@@ -147,8 +146,8 @@ lake-district-spas/
 ├── tailwind.config.ts          # Tailwind configuration
 ├── tsconfig.json               # TypeScript configuration
 ├── next.config.js              # Next.js configuration
-├── jest.config.js              # Jest configuration
-├── jest.setup.js               # Jest setup file
+├── vitest.config.ts            # Vitest configuration
+├── vitest.setup.ts             # Vitest setup file
 ├── postcss.config.mjs          # PostCSS configuration
 ├── components.json             # shadcn/ui configuration
 └── package.json                # Dependencies & scripts
@@ -186,13 +185,12 @@ lake-district-spas/
 - **Minimal Config**: Default configuration (no custom settings)
 - **App Router**: Enabled (default in Next.js 14)
 
-### Jest (`jest.config.js`)
+### Vitest (`vitest.config.ts`)
 
 - **Environment**: jsdom
-- **Setup File**: `jest.setup.js`
-- **Module Mapper**: `@/(.*)` → `src/$1`
-- **Test Match**: `**/__tests__/**/*.[jt]s?(x)`, `**/?(*.)+(spec|test).[jt]s?(x)`
-- **Max Workers**: 1 (configured in package.json scripts)
+- **Setup File**: `vitest.setup.ts`
+- **Path Aliases**: `vite-tsconfig-paths` resolves `@/*` from tsconfig
+- **Test Include**: `src/**/*.{test,spec}.{ts,tsx}`
 
 ---
 
@@ -582,9 +580,9 @@ Defined in `tailwind.config.ts`:
 
 ### Test Configuration
 
-- **Framework**: Jest with React Testing Library
+- **Framework**: Vitest with React Testing Library
 - **Environment**: jsdom
-- **Setup**: `jest.setup.js` with `@testing-library/jest-dom`
+- **Setup**: `vitest.setup.ts` with `@testing-library/jest-dom`
 - **Max Workers**: 1 (configured in scripts)
 
 ### Running Tests
@@ -729,7 +727,7 @@ npm run typecheck # TypeScript type checking
 ### Development Dependencies
 
 - **TypeScript**: Type checking
-- **Jest & Testing Library**: Testing
+- **Vitest & Testing Library**: Testing
 - **ESLint**: Code linting
 - **Tailwind CSS**: Styling framework
 - **Husky**: Git hooks
@@ -788,7 +786,7 @@ npm run typecheck # TypeScript type checking
 
 ### Technical Notes
 
-- **Jest Warning**: Lockfile patching warning (non-critical)
+- **Vitest Warning**: Lockfile patching warning (non-critical)
 - **Image Paths**: Some images may need path corrections
 - **Font Loading**: Playfair Display and Inter loaded via Next.js fonts
 

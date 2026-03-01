@@ -19,7 +19,6 @@
     "next-env.d.ts",
     "node_modules/**",
     "scripts/**",
-    "jest.config.js",
     "*.config.{js,mjs,ts}"
   ]
 }
