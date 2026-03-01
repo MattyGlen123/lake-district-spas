@@ -19,6 +19,7 @@ import { getSpa15FAQs } from './spa-15-faqs';
 import { getSpa16FAQs } from './spa-16-faqs';
 import { getSpa17FAQs } from './spa-17-faqs';
 import { getSpa18FAQs } from './spa-18-faqs';
+import { getSpa19FAQs } from './spa-19-faqs';
 
 // Map of spa IDs to their FAQ generator functions
 const faqGeneratorsBySpaId: Record<number, (spa: Spa) => FAQ[]> = {
@@ -40,6 +41,7 @@ const faqGeneratorsBySpaId: Record<number, (spa: Spa) => FAQ[]> = {
   16: getSpa16FAQs, // Netherwood Hotel & Spa
   17: getSpa17FAQs, // Grange Hotel
   18: getSpa18FAQs, // Lakes Hotel & Spa
+  19: getSpa19FAQs, // The Spa at Underscar
 };
 
 // Cache for generated FAQs

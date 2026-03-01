@@ -14,7 +14,7 @@ export default function SpaNavigation({ currentSpa }: SpaNavigationProps) {
     currentIndex < spaData.length - 1 ? spaData[currentIndex + 1] : undefined;
 
   return (
-    <section className="border-y border-slate-200 py-8 sm:py-16 mb-20">
+    <section className="border-y border-slate-200 py-8 sm:py-16">
       <div className="container mx-auto px-4 md:px-8 flex flex-row items-stretch justify-between gap-2 sm:gap-6">
         {prevSpa ? (
           <Link

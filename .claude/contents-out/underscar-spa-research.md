@@ -130,3 +130,12 @@ All full-day packages include: Pool, Jacuzzi, Sauna, Steam Room, Gym + Towel, ro
 9. **Hotel booking URL**: https://www.underscar.co.uk/ (cottage bookings)
 10. **Treatment booking URL**: https://underscar.try.be/
 11. **Day pass booking URL**: https://underscar.try.be/
+
+## Images
+
+| # | Subject | Filename | Alt Text |
+|---|---------|----------|----------|
+| 1 | Woman in jacuzzi with blue mosaic tiles | `lake-district-spas_underscar-hydrotherapy-pool.jpg` | Heated hydrotherapy pool at Underscar luxury cottages near Keswick, featuring bubbling spa jets and deep blue mosaic tile walls creating a calming ambient atmosphere, part of the on-site spa facilities available to guests staying in this self-catering retreat on the slopes of Skiddaw |
+| 2 | Couple in indoor pool | `lake-district-spas_underscar-indoor-swimming-pool.jpg` | Indoor swimming pool at Underscar luxury cottages near Keswick, featuring spacious turquoise waters with contemporary pillars and natural light from high windows, a relaxing spa facility for couples enjoying self-catering breaks on the sheltered slopes of Skiddaw overlooking Derwentwater |
+| 3 | Overhead swimmer in turquoise pool | `lake-district-spas_underscar-pool-aerial-view.jpg` | Aerial view of the turquoise swimming pool at Underscar luxury cottages near Keswick, showing crystal-clear heated waters with light ripple patterns and mosaic tiling, part of the relaxing spa and leisure facilities at this self-catering retreat beneath Skiddaw in the Lake District |
+| 4 | Massage treatment close-up | `lake-district-spas_underscar-massage-treatment.jpg` | Professional deep tissue back and shoulder massage at Underscar luxury cottages near Keswick, with warm ambient candlelit lighting creating an intimate treatment room atmosphere, spa therapies available to guests staying in this self-catering Lake District retreat on the slopes of Skiddaw |

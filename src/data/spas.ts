@@ -2221,6 +2221,116 @@ Complimentary Cascades access included for all hotel guests, with 10% discount o
     hotelBookingUrl:
       'https://whitewater-hotel.co.uk/spa-fitness/newby-bridge-spa/',
   },
+  {
+    id: 19,
+    url: 'underscar-spa',
+    name: 'Underscar Spa',
+    location: 'Keswick',
+    address: {
+      street: 'Applethwaite',
+      locality: 'Keswick',
+      region: 'Cumbria',
+      postcode: 'CA12 4PH',
+      country: 'GB',
+    },
+    metaDescription:
+      'Luxury spa at Underscar self-catering cottages near Keswick. 13-metre heated pool, hydrotherapy jacuzzi, eucalyptus sauna, steam room and gym. Complimentary for all cottage guests. Spa day packages from £55.',
+    intro: `Perched on the sheltered slopes of Skiddaw above Keswick, Underscar is a five-star self-catering cottage resort of 25 properties converted from a 19th-century coach house and walled garden. The spa sits at the heart of the estate, looking out over Derwentwater and the northern fells, and serves as a centrepiece for guests staying in the one, two, and three-bedroom cottages. The 13-metre indoor heated swimming pool is the main draw, a spacious and beautifully designed facility with contemporary pillars and natural light, alongside a hydrotherapy jacuzzi with massage jets set against deep blue mosaic tiling.
+
+The thermal facilities extend to a eucalyptus-infused sauna, a steam room, and a dedicated relaxation room for post-treatment recovery. A Technogym-equipped gym and bistro serving drinks and afternoon tea complete the on-site offering. Treatment rooms are softly lit and tranquilly appointed, delivering therapies from Germaine de Capuccini, NEOM Organics, and The Gel Bottle across massage, facials, body treatments, and nail care. The walkers leg massage is a popular choice after time spent on the Skiddaw fells above the estate.
+
+Spa access is complimentary for all cottage guests throughout their stay, with no time restrictions and no advance booking required for the facilities. Day visitors are welcome with a range of packages to choose from. All spa facilities, treatments, and packages are for guests aged 16 and over.`,
+    websiteUrl: 'https://www.underscar.co.uk/spa/',
+    accessLabels: ['free-for-all-guests', 'day-passes-available'],
+    images: [
+      {
+        src: '/images/spas/underscar-spa/lake-district-spas_underscar-pool-aerial-view.jpg',
+        alt: 'Aerial view of the turquoise swimming pool at Underscar luxury cottages near Keswick, showing crystal-clear heated waters with light ripple patterns and mosaic tiling, part of the relaxing spa and leisure facilities at this self-catering retreat beneath Skiddaw in the Lake District',
+      },
+      {
+        src: '/images/spas/underscar-spa/lake-district-spas_underscar-hydrotherapy-pool.jpg',
+        alt: 'Heated hydrotherapy pool at Underscar luxury cottages near Keswick, featuring bubbling spa jets and deep blue mosaic tile walls creating a calming ambient atmosphere, part of the on-site spa facilities available to guests staying in this self-catering retreat on the slopes of Skiddaw',
+      },
+      {
+        src: '/images/spas/underscar-spa/lake-district-spas_underscar-indoor-swimming-pool.jpg',
+        alt: 'Indoor swimming pool at Underscar luxury cottages near Keswick, featuring spacious turquoise waters with contemporary pillars and natural light from high windows, a relaxing spa facility for couples enjoying self-catering breaks on the sheltered slopes of Skiddaw overlooking Derwentwater',
+      },
+      {
+        src: '/images/spas/underscar-spa/lake-district-spas_underscar-massage-treatment.jpg',
+        alt: 'Professional deep tissue back and shoulder massage at Underscar luxury cottages near Keswick, with warm ambient candlelit lighting creating an intimate treatment room atmosphere, spa therapies available to guests staying in this self-catering Lake District retreat on the slopes of Skiddaw',
+      },
+    ],
+    keyFeatures: [
+      '13-metre heated indoor swimming pool',
+      'Hydrotherapy jacuzzi with massage jets',
+      'Eucalyptus-infused sauna and steam room',
+      'Germaine de Capuccini and NEOM Organics treatments',
+    ],
+    thermalFacilities: [
+      {
+        name: 'Eucalyptus Sauna',
+        details: 'Eucalyptus-infused sauna',
+      },
+      {
+        name: 'Steam Room',
+        details: 'Steam room',
+      },
+      {
+        name: 'Relaxation Room',
+        details: 'Dedicated relaxation room for post-treatment recovery',
+      },
+    ],
+    poolFeatures: [
+      {
+        name: 'Indoor Pool',
+        details: '13-metre indoor heated swimming pool',
+      },
+      {
+        name: 'Hydrotherapy Jacuzzi',
+        details: 'Hydrotherapy jacuzzi with massage jets',
+      },
+    ],
+    accessPolicy: [
+      {
+        name: 'Cottage Guests',
+        details: 'Complimentary spa access included with all cottage stays',
+        accessType: 'hotel',
+      },
+      {
+        name: 'Day Visitors',
+        details: 'Spa day packages available',
+        accessType: 'day-pass',
+      },
+      {
+        name: 'Age Restriction',
+        details: 'Minimum age 16 for spa access, treatments, and packages',
+        accessType: 'age-restriction',
+      },
+      {
+        name: 'Spa Hours',
+        details:
+          'Adults-only during late evening and early morning; family swim times during the day',
+        accessType: 'general',
+      },
+    ],
+    facilities: {
+      infraredSauna: false,
+      coldPlunge: false,
+      sauna: true,
+      steamRoom: true,
+      iceRoom: false,
+      hotTub: true,
+      indoorPool: true,
+      outdoorPool: false,
+      thermalSuite: true,
+    },
+    agePolicy: '16+',
+    relatedSpas: [1, 4],
+    treatmentBookingPhone: '017687 71500',
+    treatmentBookingUrl: 'https://underscar.try.be/',
+    dayPassBookingUrl: 'https://underscar.try.be/',
+    hotelBookingUrl: 'https://www.underscar.co.uk/',
+  },
 ];
 
 export const locations = [
@@ -2235,6 +2345,7 @@ export const locations = [
   'Grasmere',
   'Great Langdale',
   'Kendal',
+  'Keswick',
   'Newby Bridge',
   'Penrith',
   'Ullswater',
