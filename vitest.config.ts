@@ -9,13 +9,13 @@ export default defineConfig({
     globals: true,
     setupFiles: ['./vitest.setup.ts'],
     include: [
-      'src/__tests__/unit/**/*.{test,spec}.{ts,tsx}',
-      'src/__tests__/integration/**/*.{test,spec}.{ts,tsx}',
+      'tests/unit/**/*.{test,spec}.{ts,tsx}',
+      'tests/integration/**/*.{test,spec}.{ts,tsx}',
     ],
     coverage: {
       provider: 'v8',
       include: ['src/**/*.{ts,tsx}'],
-      exclude: ['src/**/*.d.ts', 'src/**/__tests__/**'],
+      exclude: ['src/**/*.d.ts', 'tests/**'],
     },
   },
 })
