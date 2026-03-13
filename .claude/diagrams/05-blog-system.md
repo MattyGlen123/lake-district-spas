@@ -4,7 +4,7 @@
 flowchart TD
     mdxFiles["content/blog/*.mdx\nYAML frontmatter + MDX content"]
 
-    subgraph Frontmatter["Required Frontmatter Fields"]
+    subgraph Frontmatter["Frontmatter Fields"]
         title
         excerpt
         publishedAt["publishedAt — must be today or past to publish"]
@@ -12,6 +12,7 @@ flowchart TD
         tags["tags: string[]"]
         featuredImage
         featuredImageAlt
+        relatedSpas["relatedSpas?: string[] — spa slugs for internal linking (optional)"]
     end
 
     mdxFiles --> |"gray-matter parse"| Frontmatter
