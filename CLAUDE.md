@@ -104,8 +104,12 @@ See `docs/STYLE_GUIDE.md` for full reference. Key rules:
 
 ## Testing
 
-**Unit/Integration** (Vitest): Tests in `src/__tests__/` validate:
+**Unit/Integration** (Vitest): Tests are **collocated alongside source files** — `Foo.tsx` has `Foo.test.tsx` in the same directory. Exceptions:
+- `tests/unit/spa-intro-validation.test.ts` — spans many spa data files, no single home
+- `tests/integration/spa-days.test.tsx` and `tests/integration/spa-treatments.test.tsx` — page-level tests
+- `tests/e2e/` — E2E specs (Playwright)
 
+Vitest discovers tests via `src/**/*.{test,spec}.{ts,tsx}` plus the two `tests/` folder globs. Tests cover:
 - Spa data structure completeness and required fields.
 - Intro text accuracy (facility counts, age policies, access labels must match data).
 - Filtering logic (multi-filter AND/OR combinations).
@@ -113,7 +117,7 @@ See `docs/STYLE_GUIDE.md` for full reference. Key rules:
 - Blog price component rendering.
 - Outbound click tracking.
 
-**E2E** (Playwright): Tests in `e2e/` run in real browsers. Config: `playwright.config.ts`. Run `npx playwright install` once to download browsers.
+**E2E** (Playwright): Tests in `tests/e2e/` run in real browsers. Config: `playwright.config.ts`. Run `npx playwright install` once to download browsers.
 
 ## Content Directories
 

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import React from 'react';
-import { generateFAQSchema } from '@/components/FAQs';
+import { generateFAQSchema } from '@/utils/generateFAQSchema';
 
 describe('generateFAQSchema()', () => {
   it('produces a valid Schema.org FAQPage structure', () => {

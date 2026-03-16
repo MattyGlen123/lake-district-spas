@@ -9,8 +9,9 @@ export default defineConfig({
     globals: true,
     setupFiles: ['./vitest.setup.ts'],
     include: [
-      'tests/unit/**/*.{test,spec}.{ts,tsx}',
-      'tests/integration/**/*.{test,spec}.{ts,tsx}',
+      'tests/unit/**/*.{test,spec}.{ts,tsx}',          // spa-intro-validation.test.ts
+      'tests/integration/**/*.{test,spec}.{ts,tsx}',   // spa-days.test.tsx, spa-treatments.test.tsx
+      'src/**/*.{test,spec}.{ts,tsx}',                 // all collocated tests
     ],
     coverage: {
       provider: 'v8',

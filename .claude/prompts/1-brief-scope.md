@@ -1,4 +1,4 @@
-Your going to review the doc I’ve created, aske questions to imrpove your accuracy, then you’ll create a implementation doc and finally you'll proceed with the implementation plan. The file path aot the doc will follow this prompt.
+Your going to review the doc I’ve created, ask questions to improve your accuracy, then you’ll create a implementation doc and finally you'll proceed with the implementation plan. The file path of the doc will follow this prompt.
 
 The file structure will always be in the contents-in/ folder and will look something like the following example. e.g “.claude/contents-in/<doc-name>.md”
 
