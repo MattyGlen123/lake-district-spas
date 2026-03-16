@@ -9,4 +9,4 @@ Then:
 
 1. Give a simple **coverage score 0 - 100** and 1-2 sentence rationale.
 2. List the **top gaps** (missing, partially covered or unclear assumptions), prioritized by impact.
-3. Produce a **patched version of the plan** that closes those gaps with **minimal changes**, preserving the original structure where possible (Add/adjust sections rather than rewriting everything).
+3. Produce an **updated version of the plan** that closes those gaps with **minimal changes**, preserving the original structure where possible (Add/adjust sections rather than rewriting everything).

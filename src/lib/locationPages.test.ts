@@ -38,9 +38,15 @@ describe('locationPageSlugs', () => {
 });
 
 describe('getLocationPageSlug()', () => {
-  it('returns the correct slug for a known location', () => {
+  it('returns windermere for Windermere', () => {
     expect(getLocationPageSlug('Windermere')).toBe('windermere');
+  });
+
+  it('returns borrowdale for Borrowdale', () => {
     expect(getLocationPageSlug('Borrowdale')).toBe('borrowdale');
+  });
+
+  it('returns grasmere for Grasmere', () => {
     expect(getLocationPageSlug('Grasmere')).toBe('grasmere');
   });
 
@@ -58,9 +64,15 @@ describe('getLocationPageSlug()', () => {
 });
 
 describe('getLocationPagePath()', () => {
-  it('returns the correct full path for a known location', () => {
+  it('returns /location/spas-in-windermere for Windermere', () => {
     expect(getLocationPagePath('Windermere')).toBe('/location/spas-in-windermere');
+  });
+
+  it('returns /location/spas-in-borrowdale for Borrowdale', () => {
     expect(getLocationPagePath('Borrowdale')).toBe('/location/spas-in-borrowdale');
+  });
+
+  it('returns /location/spas-in-grasmere for Grasmere', () => {
     expect(getLocationPagePath('Grasmere')).toBe('/location/spas-in-grasmere');
   });
 
@@ -100,6 +112,16 @@ describe('locationMetadata', () => {
     });
   });
 
+  it('every locationPageSlugs entry has a corresponding metadata entry', () => {
+    const metaSlugs = new Set(locationMetadata.map((m) => m.slug));
+    Object.entries(locationPageSlugs).forEach(([name, slug]) => {
+      expect(
+        metaSlugs.has(slug),
+        `Slug "${slug}" (${name}) in locationPageSlugs has no entry in locationMetadata`,
+      ).toBe(true);
+    });
+  });
+
   it('image paths start with / and reference a valid image extension', () => {
     locationMetadata.forEach((meta) => {
       expect(meta.image).toMatch(/^\/.*\.(jpg|jpeg|webp|png)$/);
@@ -108,13 +130,13 @@ describe('locationMetadata', () => {
 });
 
 describe('spaData location consistency', () => {
-  it('every spa location that has a page exists in locationPageSlugs', () => {
-    const spaLocationsWithPages = spaData
-      .map((s) => s.location)
-      .filter((loc) => locationPageSlugs[loc] !== undefined);
-
-    spaLocationsWithPages.forEach((loc) => {
-      expect(typeof locationPageSlugs[loc]).toBe('string');
+  it('every locationPageSlugs entry has at least one spa in spaData', () => {
+    const spaLocations = new Set(spaData.map((s) => s.location));
+    Object.keys(locationPageSlugs).forEach((locationName) => {
+      expect(
+        spaLocations.has(locationName),
+        `Location "${locationName}" has a page but no spas in spaData`,
+      ).toBe(true);
     });
   });
 });

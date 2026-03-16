@@ -1,11 +1,107 @@
 ---
 name: unit-test
-description: Write meaningful unit tests for a given component or function. Best suited for pure functions and critical business logic. Will redirect to integration testing if the code requires significant mocking. Generic — not tied to any specific project.
+description: Write or review unit tests given a file path argument. Pass a source file to generate a new test file. Pass an existing test file to review and improve it. Proceeds without confirmation. Generic — not tied to any specific project.
 ---
 
 # Unit Test Writer
 
 Given a function or component, produce a complete, meaningful unit test suite using Vitest.
+
+## Input Phase: Detect File and Scenario
+
+The skill requires a file path as its argument:
+
+```
+/unit-test src/lib/prices.ts          ← source file → Scenario 2
+/unit-test src/lib/prices.test.ts     ← test file   → Scenario 1
+```
+
+**Step 1 — Was a file path provided?**
+
+- **Yes** → Read the file at that path. Continue to Step 2.
+- **No** → Ask the user: "Please provide a file path to proceed. Pass a source file to generate tests, or an existing test file to review it." Wait for the path, then continue to Step 2.
+
+**Step 2 — What type of file is it?**
+
+Check whether the file name contains `.test.` or `.spec.`:
+
+- **Test file** (e.g. `prices.test.ts`) → **Scenario 1** — Review and update the existing test file. Skip Phase 0. Go directly to Scenario 1 below.
+- **Source file** (e.g. `prices.ts`) → **Scenario 2** — Assess and generate a new test file. Continue to Scenario 2 / Phase 0 below.
+
+---
+
+## Scenario 1: Review Existing Test File
+
+The input is an existing test file. The goal is to determine whether it needs updating and, if so, update it without asking for confirmation.
+
+### Step 1 — Locate and read the source file
+
+Identify the source file the test file is covering:
+
+- `src/lib/prices.test.ts` → source is `src/lib/prices.ts`
+- `src/components/Button.test.tsx` → source is `src/components/Button.tsx`
+
+Read both files before continuing.
+
+If the source file cannot be located at the inferred path, output:
+
+`Cannot locate source file at [inferred path]. Please confirm the path and re-run.`
+
+Stop. Do not modify the test file.
+
+### Step 2 — Review the test file against two criteria
+
+**Criterion A — Coverage gaps**
+
+Compare the test cases against the source file's branches, return values, and edge cases (using the Phase 2 buckets: happy path, edge cases, error cases, state/branching). Identify any meaningful behaviour in the source that has no corresponding test.
+
+**Criterion B — Quality issues**
+
+Check every test against the warning signs in "What Makes a Good Unit Test":
+- Test name contains "and" → should be split
+- Test mocks an internal function → tests implementation, not behaviour
+- Test has no assertion → cannot fail
+- Test has many assertions without `expect.soft()` → should be split
+- Assertion uses `toBeTruthy` where `toBe(true)` would be more specific
+
+### Step 3 — Decide: update or no update needed?
+
+**If no coverage gaps and no quality issues are found:**
+
+Output: `No updates needed — [one-sentence reason, e.g. "all branches covered, no quality issues detected"].`
+
+Stop. Do not modify the file.
+
+**If gaps or issues are found:**
+
+Proceed to Step 4.
+
+### Step 4 — Write the updated test file
+
+Rules:
+- Keep every test that is correct exactly as-is. Do not rewrite, reformat, or rename passing tests unless they have a quality issue.
+- Only add, fix, or remove tests where a specific gap or issue was identified in Step 2.
+- Write the updated file silently — no confirmation prompt.
+
+### Step 5 — Run the tests
+
+Run the test file:
+
+```bash
+npx vitest run <path-to-test-file>
+```
+
+Report the result:
+- **Pass** → State how many tests passed.
+- **Fail** → Show the failing test names and error output. Fix the failures and re-run.
+
+---
+
+## Scenario 2: Generate Test File for a Source File
+
+The input is a source file (component or utility function). Phase 0 through Phase 3 below cover this scenario. Phase 0 decides whether a unit test is appropriate; Phase 1–3 plan and write it.
+
+---
 
 ## Phase 0: Is This the Right Test Type?
 
@@ -77,7 +173,7 @@ List everything the code reaches outside itself. These are candidates for mockin
 **5. What are the interesting cases?**
 Scan for: conditionals, loops, type coercions, null/undefined checks, early returns, throws, async paths, and boundary values.
 
-Present a brief summary. Get confirmation before writing tests if anything is ambiguous.
+Present a brief summary. Proceed to Phase 2 without asking for confirmation.
 
 ---
 
@@ -100,6 +196,8 @@ Organise into four buckets:
 ---
 
 ## Phase 3: Write the Tests
+
+> **Auto-proceed:** Write the test file directly to disk without asking for confirmation.
 
 ### File naming
 
@@ -230,13 +328,93 @@ it('fires callback after 1s', () => {
 
 ---
 
+## Test Data Factories
+
+Test setup must be as simple as possible. When setup is complicated, developers avoid adding tests and resist modifying existing ones — the very thing unit tests are supposed to enable. The two tools for keeping setup simple are **factories** (for shared object construction) and **random helpers** (for values whose specific content doesn't matter).
+
+If your test setup requires creating the same data shape more than once, extract it into a factory function. Duplicated setup code makes tests fragile — a field rename means touching every test instead of one helper.
+
+**Where to put factory files:** `tests/factories/` — shared across all test files that need them.
+
+```
+tests/
+  factories/
+    makeSpa.ts        ← factory for a domain object
+    random.ts         ← random data helpers
+```
+
+### Factory pattern
+
+```typescript
+// tests/factories/makeUser.ts
+import type { User } from '@/types/user'
+
+let _id = 1
+
+export function makeUser(overrides: Partial<User> = {}): User {
+  return {
+    id: _id++,
+    name: 'Test User',
+    email: 'test@example.com',
+    role: 'viewer',
+    ...overrides,
+  }
+}
+```
+
+Use `overrides` to set only the fields your test cares about:
+
+```typescript
+it('grants access when role is admin', () => {
+  const user = makeUser({ role: 'admin' })
+  expect(canAccess(user, 'dashboard')).toBe(true)
+})
+```
+
+### Random data helpers
+
+When the specific value doesn't matter — only its type or shape does — generate it randomly. This prevents tests from accidentally passing because of a hardcoded coincidence.
+
+```typescript
+// tests/factories/random.ts
+export const randomString = (prefix = 'str') =>
+  `${prefix}-${Math.random().toString(36).slice(2, 8)}`
+
+export const randomInt = (min = 0, max = 100) =>
+  Math.floor(Math.random() * (max - min + 1)) + min
+
+export const randomPick = <T>(arr: T[]): T =>
+  arr[Math.floor(Math.random() * arr.length)]
+```
+
+**Rule:** Use a hardcoded value when the test cares about *that specific value*. Use a random helper when the test only cares about *the type or shape*.
+
+### Extracting the "When" call
+
+If the function under test has a signature that might change (different parameter order, added arguments), wrap the call in a single helper. Every test calls the helper — only the helper needs updating when the signature changes.
+
+```typescript
+// Single point of change if the function signature evolves
+function whenGetLowestPrice(id: number) {
+  return getLowestDayPassPrice(id)
+}
+
+it('returns the lowest price from multiple options', () => {
+  expect(whenGetLowestPrice(1)).toBe(45)
+})
+```
+
+Keep these helpers in the same test file unless multiple test files share the same function under test.
+
+---
+
 ## What Makes a Good Unit Test
 
 A good unit test:
 - Tests **one behaviour** per test
 - Uses the **public interface** — not internals
-- Has a name that reads like a sentence: `"returns zero when the list is empty"`
-- **Survives a refactor** — if the behaviour hasn't changed, the test shouldn't break
+- Has a name that reads like a sentence: `"[subject] [condition] [expected outcome]"` — e.g. `"returns zero when the list is empty"`, `"throws when input is null"`. Specific names mean a CI failure tells you exactly what broke without reading the test body.
+- **Survives a refactor** — if the behaviour hasn't changed, the test shouldn't break. Test what the function *returns or renders*, not which internal functions it calls. A test that breaks when you rename a private function is testing implementation, not behaviour.
 - Is **fast** — no I/O, no network, no sleep
 
 ### Warning signs
@@ -244,28 +422,38 @@ A good unit test:
 - Test name contains "and" → split it
 - Test mocks an internal function (not a boundary) → testing implementation, not behaviour
 - Test breaks when you rename a private variable → coupled to internals
-- Test calls `expect` zero or one time → probably not testing enough
+- Test has **no** assertion → it cannot fail; delete or fix it
+- Test has **many** assertions → split into separate tests, each with a name that describes the one thing it checks
+  - *Exception:* Vitest's `expect.soft()` continues running after a failure and attaches a per-assertion message. If you use it, give every assertion an explicit description — without one you lose the CI debuggability that justifies the exception.
+  ```typescript
+  it('returns correct shape for valid input', () => {
+    const result = transform(input)
+    expect.soft(result.name, 'name field').toBe('Alice')
+    expect.soft(result.age, 'age field').toBe(30)
+  })
+  ```
 - Test always passes → assertion may be wrong
 
 ---
 
 ## Output Format
 
-Produce:
-1. The complete test file, ready to run
-2. A brief summary listing:
-   - How many tests were written
-   - Which buckets were covered
-   - Any behaviours that were **intentionally skipped** and why
+Write the complete test file directly to disk without asking for confirmation. Then run the file:
+
+```bash
+npx vitest run <path-to-test-file>
+```
+
+Report the result:
+- **Pass** → State how many tests passed.
+- **Fail** → Show the failing test names and error output. Fix the failures and re-run.
 
 If the code is untestable as-is (e.g. hidden dependencies, no injectable seams), flag this and suggest the minimal refactor that would make it testable.
 
 ### When Phase 0 redirects
 
-If the code did not pass the Phase 0 gate, output the following instead of a test file:
+If the code did not pass the Phase 0 gate, output a single brief message:
 
-1. **Which step failed** — state clearly: "This code did not pass the Phase 0 unit test gate at Step [1/2/3]."
-2. **Why** — one sentence explaining the specific signal (not a pure function / not critical business logic / [N] mocks required).
-3. **Recommendation** — advise the user to use an integration test instead and briefly explain what that would cover that a unit test cannot.
+`No test file needed — [one sentence: which step failed and why, e.g. "requires 4 mocks, better suited to an integration test"].`
 
-Do not produce a partial test file. Do not apologise. State the finding and the recommendation directly.
+Do not produce a partial test file. Do not run the test runner. Do not apologise.
