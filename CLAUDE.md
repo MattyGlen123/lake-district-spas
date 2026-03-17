@@ -1,5 +1,7 @@
 .claude/skills/# CLAUDE.md
 
+- In all interactions and Commit messages, be extremely concise and sacrifice grammar for the sake of concision.
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
@@ -30,16 +32,16 @@ Pre-commit hook (Husky) runs `typecheck` then `test` — both must pass.
 
 > Compressed diagrams are in `.claude/diagrams/`. Load them at session start for accurate context without file-read overhead.
 >
-> | File | Covers |
-> |------|--------|
-> | `00-overview.md` | System-wide — data, libs, pages |
-> | `01-data-layer.md` | Spa entity model and relationships |
-> | `02-page-routing.md` | App Router URL structure |
-> | `03-component-hierarchy.md` | Spa detail page component tree |
-> | `04-data-flow.md` | How data flows from TS files to pages |
-> | `05-blog-system.md` | MDX pipeline and blog utilities |
-> | `06-filtering-logic.md` | Filter/sort/paginate flow |
-> | `07-location-pages.md` | Location page structure and data flow |
+> | File                        | Covers                                |
+> | --------------------------- | ------------------------------------- |
+> | `00-overview.md`            | System-wide — data, libs, pages       |
+> | `01-data-layer.md`          | Spa entity model and relationships    |
+> | `02-page-routing.md`        | App Router URL structure              |
+> | `03-component-hierarchy.md` | Spa detail page component tree        |
+> | `04-data-flow.md`           | How data flows from TS files to pages |
+> | `05-blog-system.md`         | MDX pipeline and blog utilities       |
+> | `06-filtering-logic.md`     | Filter/sort/paginate flow             |
+> | `07-location-pages.md`      | Location page structure and data flow |
 
 ### Data Layer (no backend — all local TypeScript)
 
@@ -105,11 +107,13 @@ See `docs/STYLE_GUIDE.md` for full reference. Key rules:
 ## Testing
 
 **Unit/Integration** (Vitest): Tests are **collocated alongside source files** — `Foo.tsx` has `Foo.test.tsx` in the same directory. Exceptions:
+
 - `tests/unit/spa-intro-validation.test.ts` — spans many spa data files, no single home
 - `tests/integration/spa-days.test.tsx` and `tests/integration/spa-treatments.test.tsx` — page-level tests
 - `tests/e2e/` — E2E specs (Playwright)
 
 Vitest discovers tests via `src/**/*.{test,spec}.{ts,tsx}` plus the two `tests/` folder globs. Tests cover:
+
 - Spa data structure completeness and required fields.
 - Intro text accuracy (facility counts, age policies, access labels must match data).
 - Filtering logic (multi-filter AND/OR combinations).
