@@ -2,7 +2,14 @@ import { defineConfig, devices } from '@playwright/test';
 import path from 'path';
 
 const PORT = process.env.PORT || 3000;
-const baseURL = `http://localhost:${PORT}`;
+const baseURL = process.env.BASE_URL || `http://localhost:${PORT}`;
+
+// Guard: e2e tests must only run against localhost.
+// Note: the --base-url CLI flag overrides this at runtime and is not caught here.
+const parsedURL = new URL(baseURL);
+if (parsedURL.hostname !== 'localhost' && parsedURL.hostname !== '127.0.0.1') {
+  throw new Error(`E2E tests must only run against localhost. Blocked: ${baseURL}`);
+}
 
 export default defineConfig({
   testDir: path.join(__dirname, 'tests/e2e'),
