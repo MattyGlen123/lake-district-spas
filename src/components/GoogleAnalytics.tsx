@@ -3,16 +3,6 @@
 import Script from 'next/script';
 
 export default function GoogleAnalytics() {
-  const isProduction = process.env.NODE_ENV === 'production';
-  const isLocalhost =
-    typeof window !== 'undefined' &&
-    (window.location.hostname === 'localhost' ||
-      window.location.hostname === '127.0.0.1');
-
-  if (!isProduction || isLocalhost) {
-    return null;
-  }
-
   return (
     <>
       {/* Google Tag Manager - handles GA4 config + all event tags */}
