@@ -12,7 +12,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Facial Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/63c2b865cfc8cbb1a407cc7d/ishga-mini-facial-full-body-salt-oil-scrub',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/63c2b865cfc8cbb1a407cc7d/ishga-mini-facial-full-body-salt-oil-scrub',
   },
   {
     spaId: 1,
@@ -25,7 +26,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Facial Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/63c2b96c824cb25228004352/ishga-mini-facial-foot-ritual',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/63c2b96c824cb25228004352/ishga-mini-facial-foot-ritual',
   },
   {
     spaId: 1,
@@ -38,7 +40,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Hands & Feet Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/64593cbb1c0c2583b902cdd5/foot-recovery-treatment-with-a-salt-infused-oil-body-scrub',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/64593cbb1c0c2583b902cdd5/foot-recovery-treatment-with-a-salt-infused-oil-body-scrub',
   },
   {
     spaId: 1,
@@ -51,7 +54,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Massage Therapies',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/63c2b45687439fdc990f0a64/backneck-shoulder-massage-mini-facial',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/63c2b45687439fdc990f0a64/backneck-shoulder-massage-mini-facial',
   },
   {
     spaId: 1,
@@ -64,7 +68,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Massage Therapies',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/63c2b6cb33ad4f3ba301100d/backneck-shoulder-massage-followed-by-a-relaxing-foot-treatment',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/63c2b6cb33ad4f3ba301100d/backneck-shoulder-massage-followed-by-a-relaxing-foot-treatment',
   },
   {
     spaId: 1,
@@ -77,7 +82,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Massage Therapies',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/63c7df7b73c8f69a9e074232/backneck-shoulder-massage-with-warm-oil-head-massage',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/63c7df7b73c8f69a9e074232/backneck-shoulder-massage-with-warm-oil-head-massage',
   },
   {
     spaId: 1,
@@ -90,7 +96,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Massage Therapies',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/640b16c47007ef6c93019294/backneck-shoulder-massage-followed-by-hand-and-arm-massage',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/640b16c47007ef6c93019294/backneck-shoulder-massage-followed-by-hand-and-arm-massage',
   },
   {
     spaId: 1,
@@ -103,7 +110,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Massage Therapies',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/63c2b55ba04b6bdb6e0b6263/back-neck-shoulder-massage-with-a-salt-oil-body-scrub',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/63c2b55ba04b6bdb6e0b6263/back-neck-shoulder-massage-with-a-salt-oil-body-scrub',
   },
   {
     spaId: 1,
@@ -116,7 +124,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Body Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/685d51b1e6398dd11800b0ca/elemis-expert-tech-smooth-polish',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/685d51b1e6398dd11800b0ca/elemis-expert-tech-smooth-polish',
   },
   {
     spaId: 1,
@@ -129,7 +138,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/685d560bc42a5092610c019e/elemis-expert-tech-sculpt-firm-facial',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/685d560bc42a5092610c019e/elemis-expert-tech-sculpt-firm-facial',
   },
   {
     spaId: 1,
@@ -142,7 +152,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/61dd80b6623006779f6a0fa8/elemis-expert-tech-radiance-revive-facial',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/61dd80b6623006779f6a0fa8/elemis-expert-tech-radiance-revive-facial',
   },
   {
     spaId: 1,
@@ -155,7 +166,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/685d5590b2afc7f69a07aea7/elemis-expert-tech-lift-rejuvenate-facial',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/685d5590b2afc7f69a07aea7/elemis-expert-tech-lift-rejuvenate-facial',
   },
   {
     spaId: 1,
@@ -168,7 +180,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/685d546b516264fdeb0faaf2/elemis-expert-touch-reveal-facial',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/685d546b516264fdeb0faaf2/elemis-expert-touch-reveal-facial',
   },
   {
     spaId: 1,
@@ -181,7 +194,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/685d68c3623fbb52de044116/elemis-expert-touch-nourish-facial',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/685d68c3623fbb52de044116/elemis-expert-touch-nourish-facial',
   },
   {
     spaId: 1,
@@ -194,7 +208,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/61dd8d7a24d7f7352a639432/elemis-expert-touch-define-facial',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/61dd8d7a24d7f7352a639432/elemis-expert-touch-define-facial',
   },
   {
     spaId: 1,
@@ -207,7 +222,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Facial Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/61dd92a6c4045863d15cdc7e/elemis-expert-touch-renew-facial',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/61dd92a6c4045863d15cdc7e/elemis-expert-touch-renew-facial',
   },
   {
     spaId: 1,
@@ -220,7 +236,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ELEMIS',
     category: 'Massage Therapies',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/685d531776849117d20a8a95/pregnancy-elemis-expert-peaceful-pregnancy-massage',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/685d531776849117d20a8a95/pregnancy-elemis-expert-peaceful-pregnancy-massage',
   },
   {
     spaId: 1,
@@ -233,7 +250,8 @@ export const spa1Treatments: Treatment[] = [
     brand: undefined,
     category: 'Hands & Feet Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/67f148adabf20c10b40646b8/reflexology',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/67f148adabf20c10b40646b8/reflexology',
   },
   {
     spaId: 1,
@@ -246,7 +264,8 @@ export const spa1Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/65db2117aae252eead05f565/bamboo-full-body-massage',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/65db2117aae252eead05f565/bamboo-full-body-massage',
   },
   {
     spaId: 1,
@@ -259,7 +278,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Facial Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/62a9c5e82a67e9880609cfe3/ishga-full-facial',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/62a9c5e82a67e9880609cfe3/ishga-full-facial',
   },
   {
     spaId: 1,
@@ -272,7 +292,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Body Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/627e6e34d46dda14f129181f/ishga-tender-care-touch',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/627e6e34d46dda14f129181f/ishga-tender-care-touch',
   },
   {
     spaId: 1,
@@ -285,7 +306,8 @@ export const spa1Treatments: Treatment[] = [
     brand: undefined,
     category: 'Body Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/627e6a248fc39e7bd07b9f87/falls-detoxifying-body-cocoon-50-minutes',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/627e6a248fc39e7bd07b9f87/falls-detoxifying-body-cocoon-50-minutes',
   },
   {
     spaId: 1,
@@ -298,7 +320,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Massage Therapies',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/627e5b164c050930e37f0f3e/ishga-mum-to-be-pregnancy-massage',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/627e5b164c050930e37f0f3e/ishga-mum-to-be-pregnancy-massage',
   },
   {
     spaId: 1,
@@ -311,7 +334,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Body Treatments',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/627e6a9173174f05ea1dbe32/ishga-marine-backneck-shoulder-leg-treatment-50-minutes',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/627e6a9173174f05ea1dbe32/ishga-marine-backneck-shoulder-leg-treatment-50-minutes',
   },
   {
     spaId: 1,
@@ -324,7 +348,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Massage Therapies',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/627e6b001bf3923689318582/ishga-hot-poultice-massage-deeply-relaxing-body-mind-detox',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/627e6b001bf3923689318582/ishga-hot-poultice-massage-deeply-relaxing-body-mind-detox',
   },
   {
     spaId: 1,
@@ -337,7 +362,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Massage Therapies',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/627e6b5889ef975ea153d8b7/ishgas-melting-into-hot-stones-full-body-massage-50-minutes',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/627e6b5889ef975ea153d8b7/ishgas-melting-into-hot-stones-full-body-massage-50-minutes',
   },
   {
     spaId: 1,
@@ -350,7 +376,8 @@ export const spa1Treatments: Treatment[] = [
     brand: 'ishga',
     category: 'Massage Therapies',
     price: '£130',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/627e6c101bf3923689318584/ishga-deep-tissue-full-body-massage-50-minutes',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/627e6c101bf3923689318584/ishga-deep-tissue-full-body-massage-50-minutes',
   },
   {
     spaId: 1,
@@ -363,7 +390,8 @@ export const spa1Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/61dd967f5e0fb71750477a04/the-falls-signature-relaxing-full-body-massage',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/61dd967f5e0fb71750477a04/the-falls-signature-relaxing-full-body-massage',
   },
   {
     spaId: 1,
@@ -376,19 +404,7 @@ export const spa1Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£100',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/627e5a483ab50b606e3edf84/falls-deluxe-trio-backneck-shoulder-massage-mini-facial-head-massage',
-  },
-  {
-    spaId: 1,
-    name: 'Journey of the Senses: Rasul Ritual',
-    description:
-      'Experience an ancient Arabian wellness ritual designed for 2-4 people, combining mineral-rich clay, heat, and steam for a deeply relaxing and revitalising treatment.',
-    shortDescription:
-      'Ancient Arabian cleansing ritual using mineral-rich muds and steam to deeply cleanse and revitalize skin.',
-    duration: '60 minutes',
-    brand: undefined,
-    category: 'Body Treatments',
-    price: '£60',
-    bookingUrl: 'https://lodorefallsspa.try.be/items/621e691d17cb3c4eb74d375c/rasul-ritual',
+    bookingUrl:
+      'https://lodorefallsspa.try.be/items/627e5a483ab50b606e3edf84/falls-deluxe-trio-backneck-shoulder-massage-mini-facial-head-massage',
   },
 ];

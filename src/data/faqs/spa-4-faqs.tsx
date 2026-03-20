@@ -101,7 +101,7 @@ export function getSpa4FAQs(spa: Spa): FAQ[] {
       question: `How much does a spa day cost at ${spa.name}?`,
       answer: (
         <>
-          Spa day packages at {spa.name} range from {facilitiesWeekdayPrice || '£35'} to {doNotDisturbWeekendPrice || '£195'} per person, depending on what&apos;s included. The spa offers nine different packages to suit various budgets and preferences.
+          Spa day packages at {spa.name} range from {facilitiesWeekdayPrice || '£35'} to {doNotDisturbWeekendPrice || '£195'} per person, depending on what&apos;s included. The spa offers ten different packages to suit various budgets and preferences.
           <br />
           <br />
           For spa facilities only, prices start at {facilitiesWeekdayPrice || '£35'} for 3 hours Monday to Thursday, or {facilitiesWeekendPrice || '£45'} Friday to Sunday and bank holidays. The{' '}

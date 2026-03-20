@@ -15,7 +15,7 @@ export const spaData: Spa[] = [
     },
     metaDescription:
       'Luxury spa in Borrowdale with infinity-edge outdoor pool overlooking the fells. Three thermal pools and steam room. Perfect for romantic couples.',
-    intro: `The Falls Spa at Lodore Falls Hotel offers one of the Lake District's finest spa experiences, featuring an infinity-edge outdoor hydrotherapy pool overlooking Derwentwater and the surrounding fells. Set in Borrowdale near Keswick, this adults-only retreat combines nine thermal experiences with stunning Cumbrian scenery.
+    intro: `The Falls Spa at Lodore Falls Hotel offers one of the Lake District's finest spa experiences, featuring an infinity-edge outdoor hydrotherapy pool overlooking Derwentwater and the surrounding fells. Set in Borrowdale near Keswick, this adults-only retreat combines ten thermal experiences with stunning Cumbrian scenery.
 
 The comprehensive thermal suite includes Finnish and herbal saunas with panoramic views, a Roman laconium, salt and aroma steam rooms, plus ice fountain and cold drench bucket for contrast therapy. The outdoor vitality pool features underwater bubble loungers, volcano fountain, and hydromassage neck jets.
 
@@ -75,6 +75,11 @@ Spa access is complimentary for suite bookings (2 hours per night), while standa
       {
         name: 'Salt Steam Room',
         details: 'Salt Steam room at 40°C at 95% humidity, halotherapy',
+      },
+      {
+        name: 'Rasul Mud Chamber',
+        details:
+          'Rasul Mud Chamber mineral-rich mud application (additional charge)',
       },
       { name: 'Heated Loungers', details: 'Heated loungers in thermal suite' },
       {
@@ -724,7 +729,7 @@ Spa access is complimentary for all Brimstone Hotel guests throughout their stay
       "Grasmere's contemporary spa with thermal facilities in the village heart. Modern wellness and mountain views. Perfect for village-based escapes.",
     intro: `Daffodil Hotel Spa offers contemporary wellness in the heart of Grasmere village, just a five-minute walk from the village center and on the shores of Grasmere lake. The spa features a 33ft hydrotherapy pool with cascade water features, creating multiple levels of hydromassage.
 
-Thermal facilities include a Finnish sauna, steam room, and tepidarium for gentle warming heat therapy. The spa also features a rasul mud chamber where guests can apply mineral-rich mud in a tranquil tiled room. The treatment menu spans 33 experiences using Germaine De Capuccini and Temple Spa products.
+Thermal facilities include a Finnish sauna, steam room, and tepidarium for gentle warming heat therapy. The spa also features a rasul mud chamber where guests can apply mineral-rich mud in a tranquil tiled room (additional charge). The treatment menu spans 33 experiences using Germaine De Capuccini and Temple Spa products.
 
 Spa access is complimentary for all hotel guests from 2pm on arrival until midday on departure. Day passes are available for non-residents for two-hour sessions. This is a 16+ spa.`,
     websiteUrl:
@@ -771,7 +776,8 @@ Spa access is complimentary for all hotel guests from 2pm on arrival until midda
       { name: 'Tepidarium', details: 'Gentle warming heat therapy' },
       {
         name: 'Rasul Mud Chamber',
-        details: 'Mineral-rich mud application in tranquil tiled room',
+        details:
+          'Mineral-rich mud application in tranquil tiled room (additional charge)',
       },
     ],
     poolFeatures: [
@@ -2128,7 +2134,7 @@ Complimentary spa access included for hotel guests, with day passes and annual m
     },
     metaDescription:
       "Backbarrow's riverside spa with outdoor jacuzzi overlooking River Leven. Peaceful natural setting and intimate wellness. Ideal for secluded couples' retreats.",
-    intro: `The Whitewater Hotel sits directly on River Leven's banks in Backbarrow's Lakeland Village. Located one mile south of Lake Windermere near Ulverston, the spa features the Lake District's first Rasul Mud Temple, a genuinely unique Arabian thermal experience unavailable elsewhere in the region.
+    intro: `The Whitewater Hotel sits directly on River Leven's banks in Backbarrow's Lakeland Village. Located one mile south of Lake Windermere near Ulverston, the spa features the Lake District's first Rasul Mud Temple, a genuinely unique Arabian thermal experience unavailable elsewhere in the region (additional charge).
 
 The indoor heated pool and outdoor jacuzzi overlook River Leven's flowing waters. The thermal circuit includes Turkish Hamam aromatherapy steam room, traditional sauna, and multi-sensory feature shower. Elemis spa treatments complete the wellness offering.
 
@@ -2162,9 +2168,9 @@ Complimentary Cascades access included for all hotel guests, with 10% discount o
       },
       { name: 'Feature Shower', details: 'Multi-sensory feature shower' },
       {
-        name: 'Rasul Mud Temple (additional cost)',
+        name: 'Rasul Mud Temple',
         details:
-          'Arabian steam room with multiple mud applications for deep cleansing',
+          'Arabian steam room with multiple mud applications for deep cleansing (additional charge)',
       },
     ],
     poolFeatures: [

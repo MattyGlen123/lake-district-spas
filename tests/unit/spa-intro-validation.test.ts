@@ -406,8 +406,8 @@ describe('Spa Introduction Text Validation', () => {
 
     it('should mention thermal facility count correctly', () => {
       const intro = lodoreFalls.intro?.toLowerCase() || '';
-      expect(intro).toContain('nine thermal experiences');
-      expect(lodoreFalls.thermalFacilities.length).toBe(9);
+      expect(intro).toContain('ten thermal experiences');
+      expect(lodoreFalls.thermalFacilities.length).toBe(10);
     });
 
     it('should mention suite access policy correctly', () => {

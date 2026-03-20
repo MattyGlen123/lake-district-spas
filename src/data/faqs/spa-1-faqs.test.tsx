@@ -65,7 +65,7 @@ describe('Lodore Falls FAQs - Helper Functions', () => {
   describe('Other Helper Functions', () => {
     it('should return correct thermal facilities count', () => {
       const thermalCount = getThermalFacilitiesCount(lodoreFallsSpa);
-      expect(thermalCount).toBe(9);
+      expect(thermalCount).toBe(10);
     });
 
     it('should return treatment brands text', () => {

@@ -93,6 +93,32 @@ export const spa4DayPasses: SpaDayPasses = {
       lastVerified: '2026-01-22',
     },
     {
+      id: 'daffodil-mud-rasul-spa-for-two',
+      packageName: 'Mud Rasul & Spa Access for Two',
+      priceGBP: 125,
+      pricePerPerson: 62,
+      spaDuration: 2,
+      requiredNumbers: '2',
+      treatmentsIncluded: true,
+      refreshmentsIncluded: false,
+      mealIncluded: true,
+      included: [
+        'Self-administered Mud Rasul treatment',
+        '2-hour spa access including shower and changing room access (10am-4pm)',
+        '2-course lunch per person',
+        'Complimentary robes and slippers',
+      ],
+      description:
+        'Nourishing mineral muds for face and body inside a steam-heated rasul chamber, combined with two hours of spa access and a two-course lunch for two.',
+      daysAvailable: 'Monday-Sunday',
+      ageRestriction: '16+',
+      bookingRequired: true,
+      bookingEmail: 'thespateam@daffodilhotel.com',
+      dayPassUrl:
+        'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/mud-rasul-and-spa-access-for-two/',
+      lastVerified: '2026-03-20',
+    },
+    {
       id: 'daffodil-twilight-spa',
       packageName: 'Twilight Spa',
       priceGBP: 40,
