@@ -135,3 +135,17 @@ Vitest discovers tests via `src/**/*.{test,spec}.{ts,tsx}` plus the two `tests/`
 - `docs/blog.md` — Blog post creation guide with MDX component docs.
 - `docs/treatments.md` — Treatment data structure.
 - `docs/day-passes.md` — Day pass data structure.
+
+## Agent skills
+
+### Issue tracker
+
+Issues live as markdown files under `.scratch/<feature>/` in this repo. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Uses default five-role vocabulary (needs-triage, needs-info, ready-for-agent, ready-for-human, wontfix). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context layout — one `CONTEXT.md` at repo root + `docs/adr/`. See `docs/agents/domain.md`.
