@@ -87,11 +87,11 @@ describe('BookVisitCTA', () => {
     expect(screen.queryByRole('link')).not.toBeInTheDocument();
   });
 
-  it('booking links have target="_blank" and rel="noopener noreferrer"', () => {
+  it('booking links have no target and no rel attribute', () => {
     const spa = { ...baseSpa, hotelBookingUrl: 'https://hotel.com/book' };
     render(<BookVisitCTA spa={spa} />);
     const link = screen.getByRole('link', { name: /book stay/i });
-    expect(link).toHaveAttribute('target', '_blank');
-    expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+    expect(link).not.toHaveAttribute('target');
+    expect(link).not.toHaveAttribute('rel');
   });
 });

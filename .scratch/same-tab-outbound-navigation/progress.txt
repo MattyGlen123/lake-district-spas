@@ -8,3 +8,11 @@ Changes:
 Gotchas:
 - `mockHrefSetter` must be typed as `(v: string) => void` (not `ReturnType<typeof vi.fn>`) to avoid TS2348 "not callable" error inside the `set href` accessor
 - `vi.useFakeTimers()` / `vi.useRealTimers()` scoped to inner describe block — outer tests unaffected
+
+## 02-bookvistcta-cleanup — completed 2026-05-19
+
+Changes:
+- `src/components/BookVisitCTA.tsx`: removed `target="_blank"`, `rel="noopener noreferrer"`, and `ExternalLink` icon from all 4 `<a>` elements (hotel, day pass, treatment, website fallback); removed `ExternalLink` from import
+- `src/components/BookVisitCTA.test.tsx`: updated existing `target`/`rel` test to assert their absence instead
+
+Gotchas: none
