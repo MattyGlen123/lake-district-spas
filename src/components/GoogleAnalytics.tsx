@@ -93,6 +93,11 @@ export default function GoogleAnalytics() {
                   click_intent: clickIntent,
                   product_name: productName
                 });
+
+                if (isExternal) {
+                  e.preventDefault();
+                  setTimeout(function() { window.location.href = href; }, 200);
+                }
               });
             })();
           `,

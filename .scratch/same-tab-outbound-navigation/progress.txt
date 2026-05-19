@@ -1,0 +1,10 @@
+
+## 01-ga-tracker-delay-navigation — completed 2026-05-19
+
+Changes:
+- `src/components/GoogleAnalytics.tsx`: added `e.preventDefault()` + 200ms `setTimeout(() => window.location.href = href)` for HTTP/HTTPS external links; protocol handlers (mailto/tel) still just fire dataLayer event
+- `src/components/GoogleAnalytics.test.ts`: updated `initializeClickTracker` helper to match; added 5 new tests in "Delayed same-tab navigation" describe block using `vi.useFakeTimers()` and a `window.location` stub
+
+Gotchas:
+- `mockHrefSetter` must be typed as `(v: string) => void` (not `ReturnType<typeof vi.fn>`) to avoid TS2348 "not callable" error inside the `set href` accessor
+- `vi.useFakeTimers()` / `vi.useRealTimers()` scoped to inner describe block — outer tests unaffected
