@@ -25,3 +25,12 @@ Changes:
 - Email Us links had no `target`/`rel` in either file — no change needed there
 
 Gotchas: DayPassCard has no dedicated test file; checked via full test run
+
+## 04-treatments-cleanup — completed 2026-05-19
+
+Changes:
+- `src/components/Treatments.tsx`: removed `target`/`rel` and `ExternalLink` icon from "Book Treatment" CTA and TreatmentCard "Book Now" buttons (both treatment.bookingUrl and spa.treatmentBookingUrl branches); ExternalLink import removed
+- `src/components/TreatmentPickCard.tsx`: same — "Book Now" link cleaned; ExternalLink import removed
+- "Call Now" tel: links had no `target`/`rel` in either file — no change needed
+
+Gotchas: TreatmentPickCard has no dedicated test file; checked via full test run

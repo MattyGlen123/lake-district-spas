@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ChevronDown, Clock, Tag, ExternalLink } from 'lucide-react';
+import { ChevronDown, Clock, Tag } from 'lucide-react';
 import { Spa, TreatmentCategory, Treatment } from '@/types/spa';
 import { getTreatmentsBySpaId } from '@/data/treatments/index';
 import { getFAQsBySpaId } from '@/data/faqs';
@@ -105,8 +105,6 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
                   {treatment.bookingUrl ? (
                     <a
                       href={appendUtmParams(treatment.bookingUrl, 'specific-product-click')}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
                       data-spa-id={spa.url}
                       data-click-intent="specific-product-click"
@@ -114,13 +112,10 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
                       className="px-4 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm flex items-center justify-center gap-1"
                     >
                       Book Now
-                      <ExternalLink className="h-2 w-2" />
                     </a>
                   ) : spa.treatmentBookingUrl ? (
                     <a
                       href={appendUtmParams(spa.treatmentBookingUrl, 'specific-product-click')}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
                       data-spa-id={spa.url}
                       data-click-intent="specific-product-click"
@@ -128,7 +123,6 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, spa }) => {
                       className="px-4 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm flex items-center justify-center gap-1"
                     >
                       Book Now
-                      <ExternalLink className="h-2 w-2" />
                     </a>
                   ) : spa.treatmentBookingPhone ? (
                     <a
@@ -246,14 +240,11 @@ export default function Treatments({ spa }: TreatmentsProps) {
             <div className="mt-8">
               <a
                 href={appendUtmParams(spa.treatmentBookingUrl, 'all-treatments')}
-                target="_blank"
-                rel="noopener noreferrer"
                 data-spa-id={spa.url}
                 data-click-intent="all-treatments"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm"
               >
                 Book Treatment
-                <ExternalLink className="h-3 w-3" />
               </a>
             </div>
           )}

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Clock, Tag, MapPin, ExternalLink } from 'lucide-react';
+import { Clock, Tag, MapPin } from 'lucide-react';
 import { Treatment, Spa } from '@/types/spa';
 import { appendUtmParams } from '@/lib/utils';
 
@@ -71,15 +71,12 @@ export default function TreatmentPickCard({
         {spa.treatmentBookingUrl ? (
           <a
             href={appendUtmParams(spa.treatmentBookingUrl, 'specific-product-click')}
-            target="_blank"
-            rel="noopener noreferrer"
             data-spa-id={spa.url}
             data-click-intent="specific-product-click"
             data-product-name={treatment.name}
             className="mt-auto w-full flex items-center justify-center gap-1 px-4 py-3 bg-amber-700 text-white font-bold rounded-full text-sm uppercase tracking-wider shadow-sm"
           >
             Book Now
-            <ExternalLink className="h-2 w-2" />
           </a>
         ) : spa.treatmentBookingPhone ? (
           <a
