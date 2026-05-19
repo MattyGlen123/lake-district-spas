@@ -16,3 +16,12 @@ Changes:
 - `src/components/BookVisitCTA.test.tsx`: updated existing `target`/`rel` test to assert their absence instead
 
 Gotchas: none
+
+## 03-day-passes-cleanup — completed 2026-05-19
+
+Changes:
+- `src/components/DayPasses.tsx`: removed `target`/`rel` and `ExternalLink` icon from "Book Day Pass" CTA, "More info" inline link, and "Book Pass" button; removed ExternalLink import
+- `src/components/DayPassCard.tsx`: same — "More info" and "Book Pass" links cleaned; ExternalLink import removed
+- Email Us links had no `target`/`rel` in either file — no change needed there
+
+Gotchas: DayPassCard has no dedicated test file; checked via full test run

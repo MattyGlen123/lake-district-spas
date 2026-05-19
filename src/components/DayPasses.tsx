@@ -1,4 +1,4 @@
-import { Check, ExternalLink, CreditCard, Users, Mail } from 'lucide-react';
+import { Check, CreditCard, Users, Mail } from 'lucide-react';
 import { Spa } from '@/types/spa';
 import { getDayPassOptionsBySpaId } from '@/data/day-passes';
 import { appendUtmParams } from '@/lib/utils';
@@ -41,14 +41,11 @@ export default function DayPasses({ spa }: DayPassesProps) {
           <div className="mb-8">
             <a
               href={appendUtmParams(spa.dayPassBookingUrl, 'all-day-passes')}
-              target="_blank"
-              rel="noopener noreferrer"
               data-spa-id={spa.url}
               data-click-intent="all-day-passes"
               className="inline-flex items-center justify-center gap-2 bg-emerald-950 text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
             >
               <span className="leading-none">Book Day Pass</span>
-              <ExternalLink className="h-3 w-3 self-start" />
             </a>
           </div>
         )}
@@ -101,15 +98,12 @@ export default function DayPasses({ spa }: DayPassesProps) {
                 {option.description}{' '}
                   <a
                   href={appendUtmParams(option.dayPassUrl, 'specific-product-click')}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   data-spa-id={spa.url}
                   data-click-intent="specific-product-click"
                   data-product-name={option.packageName}
                   className="underline"
                 >
-                  More info{' '}
-                  <ExternalLink className="h-2 w-2 inline-block align-top" style={{ verticalAlign: '0.1em' }} />
+                  More info
                 </a>
               </p>
 
@@ -126,15 +120,12 @@ export default function DayPasses({ spa }: DayPassesProps) {
                 {option.bookingUrl ? (
                   <a
                     href={appendUtmParams(option.bookingUrl, 'specific-product-click')}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     data-spa-id={spa.url}
                     data-click-intent="specific-product-click"
                     data-product-name={option.packageName}
                     className="flex items-center justify-center gap-2 bg-emerald-950 text-white px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
                   >
                     <span className="leading-none">Book Pass</span>
-                    <ExternalLink className="h-3 w-3 self-start" />
                   </a>
                 ) : option.bookingEmail ? (
                   <a

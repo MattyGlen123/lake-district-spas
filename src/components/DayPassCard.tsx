@@ -1,4 +1,4 @@
-import { Check, ExternalLink, CreditCard, Users, Mail, MapPin } from 'lucide-react';
+import { Check, CreditCard, Users, Mail, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { DayPassOption, Spa } from '@/types/spa';
 import { appendUtmParams } from '@/lib/utils';
@@ -82,15 +82,12 @@ export default function DayPassCard({ dayPass, spa }: DayPassCardProps) {
           {dayPass.description}{' '}
           <a
             href={appendUtmParams(dayPass.dayPassUrl, 'specific-product-click')}
-            target="_blank"
-            rel="noopener noreferrer"
             data-spa-id={spa.url}
             data-click-intent="specific-product-click"
             data-product-name={dayPass.packageName}
             className="underline"
           >
-            More info{' '}
-            <ExternalLink className="h-2 w-2 inline-block align-top" style={{ verticalAlign: '0.1em' }} />
+            More info
           </a>
         </p>
 
@@ -107,15 +104,12 @@ export default function DayPassCard({ dayPass, spa }: DayPassCardProps) {
           {dayPass.bookingUrl ? (
             <a
               href={appendUtmParams(dayPass.bookingUrl, 'specific-product-click')}
-              target="_blank"
-              rel="noopener noreferrer"
               data-spa-id={spa.url}
               data-click-intent="specific-product-click"
               data-product-name={dayPass.packageName}
               className="flex items-center justify-center gap-2 bg-emerald-950 text-white px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
             >
               <span className="leading-none">Book Pass</span>
-              <ExternalLink className="h-3 w-3 self-start" />
             </a>
           ) : dayPass.bookingEmail ? (
             <a
