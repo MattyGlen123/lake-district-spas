@@ -34,3 +34,11 @@ Changes:
 - "Call Now" tel: links had no `target`/`rel` in either file — no change needed
 
 Gotchas: TreatmentPickCard has no dedicated test file; checked via full test run
+
+## 05-blog-links-cleanup — completed 2026-05-19
+
+Changes:
+- `src/app/blog/[slug]/page.tsx`: removed `target="_blank"` and `rel="noopener noreferrer"` from 3 link types: (1) MDX prose `a` renderer (external links), (2) `DayPassLink` MDX component, (3) `TreatmentLink` MDX component (bookingUrl branch)
+- No icons to remove — none were present in this file
+
+Gotchas: none — page.test.tsx covers price components, not link attributes

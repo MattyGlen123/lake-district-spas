@@ -196,8 +196,6 @@ const mdxComponents = {
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
         className="text-emerald-700 hover:text-emerald-900 underline font-medium"
         {...props}
       >
@@ -428,8 +426,6 @@ const mdxComponents = {
     return (
       <a
         href={appendUtmParams(bookingUrl, 'specific-product-click')}
-        target="_blank"
-        rel="noopener noreferrer"
         data-spa-id={spa.url}
         data-click-intent="specific-product-click"
         data-product-name={packageName || dayPassId}
@@ -460,8 +456,6 @@ const mdxComponents = {
       return (
         <a
           href={appendUtmParams(bookingUrl, 'specific-product-click')}
-          target="_blank"
-          rel="noopener noreferrer"
           data-spa-id={spa.url}
           data-click-intent="specific-product-click"
           data-product-name={fullTreatmentName || treatmentName}
