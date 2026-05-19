@@ -15,34 +15,28 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
     spa.id,
     'another-place-day-membership-treatment'
   );
-  const dayMembershipLunchPrice = getDayPassPrice(
+  const swimAndDinePrice = getDayPassPrice(
     spa.id,
-    'another-place-day-membership-lunch'
+    'another-place-swim-and-dine'
   );
 
   // Treatment prices
   const fellWalkersPrice = getTreatmentPrice(spa.id, 'Fell Walkers Massage');
   const fullBodyMassagePrice = getTreatmentPrice(spa.id, 'Full Body Massage');
-  const drenchFacialPrice = getTreatmentPrice(
-    spa.id,
-    'land&water drench facial'
-  );
+  const drenchFacialPrice = getTreatmentPrice(spa.id, 'Drench Facial');
   const worksPrice = getTreatmentPrice(spa.id, 'The Works');
-  const sideBySidePrice = getTreatmentPrice(spa.id, 'Side by Side');
+  const sideBySidePrice = getTreatmentPrice(spa.id, 'Side by side massage');
 
   // Treatment IDs for linking
   const fellWalkersId = getTreatmentIdByName(spa.id, 'Fell Walkers Massage');
   const fullBodyMassageId = getTreatmentIdByName(spa.id, 'Full Body Massage');
-  const drenchFacialId = getTreatmentIdByName(
-    spa.id,
-    'land&water drench facial'
-  );
+  const drenchFacialId = getTreatmentIdByName(spa.id, 'Drench Facial');
   const worksId = getTreatmentIdByName(spa.id, 'The Works');
-  const sideBySideId = getTreatmentIdByName(spa.id, 'Side by Side');
+  const sideBySideId = getTreatmentIdByName(spa.id, 'Side by side massage');
 
   // Treatment durations
-  const treatment60Min = getTreatmentDuration(spa.id, '60 minute');
-  const treatment120Min = getTreatmentDuration(spa.id, '120 minute');
+  const treatment50Min = getTreatmentDuration(spa.id, '50 minute');
+  const treatment105Min = getTreatmentDuration(spa.id, '105 minute');
 
   // Brands text
   const brandsText = getTreatmentBrandsText(spa.id);
@@ -92,23 +86,17 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
           </Link>
           . This includes full day access to the 20 metre lake view pool,
           outdoor hot tub, sauna, and cardio room, plus a{' '}
-          {treatment60Min || '60 minute'} treatment of your choice. For{' '}
-          {dayMembershipLunchPrice || '£120'} per person, you can add a one
-          course lunch in the hotel restaurant with the{' '}
-          <Link
-            href="#another-place-day-membership-lunch"
-            className="underline"
-          >
-            Day Membership with Treatment & Lunch
-          </Link>
-          .
+          {treatment50Min || '50 minute'} treatment of your choice.
           <br />
           <br />
-          If you&apos;re looking for a shorter experience, the Evening Swim Club
-          package offers access from 6pm with a three course dinner in Rampsbeck
-          Restaurant for £55 to £60 per person (available Sunday to Thursday
-          outside school holidays). Day membership is subject to availability
-          and booking is required in advance.
+          For an evening option, the{' '}
+          <Link href="#another-place-swim-and-dine" className="underline">
+            Swim &amp; Dine
+          </Link>{' '}
+          package is {swimAndDinePrice || '£60'} per person. You arrive from
+          6pm and enjoy Swim Club access alongside a three-course dinner at
+          Rampsbeck Restaurant. Available Sunday to Thursday outside school
+          holidays, minimum 2 people.
           <br />
           <br />
           For locals, {spa.name} also offers limited 6 and 12 month memberships
@@ -124,7 +112,7 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
           .
         </>
       ),
-      schemaText: `Day membership at ${spa.name} Swim Club costs ${dayMembershipTreatmentPrice || '£110'} per person including full day access and a ${treatment60Min || '60 minute'} treatment, or ${dayMembershipLunchPrice || '£120'} with a one course lunch. Evening packages from £55-60 include dinner (Sunday to Thursday). Day membership includes the 20 metre lake view pool, outdoor hot tub, sauna, and cardio room. Booking is required in advance. Local memberships are also available on 6 and 12 month terms.`,
+      schemaText: `Day membership at ${spa.name} Swim Club costs ${dayMembershipTreatmentPrice || '£110'} per person including full day access and a ${treatment50Min || '50 minute'} treatment. The Swim & Dine evening package is ${swimAndDinePrice || '£60'} per person and includes Swim Club access from 6pm and a three-course dinner at Rampsbeck Restaurant, available Sunday to Thursday outside school holidays (minimum 2 people). Booking is required in advance. Local memberships are also available on 6 and 12 month terms.`,
     },
     {
       question: `Is Swim Club access included with my room at ${spa.name}?`,
@@ -189,7 +177,7 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
       question: `What treatments are available at ${spa.name}?`,
       answer: (
         <>
-          {spa.name} Swim Club offers 18 spa treatments using
+          {spa.name} Swim Club offers 14 spa treatments using
           {brandsText ? ` ${brandsText}` : ' land&water products'}, a brand
           developed with their sister hotel Watergate Bay in Cornwall. The
           signature treatment is the{' '}
@@ -199,7 +187,7 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
           >
             Fell Walkers Massage
           </Link>{' '}
-          ({fellWalkersPrice || '£90'}, {treatment60Min || '60 minutes'}),
+          ({fellWalkersPrice || '£90'}, {treatment50Min || '50 minutes'}),
           designed specifically for tired legs after a day hiking in the Lake
           District fells. It includes a foot soak and scrub, legs wrapped in
           heated towels, leg and foot massage, and neck and scalp massage.
@@ -217,7 +205,7 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
             href={drenchFacialId ? `#${drenchFacialId}` : '#treatments'}
             className="underline"
           >
-            land&water drench facial
+            Drench Facial
           </Link>{' '}
           ({drenchFacialPrice || '£90'}), and{' '}
           <Link
@@ -226,10 +214,10 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
           >
             The Works
           </Link>{' '}
-          ({worksPrice || '£160'}, {treatment120Min || '120 minutes'}) which
+          ({worksPrice || '£160'}, {treatment105Min || '105 minutes'}) which
           combines body brush, salt scrub, wrap, mini facial, and full body
-          massage for the ultimate experience. Pregnancy safe treatments are
-          available including adapted massage and facial options.
+          massage for the ultimate experience. A pregnancy massage is available
+          for expectant mothers past the first trimester.
           <br />
           <br />
           For couples,{' '}
@@ -239,17 +227,15 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
           >
             side by side massage or facial treatments
           </Link>{' '}
-          ({sideBySidePrice || '£170'}) are available in the double treatment
-          room. Most treatments can be booked online, though The Works and 30
-          minute treatments require booking through guest services directly. See
-          all{' '}
+          ({sideBySidePrice || '£85'} per person) are available in the double
+          treatment room. See all{' '}
           <Link href="#treatments" className="underline">
             treatment options
           </Link>
           .
         </>
       ),
-      schemaText: `${spa.name} Swim Club offers 18 spa treatments using${brandsText ? ` ${brandsText}` : ' land&water products'}. The signature Fell Walkers Massage (${fellWalkersPrice || '£90'}, ${treatment60Min || '60 minutes'}) is designed for tired legs after hiking, including foot soak, heated towel leg wrap, and massage. Other options include full body massage (${fullBodyMassagePrice || '£90'}), land&water drench facial (${drenchFacialPrice || '£90'}), and The Works (${worksPrice || '£160'}, ${treatment120Min || '120 minutes'}). Pregnancy safe treatments and side by side couples treatments (${sideBySidePrice || '£170'}) are available. Most treatments can be booked online.`,
+      schemaText: `${spa.name} Swim Club offers 14 spa treatments using${brandsText ? ` ${brandsText}` : ' land&water products'}. The signature Fell Walkers Massage (${fellWalkersPrice || '£90'}, ${treatment50Min || '50 minutes'}) is designed for tired legs after hiking, including foot soak, heated towel leg wrap, and massage. Other options include full body massage (${fullBodyMassagePrice || '£90'}), Drench Facial (${drenchFacialPrice || '£90'}), and The Works (${worksPrice || '£160'}, ${treatment105Min || '105 minutes'}). Pregnancy massage and side by side couples treatments (${sideBySidePrice || '£85'} per person) are available.`,
     },
   ];
 }

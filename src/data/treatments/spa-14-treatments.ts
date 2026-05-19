@@ -8,7 +8,7 @@ export const spa14Treatments: Treatment[] = [
       'Therapeutic full body massage focused on relaxation and muscle tension relief.',
     shortDescription:
       'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
-    duration: '60 minutes',
+    duration: '50 minutes',
     brand: undefined,
     category: 'Massage Therapies',
     price: '£90',
@@ -19,8 +19,8 @@ export const spa14Treatments: Treatment[] = [
     description:
       'Foot soak and scrub. Legs wrapped in heated towels, leg and foot massage, neck and scalp massage. Perfect after a day in the fells.',
     shortDescription:
-      'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
-    duration: '60 minutes',
+      'Restorative massage designed for tired legs after a day in the Lake District fells.',
+    duration: '50 minutes',
     brand: undefined,
     category: 'Massage Therapies',
     price: '£90',
@@ -30,22 +30,10 @@ export const spa14Treatments: Treatment[] = [
     name: 'Freestyle Massage',
     description: 'Personalised massage tailored to your needs.',
     shortDescription:
-      'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
-    duration: '60 minutes',
+      'Bespoke massage tailored entirely to your individual needs and preferences.',
+    duration: '50 minutes',
     brand: undefined,
     category: 'Massage Therapies',
-    price: '£90',
-  },
-  {
-    spaId: 14,
-    name: 'land&water body',
-    description:
-      'Full body brush, salt scrub, exfoliate, body lotion, shoulder, scalp, neck & shoulder massage.',
-    shortDescription:
-      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
-    duration: '60 minutes',
-    brand: 'land&water',
-    category: 'Body Treatments',
     price: '£90',
   },
   {
@@ -54,8 +42,8 @@ export const spa14Treatments: Treatment[] = [
     description:
       'A relaxing heated massage to back, neck, shoulders and back of legs.',
     shortDescription:
-      'Relaxing full-body massage tailored to ease muscle tension and restore a sense of calm and wellbeing.',
-    duration: '60 minutes',
+      'Warming stone massage targeting back, neck, shoulders and legs to ease deep muscle tension.',
+    duration: '50 minutes',
     brand: undefined,
     category: 'Massage Therapies',
     price: '£90',
@@ -65,76 +53,103 @@ export const spa14Treatments: Treatment[] = [
     name: 'Back, Face and Scalp Massage',
     description: 'Back, neck, and shoulder, face, and scalp massage.',
     shortDescription:
-      'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
-    duration: '60 minutes',
+      'Targeted massage covering back, neck, shoulders, face and scalp.',
+    duration: '25 minutes',
+    brand: undefined,
+    category: 'Massage Therapies',
+    price: '£50',
+  },
+  {
+    spaId: 14,
+    name: 'Side by side massage',
+    description:
+      'Share the relaxation of a Swim Club treatment. Experience a massage together in our double treatment room.',
+    shortDescription:
+      'Couples massage treatment side by side in the double treatment room.',
+    duration: '50 minutes',
+    brand: undefined,
+    category: 'Massage Therapies',
+    price: '£85',
+  },
+  {
+    spaId: 14,
+    name: 'Pregnancy Massage',
+    description:
+      'Full body massage, for pregnancy past first trimester. Specialist positioning ensures safety and comfort.',
+    shortDescription:
+      'Specially designed massage for expectant mothers focusing on sore, tired muscles without lying on your tummy.',
+    duration: '50 minutes',
     brand: undefined,
     category: 'Massage Therapies',
     price: '£90',
   },
   {
     spaId: 14,
-    name: 'Back, Neck and Shoulder Massage & Mini Facial',
+    name: 'land&water Full body wrap',
     description:
-      'Back, neck, and shoulder massage and mini facial: cleanse, tone, exfoliation, mask, scalp massage and moisturise.',
+      'Full body exfoliation and wrap treatment using land&water products. Includes body brush, salt scrub, wrap, and shoulder and scalp massage.',
     shortDescription:
-      'Express facial treatment providing quick, targeted results to refresh and revitalize skin.',
-    duration: '60 minutes',
-    brand: undefined,
-    category: 'Massage Therapies',
+      'Indulgent full body exfoliation and wrap using land&water products for deeply nourished, renewed skin.',
+    duration: '75 minutes',
+    brand: 'land&water',
+    category: 'Body Treatments',
+    price: '£140',
   },
   {
     spaId: 14,
-    name: 'land&water hands and feet',
+    name: 'The Works',
     description:
-      'Foot soak and salt scrub, foot and leg massage, hand soak and salt scrub, hand and arm massage with land and water hand lotion.',
+      'Body brush, salt scrub exfoliate, wrap, mini facial followed by a full body massage. The ultimate spa treatment experience.',
     shortDescription:
-      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
-    duration: '60 minutes',
+      'The ultimate spa package combining body brush, salt scrub, wrap, mini facial and full body massage.',
+    duration: '105 minutes',
+    brand: undefined,
+    category: 'Body Treatments',
+    price: '£160',
+  },
+  {
+    spaId: 14,
+    name: 'Drench Facial',
+    description:
+      'Cleanse, exfoliate, tone, face, neck and shoulder massage, face mask, scalp massage, moisturise.',
+    shortDescription:
+      'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
+    duration: '50 minutes',
+    brand: 'land&water',
+    category: 'Facial Treatments',
+    price: '£90',
+  },
+  {
+    spaId: 14,
+    name: 'Side by Side Facial',
+    description:
+      'Share the relaxation of a Swim Club treatment. Experience a facial together in our double treatment room.',
+    shortDescription:
+      'Couples facial treatment side by side in the double treatment room.',
+    duration: '50 minutes',
+    brand: undefined,
+    category: 'Facial Treatments',
+    price: '£85',
+  },
+  {
+    spaId: 14,
+    name: 'land&water hand and feet',
+    description:
+      'Foot soak and salt scrub, foot and leg massage, hand soak and salt scrub, hand and arm massage with land&water hand lotion.',
+    shortDescription:
+      'Reviving hand and feet treatment with soaks, scrubs and massage using land&water products.',
+    duration: '50 minutes',
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
     price: '£80',
   },
   {
     spaId: 14,
-    name: 'land&water drench facial',
-    description:
-      'Cleanse, exfoliate, tone, face, neck and shoulder massage, face mask, scalp massage, moisturise.',
-    shortDescription:
-      'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
-    duration: '60 minutes',
-    brand: 'land&water',
-    category: 'Facial Treatments',
-    price: '£90',
-  },
-  {
-    spaId: 14,
-    name: 'Mini Facial',
-    description: 'Quick refreshing facial treatment.',
-    shortDescription:
-      'Express facial treatment providing quick, targeted results to refresh and revitalize skin.',
-    duration: '30 minutes',
-    brand: undefined,
-    category: 'Facial Treatments',
-    price: '£50',
-  },
-  {
-    spaId: 14,
-    name: 'Back, Neck and Shoulders Massage',
-    description: 'Focused massage on upper body tension areas.',
-    shortDescription:
-      'Focused massage targeting back, neck and shoulders to release tension and soothe tired muscles.',
-    duration: '30 minutes',
-    brand: undefined,
-    category: 'Massage Therapies',
-    price: '£50',
-  },
-  {
-    spaId: 14,
     name: 'land&water feet',
     description: 'Foot soak, scrub and massage treatment.',
     shortDescription:
-      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
-    duration: '30 minutes',
+      'Soothing foot soak, scrub and massage using land&water products.',
+    duration: '25 minutes',
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
     price: '£45',
@@ -144,81 +159,10 @@ export const spa14Treatments: Treatment[] = [
     name: 'land&water hands',
     description: 'Hand soak, scrub and massage treatment.',
     shortDescription:
-      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
-    duration: '30 minutes',
+      'Reviving hand soak, scrub and massage using land&water products.',
+    duration: '25 minutes',
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
     price: '£45',
-  },
-  {
-    spaId: 14,
-    name: 'Neck and Scalp Massage',
-    description: 'Targeted massage for neck and scalp relaxation.',
-    shortDescription:
-      'Soothing scalp and head massage to relieve mental stress and promote deep relaxation.',
-    duration: '30 minutes',
-    brand: undefined,
-    category: 'Massage Therapies',
-    price: '£50',
-  },
-  {
-    spaId: 14,
-    name: 'The Works',
-    description:
-      'Body brush, salt scrub exfoliate, wrap, mini facial followed by a full body massage. The ultimate spa treatment experience.',
-    shortDescription:
-      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
-    duration: '120 minutes',
-    brand: undefined,
-    category: 'Body Treatments',
-    price: '£160',
-  },
-  {
-    spaId: 14,
-    name: 'Pregnancy Massage',
-    description:
-      'Full body massage, for pregnancy past first trimester. Specialist positioning ensures safety and comfort.',
-    shortDescription:
-      'Specially designed massage for expectant mothers focusing on sore, tired muscles without lying on your tummy.',
-    duration: '60 minutes',
-    brand: undefined,
-    category: 'Massage Therapies',
-    price: '£90',
-  },
-  {
-    spaId: 14,
-    name: 'Drench Facial (Pregnancy)',
-    description:
-      'Pregnancy-safe facial treatment: cleanse, exfoliate, tone, face, neck and shoulder massage, face mask, scalp massage, moisturise.',
-    shortDescription:
-      'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
-    duration: '60 minutes',
-    brand: 'land&water',
-    category: 'Facial Treatments',
-    price: '£90',
-  },
-  {
-    spaId: 14,
-    name: 'land&water hands and feet (Pregnancy)',
-    description:
-      'Pregnancy-safe hand and feet treatment with soak, scrub and massage.',
-    shortDescription:
-      'Rejuvenating spa treatment tailored to your individual needs for complete relaxation and renewal.',
-    duration: '60 minutes',
-    brand: 'land&water',
-    category: 'Hands & Feet Treatments',
-    price: '£80',
-  },
-  {
-    spaId: 14,
-    name: 'Side by Side Massage/Facials',
-    description:
-      'Share the relaxation of a Swim Club treatment. Experience one of our massage or facial treatments together in our double treatment room.',
-    shortDescription:
-      'Rejuvenating facial treatment that cleanses, nourishes and revitalizes skin for a healthy, glowing complexion.',
-    duration: '60 minutes',
-    brand: undefined,
-    category: 'Facial Treatments',
-    price: '£170',
   },
 ];

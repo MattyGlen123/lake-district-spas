@@ -1,0 +1,37 @@
+
+## 2026-05-19 — All four issues completed in one run
+
+### 01-treatment-data-rewrite
+- Rewrote spa-14-treatments.ts: 19 → 14 treatments
+- Removed: Back Neck Shoulder & Mini Facial, Mini Facial, Back Neck Shoulders Massage, Neck and Scalp Massage, Drench Facial (Pregnancy), land&water hands and feet (Pregnancy)
+- Updated all 60 min → 50 min, all 30 min → 25 min, The Works 120 → 105 min
+- land&water body replaced with land&water Full body wrap (75 min, £140)
+- land&water drench facial → Drench Facial (renamed, 50 min)
+- land&water hands and feet → land&water hand and feet (renamed, 50 min)
+- Back, Face and Scalp Massage corrected to 25 min / £50
+- Side by Side Massage/Facials split into Side by side massage (Massage Therapies, £85) + Side by Side Facial (Facial Treatments, £85)
+- Collocated test: src/data/treatments/spa-14-treatments.test.ts (9 tests)
+
+### 02-day-pass-swim-and-dine
+- Updated another-place-day-membership-treatment: 60-minute → 50-minute, lastVerified 2026-04-27
+- Replaced another-place-day-membership-lunch with another-place-swim-and-dine (£60pp, 3h, no treatment, dinner included)
+- Collocated test: src/data/day-passes/spa-14-day-passes.test.ts (5 tests)
+
+### 03-blog-post-pregnancy-paragraph
+- Rewrote Another Place paragraph in how-to-treat-your-pregnant-wife.mdx
+- Removed references to Drench Facial (Pregnancy) and land&water hands and feet (Pregnancy)
+- Removed "three treatments / widest range" claim
+- Kept TreatmentLink/TreatmentDuration/TreatmentPrice for Pregnancy Massage
+
+### 04-faq-content-update
+- Renamed dayMembershipLunchPrice → swimAndDinePrice; updated lookup ID
+- Anchor href updated to #another-place-swim-and-dine
+- FAQ 2 rewritten to describe Swim & Dine (£60pp, 3-course dinner, arrive 6pm, Sun-Thu outside school holidays)
+- Duration lookups updated: '60 minute' → '50 minute', '120 minute' → '105 minute'
+- Treatment name lookups updated: 'land&water drench facial' → 'Drench Facial', 'Side by Side' → 'Side by side massage'
+- Side-by-side price fallback £170 → £85
+- Treatment count: "18 spa treatments" → "14 spa treatments" in both JSX and schemaText
+
+### Results
+- npm run typecheck: pass
+- npm test: 578/578 pass (34 test files)
