@@ -470,8 +470,8 @@ Swim Club access is complimentary for all hotel guests. Day memberships are avai
     agePolicy: 'Family Friendly',
     relatedSpas: [2, 11],
     treatmentBookingPhone: '01768 486442',
-    treatmentBookingUrl: 'https://another.place/the-lake/book/treatments',
-    dayPassBookingUrl: 'https://another.place/the-lake/swim-club/swim-and-dine',
+    treatmentBookingUrl:
+      'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake',
     hotelBookingUrl: 'https://another.place/the-lake/',
   },
   {

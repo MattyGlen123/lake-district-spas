@@ -12,6 +12,7 @@ export const spa14Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£90',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=6661',
   },
   {
     spaId: 14,
@@ -24,6 +25,7 @@ export const spa14Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£90',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=6665',
   },
   {
     spaId: 14,
@@ -35,6 +37,7 @@ export const spa14Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£90',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=6662',
   },
   {
     spaId: 14,
@@ -47,6 +50,7 @@ export const spa14Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£90',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=6664',
   },
   {
     spaId: 14,
@@ -58,6 +62,7 @@ export const spa14Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£50',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=6674',
   },
   {
     spaId: 14,
@@ -70,6 +75,7 @@ export const spa14Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£85',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=6677',
   },
   {
     spaId: 14,
@@ -82,6 +88,7 @@ export const spa14Treatments: Treatment[] = [
     brand: undefined,
     category: 'Massage Therapies',
     price: '£90',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=6676',
   },
   {
     spaId: 14,
@@ -94,6 +101,7 @@ export const spa14Treatments: Treatment[] = [
     brand: 'land&water',
     category: 'Body Treatments',
     price: '£140',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=7157',
   },
   {
     spaId: 14,
@@ -106,6 +114,7 @@ export const spa14Treatments: Treatment[] = [
     brand: undefined,
     category: 'Body Treatments',
     price: '£160',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=6675',
   },
   {
     spaId: 14,
@@ -118,6 +127,7 @@ export const spa14Treatments: Treatment[] = [
     brand: 'land&water',
     category: 'Facial Treatments',
     price: '£90',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=6669',
   },
   {
     spaId: 14,
@@ -130,6 +140,7 @@ export const spa14Treatments: Treatment[] = [
     brand: undefined,
     category: 'Facial Treatments',
     price: '£85',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=7161',
   },
   {
     spaId: 14,
@@ -142,6 +153,7 @@ export const spa14Treatments: Treatment[] = [
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
     price: '£80',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=6668',
   },
   {
     spaId: 14,
@@ -153,6 +165,7 @@ export const spa14Treatments: Treatment[] = [
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
     price: '£45',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=6672',
   },
   {
     spaId: 14,
@@ -164,5 +177,6 @@ export const spa14Treatments: Treatment[] = [
     brand: 'land&water',
     category: 'Hands & Feet Treatments',
     price: '£45',
+    bookingUrl: 'https://book.onagilysys.eu/onecart/spa/services/10278/TheLake?serviceId=6673',
   },
 ];
