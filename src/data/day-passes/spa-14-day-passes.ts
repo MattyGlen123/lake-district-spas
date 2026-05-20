@@ -24,7 +24,7 @@ export const spa14DayPasses: SpaDayPasses = {
       ageRestriction: '18+',
       bookingRequired: true,
       dayPassUrl: 'https://another.place/the-lake/swim-club/',
-      bookingUrl: 'mailto:life@another.place',
+      bookingEmail: 'life@another.place',
       lastVerified: '2026-04-27',
     },
     {

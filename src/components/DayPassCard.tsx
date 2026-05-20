@@ -1,7 +1,7 @@
 import { Check, CreditCard, Users, Mail, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { DayPassOption, Spa } from '@/types/spa';
-import { appendUtmParams } from '@/lib/utils';
+import { appendUtmParams, bookingEmailHref } from '@/lib/utils';
 
 interface DayPassCardProps {
   dayPass: DayPassOption;
@@ -79,16 +79,21 @@ export default function DayPassCard({ dayPass, spa }: DayPassCardProps) {
         </div>
 
         <p className="text-stone-600 text-base md:text-sm font-light mb-6">
-          {dayPass.description}{' '}
-          <a
-            href={appendUtmParams(dayPass.dayPassUrl, 'specific-product-click')}
-            data-spa-id={spa.url}
-            data-click-intent="specific-product-click"
-            data-product-name={dayPass.packageName}
-            className="underline"
-          >
-            More info
-          </a>
+          {dayPass.description}
+          {dayPass.dayPassUrl && (
+            <>
+              {' '}
+              <a
+                href={appendUtmParams(dayPass.dayPassUrl, 'specific-product-click')}
+                data-spa-id={spa.url}
+                data-click-intent="specific-product-click"
+                data-product-name={dayPass.packageName}
+                className="underline"
+              >
+                More info
+              </a>
+            </>
+          )}
         </p>
 
         <ul className="space-y-2 mb-8">
@@ -113,7 +118,7 @@ export default function DayPassCard({ dayPass, spa }: DayPassCardProps) {
             </a>
           ) : dayPass.bookingEmail ? (
             <a
-              href={appendUtmParams(`mailto:${dayPass.bookingEmail}`, 'specific-product-click')}
+              href={appendUtmParams(bookingEmailHref(dayPass.bookingEmail), 'specific-product-click')}
               data-spa-id={spa.url}
               data-click-intent="specific-product-click"
               data-product-name={dayPass.packageName}

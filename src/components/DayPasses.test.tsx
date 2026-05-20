@@ -102,10 +102,39 @@ describe('DayPasses', () => {
       ...sampleOption,
       id: 'email-pass',
       bookingUrl: undefined,
+      bookingEmail: 'life@another.place',
+    };
+    mockGetOptions.mockReturnValue([emailOption]);
+    render(<DayPasses spa={baseSpa} />);
+    const emailLink = screen.getByRole('link', { name: /email us/i });
+    expect(emailLink).toBeInTheDocument();
+    expect(emailLink).toHaveAttribute('href', 'mailto:life@another.place');
+  });
+
+  it('normalizes bookingEmail when data includes mailto: prefix', () => {
+    const emailOption: DayPassOption = {
+      ...sampleOption,
+      id: 'email-pass',
+      bookingUrl: undefined,
+      bookingEmail: 'mailto:life@another.place',
+    };
+    mockGetOptions.mockReturnValue([emailOption]);
+    render(<DayPasses spa={baseSpa} />);
+    const emailLink = screen.getByRole('link', { name: /email us/i });
+    expect(emailLink).toHaveAttribute('href', 'mailto:life@another.place');
+  });
+
+  it('omits "More info" when dayPassUrl is absent but still shows Email Us', () => {
+    const emailOption: DayPassOption = {
+      ...sampleOption,
+      id: 'email-pass',
+      dayPassUrl: undefined,
+      bookingUrl: undefined,
       bookingEmail: 'spa@test.com',
     };
     mockGetOptions.mockReturnValue([emailOption]);
     render(<DayPasses spa={baseSpa} />);
+    expect(screen.queryByRole('link', { name: /more info/i })).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: /email us/i })).toBeInTheDocument();
   });
 

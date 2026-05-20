@@ -151,8 +151,8 @@ export interface DayPassOption {
   /** Phone number for bookings */
   phoneBooking?: string;
 
-  /** URL to the day pass information page */
-  dayPassUrl: string;
+  /** URL to the day pass information page; optional when booking is email-only */
+  dayPassUrl?: string;
 
   /** URL to the booking/purchase page */
   bookingUrl?: string;

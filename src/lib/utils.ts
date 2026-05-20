@@ -76,3 +76,9 @@ export function appendUtmParams(url: string, clickIntent: string): string {
     return url;
   }
 }
+
+/** Normalizes a booking email to a mailto: href (strips duplicate mailto: prefix). */
+export function bookingEmailHref(email: string): string {
+  const normalized = email.replace(/^mailto:/i, '');
+  return `mailto:${normalized}`;
+}

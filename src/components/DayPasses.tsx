@@ -1,7 +1,7 @@
 import { Check, CreditCard, Users, Mail } from 'lucide-react';
 import { Spa } from '@/types/spa';
 import { getDayPassOptionsBySpaId } from '@/data/day-passes';
-import { appendUtmParams } from '@/lib/utils';
+import { appendUtmParams, bookingEmailHref } from '@/lib/utils';
 
 interface DayPassesProps {
   spa: Spa;
@@ -95,16 +95,21 @@ export default function DayPasses({ spa }: DayPassesProps) {
               </div>
 
               <p className="text-stone-600 text-base md:text-sm font-light mb-6">
-                {option.description}{' '}
-                  <a
-                  href={appendUtmParams(option.dayPassUrl, 'specific-product-click')}
-                  data-spa-id={spa.url}
-                  data-click-intent="specific-product-click"
-                  data-product-name={option.packageName}
-                  className="underline"
-                >
-                  More info
-                </a>
+                {option.description}
+                {option.dayPassUrl && (
+                  <>
+                    {' '}
+                    <a
+                      href={appendUtmParams(option.dayPassUrl, 'specific-product-click')}
+                      data-spa-id={spa.url}
+                      data-click-intent="specific-product-click"
+                      data-product-name={option.packageName}
+                      className="underline"
+                    >
+                      More info
+                    </a>
+                  </>
+                )}
               </p>
 
               <ul className="space-y-2 mb-8">
@@ -129,7 +134,7 @@ export default function DayPasses({ spa }: DayPassesProps) {
                   </a>
                 ) : option.bookingEmail ? (
                   <a
-                    href={appendUtmParams(`mailto:${option.bookingEmail}`, 'specific-product-click')}
+                    href={appendUtmParams(bookingEmailHref(option.bookingEmail), 'specific-product-click')}
                     data-spa-id={spa.url}
                     data-click-intent="specific-product-click"
                     data-product-name={option.packageName}
