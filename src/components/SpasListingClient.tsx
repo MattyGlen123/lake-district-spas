@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useRef } from 'react';
+import { useRef } from 'react';
 import FilterButton from '@/components/FilterButton';
 import FilterModal from '@/components/FilterModal';
 import SpaGrid from '@/components/SpaGrid';
