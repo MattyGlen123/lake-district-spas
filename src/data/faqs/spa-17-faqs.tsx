@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { Spa } from '@/types/spa';
 import {
   getTreatmentBrandsText,
-} from './helpers';
-import { getDayPassPrice, getDayPassDuration } from './helpers';
+} from '@/data/priced-content';
+import { getDayPassPrice, getDayPassDuration } from '@/data/priced-content';
 
 export function getSpa17FAQs(spa: Spa): FAQ[] {
   const brandsText = getTreatmentBrandsText(spa.id);

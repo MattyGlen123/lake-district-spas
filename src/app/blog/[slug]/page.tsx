@@ -28,7 +28,7 @@ import {
   getTreatmentCouplesPrice,
   getTreatmentIndividualPrice,
   getDayPassPricePerPerson,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 import { appendUtmParams } from '@/lib/utils';
 import { getLowestDayPassPrice, getLowestTreatmentPrice } from '@/lib/prices';
 
@@ -92,6 +92,23 @@ export async function generateMetadata({
       description,
       images: [imageUrl],
     },
+  };
+}
+
+/**
+ * Resolve `spaSlug` to a Spa once and guard the miss case, so each MDX price/link
+ * component below only has to describe what it renders once a Spa is found.
+ * `notFound` covers components (DayPassLink, TreatmentLink) that fall back to
+ * rendering `children` rather than null when the spa can't be resolved.
+ */
+function withSpa<P extends { spaSlug: string }>(
+  render: (spa: Spa, props: P) => React.ReactNode,
+  notFound?: (props: P) => React.ReactNode
+): (props: P) => React.ReactNode {
+  return (props: P) => {
+    const spa = spaData.find((s) => s.url === props.spaSlug);
+    if (!spa) return notFound ? notFound(props) : null;
+    return render(spa, props);
   };
 }
 
@@ -289,22 +306,17 @@ const mdxComponents = {
       {children}
     </td>
   ),
-  SpaCard: ({ spaSlug }: { spaSlug: string }) => {
-    const spa = spaData.find((s) => s.url === spaSlug);
-    if (!spa) return null;
-    return (
-      <div className="my-8">
-        <SpaCard
-          spa={spa}
-          lowestDayPassPrice={getLowestDayPassPrice(spa.id)}
-          lowestTreatmentPrice={getLowestTreatmentPrice(spa.id)}
-        />
-      </div>
-    );
-  },
-  SpaAccessPrice: ({ spaSlug }: { spaSlug: string }) => {
-    const spa = spaData.find((s) => s.url === spaSlug);
-    if (!spa?.spaAccessForHotelGuest) return null;
+  SpaCard: withSpa<{ spaSlug: string }>((spa) => (
+    <div className="my-8">
+      <SpaCard
+        spa={spa}
+        lowestDayPassPrice={getLowestDayPassPrice(spa.id)}
+        lowestTreatmentPrice={getLowestTreatmentPrice(spa.id)}
+      />
+    </div>
+  )),
+  SpaAccessPrice: withSpa<{ spaSlug: string }>((spa) => {
+    if (!spa.spaAccessForHotelGuest) return null;
     const { weekdayPriceGBP, weekendPriceGBP } = spa.spaAccessForHotelGuest;
     if (!weekdayPriceGBP || !weekendPriceGBP) return null;
     return (
@@ -312,44 +324,22 @@ const mdxComponents = {
         £{weekdayPriceGBP} on weekdays or £{weekendPriceGBP} on weekends
       </span>
     );
-  },
-  DayPassPrice: ({
-    spaSlug,
-    dayPassId,
-  }: {
-    spaSlug: string;
-    dayPassId: string;
-  }) => {
-    const spa = spaData.find((s) => s.url === spaSlug);
-    if (!spa) return null;
+  }),
+  DayPassPrice: withSpa<{ spaSlug: string; dayPassId: string }>((spa, { dayPassId }) => {
     const price = getDayPassPrice(spa.id, dayPassId);
     if (!price) return null;
     return <span>{price}</span>;
-  },
-  DayPassPricePerPerson: ({
-    spaSlug,
-    dayPassId,
-  }: {
-    spaSlug: string;
-    dayPassId: string;
-  }) => {
-    const spa = spaData.find((s) => s.url === spaSlug);
-    if (!spa) return null;
+  }),
+  DayPassPricePerPerson: withSpa<{ spaSlug: string; dayPassId: string }>((spa, { dayPassId }) => {
     const price = getDayPassPricePerPerson(spa.id, dayPassId);
     if (!price) return null;
     return <span>{price}</span>;
-  },
-  TreatmentPrice: ({
-    spaSlug,
-    treatmentName,
-    variant,
-  }: {
+  }),
+  TreatmentPrice: withSpa<{
     spaSlug: string;
     treatmentName: string;
     variant?: 'individual' | 'couples';
-  }) => {
-    const spa = spaData.find((s) => s.url === spaSlug);
-    if (!spa) return null;
+  }>((spa, { treatmentName, variant }) => {
     const priceString = getTreatmentPrice(spa.id, treatmentName);
     if (!priceString) return null;
 
@@ -363,124 +353,100 @@ const mdxComponents = {
 
     // Default: return full price string
     return <span>{priceString}</span>;
-  },
-  TreatmentDuration: ({
-    spaSlug,
-    treatmentName,
-  }: {
-    spaSlug: string;
-    treatmentName: string;
-  }) => {
-    const spa = spaData.find((s) => s.url === spaSlug);
-    if (!spa) return null;
-    const duration = getTreatmentDuration(spa.id, treatmentName);
-    if (!duration) return null;
-    return <span>{duration}</span>;
-  },
-  SpaAccessDuration: ({ spaSlug }: { spaSlug: string }) => {
-    const spa = spaData.find((s) => s.url === spaSlug);
-    if (!spa) return null;
+  }),
+  TreatmentDuration: withSpa<{ spaSlug: string; treatmentName: string }>(
+    (spa, { treatmentName }) => {
+      const duration = getTreatmentDuration(spa.id, treatmentName);
+      if (!duration) return null;
+      return <span>{duration}</span>;
+    }
+  ),
+  SpaAccessDuration: withSpa<{ spaSlug: string }>((spa) => {
     const duration = getSpaAccessDurationText(spa);
     if (!duration) return null;
     return <span>{duration}</span>;
-  },
-  SpaAccessDurationHyphenated: ({ spaSlug }: { spaSlug: string }) => {
-    const spa = spaData.find((s) => s.url === spaSlug);
-    if (!spa) return null;
+  }),
+  SpaAccessDurationHyphenated: withSpa<{ spaSlug: string }>((spa) => {
     const duration = getSpaAccessDurationHyphenated(spa);
     if (!duration) return null;
     return <span>{duration}</span>;
-  },
-  DayPassDuration: ({
-    spaSlug,
-    dayPassId,
-  }: {
-    spaSlug: string;
-    dayPassId: string;
-  }) => {
-    const spa = spaData.find((s) => s.url === spaSlug);
-    if (!spa) return null;
+  }),
+  DayPassDuration: withSpa<{ spaSlug: string; dayPassId: string }>((spa, { dayPassId }) => {
     const duration = getDayPassDuration(spa.id, dayPassId);
     if (!duration) return null;
     return <span>{duration}</span>;
-  },
-  DayPassLink: ({
-    spaSlug,
-    dayPassId,
-    children,
-  }: {
+  }),
+  DayPassLink: withSpa<{
     spaSlug: string;
     dayPassId: string;
     children?: React.ReactNode;
-  }) => {
-    const spa = spaData.find((s) => s.url === spaSlug);
-    if (!spa) return children || null;
-    const bookingUrl = getDayPassBookingUrl(spa.id, dayPassId);
-    const packageName = getDayPassPackageName(spa.id, dayPassId);
-    const displayText = children || packageName || dayPassId;
+  }>(
+    (spa, { dayPassId, children }) => {
+      const bookingUrl = getDayPassBookingUrl(spa.id, dayPassId);
+      const packageName = getDayPassPackageName(spa.id, dayPassId);
+      const displayText = children || packageName || dayPassId;
 
-    if (!bookingUrl) {
-      return <span>{displayText}</span>;
-    }
+      if (!bookingUrl) {
+        return <span>{displayText}</span>;
+      }
 
-    return (
-      <a
-        href={appendUtmParams(bookingUrl, 'specific-product-click')}
-        data-spa-id={spa.url}
-        data-click-intent="specific-product-click"
-        data-product-name={packageName || dayPassId}
-        className="text-emerald-950 underline hover:text-emerald-800 font-medium"
-      >
-        {displayText}
-      </a>
-    );
-  },
-  TreatmentLink: ({
-    spaSlug,
-    treatmentName,
-    children,
-  }: {
-    spaSlug: string;
-    treatmentName: string;
-    children?: React.ReactNode;
-  }) => {
-    const spa = spaData.find((s) => s.url === spaSlug);
-    if (!spa) return children || null;
-    const bookingUrl = getTreatmentBookingUrl(spa.id, treatmentName, spa);
-    const fullTreatmentName = getTreatmentName(spa.id, treatmentName);
-    const treatmentId = getTreatmentIdByName(spa.id, treatmentName);
-    const displayText = children || fullTreatmentName || treatmentName;
-
-    // If we have a booking URL, link to it
-    if (bookingUrl) {
       return (
         <a
           href={appendUtmParams(bookingUrl, 'specific-product-click')}
           data-spa-id={spa.url}
           data-click-intent="specific-product-click"
-          data-product-name={fullTreatmentName || treatmentName}
+          data-product-name={packageName || dayPassId}
           className="text-emerald-950 underline hover:text-emerald-800 font-medium"
         >
           {displayText}
         </a>
       );
-    }
+    },
+    ({ children }) => children || null
+  ),
+  TreatmentLink: withSpa<{
+    spaSlug: string;
+    treatmentName: string;
+    children?: React.ReactNode;
+  }>(
+    (spa, { treatmentName, children }) => {
+      const bookingUrl = getTreatmentBookingUrl(spa.id, treatmentName, spa);
+      const fullTreatmentName = getTreatmentName(spa.id, treatmentName);
+      const treatmentId = getTreatmentIdByName(spa.id, treatmentName);
+      const displayText = children || fullTreatmentName || treatmentName;
 
-    // Otherwise, link to the treatment on the spa page
-    if (treatmentId) {
-      return (
-        <Link
-          href={`/spa/${spa.url}#${treatmentId}`}
-          className="text-emerald-950 underline hover:text-emerald-800 font-medium"
-        >
-          {displayText}
-        </Link>
-      );
-    }
+      // If we have a booking URL, link to it
+      if (bookingUrl) {
+        return (
+          <a
+            href={appendUtmParams(bookingUrl, 'specific-product-click')}
+            data-spa-id={spa.url}
+            data-click-intent="specific-product-click"
+            data-product-name={fullTreatmentName || treatmentName}
+            className="text-emerald-950 underline hover:text-emerald-800 font-medium"
+          >
+            {displayText}
+          </a>
+        );
+      }
 
-    // Fallback: just show the text
-    return <span>{displayText}</span>;
-  },
+      // Otherwise, link to the treatment on the spa page
+      if (treatmentId) {
+        return (
+          <Link
+            href={`/spa/${spa.url}#${treatmentId}`}
+            className="text-emerald-950 underline hover:text-emerald-800 font-medium"
+          >
+            {displayText}
+          </Link>
+        );
+      }
+
+      // Fallback: just show the text
+      return <span>{displayText}</span>;
+    },
+    ({ children }) => children || null
+  ),
 };
 
 // Generate table of contents from headings

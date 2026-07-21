@@ -8,7 +8,7 @@ import {
   getThermalFacilitiesCount,
   getTreatmentPrice,
   getTreatmentIdByName,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 
 export function getBassenthwaiteFAQs(spas: Spa[]): FAQ[] {
   const armathwaite = spas.find((s) => s.id === 2);

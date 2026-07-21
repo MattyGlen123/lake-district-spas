@@ -7,7 +7,7 @@ import {
   getThermalFacilitiesCount,
   getDayPassPrice,
   getTreatmentIdByName,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 
 export function getAmblesideFAQs(spas: Spa[]): FAQ[] {
   const salutation = spas.find((s) => s.id === 8);

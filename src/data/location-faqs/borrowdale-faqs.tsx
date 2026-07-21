@@ -7,7 +7,7 @@ import {
   getTreatmentBrandsText,
   getThermalFacilitiesCount,
   getSpaAccessPriceRange,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 import { getLocationTreatmentCount } from './helpers';
 
 export function getBorrowdaleFAQs(spas: Spa[]): FAQ[] {

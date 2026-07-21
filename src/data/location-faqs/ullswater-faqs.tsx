@@ -6,7 +6,7 @@ import {
   getTreatmentPrice,
   getTreatmentIdByName,
   getTreatmentBrandsText,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 
 export function getUllswaterFAQs(spas: Spa[]): FAQ[] {
   const anotherPlace = spas.find((s) => s.id === 14);

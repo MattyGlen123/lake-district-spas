@@ -5,7 +5,7 @@ import {
   getDayPassPrice,
   getTreatmentBrandsText,
   getThermalFacilitiesCount,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 
 export function getBownessOnWindermereFAQs(spas: Spa[]): FAQ[] {
   const oldEngland = spas.find((s) => s.id === 6);

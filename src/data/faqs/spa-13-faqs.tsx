@@ -8,7 +8,7 @@ import {
   getDayPassPrice,
   getDayPassDuration,
   getTreatmentDuration,
-} from './helpers';
+} from '@/data/priced-content';
 
 export function getSpa13FAQs(spa: Spa): FAQ[] {
   // Dynamic values

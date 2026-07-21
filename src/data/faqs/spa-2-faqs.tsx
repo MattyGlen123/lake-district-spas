@@ -6,7 +6,7 @@ import {
   getTreatmentBrandsText,
   getTreatmentIdByName,
   getAgePolicy,
-} from './helpers';
+} from '@/data/priced-content';
 
 export function getSpa2FAQs(spa: Spa): FAQ[] {
   // Day pass prices

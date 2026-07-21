@@ -8,7 +8,7 @@ import {
   getThermalFacilitiesCount,
   getAgePolicy,
   getTreatmentPrice,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 
 export function getApplebyInWestmorlandFAQs(spas: Spa[]): FAQ[] {
   const applebyManor = spas.find((s) => s.id === 15);

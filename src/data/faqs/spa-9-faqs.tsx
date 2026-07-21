@@ -1,7 +1,7 @@
 import { FAQ } from '@/components/FAQs';
 import Link from 'next/link';
 import { Spa } from '@/types/spa';
-import { getDayPassPrice, getDayPassDuration } from './helpers';
+import { getDayPassPrice, getDayPassDuration } from '@/data/priced-content';
 
 export function getSpa9FAQs(spa: Spa): FAQ[] {
   // Extract dynamic values from day passes

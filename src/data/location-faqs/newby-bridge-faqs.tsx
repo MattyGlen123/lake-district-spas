@@ -6,7 +6,7 @@ import {
   getThermalFacilitiesCount,
   getTreatmentBrandsText,
   getAgePolicy,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 import { getCheapestDayPassPrice } from './helpers';
 
 export function getNewbyBridgeFAQs(spas: Spa[]): FAQ[] {

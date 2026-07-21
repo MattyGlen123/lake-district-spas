@@ -7,7 +7,7 @@ import {
   getTreatmentIdByName,
   getTreatmentPrice,
   getTreatmentDuration,
-} from './helpers';
+} from '@/data/priced-content';
 
 export function getSpa12FAQs(spa: Spa): FAQ[] {
   const agePolicy = getAgePolicy(spa);

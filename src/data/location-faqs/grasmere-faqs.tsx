@@ -5,7 +5,7 @@ import {
   getDayPassPrice,
   getThermalFacilitiesCount,
   getAgePolicy,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 import { getTreatmentsBySpaId } from '@/data/treatments';
 
 export function getGrasmereFAQs(spas: Spa[]): FAQ[] {

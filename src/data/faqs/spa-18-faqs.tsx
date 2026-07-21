@@ -4,7 +4,7 @@ import { Spa } from '@/types/spa';
 import {
   getThermalFacilitiesCount,
   getTreatmentBrandsText,
-} from './helpers';
+} from '@/data/priced-content';
 
 export function getSpa18FAQs(spa: Spa): FAQ[] {
   const thermalCount = getThermalFacilitiesCount(spa);

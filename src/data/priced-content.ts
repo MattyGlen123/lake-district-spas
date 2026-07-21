@@ -3,6 +3,20 @@ import { getTreatmentsBySpaId } from '@/data/treatments';
 import { getDayPassOptionsBySpaId } from '@/data/day-passes';
 
 /**
+ * Shared Spa / Treatment / Day Pass pricing and lookup library.
+ *
+ * Not FAQ-specific — consumed by both FAQ generators (src/data/faqs/spa-*-faqs.tsx)
+ * and blog MDX price/link components (src/app/blog/[slug]/page.tsx).
+ *
+ * Treatment lookups (getTreatmentPrice, getTreatmentDuration, getTreatmentIdByName,
+ * getTreatmentBookingUrl, getTreatmentName) match on free-text `treatmentName` via
+ * case-insensitive substring — Treatment has no stable id. If a treatment is renamed
+ * in src/data/treatments/spa-*.ts, these silently return null. This is guarded by
+ * src/data/priced-content.test.ts, which enumerates every FAQ/MDX usage and fails
+ * the build if any reference no longer resolves. See docs/adr/0003-dynamic-pricing-in-blog.md.
+ */
+
+/**
  * Get spa access duration in hours for hotel guests
  * @param spa - The spa object
  * @returns Duration in hours as a number, or null if not available

@@ -6,7 +6,7 @@ import { getTreatmentsBySpaId } from '@/data/treatments';
  * Location-specific helper functions for location FAQs.
  *
  * For single-spa helpers (getDayPassPrice, getTreatmentPrice, etc.),
- * import directly from '@/data/faqs/helpers' instead.
+ * import directly from '@/data/priced-content' instead.
  *
  * This file is for aggregate helpers that operate across multiple spas
  * within a location.

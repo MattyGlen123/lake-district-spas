@@ -4,7 +4,7 @@ import { Spa } from '@/types/spa';
 import {
   getDayPassPrice,
   getTreatmentBrandsText,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 import { getLocationTreatmentCount } from './helpers';
 
 export function getKeswickFAQs(spas: Spa[]): FAQ[] {
