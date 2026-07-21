@@ -6,7 +6,7 @@ import { Sparkles } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FilterButton from '@/components/FilterButton';
-import TreatmentFilters, { PriceBracket } from '@/components/TreatmentFilters';
+import TreatmentFilters from '@/components/TreatmentFilters';
 import TreatmentPickCard from '@/components/TreatmentPickCard';
 import { getAllTreatmentsWithSpa } from '@/data/treatments';
 import { spaData } from '@/data/spas';
@@ -22,6 +22,7 @@ import {
   sortTreatments,
   treatmentSortOptions,
 } from '@/lib/treatment-catalog';
+import { PriceBracket } from '@/lib/treatment-categories';
 
 export default function SpaTreatmentsPage() {
   const allTreatments = useMemo(() => getAllTreatmentsWithSpa(spaData), []);

@@ -1,9 +1,12 @@
 import { spaData } from '@/data/spas';
 import { AccessLabel, Spa } from '@/types/spa';
+import { applyFilters, countActiveFilters, SpaFiltersState } from '@/lib/spa-catalog';
 
 /**
- * Core filtering logic extracted from page.tsx for testing
- * This mirrors the filtering logic used in the Home component
+ * Thin wrappers around the real spa-catalog.ts implementation, kept so the large
+ * scenario suite below reads the same as before. The actual filtering business rules
+ * (including the pool OR-logic and ice-room/cold-plunge special case) live in
+ * applyFilters/countActiveFilters — see spa-catalog.ts and facility-matching.ts.
  */
 function filterSpas(
   spas: Spa[],
@@ -11,81 +14,16 @@ function filterSpas(
   location: string,
   facilities: string[]
 ): Spa[] {
-  return spas.filter((spa: Spa) => {
-    // Filter by access labels (OR logic - show if spa has ANY selected label)
-    if (accessLabels.length > 0) {
-      const hasAnyLabel = spa.accessLabels.some((label) =>
-        accessLabels.includes(label)
-      );
-      if (!hasAnyLabel) {
-        return false;
-      }
-    }
-
-    // Filter by location
-    if (location !== 'All Locations' && spa.location !== location) {
-      return false;
-    }
-
-    // Filter by facilities - ALL selected facilities must be present
-    // EXCEPT for pools: if both indoorPool and outdoorPool are selected, use OR logic
-    // EXCEPT for ice room: if iceRoom is selected, show spas with either iceRoom OR coldPlunge
-    if (facilities.length > 0) {
-      const poolFilters = ['indoorPool', 'outdoorPool'];
-      const selectedPools = facilities.filter((f) => poolFilters.includes(f));
-      const hasIceRoomFilter = facilities.includes('iceRoom');
-      const otherFacilities = facilities.filter(
-        (f) => !poolFilters.includes(f) && f !== 'iceRoom'
-      );
-
-      // Check pools with OR logic if any are selected
-      if (selectedPools.length > 0) {
-        const hasAnyPool = selectedPools.some((pool) => {
-          const poolKey = pool as keyof typeof spa.facilities;
-          return spa.facilities[poolKey];
-        });
-        if (!hasAnyPool) {
-          return false;
-        }
-      }
-
-      // Check ice room filter with OR logic (iceRoom OR coldPlunge)
-      if (hasIceRoomFilter) {
-        if (!spa.facilities.iceRoom && !spa.facilities.coldPlunge) {
-          return false;
-        }
-      }
-
-      // Check other facilities with AND logic
-      if (otherFacilities.length > 0) {
-        const hasAllOtherFacilities = otherFacilities.every((facility) => {
-          const facilityKey = facility as keyof typeof spa.facilities;
-          return spa.facilities[facilityKey];
-        });
-        if (!hasAllOtherFacilities) {
-          return false;
-        }
-      }
-    }
-
-    return true;
-  });
+  const filters: SpaFiltersState = { accessLabels, location, facilities };
+  return spas.filter((spa) => applyFilters(spa, filters));
 }
 
-/**
- * Calculate active filter count
- * This mirrors the logic in page.tsx
- */
 function calculateActiveFilterCount(
   accessLabels: AccessLabel[],
   location: string,
   facilities: string[]
 ): number {
-  return (
-    accessLabels.length +
-    (location !== 'All Locations' ? 1 : 0) +
-    facilities.length
-  );
+  return countActiveFilters({ accessLabels, location, facilities });
 }
 
 describe('Spa Filtering Logic', () => {
