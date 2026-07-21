@@ -17,6 +17,9 @@ graph TD
         prices[prices.ts — price helpers]
         treatCatalog[treatment-catalog.ts]
         dayPassCatalog[day-pass-catalog.ts]
+        facilityMatching[facility-matching.ts — matchesFacilityFilters]
+        filterUtils[filter-utils.ts — countActiveFilters helpers]
+        treatCategories[treatment-categories.ts — CATEGORY_GROUPS / PriceBracket]
     end
 
     subgraph Pages["App Router — all statically generated"]
@@ -49,6 +52,12 @@ graph TD
     blogLib --> blogPost
     treatCatalog --> spaTreatments
     dayPassCatalog --> spaDays
+    facilityMatching --> spaCatalog
+    facilityMatching --> dayPassCatalog
+    filterUtils --> spaCatalog
+    filterUtils --> dayPassCatalog
+    filterUtils --> treatCatalog
+    treatCategories --> treatCatalog
 ```
 
 ---

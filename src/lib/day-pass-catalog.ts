@@ -1,4 +1,6 @@
 import { DayPassWithSpa } from '@/data/day-passes';
+import { matchesFacilityFilters } from '@/lib/facility-matching';
+import { countActiveFilters as sumActiveFilters, countIf, countSelected } from '@/lib/filter-utils';
 
 export interface DayPassFiltersState {
   maxPrice: number;
@@ -99,38 +101,7 @@ export function applyDayPassFilters(
     }
   }
 
-  if (filters.facilities.length > 0) {
-    const poolFilters = ['indoorPool', 'outdoorPool'];
-    const selectedPools = filters.facilities.filter((facility) =>
-      poolFilters.includes(facility)
-    );
-    const hasIceRoomFilter = filters.facilities.includes('iceRoom');
-    const otherFacilities = filters.facilities.filter(
-      (facility) => !poolFilters.includes(facility) && facility !== 'iceRoom'
-    );
-
-    if (selectedPools.length > 0) {
-      const hasAnyPool = selectedPools.some((pool) => {
-        const poolKey = pool as keyof typeof dayPass.spa.facilities;
-        return dayPass.spa.facilities[poolKey];
-      });
-      if (!hasAnyPool) return false;
-    }
-
-    if (hasIceRoomFilter) {
-      if (!dayPass.spa.facilities.iceRoom && !dayPass.spa.facilities.coldPlunge) {
-        return false;
-      }
-    }
-
-    if (otherFacilities.length > 0) {
-      const hasAllOtherFacilities = otherFacilities.every((facility) => {
-        const key = facility as keyof typeof dayPass.spa.facilities;
-        return dayPass.spa.facilities[key];
-      });
-      if (!hasAllOtherFacilities) return false;
-    }
-  }
+  if (!matchesFacilityFilters(dayPass.spa.facilities, filters.facilities)) return false;
 
   if (filters.spas.length > 0 && !filters.spas.includes(dayPass.spa.id)) {
     return false;
@@ -163,14 +134,14 @@ export function countActiveDayPassFilters(
   maxPrice: number,
   availableSpaCount: number
 ): number {
-  return (
-    (filters.maxPrice < maxPrice ? 1 : 0) +
-    filters.durations.length +
-    (filters.treatmentsIncluded === true ? 1 : 0) +
-    (filters.refreshmentsIncluded === true ? 1 : 0) +
-    (filters.mealIncluded === true ? 1 : 0) +
-    filters.partyTypes.length +
-    filters.facilities.length +
-    (filters.spas.length < availableSpaCount ? 1 : 0)
-  );
+  return sumActiveFilters(filters, [
+    countIf((f) => f.maxPrice < maxPrice),
+    countSelected((f) => f.durations),
+    countIf((f) => f.treatmentsIncluded === true),
+    countIf((f) => f.refreshmentsIncluded === true),
+    countIf((f) => f.mealIncluded === true),
+    countSelected((f) => f.partyTypes),
+    countSelected((f) => f.facilities),
+    countIf((f) => f.spas.length < availableSpaCount),
+  ]);
 }

@@ -1,4 +1,6 @@
 import { AccessLabel, Spa } from '@/types/spa';
+import { matchesFacilityFilters } from '@/lib/facility-matching';
+import { countActiveFilters as sumActiveFilters, countIf, countSelected } from '@/lib/filter-utils';
 
 export interface SpaFiltersState {
   accessLabels: AccessLabel[];
@@ -35,44 +37,17 @@ export function applyFilters(spa: Spa, filters: SpaFiltersState): boolean {
     return false;
   }
 
-  if (filters.facilities.length > 0) {
-    const poolFilters = ['indoorPool', 'outdoorPool'];
-    const selectedPools = filters.facilities.filter((f) => poolFilters.includes(f));
-    const hasIceRoomFilter = filters.facilities.includes('iceRoom');
-    const otherFacilities = filters.facilities.filter(
-      (f) => !poolFilters.includes(f) && f !== 'iceRoom'
-    );
-
-    if (selectedPools.length > 0) {
-      const hasAnyPool = selectedPools.some((pool) => {
-        const poolKey = pool as keyof typeof spa.facilities;
-        return spa.facilities[poolKey];
-      });
-      if (!hasAnyPool) return false;
-    }
-
-    if (hasIceRoomFilter) {
-      if (!spa.facilities.iceRoom && !spa.facilities.coldPlunge) return false;
-    }
-
-    if (otherFacilities.length > 0) {
-      const hasAllOtherFacilities = otherFacilities.every((facility) => {
-        const facilityKey = facility as keyof typeof spa.facilities;
-        return spa.facilities[facilityKey];
-      });
-      if (!hasAllOtherFacilities) return false;
-    }
-  }
+  if (!matchesFacilityFilters(spa.facilities, filters.facilities)) return false;
 
   return true;
 }
 
 export function countActiveFilters(filters: SpaFiltersState): number {
-  return (
-    filters.accessLabels.length +
-    (filters.location !== 'All Locations' ? 1 : 0) +
-    filters.facilities.length
-  );
+  return sumActiveFilters(filters, [
+    countSelected((f) => f.accessLabels),
+    countIf((f) => f.location !== 'All Locations'),
+    countSelected((f) => f.facilities),
+  ]);
 }
 
 export function sortSpas(spas: Spa[], sortBy: SpaSortOption): Spa[] {
