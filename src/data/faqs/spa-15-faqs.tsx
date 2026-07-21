@@ -1,7 +1,7 @@
 import { FAQ } from '@/components/FAQs';
 import Link from 'next/link';
 import { Spa } from '@/types/spa';
-import { getThermalFacilitiesCount, getTreatmentBrandsText, getAgePolicy, getDayPassPrice, getDayPassDuration, getTreatmentIdByName, getTreatmentDuration } from './helpers';
+import { getThermalFacilitiesCount, getTreatmentBrandsText, getAgePolicy, getDayPassPrice, getDayPassDuration, getTreatmentIdByName, getTreatmentDuration } from '@/data/priced-content';
 
 export function getSpa15FAQs(spa: Spa): FAQ[] {
   const thermalCount = getThermalFacilitiesCount(spa);

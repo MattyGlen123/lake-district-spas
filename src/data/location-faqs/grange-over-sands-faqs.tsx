@@ -5,7 +5,7 @@ import {
   getDayPassPrice,
   getThermalFacilitiesCount,
   getTreatmentBrandsText,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 
 export function getGrangeOverSandsFAQs(spas: Spa[]): FAQ[] {
   const netherwood = spas.find((s) => s.id === 16);

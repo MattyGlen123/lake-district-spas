@@ -8,7 +8,7 @@ import {
   getTreatmentBrandsText,
   getThermalFacilitiesCount,
   getAgePolicy,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 
 export function getWindermereFAQs(spas: Spa[]): FAQ[] {
   const lowWoodBay = spas.find((s) => s.id === 7);

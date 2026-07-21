@@ -5,8 +5,13 @@ This directory contains frequently asked questions (FAQs) organized by individua
 ## File Structure
 
 - `spa-{id}-faqs.tsx` - FAQ data for each spa (e.g., `spa-1-faqs.tsx`)
-- `helpers.ts` - Helper functions for dynamically generating FAQ values
 - `index.ts` - Exports helper functions to access FAQ data
+
+Pricing/lookup helpers (`getDayPassPrice`, `getTreatmentPrice`, etc.) live at
+`src/data/priced-content.ts`, not in this directory — they're shared between FAQ
+generation and the blog's MDX price components (`src/app/blog/[slug]/page.tsx`),
+so they're namespaced neutrally rather than under `faqs/`. Import them from
+`@/data/priced-content`.
 
 ## Usage
 
@@ -55,11 +60,11 @@ export interface FAQ {
 
 ## Using Helper Functions
 
-**IMPORTANT**: Always use helper functions from `helpers.ts` instead of hardcoding values. This ensures data consistency and makes FAQs easier to maintain.
+**IMPORTANT**: Always use helper functions from `@/data/priced-content` instead of hardcoding values. This ensures data consistency and makes FAQs easier to maintain.
 
 ### Available Helper Functions
 
-All helper functions are imported from `./helpers`:
+All helper functions are imported from `@/data/priced-content`:
 
 #### Spa Access Helpers
 - `getSpaAccessDuration(spa)` - Get duration in hours (number)
@@ -96,7 +101,7 @@ import {
   getTreatmentPrice,
   getTreatmentDuration,
   getTreatmentBrandsText,
-} from './helpers';
+} from '@/data/priced-content';
 
 export function getSpa14FAQs(spa: Spa): FAQ[] {
   // Get dynamic values using helpers
@@ -136,7 +141,7 @@ FAQs should include internal links to:
 
 ```typescript
 import Link from 'next/link';
-import { getTreatmentPrice, getTreatmentDuration, getTreatmentIdByName } from './helpers';
+import { getTreatmentPrice, getTreatmentDuration, getTreatmentIdByName } from '@/data/priced-content';
 
 export function getSpa14FAQs(spa: Spa): FAQ[] {
   // Get treatment ID for linking
@@ -169,7 +174,7 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
 
 ```typescript
 import Link from 'next/link';
-import { getDayPassPrice, getDayPassDuration } from './helpers';
+import { getDayPassPrice, getDayPassDuration } from '@/data/priced-content';
 
 {
   question: 'How much does a spa day cost?',
@@ -239,7 +244,7 @@ import {
   getTreatmentIdByName,
   getTreatmentBrandsText,
   // ... other helpers as needed
-} from './helpers';
+} from '@/data/priced-content';
 ```
 3. Export a function that generates FAQs (not a static array):
 ```typescript
@@ -288,7 +293,7 @@ import {
   getTreatmentDuration,
   getTreatmentIdByName,
   getTreatmentBrandsText,
-} from './helpers';
+} from '@/data/priced-content';
 
 export function getSpa14FAQs(spa: Spa): FAQ[] {
   // Get dynamic values using helpers
@@ -329,7 +334,7 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
 
 ## Best Practices
 
-1. **Use Helper Functions**: **NEVER hardcode prices, durations, or other values**. Always use helper functions from `helpers.ts` to ensure data consistency.
+1. **Use Helper Functions**: **NEVER hardcode prices, durations, or other values**. Always use helper functions from `@/data/priced-content` to ensure data consistency.
 2. **Link Treatment Names**: **Always link treatment names** to their specific treatment card using `getTreatmentIdByName()` (e.g., `#fell-walkers-massage`). Provide fallback to `#treatments` if treatment not found.
 3. **Link Day Pass Names**: **Always link day pass names** to their specific day pass card (e.g., `#day-pass-id`).
 4. **Direct Answer First**: Always start with the direct answer in the first sentence.
@@ -340,7 +345,7 @@ export function getSpa14FAQs(spa: Spa): FAQ[] {
 9. **Link Styling**: Use `className="underline"` for internal links (no text color or font weight classes).
 10. **Not All Spas Need FAQs**: Only create FAQ files for spas that have researched, specific FAQs.
 11. **Function-Based FAQs**: Export a function that accepts a `Spa` object, not a static array.
-12. **Fallback Values**: Always provide fallback values when using helpers (e.g., `{treatmentPrice || '£90'}`).
+12. **Fallback Values**: Provide a fallback when using a treatment/day-pass helper (e.g., `{treatmentPrice || '£90'}`) as a display safety net — but treat any fallback that actually renders in production as a bug, not an accepted outcome. `treatmentName`/`dayPassId` lookups are fuzzy substring matches against free-text (`Treatment` has no stable id), so a rename in `src/data/treatments/spa-*.ts` silently returns null here. `src/data/priced-content.test.ts` guards against this: it parses every FAQ and blog MDX reference and fails the build if any no longer resolves against live data, so a drifted fallback is now a hard `npm test` failure, not a silent stale price.
 13. **Treatment IDs**: Treatment IDs are automatically generated from treatment names. Use `getTreatmentIdByName()` to get the correct ID for linking.
 
 ## Notes

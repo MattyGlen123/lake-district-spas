@@ -7,7 +7,7 @@ import {
   getDayPassPrice,
   getDayPassDuration,
   getTreatmentDuration,
-} from './helpers';
+} from '@/data/priced-content';
 
 export function getSpa7FAQs(spa: Spa): FAQ[] {
   const brandsText = getTreatmentBrandsText(spa.id);

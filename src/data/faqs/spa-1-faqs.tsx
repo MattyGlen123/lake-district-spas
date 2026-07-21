@@ -9,7 +9,7 @@ import {
   getThermalFacilitiesCount,
   getTreatmentBrandsText,
   getAgePolicy,
-} from './helpers';
+} from '@/data/priced-content';
 
 export function getSpa1FAQs(spa: Spa): FAQ[] {
   const durationText = getSpaAccessDurationText(spa);

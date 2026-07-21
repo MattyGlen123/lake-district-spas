@@ -7,7 +7,7 @@ import {
   getTreatmentPrice,
   getTreatmentIdByName,
   getAgePolicy,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 import { getLocationTreatmentCount } from './helpers';
 
 export function getGreatLangdaleFAQs(spas: Spa[]): FAQ[] {

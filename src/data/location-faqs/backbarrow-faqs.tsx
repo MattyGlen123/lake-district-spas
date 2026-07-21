@@ -7,7 +7,7 @@ import {
   getTreatmentPrice,
   getTreatmentBrandsText,
   getThermalFacilitiesCount,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 
 export function getBackbarrowFAQs(spas: Spa[]): FAQ[] {
   const whitewater = spas.find((s) => s.id === 13);

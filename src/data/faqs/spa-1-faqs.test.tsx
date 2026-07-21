@@ -11,7 +11,7 @@ import {
   getThermalFacilitiesCount,
   getTreatmentBrandsText,
   getAgePolicy,
-} from '@/data/faqs/helpers';
+} from '@/data/priced-content';
 import { Spa } from '@/types/spa';
 import { render } from '@testing-library/react';
 import React from 'react';

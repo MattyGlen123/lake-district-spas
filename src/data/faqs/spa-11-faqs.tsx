@@ -1,7 +1,7 @@
 import { FAQ } from '@/components/FAQs';
 import Link from 'next/link';
 import { Spa } from '@/types/spa';
-import { getThermalFacilitiesCount, getAgePolicy } from './helpers';
+import { getThermalFacilitiesCount, getAgePolicy } from '@/data/priced-content';
 
 export function getSpa11FAQs(spa: Spa): FAQ[] {
   // Extract dynamic values

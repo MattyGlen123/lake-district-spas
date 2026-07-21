@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { spaData } from '@/data/spas';
-import { getDayPassPrice } from '@/data/faqs/helpers';
+import { getDayPassPrice } from '@/data/priced-content';
 
 // Import the components from the blog page (we'll need to extract them or test them directly)
 // For now, we'll recreate them in the test to test the logic

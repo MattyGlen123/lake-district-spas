@@ -1,7 +1,7 @@
 import { FAQ } from '@/components/FAQs';
 import Link from 'next/link';
 import { Spa } from '@/types/spa';
-import { getTreatmentBrandsText, getTreatmentIdByName } from './helpers';
+import { getTreatmentBrandsText, getTreatmentIdByName } from '@/data/priced-content';
 
 export function getSpa8FAQs(spa: Spa): FAQ[] {
   const brandsText = getTreatmentBrandsText(spa.id);

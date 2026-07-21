@@ -6,7 +6,7 @@ graph TD
         spas[spas.ts — spaData array]
         treatments[treatments/spa-N-treatments.ts]
         dayPasses[day-passes/spa-N-day-passes.ts]
-        faqs[faqs/index.ts + helpers.ts]
+        faqs[faqs/index.ts]
         locationFaqs[location-faqs/index.ts + helpers.ts]
     end
 
@@ -15,6 +15,7 @@ graph TD
         locationLib[locationPages.ts — slugs + metadata]
         blogLib[blog.ts — getAllBlogPosts / getRelated]
         prices[prices.ts — price helpers]
+        pricedContent[priced-content.ts — shared spa/treatment/day-pass price + lookup helpers, used by faqs and blog MDX components]
         treatCatalog[treatment-catalog.ts]
         dayPassCatalog[day-pass-catalog.ts]
         facilityMatching[facility-matching.ts — matchesFacilityFilters]
@@ -58,6 +59,8 @@ graph TD
     filterUtils --> dayPassCatalog
     filterUtils --> treatCatalog
     treatCategories --> treatCatalog
+    pricedContent --> faqs
+    pricedContent --> blogPost
 ```
 
 ---

@@ -5,7 +5,7 @@ import {
   getTreatmentBrandsText,
   getAgePolicy,
   getDayPassPrice,
-} from './helpers';
+} from '@/data/priced-content';
 
 export function getSpa19FAQs(spa: Spa): FAQ[] {
   // Extract dynamic values
