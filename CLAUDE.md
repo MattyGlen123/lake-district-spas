@@ -55,7 +55,7 @@ See `.claude/diagrams/01-data-layer.md` for the full entity model. Key access pa
 
 ### Pages (App Router)
 
-See `.claude/diagrams/02-page-routing.md` for full URL structure. All pages are statically generated. `/spas` is the only `'use client'` page (filter/sort/paginate). Location pages are 13 individual static folders under `src/app/location/`.
+See `.claude/diagrams/02-page-routing.md` for full URL structure. All pages are statically generated. `/spas` is the only `'use client'` page (filter/sort/paginate). Location pages are a single dynamic route (`src/app/location/[slug]/page.tsx`) driven by `src/data/locations.ts` (`generateStaticParams`), preserving the 14 existing `/location/spas-in-{slug}` URLs.
 
 ### Blog System
 
