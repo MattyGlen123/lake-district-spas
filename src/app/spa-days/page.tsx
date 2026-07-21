@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import Image from 'next/image';
 import { Ticket } from 'lucide-react';
 import Header from '@/components/Header';
@@ -13,8 +13,7 @@ import { spaData } from '@/data/spas';
 import SortMenu from '@/components/listing/SortMenu';
 import PaginationControls from '@/components/listing/PaginationControls';
 import FeaturedSpasGrid from '@/components/FeaturedSpasGrid';
-import { useDraftFilters } from '@/hooks/listing/useDraftFilters';
-import { usePagination } from '@/hooks/listing/usePagination';
+import { useListing } from '@/hooks/listing/useListing';
 import {
   DayPassSortOption,
   applyDayPassFilters,
@@ -28,8 +27,6 @@ export default function SpaDaysPage() {
   const allDayPasses = useMemo(() => getAllDayPassesWithSpa(spaData), []);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  // Filter state
-  const [sortBy, setSortBy] = useState<DayPassSortOption>('price-high-low');
   const itemsPerPage = 12;
 
   // Calculate available options
@@ -72,38 +69,25 @@ export default function SpaDaysPage() {
     closeDraft: handleCloseModal,
     applyDraft: handleApplyFilters,
     resetBoth: resetBothFilters,
-  } = useDraftFilters(initialFilters);
-
-  // Filter logic
-  const filteredDayPasses = useMemo(
-    () => allDayPasses.filter((pass) => applyDayPassFilters(pass, filters)),
-    [allDayPasses, filters]
-  );
-
-  // Sort logic
-  const sortedDayPasses = useMemo(
-    () => sortDayPasses(filteredDayPasses, sortBy),
-    [filteredDayPasses, sortBy]
-  );
-
-  const {
+    draftResultCount: tempFilteredCount,
+    sortBy,
+    setSortBy,
+    filteredItems: filteredDayPasses,
+    paginatedItems: paginatedDayPasses,
     currentPage,
     totalPages,
-    paginatedItems: paginatedDayPasses,
     pageTokens,
     setCurrentPage,
     goToPreviousPage,
     goToNextPage,
-  } = usePagination({
-    items: sortedDayPasses,
+  } = useListing({
+    items: allDayPasses,
+    initialFilters,
+    filterFn: (passes, f) => passes.filter((pass) => applyDayPassFilters(pass, f)),
+    initialSortBy: 'price-high-low' as DayPassSortOption,
+    sortFn: sortDayPasses,
     itemsPerPage,
-    resetDeps: [filters, sortBy],
   });
-
-  // Calculate temp filtered count (for modal display)
-  const tempFilteredCount = useMemo(() => {
-    return allDayPasses.filter((pass) => applyDayPassFilters(pass, tempFilters)).length;
-  }, [allDayPasses, tempFilters]);
 
   const handleClearFilters = () => {
     resetBothFilters(
