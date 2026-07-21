@@ -2,8 +2,9 @@ import {
   ALL_CATEGORY_GROUP_LABELS,
   CATEGORY_GROUPS,
   PriceBracket,
-} from '@/components/TreatmentFilters';
+} from '@/lib/treatment-categories';
 import { TreatmentWithSpa, parseTreatmentPrice } from '@/data/treatments';
+import { countActiveFilters as sumActiveFilters, countIf } from '@/lib/filter-utils';
 
 export interface TreatmentFiltersState {
   priceBrackets: PriceBracket[];
@@ -102,9 +103,9 @@ export function countActiveTreatmentFilters(
   filters: TreatmentFiltersState,
   availableSpaCount: number
 ): number {
-  return (
-    (filters.priceBrackets.length > 0 ? 1 : 0) +
-    (filters.categories.length < ALL_CATEGORY_GROUP_LABELS.length ? 1 : 0) +
-    (filters.spas.length < availableSpaCount ? 1 : 0)
-  );
+  return sumActiveFilters(filters, [
+    countIf((f) => f.priceBrackets.length > 0),
+    countIf((f) => f.categories.length < ALL_CATEGORY_GROUP_LABELS.length),
+    countIf((f) => f.spas.length < availableSpaCount),
+  ]);
 }

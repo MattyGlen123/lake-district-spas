@@ -3,8 +3,7 @@
 import { useEffect } from 'react';
 import { X } from 'lucide-react';
 import { Checkbox } from '@/components/ui/checkbox';
-
-export type PriceBracket = 'under-75' | '75-100' | '100-150' | '150-plus';
+import { CATEGORY_GROUPS, PriceBracket } from '@/lib/treatment-categories';
 
 export const PRICE_BRACKETS: { value: PriceBracket; label: string }[] = [
   { value: 'under-75', label: 'Under £75' },
@@ -12,14 +11,6 @@ export const PRICE_BRACKETS: { value: PriceBracket; label: string }[] = [
   { value: '100-150', label: '£100 – £150' },
   { value: '150-plus', label: '£150+' },
 ];
-
-export const CATEGORY_GROUPS: { label: string; categories: string[] }[] = [
-  { label: 'Body & Massage', categories: ['Massage Therapies', 'Body Treatments'] },
-  { label: 'Facial Treatments', categories: ['Facial Treatments'] },
-  { label: 'Hands & Feet', categories: ['Hands & Feet Treatments'] },
-];
-
-export const ALL_CATEGORY_GROUP_LABELS = CATEGORY_GROUPS.map((g) => g.label);
 
 interface TreatmentFiltersProps {
   isOpen: boolean;
