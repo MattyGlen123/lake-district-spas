@@ -1,6 +1,6 @@
 import { Sparkles, Bed, Calendar } from 'lucide-react';
 import { Spa } from '@/types/spa';
-import { appendUtmParams } from '@/lib/utils';
+import { getBookingLinkProps } from '@/lib/utils';
 
 interface BookVisitCTAProps {
   spa: Spa;
@@ -45,9 +45,10 @@ export default function BookVisitCTA({ spa }: BookVisitCTAProps) {
                   {/* Book a Stay */}
                   {hasHotelBooking && (
                     <a
-                      href={appendUtmParams(spa.hotelBookingUrl!, 'book-stay')}
-                      data-spa-id={spa.url}
-                      data-click-intent="book-stay"
+                      {...getBookingLinkProps(spa.hotelBookingUrl!, {
+                        spaId: spa.url,
+                        clickIntent: 'book-stay',
+                      })}
                       className="inline-flex items-center justify-center gap-3 px-6 py-4 bg-amber-600 text-stone-50 font-bold rounded-full shadow-xl uppercase tracking-widest text-xs"
                     >
                       <Bed className="h-5 w-5" />
@@ -58,9 +59,10 @@ export default function BookVisitCTA({ spa }: BookVisitCTAProps) {
                   {/* Book a Spa Day */}
                   {hasDayPassBooking && (
                     <a
-                      href={appendUtmParams(spa.dayPassBookingUrl!, 'book-day-pass')}
-                      data-spa-id={spa.url}
-                      data-click-intent="book-day-pass"
+                      {...getBookingLinkProps(spa.dayPassBookingUrl!, {
+                        spaId: spa.url,
+                        clickIntent: 'book-day-pass',
+                      })}
                       className="inline-flex items-center justify-center gap-3 px-6 py-4 bg-amber-600 text-stone-50 font-bold rounded-full shadow-xl uppercase tracking-widest text-xs"
                     >
                       <Calendar className="h-5 w-5" />
@@ -71,9 +73,10 @@ export default function BookVisitCTA({ spa }: BookVisitCTAProps) {
                   {/* Book a Treatment */}
                   {hasTreatmentBooking && (
                     <a
-                      href={appendUtmParams(spa.treatmentBookingUrl!, 'book-treatment')}
-                      data-spa-id={spa.url}
-                      data-click-intent="book-treatment"
+                      {...getBookingLinkProps(spa.treatmentBookingUrl!, {
+                        spaId: spa.url,
+                        clickIntent: 'book-treatment',
+                      })}
                       className="inline-flex items-center justify-center gap-3 px-6 py-4 bg-amber-600 text-stone-50 font-bold rounded-full shadow-xl uppercase tracking-widest text-xs"
                     >
                       <Sparkles className="h-5 w-5" />
@@ -83,9 +86,10 @@ export default function BookVisitCTA({ spa }: BookVisitCTAProps) {
                 </div>
               ) : showFallback ? (
                 <a
-                  href={appendUtmParams(spa.websiteUrl, 'book-stay')}
-                  data-spa-id={spa.url}
-                  data-click-intent="book-stay"
+                  {...getBookingLinkProps(spa.websiteUrl, {
+                    spaId: spa.url,
+                    clickIntent: 'book-stay',
+                  })}
                   className="inline-flex items-center justify-center px-10 py-5 bg-amber-600 text-stone-50 font-bold rounded-full shadow-xl uppercase tracking-widest text-xs"
                 >
                   Visit the Official Website

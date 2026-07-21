@@ -1,8 +1,17 @@
 /**
- * Tests for the spa outbound click tracker
- * This tests the global click listener that captures spa booking clicks
- * and sends them to Google Analytics via dataLayer
+ * Tests for the spa outbound click tracker.
+ * Imports the real implementation from @/lib/outboundClickTracker — the exact
+ * module GoogleAnalytics.tsx wires up via useEffect. No hand-copied logic
+ * here: deleting the real tracker breaks these tests.
  */
+
+import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
+import {
+  handleOutboundClick,
+  initOutboundClickTracker,
+  isExternalUrl,
+  isProtocolHandler,
+} from '@/lib/outboundClickTracker';
 
 interface DataLayerItem {
   event: string;
@@ -15,212 +24,63 @@ interface WindowWithDataLayer extends Window {
   dataLayer?: DataLayerItem[];
 }
 
-import { vi } from 'vitest';
+/** Mocks window.location for tests that need a specific hostname (and, optionally, to observe href assignment). */
+function mockLocation(hostname: string, hrefSetter?: (v: string) => void) {
+  Object.defineProperty(window, 'location', {
+    value: {
+      hostname,
+      origin: `https://${hostname}`,
+      set href(v: string) {
+        hrefSetter?.(v);
+      },
+    },
+    writable: true,
+    configurable: true,
+  });
+
+  // jsdom resolves relative <a href> against the document's <base>/URL, not
+  // our mocked window.location — point <base> at the same origin so relative
+  // links resolve the way they would in a real browser on this domain.
+  document.querySelectorAll('base').forEach((el) => el.remove());
+  const base = document.createElement('base');
+  base.href = `https://${hostname}/`;
+  document.head.appendChild(base);
+}
 
 describe('Spa Outbound Click Tracker', () => {
   let dataLayer: DataLayerItem[];
   let mockDataLayerPush: ReturnType<typeof vi.fn>;
-  let clickHandler: ((e: Event) => void) | null = null;
 
   beforeEach(() => {
+    vi.useFakeTimers();
+
     // Reset dataLayer before each test
     dataLayer = [];
     mockDataLayerPush = vi.fn((item: DataLayerItem) => {
       // Directly push to the array, not through the mock to avoid circular reference
       Array.prototype.push.call(dataLayer, item);
     });
-    
-    // Set up window.dataLayer with the actual array
+
     (window as WindowWithDataLayer).dataLayer = dataLayer;
-    // Replace push method with our mock
     dataLayer.push = mockDataLayerPush as typeof Array.prototype.push;
 
-    // Remove any existing click listeners
-    if (clickHandler) {
-      document.removeEventListener('click', clickHandler);
-      clickHandler = null;
-    }
+    // Real handleOutboundClick is a stable function reference, so cleanup
+    // doesn't need to track per-test closures like the old hand-copy did.
+    document.removeEventListener('click', handleOutboundClick);
   });
 
   afterEach(() => {
-    // Clean up event listener
-    if (clickHandler) {
-      document.removeEventListener('click', clickHandler);
-      clickHandler = null;
-    }
-    // Clean up
+    document.removeEventListener('click', handleOutboundClick);
     delete (window as WindowWithDataLayer).dataLayer;
+    document.querySelectorAll('base').forEach((el) => el.remove());
     vi.clearAllMocks();
+    vi.useRealTimers();
   });
-
-  /**
-   * Execute the click tracker script with custom location
-   * This simulates what happens when the Script component loads
-   */
-  function initializeClickTrackerWithLocation(customHostname: string = 'localhost') {
-    // Initialize dataLayer if it doesn't exist (matching the actual script)
-    const win = window as WindowWithDataLayer;
-    win.dataLayer = win.dataLayer || [];
-    
-    // Remove existing handler if any
-    if (clickHandler) {
-      document.removeEventListener('click', clickHandler);
-    }
-    
-    // Helper function to check if URL is external (http/https to different domain)
-    function isExternalUrl(url: string, originalHref?: string): boolean {
-      if (!url) return false;
-      
-      // Check original href attribute first - if it's relative, it's internal
-      if (originalHref && !originalHref.startsWith('http://') && !originalHref.startsWith('https://') && !originalHref.startsWith('mailto:') && !originalHref.startsWith('tel:')) {
-        return false;
-      }
-      
-      // Skip relative URLs (internal links) - check the resolved URL
-      if (!url.startsWith('http://') && !url.startsWith('https://')) {
-        return false;
-      }
-      
-      try {
-        const urlObj = new URL(url);
-        const currentHost = customHostname;
-        const linkHost = urlObj.hostname;
-        // Check if it's external (different domain)
-        return linkHost !== currentHost && linkHost !== 'www.' + currentHost && 'www.' + linkHost !== currentHost;
-      } catch {
-        return false;
-      }
-    }
-
-    // Helper function to check if URL is a protocol handler (mailto, tel)
-    function isProtocolHandler(url: string): boolean {
-      if (!url) return false;
-      return url.startsWith('mailto:') || url.startsWith('tel:');
-    }
-    
-    // Create the click handler (matching actual implementation)
-    clickHandler = function(e: Event) {
-      const target = e.target as HTMLElement;
-      const link = target.closest('a') as HTMLAnchorElement;
-      
-      if (!link || !link.href) return;
-      
-      // Use the resolved href (absolute URL) for external check
-      const href = link.href;
-      const originalHref = link.getAttribute('href') || '';
-      
-      // Track external URLs OR protocol handlers (mailto, tel)
-      const isExternal = isExternalUrl(href, originalHref);
-      const isProtocol = isProtocolHandler(href);
-      
-      if (!isExternal && !isProtocol) return;
-      
-      // Get spa ID from data attribute (required)
-      const spaId = link.dataset.spaId || '';
-      
-      // Only fire event if we have a valid spa ID
-      if (!spaId) return;
-      
-      // Get other data attributes if available
-      const clickIntent = link.dataset.clickIntent || 'external-link';
-      const productName = link.dataset.productName || 'none';
-      
-      // Fire the event for external links or protocol handlers with spa context
-      if (win.dataLayer) {
-        win.dataLayer.push({
-          event: 'spa_outbound_click',
-          spa_id: spaId,
-          click_intent: clickIntent,
-          product_name: productName
-        });
-      }
-    };
-    
-    // Add the event listener
-    document.addEventListener('click', clickHandler);
-  }
-
-  /**
-   * Execute the click tracker script
-   * This simulates what happens when the Script component loads
-   */
-  function initializeClickTracker() {
-    // Initialize dataLayer if it doesn't exist (matching the actual script)
-    const win = window as WindowWithDataLayer;
-    win.dataLayer = win.dataLayer || [];
-    
-    // Remove existing handler if any
-    if (clickHandler) {
-      document.removeEventListener('click', clickHandler);
-    }
-    
-    // Helper function to check if URL is external (http/https to different domain)
-    function isExternalUrl(url: string): boolean {
-      if (!url) return false;
-      // Skip relative URLs (internal links)
-      if (!url.startsWith('http://') && !url.startsWith('https://')) {
-        return false;
-      }
-      try {
-        const urlObj = new URL(url, window.location.origin);
-        const currentHost = window.location.hostname;
-        const linkHost = urlObj.hostname;
-        // Check if it's external (different domain)
-        return linkHost !== currentHost && linkHost !== 'www.' + currentHost && 'www.' + linkHost !== currentHost;
-      } catch {
-        return false;
-      }
-    }
-
-    // Helper function to check if URL is a protocol handler (mailto, tel)
-    function isProtocolHandler(url: string): boolean {
-      if (!url) return false;
-      return url.startsWith('mailto:') || url.startsWith('tel:');
-    }
-    
-    // Create the click handler (matching actual implementation)
-    clickHandler = function(e: Event) {
-      const target = e.target as HTMLElement;
-      const link = target.closest('a') as HTMLAnchorElement;
-
-      if (!link || !link.href) return;
-
-      const href = link.href;
-
-      const isExternal = isExternalUrl(href);
-      const isProtocol = isProtocolHandler(href);
-
-      if (!isExternal && !isProtocol) return;
-
-      const spaId = link.dataset.spaId || '';
-      if (!spaId) return;
-
-      const clickIntent = link.dataset.clickIntent || 'external-link';
-      const productName = link.dataset.productName || 'none';
-
-      if (win.dataLayer) {
-        win.dataLayer.push({
-          event: 'spa_outbound_click',
-          spa_id: spaId,
-          click_intent: clickIntent,
-          product_name: productName
-        });
-      }
-
-      if (isExternal) {
-        e.preventDefault();
-        setTimeout(function() { window.location.href = href; }, 200);
-      }
-    };
-
-    // Add the event listener
-    document.addEventListener('click', clickHandler);
-  }
 
   describe('Event listener setup', () => {
     it('should initialize dataLayer if it does not exist', () => {
       delete (window as WindowWithDataLayer).dataLayer;
-      initializeClickTracker();
+      initOutboundClickTracker();
       const win = window as WindowWithDataLayer;
       expect(win.dataLayer).toBeDefined();
       expect(Array.isArray(win.dataLayer)).toBe(true);
@@ -228,18 +88,62 @@ describe('Spa Outbound Click Tracker', () => {
 
     it('should not overwrite existing dataLayer', () => {
       const existingDataLayer: DataLayerItem[] = [
-        { event: 'test', spa_id: 'test', click_intent: 'test', product_name: 'test' }
+        { event: 'test', spa_id: 'test', click_intent: 'test', product_name: 'test' },
       ];
       (window as WindowWithDataLayer).dataLayer = existingDataLayer;
-      initializeClickTracker();
+      initOutboundClickTracker();
       const win = window as WindowWithDataLayer;
       expect(win.dataLayer).toBe(existingDataLayer);
     });
   });
 
+  describe('isExternalUrl', () => {
+    it('treats a different domain as external', () => {
+      expect(isExternalUrl('https://example.com/book', 'lakedistrictspas.co.uk')).toBe(true);
+    });
+
+    it('treats the same domain as internal', () => {
+      expect(isExternalUrl('https://lakedistrictspas.co.uk/spa/x', 'lakedistrictspas.co.uk')).toBe(false);
+    });
+
+    it('treats relative URLs as internal', () => {
+      expect(isExternalUrl('/spa/x', 'lakedistrictspas.co.uk')).toBe(false);
+    });
+
+    it('treats a www-prefixed link host as the same domain', () => {
+      expect(isExternalUrl('https://www.lakedistrictspas.co.uk/spa/x', 'lakedistrictspas.co.uk')).toBe(false);
+    });
+
+    it('treats a www-prefixed current host with a non-www link as the same domain', () => {
+      expect(isExternalUrl('https://lakedistrictspas.co.uk/spa/x', 'www.lakedistrictspas.co.uk')).toBe(false);
+    });
+
+    it('treats a www-prefixed external domain as external', () => {
+      expect(isExternalUrl('https://www.example.com/book', 'lakedistrictspas.co.uk')).toBe(true);
+    });
+
+    it('returns false for an empty URL', () => {
+      expect(isExternalUrl('', 'lakedistrictspas.co.uk')).toBe(false);
+    });
+  });
+
+  describe('isProtocolHandler', () => {
+    it('detects mailto: links', () => {
+      expect(isProtocolHandler('mailto:info@example.com')).toBe(true);
+    });
+
+    it('detects tel: links', () => {
+      expect(isProtocolHandler('tel:+441234567890')).toBe(true);
+    });
+
+    it('rejects http(s) links', () => {
+      expect(isProtocolHandler('https://example.com')).toBe(false);
+    });
+  });
+
   describe('Click detection', () => {
     beforeEach(() => {
-      initializeClickTracker();
+      initOutboundClickTracker();
     });
 
     it('should detect clicks on external links with data-spa-id', () => {
@@ -418,7 +322,7 @@ describe('Spa Outbound Click Tracker', () => {
 
   describe('Real-world scenarios', () => {
     beforeEach(() => {
-      initializeClickTracker();
+      initOutboundClickTracker();
     });
 
     it('should handle Book Stay button click', () => {
@@ -559,7 +463,7 @@ describe('Spa Outbound Click Tracker', () => {
 
   describe('Event structure', () => {
     beforeEach(() => {
-      initializeClickTracker();
+      initOutboundClickTracker();
     });
 
     it('should push event with correct structure to dataLayer', () => {
@@ -573,7 +477,7 @@ describe('Spa Outbound Click Tracker', () => {
       link.click();
 
       const callArgs = mockDataLayerPush.mock.calls[0][0];
-      
+
       expect(callArgs).toHaveProperty('event', 'spa_outbound_click');
       expect(callArgs).toHaveProperty('spa_id');
       expect(callArgs).toHaveProperty('click_intent');
@@ -598,7 +502,7 @@ describe('Spa Outbound Click Tracker', () => {
       link.click();
 
       const callArgs = mockDataLayerPush.mock.calls[0][0];
-      
+
       // Verify parameters are at top level, not nested in a params object
       expect(callArgs.spa_id).toBe('lodore-falls-spa');
       expect(callArgs.click_intent).toBe('book-stay');
@@ -611,8 +515,8 @@ describe('Spa Outbound Click Tracker', () => {
 
   describe('External URL validation', () => {
     beforeEach(() => {
-      // Use custom location for these tests
-      initializeClickTrackerWithLocation('lakedistrictspas.co.uk');
+      mockLocation('lakedistrictspas.co.uk');
+      initOutboundClickTracker();
     });
 
     it('should track external links (different domain)', () => {
@@ -694,7 +598,7 @@ describe('Spa Outbound Click Tracker', () => {
 
   describe('Protocol handler links (mailto, tel)', () => {
     beforeEach(() => {
-      initializeClickTracker();
+      initOutboundClickTracker();
     });
 
     it('should track mailto links with data-spa-id', () => {
@@ -768,7 +672,7 @@ describe('Spa Outbound Click Tracker', () => {
 
   describe('Anchor tag requirement', () => {
     beforeEach(() => {
-      initializeClickTracker();
+      initOutboundClickTracker();
     });
 
     it('should only track anchor tags, not buttons', () => {
@@ -818,22 +722,9 @@ describe('Spa Outbound Click Tracker', () => {
     let mockHrefSetter: (v: string) => void;
 
     beforeEach(() => {
-      vi.useFakeTimers();
       mockHrefSetter = vi.fn();
-      Object.defineProperty(window, 'location', {
-        value: {
-          hostname: 'localhost',
-          origin: 'http://localhost',
-          set href(v: string) { mockHrefSetter(v); },
-        },
-        writable: true,
-        configurable: true,
-      });
-      initializeClickTracker();
-    });
-
-    afterEach(() => {
-      vi.useRealTimers();
+      mockLocation('localhost', mockHrefSetter);
+      initOutboundClickTracker();
     });
 
     it('calls preventDefault on HTTP/HTTPS external link with data-spa-id', () => {
@@ -918,7 +809,7 @@ describe('Spa Outbound Click Tracker', () => {
 
   describe('Required data-spa-id attribute', () => {
     beforeEach(() => {
-      initializeClickTracker();
+      initOutboundClickTracker();
     });
 
     it('should not track external links without data-spa-id', () => {
@@ -970,4 +861,3 @@ describe('Spa Outbound Click Tracker', () => {
     });
   });
 });
-
