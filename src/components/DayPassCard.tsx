@@ -1,14 +1,16 @@
 import { Check, CreditCard, Users, Mail, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { DayPassOption, Spa } from '@/types/spa';
-import { appendUtmParams, bookingEmailHref } from '@/lib/utils';
+import { bookingEmailHref, getBookingLinkProps } from '@/lib/utils';
 
 interface DayPassCardProps {
   dayPass: DayPassOption;
   spa: Spa;
+  /** Show the spa name/location header. Off when the card already lives on that spa's own page. */
+  showSpaHeader?: boolean;
 }
 
-export default function DayPassCard({ dayPass, spa }: DayPassCardProps) {
+export default function DayPassCard({ dayPass, spa, showSpaHeader = true }: DayPassCardProps) {
   const formatPrice = (value: number) =>
     value.toLocaleString('en-GB', {
       minimumFractionDigits: 0,
@@ -21,24 +23,26 @@ export default function DayPassCard({ dayPass, spa }: DayPassCardProps) {
       className="bg-white rounded-3xl border border-stone-200 shadow-lg flex flex-col overflow-hidden scroll-mt-32"
     >
       {/* Spa Header */}
-      <Link
-        href={`/spa/${spa.url}`}
-        className="px-4 pt-4 pb-3 border-b border-stone-100 bg-amber-50"
-      >
-        <div className="flex items-start gap-3">
-          <div className="flex-1 min-w-0">
-            <h3 className="font-serif text-lg text-stone-900">
-              {spa.name}
-            </h3>
-            <div className="flex items-center gap-1 mt-0.5">
-              <MapPin className="h-3 w-3 text-stone-400" strokeWidth={2.5} />
-              <span className="text-[9px] font-black uppercase tracking-widest text-stone-400">
-                {spa.location}
-              </span>
+      {showSpaHeader && (
+        <Link
+          href={`/spa/${spa.url}`}
+          className="px-4 pt-4 pb-3 border-b border-stone-100 bg-amber-50"
+        >
+          <div className="flex items-start gap-3">
+            <div className="flex-1 min-w-0">
+              <h3 className="font-serif text-lg text-stone-900">
+                {spa.name}
+              </h3>
+              <div className="flex items-center gap-1 mt-0.5">
+                <MapPin className="h-3 w-3 text-stone-400" strokeWidth={2.5} />
+                <span className="text-[9px] font-black uppercase tracking-widest text-stone-400">
+                  {spa.location}
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-      </Link>
+        </Link>
+      )}
 
       {/* Day Pass Content */}
       <div className="py-6 px-4 flex flex-col flex-1">
@@ -73,9 +77,15 @@ export default function DayPassCard({ dayPass, spa }: DayPassCardProps) {
               {dayPass.requiredNumbers}
             </span>
           )}
-          <h4 className="font-serif text-xl text-stone-950">
-            {dayPass.packageName}
-          </h4>
+          {showSpaHeader ? (
+            <h4 className="font-serif text-xl text-stone-950">
+              {dayPass.packageName}
+            </h4>
+          ) : (
+            <h3 className="font-serif text-xl text-stone-950">
+              {dayPass.packageName}
+            </h3>
+          )}
         </div>
 
         <p className="text-stone-600 text-base md:text-sm font-light mb-6">
@@ -84,10 +94,11 @@ export default function DayPassCard({ dayPass, spa }: DayPassCardProps) {
             <>
               {' '}
               <a
-                href={appendUtmParams(dayPass.dayPassUrl, 'specific-product-click')}
-                data-spa-id={spa.url}
-                data-click-intent="specific-product-click"
-                data-product-name={dayPass.packageName}
+                {...getBookingLinkProps(dayPass.dayPassUrl, {
+                  spaId: spa.url,
+                  clickIntent: 'specific-product-click',
+                  productName: dayPass.packageName,
+                })}
                 className="underline"
               >
                 More info
@@ -108,20 +119,22 @@ export default function DayPassCard({ dayPass, spa }: DayPassCardProps) {
         <div className="mt-auto">
           {dayPass.bookingUrl ? (
             <a
-              href={appendUtmParams(dayPass.bookingUrl, 'specific-product-click')}
-              data-spa-id={spa.url}
-              data-click-intent="specific-product-click"
-              data-product-name={dayPass.packageName}
+              {...getBookingLinkProps(dayPass.bookingUrl, {
+                spaId: spa.url,
+                clickIntent: 'specific-product-click',
+                productName: dayPass.packageName,
+              })}
               className="flex items-center justify-center gap-2 bg-emerald-950 text-white px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
             >
               <span className="leading-none">Book Pass</span>
             </a>
           ) : dayPass.bookingEmail ? (
             <a
-              href={appendUtmParams(bookingEmailHref(dayPass.bookingEmail), 'specific-product-click')}
-              data-spa-id={spa.url}
-              data-click-intent="specific-product-click"
-              data-product-name={dayPass.packageName}
+              {...getBookingLinkProps(bookingEmailHref(dayPass.bookingEmail), {
+                spaId: spa.url,
+                clickIntent: 'specific-product-click',
+                productName: dayPass.packageName,
+              })}
               className="flex items-center justify-center gap-2 bg-emerald-950 text-white px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap"
             >
               <span className="leading-none">Email Us</span>

@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { SITE_HOSTNAME, isSameHost } from "@/lib/siteDomain"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -55,9 +56,10 @@ export function appendUtmParams(url: string, clickIntent: string): string {
     // Parse the URL to handle existing query parameters properly
     const urlObj = new URL(url);
     
-    // Don't modify internal links (same domain)
+    // Don't modify internal links (same domain) — shared with the outbound
+    // click tracker's isExternalUrl via isSameHost, so the two never drift.
     const hostname = urlObj.hostname;
-    if (hostname === 'lakedistrictspas.co.uk' || hostname === 'www.lakedistrictspas.co.uk') {
+    if (isSameHost(hostname, SITE_HOSTNAME)) {
       return url;
     }
 
@@ -81,4 +83,33 @@ export function appendUtmParams(url: string, clickIntent: string): string {
 export function bookingEmailHref(email: string): string {
   const normalized = email.replace(/^mailto:/i, '');
   return `mailto:${normalized}`;
+}
+
+/** Attributes every tracked booking CTA needs, spread onto an <a>. */
+export interface BookingLinkAttrs {
+  href: string;
+  'data-spa-id': string;
+  'data-click-intent': string;
+  'data-product-name'?: string;
+}
+
+/**
+ * Single seam for booking CTAs: derives the UTM-tagged href plus the
+ * data-spa-id/data-click-intent/data-product-name attributes the outbound
+ * click tracker (src/lib/outboundClickTracker.ts) reads from one place,
+ * instead of each call site hand-typing all four.
+ */
+export function getBookingLinkProps(
+  url: string,
+  opts: { spaId: string; clickIntent: string; productName?: string }
+): BookingLinkAttrs {
+  const attrs: BookingLinkAttrs = {
+    href: appendUtmParams(url, opts.clickIntent),
+    'data-spa-id': opts.spaId,
+    'data-click-intent': opts.clickIntent,
+  };
+  if (opts.productName) {
+    attrs['data-product-name'] = opts.productName;
+  }
+  return attrs;
 }
