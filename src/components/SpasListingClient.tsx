@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import FilterButton from '@/components/FilterButton';
 import FilterModal from '@/components/FilterModal';
 import SpaGrid from '@/components/SpaGrid';
 import SortMenu from '@/components/listing/SortMenu';
-import { useDraftFilters } from '@/hooks/listing/useDraftFilters';
+import { useListing } from '@/hooks/listing/useListing';
 import { AccessLabel, Spa } from '@/types/spa';
 import {
   SpaSortOption,
@@ -22,7 +22,6 @@ interface SpasListingClientProps {
 
 export default function SpasListingClient({ spas }: SpasListingClientProps) {
   const gridRef = useRef<HTMLDivElement>(null);
-  const [sortBy, setSortBy] = useState<SpaSortOption>('featured');
 
   const {
     isOpen: isFilterModalOpen,
@@ -33,22 +32,22 @@ export default function SpasListingClient({ spas }: SpasListingClientProps) {
     closeDraft: handleCloseModal,
     applyDraft: handleApplyFilters,
     resetBoth: resetBothFilters,
-  } = useDraftFilters(createDefaultSpaFilters());
-
-  const filteredSpas = useMemo(
-    () => spas.filter((spa) => applyFilters(spa, filters)),
-    [spas, filters]
-  );
-
-  const tempFilteredCount = useMemo(
-    () => spas.filter((spa) => applyFilters(spa, tempFilters)).length,
-    [spas, tempFilters]
-  );
-
-  const sortedSpas = useMemo(
-    () => sortSpas(filteredSpas, sortBy),
-    [filteredSpas, sortBy]
-  );
+    draftResultCount: tempFilteredCount,
+    sortBy,
+    setSortBy,
+    filteredItems: filteredSpas,
+    sortedItems: sortedSpas,
+  } = useListing<Spa, ReturnType<typeof createDefaultSpaFilters>, SpaSortOption>({
+    items: spas,
+    initialFilters: createDefaultSpaFilters(),
+    filterFn: (allSpas, f) => allSpas.filter((spa) => applyFilters(spa, f)),
+    initialSortBy: 'featured',
+    sortFn: sortSpas,
+    itemsPerPage: spas.length,
+    // ~22 spas total — small enough that pagination would add clicks with no
+    // benefit, so /spas intentionally renders the full list unpaginated.
+    paginate: false,
+  });
 
   const activeFilterCount = countActiveFilters(filters);
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import Image from 'next/image';
 import { Sparkles } from 'lucide-react';
 import Header from '@/components/Header';
@@ -13,8 +13,7 @@ import { spaData } from '@/data/spas';
 import SortMenu from '@/components/listing/SortMenu';
 import PaginationControls from '@/components/listing/PaginationControls';
 import FeaturedSpasGrid from '@/components/FeaturedSpasGrid';
-import { useDraftFilters } from '@/hooks/listing/useDraftFilters';
-import { usePagination } from '@/hooks/listing/usePagination';
+import { useListing } from '@/hooks/listing/useListing';
 import {
   TreatmentSortOption,
   buildInitialTreatmentFilters,
@@ -38,7 +37,6 @@ export default function SpaTreatmentsPage() {
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [allTreatments]);
 
-  const [sortBy, setSortBy] = useState<TreatmentSortOption>('name-asc');
   const itemsPerPage = 12;
 
   const {
@@ -50,35 +48,24 @@ export default function SpaTreatmentsPage() {
     closeDraft: handleCloseModal,
     applyDraft: handleApplyFilters,
     resetBoth: resetBothFilters,
-  } = useDraftFilters(buildInitialTreatmentFilters(availableSpas));
-
-  const filteredTreatments = useMemo(
-    () => filterTreatments(allTreatments, filters),
-    [allTreatments, filters]
-  );
-
-  const tempFilteredCount = useMemo(
-    () => filterTreatments(allTreatments, tempFilters).length,
-    [allTreatments, tempFilters]
-  );
-
-  const sortedTreatments = useMemo(
-    () => sortTreatments(filteredTreatments, sortBy),
-    [filteredTreatments, sortBy]
-  );
-
-  const {
+    draftResultCount: tempFilteredCount,
+    sortBy,
+    setSortBy,
+    filteredItems: filteredTreatments,
+    paginatedItems: paginatedTreatments,
     currentPage,
     totalPages,
-    paginatedItems: paginatedTreatments,
     pageTokens,
     setCurrentPage,
     goToPreviousPage,
     goToNextPage,
-  } = usePagination({
-    items: sortedTreatments,
+  } = useListing({
+    items: allTreatments,
+    initialFilters: buildInitialTreatmentFilters(availableSpas),
+    filterFn: filterTreatments,
+    initialSortBy: 'name-asc' as TreatmentSortOption,
+    sortFn: sortTreatments,
     itemsPerPage,
-    resetDeps: [filters, sortBy],
   });
 
   const activeFilterCount = countActiveTreatmentFilters(
