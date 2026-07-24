@@ -1,6 +1,6 @@
 # Schema fit: does DayPassOption hold what spas publish?
 
-Status: needs-triage
+Status: ready-for-human
 Labels: wayfinder:grilling
 Assignee: (unclaimed)
 Blocked-by: [Source audit of the 15 spas' day-pass pages](02-source-audit.md)
