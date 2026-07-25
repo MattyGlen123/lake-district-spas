@@ -2,10 +2,10 @@
 
 Asset for [PR anatomy & failure UX](../../.scratch/day-pass-freshness/issues/04-pr-anatomy.md). Everything below the rule is the PR body as `/refresh-day-passes` would emit it. All figures are real (2026-07-24 source audit); timestamps simulated.
 
-**Decision points rendered (react to these — marked ▶ in body):**
+**Status: adopted verbatim as the normative PR template** (resolution 2026-07-25). The two decision points (▶) are resolved:
 
-1. **▶ Partial-fetch UX** — mock renders a *partial PR*: 14 fetched spas proceed, the failed spa gets a "Not fetched" section and its entries/`lastVerified` are untouched. Alternative: fail the whole run, or open a separate issue per failure.
-2. **▶ lastVerified on unchanged passes** — mock renders the *bump*: all 99 confirmed-unchanged passes get `lastVerified → 2026-07-25`, making date churn ~95% of the diff's line count. Alternative: only touch changed entries (diff stays tiny, but "verified" dates go stale on the passes that were actually checked).
+1. **▶ Partial-fetch UX — RESOLVED: partial PR + one filed issue per failure.** Fetched spas proceed; each failed spa gets a "Not fetched" row that links a separately-filed issue, so failures are reviewed on their own lane and drive automation fixes.
+2. **▶ lastVerified on unchanged passes — RESOLVED: bump, as rendered.** All confirmed-unchanged passes get `lastVerified → run date`; date churn accepted. After a run, any stale `lastVerified` = exactly the failed/flagged set.
 
 Prior decisions rendered, not reopened: evidence quote + source URL per change (charting), never-auto-delete (charting), per-couple normalization + "from £X" floor + promo-as-PR-note ([Schema fit](../../.scratch/day-pass-freshness/issues/06-schema-fit.md)), tier-3 successor suggestion ([Seasonal churn](../../.scratch/day-pass-freshness/issues/08-seasonal-churn.md) / [Rename & id-stability](../../.scratch/day-pass-freshness/issues/03-rename-id-stability.md)).
 
@@ -67,11 +67,11 @@ Match evidence: same £150, same shape (1 treatment + fizz + meal choice + therm
 
 ## ❌ Not fetched (1 spa) — entries untouched ▶
 
-| Spa | Passes | Source | Error |
-| --- | --- | --- | --- |
-| Macdonald Old England (6) | 6 | [macdonaldhotels.co.uk/old-england/…/spa/days](https://www.macdonaldhotels.co.uk/old-england/spa-leisure/spa/days) | HTTP 403 (bot protection), 2 retries |
+| Spa | Passes | Source | Error | Issue |
+| --- | --- | --- | --- | --- |
+| Macdonald Old England (6) | 6 | [macdonaldhotels.co.uk/old-england/…/spa/days](https://www.macdonaldhotels.co.uk/old-england/spa-leisure/spa/days) | HTTP 403 (bot protection), 2 retries | [fetch-failure: Old England 403](#) *(filed by this run)* |
 
-These 6 entries are excluded from this run: no price checks, `lastVerified` left at 2026-01-22. Re-try with the Playwright fallback or verify manually, then re-run `/refresh-day-passes --spa 6`.
+These 6 entries are excluded from this run: no price checks, `lastVerified` left at 2026-01-22. Each failure files its own issue (error, URL, retry log) for separate review and automation fixes; re-run `/refresh-day-passes --spa 6` once addressed.
 
 ## ✅ Verified unchanged (99 passes, 13 spas) ▶
 
