@@ -20,10 +20,12 @@ A **locked spec** (PRD.md in this directory) for a manually-triggered automation
 
 <!-- one line per closed ticket: gist + link -->
 
+- [Fetch & extraction mechanism](issues/01-fetch-mechanism.md) — curl (browser UA) + Claude Code reading raw HTML/`__NEXT_DATA__`/PDF, run as a local `/refresh-day-passes` skill opening the PR via `gh`; WebFetch disqualified by probe, GitHub Actions risky (bot-blocking); Playwright and Claude PDF blocks as fallbacks.
+- [Source audit of the 15 spas' day-pass pages](issues/02-source-audit.md) — 110 passes audited: 6 entries on dead URLs, 1 bot-blocked spa, 5 spas with prices only in booking portals (fetch `bookingUrl` there), 1 PDF-only spa, widespread real drift (worst: Whitewater +17–25%), and pricing structures a single `priceGBP` can't hold.
+
 ## Not yet specified
 
-- Operational detail of the chosen fetch mechanism (secrets/keys, MCP server setup, rate limits, cost envelope) — can't be specified until [Fetch & extraction mechanism](issues/01-fetch-mechanism.md) lands.
-- Whether/how the spec should version or stage rollout (e.g. run on 3 spas first) — depends on confidence shape that emerges from verification discussion.
+- Whether/how the spec should version or stage rollout (e.g. run on 3 spas first) — depends on confidence shape that emerges from verification discussion. The audit's per-spa difficulty tiers (clean HTML / booking-portal / PDF-only / bot-blocked) may become the staging axis.
 
 ## Out of scope
 

@@ -1,6 +1,6 @@
 # Verification & trust gating for extracted data
 
-Status: needs-triage
+Status: ready-for-human
 Labels: wayfinder:grilling
 Assignee: (unclaimed)
 Blocked-by: [Fetch & extraction mechanism](01-fetch-mechanism.md), [Source audit of the 15 spas' day-pass pages](02-source-audit.md)
