@@ -22,6 +22,7 @@ A **locked spec** (PRD.md in this directory) for a manually-triggered automation
 
 - [Fetch & extraction mechanism](issues/01-fetch-mechanism.md) — curl (browser UA) + Claude Code reading raw HTML/`__NEXT_DATA__`/PDF, run as a local `/refresh-day-passes` skill opening the PR via `gh`; WebFetch disqualified by probe, GitHub Actions risky (bot-blocking); Playwright and Claude PDF blocks as fallbacks.
 - [Source audit of the 15 spas' day-pass pages](issues/02-source-audit.md) — 110 passes audited: 6 entries on dead URLs, 1 bot-blocked spa, 5 spas with prices only in booking portals (fetch `bookingUrl` there), 1 PDF-only spa, widespread real drift (worst: Whitewater +17–25%), and pricing structures a single `priceGBP` can't hold.
+- [Rename & id-stability policy](issues/03-rename-id-stability.md) — ids track the current name (re-slug + rewrite all refs in the same PR); matching cascade bookingUrl-item → exact name → structural (tier 3 suggestion-only); flag-never-block; mechanical refs auto-rewritten, prose flagged not rewritten.
 
 ## Not yet specified
 
@@ -32,3 +33,4 @@ A **locked spec** (PRD.md in this directory) for a manually-triggered automation
 - **Discovering new day passes or new spas** — refresh-existing-only was chosen at charting; discovery is a fresh effort if the destination is later redrawn.
 - **Verifying "no day passes" for the 7 spas without day-pass files** (spas 3, 8, 11, 18, 20, 21, 22) — discovery-shaped, same reasoning.
 - **Treatments data freshness** — `src/data/treatments/` has the same staleness problem and the eventual mechanism likely generalises, but it's beyond this destination; note for a future effort.
+- **Inert day-pass anchor links** — found while resolving [Rename & id-stability policy](issues/03-rename-id-stability.md): ~15 blog links use `#<pass-id>` fragments but no component renders matching DOM anchors, so they silently scroll to page top. Pre-existing site bug, not freshness work — fix separately.
