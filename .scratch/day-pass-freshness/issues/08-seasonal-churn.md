@@ -2,7 +2,7 @@
 
 Status: ready-for-human
 Labels: wayfinder:grilling
-Assignee: (unclaimed)
+Assignee: Matthew Glen (via Claude session)
 Map: ../MAP.md
 
 ## Question
