@@ -26,10 +26,11 @@ A **locked spec** (PRD.md in this directory) for a manually-triggered automation
 - [Seasonal churn vs refresh-only scope](issues/08-seasonal-churn.md) — seasonal replacement = rename-plus: tier-3 suggested rename, strict 1:1 (one vanished ↔ one new, best match only), never auto-applied; recurrence churn accepted; no seasonality schema field (considered-and-rejected — 06 must not reopen); no-predecessor additions stay out of scope.
 - [Schema fit: does DayPassOption hold what spas publish?](issues/06-schema-fit.md) — no schema change; all five audit structures become extractor normalization rules: weekday/weekend = duplicate entries stay canonical (one entry per bookable variant, ~40 ids across 7 spas), "from £X" = silent floor in priceGBP (match, not drift), promos = PR-note only (list price canonical), per-hour extensions = prose, per-couple = existing priceGBP+pricePerPerson pattern; zero price-component ripple.
 - [PR anatomy & failure UX](issues/04-pr-anatomy.md) — mock PR adopted verbatim as normative template (asset: `.claude/content-out/day-pass-refresh-mock-pr.md`); partial PR on fetch failure + one filed issue per failure; lastVerified bumps on all confirmed-unchanged passes (stale date = exactly the failed/flagged set).
+- [Verification & trust gating for extracted data](issues/05-verification-trust.md) — every gate deterministic vs saved fetch artifact, none on model self-assessment: script-grepped contiguous quote (pass name + price in one span) required per pass incl. unchanged bumps (evidence artifact linked from PR); poison-word regex, PDF vintage check, and bounds (>±40% move or outside £20–£400) demote to flags; double-pass and confidence thresholds considered-and-rejected; staging fog resolved as mandated 3-spa pilot (Whitewater, Lakeside, Armathwaite) then full 15.
 
 ## Not yet specified
 
-- Whether/how the spec should version or stage rollout (e.g. run on 3 spas first) — depends on confidence shape that emerges from verification discussion. The audit's per-spa difficulty tiers (clean HTML / booking-portal / PDF-only / bot-blocked) may become the staging axis.
+*(empty — fog cleared; [Assemble the spec](issues/07-assemble-spec.md) closes the map.)*
 
 ## Out of scope
 
