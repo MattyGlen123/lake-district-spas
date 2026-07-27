@@ -2,7 +2,7 @@
 
 Status: ready-for-agent
 Type: AFK
-Assignee: (unclaimed)
+Assignee: Claude (agent, 2026-07-27)
 
 ## Parent
 
