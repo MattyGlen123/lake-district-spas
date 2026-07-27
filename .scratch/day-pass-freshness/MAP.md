@@ -1,6 +1,7 @@
 # Map: Day Pass Data Freshness
 
 Labels: wayfinder:map
+Status: complete (destination reached 2026-07-27 — [PRD.md](PRD.md) locked)
 
 ## Destination
 
@@ -27,10 +28,11 @@ A **locked spec** (PRD.md in this directory) for a manually-triggered automation
 - [Schema fit: does DayPassOption hold what spas publish?](issues/06-schema-fit.md) — no schema change; all five audit structures become extractor normalization rules: weekday/weekend = duplicate entries stay canonical (one entry per bookable variant, ~40 ids across 7 spas), "from £X" = silent floor in priceGBP (match, not drift), promos = PR-note only (list price canonical), per-hour extensions = prose, per-couple = existing priceGBP+pricePerPerson pattern; zero price-component ripple.
 - [PR anatomy & failure UX](issues/04-pr-anatomy.md) — mock PR adopted verbatim as normative template (asset: `.claude/content-out/day-pass-refresh-mock-pr.md`); partial PR on fetch failure + one filed issue per failure; lastVerified bumps on all confirmed-unchanged passes (stale date = exactly the failed/flagged set).
 - [Verification & trust gating for extracted data](issues/05-verification-trust.md) — every gate deterministic vs saved fetch artifact, none on model self-assessment: script-grepped contiguous quote (pass name + price in one span) required per pass incl. unchanged bumps (evidence artifact linked from PR); poison-word regex, PDF vintage check, and bounds (>±40% move or outside £20–£400) demote to flags; double-pass and confidence thresholds considered-and-rejected; staging fog resolved as mandated 3-spa pilot (Whitewater, Lakeside, Armathwaite) then full 15.
+- [Assemble the spec](issues/07-assemble-spec.md) — [PRD.md](PRD.md) locked 2026-07-27; all decisions folded, none new; ready for `/to-issues` as the follow-on implementation effort.
 
 ## Not yet specified
 
-*(empty — fog cleared; [Assemble the spec](issues/07-assemble-spec.md) closes the map.)*
+*(empty — destination reached; map complete.)*
 
 ## Out of scope
 
