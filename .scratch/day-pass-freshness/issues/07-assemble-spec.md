@@ -1,8 +1,8 @@
 # Assemble the spec (PRD.md)
 
-Status: needs-triage
+Status: ready-for-agent
 Labels: wayfinder:task
-Assignee: (unclaimed)
+Assignee: Matthew Glen (via Claude session)
 Blocked-by: [Fetch & extraction mechanism](01-fetch-mechanism.md), [Source audit of the 15 spas' day-pass pages](02-source-audit.md), [Rename & id-stability policy](03-rename-id-stability.md), [PR anatomy & failure UX](04-pr-anatomy.md), [Verification & trust gating for extracted data](05-verification-trust.md), [Schema fit: does DayPassOption hold what spas publish?](06-schema-fit.md), [Seasonal churn vs refresh-only scope](08-seasonal-churn.md)
 Map: ../MAP.md
 
