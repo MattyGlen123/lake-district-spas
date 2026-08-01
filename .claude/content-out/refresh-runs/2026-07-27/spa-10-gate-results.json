@@ -1,0 +1,25 @@
+{
+  "artifact": ".claude/content-out/refresh-runs/2026-07-27/spa-10.html",
+  "results": [
+    {
+      "passId": "beech-hill-rejuvenate-spa-day",
+      "grounded": true,
+      "reason": "grounded"
+    },
+    {
+      "passId": "beech-hill-relax-spa-day",
+      "grounded": true,
+      "reason": "grounded"
+    },
+    {
+      "passId": "beech-hill-spa-access-friday-saturday",
+      "grounded": true,
+      "reason": "grounded"
+    },
+    {
+      "passId": "beech-hill-spa-access-sunday-thursday",
+      "grounded": true,
+      "reason": "grounded"
+    }
+  ]
+}
