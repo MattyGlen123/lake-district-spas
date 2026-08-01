@@ -2,7 +2,7 @@
 
 Status: ready-for-agent
 Type: AFK
-Assignee: (unclaimed)
+Assignee: claude (session 2026-08-01, branch refresh/07-failure-ux)
 
 ## Parent
 
