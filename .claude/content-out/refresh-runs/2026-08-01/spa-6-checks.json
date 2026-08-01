@@ -1,0 +1,32 @@
+[
+  {
+    "passId": "old-england-morning-retreat-weekday",
+    "quote": "from <span>£109</span></p></div> <div class=\"spaCard__content\"><div class=\"topSection\"><h2 class=\"topSection__title title\"> My Morning Retreat <!----></h2>",
+    "figureGBP": 109
+  },
+  {
+    "passId": "old-england-morning-retreat-weekend",
+    "quote": "from <span>£109</span></p></div> <div class=\"spaCard__content\"><div class=\"topSection\"><h2 class=\"topSection__title title\"> My Morning Retreat <!----></h2>",
+    "figureGBP": 109
+  },
+  {
+    "passId": "old-england-afternoon-escape-weekday",
+    "quote": "from <span>£109</span></p></div> <div class=\"spaCard__content\"><div class=\"topSection\"><h2 class=\"topSection__title title\"> My Afternoon Escape <!----></h2>",
+    "figureGBP": 109
+  },
+  {
+    "passId": "old-england-afternoon-escape-weekend",
+    "quote": "from <span>£109</span></p></div> <div class=\"spaCard__content\"><div class=\"topSection\"><h2 class=\"topSection__title title\"> My Afternoon Escape <!----></h2>",
+    "figureGBP": 109
+  },
+  {
+    "passId": "old-england-time-for-me-weekday",
+    "quote": "from <span>£70</span></p></div> <div class=\"spaCard__content\"><div class=\"topSection\"><h2 class=\"topSection__title title\"> My Time for Me Spa Day <!----></h2>",
+    "figureGBP": 70
+  },
+  {
+    "passId": "old-england-time-for-me-weekend",
+    "quote": "from <span>£70</span></p></div> <div class=\"spaCard__content\"><div class=\"topSection\"><h2 class=\"topSection__title title\"> My Time for Me Spa Day <!----></h2>",
+    "figureGBP": 70
+  }
+]

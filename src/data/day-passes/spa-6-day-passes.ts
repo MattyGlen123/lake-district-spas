@@ -24,7 +24,7 @@ export const spa6DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.macdonaldhotels.co.uk/old-england/spa-leisure/spa/days',
       bookingUrl: 'https://www.macdonaldhotels.co.uk/old-england/book/spa/day/my-morning-retreat-spa-day?package=12724',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-01',
     },
     {
       id: 'old-england-morning-retreat-weekend',
@@ -47,7 +47,7 @@ export const spa6DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.macdonaldhotels.co.uk/old-england/spa-leisure/spa/days',
       bookingUrl: 'https://www.macdonaldhotels.co.uk/old-england/book/spa/day/my-morning-retreat-spa-day?package=12723',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-01',
     },
     {
       id: 'old-england-afternoon-escape-weekday',
@@ -70,7 +70,7 @@ export const spa6DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.macdonaldhotels.co.uk/old-england/spa-leisure/spa/days',
       bookingUrl: 'https://www.macdonaldhotels.co.uk/old-england/book/spa/day/my-afternoon-escape-spa-day?package=12722',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-01',
     },
     {
       id: 'old-england-afternoon-escape-weekend',
@@ -93,7 +93,7 @@ export const spa6DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.macdonaldhotels.co.uk/old-england/spa-leisure/spa/days',
       bookingUrl: 'https://www.macdonaldhotels.co.uk/old-england/book/spa/day/my-afternoon-escape-spa-day?package=12721',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-01',
     },
     {
       id: 'old-england-time-for-me-weekday',
@@ -115,7 +115,7 @@ export const spa6DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.macdonaldhotels.co.uk/old-england/spa-leisure/spa/days',
       bookingUrl: 'https://www.macdonaldhotels.co.uk/old-england/book/spa/day/my-time-for-me-spa-day?package=14056',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-01',
     },
     {
       id: 'old-england-time-for-me-weekend',
@@ -137,7 +137,7 @@ export const spa6DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.macdonaldhotels.co.uk/old-england/spa-leisure/spa/days',
       bookingUrl: 'https://www.macdonaldhotels.co.uk/old-england/book/spa/day/my-time-for-me-spa-day?package=14055',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-01',
     },
   ],
 };

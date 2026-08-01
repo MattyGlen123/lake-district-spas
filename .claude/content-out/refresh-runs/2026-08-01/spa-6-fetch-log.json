@@ -1,0 +1,17 @@
+{
+  "url": "https://www.macdonaldhotels.co.uk/old-england/spa-leisure/spa/days",
+  "artifact": ".claude/content-out/refresh-runs/2026-08-01/spa-6.html",
+  "ok": true,
+  "botBlocked": false,
+  "error": null,
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-08-01T20:23:21.822Z",
+      "method": "playwright-chromium",
+      "httpCode": "200",
+      "curlError": null,
+      "bytes": 1890489
+    }
+  ]
+}

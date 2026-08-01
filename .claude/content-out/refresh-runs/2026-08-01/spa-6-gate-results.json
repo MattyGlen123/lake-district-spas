@@ -1,0 +1,35 @@
+{
+  "artifact": ".claude/content-out/refresh-runs/2026-08-01/spa-6.html",
+  "results": [
+    {
+      "passId": "old-england-morning-retreat-weekday",
+      "grounded": true,
+      "reason": "grounded"
+    },
+    {
+      "passId": "old-england-morning-retreat-weekend",
+      "grounded": true,
+      "reason": "grounded"
+    },
+    {
+      "passId": "old-england-afternoon-escape-weekday",
+      "grounded": true,
+      "reason": "grounded"
+    },
+    {
+      "passId": "old-england-afternoon-escape-weekend",
+      "grounded": true,
+      "reason": "grounded"
+    },
+    {
+      "passId": "old-england-time-for-me-weekday",
+      "grounded": true,
+      "reason": "grounded"
+    },
+    {
+      "passId": "old-england-time-for-me-weekend",
+      "grounded": true,
+      "reason": "grounded"
+    }
+  ]
+}
