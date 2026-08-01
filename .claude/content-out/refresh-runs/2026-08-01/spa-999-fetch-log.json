@@ -1,0 +1,33 @@
+{
+  "url": "https://spa-999-does-not-exist.invalid/day-passes",
+  "artifact": ".claude/content-out/refresh-runs/2026-08-01/spa-999.html",
+  "ok": false,
+  "botBlocked": false,
+  "error": "curl: (6) Could not resolve host: spa-999-does-not-exist.invalid",
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-08-01T20:23:36.095Z",
+      "method": "curl",
+      "httpCode": null,
+      "curlError": "curl: (6) Could not resolve host: spa-999-does-not-exist.invalid",
+      "bytes": 0
+    },
+    {
+      "attempt": 2,
+      "at": "2026-08-01T20:23:38.113Z",
+      "method": "curl",
+      "httpCode": null,
+      "curlError": "curl: (6) Could not resolve host: spa-999-does-not-exist.invalid",
+      "bytes": 0
+    },
+    {
+      "attempt": 3,
+      "at": "2026-08-01T20:23:46.137Z",
+      "method": "curl",
+      "httpCode": null,
+      "curlError": "curl: (6) Could not resolve host: spa-999-does-not-exist.invalid",
+      "bytes": 0
+    }
+  ]
+}
