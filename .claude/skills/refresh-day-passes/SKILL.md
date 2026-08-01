@@ -1,6 +1,6 @@
 ---
 name: refresh-day-passes
-description: Refresh day-pass prices from spa source sites and open an evidence-grounded draft PR. Use when the user runs /refresh-day-passes, optionally with --spa <id>. Walking skeleton — html fetch tier only.
+description: Refresh day-pass prices from spa source sites and open an evidence-grounded draft PR. Use when the user runs /refresh-day-passes, optionally with --spa <id>. html + blocked (Playwright) fetch tiers; failed fetches file tracker issues, never block the run.
 ---
 
 # /refresh-day-passes
@@ -21,7 +21,12 @@ Manually-triggered refresh of existing `src/data/day-passes/` entries against ea
 
 ## Fetch tiers (PRD §2)
 
-This slice implements the `html` tier only: Lodore Falls (1), Daffodil (4), Swan (5), Low Wood Bay (7), Beech Hill (10), Whitewater (13), Another Place (14), Netherwood (16), Grange (17). If a targeted spa is not in this list, report "tier not implemented in this slice" and stop for that spa — do not fetch. Portal/pdf/blocked tiers plug in as later slices.
+Implemented tiers:
+
+- `html` — Lodore Falls (1), Daffodil (4), Swan (5), Low Wood Bay (7), Beech Hill (10), Whitewater (13), Another Place (14), Netherwood (16), Grange (17).
+- `blocked` — Old England (6): curl gets 403, so fetch goes straight to the Playwright fallback (`scripts/fetch-playwright.mjs`, repo's existing `@playwright/test` install; `npx playwright install` once if browsers missing). The rendered-HTML artifact it saves is gated exactly like a curl artifact.
+
+If a targeted spa is in neither list (`portal`/`pdf` tiers), report "tier not implemented in this slice" and stop for that spa — do not fetch.
 
 ## Procedure
 
@@ -29,14 +34,27 @@ Work from repo root. `RUN_DATE=$(date +%F)`; run dir = `.claude/content-out/refr
 
 ### 1. Fetch → artifact
 
-For each target spa, take `dayPassUrl` from its `src/data/day-passes/spa-<id>-day-passes.ts` entries and fetch the page source with plain curl and a browser UA (never WebFetch — PRD §8):
+For each target spa, take `dayPassUrl` from its `src/data/day-passes/spa-<id>-day-passes.ts` entries. Both fetch scripts retry with backoff internally and write a JSON retry log; exit 0 = fetched, exit 2 = failed → failure lane.
 
 ```bash
-curl -sSL --max-time 30 -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" \
-  -o ".claude/content-out/refresh-runs/$RUN_DATE/spa-<id>.html" -w '%{http_code}' "<dayPassUrl>"
+RUN_DIR=".claude/content-out/refresh-runs/$RUN_DATE"
+# html tier (plain curl + browser UA — never WebFetch, PRD §8; 3 attempts, 2s/8s backoff):
+node .claude/skills/refresh-day-passes/scripts/fetch.mjs \
+  "<dayPassUrl>" "$RUN_DIR/spa-<id>.html" "$RUN_DIR/spa-<id>-fetch-log.json"
+# blocked tier, or an html fetch that failed with "botBlocked": true in its log —
+# Playwright fallback (2 attempts, appends to the same retry log):
+node .claude/skills/refresh-day-passes/scripts/fetch-playwright.mjs \
+  "<dayPassUrl>" "$RUN_DIR/spa-<id>.html" "$RUN_DIR/spa-<id>-fetch-log.json"
 ```
 
-Record the fetch timestamp (`date '+%Y-%m-%d %H:%M %Z'`). Non-200 / curl error: the spa goes to the ❌ not-fetched table, its entries untouched (per-failure issue filing is slice 07 — for now put error detail in the table row) and continue with other spas. A failed spa never blocks the run.
+Record the fetch timestamp (`date '+%Y-%m-%d %H:%M %Z'`). A failed spa never blocks the run — continue with other spas.
+
+**Failure lane** (fetch script exit 2, all fallbacks exhausted): the spa is excluded from the run — its entries and `lastVerified` stay untouched, no checks/gate for it. For EACH failed spa:
+
+1. **File one tracker issue** (docs/agents/issue-tracker.md): `.scratch/day-pass-refresh/issues/<NN>-fetch-failure-spa-<id>-$RUN_DATE.md`, `<NN>` = next free number in that dir. Contents: title `Fetch failure: <spa name> (<id>) — day-pass refresh $RUN_DATE`; `Status: needs-triage`; error summary (HTTP code / curl or Playwright error, whether the Playwright fallback was tried); source URL; the full retry log JSON from `spa-<id>-fetch-log.json` in a fenced block; re-run line: after the fix, `/refresh-day-passes --spa <id>`.
+2. **Render a ❌ not-fetched table row** in the PR (normative template layout): spa name (id) · pass count · linked source URL · error + retry count · relative link to the filed issue file.
+
+Commit filed issues on the SAME run branch as the data PR so the table links resolve.
 
 ### 2. Extract quotes — from the artifact only
 
@@ -70,6 +88,15 @@ Route strictly by `gate-results.json`:
 
 Edit only the fields above in `src/data/day-passes/spa-<id>-day-passes.ts`. Run `npm test` — must stay green.
 
+Then run the post-run invariant check (PRD §6: stale `lastVerified` = exactly the failed/flagged set for the targeted spas):
+
+```bash
+node .claude/skills/refresh-day-passes/scripts/check-invariant.mjs \
+  "$RUN_DIR" "$RUN_DATE" "<id>,<id>,…"
+```
+
+Exit 2 = the data edits don't match the fetch/gate outcomes — fix the data (never the report) before opening the PR. Include the check's verdict line in evidence.md.
+
 ### 5. Evidence file
 
 Write `evidence.md` in the run dir: per spa, per pass — id, stored → source figure, the quote, gate verdict, source URL, fetch timestamp.
@@ -85,6 +112,5 @@ Open as DRAFT via `gh pr create --draft` (gh lives at `/opt/homebrew/bin/gh`).
 ## Later slices (stubs only — do not build here)
 
 - Gates 2–5 (contiguity, poison words, PDF vintage, plausibility) — plug into `runCheck()` in `scripts/gate.mjs`.
-- Portal (pence), PDF (poppler), blocked (Playwright) tiers — plug into step 1.
+- Portal (pence) and PDF (poppler) tiers — plug into step 1.
 - Matching cascade / renames / successors (PRD §4) — this slice matches passes by their existing ids only.
-- Per-failure issue filing (PRD §2 failure UX).
