@@ -1,0 +1,17 @@
+{
+  "url": "https://www.beechhillhotel.co.uk/spa/",
+  "artifact": ".claude/content-out/refresh-runs/2026-08-06/spa-10.html",
+  "ok": true,
+  "botBlocked": false,
+  "error": null,
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-08-06T20:09:54.030Z",
+      "method": "curl",
+      "httpCode": "200",
+      "curlError": null,
+      "bytes": 142826
+    }
+  ]
+}
