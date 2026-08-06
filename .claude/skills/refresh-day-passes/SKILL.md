@@ -56,16 +56,34 @@ Record the fetch timestamp (`date '+%Y-%m-%d %H:%M %Z'`). A failed spa never blo
 
 Commit filed issues on the SAME run branch as the data PR so the table links resolve.
 
-### 2. Extract quotes — from the artifact only
+### 2. Match fetched passes to existing entries
 
-Read the SAVED ARTIFACT (never the live page again — the artifact the model reads is the artifact the gate greps). For each existing pass in the spa's data file, find the current source price and capture:
+Before extracting quotes, identify which fetched pass (if any) each existing `DayPassOption` corresponds to. Build `existing` (from the spa's data file: `id`, `packageName`, `priceGBP`, `spaDuration`, `included`, `bookingUrl`) and `fetched` (from the artifact: `name`, `priceGBP`, `spaDuration`, `included`, `bookingUrl` — whatever the source page/portal exposes) arrays, then run:
+
+```bash
+node .claude/skills/refresh-day-passes/scripts/matching.mjs existing.json fetched.json
+```
+
+Cascade (PRD §4): (1) booking-portal item id (stable trailing path segment of `bookingUrl`) — auto-applies, including a rename when the name differs; (2) exact normalized name — auto-applies; (3) structural similarity (price/duration/inclusions) — `tier3Suggestions`, rendered in the PR as "possible rename: X → Y", **never applied**. `missingFlags` (existing matched by nothing) become ⚠️ checklist items, data untouched, no `lastVerified` bump. `unmatchedFetched` (fetched matching nothing existing) become ℹ️ notes only — discovery stays out of scope.
+
+**On a tier-1 match with a `rename` (or a human-approved tier-3/successor via `--accept-successor`, issue 06):**
+
+```bash
+node .claude/skills/refresh-day-passes/scripts/rename.mjs <repo-root> <spa-id> <old-id> <new-id> <old-name> <new-name>
+```
+
+This re-slugs the id to `<spa-prefix>-<slug-of-new-name>` (derived from the old id/name pair — see `deriveSpaPrefix` in `scripts/rename.mjs`), edits the data file's `id` and `packageName` fields, and auto-rewrites MECHANICAL references across `content/blog/**/*.mdx` and `src/data/faqs/*.tsx` — quoted id literals (`dayPassId="…"`, `getDayPassPrice(spa.id, '…')`) and `#<id>` anchor fragments — so `priced-content.test.ts` stays green. It prints `proseFlags` (case-insensitive hits of the OLD NAME in prose, file:line + context) — these go into the PR as ⚠️ checklist items and are **never rewritten**. If re-slugging would collide with another id already in use at that spa, nothing is renamed — it prints `{ applied: false, reason: 'slug-collision' }` and the PR gets a ⚠️ flag instead. Run `npm test` after any rename to confirm the priced-content validation is still green before continuing.
+
+### 3. Extract quotes — from the artifact only
+
+Read the SAVED ARTIFACT (never the live page again — the artifact the model reads is the artifact the gate greps). For each existing pass in the spa's data file (using its post-rename id, if renamed), find the current source price and capture:
 
 - `sourcePriceGBP` — the figure the source shows now. "From £X" → store the floor X, no marker; "from £X" vs stored X is a match, not drift (PRD §3). Promo/discount prices are NEVER extracted — list price only; note promos for the 🏷 section.
 - `quote` — a verbatim contiguous span copied from the artifact containing that price (prefer one also containing the pass name). Only whitespace/entity differences from the artifact are tolerated by the gate; do not paraphrase, reorder, or bridge gaps with `…`.
 
 A pass whose price cannot be found in the artifact gets no quote — it will fail the gate and land in the ⚠️ flag section. That is the correct outcome; never force a quote.
 
-### 3. Gate
+### 4. Gate
 
 Write `spa-<id>-checks.json` in the run dir: `[{ "passId", "quote", "figureGBP": <sourcePriceGBP> }, …]` — one entry per existing pass. Run:
 
@@ -84,7 +102,7 @@ Route strictly by `gate-results.json`:
 | grounded | differs | 💷 price change — set `priceGBP` (and `pricePerPerson` if applicable), bump `lastVerified` |
 | not grounded | — | ⚠️ flag — NO data change, NO `lastVerified` bump |
 
-### 4. Apply
+### 5. Apply
 
 Edit only the fields above in `src/data/day-passes/spa-<id>-day-passes.ts`. Run `npm test` — must stay green.
 
@@ -97,15 +115,15 @@ node .claude/skills/refresh-day-passes/scripts/check-invariant.mjs \
 
 Exit 2 = the data edits don't match the fetch/gate outcomes — fix the data (never the report) before opening the PR. Include the check's verdict line in evidence.md.
 
-### 5. Evidence file
+### 6. Evidence file
 
-Write `evidence.md` in the run dir: per spa, per pass — id, stored → source figure, the quote, gate verdict, source URL, fetch timestamp.
+Write `evidence.md` in the run dir: per spa, per pass — id (post-rename, if renamed), stored → source figure, the quote, gate verdict, source URL, fetch timestamp. Include the matching tier used (1/2/3), any applied rename (old name → new name), and any tier-3 "possible rename"/prose flags for that spa.
 
-### 6. PR
+### 7. PR
 
-Branch `refresh/day-pass-run-$RUN_DATE` off `origin/main`; commit the data edits AND the run dir (artifact, checks, gate results, evidence.md). Commit message: `chore(data): day-pass refresh $RUN_DATE — <n> price changes, <n> flags`.
+Branch `refresh/day-pass-run-$RUN_DATE` off `origin/main`; commit the data edits (including any renamed ids/mechanical-ref rewrites) AND the run dir (artifact, checks, gate results, evidence.md). Commit message: `chore(data): day-pass refresh $RUN_DATE — <n> price changes, <n> flags`.
 
-PR body follows the normative template layout exactly for every non-empty section, in template order: header (run stats line + "this PR deletes nothing" statement) → 💷 price changes → ⚠️ missing-flags → 🏷 promo notes → ❌ not-fetched table → ✅ verified-unchanged (collapsed `<details>`) → diff summary table. Per change: id + field diff, blockquoted quote, linked source URL, fetch timestamp, ℹ️ normalization notes. Omit sections with zero entries.
+PR body follows the normative template layout exactly for every non-empty section, in template order: header (run stats line + "this PR deletes nothing" statement) → 💷 price changes → ⚠️ missing-flags (include tier-3 "possible rename: X → Y" suggestions and prose-mention flags here) → 🏷 promo notes → ❌ not-fetched table → ✅ verified-unchanged (collapsed `<details>`) → diff summary table. Per change: id + field diff, blockquoted quote, linked source URL, fetch timestamp, ℹ️ normalization notes. Omit sections with zero entries.
 
 Open as DRAFT via `gh pr create --draft` (gh lives at `/opt/homebrew/bin/gh`).
 
@@ -113,4 +131,4 @@ Open as DRAFT via `gh pr create --draft` (gh lives at `/opt/homebrew/bin/gh`).
 
 - Gates 2–5 (contiguity, poison words, PDF vintage, plausibility) — plug into `runCheck()` in `scripts/gate.mjs`.
 - Portal (pence) and PDF (poppler) tiers — plug into step 1.
-- Matching cascade / renames / successors (PRD §4) — this slice matches passes by their existing ids only.
+- Successor suggestions (strict 1:1 seasonal-replacement detection) + `--accept-successor <id>` (PRD §4, issue 06) — layers on top of the tier-3 `tier3Suggestions` output from `scripts/matching.mjs` and calls `scripts/rename.mjs`'s rename engine once a suggestion is accepted.
