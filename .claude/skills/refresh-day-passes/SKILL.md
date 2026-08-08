@@ -1,6 +1,6 @@
 ---
 name: refresh-day-passes
-description: Refresh day-pass prices from spa source sites and open an evidence-grounded draft PR. Use when the user runs /refresh-day-passes, optionally with --spa <id>. html + blocked (Playwright) fetch tiers; failed fetches file tracker issues, never block the run.
+description: Refresh day-pass prices from spa source sites and open an evidence-grounded draft PR. Use when the user runs /refresh-day-passes, optionally with --spa <id>. html + blocked (Playwright) + pdf (poppler) fetch tiers; failed fetches file tracker issues, never block the run.
 ---
 
 # /refresh-day-passes
@@ -25,8 +25,9 @@ Implemented tiers:
 
 - `html` — Lodore Falls (1), Daffodil (4), Swan (5), Low Wood Bay (7), Beech Hill (10), Whitewater (13), Another Place (14), Netherwood (16), Grange (17).
 - `blocked` — Old England (6): curl gets 403, so fetch goes straight to the Playwright fallback (`scripts/fetch-playwright.mjs`, repo's existing `@playwright/test` install; `npx playwright install` once if browsers missing). The rendered-HTML artifact it saves is gated exactly like a curl artifact.
+- `pdf` — Armathwaite (2), sole pdf-tier spa: the brochure PDF linked from `dayPassUrl`'s page is the price source. `scripts/fetch-pdf.mjs` downloads it (curl + browser UA, same retry/backoff as `fetch.mjs`) then runs poppler's `pdftotext -layout` on it. **The extracted text layer is saved as the fetch artifact** (`spa-<id>.txt`) — that's the file the gate greps, same rule as every other tier ("the artifact the model reads is the artifact the gate greps"). The raw PDF is kept alongside at `spa-<id>.pdf` for reference and as the vintage evidence's source-URL trail. See "PDF vintage (gate 4)" below for the extra check this tier requires. Missing poppler (`pdftotext` not on PATH) is reported via the log's `missingDependency`/install-hint fields, exit 2 → failure lane, never a crash — `brew install poppler` if you hit it locally (poppler binaries can sit outside the default shell PATH even when installed via Homebrew).
 
-If a targeted spa is in neither list (`portal`/`pdf` tiers), report "tier not implemented in this slice" and stop for that spa — do not fetch.
+If a targeted spa is in neither list (the `portal` tier), report "tier not implemented in this slice" and stop for that spa — do not fetch.
 
 ## Procedure
 
@@ -45,6 +46,12 @@ node .claude/skills/refresh-day-passes/scripts/fetch.mjs \
 # Playwright fallback (2 attempts, appends to the same retry log):
 node .claude/skills/refresh-day-passes/scripts/fetch-playwright.mjs \
   "<dayPassUrl>" "$RUN_DIR/spa-<id>.html" "$RUN_DIR/spa-<id>-fetch-log.json"
+# pdf tier: fetch dayPassUrl's page first to locate the linked brochure PDF
+# (curl, same as above — no dedicated script, it's a plain HTML page), then
+# download + extract the brochure itself. exit 0's log carries
+# textLayerUsable + textChars — see "PDF vintage" below when it's false.
+node .claude/skills/refresh-day-passes/scripts/fetch-pdf.mjs \
+  "<brochurePdfUrl>" "$RUN_DIR/spa-<id>.txt" "$RUN_DIR/spa-<id>-fetch-log.json"
 ```
 
 Record the fetch timestamp (`date '+%Y-%m-%d %H:%M %Z'`). A failed spa never blocks the run — continue with other spas.
@@ -66,6 +73,8 @@ Read the SAVED ARTIFACT (never the live page again — the artifact the model re
 
 A pass whose price cannot be found in the artifact gets no quote — it will fail the gate and land in the ⚠️ flag section. That is the correct outcome; never force a quote.
 
+**pdf tier, thin text layer** — if `fetch-pdf.mjs`'s log reports `textLayerUsable: false` (under ~200 chars — a scanned/image brochure with little or no embedded text), reading `spa-<id>.txt` won't surface real quotes. Fall back to reading `spa-<id>.pdf` directly as a Claude API document content block to see what the brochure says. This is a **reading aid only** — it does not relax grounding. The `quote` you write into `checks.json` must still be a verbatim span that greps in the saved **text-layer artifact** (`spa-<id>.txt`), same as any other tier; if the thin layer genuinely doesn't contain the price as text, the gate will correctly return `quote-not-found-in-artifact` and the pass lands in ⚠️, exactly as the iron rule requires ("no gate depends on model self-assessment"). Do not point the gate at the PDF itself or at anything the document block "read" that isn't literally in the text-layer file.
+
 ### 3. Gate
 
 Write `spa-<id>-checks.json` in the run dir — one entry per existing pass:
@@ -81,6 +90,26 @@ Write `spa-<id>-checks.json` in the run dir — one entry per existing pass:
   "quotedFigure": 115                     // figure literally in the span (see below)
 }]
 ```
+
+**pdf tier only** — every check for a pdf-tier spa also carries `pdfVintage` (omit it entirely for other tiers; gate 4 is then a no-op):
+
+```jsonc
+{
+  "pdfVintage": {
+    "documentYear": 2026,          // year the evidence points to
+    "evidenceType": "filename",    // "filename" | "cover-date" | "valid-until"
+    "evidence": "https://.../uploads/2026/02/brochure.pdf", // see below
+    "runYear": 2026                // optional, defaults to current calendar year
+  }
+}
+```
+
+`evidenceType` decides what `evidence` is and how it's checked:
+
+- `filename` — the PDF's **source URL** (from the fetch log, not the text-layer artifact — URLs aren't part of the extracted text). Must literally contain `documentYear`. This is what Armathwaite's demo run uses: the upload path `/wp-content/uploads/2026/02/...` carries the year.
+- `cover-date` / `valid-until` — a verbatim quote that must grep in the artifact (same grounding rule as gate 1) **and** literally contain `documentYear` — a self-reported date only counts if it's actually printed in the brochure.
+
+Any `documentYear` older than `runYear` demotes with `pdf-vintage-stale` — see the whole-spa rule below.
 
 **Arithmetic cases** (PRD §3 rule 5) — `figureGBP` is always GBP; `quotedFigure` is what the span literally shows:
 
@@ -106,9 +135,12 @@ Gates run in order and the first failure demotes (`grounded: false`, with `gate`
 | 1 grounding | quote greps verbatim in the artifact (whitespace/entity normalization only); figure inside it; arithmetic case holds | `empty-quote`, `quote-not-found-in-artifact`, `figure-not-in-quote`, `arithmetic-mismatch`, `arithmetic-missing-per-person` |
 | 2 contiguity | pass name AND price in the one span | `pass-name-not-in-quote`, `missing-pass-name` |
 | 3 poison words | `member`/`membership`/`resident`/`voucher`/`deposit`/`per month` in the span or ±200 chars of artifact context (any occurrence of a repeated span) | `poison-word:<word>` (+ `poisonWords`) |
+| 4 PDF vintage (pdf tier only; no-op without `pdfVintage`) | `documentYear` present + evidence proven per `evidenceType` (see above) + not older than `runYear` | `pdf-vintage-year-missing`, `pdf-vintage-evidence-type-invalid`, `pdf-vintage-evidence-missing`, `pdf-vintage-year-not-in-evidence`, `pdf-vintage-evidence-not-found-in-artifact`, `pdf-vintage-stale` |
 | 5 plausibility | move ≤ ±40% vs `storedGBP`; price within £20–£400, even if unchanged | `move-exceeds-40pct`, `price-out-of-bounds` (+ computed `movePct`) |
 
-Gate 4 (PDF vintage) arrives with the pdf tier. Route strictly by `gate-results.json`:
+**Stale vintage demotes the whole spa, not just the pass** (PRD §2): `pdf-vintage-stale` on any one check means the brochure itself is out of date — every pass sourced from it is unreliable, not just that pass. Treat the spa exactly like a fetch failure (SKILL step 1's failure lane): exclude it from the run (entries and `lastVerified` untouched, no `priceGBP` edits from any of its checks even if other passes on the same brochure grounded fine), file one tracker issue (same shape as a fetch failure, error summary = "brochure dated `documentYear`, current run is `runYear`" + the vintage evidence), and render the ❌ not-fetched table row linking it. This is the one case where a gate-4 reason reaches back past step 3 into step 1's failure handling — every other gate reason (including the other pdf-vintage reasons: missing/invalid/unproven evidence) stays a normal per-pass ⚠️ flag. A pass-level flag for a **different** reason (e.g. gate 2 name drift) on a pdf-tier spa does NOT trigger this whole-spa rule — only `pdf-vintage-stale` does.
+
+Route strictly by `gate-results.json`:
 
 | Gate result | Source vs stored | Outcome |
 | --- | --- | --- |
@@ -147,6 +179,5 @@ Open as DRAFT via `gh pr create --draft` (gh lives at `/opt/homebrew/bin/gh`).
 
 ## Later slices (stubs only — do not build here)
 
-- Gate 4 (PDF vintage) — plugs into `runCheck()` in `scripts/gate.mjs` with the pdf tier.
-- Portal and PDF tiers — plug into step 1 (their arithmetic cases are already gated: `pence`, `per-couple`).
-- Matching cascade / renames / successors (PRD §4) — this slice matches passes by their existing ids only.
+- Portal tier — plugs into step 1; its `pence` arithmetic case is already gated (see gate 1's table above).
+- Matching cascade / renames / successors (PRD §4) — this slice matches passes by their existing ids only. Note from the Armathwaite pdf-tier demo: a source title that's merely shorter/reworded from the stored `packageName` (e.g. brochure "Serenity" vs stored "Serenity Full Spa Day") is NOT a rename to resolve here — it correctly fails gate 2 and lands in ⚠️ until 05 ships or the stored name is corrected by hand.
