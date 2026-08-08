@@ -1,0 +1,34 @@
+[
+  {
+    "passId": "beech-hill-rejuvenate-spa-day",
+    "passName": "Rejuvenate Spa Day",
+    "quote": "<strong>Rejuvenate Spa Day</strong><br /> <em>£140.00</em><br /> <em>50 minute appointment</em>",
+    "figureGBP": 140,
+    "storedGBP": 140,
+    "arithmetic": "none"
+  },
+  {
+    "passId": "beech-hill-relax-spa-day",
+    "passName": "Relax Spa Day",
+    "quote": "<strong>Relax Spa Day</strong><br /> <em>£115.00</em><br /> <em>25 minute appointment</em>",
+    "figureGBP": 115,
+    "storedGBP": 115,
+    "arithmetic": "none"
+  },
+  {
+    "passId": "beech-hill-spa-access-friday-saturday",
+    "passName": "Spa access",
+    "quote": "<strong>Spa access</strong><br /> <em>£45.00</em><br /> <em>180 minute appointment</em>",
+    "figureGBP": 45,
+    "storedGBP": 45,
+    "arithmetic": "none"
+  },
+  {
+    "passId": "beech-hill-spa-access-sunday-thursday",
+    "passName": "Spa access",
+    "quote": "<strong>Spa access</strong><br /> <em>£45.00</em><br /> <em>180 minute appointment</em>",
+    "figureGBP": 45,
+    "storedGBP": 45,
+    "arithmetic": "none"
+  }
+]

@@ -96,13 +96,36 @@ Same collision/prose-flag semantics as `rename.mjs` (it composes `planRename` + 
 Read the SAVED ARTIFACT (never the live page again — the artifact the model reads is the artifact the gate greps). For each existing pass in the spa's data file (using its post-rename id, if renamed), find the current source price and capture:
 
 - `sourcePriceGBP` — the figure the source shows now. "From £X" → store the floor X, no marker; "from £X" vs stored X is a match, not drift (PRD §3). Promo/discount prices are NEVER extracted — list price only; note promos for the 🏷 section.
-- `quote` — a verbatim contiguous span copied from the artifact containing that price (prefer one also containing the pass name). Only whitespace/entity differences from the artifact are tolerated by the gate; do not paraphrase, reorder, or bridge gaps with `…`.
+- `quote` — a verbatim contiguous span copied from the artifact containing **both** that price **and** the pass name / booking-item title (gate 2 requires both in the one span). Only whitespace/entity differences from the artifact are tolerated by the gate; do not paraphrase, reorder, or bridge gaps with `…`.
+- `passName` — the name the span shows (source title if it differs from `packageName`); the gate greps it inside the quote, case- and tag-insensitively.
 
 A pass whose price cannot be found in the artifact gets no quote — it will fail the gate and land in the ⚠️ flag section. That is the correct outcome; never force a quote.
 
 ### 4. Gate
 
-Write `spa-<id>-checks.json` in the run dir: `[{ "passId", "quote", "figureGBP": <sourcePriceGBP> }, …]` — one entry per existing pass. Run:
+Write `spa-<id>-checks.json` in the run dir — one entry per existing pass:
+
+```jsonc
+[{
+  "passId": "beech-hill-relax-spa-day",   // existing DayPassOption id
+  "passName": "Relax Spa Day",            // name/title as the span shows it (gate 2)
+  "quote": "<strong>Relax Spa Day</strong> <em>£115.00</em>",
+  "figureGBP": 115,                       // sourcePriceGBP, in GBP
+  "storedGBP": 115,                       // current priceGBP (gate 5 % move)
+  "arithmetic": "none",                   // "none" | "pence" | "per-couple"
+  "quotedFigure": 115                     // figure literally in the span (see below)
+}]
+```
+
+**Arithmetic cases** (PRD §3 rule 5) — `figureGBP` is always GBP; `quotedFigure` is what the span literally shows:
+
+| `arithmetic` | Span shows | `quotedFigure` | Gate proves |
+| --- | --- | --- | --- |
+| `none` (default) | `£115` | (ignored) | `£<figureGBP>` in span |
+| `pence` (portal tier) | `"price":14000` | `14000` | integer in span AND `= figureGBP × 100` |
+| `per-couple` | `£95 per person` | `95` | `£95` in span AND `figureGBP = 95 × 2` (group total) |
+
+Run:
 
 ```bash
 node .claude/skills/refresh-day-passes/scripts/gate.mjs \
@@ -111,13 +134,24 @@ node .claude/skills/refresh-day-passes/scripts/gate.mjs \
   > ".claude/content-out/refresh-runs/$RUN_DATE/spa-<id>-gate-results.json"
 ```
 
-Route strictly by `gate-results.json`:
+Gates run in order and the first failure demotes (`grounded: false`, with `gate` + `reason` + the `quote` on the result):
+
+| Gate | Checks | Demote reasons |
+| --- | --- | --- |
+| 1 grounding | quote greps verbatim in the artifact (whitespace/entity normalization only); figure inside it; arithmetic case holds | `empty-quote`, `quote-not-found-in-artifact`, `figure-not-in-quote`, `arithmetic-mismatch`, `arithmetic-missing-per-person` |
+| 2 contiguity | pass name AND price in the one span | `pass-name-not-in-quote`, `missing-pass-name` |
+| 3 poison words | `member`/`membership`/`resident`/`voucher`/`deposit`/`per month` in the span or ±200 chars of artifact context (any occurrence of a repeated span) | `poison-word:<word>` (+ `poisonWords`) |
+| 5 plausibility | move ≤ ±40% vs `storedGBP`; price within £20–£400, even if unchanged | `move-exceeds-40pct`, `price-out-of-bounds` (+ computed `movePct`) |
+
+Gate 4 (PDF vintage) arrives with the pdf tier. Route strictly by `gate-results.json`:
 
 | Gate result | Source vs stored | Outcome |
 | --- | --- | --- |
 | grounded | equal | ✅ verified unchanged — bump `lastVerified` to run date |
 | grounded | differs | 💷 price change — set `priceGBP` (and `pricePerPerson` if applicable), bump `lastVerified` |
-| not grounded | — | ⚠️ flag — NO data change, NO `lastVerified` bump |
+| not grounded | — | ⚠️ flag with the quote + `reason` (+ `movePct` where computed) rendered — NO data change, NO `lastVerified` bump |
+
+Never re-quote or re-run a demoted pass to get it green: a demotion is a review item, not a retry.
 
 ### 5. Apply
 
@@ -134,7 +168,7 @@ Exit 2 = the data edits don't match the fetch/gate outcomes — fix the data (ne
 
 ### 6. Evidence file
 
-Write `evidence.md` in the run dir: per spa, per pass — id (post-rename, if renamed), stored → source figure, the quote, gate verdict, source URL, fetch timestamp. Include the matching tier used (1/2/3), any applied rename (old name → new name), and any tier-3 "possible rename"/prose flags or "possible successor: X → Y" (with its evidence lines) for that spa.
+Write `evidence.md` in the run dir — the **full** per-pass quote set (PRD §5), never a sample. Per spa: source URL, artifact filename + HTTP status, gate-results filename, fetch timestamp, grounded/flagged counts, plus any tier-3 "possible rename: X → Y"/prose-mention flags and "possible successor: X → Y" suggestions (with their evidence lines). Per pass: id (post-rename, if renamed), the matching tier used (1/2/3) and any applied rename (old name → new name), stored → source figure, computed `movePct` when the price moved, the blockquoted quote, and the gate verdict — for demoted passes, the demoting gate + reason + "no data change, no `lastVerified` bump". Close with the `check-invariant.mjs` verdict line.
 
 ### 7. PR
 
@@ -142,9 +176,11 @@ Branch `refresh/day-pass-run-$RUN_DATE` off `origin/main`; commit the data edits
 
 PR body follows the normative template layout exactly for every non-empty section, in template order: header (run stats line + "this PR deletes nothing" statement) → 💷 price changes → ⚠️ missing-flags (include tier-3 "possible rename: X → Y" suggestions, "possible successor: X → Y" suggestions with their evidence lines, and prose-mention flags here) → 🏷 promo notes → ❌ not-fetched table → ✅ verified-unchanged (collapsed `<details>`) → diff summary table. Per change: id + field diff, blockquoted quote, linked source URL, fetch timestamp, ℹ️ normalization notes. Omit sections with zero entries.
 
+The header links `evidence.md` (relative repo path, in-branch) as the full quote set; **the PR body itself shows per-spa samples only** (PRD §5). Every gate demotion appears in the ⚠️ section with its quote, gate number and reason.
+
 Open as DRAFT via `gh pr create --draft` (gh lives at `/opt/homebrew/bin/gh`).
 
 ## Later slices (stubs only — do not build here)
 
-- Gates 2–5 (contiguity, poison words, PDF vintage, plausibility) — plug into `runCheck()` in `scripts/gate.mjs`.
-- Portal (pence) and PDF (poppler) tiers — plug into step 1.
+- Gate 4 (PDF vintage) — plugs into `runCheck()` in `scripts/gate.mjs` with the pdf tier.
+- Portal and PDF tiers — plug into step 1 (their arithmetic cases are already gated: `pence`, `per-couple`).

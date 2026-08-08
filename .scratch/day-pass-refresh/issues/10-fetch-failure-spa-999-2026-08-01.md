@@ -1,6 +1,6 @@
 # Fetch failure: Test Fixture Spa (999) — day-pass refresh 2026-08-01
 
-Status: needs-triage
+Status: closed (wontfix — fixture)
 Type: fetch-failure
 Filed-by: /refresh-day-passes run 2026-08-01
 
@@ -57,3 +57,7 @@ From `.claude/content-out/refresh-runs/2026-08-01/spa-999-fetch-log.json`:
 ## Re-run
 
 After the fix, re-run `/refresh-day-passes --spa 999`.
+
+## Comments
+
+**Closed** (2026-08-06, Claude PM): Deliberate fixture failure (spa 999, bogus URL) filed to prove the 07 failure lane. Lane shipped + demoed in PR #19/#18, issue 07 closed. No fix needed per filing note.

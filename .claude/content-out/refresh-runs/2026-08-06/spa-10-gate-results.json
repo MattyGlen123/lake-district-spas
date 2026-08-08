@@ -1,0 +1,58 @@
+{
+  "artifact": ".claude/content-out/refresh-runs/2026-08-06/spa-10.html",
+  "gates": [
+    "1 grounding+arithmetic",
+    "2 contiguity",
+    "3 poison words",
+    "5 plausibility"
+  ],
+  "constants": {
+    "PRICE_MIN_GBP": 20,
+    "PRICE_MAX_GBP": 400,
+    "MAX_MOVE_PCT": 40,
+    "POISON_CONTEXT_CHARS": 200
+  },
+  "summary": {
+    "checked": 4,
+    "grounded": 4,
+    "flagged": 0
+  },
+  "results": [
+    {
+      "passId": "beech-hill-rejuvenate-spa-day",
+      "quote": "<strong>Rejuvenate Spa Day</strong><br /> <em>£140.00</em><br /> <em>50 minute appointment</em>",
+      "figureGBP": 140,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "beech-hill-relax-spa-day",
+      "quote": "<strong>Relax Spa Day</strong><br /> <em>£115.00</em><br /> <em>25 minute appointment</em>",
+      "figureGBP": 115,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "beech-hill-spa-access-friday-saturday",
+      "quote": "<strong>Spa access</strong><br /> <em>£45.00</em><br /> <em>180 minute appointment</em>",
+      "figureGBP": 45,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "beech-hill-spa-access-sunday-thursday",
+      "quote": "<strong>Spa access</strong><br /> <em>£45.00</em><br /> <em>180 minute appointment</em>",
+      "figureGBP": 45,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    }
+  ]
+}

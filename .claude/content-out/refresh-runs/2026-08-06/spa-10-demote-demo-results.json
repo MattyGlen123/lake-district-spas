@@ -1,0 +1,49 @@
+{
+  "artifact": ".claude/content-out/refresh-runs/2026-08-06/spa-10.html",
+  "gates": [
+    "1 grounding+arithmetic",
+    "2 contiguity",
+    "3 poison words",
+    "5 plausibility"
+  ],
+  "constants": {
+    "PRICE_MIN_GBP": 20,
+    "PRICE_MAX_GBP": 400,
+    "MAX_MOVE_PCT": 40,
+    "POISON_CONTEXT_CHARS": 200
+  },
+  "summary": {
+    "checked": 3,
+    "grounded": 0,
+    "flagged": 3
+  },
+  "results": [
+    {
+      "passId": "demo-gate2-wrong-price-nearby",
+      "quote": "<em>£100.00</em><br /> <em>50 minute appointment</em>",
+      "figureGBP": 100,
+      "movePct": -28.6,
+      "grounded": false,
+      "reason": "pass-name-not-in-quote",
+      "gate": 2
+    },
+    {
+      "passId": "demo-gate1-hallucinated-quote",
+      "quote": "<strong>Rejuvenate Spa Day</strong> now only £99.00",
+      "figureGBP": 99,
+      "movePct": -29.3,
+      "grounded": false,
+      "reason": "quote-not-found-in-artifact",
+      "gate": 1
+    },
+    {
+      "passId": "demo-gate5-implausible-move",
+      "quote": "<strong>Rejuvenate Spa Day</strong><br /> <em>£140.00</em><br /> <em>50 minute appointment</em>",
+      "figureGBP": 140,
+      "movePct": 55.6,
+      "grounded": false,
+      "reason": "move-exceeds-40pct",
+      "gate": 5
+    }
+  ]
+}

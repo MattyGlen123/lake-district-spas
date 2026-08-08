@@ -24,7 +24,7 @@ export const spa10DayPasses: SpaDayPasses = {
       bookingRequired: true,
       bookingEmail: 'reservations@beechhillhotel.co.uk',
       dayPassUrl: 'https://www.beechhillhotel.co.uk/spa/',
-      lastVerified: '2026-07-27',
+      lastVerified: '2026-08-06',
     },
     {
       id: 'beech-hill-relax-spa-day',
@@ -47,7 +47,7 @@ export const spa10DayPasses: SpaDayPasses = {
       bookingRequired: true,
       bookingEmail: 'reservations@beechhillhotel.co.uk',
       dayPassUrl: 'https://www.beechhillhotel.co.uk/spa/',
-      lastVerified: '2026-07-27',
+      lastVerified: '2026-08-06',
     },
     {
       id: 'beech-hill-spa-access-friday-saturday',
@@ -68,7 +68,7 @@ export const spa10DayPasses: SpaDayPasses = {
       bookingRequired: true,
       bookingEmail: 'reservations@beechhillhotel.co.uk',
       dayPassUrl: 'https://www.beechhillhotel.co.uk/spa/',
-      lastVerified: '2026-07-27',
+      lastVerified: '2026-08-06',
     },
     {
       id: 'beech-hill-spa-access-sunday-thursday',
@@ -89,7 +89,7 @@ export const spa10DayPasses: SpaDayPasses = {
       bookingRequired: true,
       bookingEmail: 'reservations@beechhillhotel.co.uk',
       dayPassUrl: 'https://www.beechhillhotel.co.uk/spa/',
-      lastVerified: '2026-07-27',
+      lastVerified: '2026-08-06',
     },
   ],
 };
