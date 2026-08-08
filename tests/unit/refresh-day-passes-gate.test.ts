@@ -18,6 +18,7 @@ interface GateResult {
   figureGBP: number;
   movePct?: number;
   poisonWords?: string[];
+  documentYear?: number;
 }
 
 let dir: string;
@@ -348,6 +349,181 @@ describe('gate 3 — poison words', () => {
     });
     expect(r.grounded).toBe(false);
     expect(r.reason).toBe('poison-word:member');
+  });
+});
+
+describe('gate 4 — PDF vintage (pdf tier only)', () => {
+  const brochure = `<html><body>
+    <h3>Escape Half Day</h3><p>Mon-Fri &pound;150</p>
+    <p>Prices valid until December 2026 season.</p>
+  </body></html>`;
+
+  it('is a no-op when pdfVintage is absent (other tiers unaffected)', () => {
+    const r = one(brochure, {
+      passId: 'escape',
+      passName: 'Escape Half Day',
+      quote: 'Escape Half Day</h3><p>Mon-Fri £150',
+      figureGBP: 150,
+    });
+    expect(r.grounded).toBe(true);
+  });
+
+  it('grounds filename-year evidence matching the run year', () => {
+    const r = one(brochure, {
+      passId: 'escape',
+      passName: 'Escape Half Day',
+      quote: 'Escape Half Day</h3><p>Mon-Fri £150',
+      figureGBP: 150,
+      pdfVintage: {
+        documentYear: 2026,
+        evidenceType: 'filename',
+        evidence: 'https://example.com/wp-content/uploads/2026/02/spa-brochure.pdf',
+        runYear: 2026,
+      },
+    });
+    expect(r.grounded).toBe(true);
+    expect(r.documentYear).toBe(2026);
+  });
+
+  it('demotes a prior-year filename brochure — whole-source vintage failure', () => {
+    const r = one(brochure, {
+      passId: 'escape',
+      passName: 'Escape Half Day',
+      quote: 'Escape Half Day</h3><p>Mon-Fri £150',
+      figureGBP: 150,
+      pdfVintage: {
+        documentYear: 2025,
+        evidenceType: 'filename',
+        evidence: 'https://example.com/wp-content/uploads/2025/02/spa-brochure.pdf',
+        runYear: 2026,
+      },
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('pdf-vintage-stale');
+    expect(r.gate).toBe(4);
+  });
+
+  it('grounds a cover-date/valid-until quote that greps in the artifact and states the year', () => {
+    const r = one(brochure, {
+      passId: 'escape',
+      passName: 'Escape Half Day',
+      quote: 'Escape Half Day</h3><p>Mon-Fri £150',
+      figureGBP: 150,
+      pdfVintage: {
+        documentYear: 2026,
+        evidenceType: 'valid-until',
+        evidence: 'Prices valid until December 2026 season.',
+        runYear: 2026,
+      },
+    });
+    expect(r.grounded).toBe(true);
+  });
+
+  it('demotes a cover-date/valid-until quote absent from the artifact (no self-reported evidence)', () => {
+    const r = one(brochure, {
+      passId: 'escape',
+      passName: 'Escape Half Day',
+      quote: 'Escape Half Day</h3><p>Mon-Fri £150',
+      figureGBP: 150,
+      pdfVintage: {
+        documentYear: 2026,
+        evidenceType: 'valid-until',
+        evidence: 'Prices valid until December 2026 — not actually printed anywhere',
+        runYear: 2026,
+      },
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('pdf-vintage-evidence-not-found-in-artifact');
+    expect(r.gate).toBe(4);
+  });
+
+  it('demotes when documentYear is missing or not a number', () => {
+    const r = one(brochure, {
+      passId: 'escape',
+      passName: 'Escape Half Day',
+      quote: 'Escape Half Day</h3><p>Mon-Fri £150',
+      figureGBP: 150,
+      pdfVintage: { evidenceType: 'filename', evidence: 'https://example.com/2026/brochure.pdf' },
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('pdf-vintage-year-missing');
+    expect(r.gate).toBe(4);
+  });
+
+  it('demotes an unrecognised evidenceType', () => {
+    const r = one(brochure, {
+      passId: 'escape',
+      passName: 'Escape Half Day',
+      quote: 'Escape Half Day</h3><p>Mon-Fri £150',
+      figureGBP: 150,
+      pdfVintage: { documentYear: 2026, evidenceType: 'guess', evidence: 'trust me, 2026' },
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('pdf-vintage-evidence-type-invalid');
+  });
+
+  it('demotes filename evidence that does not literally contain documentYear', () => {
+    const r = one(brochure, {
+      passId: 'escape',
+      passName: 'Escape Half Day',
+      quote: 'Escape Half Day</h3><p>Mon-Fri £150',
+      figureGBP: 150,
+      pdfVintage: {
+        documentYear: 2026,
+        evidenceType: 'filename',
+        evidence: 'https://example.com/wp-content/uploads/spa-brochure.pdf',
+        runYear: 2026,
+      },
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('pdf-vintage-year-not-in-evidence');
+  });
+
+  it('demotes empty evidence', () => {
+    const r = one(brochure, {
+      passId: 'escape',
+      passName: 'Escape Half Day',
+      quote: 'Escape Half Day</h3><p>Mon-Fri £150',
+      figureGBP: 150,
+      pdfVintage: { documentYear: 2026, evidenceType: 'filename', evidence: '' },
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('pdf-vintage-evidence-missing');
+  });
+
+  it('defaults runYear to the current calendar year when omitted', () => {
+    const nextYear = new Date().getFullYear() + 1;
+    const r = one(brochure, {
+      passId: 'escape',
+      passName: 'Escape Half Day',
+      quote: 'Escape Half Day</h3><p>Mon-Fri £150',
+      figureGBP: 150,
+      pdfVintage: {
+        documentYear: nextYear,
+        evidenceType: 'filename',
+        evidence: `https://example.com/uploads/${nextYear}/brochure.pdf`,
+      },
+    });
+    expect(r.grounded).toBe(true);
+  });
+
+  it('runs gate 4 before gate 5, so a stale vintage wins over a plausibility flag', () => {
+    const r = one('<p>Escape Half Day &pound;9999</p>', {
+      passId: 'escape',
+      passName: 'Escape Half Day',
+      quote: 'Escape Half Day £9999',
+      figureGBP: 9999,
+      storedGBP: 150,
+      pdfVintage: {
+        documentYear: 2025,
+        evidenceType: 'filename',
+        evidence: 'https://example.com/uploads/2025/brochure.pdf',
+        runYear: 2026,
+      },
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('pdf-vintage-stale');
+    expect(r.gate).toBe(4);
   });
 });
 
