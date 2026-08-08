@@ -17,7 +17,7 @@ Manually-triggered refresh of existing `src/data/day-passes/` entries against ea
 
 - `--spa <id>[,<id>…]` — scope to given spas. **Implemented.**
 - `--tier <tier>` — STUB (slice 03/04/08). Error: "not implemented in this slice".
-- `--accept-successor <id>` — STUB (slice 06). Error: "not implemented in this slice".
+- `--accept-successor <existing-id>` — apply a previously-suggested successor rename for one existing id, re-running the same matching pass first. **Implemented** (step 2).
 
 ## Fetch tiers (PRD §2)
 
@@ -56,9 +56,44 @@ Record the fetch timestamp (`date '+%Y-%m-%d %H:%M %Z'`). A failed spa never blo
 
 Commit filed issues on the SAME run branch as the data PR so the table links resolve.
 
-### 2. Extract quotes — from the artifact only
+### 2. Match fetched passes to existing entries
 
-Read the SAVED ARTIFACT (never the live page again — the artifact the model reads is the artifact the gate greps). For each existing pass in the spa's data file, find the current source price and capture:
+Before extracting quotes, identify which fetched pass (if any) each existing `DayPassOption` corresponds to. Build `existing` (from the spa's data file: `id`, `packageName`, `priceGBP`, `spaDuration`, `included`, `bookingUrl`) and `fetched` (from the artifact: `name`, `priceGBP`, `spaDuration`, `included`, `bookingUrl` — whatever the source page/portal exposes) arrays, then run:
+
+```bash
+node .claude/skills/refresh-day-passes/scripts/matching.mjs existing.json fetched.json
+```
+
+Cascade (PRD §4): (1) booking-portal item id (stable trailing path segment of `bookingUrl`) — auto-applies, including a rename when the name differs; (2) exact normalized name — auto-applies; (3) structural similarity (price/duration/inclusions) — `tier3Suggestions`, rendered in the PR as "possible rename: X → Y", **never applied**. `missingFlags` (existing matched by nothing) become ⚠️ checklist items, data untouched, no `lastVerified` bump. `unmatchedFetched` (fetched matching nothing existing) become ℹ️ notes only — discovery stays out of scope.
+
+**On a tier-1 match with a `rename` (or a human-approved tier-3/successor via `--accept-successor`, issue 06):**
+
+```bash
+node .claude/skills/refresh-day-passes/scripts/rename.mjs <repo-root> <spa-id> <old-id> <new-id> <old-name> <new-name>
+```
+
+This re-slugs the id to `<spa-prefix>-<slug-of-new-name>` (derived from the old id/name pair — see `deriveSpaPrefix` in `scripts/rename.mjs`), edits the data file's `id` and `packageName` fields, and auto-rewrites MECHANICAL references across `content/blog/**/*.mdx` and `src/data/faqs/*.tsx` — quoted id literals (`dayPassId="…"`, `getDayPassPrice(spa.id, '…')`) and `#<id>` anchor fragments — so `priced-content.test.ts` stays green. It prints `proseFlags` (case-insensitive hits of the OLD NAME in prose, file:line + context) — these go into the PR as ⚠️ checklist items and are **never rewritten**. If re-slugging would collide with another id already in use at that spa, nothing is renamed — it prints `{ applied: false, reason: 'slug-collision' }` and the PR gets a ⚠️ flag instead. Run `npm test` after any rename to confirm the priced-content validation is still green before continuing.
+
+**Successor suggestions (strict 1:1, PRD §4).** After `matchPasses`, feed its result plus the same `existing`/`fetched` arrays through:
+
+```bash
+node .claude/skills/refresh-day-passes/scripts/successor.mjs existing.json fetched.json matchResult.json
+```
+
+`classifySuccessors` applies the strict-1:1 rule: only when a spa's WHOLE post-tier-1/2 leftover pool is exactly one vanished existing pass and one unmatched fetched pass, and they clear `TIER3_THRESHOLD`, does it render a `successors` entry — `{ existingId, existingName, fetchedName, score, evidence }`, `evidence` being price/duration/inclusions-shape/availability/positional-index lines for the PR's "possible successor: X → Y" flag. Two+ vanished passes, two+ unmatched passes, a no-predecessor addition, or an apparent merge all demote back to plain `missingFlags`/`unmatchedFetched` — never a guessed pairing. Successors are rendered in the PR's ⚠️ missing-flag section as a suggestion only, same as a tier-3 rename — **never applied on this run**.
+
+**On `--accept-successor <existing-id>` (a re-run):** re-run fetch + matching + `classifySuccessors` for that spa as normal, find the `successors` entry with the matching `existingId`, then apply it exactly like a tier-1 auto-rename:
+
+```js
+import { applySuccessor } from './successor.mjs';
+const { plan, updatedFiles, proseFlags } = applySuccessor(successor, siblingIds, files);
+```
+
+Same collision/prose-flag semantics as `rename.mjs` (it composes `planRename` + `applyRenameToFiles` underneath). If no `successors` entry matches the given id on the re-run (source changed again, or it was never strict 1:1), stop and report that — never fall back to a manual rename. Run `npm test` afterwards to confirm `priced-content.test.ts` stays green.
+
+### 3. Extract quotes — from the artifact only
+
+Read the SAVED ARTIFACT (never the live page again — the artifact the model reads is the artifact the gate greps). For each existing pass in the spa's data file (using its post-rename id, if renamed), find the current source price and capture:
 
 - `sourcePriceGBP` — the figure the source shows now. "From £X" → store the floor X, no marker; "from £X" vs stored X is a match, not drift (PRD §3). Promo/discount prices are NEVER extracted — list price only; note promos for the 🏷 section.
 - `quote` — a verbatim contiguous span copied from the artifact containing **both** that price **and** the pass name / booking-item title (gate 2 requires both in the one span). Only whitespace/entity differences from the artifact are tolerated by the gate; do not paraphrase, reorder, or bridge gaps with `…`.
@@ -66,7 +101,7 @@ Read the SAVED ARTIFACT (never the live page again — the artifact the model re
 
 A pass whose price cannot be found in the artifact gets no quote — it will fail the gate and land in the ⚠️ flag section. That is the correct outcome; never force a quote.
 
-### 3. Gate
+### 4. Gate
 
 Write `spa-<id>-checks.json` in the run dir — one entry per existing pass:
 
@@ -118,7 +153,7 @@ Gate 4 (PDF vintage) arrives with the pdf tier. Route strictly by `gate-results.
 
 Never re-quote or re-run a demoted pass to get it green: a demotion is a review item, not a retry.
 
-### 4. Apply
+### 5. Apply
 
 Edit only the fields above in `src/data/day-passes/spa-<id>-day-passes.ts`. Run `npm test` — must stay green.
 
@@ -131,15 +166,15 @@ node .claude/skills/refresh-day-passes/scripts/check-invariant.mjs \
 
 Exit 2 = the data edits don't match the fetch/gate outcomes — fix the data (never the report) before opening the PR. Include the check's verdict line in evidence.md.
 
-### 5. Evidence file
+### 6. Evidence file
 
-Write `evidence.md` in the run dir — the **full** per-pass quote set (PRD §5), never a sample. Per spa: source URL, artifact filename + HTTP status, gate-results filename, fetch timestamp, grounded/flagged counts. Per pass: id, stored → source figure, computed `movePct` when the price moved, the blockquoted quote, and the gate verdict — for demoted passes, the demoting gate + reason + "no data change, no `lastVerified` bump". Close with the `check-invariant.mjs` verdict line.
+Write `evidence.md` in the run dir — the **full** per-pass quote set (PRD §5), never a sample. Per spa: source URL, artifact filename + HTTP status, gate-results filename, fetch timestamp, grounded/flagged counts, plus any tier-3 "possible rename: X → Y"/prose-mention flags and "possible successor: X → Y" suggestions (with their evidence lines). Per pass: id (post-rename, if renamed), the matching tier used (1/2/3) and any applied rename (old name → new name), stored → source figure, computed `movePct` when the price moved, the blockquoted quote, and the gate verdict — for demoted passes, the demoting gate + reason + "no data change, no `lastVerified` bump". Close with the `check-invariant.mjs` verdict line.
 
-### 6. PR
+### 7. PR
 
-Branch `refresh/day-pass-run-$RUN_DATE` off `origin/main`; commit the data edits AND the run dir (artifact, checks, gate results, evidence.md). Commit message: `chore(data): day-pass refresh $RUN_DATE — <n> price changes, <n> flags`.
+Branch `refresh/day-pass-run-$RUN_DATE` off `origin/main`; commit the data edits (including any renamed ids/mechanical-ref rewrites) AND the run dir (artifact, checks, gate results, evidence.md). Commit message: `chore(data): day-pass refresh $RUN_DATE — <n> price changes, <n> flags`.
 
-PR body follows the normative template layout exactly for every non-empty section, in template order: header (run stats line + "this PR deletes nothing" statement) → 💷 price changes → ⚠️ missing-flags → 🏷 promo notes → ❌ not-fetched table → ✅ verified-unchanged (collapsed `<details>`) → diff summary table. Per change: id + field diff, blockquoted quote, linked source URL, fetch timestamp, ℹ️ normalization notes. Omit sections with zero entries.
+PR body follows the normative template layout exactly for every non-empty section, in template order: header (run stats line + "this PR deletes nothing" statement) → 💷 price changes → ⚠️ missing-flags (include tier-3 "possible rename: X → Y" suggestions, "possible successor: X → Y" suggestions with their evidence lines, and prose-mention flags here) → 🏷 promo notes → ❌ not-fetched table → ✅ verified-unchanged (collapsed `<details>`) → diff summary table. Per change: id + field diff, blockquoted quote, linked source URL, fetch timestamp, ℹ️ normalization notes. Omit sections with zero entries.
 
 The header links `evidence.md` (relative repo path, in-branch) as the full quote set; **the PR body itself shows per-spa samples only** (PRD §5). Every gate demotion appears in the ⚠️ section with its quote, gate number and reason.
 
@@ -149,4 +184,3 @@ Open as DRAFT via `gh pr create --draft` (gh lives at `/opt/homebrew/bin/gh`).
 
 - Gate 4 (PDF vintage) — plugs into `runCheck()` in `scripts/gate.mjs` with the pdf tier.
 - Portal and PDF tiers — plug into step 1 (their arithmetic cases are already gated: `pence`, `per-couple`).
-- Matching cascade / renames / successors (PRD §4) — this slice matches passes by their existing ids only.
