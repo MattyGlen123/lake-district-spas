@@ -1,0 +1,29 @@
+[
+  {
+    "_note": "ADVERSARIAL DEMO ONLY — not real passes, touches no data. Proves the flag lane routes against the same spa-10.html artifact.",
+    "passId": "demo-gate2-wrong-price-nearby",
+    "passName": "Rejuvenate Spa Day",
+    "quote": "<em>£100.00</em><br /> <em>50 minute appointment</em>",
+    "figureGBP": 100,
+    "storedGBP": 140,
+    "arithmetic": "none"
+  },
+  {
+    "_note": "ADVERSARIAL DEMO ONLY — quote never appears in the artifact.",
+    "passId": "demo-gate1-hallucinated-quote",
+    "passName": "Rejuvenate Spa Day",
+    "quote": "<strong>Rejuvenate Spa Day</strong> now only £99.00",
+    "figureGBP": 99,
+    "storedGBP": 140,
+    "arithmetic": "none"
+  },
+  {
+    "_note": "ADVERSARIAL DEMO ONLY — real grounded span, fabricated storedGBP to force a >±40% move.",
+    "passId": "demo-gate5-implausible-move",
+    "passName": "Rejuvenate Spa Day",
+    "quote": "<strong>Rejuvenate Spa Day</strong><br /> <em>£140.00</em><br /> <em>50 minute appointment</em>",
+    "figureGBP": 140,
+    "storedGBP": 90,
+    "arithmetic": "none"
+  }
+]
