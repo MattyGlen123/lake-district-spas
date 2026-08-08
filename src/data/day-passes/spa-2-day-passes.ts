@@ -6,7 +6,7 @@ export const spa2DayPasses: SpaDayPasses = {
     {
       id: 'armathwaite-escape-weekend',
       packageName: 'Escape Half Day',
-      priceGBP: 150,
+      priceGBP: 160,
       spaDuration: 4,
       treatmentsIncluded: true,
       refreshmentsIncluded: true,
@@ -24,7 +24,7 @@ export const spa2DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.armathwaite-hall.com/spa/spa-day-experience/',
       bookingUrl: 'https://armathwaite.onejourney.travel/spa/days/2482',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-08',
     },
     {
       id: 'armathwaite-sunset-weekday',
@@ -46,7 +46,7 @@ export const spa2DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.armathwaite-hall.com/spa/spa-day-experience/',
       bookingUrl: 'https://armathwaite.onejourney.travel/spa/days/2401',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-08',
     },
     {
       id: 'armathwaite-sunset-bank-holiday',
@@ -68,7 +68,7 @@ export const spa2DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.armathwaite-hall.com/spa/spa-day-experience/',
       bookingUrl: 'https://armathwaite.onejourney.travel/spa/days',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-08',
     },
     {
       id: 'armathwaite-sereni-tea-weekday',
@@ -231,7 +231,7 @@ export const spa2DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.armathwaite-hall.com/spa/spa-day-experience/',
       bookingUrl: 'https://armathwaite.onejourney.travel/spa/days',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-08',
     },
     {
       id: 'armathwaite-sunrise-bank-holiday',
@@ -254,12 +254,12 @@ export const spa2DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.armathwaite-hall.com/spa/spa-day-experience/',
       bookingUrl: 'https://armathwaite.onejourney.travel/spa/days',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-08',
     },
     {
       id: 'armathwaite-escape-weekday',
       packageName: 'Escape Half Day',
-      priceGBP: 140,
+      priceGBP: 150,
       spaDuration: 4,
       treatmentsIncluded: true,
       refreshmentsIncluded: true,
@@ -277,7 +277,7 @@ export const spa2DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.armathwaite-hall.com/spa/spa-day-experience/',
       bookingUrl: 'https://armathwaite.onejourney.travel/spa/days/10727',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-08',
     },
   ],
 };

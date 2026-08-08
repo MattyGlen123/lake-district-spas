@@ -1,0 +1,19 @@
+{
+  "url": "https://www.armathwaite-hall.com/wp-content/uploads/2026/02/2531014-Spa-Brochure-October-V8.2.pdf",
+  "artifact": ".claude/content-out/refresh-runs/2026-08-08/spa-2.txt",
+  "pdf": ".claude/content-out/refresh-runs/2026-08-08/spa-2.pdf",
+  "ok": true,
+  "textLayerUsable": true,
+  "textChars": 49389,
+  "error": null,
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-08-08T11:57:07.123Z",
+      "method": "curl",
+      "httpCode": "200",
+      "curlError": null,
+      "bytes": 7390453
+    }
+  ]
+}
