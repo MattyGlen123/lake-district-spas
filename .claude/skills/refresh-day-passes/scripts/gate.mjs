@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 // Deterministic verification gates for /refresh-day-passes (PRD §5).
 // Implemented: gate 1 (exact-quote grounding + arithmetic cases),
-// gate 2 (contiguity), gate 3 (poison words), gate 5 (plausibility).
-// Gate 4 (PDF vintage) belongs to the pdf-tier slice and plugs into
-// runCheck() the same way.
+// gate 2 (contiguity), gate 3 (poison words), gate 4 (PDF vintage,
+// pdf-tier only), gate 5 (plausibility).
 //
 // No gate consults the model's opinion of itself: every verdict is a
 // grep/arithmetic check against the SAVED fetch artifact.
@@ -17,9 +16,19 @@
 //   "figureGBP":  number,   // price entering the PR, in GBP
 //   "storedGBP":  number?,  // current stored price (gate 5 % move)
 //   "arithmetic": "none"|"pence"|"per-couple"?,   // default "none"
-//   "quotedFigure": number? // figure literally in the quote:
+//   "quotedFigure": number?, // figure literally in the quote:
 //                           //   pence      -> integer pence (figureGBP*100)
 //                           //   per-couple -> per-person GBP (figureGBP/2)
+//   "pdfVintage": {          // pdf tier only; omitted -> gate 4 is a no-op
+//     "documentYear":  number,  // year the evidence points to
+//     "evidenceType":  "filename"|"cover-date"|"valid-until",
+//     "evidence":      string,  // filename type: the PDF source URL
+//                                // (checked against the URL string, not
+//                                // the text-layer artifact); cover-date /
+//                                // valid-until: a verbatim quote, checked
+//                                // against the artifact like any quote
+//     "runYear":       number?  // defaults to the current calendar year
+//   }?
 // }]
 //
 // stdout: JSON { artifact, gates, summary, results: [{ passId, grounded,
@@ -164,6 +173,50 @@ export function poisonAround(artifactNorm, quoteNorm) {
   return [...found];
 }
 
+// --- gate 4: PDF vintage (PRD §5 gate 4, pdf tier only) ----------------
+// Runs only when a check carries `pdfVintage` — every pdf-tier check
+// must set it; other tiers omit it and gate 4 is a no-op for them.
+// The extractor states document-year evidence (filename/URL year, a
+// cover-page date, or a "valid until" line); this gate proves it the
+// same deterministic way as every other gate rather than trusting the
+// model's say-so:
+//
+//  - "filename": evidence is the PDF's source URL (recorded in the
+//    fetch log, not the text layer — URLs aren't part of the extracted
+//    artifact text) and must literally contain documentYear.
+//  - "cover-date" / "valid-until": evidence is a verbatim quote that
+//    must grep in the artifact (same grounding as gate 1) AND literally
+//    contain documentYear.
+//
+// documentYear older than the run's year demotes with `pdf-vintage-stale`.
+// A single stale document means every pass sourced from it is stale —
+// the SKILL treats this as the WHOLE spa demoted to a fetch failure
+// (brochure fetched fine; it's just evidence of an out-of-date one),
+// never a per-pass flag.
+export function pdfVintageCheck(vintage, artifactNorm) {
+  if (vintage === undefined || vintage === null) return { ok: true }; // not a pdf-tier check
+  const { documentYear, evidenceType, evidence, runYear } = vintage;
+  if (typeof documentYear !== 'number' || !Number.isFinite(documentYear)) {
+    return { ok: false, reason: 'pdf-vintage-year-missing' };
+  }
+  if (!['filename', 'cover-date', 'valid-until'].includes(evidenceType)) {
+    return { ok: false, reason: 'pdf-vintage-evidence-type-invalid' };
+  }
+  const evidenceNorm = normalize(String(evidence ?? ''));
+  if (!evidenceNorm) return { ok: false, reason: 'pdf-vintage-evidence-missing' };
+  if (!evidenceNorm.includes(String(documentYear))) {
+    return { ok: false, reason: 'pdf-vintage-year-not-in-evidence' };
+  }
+  if (evidenceType !== 'filename' && !artifactNorm.includes(evidenceNorm)) {
+    return { ok: false, reason: 'pdf-vintage-evidence-not-found-in-artifact' };
+  }
+  const currentYear = typeof runYear === 'number' ? runYear : new Date().getFullYear();
+  if (documentYear < currentYear) {
+    return { ok: false, reason: 'pdf-vintage-stale' };
+  }
+  return { ok: true };
+}
+
 // --- gate 5: plausibility bounds --------------------------------------
 export function movePct(storedGBP, figureGBP) {
   if (typeof storedGBP !== 'number' || !Number.isFinite(storedGBP) || storedGBP === 0) return null;
@@ -191,6 +244,12 @@ const GATE_OF = {
   'unknown-arithmetic-mode': 1,
   'missing-pass-name': 2,
   'pass-name-not-in-quote': 2,
+  'pdf-vintage-year-missing': 4,
+  'pdf-vintage-evidence-type-invalid': 4,
+  'pdf-vintage-evidence-missing': 4,
+  'pdf-vintage-year-not-in-evidence': 4,
+  'pdf-vintage-evidence-not-found-in-artifact': 4,
+  'pdf-vintage-stale': 4,
   'price-out-of-bounds': 5,
   'move-exceeds-40pct': 5,
 };
@@ -200,6 +259,7 @@ export function runCheck(artifactNorm, check) {
   const base = { passId: check.passId, quote: check.quote ?? '', figureGBP: check.figureGBP };
   const pct = movePct(check.storedGBP, check.figureGBP);
   if (pct !== null) base.movePct = pct;
+  if (check.pdfVintage) base.documentYear = check.pdfVintage.documentYear;
   const demote = (reason, extra = {}) => ({
     ...base,
     grounded: false,
@@ -225,7 +285,9 @@ export function runCheck(artifactNorm, check) {
   const poison = poisonAround(artifactNorm, quoteNorm);
   if (poison.length) return demote(`poison-word:${poison[0]}`, { poisonWords: poison });
 
-  // gate 4 (PDF vintage) plugs in here with the pdf tier.
+  // gate 4 - PDF vintage (pdf tier only; no-op when pdfVintage is absent)
+  const vintage = pdfVintageCheck(check.pdfVintage, artifactNorm);
+  if (!vintage.ok) return demote(vintage.reason);
 
   // gate 5 - plausibility bounds, flag-never-block
   const plaus = plausibility(check);
@@ -252,7 +314,13 @@ function main() {
     JSON.stringify(
       {
         artifact: artifactPath,
-        gates: ['1 grounding+arithmetic', '2 contiguity', '3 poison words', '5 plausibility'],
+        gates: [
+          '1 grounding+arithmetic',
+          '2 contiguity',
+          '3 poison words',
+          '4 pdf vintage (pdf tier only)',
+          '5 plausibility',
+        ],
         constants: { PRICE_MIN_GBP, PRICE_MAX_GBP, MAX_MOVE_PCT, POISON_CONTEXT_CHARS },
         summary,
         results,
