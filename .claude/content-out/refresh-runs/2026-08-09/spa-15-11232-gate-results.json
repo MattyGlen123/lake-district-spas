@@ -1,0 +1,32 @@
+{
+  "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-09/spa-15-11232.html",
+  "gates": [
+    "1 grounding+arithmetic",
+    "2 contiguity",
+    "3 poison words",
+    "4 pdf vintage (pdf tier only)",
+    "5 plausibility"
+  ],
+  "constants": {
+    "PRICE_MIN_GBP": 20,
+    "PRICE_MAX_GBP": 400,
+    "MAX_MOVE_PCT": 40,
+    "POISON_CONTEXT_CHARS": 200
+  },
+  "summary": {
+    "checked": 1,
+    "grounded": 1,
+    "flagged": 0
+  },
+  "results": [
+    {
+      "passId": "appleby-luxuriance-including-a-back-neck-and-shoulder-massage-friday-sunday",
+      "quote": "\"name\":\"Luxuriance Including a Back, Neck and Shoulder Massage Friday - Sunday\",\"description\":\"Choose to use your time, your way.\\n\\nBegin the day by shedding your outdoor wear and changing into a warm, fluffy robe. Spend time in the Aqua Thermal area - Your experience begins in the Aroma Salt inhalation Room, a warm, gentle heat. Time to enjoy the relaxing massaging jets of the Pedidarium on your feet, move on to the warm, moist heat of the steam room and finish with the intense heat of the Sauna to warm and relax all your muscles. Cool down in the feature Rain, Sky \\u0026 Monsoon shower, before soothing your aching muscles in the Hydrotherapy Pool – invigorating massage jets then refresh your body and mind in the Outdoor Spa Bath. \\n\\n**Morning Session **\\n- 10.00am - Arrive into the thermal journey\\n- Includes a 25 Back, Neck and Shoulder Massage\\n- 1.00pm - Retire to changing rooms ready for departure\\n- 1.30pm - Two course lunch served in main hotel restaurant (Order taken on arrival)\\n\\n**Afternoon Session**\\n- 1.00pm - Arrive into the thermal journey\\n- Includes a 25 Minute Back, Neck and Shoulder Massage\\n- 4.00pm - Retire to changing rooms ready for departure\\n- 4.30pm - Full afternoon tea served in the main hotel lounge\\n\\n**Important Information**\\n\\nFootwear: We kindly request that you bring your own suitable footwear, as this is not provided on the day of your visit. Alternatively, single-use flip-flops are available for purchase at an additional charge.\\n\\nDietary Requirements: Please ensure you inform us of any dietary restrictions or allergies in the free text section when confirming your booking. We are unable to accommodate specific needs on the day without prior notice.\\n\\nAge Restriction: Our spa services are strictly for guests aged 18 and over. If you have any questions regarding this policy, please do not hesitate to contact us.\\n\\nMedical Conditions and Pregnancy: For your safety, please inform us if you are undergoing treatment for a medical condition or are pregnant. Depending on the circumstances, we may need to adjust or limit the services we provide. Please include this information in the free text section when completing your booking to ensure a safe and enjoyable experience.\",\"termsAndConditions\":\"\\n\",\"image\":{\"externalKey\":\"76fbfe991091376cdf0f82cbe08d13ea\",\"url\":\"https://hcommerce-live.s3.amazonaws.com/76fbfe991091376cdf0f82cbe08d13ea.jpg\"},\"numberOfGuests\":1,\"durationText\":\"half_day\",\"gender\":null,\"displayOrder\":6,\"telephoneOnly\":false,\"price\":{\"amount\":10900",
+      "figureGBP": 109,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    }
+  ]
+}

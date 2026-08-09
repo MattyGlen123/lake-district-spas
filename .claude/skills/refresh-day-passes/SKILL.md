@@ -30,7 +30,24 @@ Implemented tiers:
 
 ⚠️ **Multi-column brochures weaken gate 2.** `pdftotext -layout` flattens side-by-side package columns into interleaved lines, and the gate normalizes whitespace away — so a span can contain the right pass name next to a *neighbouring* package's price and still pass contiguity. When a pdf-tier quote's span contains more than one price, verify the column alignment in the raw text layer by hand before applying, and say so in evidence.md. See `.scratch/day-pass-refresh/issues/11-pdf-multicolumn-contiguity.md`.
 
-If a targeted spa is in neither list (the `portal` tier), report "tier not implemented in this slice" and stop for that spa — do not fetch.
+- `portal-onejourney` — Appleby (15), sole spa on this tier. Prices live only in the booking portal, so fetch each pass's **`bookingUrl`, not `dayPassUrl`** — one artifact per pass (`spa-<id>-<item>.html`, `<item>` = the trailing path segment of the bookingUrl), with `scripts/fetch.mjs` exactly as the html tier uses it. The page embeds a React-Query SSR payload; quote the contiguous span from the item's `"name":"…"` through its `"price":{"amount":<pence>`, with `arithmetic: "pence"`. See "Portal tier extraction" below.
+
+**Portal tiers are per-vendor, not per-portal.** The four portal spas split by whether their tenant server-renders, and that cuts across both vendors — do not generalize one spa's rule to another. Appleby (onejourney) server-renders; Lakeside (9, also onejourney) does NOT and is unimplemented (see `.scratch/day-pass-refresh/issues/03c-portal-lakeside-shell.md`); North Lakes (12) and Underscar (19) are try.be, whose JSON-LD prices are in **whole pounds, not pence**, and are unimplemented (see `03b-portal-trybe-jsonld.md`).
+
+If a targeted spa is on no implemented tier (Lakeside 9, North Lakes 12, Underscar 19), report "tier not implemented in this slice" and stop for that spa — do not fetch. In particular **never point the html-tier fetch at a Lakeside bookingUrl**: it returns HTTP 200 and a shell full of Elemis retail-shop prices with no day-pass data, so a quote can ground a real-looking figure to entirely the wrong product.
+
+### Portal tier extraction (onejourney SSR)
+
+```
+"queries":[{"state":{"data":{"id":<item>,"categories":[…],"name":"<item name>",
+"description":"…", … ,"price":{"amount":<pence>,…
+```
+
+- **Quote** = `"name":"<item name>"` … `"price":{"amount":<pence>` — one contiguous span, typically 1.3–2.7 KB. `arithmetic: "pence"`, `quotedFigure` = the pence integer. Gate 1 already implements this case; no gate change is needed.
+- **`passName` must be the artifact-literal form.** The payload JSON-escapes non-ASCII, so `&` appears as `&`. Gate 2's normalization decodes HTML entities, not JSON escapes — pass `Aqua Thermal Journey & Light Afternoon Tea Fri-sun`, not the decoded form, or gate 2 demotes with `pass-name-not-in-quote`.
+- **Decode before writing data.** The reverse applies to renames: `packageName` in the data file takes the decoded human form (`&`). Same string, two representations — artifact-literal for the gate, decoded for the data.
+- An empty SSR slot (`"queries":[]`) means the tenant does not server-render. Treat it as tier-not-implemented, never as a fetch to salvage from the shell.
+- The payload is emitted twice, camelCase and snake_case. Quote from the camelCase copy; gate 3 poison-scans every occurrence of a repeated span, which is correct and was verified clean.
 
 ## Procedure
 
@@ -217,4 +234,5 @@ Open as DRAFT via `gh pr create --draft` (gh lives at `/opt/homebrew/bin/gh`).
 
 ## Later slices (stubs only — do not build here)
 
-- Portal tier — plugs into step 1; its `pence` arithmetic case is already gated (see gate 1's table above).
+- Portal tier, try.be half (North Lakes 12, Underscar 19) — JSON-LD prices are whole pounds and fit **no existing arithmetic case**; needs a new bare-integer/identity mode in `gate.mjs`. See issue 03b.
+- Portal tier, Lakeside (9) — no SSR payload; needs a rendered/API artifact, not a curl one. See issue 03c.

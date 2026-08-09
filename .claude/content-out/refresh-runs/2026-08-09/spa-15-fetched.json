@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Indulgence | Friday - Sunday",
+    "priceGBP": 125,
+    "spaDuration": 5,
+    "included": [],
+    "bookingUrl": "https://applebymanor.onejourney.travel/spa/days/6712"
+  },
+  {
+    "name": "Indulgence | Monday - Thursday",
+    "priceGBP": 115,
+    "spaDuration": 5,
+    "included": [],
+    "bookingUrl": "https://applebymanor.onejourney.travel/spa/days/6713"
+  },
+  {
+    "name": "Luxuriance Including a Back, Neck and Shoulder Massage | Monday - Thursday",
+    "priceGBP": 99,
+    "spaDuration": 3,
+    "included": [],
+    "bookingUrl": "https://applebymanor.onejourney.travel/spa/days/11233"
+  },
+  {
+    "name": "Luxuriance Including a Back, Neck and Shoulder Massage Friday - Sunday",
+    "priceGBP": 109,
+    "spaDuration": 3,
+    "included": [],
+    "bookingUrl": "https://applebymanor.onejourney.travel/spa/days/11232"
+  },
+  {
+    "name": "Luxurience | Friday - Sunday",
+    "priceGBP": 99,
+    "spaDuration": 3,
+    "included": [],
+    "bookingUrl": "https://applebymanor.onejourney.travel/spa/days/6714"
+  },
+  {
+    "name": "Luxurience | Monday - Thursday",
+    "priceGBP": 89,
+    "spaDuration": 3,
+    "included": [],
+    "bookingUrl": "https://applebymanor.onejourney.travel/spa/days/6715"
+  },
+  {
+    "name": "Aqua Thermal Journey \\u0026 Light Afternoon Tea Fri-sun",
+    "priceGBP": 59,
+    "spaDuration": 2,
+    "included": [],
+    "bookingUrl": "https://applebymanor.onejourney.travel/spa/days/12307"
+  },
+  {
+    "name": "Aqua Thermal Journey \\u0026 Light Afternoon Tea Monday - Thursday",
+    "priceGBP": 49,
+    "spaDuration": 2,
+    "included": [],
+    "bookingUrl": "https://applebymanor.onejourney.travel/spa/days/9278"
+  },
+  {
+    "name": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea | Friday - Sunday",
+    "priceGBP": 65,
+    "spaDuration": 2,
+    "included": [],
+    "bookingUrl": "https://applebymanor.onejourney.travel/spa/days/6706"
+  },
+  {
+    "name": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea | Monday - Thursday",
+    "priceGBP": 60,
+    "spaDuration": 2,
+    "included": [],
+    "bookingUrl": "https://applebymanor.onejourney.travel/spa/days/6707"
+  },
+  {
+    "name": "Aqua Thermal Journey Monday to Sunday",
+    "priceGBP": 45,
+    "spaDuration": 2,
+    "included": [],
+    "bookingUrl": "https://applebymanor.onejourney.travel/spa/days/9279"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "url": "https://applebymanor.onejourney.travel/spa/days/6714",
+  "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-09/spa-15-6714.html",
+  "ok": true,
+  "botBlocked": false,
+  "error": null,
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-08-09T12:03:12.276Z",
+      "method": "curl",
+      "httpCode": "200",
+      "curlError": null,
+      "bytes": 115938
+    }
+  ]
+}

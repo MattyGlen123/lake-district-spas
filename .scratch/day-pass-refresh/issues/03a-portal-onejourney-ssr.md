@@ -1,8 +1,19 @@
 # Portal tier — onejourney server-rendered (Appleby 15)
 
-Status: ready-for-agent
+Status: ready-for-human — built, run complete, awaiting review
 Type: AFK
 Assignee: (unclaimed)
+
+## Outcome (2026-08-09)
+
+Built and run. 11/11 fetched, 11/11 grounded, 0 flags, 0 price changes, 11 `lastVerified` bumps,
+11 tier-1 renames applied. `check-invariant.mjs` exit 0. Typecheck clean, 758 tests pass.
+
+One bug found and fixed en route: `applyRenameToFiles` replaced `packageName` **globally**, so
+renaming one of a weekday/weekend pair that shares a package name clobbered its twin and left the
+twin's own rename with nothing to match. Appleby has five such pairs — it would have corrupted the
+data file. The rewrite is now scoped to the renamed entry's own option block, with a regression
+test (`tests/unit/refresh-day-passes-rename.test.ts`).
 
 ## Parent
 
