@@ -1,6 +1,6 @@
 # Lakeside (9) — booking catalogue replaced, all 6 stored passes are dead links
 
-Status: needs-triage
+Status: ready-for-human — option (a) applied, awaiting review
 Type: human decision (content), not an AFK refresh task
 Assignee: (unclaimed)
 
@@ -74,6 +74,36 @@ Options:
 
 Whichever is chosen, the [03c](03c-portal-lakeside-shell.md) API fetch tier is what keeps it
 verified afterwards.
+
+## Outcome (2026-08-26) — option (a) applied
+
+Spa 9's six dead entries were replaced with the four live packages. All four prices are grounded
+against the API artifact through the real gate (4/4 grounded, 0 flags);
+`check-invariant.mjs` exit 0, 0 violations. Full working:
+`.claude/content-out/refresh-runs/2026-08-26-lakeside-rewrite/evidence.md`.
+
+Files changed beyond the day-pass data — the old names and ids were referenced in prose and
+schema text in four places, all of which would otherwise have rendered dead anchors or stale
+prices:
+
+- `src/data/faqs/spa-9-faqs.tsx` — FAQ 1 (pricing) and FAQ 5 (afternoon tea) rewritten. FAQ 1 said
+  "six different packages"; both FAQs linked `#`-anchors that no longer exist.
+- `src/data/location-faqs/newby-bridge-faqs.tsx` — Lakeside price lookups and anchors swapped;
+  "Steam and Swim at £30" → "Dip & Dine at £25" in prose and schema text.
+- `content/blog/windermere-spas-guide.mdx` — the Lakeside paragraph named two withdrawn packages
+  with **hardcoded** prices, against the rule in CLAUDE.md. Now uses `<DayPassPrice>` /
+  `<DayPassLink>`, so it tracks the data from here on. Two literal `£30`s elsewhere in the post
+  updated to `£25` (one is frontmatter `seoDescription`, where a component cannot be used).
+
+`src/data/priced-content.test.ts` is what caught every dangling reference — it failed with 8
+unresolved lookups the moment the data changed, and is green now.
+
+Two things for a human to confirm — both flagged in evidence.md:
+
+1. **Express Escape `spaDuration: 3` is inferred, not quoted.** The source states no access hours
+   for that package; 3 is the standard block at this property.
+2. **Fizz and Float has released no availability** on any of the next 14 days, though it is listed
+   and priced. It is included as a live product, but may not be genuinely bookable.
 
 ## Reproduce
 

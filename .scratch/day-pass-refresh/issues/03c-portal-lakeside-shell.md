@@ -1,6 +1,6 @@
 # Portal tier — Lakeside (9), onejourney tenant with no SSR payload
 
-Status: ready-for-human — spike complete, needs a scope decision before build
+Status: ready-for-human — built (portal-onejourney-api tier), awaiting review
 Type: AFK
 Assignee: (unclaimed)
 
@@ -50,10 +50,15 @@ Do **not** attempt this slice by pointing the existing html-tier fetch at the bo
 
 ## Acceptance criteria
 
-- [ ] Lakeside's 6 passes ground against a JSON artifact that actually contains the day-pass items
-- [ ] The wrong-number hazard is closed: no check can ground against an Elemis shop product
-- [ ] Fetch failure flags the pass, doesn't sink the spa
-- [ ] `npm run typecheck && npm test` green; `check-invariant.mjs` 0 violations
+- [x] Lakeside's passes ground against a JSON artifact that actually contains the day-pass items —
+      4/4 grounded. Six of the original passes no longer exist at source (see below); the four that
+      do are grounded against `spa-9.json`.
+- [x] The wrong-number hazard is closed: no check can ground against an Elemis shop product —
+      closed structurally, not by convention. `fetch-onejourney.mjs` parses and validates before
+      writing, so a non-JSON or non-spa-package body fails with exit 2 and produces no artifact.
+- [x] Fetch failure flags the pass, doesn't sink the spa — a withdrawn item simply is not in the
+      catalogue artifact, so it takes no quote and gate 1 demotes it to a ⚠️ flag.
+- [x] `npm run typecheck && npm test` green (793 tests); `check-invariant.mjs` exit 0, 0 violations
 
 ## Spike 2 — 2026-08-26: route FOUND, and the catalogue has been replaced
 
@@ -147,6 +152,34 @@ day-pass items") is met for the items that *exist*.
 The stale data itself is out of scope here: the iron rule forbids adding or deleting entries, and
 six dead `bookingUrl`s on the live site is a content problem, not a refresh problem. Filed
 separately as [13 Lakeside catalogue replaced](13-lakeside-catalogue-replaced.md).
+
+## Outcome (2026-08-26)
+
+Built as the **`portal-onejourney-api`** tier — option (c), the cleanest of the four.
+
+- `scripts/fetch-onejourney.mjs` (new). Fetches the property's whole day-pass catalogue in ONE
+  call, so a portal spa is now one small artifact with no `trim-artifact.mjs` step at all.
+  Lakeside: **2.5 KB, 1 file** (compare Appleby's SSR run: 1,233 KB / 52 files before trimming,
+  148 KB / 7 after).
+- It **validates before it saves** — that is what closes this ticket's hazard for good rather than
+  relying on a documented warning. `notJson` / `unexpectedShape` are exit-2 failures with no
+  artifact written.
+- No gate change was needed: `price.amount` is pence, reusing gate 1's existing `pence` case.
+- 16 unit tests in `tests/unit/refresh-day-passes-fetch-onejourney.test.ts`, run against a
+  loopback HTTP server so no network is required. The refusal paths are tested with the real
+  Elemis-shell shape.
+- SKILL.md documents the tier, the route, how it was recovered, and the withdrawn-pass rule.
+
+Note for whoever runs this next: the tier serves **any** onejourney tenant, Appleby included
+(`320/spa-packages/6712/en` returns 200). Appleby was deliberately left on the SSR tier — moving
+it means re-verifying all 11 passes, so it should be its own change, not a side effect of this one.
+
+Lakeside's data could not simply be refreshed: see finding 2 below and
+[issue 13](13-lakeside-catalogue-replaced.md), applied in the same PR.
+
+### Decision (resolved 2026-08-26)
+
+Build now, and rewrite Lakeside to the four live packages (issue 13, option **a**). Both done.
 
 ### Decision needed before build
 
