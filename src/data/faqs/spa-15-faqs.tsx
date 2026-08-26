@@ -13,20 +13,20 @@ export function getSpa15FAQs(spa: Spa): FAQ[] {
   const elemisExpertTouchRenewId = getTreatmentIdByName(spa.id, 'Elemis Expert Touch Renew Facial');
   const elemisExpertTouchRevealId = getTreatmentIdByName(spa.id, 'Elemis Expert Touch Reveal Facial');
   const elemisExpertTouchNourishId = getTreatmentIdByName(spa.id, 'Elemis Expert Touch Nourish Facial');
-  const thermalOnlyPrice = getDayPassPrice(spa.id, 'appleby-thermal-only');
-  const thermalOnlyDuration = getDayPassDuration(spa.id, 'appleby-thermal-only');
-  const indulgenceWeekendPrice = getDayPassPrice(spa.id, 'appleby-indulgence-weekend');
-  const indulgenceWeekdayPrice = getDayPassPrice(spa.id, 'appleby-indulgence-weekday');
-  const indulgenceDuration = getDayPassDuration(spa.id, 'appleby-indulgence-weekend');
-  const luxurienceWeekdayPrice = getDayPassPrice(spa.id, 'appleby-luxurience-weekday');
-  const luxurienceWeekendPrice = getDayPassPrice(spa.id, 'appleby-luxurience-weekend');
-  const luxurienceDuration = getDayPassDuration(spa.id, 'appleby-luxurience-weekday');
-  const lightTeaWeekdayPrice = getDayPassPrice(spa.id, 'appleby-thermal-light-tea-weekday');
-  const lightTeaWeekendPrice = getDayPassPrice(spa.id, 'appleby-thermal-light-tea-weekend');
-  const lightTeaDuration = getDayPassDuration(spa.id, 'appleby-thermal-light-tea-weekday');
-  const thermalMealWeekdayPrice = getDayPassPrice(spa.id, 'appleby-thermal-meal-weekday');
-  const thermalMealWeekendPrice = getDayPassPrice(spa.id, 'appleby-thermal-meal-weekend');
-  const thermalMealDuration = getDayPassDuration(spa.id, 'appleby-thermal-meal-weekday');
+  const thermalOnlyPrice = getDayPassPrice(spa.id, 'appleby-aqua-thermal-journey-monday-to-sunday');
+  const thermalOnlyDuration = getDayPassDuration(spa.id, 'appleby-aqua-thermal-journey-monday-to-sunday');
+  const indulgenceWeekendPrice = getDayPassPrice(spa.id, 'appleby-indulgence-friday-sunday');
+  const indulgenceWeekdayPrice = getDayPassPrice(spa.id, 'appleby-indulgence-monday-thursday');
+  const indulgenceDuration = getDayPassDuration(spa.id, 'appleby-indulgence-friday-sunday');
+  const luxurienceWeekdayPrice = getDayPassPrice(spa.id, 'appleby-luxurience-monday-thursday');
+  const luxurienceWeekendPrice = getDayPassPrice(spa.id, 'appleby-luxurience-friday-sunday');
+  const luxurienceDuration = getDayPassDuration(spa.id, 'appleby-luxurience-monday-thursday');
+  const lightTeaWeekdayPrice = getDayPassPrice(spa.id, 'appleby-aqua-thermal-journey-light-afternoon-tea-monday-thursday');
+  const lightTeaWeekendPrice = getDayPassPrice(spa.id, 'appleby-aqua-thermal-journey-light-afternoon-tea-fri-sun');
+  const lightTeaDuration = getDayPassDuration(spa.id, 'appleby-aqua-thermal-journey-light-afternoon-tea-monday-thursday');
+  const thermalMealWeekdayPrice = getDayPassPrice(spa.id, 'appleby-aqua-thermal-spa-experience-with-lunch-or-afternoon-tea-monday-thursday');
+  const thermalMealWeekendPrice = getDayPassPrice(spa.id, 'appleby-aqua-thermal-spa-experience-with-lunch-or-afternoon-tea-friday-sunday');
+  const thermalMealDuration = getDayPassDuration(spa.id, 'appleby-aqua-thermal-spa-experience-with-lunch-or-afternoon-tea-monday-thursday');
   const treatment25Min = getTreatmentDuration(spa.id, '25 minute');
   const treatment110Min = getTreatmentDuration(spa.id, 'Absolute Spa Ritual');
   const skinBoosterDuration = getTreatmentDuration(spa.id, 'Skin Booster');
@@ -38,18 +38,18 @@ export function getSpa15FAQs(spa: Spa): FAQ[] {
       answer: (
         <>
           Spa day packages at {spa.name} start from {thermalOnlyPrice || '£45'} per person for a {thermalOnlyDuration || '2 hour'}{' '}
-          <Link href="#appleby-thermal-only" className="underline">
+          <Link href="#appleby-aqua-thermal-journey-monday-to-sunday" className="underline">
             Aqua Thermal Journey
           </Link>
           , which gives you access to the hydrotherapy pool, outdoor spa bath, sauna, and salt inhalation room. The most comprehensive package is the{' '}
-          <Link href="#appleby-indulgence-weekend" className="underline">
+          <Link href="#appleby-indulgence-friday-sunday" className="underline">
             Indulgence
           </Link>{' '}
           at {indulgenceWeekendPrice || '£125'} per person on weekends ({indulgenceWeekdayPrice || '£115'} weekdays), which includes {indulgenceDuration || '5 hours'} of spa access, a treatment of your choice, and a 2 course lunch.
           <br />
           <br />
           In between, the{' '}
-          <Link href="#appleby-luxurience-weekday" className="underline">
+          <Link href="#appleby-luxurience-monday-thursday" className="underline">
             Luxurience packages
           </Link>{' '}
           offer a {luxurienceDuration || '3 hour'} thermal journey with a {treatment25Min || '25 minute'} treatment and lunch or afternoon tea from {luxurienceWeekdayPrice || '£89'} weekdays or {luxurienceWeekendPrice || '£99'} weekends. All packages include full use of the thermal facilities and outdoor spa garden. Weekday pricing is typically £10 less than weekends across all packages.
@@ -75,18 +75,18 @@ export function getSpa15FAQs(spa: Spa): FAQ[] {
             day spa packages
           </Link>
           . You don&apos;t need to be a hotel guest to enjoy the spa facilities. Day packages range from {thermalOnlyDuration || '2 hour'}{' '}
-          <Link href="#appleby-thermal-only" className="underline">
+          <Link href="#appleby-aqua-thermal-journey-monday-to-sunday" className="underline">
             thermal journeys
           </Link>{' '}
           to full {indulgenceDuration || '5 hour'} experiences with treatments and dining included. All packages must be booked in advance.
           <br />
           <br />
           Day visitors get full access to the same facilities as hotel guests, including the indoor hydrotherapy pool with underwater massage loungers, the outdoor spa garden with hot tub and fire pit, traditional sauna, aromatherapy steam room, and salt inhalation room. The spa operates a time slot system, so you&apos;ll choose either a{' '}
-          <Link href="#appleby-thermal-only" className="underline">
+          <Link href="#appleby-aqua-thermal-journey-monday-to-sunday" className="underline">
             morning
           </Link>{' '}
           or{' '}
-          <Link href="#appleby-thermal-only" className="underline">
+          <Link href="#appleby-aqua-thermal-journey-monday-to-sunday" className="underline">
             afternoon
           </Link>{' '}session when booking.
           <br />
@@ -177,7 +177,7 @@ export function getSpa15FAQs(spa: Spa): FAQ[] {
       answer: (
         <>
           Yes, several of the Garden Spa&apos;s day packages include afternoon tea. The most affordable option is the{' '}
-          <Link href="#appleby-thermal-light-tea-weekday" className="underline">
+          <Link href="#appleby-aqua-thermal-journey-light-afternoon-tea-monday-thursday" className="underline">
             Aqua Thermal Journey with Light Afternoon Tea
           </Link>{' '}
           , starting from {lightTeaWeekdayPrice || '£49'} per person on weekdays ({lightTeaWeekendPrice || '£59'} weekends). This includes a {lightTeaDuration || '2 hour'} thermal journey followed by sandwiches, a scone with jam and cream, and biscuits.
@@ -188,7 +188,7 @@ export function getSpa15FAQs(spa: Spa): FAQ[] {
             Aqua Thermal Spa Experience with Lunch or Afternoon Tea
           </Link>{' '}
           starts from {thermalMealWeekdayPrice || '£60'} weekdays ({thermalMealWeekendPrice || '£65'} weekends) and lets you choose between a full afternoon tea or a 2 course lunch after your {thermalMealDuration || '2 hour'} spa session. The{' '}
-          <Link href="#appleby-luxurience-weekday" className="underline">
+          <Link href="#appleby-luxurience-monday-thursday" className="underline">
             Luxurience packages
           </Link>{' '}
           from {luxurienceWeekdayPrice || '£89'} also offer the lunch or afternoon tea choice, and add a {treatment25Min || '25 minute'} treatment and an extra hour of spa access.
