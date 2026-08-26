@@ -1,0 +1,92 @@
+[
+  {
+    "item": "simple-ritual",
+    "url": "https://northlakeshotel.try.be/items/66d86135b55c898c4c09db14/simple-ritual",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-12-simple-ritual.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-26T20:05:58.770Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 30240
+      }
+    ]
+  },
+  {
+    "item": "morning-ritual",
+    "url": "https://northlakeshotel.try.be/items/66d86135b55c898c4c09db16/morning-ritual",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-12-morning-ritual.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-26T20:05:59.135Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 28475
+      }
+    ]
+  },
+  {
+    "item": "afternoon-ritual",
+    "url": "https://northlakeshotel.try.be/items/66d86135b55c898c4c09db18/afternoon-ritual",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-12-afternoon-ritual.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-26T20:05:59.474Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 29505
+      }
+    ]
+  },
+  {
+    "item": "twilight-ritual",
+    "url": "https://northlakeshotel.try.be/items/66d86136b55c898c4c09db1a/twilight-ritual",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-12-twilight-ritual.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-26T20:05:59.788Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 30224
+      }
+    ]
+  },
+  {
+    "item": "pure-luxury-spa-experience",
+    "url": "https://northlakeshotel.try.be/items/66d86136b55c898c4c09db1e/pure-luxury-spa-experience",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-12-pure-luxury-spa-experience.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-26T20:06:00.277Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 29661
+      }
+    ]
+  }
+]

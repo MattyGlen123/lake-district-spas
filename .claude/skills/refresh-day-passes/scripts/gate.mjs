@@ -15,10 +15,11 @@
 //   "quote":      string,   // verbatim contiguous span from the artifact
 //   "figureGBP":  number,   // price entering the PR, in GBP
 //   "storedGBP":  number?,  // current stored price (gate 5 % move)
-//   "arithmetic": "none"|"pence"|"per-couple"?,   // default "none"
+//   "arithmetic": "none"|"pence"|"gbp-integer"|"per-couple"?,  // default "none"
 //   "quotedFigure": number?, // figure literally in the quote:
-//                           //   pence      -> integer pence (figureGBP*100)
-//                           //   per-couple -> per-person GBP (figureGBP/2)
+//                           //   pence       -> integer pence (figureGBP*100)
+//                           //   gbp-integer -> the same whole-pound integer
+//                           //   per-couple  -> per-person GBP (figureGBP/2)
 //   "pdfVintage": {          // pdf tier only; omitted -> gate 4 is a no-op
 //     "documentYear":  number,  // year the evidence points to
 //     "evidenceType":  "filename"|"cover-date"|"valid-until",
@@ -105,6 +106,21 @@ export function resolveArithmetic(check) {
     }
     return { ok: true, mode, kind: 'pence', quotedFigure: pence };
   }
+  if (mode === 'gbp-integer') {
+    // try.be JSON-LD quotes whole pounds as a bare integer with no currency
+    // symbol ("lowPrice":68), so `none` (which requires a literal £) and
+    // `pence` (which requires figure*100) both reject it. The conversion is
+    // the identity — the gate's job here is to prove the integer really is
+    // in the span, and that we are not silently reading a pence figure as
+    // pounds. A non-integer figure cannot have been read from this shape.
+    if (!Number.isInteger(figure)) {
+      return { ok: false, mode, reason: 'arithmetic-mismatch' };
+    }
+    if (check.quotedFigure !== undefined && check.quotedFigure !== figure) {
+      return { ok: false, mode, reason: 'arithmetic-mismatch' };
+    }
+    return { ok: true, mode, kind: 'bare', quotedFigure: figure };
+  }
   if (mode === 'per-couple') {
     // Source quotes a per-person price; priceGBP stores the group total.
     const perPerson = check.quotedFigure;
@@ -121,10 +137,11 @@ export function resolveArithmetic(check) {
 
 // The figure must appear inside the quote as a GBP price: £140, £ 140,
 // £140.00. A bare number is NOT accepted (too easy to match a duration
-// or a room number). Pence-mode figures are raw JSON integers, so they
-// are matched as standalone numbers instead.
+// or a room number). Pence- and gbp-integer-mode figures are raw JSON
+// integers, so they are matched as standalone numbers instead — safe
+// there because the span is a JSON fragment, not prose.
 export function figureInQuote(quoteNorm, figure, kind = 'gbp') {
-  if (kind === 'pence') {
+  if (kind === 'pence' || kind === 'bare') {
     const re = new RegExp(`(?<![\\d.])${String(figure)}(?![\\d.])`);
     return re.test(quoteNorm);
   }

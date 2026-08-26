@@ -1,0 +1,49 @@
+{
+  "matches": [
+    {
+      "tier": 1,
+      "existingId": "underscar-twilight-spa",
+      "fetchedName": "Twilight Spa Experience",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "underscar-harmonie-half-day",
+      "fetchedName": "Harmonie Half Spa Day",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "underscar-serenity-half-day",
+      "fetchedName": "Serenity Half Spa Day",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "underscar-mindfulness-half-day",
+      "fetchedName": "Mindfulness Half Spa Day",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "underscar-wellbeing-full-day",
+      "fetchedName": "Wellbeing Full Spa Day",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "underscar-peaceful-full-day",
+      "fetchedName": "Peaceful Full Spa Day",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "underscar-reflection-full-day",
+      "fetchedName": "Reflection Full Spa Day",
+      "rename": null
+    }
+  ],
+  "tier3Suggestions": [],
+  "missingFlags": [],
+  "unmatchedFetched": []
+}

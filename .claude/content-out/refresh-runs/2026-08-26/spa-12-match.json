@@ -1,0 +1,73 @@
+{
+  "matches": [
+    {
+      "tier": 1,
+      "existingId": "north-lakes-simple-ritual-weekday",
+      "fetchedName": "Simple Ritual",
+      "rename": {
+        "from": "The Simple Ritual",
+        "to": "Simple Ritual"
+      }
+    },
+    {
+      "tier": 1,
+      "existingId": "north-lakes-simple-ritual-weekend",
+      "fetchedName": "Simple Ritual",
+      "rename": {
+        "from": "The Simple Ritual",
+        "to": "Simple Ritual"
+      }
+    },
+    {
+      "tier": 1,
+      "existingId": "north-lakes-morning-ritual-weekday",
+      "fetchedName": "Morning Ritual",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "north-lakes-morning-ritual-weekend",
+      "fetchedName": "Morning Ritual",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "north-lakes-afternoon-ritual-weekday",
+      "fetchedName": "Afternoon Ritual",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "north-lakes-afternoon-ritual-weekend",
+      "fetchedName": "Afternoon Ritual",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "north-lakes-twilight-ritual-weekday",
+      "fetchedName": "Twilight Ritual",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "north-lakes-twilight-ritual-weekend",
+      "fetchedName": "Twilight Ritual",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "north-lakes-pure-luxury-weekday",
+      "fetchedName": "Pure Luxury Spa Experience",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "north-lakes-pure-luxury-weekend",
+      "fetchedName": "Pure Luxury Spa Experience",
+      "rename": null
+    }
+  ],
+  "tier3Suggestions": [],
+  "missingFlags": [],
+  "unmatchedFetched": []
+}
