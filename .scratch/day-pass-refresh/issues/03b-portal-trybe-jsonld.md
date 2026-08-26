@@ -1,6 +1,6 @@
 # Portal tier — try.be JSON-LD (North Lakes 12, Underscar 19)
 
-Status: ready-for-human — built, run complete, awaiting review
+Status: closed — merged in PR #33 (2026-08-26)
 Type: AFK
 Assignee: (unclaimed)
 

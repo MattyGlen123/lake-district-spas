@@ -1,6 +1,6 @@
 # Portal tier — onejourney server-rendered (Appleby 15)
 
-Status: ready-for-human — built, run complete, awaiting review
+Status: closed — merged in PR #32 (2026-08-26)
 Type: AFK
 Assignee: (unclaimed)
 
