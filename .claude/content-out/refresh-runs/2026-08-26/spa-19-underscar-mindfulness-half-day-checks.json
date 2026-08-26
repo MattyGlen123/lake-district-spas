@@ -1,0 +1,11 @@
+[
+  {
+    "passId": "underscar-mindfulness-half-day",
+    "passName": "Mindfulness Half Spa Day",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Mindfulness Half Spa Day\",\"description\":\"<div><p>Embark on a journey of profound relaxation with our exclusive Mindfulness Half Spa Day, set against the beautiful backdrop of Skiddaw just outside the market town of Keswick. Every detail is brought together to transport you to a realm of pure relaxation. Immerse yourself in an oasis of serenity with access to our luxurious facilities including: Pool, Jacuzzi, Sauna, Steam Room, and a cutting-edge Gym.<br>\\n <br>\\nSelect your preferred time slot, either the morning hours from 9am to 1:15pm or the afternoon from 1pm to 5:15pm. As you surrender to relaxation, wrap yourself in the sumptuous embrace of the provided towel, robe, and slippers, while savouring a delightful light refreshment.<br>\\n <br>\\nAs the crowning jewel of your experience, enjoy a 30-minute Back Massage featuring the exquisite aromas of a NEOM treatment candle. Choose from three indulgent options: <br>\\n- De-Stress<br>\\n- Sleep<br>\\n- Mood Boost. <br>\\n <br>\\nEach designed to elevate your senses and promote profound well-being.<br>\\n <br>\\nThis spa day package includes:<br>\\nUse of the Pool, Jacuzzi, Sauna, Steam Room and Gym <br>\\nMorning 9am-1:15pm or Afternoon 1pm-5:15pm<br>\\nLight refreshment includes a drink (hot drink or fresh orange\\/apple juice) and a slice of traybake &nbsp;<br>\\nTowel, robe and slippers<br>\\n30 minute Back Massage using a NEOM treatment candle.<br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over.<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29725\\/881f4858-021d-48b1-8112-d61b73c9cf68.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":100",
+    "figureGBP": 100,
+    "storedGBP": 100,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 100
+  }
+]

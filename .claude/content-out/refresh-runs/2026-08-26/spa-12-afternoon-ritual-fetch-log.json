@@ -1,0 +1,17 @@
+{
+  "url": "https://northlakeshotel.try.be/items/66d86135b55c898c4c09db18/afternoon-ritual",
+  "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-12-afternoon-ritual.html",
+  "ok": true,
+  "botBlocked": false,
+  "error": null,
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-08-26T20:05:59.474Z",
+      "method": "curl",
+      "httpCode": "200",
+      "curlError": null,
+      "bytes": 29505
+    }
+  ]
+}

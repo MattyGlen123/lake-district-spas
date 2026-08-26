@@ -1,0 +1,17 @@
+{
+  "url": "https://underscar.try.be/items/657626bf1363da0fcf0b156f/peaceful-full-spa-day",
+  "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-19-peaceful-full-spa-day.html",
+  "ok": true,
+  "botBlocked": false,
+  "error": null,
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-08-26T20:06:03.051Z",
+      "method": "curl",
+      "httpCode": "200",
+      "curlError": null,
+      "bytes": 33423
+    }
+  ]
+}

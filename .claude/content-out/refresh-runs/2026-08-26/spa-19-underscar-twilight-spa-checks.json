@@ -1,0 +1,11 @@
+[
+  {
+    "passId": "underscar-twilight-spa",
+    "passName": "Twilight Spa Experience",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Twilight Spa Experience\",\"description\":\"<div><p>Nestled under the slopes of Skiddaw and Latrigg just on the out skirts of Keswick immerse yourself in a day of calm with our Twilight Spa Experience, a package tailored to provide the ultimate relaxation for mind, body and spirit. <br>\\n <br>\\nFrom 6 pm to 9 pm, indulge in our facilities, featuring:<br>\\nPool, Jacuzzi, Sauna, Steam Room, and a fully-equipped Gym.<\\/p>\\n<p>Includes towel, robe and slippers.<br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over.<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29391\\/91d5d620-e4c6-4bcc-8a92-fca161c78542.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":55",
+    "figureGBP": 55,
+    "storedGBP": 55,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 55
+  }
+]

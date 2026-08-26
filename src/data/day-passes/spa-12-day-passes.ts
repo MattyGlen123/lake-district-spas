@@ -6,7 +6,7 @@ export const spa12DayPasses: SpaDayPasses = {
     {
       id: 'north-lakes-simple-ritual-weekday',
       packageName: 'The Simple Ritual',
-      priceGBP: 63,
+      priceGBP: 68,
       spaDuration: 8,
       treatmentsIncluded: false,
       refreshmentsIncluded: false,
@@ -26,12 +26,12 @@ export const spa12DayPasses: SpaDayPasses = {
         'https://www.northlakeshotel.co.uk/spa-treatments/spa-days-breaks',
       bookingUrl:
         'https://northlakeshotel.try.be/items/66d86135b55c898c4c09db14/simple-ritual',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-26',
     },
     {
       id: 'north-lakes-simple-ritual-weekend',
       packageName: 'The Simple Ritual',
-      priceGBP: 73,
+      priceGBP: 78,
       spaDuration: 8,
       treatmentsIncluded: false,
       refreshmentsIncluded: false,
@@ -51,12 +51,12 @@ export const spa12DayPasses: SpaDayPasses = {
         'https://www.northlakeshotel.co.uk/spa-treatments/spa-days-breaks',
       bookingUrl:
         'https://northlakeshotel.try.be/items/66d86135b55c898c4c09db14/simple-ritual',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-26',
     },
     {
       id: 'north-lakes-morning-ritual-weekday',
       packageName: 'Morning Ritual',
-      priceGBP: 126,
+      priceGBP: 139,
       spaDuration: 4,
       treatmentsIncluded: true,
       refreshmentsIncluded: false,
@@ -77,12 +77,12 @@ export const spa12DayPasses: SpaDayPasses = {
         'https://www.northlakeshotel.co.uk/spa-treatments/spa-days-breaks',
       bookingUrl:
         'https://northlakeshotel.try.be/items/66d86135b55c898c4c09db16/morning-ritual',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-26',
     },
     {
       id: 'north-lakes-morning-ritual-weekend',
       packageName: 'Morning Ritual',
-      priceGBP: 136,
+      priceGBP: 149,
       spaDuration: 4,
       treatmentsIncluded: true,
       refreshmentsIncluded: false,
@@ -103,12 +103,12 @@ export const spa12DayPasses: SpaDayPasses = {
         'https://www.northlakeshotel.co.uk/spa-treatments/spa-days-breaks',
       bookingUrl:
         'https://northlakeshotel.try.be/items/66d86135b55c898c4c09db16/morning-ritual',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-26',
     },
     {
       id: 'north-lakes-afternoon-ritual-weekday',
       packageName: 'Afternoon Ritual',
-      priceGBP: 126,
+      priceGBP: 139,
       spaDuration: 4,
       treatmentsIncluded: true,
       refreshmentsIncluded: false,
@@ -129,12 +129,12 @@ export const spa12DayPasses: SpaDayPasses = {
         'https://www.northlakeshotel.co.uk/spa-treatments/spa-days-breaks',
       bookingUrl:
         'https://northlakeshotel.try.be/items/66d86135b55c898c4c09db18/afternoon-ritual',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-26',
     },
     {
       id: 'north-lakes-afternoon-ritual-weekend',
       packageName: 'Afternoon Ritual',
-      priceGBP: 136,
+      priceGBP: 149,
       spaDuration: 4,
       treatmentsIncluded: true,
       refreshmentsIncluded: false,
@@ -155,12 +155,12 @@ export const spa12DayPasses: SpaDayPasses = {
         'https://www.northlakeshotel.co.uk/spa-treatments/spa-days-breaks',
       bookingUrl:
         'https://northlakeshotel.try.be/items/66d86135b55c898c4c09db18/afternoon-ritual',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-26',
     },
     {
       id: 'north-lakes-twilight-ritual-weekday',
       packageName: 'Twilight Ritual',
-      priceGBP: 126,
+      priceGBP: 139,
       spaDuration: 4,
       treatmentsIncluded: true,
       refreshmentsIncluded: false,
@@ -181,12 +181,12 @@ export const spa12DayPasses: SpaDayPasses = {
         'https://www.northlakeshotel.co.uk/spa-treatments/spa-days-breaks',
       bookingUrl:
         'https://northlakeshotel.try.be/items/66d86136b55c898c4c09db1a/twilight-ritual',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-26',
     },
     {
       id: 'north-lakes-twilight-ritual-weekend',
       packageName: 'Twilight Ritual',
-      priceGBP: 136,
+      priceGBP: 149,
       spaDuration: 4,
       treatmentsIncluded: true,
       refreshmentsIncluded: false,
@@ -207,12 +207,12 @@ export const spa12DayPasses: SpaDayPasses = {
         'https://www.northlakeshotel.co.uk/spa-treatments/spa-days-breaks',
       bookingUrl:
         'https://northlakeshotel.try.be/items/66d86136b55c898c4c09db1a/twilight-ritual',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-26',
     },
     {
       id: 'north-lakes-pure-luxury-weekday',
       packageName: 'Pure Luxury Spa Experience',
-      priceGBP: 250,
+      priceGBP: 280,
       spaDuration: 4,
       treatmentsIncluded: true,
       refreshmentsIncluded: true,
@@ -236,12 +236,12 @@ export const spa12DayPasses: SpaDayPasses = {
         'https://www.northlakeshotel.co.uk/spa-treatments/spa-days-breaks',
       bookingUrl:
         'https://northlakeshotel.try.be/items/66d86136b55c898c4c09db1e/pure-luxury-spa-experience',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-26',
     },
     {
       id: 'north-lakes-pure-luxury-weekend',
       packageName: 'Pure Luxury Spa Experience',
-      priceGBP: 260,
+      priceGBP: 290,
       spaDuration: 4,
       treatmentsIncluded: true,
       refreshmentsIncluded: true,
@@ -265,7 +265,7 @@ export const spa12DayPasses: SpaDayPasses = {
         'https://www.northlakeshotel.co.uk/spa-treatments/spa-days-breaks',
       bookingUrl:
         'https://northlakeshotel.try.be/items/66d86136b55c898c4c09db1e/pure-luxury-spa-experience',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-26',
     },
   ],
 };

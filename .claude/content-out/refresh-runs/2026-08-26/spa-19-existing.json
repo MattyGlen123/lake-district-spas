@@ -1,0 +1,65 @@
+[
+  {
+    "id": "underscar-twilight-spa",
+    "packageName": "Twilight Spa Experience",
+    "priceGBP": 55,
+    "spaDuration": 3,
+    "daysAvailable": "Monday - Sunday",
+    "bookingUrl": "https://underscar.try.be/items/65b4f16e90dd65ddf90f8f26/twilight-spa-experience",
+    "lastVerified": "2026-02-28"
+  },
+  {
+    "id": "underscar-harmonie-half-day",
+    "packageName": "Harmonie Half Spa Day",
+    "priceGBP": 80,
+    "spaDuration": 4,
+    "daysAvailable": "Monday - Sunday",
+    "bookingUrl": "https://underscar.try.be/items/6581b78cd738b4eec60662d7/harmonie-half-spa-day",
+    "lastVerified": "2026-02-28"
+  },
+  {
+    "id": "underscar-serenity-half-day",
+    "packageName": "Serenity Half Spa Day",
+    "priceGBP": 90,
+    "spaDuration": 4,
+    "daysAvailable": "Monday - Sunday",
+    "bookingUrl": "https://underscar.try.be/items/657242904ea5689b6c06e573/serenity-half-spa-day",
+    "lastVerified": "2026-02-28"
+  },
+  {
+    "id": "underscar-mindfulness-half-day",
+    "packageName": "Mindfulness Half Spa Day",
+    "priceGBP": 100,
+    "spaDuration": 4,
+    "daysAvailable": "Monday - Sunday",
+    "bookingUrl": "https://underscar.try.be/items/65723dc3210eadd5d500250c/mindfulness-half-spa-day",
+    "lastVerified": "2026-02-28"
+  },
+  {
+    "id": "underscar-wellbeing-full-day",
+    "packageName": "Wellbeing Full Spa Day",
+    "priceGBP": 150,
+    "spaDuration": 8,
+    "daysAvailable": "Monday - Sunday",
+    "bookingUrl": "https://underscar.try.be/items/65724105e24a2fe9550692e6/wellbeing-full-spa-day",
+    "lastVerified": "2026-02-28"
+  },
+  {
+    "id": "underscar-peaceful-full-day",
+    "packageName": "Peaceful Full Spa Day",
+    "priceGBP": 170,
+    "spaDuration": 8,
+    "daysAvailable": "Monday - Sunday",
+    "bookingUrl": "https://underscar.try.be/items/657626bf1363da0fcf0b156f/peaceful-full-spa-day",
+    "lastVerified": "2026-02-28"
+  },
+  {
+    "id": "underscar-reflection-full-day",
+    "packageName": "Reflection Full Spa Day",
+    "priceGBP": 210,
+    "spaDuration": 8,
+    "daysAvailable": "Monday - Sunday",
+    "bookingUrl": "https://underscar.try.be/items/65785b1f4e416d55710c20f2/reflection-full-spa-day",
+    "lastVerified": "2026-02-28"
+  }
+]

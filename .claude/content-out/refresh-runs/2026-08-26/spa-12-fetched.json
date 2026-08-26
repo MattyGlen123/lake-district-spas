@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Simple Ritual",
+    "priceGBP": 68,
+    "spaDuration": 8,
+    "included": [],
+    "bookingUrl": "https://northlakeshotel.try.be/items/66d86135b55c898c4c09db14/simple-ritual-weekday"
+  },
+  {
+    "name": "Simple Ritual",
+    "priceGBP": 78,
+    "spaDuration": 8,
+    "included": [],
+    "bookingUrl": "https://northlakeshotel.try.be/items/66d86135b55c898c4c09db14/simple-ritual-weekend"
+  },
+  {
+    "name": "Morning Ritual",
+    "priceGBP": 139,
+    "spaDuration": 4,
+    "included": [],
+    "bookingUrl": "https://northlakeshotel.try.be/items/66d86135b55c898c4c09db16/morning-ritual-weekday"
+  },
+  {
+    "name": "Morning Ritual",
+    "priceGBP": 149,
+    "spaDuration": 4,
+    "included": [],
+    "bookingUrl": "https://northlakeshotel.try.be/items/66d86135b55c898c4c09db16/morning-ritual-weekend"
+  },
+  {
+    "name": "Afternoon Ritual",
+    "priceGBP": 139,
+    "spaDuration": 4,
+    "included": [],
+    "bookingUrl": "https://northlakeshotel.try.be/items/66d86135b55c898c4c09db18/afternoon-ritual-weekday"
+  },
+  {
+    "name": "Afternoon Ritual",
+    "priceGBP": 149,
+    "spaDuration": 4,
+    "included": [],
+    "bookingUrl": "https://northlakeshotel.try.be/items/66d86135b55c898c4c09db18/afternoon-ritual-weekend"
+  },
+  {
+    "name": "Twilight Ritual",
+    "priceGBP": 139,
+    "spaDuration": 4,
+    "included": [],
+    "bookingUrl": "https://northlakeshotel.try.be/items/66d86136b55c898c4c09db1a/twilight-ritual-weekday"
+  },
+  {
+    "name": "Twilight Ritual",
+    "priceGBP": 149,
+    "spaDuration": 4,
+    "included": [],
+    "bookingUrl": "https://northlakeshotel.try.be/items/66d86136b55c898c4c09db1a/twilight-ritual-weekend"
+  },
+  {
+    "name": "Pure Luxury Spa Experience",
+    "priceGBP": 280,
+    "spaDuration": 4,
+    "included": [],
+    "bookingUrl": "https://northlakeshotel.try.be/items/66d86136b55c898c4c09db1e/pure-luxury-spa-experience-weekday"
+  },
+  {
+    "name": "Pure Luxury Spa Experience",
+    "priceGBP": 290,
+    "spaDuration": 4,
+    "included": [],
+    "bookingUrl": "https://northlakeshotel.try.be/items/66d86136b55c898c4c09db1e/pure-luxury-spa-experience-weekend"
+  }
+]

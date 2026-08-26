@@ -1,0 +1,11 @@
+[
+  {
+    "passId": "underscar-serenity-half-day",
+    "passName": "Serenity Half Spa Day",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Serenity Half Spa Day\",\"description\":\"<div><p>Unwind at the Spa at Underscar just beyond Keswick, nestled in a stunning natural setting. Embark on a journey to serenity with our Serenity Half Spa Day, carefully crafted to envelop you in an oasis of calm. Immerse yourself in our facilities including: Pool, Jacuzzi, Sauna, Steam Room, and Gym, as you escape into a world of &nbsp;relaxation.<br>\\n <br>\\nChoose your moment of bliss with a morning retreat from 9am to 1:15pm or an afternoon serenade from 1pm to 5:15pm. As you unwind, get cozy in the plush comfort of the provided towel, robe, and slippers and enjoy a light refreshment.<br>\\n <br>\\nElevate your sense of peace with a 30-minute treatment, where you have the choice between a soothing Back, Neck, and Shoulder Massage, a relaxing Walkers Leg Massage or a rejuvenating Germaine De Capuccini Express Facial. Each option is meticulously designed to restore harmony to both body and mind.<br>\\nThis tranquil escape is a sanctuary for those seeking a peaceful interlude. <br>\\n <br>\\nThis spa day package includes:<br>\\nUse of the Pool, Jacuzzi, Sauna, Steam Room and Gym <br>\\nMorning 9am-1:15pm or Afternoon 1pm-5:15pm<br>\\nLight refreshment includes a drink (hot drink or fresh orange\\/apple juice) and a slice of traybake &nbsp;<br>\\nTowel, robe and slippers<br>\\n30 minute treatment.<br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over.<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29390\\/a6945ad8-bbe0-43a0-8217-6290f1aff78f.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":90",
+    "figureGBP": 90,
+    "storedGBP": 90,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 90
+  }
+]

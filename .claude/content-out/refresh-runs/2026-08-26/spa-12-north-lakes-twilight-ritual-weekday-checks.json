@@ -1,0 +1,11 @@
+[
+  {
+    "passId": "north-lakes-twilight-ritual-weekday",
+    "passName": "Twilight Ritual",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Twilight Ritual\",\"description\":\"<div><p>What better way to escape the hustle and bustle of a busy working week than with our Twilight Spa Day?<\\/p>\\n<p>Arrive any time after 4 pm and change into your robe and slippers, before taking a dip in the pool.<\\/p>\\n<p>Enjoy a 50 minute treatment or your choice of two 25 minute treatments and then relax wrapped up on our lounger before spending more time in the Spa, until your feeling completely recharged.<\\/p>\\n<p>Once you&rsquo;ve changed, head down to our restaurant anytime after 6.30 pm to enjoy the main course from our Chefs Table and a glass of Prosecco&hellip;just perfect.<\\/p>\\n<p>Please be advised that our aqua classes run at the following times:<\\/p>\\n<p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p>\\n<p>TUESDAY &ndash; 12:30pm - 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43796\\/eec945dc-be17-477e-9737-ca8d5c068535.jpg\",\"sku\":\"TWILIGHTRITUAL\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":139",
+    "figureGBP": 139,
+    "storedGBP": 126,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 139
+  }
+]

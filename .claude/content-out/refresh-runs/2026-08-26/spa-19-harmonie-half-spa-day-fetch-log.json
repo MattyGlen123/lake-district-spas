@@ -1,0 +1,17 @@
+{
+  "url": "https://underscar.try.be/items/6581b78cd738b4eec60662d7/harmonie-half-spa-day",
+  "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-19-harmonie-half-spa-day.html",
+  "ok": true,
+  "botBlocked": false,
+  "error": null,
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-08-26T20:06:01.386Z",
+      "method": "curl",
+      "httpCode": "200",
+      "curlError": null,
+      "bytes": 34300
+    }
+  ]
+}

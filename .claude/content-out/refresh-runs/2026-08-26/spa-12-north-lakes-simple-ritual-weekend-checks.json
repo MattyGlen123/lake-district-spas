@@ -1,0 +1,11 @@
+[
+  {
+    "passId": "north-lakes-simple-ritual-weekend",
+    "passName": "Simple Ritual",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Simple Ritual\",\"description\":\"<div><p>For those looking to enjoy a day by the pool, using our stunning facilities, this is the perfect day for you to unwind. Your day includes full use of the Spa facilities and a light lunch or afternoon tea.<\\/p><p>Please be advised that our aqua classes run at the following times:<\\/p><p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p><p>TUESDAY &ndash; 12:30pm - 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43789\\/547475a9-935d-4599-b83c-27a5616003f4.jpg\",\"sku\":\"SIMPLERITUAL\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":68,\"highPrice\":78",
+    "figureGBP": 78,
+    "storedGBP": 73,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 78
+  }
+]

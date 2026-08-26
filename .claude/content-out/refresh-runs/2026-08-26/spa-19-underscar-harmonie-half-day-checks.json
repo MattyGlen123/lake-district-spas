@@ -1,0 +1,11 @@
+[
+  {
+    "passId": "underscar-harmonie-half-day",
+    "passName": "Harmonie Half Spa Day",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Harmonie Half Spa Day\",\"description\":\"<div><p>Indulge in a half-day retreat with our Harmonie half spa day package. Immerse yourself in our luxury facilities featuring: Pool, Jacuzzi, Sauna, Steam Room, and a state-of-the-art Gym. We are located on the outskirts of Keswick under the slopes of Skiddaw. <br>\\n <br>\\nSelect your preferred time slot, either the morning hours from 9am to 1:15pm or the afternoon from 1pm to 5:15pm. As you surrender to relaxation, wrap yourself in the sumptuous embrace of the provided towel, robe, and slippers, while savouring a delightful light refreshment. <br>\\n <br>\\nA 30-minute treatment of your choice. Opt for a pampering GEL Mini Manicure or GEL Mini Pedicure. Please note any previous gel\\/polish must be removed prior to treatment. <br>\\n <br>\\nThis spa day package includes: <br>\\nUse of the Pool, Jacuzzi, Sauna, Steam Room and Gym <br>\\nMorning 9am-1:15pm or Afternoon 1pm-5:15pm<br>\\nLight refreshment includes a drink (hot drink or fresh orange\\/apple juice) and a slice of traybake <br>\\nTowel, robe and slippers <br>\\n30 minute treatment. <br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29794\\/4e29c52f-2b9a-428a-a5fd-c0517fc35e47.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":80",
+    "figureGBP": 80,
+    "storedGBP": 80,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 80
+  }
+]

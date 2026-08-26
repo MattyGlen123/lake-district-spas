@@ -1,0 +1,11 @@
+[
+  {
+    "passId": "underscar-peaceful-full-day",
+    "passName": "Peaceful Full Spa Day",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Peaceful Full Spa Day\",\"description\":\"<div><p>Nestled under the slopes of Skiddaw and Latrigg just on the out skirts of Keswick immerse yourself in a day of calm with our Peaceful Full Spa Day, a package tailored to provide the ultimate relaxation for mind, body and spirit. <br>\\n <br>\\nFrom 9 am to 5:15 pm, indulge in our facilities, featuring:<br>\\nPool, Jacuzzi, Sauna, Steam Room, and a fully-equipped Gym.<br>\\n <br>\\nEnjoy a High Tea wrapped in the luxury towel, robe, and slippers provided. <br>\\n <br>\\nThe highlight of your day unfolds with a blissful 1-hour treatment. Choose two from our curated selection, including the calming Back, Neck, and Shoulder Massage, the relaxing Walkers Leg Massage, the rejuvenating Germaine De Cappucini Express Facial, the aromatic Foot Spa, the indulgent Hand Spa, or the Mini Manicure and Mini Pedicure. <br>\\nLet the Peaceful Full Spa Day be a sanctuary of calm where every moment is designed to rejuvenate you.<br>\\n <br>\\nThis spa day package includes:<br>\\nUse of the Pool, Jacuzzi, Sauna, Steam Room and Gym <br>\\n9am-5:15pm<br>\\nHigh Tea<br>\\nTowel, robe and slippers<br>\\n1 Hour of Treatment <br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over.<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29391\\/91d5d620-e4c6-4bcc-8a92-fca161c78542.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":170",
+    "figureGBP": 170,
+    "storedGBP": 170,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 170
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "passId": "underscar-wellbeing-full-day",
+    "passName": "Wellbeing Full Spa Day",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Wellbeing Full Spa Day\",\"description\":\"<div><p>Indulge in a luxurious spa day where all your senses are pampered. <br>\\n <br>\\nCreated by the Neom team of 11 experts, these treatments combine 6 of the most effective therapies &ndash; Meditation, Shiatsu, Cranio, Thai Massage, Trigger Point and Reflexology. Each treatment begins with a relaxing guided meditation, reflex foot massage and breathing techniques. Throughout the treatment we drizzle the warm oil of a NEOM Intensive Treatment Candle over the skin.<br>\\n <br>\\nThis spa day package includes:<br>\\nUse of the Pool, Jacuzzi, Sauna, Steam Room and Gym <br>\\n9am-5:15pm<br>\\nHigh Tea<br>\\nTowel, robe and slippers<br>\\n1 hour NEOM Treatment<br>\\n <br>\\nChoose one of the following:<br>\\n- De-Stress<br>\\n- Sleep<br>\\n- Mood Boost<br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over.<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29797\\/7dfdad20-ceeb-49f8-8408-eac581634669.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":150",
+    "figureGBP": 150,
+    "storedGBP": 150,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 150
+  }
+]

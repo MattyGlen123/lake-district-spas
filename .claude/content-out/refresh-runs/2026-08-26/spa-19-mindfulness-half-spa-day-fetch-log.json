@@ -1,0 +1,17 @@
+{
+  "url": "https://underscar.try.be/items/65723dc3210eadd5d500250c/mindfulness-half-spa-day",
+  "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-19-mindfulness-half-spa-day.html",
+  "ok": true,
+  "botBlocked": false,
+  "error": null,
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-08-26T20:06:02.517Z",
+      "method": "curl",
+      "httpCode": "200",
+      "curlError": null,
+      "bytes": 37116
+    }
+  ]
+}

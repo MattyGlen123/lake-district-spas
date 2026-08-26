@@ -1,0 +1,11 @@
+[
+  {
+    "passId": "north-lakes-pure-luxury-weekday",
+    "passName": "Pure Luxury Spa Experience",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Pure Luxury Spa Experience\",\"description\":\"<div><p>This therapeutic Spa day provides you with the opportunity to experience our most exclusive Spa treatments.<\\/p>\\n<p>Your day includes four hours to relax and enjoy the Spa facilities before you indulge in the full body exfoliation, pure bliss!<\\/p>\\n<p>After a healthy light lunch with prosecco, your treatments continue with the back, face and scalp treatment and the foot ritual treatment. All finished off with a cream tea.<\\/p>\\n<p>Please be advised that our aqua classes run at the following times:<\\/p>\\n<p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p>\\n<p>TUESDAY &ndash; 12:30pm - 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43801\\/c0518639-a4fe-419a-a116-9a056626e18b.jpg\",\"sku\":\"PURELUXURYSPAACCESS\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":280",
+    "figureGBP": 280,
+    "storedGBP": 250,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 280
+  }
+]

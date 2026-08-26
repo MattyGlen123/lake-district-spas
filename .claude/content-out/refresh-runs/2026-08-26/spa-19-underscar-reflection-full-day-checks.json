@@ -1,0 +1,11 @@
+[
+  {
+    "passId": "underscar-reflection-full-day",
+    "passName": "Reflection Full Spa Day",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Reflection Full Spa Day\",\"description\":\"<div><p>Relax and unwind fully with our Reflection Full Spa Day, treat yourself to the lavish escape you deserve &nbsp;&ndash; a day designed to rejuvenate your mind, body, and soul. From 9 am to 5:15 pm, immerse yourself in the spa world, taking advantage of our facilities, including: <br>\\nPool, Jacuzzi, Sauna, Steam Room, and state-of-the-art Gym.<br>\\n <br>\\nAs you embark on this sensory journey, relish in the blissful ambiance of our spa while cocooned in a plush robe and comfortable slippers, provided along with a soft towel for your convenience.<br>\\nElevate your spa day with a High Tea, offering a delightful selection of treats to tantalize your taste buds and complement your pampering experience.<br>\\n <br>\\nThe highlight of your day awaits with two hours of indulgent treatments. Choose from our curated selection of premium therapies, including a Full Body Massage, a rejuvenating Germaine De Cappucini Facial, Gel Luxury Manicure and Gel Luxury Pedicure. Please choose 2.<br>\\n <br>\\nThis spa day package includes:<br>\\nUse of the Pool, Jacuzzi, Sauna, Steam Room and Gym <br>\\n9am-5:15pm<br>\\nHigh Tea<br>\\nTowel, robe and slippers<br>\\nTwo hours of Treatment.<br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over.<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29392\\/840caaee-fa13-488a-a45a-8a1cbecd89b0.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":210",
+    "figureGBP": 210,
+    "storedGBP": 210,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 210
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "passId": "north-lakes-morning-ritual-weekend",
+    "passName": "Morning Ritual",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Morning Ritual\",\"description\":\"<div><p>Experience a morning of relaxation with a 50 minute treatment or a choice of two 25 minute treatments, along with full use of our Spa facilities and a light lunch.<\\/p>\\n<p>Please be advised that our aqua classes run at the following times:<\\/p>\\n<p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p>\\n<p>TUESDAY &ndash; 12.30pm &ndash; 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43792\\/b1d91263-0cac-46da-93b5-66bdcb420117.jpg\",\"sku\":\"MORNINGRITUAL\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":139,\"highPrice\":149",
+    "figureGBP": 149,
+    "storedGBP": 136,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 149
+  }
+]
