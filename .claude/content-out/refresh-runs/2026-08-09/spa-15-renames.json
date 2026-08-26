@@ -1,0 +1,766 @@
+{
+  "applied": [
+    {
+      "oldId": "appleby-indulgence-weekend",
+      "newId": "appleby-indulgence-friday-sunday",
+      "applied": true,
+      "oldName": "Indulgence",
+      "newName": "Indulgence | Friday - Sunday",
+      "filesTouched": [
+        {
+          "path": "src/data/day-passes/spa-15-day-passes.ts",
+          "rewrites": 2
+        },
+        {
+          "path": "src/data/faqs/spa-15-faqs.tsx",
+          "rewrites": 3
+        }
+      ]
+    },
+    {
+      "oldId": "appleby-indulgence-weekday",
+      "newId": "appleby-indulgence-monday-thursday",
+      "applied": true,
+      "oldName": "Indulgence",
+      "newName": "Indulgence | Monday - Thursday",
+      "filesTouched": [
+        {
+          "path": "src/data/day-passes/spa-15-day-passes.ts",
+          "rewrites": 2
+        },
+        {
+          "path": "src/data/faqs/spa-15-faqs.tsx",
+          "rewrites": 1
+        }
+      ]
+    },
+    {
+      "oldId": "appleby-luxuriance-massage-weekday",
+      "newId": "appleby-luxuriance-including-a-back-neck-and-shoulder-massage-monday-thursday",
+      "applied": true,
+      "oldName": "Luxuriance Including a Back, Neck and Shoulder Massage",
+      "newName": "Luxuriance Including a Back, Neck and Shoulder Massage | Monday - Thursday",
+      "filesTouched": [
+        {
+          "path": "src/data/day-passes/spa-15-day-passes.ts",
+          "rewrites": 2
+        }
+      ]
+    },
+    {
+      "oldId": "appleby-luxuriance-massage-weekend",
+      "newId": "appleby-luxuriance-including-a-back-neck-and-shoulder-massage-friday-sunday",
+      "applied": true,
+      "oldName": "Luxuriance Including a Back, Neck and Shoulder Massage",
+      "newName": "Luxuriance Including a Back, Neck and Shoulder Massage Friday - Sunday",
+      "filesTouched": [
+        {
+          "path": "src/data/day-passes/spa-15-day-passes.ts",
+          "rewrites": 2
+        }
+      ]
+    },
+    {
+      "oldId": "appleby-luxurience-weekend",
+      "newId": "appleby-luxurience-friday-sunday",
+      "applied": true,
+      "oldName": "Luxurience",
+      "newName": "Luxurience | Friday - Sunday",
+      "filesTouched": [
+        {
+          "path": "src/data/day-passes/spa-15-day-passes.ts",
+          "rewrites": 2
+        },
+        {
+          "path": "src/data/faqs/spa-15-faqs.tsx",
+          "rewrites": 1
+        }
+      ]
+    },
+    {
+      "oldId": "appleby-luxurience-weekday",
+      "newId": "appleby-luxurience-monday-thursday",
+      "applied": true,
+      "oldName": "Luxurience",
+      "newName": "Luxurience | Monday - Thursday",
+      "filesTouched": [
+        {
+          "path": "src/data/day-passes/spa-15-day-passes.ts",
+          "rewrites": 2
+        },
+        {
+          "path": "src/data/faqs/spa-15-faqs.tsx",
+          "rewrites": 4
+        }
+      ]
+    },
+    {
+      "oldId": "appleby-thermal-light-tea-weekend",
+      "newId": "appleby-aqua-thermal-journey-light-afternoon-tea-fri-sun",
+      "applied": true,
+      "oldName": "Aqua Thermal Journey & Light Afternoon Tea",
+      "newName": "Aqua Thermal Journey & Light Afternoon Tea Fri-sun",
+      "filesTouched": [
+        {
+          "path": "src/data/day-passes/spa-15-day-passes.ts",
+          "rewrites": 2
+        },
+        {
+          "path": "src/data/faqs/spa-15-faqs.tsx",
+          "rewrites": 1
+        }
+      ]
+    },
+    {
+      "oldId": "appleby-thermal-light-tea-weekday",
+      "newId": "appleby-aqua-thermal-journey-light-afternoon-tea-monday-thursday",
+      "applied": true,
+      "oldName": "Aqua Thermal Journey & Light Afternoon Tea",
+      "newName": "Aqua Thermal Journey & Light Afternoon Tea Monday - Thursday",
+      "filesTouched": [
+        {
+          "path": "src/data/day-passes/spa-15-day-passes.ts",
+          "rewrites": 2
+        },
+        {
+          "path": "src/data/faqs/spa-15-faqs.tsx",
+          "rewrites": 3
+        }
+      ]
+    },
+    {
+      "oldId": "appleby-thermal-meal-weekend",
+      "newId": "appleby-aqua-thermal-spa-experience-with-lunch-or-afternoon-tea-friday-sunday",
+      "applied": true,
+      "oldName": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea",
+      "newName": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea | Friday - Sunday",
+      "filesTouched": [
+        {
+          "path": "src/data/day-passes/spa-15-day-passes.ts",
+          "rewrites": 2
+        },
+        {
+          "path": "src/data/faqs/spa-15-faqs.tsx",
+          "rewrites": 1
+        }
+      ]
+    },
+    {
+      "oldId": "appleby-thermal-meal-weekday",
+      "newId": "appleby-aqua-thermal-spa-experience-with-lunch-or-afternoon-tea-monday-thursday",
+      "applied": true,
+      "oldName": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea",
+      "newName": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea | Monday - Thursday",
+      "filesTouched": [
+        {
+          "path": "src/data/day-passes/spa-15-day-passes.ts",
+          "rewrites": 2
+        },
+        {
+          "path": "src/data/faqs/spa-15-faqs.tsx",
+          "rewrites": 2
+        }
+      ]
+    },
+    {
+      "oldId": "appleby-thermal-only",
+      "newId": "appleby-aqua-thermal-journey-monday-to-sunday",
+      "applied": true,
+      "oldName": "Aqua Thermal Journey",
+      "newName": "Aqua Thermal Journey Monday to Sunday",
+      "filesTouched": [
+        {
+          "path": "src/data/day-passes/spa-15-day-passes.ts",
+          "rewrites": 2
+        },
+        {
+          "path": "src/data/faqs/spa-15-faqs.tsx",
+          "rewrites": 6
+        }
+      ]
+    }
+  ],
+  "proseFlags": [
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-12-faqs.tsx",
+      "line": 79,
+      "context": "For the ultimate indulgence, the{' '}",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 18,
+      "context": "const indulgenceWeekendPrice = getDayPassPrice(spa.id, 'appleby-indulgence-friday-sunday');",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 18,
+      "context": "const indulgenceWeekendPrice = getDayPassPrice(spa.id, 'appleby-indulgence-friday-sunday');",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 19,
+      "context": "const indulgenceWeekdayPrice = getDayPassPrice(spa.id, 'appleby-indulgence-weekday');",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 19,
+      "context": "const indulgenceWeekdayPrice = getDayPassPrice(spa.id, 'appleby-indulgence-weekday');",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 20,
+      "context": "const indulgenceDuration = getDayPassDuration(spa.id, 'appleby-indulgence-friday-sunday');",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 20,
+      "context": "const indulgenceDuration = getDayPassDuration(spa.id, 'appleby-indulgence-friday-sunday');",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 45,
+      "context": "<Link href=\"#appleby-indulgence-friday-sunday\" className=\"underline\">",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 46,
+      "context": "Indulgence",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 48,
+      "context": "at {indulgenceWeekendPrice || '£125'} per person on weekends ({indulgenceWeekdayPrice || '£115'} weekdays), which includes {indulgenceDuration || '5 hours'} of spa access, a treatment of your choice, and a 2 course lunch.",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 48,
+      "context": "at {indulgenceWeekendPrice || '£125'} per person on weekends ({indulgenceWeekdayPrice || '£115'} weekdays), which includes {indulgenceDuration || '5 hours'} of spa access, a treatment of your choice, and a 2 course lunch.",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 48,
+      "context": "at {indulgenceWeekendPrice || '£125'} per person on weekends ({indulgenceWeekdayPrice || '£115'} weekdays), which includes {indulgenceDuration || '5 hours'} of spa access, a treatment of your choice, and a 2 course lunch.",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 81,
+      "context": "to full {indulgenceDuration || '5 hour'} experiences with treatments and dining included. All packages must be booked in advance.",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-4-faqs.tsx",
+      "line": 151,
+      "context": "(from {champagneTrufflesPrice || '£121'}). For the ultimate indulgence, the{' '}",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-4-faqs.tsx",
+      "line": 165,
+      "context": "schemaText: `${spa.name} offers 33 spa treatments using${brandsText ? ` ${brandsText}` : ' Temple Spa products'}, from ${upgradeDuration || '15 minute'} upgrades to ${vipGoldenTruffleDuration || '2 hour'} experiences, priced ${upgradePrice || '£15'} to ${vipGoldenTrufflePrice || '£231'}. Popular options include Drift Away massage (from ${driftAway30Price || '£72'}), Power Breakfast Facial (${powerBreakfastFacialPrice || '£77'}, ${powerBreakfastFacialDuration || '45 minutes'}), and Champagne and Truffles facial (from ${champagneTrufflesPrice || '£121'}). The VIP Golden Truffle Experience (${vipGoldenTrufflePrice || '£231'}, ${vipGoldenTruffleDuration || '2 hours'}) is the ultimate indulgence. Pregnancy safe treatments available through New Beginnings range. Express ${upgradeDuration || '15 minute'} upgrades from ${upgradePrice || '£15'}.`,",
+      "forPass": "appleby-indulgence-friday-sunday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-12-faqs.tsx",
+      "line": 79,
+      "context": "For the ultimate indulgence, the{' '}",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 18,
+      "context": "const indulgenceWeekendPrice = getDayPassPrice(spa.id, 'appleby-indulgence-friday-sunday');",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 18,
+      "context": "const indulgenceWeekendPrice = getDayPassPrice(spa.id, 'appleby-indulgence-friday-sunday');",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 19,
+      "context": "const indulgenceWeekdayPrice = getDayPassPrice(spa.id, 'appleby-indulgence-monday-thursday');",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 19,
+      "context": "const indulgenceWeekdayPrice = getDayPassPrice(spa.id, 'appleby-indulgence-monday-thursday');",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 20,
+      "context": "const indulgenceDuration = getDayPassDuration(spa.id, 'appleby-indulgence-friday-sunday');",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 20,
+      "context": "const indulgenceDuration = getDayPassDuration(spa.id, 'appleby-indulgence-friday-sunday');",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 45,
+      "context": "<Link href=\"#appleby-indulgence-friday-sunday\" className=\"underline\">",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 46,
+      "context": "Indulgence",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 48,
+      "context": "at {indulgenceWeekendPrice || '£125'} per person on weekends ({indulgenceWeekdayPrice || '£115'} weekdays), which includes {indulgenceDuration || '5 hours'} of spa access, a treatment of your choice, and a 2 course lunch.",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 48,
+      "context": "at {indulgenceWeekendPrice || '£125'} per person on weekends ({indulgenceWeekdayPrice || '£115'} weekdays), which includes {indulgenceDuration || '5 hours'} of spa access, a treatment of your choice, and a 2 course lunch.",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 48,
+      "context": "at {indulgenceWeekendPrice || '£125'} per person on weekends ({indulgenceWeekdayPrice || '£115'} weekdays), which includes {indulgenceDuration || '5 hours'} of spa access, a treatment of your choice, and a 2 course lunch.",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 81,
+      "context": "to full {indulgenceDuration || '5 hour'} experiences with treatments and dining included. All packages must be booked in advance.",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-4-faqs.tsx",
+      "line": 151,
+      "context": "(from {champagneTrufflesPrice || '£121'}). For the ultimate indulgence, the{' '}",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-4-faqs.tsx",
+      "line": 165,
+      "context": "schemaText: `${spa.name} offers 33 spa treatments using${brandsText ? ` ${brandsText}` : ' Temple Spa products'}, from ${upgradeDuration || '15 minute'} upgrades to ${vipGoldenTruffleDuration || '2 hour'} experiences, priced ${upgradePrice || '£15'} to ${vipGoldenTrufflePrice || '£231'}. Popular options include Drift Away massage (from ${driftAway30Price || '£72'}), Power Breakfast Facial (${powerBreakfastFacialPrice || '£77'}, ${powerBreakfastFacialDuration || '45 minutes'}), and Champagne and Truffles facial (from ${champagneTrufflesPrice || '£121'}). The VIP Golden Truffle Experience (${vipGoldenTrufflePrice || '£231'}, ${vipGoldenTruffleDuration || '2 hours'}) is the ultimate indulgence. Pregnancy safe treatments available through New Beginnings range. Express ${upgradeDuration || '15 minute'} upgrades from ${upgradePrice || '£15'}.`,",
+      "forPass": "appleby-indulgence-monday-thursday",
+      "oldName": "Indulgence"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 21,
+      "context": "const luxurienceWeekdayPrice = getDayPassPrice(spa.id, 'appleby-luxurience-weekday');",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 21,
+      "context": "const luxurienceWeekdayPrice = getDayPassPrice(spa.id, 'appleby-luxurience-weekday');",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 22,
+      "context": "const luxurienceWeekendPrice = getDayPassPrice(spa.id, 'appleby-luxurience-friday-sunday');",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 22,
+      "context": "const luxurienceWeekendPrice = getDayPassPrice(spa.id, 'appleby-luxurience-friday-sunday');",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 23,
+      "context": "const luxurienceDuration = getDayPassDuration(spa.id, 'appleby-luxurience-weekday');",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 23,
+      "context": "const luxurienceDuration = getDayPassDuration(spa.id, 'appleby-luxurience-weekday');",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 52,
+      "context": "<Link href=\"#appleby-luxurience-weekday\" className=\"underline\">",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 53,
+      "context": "Luxurience packages",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 55,
+      "context": "offer a {luxurienceDuration || '3 hour'} thermal journey with a {treatment25Min || '25 minute'} treatment and lunch or afternoon tea from {luxurienceWeekdayPrice || '£89'} weekdays or {luxurienceWeekendPrice || '£99'} weekends. All packages include full use of the thermal facilities and outdoor spa garden. Weekday pricing is typically £10 less than weekends across all packages.",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 55,
+      "context": "offer a {luxurienceDuration || '3 hour'} thermal journey with a {treatment25Min || '25 minute'} treatment and lunch or afternoon tea from {luxurienceWeekdayPrice || '£89'} weekdays or {luxurienceWeekendPrice || '£99'} weekends. All packages include full use of the thermal facilities and outdoor spa garden. Weekday pricing is typically £10 less than weekends across all packages.",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 55,
+      "context": "offer a {luxurienceDuration || '3 hour'} thermal journey with a {treatment25Min || '25 minute'} treatment and lunch or afternoon tea from {luxurienceWeekdayPrice || '£89'} weekdays or {luxurienceWeekendPrice || '£99'} weekends. All packages include full use of the thermal facilities and outdoor spa garden. Weekday pricing is typically £10 less than weekends across all packages.",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 191,
+      "context": "<Link href=\"#appleby-luxurience-weekday\" className=\"underline\">",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 192,
+      "context": "Luxurience packages",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 194,
+      "context": "from {luxurienceWeekdayPrice || '£89'} also offer the lunch or afternoon tea choice, and add a {treatment25Min || '25 minute'} treatment and an extra hour of spa access.",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 204,
+      "context": "schemaText: `Yes, several Garden Spa day packages include afternoon tea. The Aqua Thermal Journey with Light Afternoon Tea starts from ${lightTeaWeekdayPrice || '£49'} weekdays (${lightTeaWeekendPrice || '£59'} weekends) with a ${lightTeaDuration || '2 hour'} thermal journey and light tea. The Aqua Thermal Spa Experience from ${thermalMealWeekdayPrice || '£60'} weekdays lets you choose between full afternoon tea or 2 course lunch. Luxurience packages from ${luxurienceWeekdayPrice || '£89'} add a ${treatment25Min || '25 minute'} treatment plus the lunch or afternoon tea choice. All options include access to the hydrotherapy pool, outdoor spa garden, and thermal suite.`,",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 204,
+      "context": "schemaText: `Yes, several Garden Spa day packages include afternoon tea. The Aqua Thermal Journey with Light Afternoon Tea starts from ${lightTeaWeekdayPrice || '£49'} weekdays (${lightTeaWeekendPrice || '£59'} weekends) with a ${lightTeaDuration || '2 hour'} thermal journey and light tea. The Aqua Thermal Spa Experience from ${thermalMealWeekdayPrice || '£60'} weekdays lets you choose between full afternoon tea or 2 course lunch. Luxurience packages from ${luxurienceWeekdayPrice || '£89'} add a ${treatment25Min || '25 minute'} treatment plus the lunch or afternoon tea choice. All options include access to the hydrotherapy pool, outdoor spa garden, and thermal suite.`,",
+      "forPass": "appleby-luxurience-friday-sunday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 21,
+      "context": "const luxurienceWeekdayPrice = getDayPassPrice(spa.id, 'appleby-luxurience-monday-thursday');",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 21,
+      "context": "const luxurienceWeekdayPrice = getDayPassPrice(spa.id, 'appleby-luxurience-monday-thursday');",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 22,
+      "context": "const luxurienceWeekendPrice = getDayPassPrice(spa.id, 'appleby-luxurience-friday-sunday');",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 22,
+      "context": "const luxurienceWeekendPrice = getDayPassPrice(spa.id, 'appleby-luxurience-friday-sunday');",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 23,
+      "context": "const luxurienceDuration = getDayPassDuration(spa.id, 'appleby-luxurience-monday-thursday');",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 23,
+      "context": "const luxurienceDuration = getDayPassDuration(spa.id, 'appleby-luxurience-monday-thursday');",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 52,
+      "context": "<Link href=\"#appleby-luxurience-monday-thursday\" className=\"underline\">",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 53,
+      "context": "Luxurience packages",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 55,
+      "context": "offer a {luxurienceDuration || '3 hour'} thermal journey with a {treatment25Min || '25 minute'} treatment and lunch or afternoon tea from {luxurienceWeekdayPrice || '£89'} weekdays or {luxurienceWeekendPrice || '£99'} weekends. All packages include full use of the thermal facilities and outdoor spa garden. Weekday pricing is typically £10 less than weekends across all packages.",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 55,
+      "context": "offer a {luxurienceDuration || '3 hour'} thermal journey with a {treatment25Min || '25 minute'} treatment and lunch or afternoon tea from {luxurienceWeekdayPrice || '£89'} weekdays or {luxurienceWeekendPrice || '£99'} weekends. All packages include full use of the thermal facilities and outdoor spa garden. Weekday pricing is typically £10 less than weekends across all packages.",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 55,
+      "context": "offer a {luxurienceDuration || '3 hour'} thermal journey with a {treatment25Min || '25 minute'} treatment and lunch or afternoon tea from {luxurienceWeekdayPrice || '£89'} weekdays or {luxurienceWeekendPrice || '£99'} weekends. All packages include full use of the thermal facilities and outdoor spa garden. Weekday pricing is typically £10 less than weekends across all packages.",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 191,
+      "context": "<Link href=\"#appleby-luxurience-monday-thursday\" className=\"underline\">",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 192,
+      "context": "Luxurience packages",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 194,
+      "context": "from {luxurienceWeekdayPrice || '£89'} also offer the lunch or afternoon tea choice, and add a {treatment25Min || '25 minute'} treatment and an extra hour of spa access.",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 204,
+      "context": "schemaText: `Yes, several Garden Spa day packages include afternoon tea. The Aqua Thermal Journey with Light Afternoon Tea starts from ${lightTeaWeekdayPrice || '£49'} weekdays (${lightTeaWeekendPrice || '£59'} weekends) with a ${lightTeaDuration || '2 hour'} thermal journey and light tea. The Aqua Thermal Spa Experience from ${thermalMealWeekdayPrice || '£60'} weekdays lets you choose between full afternoon tea or 2 course lunch. Luxurience packages from ${luxurienceWeekdayPrice || '£89'} add a ${treatment25Min || '25 minute'} treatment plus the lunch or afternoon tea choice. All options include access to the hydrotherapy pool, outdoor spa garden, and thermal suite.`,",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 204,
+      "context": "schemaText: `Yes, several Garden Spa day packages include afternoon tea. The Aqua Thermal Journey with Light Afternoon Tea starts from ${lightTeaWeekdayPrice || '£49'} weekdays (${lightTeaWeekendPrice || '£59'} weekends) with a ${lightTeaDuration || '2 hour'} thermal journey and light tea. The Aqua Thermal Spa Experience from ${thermalMealWeekdayPrice || '£60'} weekdays lets you choose between full afternoon tea or 2 course lunch. Luxurience packages from ${luxurienceWeekdayPrice || '£89'} add a ${treatment25Min || '25 minute'} treatment plus the lunch or afternoon tea choice. All options include access to the hydrotherapy pool, outdoor spa garden, and thermal suite.`,",
+      "forPass": "appleby-luxurience-monday-thursday",
+      "oldName": "Luxurience"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 188,
+      "context": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea",
+      "forPass": "appleby-aqua-thermal-spa-experience-with-lunch-or-afternoon-tea-friday-sunday",
+      "oldName": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 188,
+      "context": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea",
+      "forPass": "appleby-aqua-thermal-spa-experience-with-lunch-or-afternoon-tea-monday-thursday",
+      "oldName": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 42,
+      "context": "Aqua Thermal Journey",
+      "forPass": "appleby-aqua-thermal-journey-monday-to-sunday",
+      "oldName": "Aqua Thermal Journey"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 65,
+      "context": "schemaText: `Spa day packages at ${spa.name} start from ${thermalOnlyPrice || '£45'} per person for a ${thermalOnlyDuration || '2 hour'} Aqua Thermal Journey. The most comprehensive Indulgence package costs ${indulgenceWeekendPrice || '£125'} per person on weekends (${indulgenceWeekdayPrice || '£115'} weekdays) and includes ${indulgenceDuration || '5 hours'} of spa access, a treatment, and 2 course lunch. Mid range Luxurience packages start from ${luxurienceWeekdayPrice || '£89'} weekdays with a ${luxurienceDuration || '3 hour'} thermal journey, ${treatment25Min || '25 minute'} treatment, and lunch or afternoon tea. Weekday pricing is typically £10 less than weekends. There are 11 different packages available.`,",
+      "forPass": "appleby-aqua-thermal-journey-monday-to-sunday",
+      "oldName": "Aqua Thermal Journey"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 181,
+      "context": "Aqua Thermal Journey with Light Afternoon Tea",
+      "forPass": "appleby-aqua-thermal-journey-monday-to-sunday",
+      "oldName": "Aqua Thermal Journey"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 197,
+      "context": "All afternoon tea options pair with the full Aqua Thermal Journey including the hydrotherapy pool, outdoor spa garden, and thermal suite. See all{' '}",
+      "forPass": "appleby-aqua-thermal-journey-monday-to-sunday",
+      "oldName": "Aqua Thermal Journey"
+    },
+    {
+      "file": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/src/data/faqs/spa-15-faqs.tsx",
+      "line": 204,
+      "context": "schemaText: `Yes, several Garden Spa day packages include afternoon tea. The Aqua Thermal Journey with Light Afternoon Tea starts from ${lightTeaWeekdayPrice || '£49'} weekdays (${lightTeaWeekendPrice || '£59'} weekends) with a ${lightTeaDuration || '2 hour'} thermal journey and light tea. The Aqua Thermal Spa Experience from ${thermalMealWeekdayPrice || '£60'} weekdays lets you choose between full afternoon tea or 2 course lunch. Luxurience packages from ${luxurienceWeekdayPrice || '£89'} add a ${treatment25Min || '25 minute'} treatment plus the lunch or afternoon tea choice. All options include access to the hydrotherapy pool, outdoor spa garden, and thermal suite.`,",
+      "forPass": "appleby-aqua-thermal-journey-monday-to-sunday",
+      "oldName": "Aqua Thermal Journey"
+    }
+  ]
+}

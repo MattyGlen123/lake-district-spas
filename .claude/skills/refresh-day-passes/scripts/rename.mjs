@@ -158,10 +158,28 @@ export function applyRenameToFiles(files, { oldId, newId, oldName, newName }) {
     totalRewrites += count;
 
     if (file.isDataFile) {
-      const packageNameRe = new RegExp(`(packageName:\\s*)(['"])${escapeRe(oldName)}\\2`, 'g');
-      const before = content;
-      content = content.replace(packageNameRe, (_m, prefix, q) => `${prefix}${q}${newName}${q}`);
-      if (content !== before) totalRewrites += 1;
+      // Scope the packageName rewrite to the renamed entry's own option block.
+      // Sibling passes at the same spa can legitimately share a packageName
+      // (e.g. weekday/weekend variants of one package), so a global replace
+      // would clobber the twin and leave the second rename with nothing to
+      // match. The id literal was already re-slugged above, so the block is
+      // located by newId and bounded by the next entry's `id:` field.
+      const idNeedle = `id: '${newId}'`;
+      const idIdx = content.indexOf(idNeedle);
+      if (idIdx !== -1) {
+        const nextIdIdx = content.indexOf("id: '", idIdx + idNeedle.length);
+        const end = nextIdIdx === -1 ? content.length : nextIdIdx;
+        const block = content.slice(idIdx, end);
+        const packageNameRe = new RegExp(`(packageName:\\s*)(['"])${escapeRe(oldName)}\\2`);
+        const rewritten = block.replace(
+          packageNameRe,
+          (_m, prefix, q) => `${prefix}${q}${newName}${q}`,
+        );
+        if (rewritten !== block) {
+          content = content.slice(0, idIdx) + rewritten + content.slice(end);
+          totalRewrites += 1;
+        }
+      }
     } else {
       // Prose mentions are flagged, never rewritten — scan every non-data file.
       proseFlags.push(...findProseMentions(content, oldName, file.path));

@@ -1,0 +1,200 @@
+[
+  {
+    "item": "6712",
+    "url": "https://applebymanor.onejourney.travel/spa/days/6712",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-09/spa-15-6712.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-09T12:03:10.435Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 115076
+      }
+    ]
+  },
+  {
+    "item": "6713",
+    "url": "https://applebymanor.onejourney.travel/spa/days/6713",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-09/spa-15-6713.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-09T12:03:10.983Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 114926
+      }
+    ]
+  },
+  {
+    "item": "11233",
+    "url": "https://applebymanor.onejourney.travel/spa/days/11233",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-09/spa-15-11233.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-09T12:03:11.425Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 112632
+      }
+    ]
+  },
+  {
+    "item": "11232",
+    "url": "https://applebymanor.onejourney.travel/spa/days/11232",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-09/spa-15-11232.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-09T12:03:11.858Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 112574
+      }
+    ]
+  },
+  {
+    "item": "6714",
+    "url": "https://applebymanor.onejourney.travel/spa/days/6714",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-09/spa-15-6714.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-09T12:03:12.276Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 115938
+      }
+    ]
+  },
+  {
+    "item": "6715",
+    "url": "https://applebymanor.onejourney.travel/spa/days/6715",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-09/spa-15-6715.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-09T12:03:12.755Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 116040
+      }
+    ]
+  },
+  {
+    "item": "12307",
+    "url": "https://applebymanor.onejourney.travel/spa/days/12307",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-09/spa-15-12307.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-09T12:03:13.210Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 107132
+      }
+    ]
+  },
+  {
+    "item": "9278",
+    "url": "https://applebymanor.onejourney.travel/spa/days/9278",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-09/spa-15-9278.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-09T12:03:13.613Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 107140
+      }
+    ]
+  },
+  {
+    "item": "6706",
+    "url": "https://applebymanor.onejourney.travel/spa/days/6706",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-09/spa-15-6706.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-09T12:03:14.025Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 111834
+      }
+    ]
+  },
+  {
+    "item": "6707",
+    "url": "https://applebymanor.onejourney.travel/spa/days/6707",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-09/spa-15-6707.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-09T12:03:14.483Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 111830
+      }
+    ]
+  },
+  {
+    "item": "9279",
+    "url": "https://applebymanor.onejourney.travel/spa/days/9279",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-09/spa-15-9279.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-09T12:03:14.926Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 108074
+      }
+    ]
+  }
+]
