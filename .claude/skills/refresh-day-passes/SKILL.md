@@ -30,11 +30,26 @@ Implemented tiers:
 
 ⚠️ **Multi-column brochures weaken gate 2.** `pdftotext -layout` flattens side-by-side package columns into interleaved lines, and the gate normalizes whitespace away — so a span can contain the right pass name next to a *neighbouring* package's price and still pass contiguity. When a pdf-tier quote's span contains more than one price, verify the column alignment in the raw text layer by hand before applying, and say so in evidence.md. See `.scratch/day-pass-refresh/issues/11-pdf-multicolumn-contiguity.md`.
 
+- `portal-onejourney` — Appleby (15), sole spa on this tier. Prices live only in the booking portal, so fetch each pass's **`bookingUrl`, not `dayPassUrl`** — one page per pass (`<item>` = the trailing path segment of the bookingUrl), with `scripts/fetch.mjs` exactly as the html tier uses it. Those pages are working files: they are bundled and trimmed into a single committed `spa-<id>.html` (see step 3b), which is what the gate greps and the PR ships. The page embeds a React-Query SSR payload; quote the contiguous span from the item's `"name":"…"` through its `"price":{"amount":<pence>`, with `arithmetic: "pence"`. See "Portal tier extraction (onejourney SSR)" below.
+
 - `portal-trybe` — North Lakes (12), Underscar (19). Prices live only in the booking portal, so fetch each pass's **`bookingUrl`, not `dayPassUrl`**, with `scripts/fetch.mjs` exactly as the html tier uses it — one page per DISTINCT booking item. Those pages are working files: they are bundled and trimmed into a single committed `spa-<id>.html` (see step 3b), which is what the gate greps and the PR ships. try.be renders a Vite SPA shell, but it **server-renders an `application/ld+json` `Product` block** carrying the item name and price, which plain curl gets. See "Portal tier extraction (try.be JSON-LD)" below.
 
-**Portal tiers are per-vendor, not one tier.** The four portal spas split by whether their tenant server-renders, and that cuts across both vendors — never generalize one spa's rule to another. Lakeside (9) is onejourney and does NOT server-render; it is unimplemented (see `.scratch/day-pass-refresh/issues/03c-portal-lakeside-shell.md`). Appleby (15) is onejourney and DOES, in a different shape with prices in **pence** (issue 03a).
+**Portal tiers are per-vendor, not per-portal.** The four portal spas split by whether their tenant server-renders, and that cuts across both vendors — never generalize one spa's rule to another. Appleby (onejourney) server-renders, prices in **pence**; North Lakes (12) and Underscar (19) are try.be and server-render a JSON-LD block, prices in **whole pounds**; Lakeside (9, also onejourney) does NOT server-render and is unimplemented (see `.scratch/day-pass-refresh/issues/03c-portal-lakeside-shell.md`).
 
 If a targeted spa is on no implemented tier (Lakeside 9), report "tier not implemented in this slice" and stop for that spa — do not fetch. In particular **never point the html-tier fetch at a Lakeside bookingUrl**: it returns HTTP 200 and a shell full of Elemis retail-shop prices with no day-pass data, so a quote can ground a real-looking figure to entirely the wrong product.
+
+### Portal tier extraction (onejourney SSR)
+
+```
+"queries":[{"state":{"data":{"id":<item>,"categories":[…],"name":"<item name>",
+"description":"…", … ,"price":{"amount":<pence>,…
+```
+
+- **Quote** = `"name":"<item name>"` … `"price":{"amount":<pence>` — one contiguous span, typically 1.3–2.7 KB. `arithmetic: "pence"`, `quotedFigure` = the pence integer. Gate 1 already implements this case; no gate change is needed.
+- **`passName` must be the artifact-literal form.** The payload JSON-escapes non-ASCII, so `&` appears as `&`. Gate 2's normalization decodes HTML entities, not JSON escapes — pass `Aqua Thermal Journey & Light Afternoon Tea Fri-sun`, not the decoded form, or gate 2 demotes with `pass-name-not-in-quote`.
+- **Decode before writing data.** The reverse applies to renames: `packageName` in the data file takes the decoded human form (`&`). Same string, two representations — artifact-literal for the gate, decoded for the data.
+- An empty SSR slot (`"queries":[]`) means the tenant does not server-render. Treat it as tier-not-implemented, never as a fetch to salvage from the shell.
+- The payload is emitted twice, camelCase and snake_case. Quote from the camelCase copy; gate 3 poison-scans every occurrence of a repeated span, which is correct and was verified clean.
 
 ### Portal tier extraction (try.be JSON-LD)
 
@@ -55,6 +70,7 @@ North Lakes stores 10 passes behind only **5 booking items** — `lowPrice`/`hig
 Tier-1 matching keys on the booking-item id and is strictly 1:1, so a fan-out item would match only ONE of its two passes and orphan the other as a false `missingFlag`. Resolve it **in the caller, not by changing `matching.mjs`**: build a synthetic per-variant `bookingUrl` (`<real-url>-weekday` / `-weekend`, derived from the pass's `daysAvailable`) on BOTH the `existing` and `fetched` sides. Tier 1 is then honestly 1:1 — two distinct bookable variants of one item. Keep the real URL for evidence and the PR.
 
 **Fan-out passes NEVER auto-apply a rename**, even on a tier-1 match. The source `name` describes the *item*, which spans both variants, while our id and `packageName` carry a weekday/weekend distinction the source does not have. Applying it destroys that distinction and re-slugs both passes to the SAME id — verified: `planRename` returns `applied: true` with `newId: 'north-lakes-simple-ritual'` for BOTH `…-weekday` and `…-weekend`, i.e. silent duplicate ids. Render such renames as ⚠️ "possible rename: X → Y" suggestions for a human, exactly like a tier-3 suggestion. See `.scratch/day-pass-refresh/issues/12-fanout-rename-guard.md`.
+
 
 ## Procedure
 
@@ -136,6 +152,25 @@ Read the SAVED ARTIFACT (never the live page again — the artifact the model re
 A pass whose price cannot be found in the artifact gets no quote — it will fail the gate and land in the ⚠️ flag section. That is the correct outcome; never force a quote.
 
 **pdf tier, thin text layer** — if `fetch-pdf.mjs`'s log reports `textLayerUsable: false` (under ~200 chars — a scanned/image brochure with little or no embedded text), reading `spa-<id>.txt` won't surface real quotes. Fall back to reading `spa-<id>.pdf` directly as a Claude API document content block to see what the brochure says. This is a **reading aid only** — it does not relax grounding. The `quote` you write into `checks.json` must still be a verbatim span that greps in the saved **text-layer artifact** (`spa-<id>.txt`), same as any other tier; if the thin layer genuinely doesn't contain the price as text, the gate will correctly return `quote-not-found-in-artifact` and the pass lands in ⚠️, exactly as the iron rule requires ("no gate depends on model self-assessment"). Do not point the gate at the PDF itself or at anything the document block "read" that isn't literally in the text-layer file.
+
+### 3b. Trim + bundle the committed artifact
+
+The committed artifact exists so any figure in the PR can be re-proved later. Committing whole pages does that but does not scale: a full 22-spa run is ~5–6 MB and ~65 files EVERY month (Old England's rendered page alone is 1.8 MB, and portal spas need one page PER PASS), and git keeps every version forever.
+
+So the page(s) fetched in step 1 are **working files, not the committed evidence**. Once quotes exist, reduce them to one trimmed, bundled artifact per spa:
+
+```bash
+node .claude/skills/refresh-day-passes/scripts/trim-artifact.mjs \
+  "$RUN_DIR/spa-<id>-checks.json" "$RUN_DIR/spa-<id>.html" <full-page> [<full-page>…]
+```
+
+It keeps every occurrence of every quote plus `DEFAULT_PAD` (2,000) raw chars either side — comfortably more than gate 3's ±200 **normalized** chars, since normalization collapses whitespace — merges overlapping windows, and joins segments with a long neutral separator so no two windows bleed into each other's poison range. Multiple input pages bundle into ONE output artifact, which is why portal spas collapse from 11 files to 1.
+
+**The equivalence is enforced, not asserted.** The script runs the real gate over both the full page(s) and the trimmed bundle and **exits 2 unless every verdict — grounded, gate, reason, poison words — is identical**; it also exits 2 if a quote is missing from the source entirely. A lossy trim cannot ship. Measured: Appleby 1,233 KB → 148 KB (88%), 11/11 identical; North Lakes + Underscar 374 KB → 60 KB (84%), 17/17 identical.
+
+Gate and commit the TRIMMED artifact (`spa-<id>.html`, uniform across tiers). Keep one `spa-<id>-fetch-log.json` per spa — an array of per-page logs for portal tiers. Do **not** commit the full pages; they are re-fetchable from the URLs in the log.
+
+This does not weaken the iron rule. The model still reads the full page to extract, and `trim-artifact.mjs` locates each quote **in that full page** — a quote that isn't really there produces no window, so it is absent from the bundle and gate 1 demotes it exactly as before.
 
 ### 4. Gate
 
@@ -234,7 +269,7 @@ Write `evidence.md` in the run dir — the **full** per-pass quote set (PRD §5)
 
 ### 7. PR
 
-Branch `refresh/day-pass-run-$RUN_DATE` off `origin/main`; commit the data edits (including any renamed ids/mechanical-ref rewrites) AND the run dir (artifact, checks, gate results, evidence.md). Commit message: `chore(data): day-pass refresh $RUN_DATE — <n> price changes, <n> flags`.
+Branch `refresh/day-pass-run-$RUN_DATE` off `origin/main`; commit the data edits (including any renamed ids/mechanical-ref rewrites) AND the run dir (the TRIMMED artifact from step 3b, checks, gate results, fetch log, evidence.md — never the full fetched pages). Commit message: `chore(data): day-pass refresh $RUN_DATE — <n> price changes, <n> flags`.
 
 PR body follows the normative template layout exactly for every non-empty section, in template order: header (run stats line + "this PR deletes nothing" statement) → 💷 price changes → ⚠️ missing-flags (include tier-3 "possible rename: X → Y" suggestions, "possible successor: X → Y" suggestions with their evidence lines, and prose-mention flags here) → 🏷 promo notes → ❌ not-fetched table → ✅ verified-unchanged (collapsed `<details>`) → diff summary table. Per change: id + field diff, blockquoted quote, linked source URL, fetch timestamp, ℹ️ normalization notes. Omit sections with zero entries.
 

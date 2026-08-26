@@ -240,4 +240,61 @@ describe('applyRenameToFiles (tier-1 rename, end-to-end over fixture files)', ()
     // The data file itself is never scanned for prose flags — its rename is a direct edit.
     expect(proseFlags.some((h) => h.file === dataFile.path)).toBe(false);
   });
+
+  // Regression: Appleby (spa 15) stores weekday/weekend variants of the same
+  // package under one packageName. A global packageName replace renamed BOTH
+  // entries on the first rename, leaving the twin's rename with nothing to
+  // match and two entries sharing a name that only one of them now has.
+  it('renames only the target entry when a sibling pass shares its packageName', () => {
+    const sharedNameDataFile = {
+      path: 'src/data/day-passes/spa-15-day-passes.ts',
+      isDataFile: true,
+      content: [
+        'export const spa15DayPasses: SpaDayPasses = {',
+        '  spaId: 15,',
+        '  options: [',
+        '    {',
+        "      id: 'appleby-indulgence-weekend',",
+        "      packageName: 'Indulgence',",
+        '      priceGBP: 125,',
+        '    },',
+        '    {',
+        "      id: 'appleby-indulgence-weekday',",
+        "      packageName: 'Indulgence',",
+        '      priceGBP: 115,',
+        '    },',
+        '  ],',
+        '};',
+      ].join('\n'),
+    };
+
+    const first = applyRenameToFiles([sharedNameDataFile], {
+      oldId: 'appleby-indulgence-weekend',
+      newId: 'appleby-indulgence-friday-sunday',
+      oldName: 'Indulgence',
+      newName: 'Indulgence | Friday - Sunday',
+    });
+    const afterFirst = first.updatedFiles.find((f) => f.path === sharedNameDataFile.path)!.content;
+
+    // The weekday twin keeps its original name and id.
+    expect(afterFirst).toContain("packageName: 'Indulgence | Friday - Sunday'");
+    expect(afterFirst).toContain("id: 'appleby-indulgence-weekday'");
+    expect(afterFirst.match(/packageName: 'Indulgence'/g)).toHaveLength(1);
+
+    // The twin's own rename then still finds its packageName to rewrite.
+    const second = applyRenameToFiles(
+      [{ ...sharedNameDataFile, content: afterFirst }],
+      {
+        oldId: 'appleby-indulgence-weekday',
+        newId: 'appleby-indulgence-monday-thursday',
+        oldName: 'Indulgence',
+        newName: 'Indulgence | Monday - Thursday',
+      },
+    );
+    const afterSecond = second.updatedFiles.find((f) => f.path === sharedNameDataFile.path)!.content;
+
+    expect(afterSecond).toContain("packageName: 'Indulgence | Friday - Sunday'");
+    expect(afterSecond).toContain("packageName: 'Indulgence | Monday - Thursday'");
+    expect(afterSecond).not.toMatch(/packageName: 'Indulgence'/);
+  });
 });

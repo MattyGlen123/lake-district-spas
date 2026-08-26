@@ -1,0 +1,106 @@
+{
+  "matches": [
+    {
+      "tier": 1,
+      "existingId": "appleby-indulgence-weekend",
+      "fetchedName": "Indulgence | Friday - Sunday",
+      "rename": {
+        "from": "Indulgence",
+        "to": "Indulgence | Friday - Sunday"
+      }
+    },
+    {
+      "tier": 1,
+      "existingId": "appleby-indulgence-weekday",
+      "fetchedName": "Indulgence | Monday - Thursday",
+      "rename": {
+        "from": "Indulgence",
+        "to": "Indulgence | Monday - Thursday"
+      }
+    },
+    {
+      "tier": 1,
+      "existingId": "appleby-luxuriance-massage-weekday",
+      "fetchedName": "Luxuriance Including a Back, Neck and Shoulder Massage | Monday - Thursday",
+      "rename": {
+        "from": "Luxuriance Including a Back, Neck and Shoulder Massage",
+        "to": "Luxuriance Including a Back, Neck and Shoulder Massage | Monday - Thursday"
+      }
+    },
+    {
+      "tier": 1,
+      "existingId": "appleby-luxuriance-massage-weekend",
+      "fetchedName": "Luxuriance Including a Back, Neck and Shoulder Massage Friday - Sunday",
+      "rename": {
+        "from": "Luxuriance Including a Back, Neck and Shoulder Massage",
+        "to": "Luxuriance Including a Back, Neck and Shoulder Massage Friday - Sunday"
+      }
+    },
+    {
+      "tier": 1,
+      "existingId": "appleby-luxurience-weekend",
+      "fetchedName": "Luxurience | Friday - Sunday",
+      "rename": {
+        "from": "Luxurience",
+        "to": "Luxurience | Friday - Sunday"
+      }
+    },
+    {
+      "tier": 1,
+      "existingId": "appleby-luxurience-weekday",
+      "fetchedName": "Luxurience | Monday - Thursday",
+      "rename": {
+        "from": "Luxurience",
+        "to": "Luxurience | Monday - Thursday"
+      }
+    },
+    {
+      "tier": 1,
+      "existingId": "appleby-thermal-light-tea-weekend",
+      "fetchedName": "Aqua Thermal Journey \\u0026 Light Afternoon Tea Fri-sun",
+      "rename": {
+        "from": "Aqua Thermal Journey & Light Afternoon Tea",
+        "to": "Aqua Thermal Journey \\u0026 Light Afternoon Tea Fri-sun"
+      }
+    },
+    {
+      "tier": 1,
+      "existingId": "appleby-thermal-light-tea-weekday",
+      "fetchedName": "Aqua Thermal Journey \\u0026 Light Afternoon Tea Monday - Thursday",
+      "rename": {
+        "from": "Aqua Thermal Journey & Light Afternoon Tea",
+        "to": "Aqua Thermal Journey \\u0026 Light Afternoon Tea Monday - Thursday"
+      }
+    },
+    {
+      "tier": 1,
+      "existingId": "appleby-thermal-meal-weekend",
+      "fetchedName": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea | Friday - Sunday",
+      "rename": {
+        "from": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea",
+        "to": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea | Friday - Sunday"
+      }
+    },
+    {
+      "tier": 1,
+      "existingId": "appleby-thermal-meal-weekday",
+      "fetchedName": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea | Monday - Thursday",
+      "rename": {
+        "from": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea",
+        "to": "Aqua Thermal Spa Experience with Lunch or Afternoon Tea | Monday - Thursday"
+      }
+    },
+    {
+      "tier": 1,
+      "existingId": "appleby-thermal-only",
+      "fetchedName": "Aqua Thermal Journey Monday to Sunday",
+      "rename": {
+        "from": "Aqua Thermal Journey",
+        "to": "Aqua Thermal Journey Monday to Sunday"
+      }
+    }
+  ],
+  "tier3Suggestions": [],
+  "missingFlags": [],
+  "unmatchedFetched": []
+}
