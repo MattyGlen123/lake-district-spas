@@ -1,0 +1,128 @@
+[
+  {
+    "item": "twilight-spa-experience",
+    "url": "https://underscar.try.be/items/65b4f16e90dd65ddf90f8f26/twilight-spa-experience",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-19-twilight-spa-experience.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-26T20:06:00.987Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 28850
+      }
+    ]
+  },
+  {
+    "item": "harmonie-half-spa-day",
+    "url": "https://underscar.try.be/items/6581b78cd738b4eec60662d7/harmonie-half-spa-day",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-19-harmonie-half-spa-day.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-26T20:06:01.386Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 34300
+      }
+    ]
+  },
+  {
+    "item": "serenity-half-spa-day",
+    "url": "https://underscar.try.be/items/657242904ea5689b6c06e573/serenity-half-spa-day",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-19-serenity-half-spa-day.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-26T20:06:01.965Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 36837
+      }
+    ]
+  },
+  {
+    "item": "mindfulness-half-spa-day",
+    "url": "https://underscar.try.be/items/65723dc3210eadd5d500250c/mindfulness-half-spa-day",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-19-mindfulness-half-spa-day.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-26T20:06:02.517Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 37116
+      }
+    ]
+  },
+  {
+    "item": "wellbeing-full-spa-day",
+    "url": "https://underscar.try.be/items/65724105e24a2fe9550692e6/wellbeing-full-spa-day",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-19-wellbeing-full-spa-day.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-26T20:06:02.782Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 31992
+      }
+    ]
+  },
+  {
+    "item": "peaceful-full-spa-day",
+    "url": "https://underscar.try.be/items/657626bf1363da0fcf0b156f/peaceful-full-spa-day",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-19-peaceful-full-spa-day.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-26T20:06:03.051Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 33423
+      }
+    ]
+  },
+  {
+    "item": "reflection-full-spa-day",
+    "url": "https://underscar.try.be/items/65785b1f4e416d55710c20f2/reflection-full-spa-day",
+    "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-19-reflection-full-spa-day.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-26T20:06:03.441Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 32005
+      }
+    ]
+  }
+]

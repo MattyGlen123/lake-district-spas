@@ -1,0 +1,86 @@
+{
+  "artifact": "/Users/matty/Desktop/projects/lake-district-spas/.claude/worktrees/agent-aa7b90115d2f3e9e2/.claude/content-out/refresh-runs/2026-08-26/spa-19.html",
+  "gates": [
+    "1 grounding+arithmetic",
+    "2 contiguity",
+    "3 poison words",
+    "4 pdf vintage (pdf tier only)",
+    "5 plausibility"
+  ],
+  "constants": {
+    "PRICE_MIN_GBP": 20,
+    "PRICE_MAX_GBP": 400,
+    "MAX_MOVE_PCT": 40,
+    "POISON_CONTEXT_CHARS": 200
+  },
+  "summary": {
+    "checked": 7,
+    "grounded": 7,
+    "flagged": 0
+  },
+  "results": [
+    {
+      "passId": "underscar-twilight-spa",
+      "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Twilight Spa Experience\",\"description\":\"<div><p>Nestled under the slopes of Skiddaw and Latrigg just on the out skirts of Keswick immerse yourself in a day of calm with our Twilight Spa Experience, a package tailored to provide the ultimate relaxation for mind, body and spirit. <br>\\n <br>\\nFrom 6 pm to 9 pm, indulge in our facilities, featuring:<br>\\nPool, Jacuzzi, Sauna, Steam Room, and a fully-equipped Gym.<\\/p>\\n<p>Includes towel, robe and slippers.<br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over.<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29391\\/91d5d620-e4c6-4bcc-8a92-fca161c78542.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":55",
+      "figureGBP": 55,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "underscar-harmonie-half-day",
+      "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Harmonie Half Spa Day\",\"description\":\"<div><p>Indulge in a half-day retreat with our Harmonie half spa day package. Immerse yourself in our luxury facilities featuring: Pool, Jacuzzi, Sauna, Steam Room, and a state-of-the-art Gym. We are located on the outskirts of Keswick under the slopes of Skiddaw. <br>\\n <br>\\nSelect your preferred time slot, either the morning hours from 9am to 1:15pm or the afternoon from 1pm to 5:15pm. As you surrender to relaxation, wrap yourself in the sumptuous embrace of the provided towel, robe, and slippers, while savouring a delightful light refreshment. <br>\\n <br>\\nA 30-minute treatment of your choice. Opt for a pampering GEL Mini Manicure or GEL Mini Pedicure. Please note any previous gel\\/polish must be removed prior to treatment. <br>\\n <br>\\nThis spa day package includes: <br>\\nUse of the Pool, Jacuzzi, Sauna, Steam Room and Gym <br>\\nMorning 9am-1:15pm or Afternoon 1pm-5:15pm<br>\\nLight refreshment includes a drink (hot drink or fresh orange\\/apple juice) and a slice of traybake <br>\\nTowel, robe and slippers <br>\\n30 minute treatment. <br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29794\\/4e29c52f-2b9a-428a-a5fd-c0517fc35e47.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":80",
+      "figureGBP": 80,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "underscar-serenity-half-day",
+      "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Serenity Half Spa Day\",\"description\":\"<div><p>Unwind at the Spa at Underscar just beyond Keswick, nestled in a stunning natural setting. Embark on a journey to serenity with our Serenity Half Spa Day, carefully crafted to envelop you in an oasis of calm. Immerse yourself in our facilities including: Pool, Jacuzzi, Sauna, Steam Room, and Gym, as you escape into a world of &nbsp;relaxation.<br>\\n <br>\\nChoose your moment of bliss with a morning retreat from 9am to 1:15pm or an afternoon serenade from 1pm to 5:15pm. As you unwind, get cozy in the plush comfort of the provided towel, robe, and slippers and enjoy a light refreshment.<br>\\n <br>\\nElevate your sense of peace with a 30-minute treatment, where you have the choice between a soothing Back, Neck, and Shoulder Massage, a relaxing Walkers Leg Massage or a rejuvenating Germaine De Capuccini Express Facial. Each option is meticulously designed to restore harmony to both body and mind.<br>\\nThis tranquil escape is a sanctuary for those seeking a peaceful interlude. <br>\\n <br>\\nThis spa day package includes:<br>\\nUse of the Pool, Jacuzzi, Sauna, Steam Room and Gym <br>\\nMorning 9am-1:15pm or Afternoon 1pm-5:15pm<br>\\nLight refreshment includes a drink (hot drink or fresh orange\\/apple juice) and a slice of traybake &nbsp;<br>\\nTowel, robe and slippers<br>\\n30 minute treatment.<br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over.<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29390\\/a6945ad8-bbe0-43a0-8217-6290f1aff78f.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":90",
+      "figureGBP": 90,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "underscar-mindfulness-half-day",
+      "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Mindfulness Half Spa Day\",\"description\":\"<div><p>Embark on a journey of profound relaxation with our exclusive Mindfulness Half Spa Day, set against the beautiful backdrop of Skiddaw just outside the market town of Keswick. Every detail is brought together to transport you to a realm of pure relaxation. Immerse yourself in an oasis of serenity with access to our luxurious facilities including: Pool, Jacuzzi, Sauna, Steam Room, and a cutting-edge Gym.<br>\\n <br>\\nSelect your preferred time slot, either the morning hours from 9am to 1:15pm or the afternoon from 1pm to 5:15pm. As you surrender to relaxation, wrap yourself in the sumptuous embrace of the provided towel, robe, and slippers, while savouring a delightful light refreshment.<br>\\n <br>\\nAs the crowning jewel of your experience, enjoy a 30-minute Back Massage featuring the exquisite aromas of a NEOM treatment candle. Choose from three indulgent options: <br>\\n- De-Stress<br>\\n- Sleep<br>\\n- Mood Boost. <br>\\n <br>\\nEach designed to elevate your senses and promote profound well-being.<br>\\n <br>\\nThis spa day package includes:<br>\\nUse of the Pool, Jacuzzi, Sauna, Steam Room and Gym <br>\\nMorning 9am-1:15pm or Afternoon 1pm-5:15pm<br>\\nLight refreshment includes a drink (hot drink or fresh orange\\/apple juice) and a slice of traybake &nbsp;<br>\\nTowel, robe and slippers<br>\\n30 minute Back Massage using a NEOM treatment candle.<br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over.<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29725\\/881f4858-021d-48b1-8112-d61b73c9cf68.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":100",
+      "figureGBP": 100,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "underscar-wellbeing-full-day",
+      "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Wellbeing Full Spa Day\",\"description\":\"<div><p>Indulge in a luxurious spa day where all your senses are pampered. <br>\\n <br>\\nCreated by the Neom team of 11 experts, these treatments combine 6 of the most effective therapies &ndash; Meditation, Shiatsu, Cranio, Thai Massage, Trigger Point and Reflexology. Each treatment begins with a relaxing guided meditation, reflex foot massage and breathing techniques. Throughout the treatment we drizzle the warm oil of a NEOM Intensive Treatment Candle over the skin.<br>\\n <br>\\nThis spa day package includes:<br>\\nUse of the Pool, Jacuzzi, Sauna, Steam Room and Gym <br>\\n9am-5:15pm<br>\\nHigh Tea<br>\\nTowel, robe and slippers<br>\\n1 hour NEOM Treatment<br>\\n <br>\\nChoose one of the following:<br>\\n- De-Stress<br>\\n- Sleep<br>\\n- Mood Boost<br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over.<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29797\\/7dfdad20-ceeb-49f8-8408-eac581634669.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":150",
+      "figureGBP": 150,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "underscar-peaceful-full-day",
+      "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Peaceful Full Spa Day\",\"description\":\"<div><p>Nestled under the slopes of Skiddaw and Latrigg just on the out skirts of Keswick immerse yourself in a day of calm with our Peaceful Full Spa Day, a package tailored to provide the ultimate relaxation for mind, body and spirit. <br>\\n <br>\\nFrom 9 am to 5:15 pm, indulge in our facilities, featuring:<br>\\nPool, Jacuzzi, Sauna, Steam Room, and a fully-equipped Gym.<br>\\n <br>\\nEnjoy a High Tea wrapped in the luxury towel, robe, and slippers provided. <br>\\n <br>\\nThe highlight of your day unfolds with a blissful 1-hour treatment. Choose two from our curated selection, including the calming Back, Neck, and Shoulder Massage, the relaxing Walkers Leg Massage, the rejuvenating Germaine De Cappucini Express Facial, the aromatic Foot Spa, the indulgent Hand Spa, or the Mini Manicure and Mini Pedicure. <br>\\nLet the Peaceful Full Spa Day be a sanctuary of calm where every moment is designed to rejuvenate you.<br>\\n <br>\\nThis spa day package includes:<br>\\nUse of the Pool, Jacuzzi, Sauna, Steam Room and Gym <br>\\n9am-5:15pm<br>\\nHigh Tea<br>\\nTowel, robe and slippers<br>\\n1 Hour of Treatment <br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over.<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29391\\/91d5d620-e4c6-4bcc-8a92-fca161c78542.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":170",
+      "figureGBP": 170,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "underscar-reflection-full-day",
+      "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Reflection Full Spa Day\",\"description\":\"<div><p>Relax and unwind fully with our Reflection Full Spa Day, treat yourself to the lavish escape you deserve &nbsp;&ndash; a day designed to rejuvenate your mind, body, and soul. From 9 am to 5:15 pm, immerse yourself in the spa world, taking advantage of our facilities, including: <br>\\nPool, Jacuzzi, Sauna, Steam Room, and state-of-the-art Gym.<br>\\n <br>\\nAs you embark on this sensory journey, relish in the blissful ambiance of our spa while cocooned in a plush robe and comfortable slippers, provided along with a soft towel for your convenience.<br>\\nElevate your spa day with a High Tea, offering a delightful selection of treats to tantalize your taste buds and complement your pampering experience.<br>\\n <br>\\nThe highlight of your day awaits with two hours of indulgent treatments. Choose from our curated selection of premium therapies, including a Full Body Massage, a rejuvenating Germaine De Cappucini Facial, Gel Luxury Manicure and Gel Luxury Pedicure. Please choose 2.<br>\\n <br>\\nThis spa day package includes:<br>\\nUse of the Pool, Jacuzzi, Sauna, Steam Room and Gym <br>\\n9am-5:15pm<br>\\nHigh Tea<br>\\nTowel, robe and slippers<br>\\nTwo hours of Treatment.<br>\\n <br>\\nALL spa day guests MUST BE 16 years old and over.<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/29392\\/840caaee-fa13-488a-a45a-8a1cbecd89b0.jpg\",\"sku\":null,\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":210",
+      "figureGBP": 210,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    }
+  ]
+}

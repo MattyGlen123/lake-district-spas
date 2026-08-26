@@ -1,8 +1,22 @@
 # Portal tier — try.be JSON-LD (North Lakes 12, Underscar 19)
 
-Status: ready-for-agent
+Status: ready-for-human — built, run complete, awaiting review
 Type: AFK
 Assignee: (unclaimed)
+
+## Outcome (2026-08-26)
+
+Built and run. 12 booking items fetched, **17/17 passes grounded, 0 flags**. North Lakes: all 10
+prices changed (+6.8% to +12%), exactly as the spike predicted 18 days earlier. Underscar: 7/7
+unchanged. `check-invariant.mjs` exit 0 across both spas. Typecheck clean, 763 tests pass.
+
+- New `gbp-integer` arithmetic mode in `gate.mjs` (+6 unit tests).
+- Fan-out (2 passes : 1 booking item) resolved in the caller via synthetic per-variant
+  `bookingUrl`s — `matching.mjs` untouched, tier 1 stayed honestly 1:1, 0 false missing flags.
+- Underscar's `lowPrice === highPrice` asserted on all 7 items rather than assumed.
+- 2 renames SUPPRESSED, not applied ("The Simple Ritual" → "Simple Ritual"): both re-slug to the
+  same id and would strip the weekday/weekend distinction. Rule documented in SKILL.md; code-level
+  guard filed as [issue 12](12-fanout-rename-guard.md).
 
 ## Parent
 

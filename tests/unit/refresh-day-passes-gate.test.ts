@@ -180,6 +180,90 @@ describe('gate 1 — arithmetic cases', () => {
     expect(r.reason).toBe('figure-not-in-quote');
   });
 
+  // try.be JSON-LD quotes whole pounds as a bare integer, no currency symbol.
+  const jsonLd =
+    '<script type="application/ld+json">{"@type":"Product","name":"Simple Ritual",' +
+    '"offers":{"@type":"AggregateOffer","lowPrice":68,"highPrice":78,"priceCurrency":"gbp"}}</script>';
+
+  it('grounds a whole-pound JSON-LD price (lowPrice 68 -> £68)', () => {
+    const r = one(jsonLd, {
+      passId: 'simple-ritual-weekday',
+      passName: 'Simple Ritual',
+      quote: '{"@type":"Product","name":"Simple Ritual","offers":{"@type":"AggregateOffer","lowPrice":68',
+      figureGBP: 68,
+      storedGBP: 63,
+      arithmetic: 'gbp-integer',
+      quotedFigure: 68,
+    });
+    expect(r.grounded).toBe(true);
+  });
+
+  it('grounds the highPrice variant of the same item', () => {
+    const r = one(jsonLd, {
+      passId: 'simple-ritual-weekend',
+      passName: 'Simple Ritual',
+      quote:
+        '{"@type":"Product","name":"Simple Ritual","offers":{"@type":"AggregateOffer","lowPrice":68,"highPrice":78',
+      figureGBP: 78,
+      storedGBP: 73,
+      arithmetic: 'gbp-integer',
+      quotedFigure: 78,
+    });
+    expect(r.grounded).toBe(true);
+  });
+
+  it('demotes a gbp-integer quote whose integer is not the figure (pence read as pounds)', () => {
+    const r = one(jsonLd, {
+      passId: 'simple-ritual-weekday',
+      passName: 'Simple Ritual',
+      quote: '{"@type":"Product","name":"Simple Ritual","offers":{"@type":"AggregateOffer","lowPrice":68',
+      figureGBP: 6800,
+      arithmetic: 'gbp-integer',
+      quotedFigure: 68,
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('arithmetic-mismatch');
+  });
+
+  it('demotes a non-integer gbp-integer figure (shape cannot produce one)', () => {
+    const r = one(jsonLd, {
+      passId: 'simple-ritual-weekday',
+      passName: 'Simple Ritual',
+      quote: '{"@type":"Product","name":"Simple Ritual","offers":{"@type":"AggregateOffer","lowPrice":68',
+      figureGBP: 68.5,
+      arithmetic: 'gbp-integer',
+      quotedFigure: 68.5,
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('arithmetic-mismatch');
+  });
+
+  it('demotes a gbp-integer quote when the integer is absent from the span', () => {
+    const r = one(jsonLd, {
+      passId: 'simple-ritual-weekday',
+      passName: 'Simple Ritual',
+      quote: '{"@type":"Product","name":"Simple Ritual"',
+      figureGBP: 68,
+      arithmetic: 'gbp-integer',
+      quotedFigure: 68,
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('figure-not-in-quote');
+  });
+
+  it('does not match a gbp-integer figure embedded in a longer number', () => {
+    const r = one('<script>{"name":"Ritual","lowPrice":6800}</script>', {
+      passId: 'simple-ritual-weekday',
+      passName: 'Ritual',
+      quote: '{"name":"Ritual","lowPrice":6800}',
+      figureGBP: 68,
+      arithmetic: 'gbp-integer',
+      quotedFigure: 68,
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('figure-not-in-quote');
+  });
+
   it('grounds a per-couple price (quoted £95 per person -> stored £190 group total)', () => {
     const r = one(couple, {
       passId: 'couples-escape',

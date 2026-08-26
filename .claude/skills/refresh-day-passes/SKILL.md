@@ -30,11 +30,13 @@ Implemented tiers:
 
 ⚠️ **Multi-column brochures weaken gate 2.** `pdftotext -layout` flattens side-by-side package columns into interleaved lines, and the gate normalizes whitespace away — so a span can contain the right pass name next to a *neighbouring* package's price and still pass contiguity. When a pdf-tier quote's span contains more than one price, verify the column alignment in the raw text layer by hand before applying, and say so in evidence.md. See `.scratch/day-pass-refresh/issues/11-pdf-multicolumn-contiguity.md`.
 
-- `portal-onejourney` — Appleby (15), sole spa on this tier. Prices live only in the booking portal, so fetch each pass's **`bookingUrl`, not `dayPassUrl`** — one artifact per pass (`spa-<id>-<item>.html`, `<item>` = the trailing path segment of the bookingUrl), with `scripts/fetch.mjs` exactly as the html tier uses it. The page embeds a React-Query SSR payload; quote the contiguous span from the item's `"name":"…"` through its `"price":{"amount":<pence>`, with `arithmetic: "pence"`. See "Portal tier extraction" below.
+- `portal-onejourney` — Appleby (15), sole spa on this tier. Prices live only in the booking portal, so fetch each pass's **`bookingUrl`, not `dayPassUrl`** — one page per pass (`<item>` = the trailing path segment of the bookingUrl), with `scripts/fetch.mjs` exactly as the html tier uses it. Those pages are working files: they are bundled and trimmed into a single committed `spa-<id>.html` (see step 3b), which is what the gate greps and the PR ships. The page embeds a React-Query SSR payload; quote the contiguous span from the item's `"name":"…"` through its `"price":{"amount":<pence>`, with `arithmetic: "pence"`. See "Portal tier extraction (onejourney SSR)" below.
 
-**Portal tiers are per-vendor, not per-portal.** The four portal spas split by whether their tenant server-renders, and that cuts across both vendors — do not generalize one spa's rule to another. Appleby (onejourney) server-renders; Lakeside (9, also onejourney) does NOT and is unimplemented (see `.scratch/day-pass-refresh/issues/03c-portal-lakeside-shell.md`); North Lakes (12) and Underscar (19) are try.be, whose JSON-LD prices are in **whole pounds, not pence**, and are unimplemented (see `03b-portal-trybe-jsonld.md`).
+- `portal-trybe` — North Lakes (12), Underscar (19). Prices live only in the booking portal, so fetch each pass's **`bookingUrl`, not `dayPassUrl`**, with `scripts/fetch.mjs` exactly as the html tier uses it — one page per DISTINCT booking item. Those pages are working files: they are bundled and trimmed into a single committed `spa-<id>.html` (see step 3b), which is what the gate greps and the PR ships. try.be renders a Vite SPA shell, but it **server-renders an `application/ld+json` `Product` block** carrying the item name and price, which plain curl gets. See "Portal tier extraction (try.be JSON-LD)" below.
 
-If a targeted spa is on no implemented tier (Lakeside 9, North Lakes 12, Underscar 19), report "tier not implemented in this slice" and stop for that spa — do not fetch. In particular **never point the html-tier fetch at a Lakeside bookingUrl**: it returns HTTP 200 and a shell full of Elemis retail-shop prices with no day-pass data, so a quote can ground a real-looking figure to entirely the wrong product.
+**Portal tiers are per-vendor, not per-portal.** The four portal spas split by whether their tenant server-renders, and that cuts across both vendors — never generalize one spa's rule to another. Appleby (onejourney) server-renders, prices in **pence**; North Lakes (12) and Underscar (19) are try.be and server-render a JSON-LD block, prices in **whole pounds**; Lakeside (9, also onejourney) does NOT server-render and is unimplemented (see `.scratch/day-pass-refresh/issues/03c-portal-lakeside-shell.md`).
+
+If a targeted spa is on no implemented tier (Lakeside 9), report "tier not implemented in this slice" and stop for that spa — do not fetch. In particular **never point the html-tier fetch at a Lakeside bookingUrl**: it returns HTTP 200 and a shell full of Elemis retail-shop prices with no day-pass data, so a quote can ground a real-looking figure to entirely the wrong product.
 
 ### Portal tier extraction (onejourney SSR)
 
@@ -48,6 +50,27 @@ If a targeted spa is on no implemented tier (Lakeside 9, North Lakes 12, Undersc
 - **Decode before writing data.** The reverse applies to renames: `packageName` in the data file takes the decoded human form (`&`). Same string, two representations — artifact-literal for the gate, decoded for the data.
 - An empty SSR slot (`"queries":[]`) means the tenant does not server-render. Treat it as tier-not-implemented, never as a fetch to salvage from the shell.
 - The payload is emitted twice, camelCase and snake_case. Quote from the camelCase copy; gate 3 poison-scans every occurrence of a repeated span, which is correct and was verified clean.
+
+### Portal tier extraction (try.be JSON-LD)
+
+```json
+{"@context":"https://schema.org/","@type":"Product","name":"Simple Ritual","description":"…",
+ "offers":{"@type":"AggregateOffer","lowPrice":68,"highPrice":78,"priceCurrency":"gbp"}}
+```
+
+- **Prices are whole pounds, not pence.** Use `arithmetic: "gbp-integer"` (`quotedFigure` = the same integer). `none` rejects it — there is no `£` in the JSON, only `"priceCurrency":"gbp"` — and `pence` would demand `figure × 100`.
+- **Quote** = the contiguous span from `{"@context":"https:\/\/schema.org\/"` through **the pass's own price key** (`"lowPrice":<n>` or `"highPrice":<n>`). Ending the span at that key is what makes weekday-vs-weekend grounding meaningful rather than "some number appears".
+  - ⚠️ A `highPrice` span necessarily contains `lowPrice` too (it precedes it in the JSON). Gate 1 proves the *claimed* figure is present, which is the right claim, but the span is not exclusive — note it in evidence.md.
+- **`passName`** is the JSON-LD `name` verbatim. These are plain ASCII, so unlike the onejourney tier there is no JSON-escape trap.
+
+#### Fan-out: two passes, one booking item
+
+North Lakes stores 10 passes behind only **5 booking items** — `lowPrice`/`highPrice` are the weekday/weekend prices of one item. Underscar is 1:1 (its `lowPrice === highPrice` on all 7; assert this rather than assuming it).
+
+Tier-1 matching keys on the booking-item id and is strictly 1:1, so a fan-out item would match only ONE of its two passes and orphan the other as a false `missingFlag`. Resolve it **in the caller, not by changing `matching.mjs`**: build a synthetic per-variant `bookingUrl` (`<real-url>-weekday` / `-weekend`, derived from the pass's `daysAvailable`) on BOTH the `existing` and `fetched` sides. Tier 1 is then honestly 1:1 — two distinct bookable variants of one item. Keep the real URL for evidence and the PR.
+
+**Fan-out passes NEVER auto-apply a rename**, even on a tier-1 match. The source `name` describes the *item*, which spans both variants, while our id and `packageName` carry a weekday/weekend distinction the source does not have. Applying it destroys that distinction and re-slugs both passes to the SAME id — verified: `planRename` returns `applied: true` with `newId: 'north-lakes-simple-ritual'` for BOTH `…-weekday` and `…-weekend`, i.e. silent duplicate ids. Render such renames as ⚠️ "possible rename: X → Y" suggestions for a human, exactly like a tier-3 suggestion. See `.scratch/day-pass-refresh/issues/12-fanout-rename-guard.md`.
+
 
 ## Procedure
 
@@ -190,8 +213,11 @@ Any `documentYear` older than `runYear` demotes with `pdf-vintage-stale` — see
 | `arithmetic` | Span shows | `quotedFigure` | Gate proves |
 | --- | --- | --- | --- |
 | `none` (default) | `£115` | (ignored) | `£<figureGBP>` in span |
-| `pence` (portal tier) | `"price":14000` | `14000` | integer in span AND `= figureGBP × 100` |
+| `pence` (portal, onejourney) | `"price":{"amount":14000` | `14000` | integer in span AND `= figureGBP × 100` |
+| `gbp-integer` (portal, try.be) | `"lowPrice":68` | `68` | integer in span AND `= figureGBP` (identity; figure must be a whole number) |
 | `per-couple` | `£95 per person` | `95` | `£95` in span AND `figureGBP = 95 × 2` (group total) |
+
+`pence` and `gbp-integer` both match the figure as a **bare standalone integer** (safe: the span is a JSON fragment, not prose). `none` requires a literal `£`. Picking the wrong one of `pence`/`gbp-integer` cannot silently pass — each proves a different arithmetic relation, so reading pence as pounds demotes with `arithmetic-mismatch`.
 
 Run:
 
@@ -253,5 +279,5 @@ Open as DRAFT via `gh pr create --draft` (gh lives at `/opt/homebrew/bin/gh`).
 
 ## Later slices (stubs only — do not build here)
 
-- Portal tier, try.be half (North Lakes 12, Underscar 19) — JSON-LD prices are whole pounds and fit **no existing arithmetic case**; needs a new bare-integer/identity mode in `gate.mjs`. See issue 03b.
 - Portal tier, Lakeside (9) — no SSR payload; needs a rendered/API artifact, not a curl one. See issue 03c.
+- Fan-out rename guard — the "never auto-rename a fan-out pass" rule above is documented and hand-applied, not yet enforced in code. See issue 12.

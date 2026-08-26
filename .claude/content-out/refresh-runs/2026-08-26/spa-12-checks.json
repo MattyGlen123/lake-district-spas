@@ -1,0 +1,92 @@
+[
+  {
+    "passId": "north-lakes-simple-ritual-weekday",
+    "passName": "Simple Ritual",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Simple Ritual\",\"description\":\"<div><p>For those looking to enjoy a day by the pool, using our stunning facilities, this is the perfect day for you to unwind. Your day includes full use of the Spa facilities and a light lunch or afternoon tea.<\\/p><p>Please be advised that our aqua classes run at the following times:<\\/p><p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p><p>TUESDAY &ndash; 12:30pm - 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43789\\/547475a9-935d-4599-b83c-27a5616003f4.jpg\",\"sku\":\"SIMPLERITUAL\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":68",
+    "figureGBP": 68,
+    "storedGBP": 63,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 68
+  },
+  {
+    "passId": "north-lakes-simple-ritual-weekend",
+    "passName": "Simple Ritual",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Simple Ritual\",\"description\":\"<div><p>For those looking to enjoy a day by the pool, using our stunning facilities, this is the perfect day for you to unwind. Your day includes full use of the Spa facilities and a light lunch or afternoon tea.<\\/p><p>Please be advised that our aqua classes run at the following times:<\\/p><p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p><p>TUESDAY &ndash; 12:30pm - 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43789\\/547475a9-935d-4599-b83c-27a5616003f4.jpg\",\"sku\":\"SIMPLERITUAL\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":68,\"highPrice\":78",
+    "figureGBP": 78,
+    "storedGBP": 73,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 78
+  },
+  {
+    "passId": "north-lakes-morning-ritual-weekday",
+    "passName": "Morning Ritual",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Morning Ritual\",\"description\":\"<div><p>Experience a morning of relaxation with a 50 minute treatment or a choice of two 25 minute treatments, along with full use of our Spa facilities and a light lunch.<\\/p>\\n<p>Please be advised that our aqua classes run at the following times:<\\/p>\\n<p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p>\\n<p>TUESDAY &ndash; 12.30pm &ndash; 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43792\\/b1d91263-0cac-46da-93b5-66bdcb420117.jpg\",\"sku\":\"MORNINGRITUAL\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":139",
+    "figureGBP": 139,
+    "storedGBP": 126,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 139
+  },
+  {
+    "passId": "north-lakes-morning-ritual-weekend",
+    "passName": "Morning Ritual",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Morning Ritual\",\"description\":\"<div><p>Experience a morning of relaxation with a 50 minute treatment or a choice of two 25 minute treatments, along with full use of our Spa facilities and a light lunch.<\\/p>\\n<p>Please be advised that our aqua classes run at the following times:<\\/p>\\n<p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p>\\n<p>TUESDAY &ndash; 12.30pm &ndash; 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43792\\/b1d91263-0cac-46da-93b5-66bdcb420117.jpg\",\"sku\":\"MORNINGRITUAL\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":139,\"highPrice\":149",
+    "figureGBP": 149,
+    "storedGBP": 136,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 149
+  },
+  {
+    "passId": "north-lakes-afternoon-ritual-weekday",
+    "passName": "Afternoon Ritual",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Afternoon Ritual\",\"description\":\"<div><p>If you are looking for a leisurely swim and relaxing spa treatment, followed by a delicious afternoon tea whilst tucked up in your robe and slippers overlooking the pool, then this is perfect Spa Day for you. With full use of the Spa facilities, Afternoon tea plus a 50 Minute Treatment, or your choice of two 25 minute treatments, you can simply spend a few glorious hours enjoying some me-time or with family and friends.<\\/p>\\n<p>Please be advised that our aqua classes run at the following times:<\\/p>\\n<p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p>\\n<p>TUESDAY &ndash; 12:30pm - 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43795\\/9e690a3b-5059-4e56-97d3-9ad07cd517b2.jpg\",\"sku\":\"AFTERNOONRITUAL\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":139",
+    "figureGBP": 139,
+    "storedGBP": 126,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 139
+  },
+  {
+    "passId": "north-lakes-afternoon-ritual-weekend",
+    "passName": "Afternoon Ritual",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Afternoon Ritual\",\"description\":\"<div><p>If you are looking for a leisurely swim and relaxing spa treatment, followed by a delicious afternoon tea whilst tucked up in your robe and slippers overlooking the pool, then this is perfect Spa Day for you. With full use of the Spa facilities, Afternoon tea plus a 50 Minute Treatment, or your choice of two 25 minute treatments, you can simply spend a few glorious hours enjoying some me-time or with family and friends.<\\/p>\\n<p>Please be advised that our aqua classes run at the following times:<\\/p>\\n<p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p>\\n<p>TUESDAY &ndash; 12:30pm - 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43795\\/9e690a3b-5059-4e56-97d3-9ad07cd517b2.jpg\",\"sku\":\"AFTERNOONRITUAL\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":139,\"highPrice\":149",
+    "figureGBP": 149,
+    "storedGBP": 136,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 149
+  },
+  {
+    "passId": "north-lakes-twilight-ritual-weekday",
+    "passName": "Twilight Ritual",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Twilight Ritual\",\"description\":\"<div><p>What better way to escape the hustle and bustle of a busy working week than with our Twilight Spa Day?<\\/p>\\n<p>Arrive any time after 4 pm and change into your robe and slippers, before taking a dip in the pool.<\\/p>\\n<p>Enjoy a 50 minute treatment or your choice of two 25 minute treatments and then relax wrapped up on our lounger before spending more time in the Spa, until your feeling completely recharged.<\\/p>\\n<p>Once you&rsquo;ve changed, head down to our restaurant anytime after 6.30 pm to enjoy the main course from our Chefs Table and a glass of Prosecco&hellip;just perfect.<\\/p>\\n<p>Please be advised that our aqua classes run at the following times:<\\/p>\\n<p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p>\\n<p>TUESDAY &ndash; 12:30pm - 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43796\\/eec945dc-be17-477e-9737-ca8d5c068535.jpg\",\"sku\":\"TWILIGHTRITUAL\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":139",
+    "figureGBP": 139,
+    "storedGBP": 126,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 139
+  },
+  {
+    "passId": "north-lakes-twilight-ritual-weekend",
+    "passName": "Twilight Ritual",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Twilight Ritual\",\"description\":\"<div><p>What better way to escape the hustle and bustle of a busy working week than with our Twilight Spa Day?<\\/p>\\n<p>Arrive any time after 4 pm and change into your robe and slippers, before taking a dip in the pool.<\\/p>\\n<p>Enjoy a 50 minute treatment or your choice of two 25 minute treatments and then relax wrapped up on our lounger before spending more time in the Spa, until your feeling completely recharged.<\\/p>\\n<p>Once you&rsquo;ve changed, head down to our restaurant anytime after 6.30 pm to enjoy the main course from our Chefs Table and a glass of Prosecco&hellip;just perfect.<\\/p>\\n<p>Please be advised that our aqua classes run at the following times:<\\/p>\\n<p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p>\\n<p>TUESDAY &ndash; 12:30pm - 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43796\\/eec945dc-be17-477e-9737-ca8d5c068535.jpg\",\"sku\":\"TWILIGHTRITUAL\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":139,\"highPrice\":149",
+    "figureGBP": 149,
+    "storedGBP": 136,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 149
+  },
+  {
+    "passId": "north-lakes-pure-luxury-weekday",
+    "passName": "Pure Luxury Spa Experience",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Pure Luxury Spa Experience\",\"description\":\"<div><p>This therapeutic Spa day provides you with the opportunity to experience our most exclusive Spa treatments.<\\/p>\\n<p>Your day includes four hours to relax and enjoy the Spa facilities before you indulge in the full body exfoliation, pure bliss!<\\/p>\\n<p>After a healthy light lunch with prosecco, your treatments continue with the back, face and scalp treatment and the foot ritual treatment. All finished off with a cream tea.<\\/p>\\n<p>Please be advised that our aqua classes run at the following times:<\\/p>\\n<p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p>\\n<p>TUESDAY &ndash; 12:30pm - 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43801\\/c0518639-a4fe-419a-a116-9a056626e18b.jpg\",\"sku\":\"PURELUXURYSPAACCESS\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":280",
+    "figureGBP": 280,
+    "storedGBP": 250,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 280
+  },
+  {
+    "passId": "north-lakes-pure-luxury-weekend",
+    "passName": "Pure Luxury Spa Experience",
+    "quote": "{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Product\",\"name\":\"Pure Luxury Spa Experience\",\"description\":\"<div><p>This therapeutic Spa day provides you with the opportunity to experience our most exclusive Spa treatments.<\\/p>\\n<p>Your day includes four hours to relax and enjoy the Spa facilities before you indulge in the full body exfoliation, pure bliss!<\\/p>\\n<p>After a healthy light lunch with prosecco, your treatments continue with the back, face and scalp treatment and the foot ritual treatment. All finished off with a cream tea.<\\/p>\\n<p>Please be advised that our aqua classes run at the following times:<\\/p>\\n<p>MONDAY &ndash; 12:15pm - 1:00pm<\\/p>\\n<p>TUESDAY &ndash; 12:30pm - 1:15pm<\\/p><\\/div>\\n\",\"image\":\"https:\\/\\/cdn.try.be\\/43801\\/c0518639-a4fe-419a-a116-9a056626e18b.jpg\",\"sku\":\"PURELUXURYSPAACCESS\",\"offers\":{\"@type\":\"AggregateOffer\",\"lowPrice\":280,\"highPrice\":290",
+    "figureGBP": 290,
+    "storedGBP": 260,
+    "arithmetic": "gbp-integer",
+    "quotedFigure": 290
+  }
+]
