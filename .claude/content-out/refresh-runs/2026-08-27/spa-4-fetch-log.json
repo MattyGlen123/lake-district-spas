@@ -1,0 +1,299 @@
+{
+  "spaId": 4,
+  "spaName": "The Daffodil Hotel & Spa",
+  "tier": "html",
+  "runDate": "2026-08-27",
+  "fetchedAt": "2026-08-27 20:04 BST",
+  "committedArtifact": "spa-4.html (trimmed bundle of the 5 reachable pages)",
+  "pages": [
+    {
+      "page": "the-spa",
+      "role": "committed-artifact",
+      "passIds": [
+        "daffodil-spa-facilities-weekday",
+        "daffodil-spa-facilities-weekend"
+      ],
+      "url": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa/",
+      "artifact": "the-spa.html (working file, not committed)",
+      "ok": true,
+      "botBlocked": false,
+      "error": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "at": "2026-08-27T19:04:39.793Z",
+          "method": "curl",
+          "httpCode": "200",
+          "curlError": null,
+          "bytes": 78691
+        }
+      ]
+    },
+    {
+      "page": "afternoon-bliss",
+      "role": "committed-artifact",
+      "passIds": [
+        "daffodil-afternoon-bliss"
+      ],
+      "url": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/afternoon-bliss/",
+      "artifact": "afternoon-bliss.html (working file, not committed)",
+      "ok": true,
+      "botBlocked": false,
+      "error": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "at": "2026-08-27T19:04:40.354Z",
+          "method": "curl",
+          "httpCode": "200",
+          "curlError": null,
+          "bytes": 55567
+        }
+      ]
+    },
+    {
+      "page": "simply-spa-time",
+      "role": "committed-artifact",
+      "passIds": [
+        "daffodil-simply-spa-time"
+      ],
+      "url": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/simply-spa-time/",
+      "artifact": "simply-spa-time.html (working file, not committed)",
+      "ok": true,
+      "botBlocked": false,
+      "error": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "at": "2026-08-27T19:04:40.533Z",
+          "method": "curl",
+          "httpCode": "200",
+          "curlError": null,
+          "bytes": 55791
+        }
+      ]
+    },
+    {
+      "page": "mud-rasul",
+      "role": "committed-artifact",
+      "passIds": [
+        "daffodil-mud-rasul-spa-for-two"
+      ],
+      "url": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/mud-rasul-and-spa-access-for-two/",
+      "artifact": "mud-rasul.html (working file, not committed)",
+      "ok": true,
+      "botBlocked": false,
+      "error": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "at": "2026-08-27T19:04:40.742Z",
+          "method": "curl",
+          "httpCode": "200",
+          "curlError": null,
+          "bytes": 55707
+        }
+      ]
+    },
+    {
+      "page": "twilight-spa",
+      "role": "committed-artifact",
+      "passIds": [
+        "daffodil-twilight-spa"
+      ],
+      "url": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/twilight-spa-offer/",
+      "artifact": "twilight-spa.html (working file, not committed)",
+      "ok": true,
+      "botBlocked": false,
+      "error": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "at": "2026-08-27T19:04:40.997Z",
+          "method": "curl",
+          "httpCode": "200",
+          "curlError": null,
+          "bytes": 55552
+        }
+      ]
+    },
+    {
+      "page": "its-all-good",
+      "role": "withdrawn-404",
+      "passIds": [
+        "daffodil-its-all-good-weekday",
+        "daffodil-its-all-good-weekend"
+      ],
+      "url": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/it-s-all-good-spa-day/",
+      "artifact": "its-all-good.html (working file, not committed)",
+      "ok": false,
+      "botBlocked": false,
+      "error": "HTTP 404",
+      "attempts": [
+        {
+          "attempt": 1,
+          "at": "2026-08-27T19:04:41.177Z",
+          "method": "curl",
+          "httpCode": "404",
+          "curlError": null,
+          "bytes": 58906
+        },
+        {
+          "attempt": 2,
+          "at": "2026-08-27T19:04:43.366Z",
+          "method": "curl",
+          "httpCode": "404",
+          "curlError": null,
+          "bytes": 58906
+        },
+        {
+          "attempt": 3,
+          "at": "2026-08-27T19:04:51.566Z",
+          "method": "curl",
+          "httpCode": "404",
+          "curlError": null,
+          "bytes": 58906
+        }
+      ]
+    },
+    {
+      "page": "do-not-disturb",
+      "role": "withdrawn-404",
+      "passIds": [
+        "daffodil-do-not-disturb-weekday",
+        "daffodil-do-not-disturb-weekend"
+      ],
+      "url": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/do-not-disturb-spa-day/",
+      "artifact": "do-not-disturb.html (working file, not committed)",
+      "ok": false,
+      "botBlocked": false,
+      "error": "HTTP 404",
+      "attempts": [
+        {
+          "attempt": 1,
+          "at": "2026-08-27T19:04:52.037Z",
+          "method": "curl",
+          "httpCode": "404",
+          "curlError": null,
+          "bytes": 58906
+        },
+        {
+          "attempt": 2,
+          "at": "2026-08-27T19:04:54.232Z",
+          "method": "curl",
+          "httpCode": "404",
+          "curlError": null,
+          "bytes": 58906
+        },
+        {
+          "attempt": 3,
+          "at": "2026-08-27T19:05:02.443Z",
+          "method": "curl",
+          "httpCode": "404",
+          "curlError": null,
+          "bytes": 58906
+        }
+      ]
+    },
+    {
+      "page": "offers-index",
+      "role": "corroboration",
+      "passIds": [],
+      "url": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/",
+      "artifact": "offers-index.html (working file, not committed)",
+      "ok": true,
+      "botBlocked": false,
+      "error": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "at": "2026-08-27T19:05:22.694Z",
+          "method": "curl",
+          "httpCode": "200",
+          "curlError": null,
+          "bytes": 60758
+        }
+      ]
+    },
+    {
+      "page": "simply-spa-day",
+      "role": "corroboration",
+      "passIds": [],
+      "url": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/simply-spa-day/",
+      "artifact": "simply-spa-day.html (working file, not committed)",
+      "ok": true,
+      "botBlocked": false,
+      "error": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "at": "2026-08-27T19:08:50.085Z",
+          "method": "curl",
+          "httpCode": "200",
+          "curlError": null,
+          "bytes": 55791
+        }
+      ]
+    },
+    {
+      "page": "autumn-indulgence",
+      "role": "corroboration",
+      "passIds": [],
+      "url": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/autumn-indulgence/",
+      "artifact": "autumn-indulgence.html (working file, not committed)",
+      "ok": true,
+      "botBlocked": false,
+      "error": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "at": "2026-08-27T19:09:54.059Z",
+          "method": "curl",
+          "httpCode": "200",
+          "curlError": null,
+          "bytes": 55613
+        }
+      ]
+    },
+    {
+      "page": "daffodil-spa-escape",
+      "role": "corroboration",
+      "passIds": [],
+      "url": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/daffodil-spa-escape/",
+      "artifact": "daffodil-spa-escape.html (working file, not committed)",
+      "ok": true,
+      "botBlocked": false,
+      "error": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "at": "2026-08-27T19:09:57.418Z",
+          "method": "curl",
+          "httpCode": "200",
+          "curlError": null,
+          "bytes": 56235
+        }
+      ]
+    },
+    {
+      "page": "prosecco-afternoon-tea",
+      "role": "corroboration",
+      "passIds": [],
+      "url": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/prosecco-afternoon-tea/",
+      "artifact": "prosecco-afternoon-tea.html (working file, not committed)",
+      "ok": true,
+      "botBlocked": false,
+      "error": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "at": "2026-08-27T19:09:57.602Z",
+          "method": "curl",
+          "httpCode": "200",
+          "curlError": null,
+          "bytes": 54532
+        }
+      ]
+    }
+  ]
+}

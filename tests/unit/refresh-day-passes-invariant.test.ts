@@ -38,12 +38,21 @@ function runCheck(
   spa: string,
   entries: { id: string; lastVerified: string }[],
   gateResults: { passId: string; grounded: boolean }[] | null,
+  withdrawn?: string[],
 ): { ok: boolean; exitCode: number; report: SpaReport[] } {
   writeFileSync(join(dataDir, `spa-${spa}-day-passes.ts`), dataFile(entries));
   const gatePath = join(runDir, `spa-${spa}-gate-results.json`);
   rmSync(gatePath, { force: true });
   if (gateResults) {
     writeFileSync(gatePath, JSON.stringify({ artifact: 'x', results: gateResults }));
+  }
+  const wdPath = join(runDir, `spa-${spa}-withdrawals.json`);
+  rmSync(wdPath, { force: true });
+  if (withdrawn) {
+    writeFileSync(
+      wdPath,
+      JSON.stringify({ withdrawn: withdrawn.map((passId) => ({ passId })) }),
+    );
   }
   try {
     const out = execFileSync('node', [CHECK, runDir, RUN_DATE, spa, dataDir], {
@@ -150,5 +159,59 @@ describe('refresh-day-passes invariant check script', () => {
     const expected = report[0].violations.map((v) => v.expected);
     expect(expected).toContain('a gate verdict');
     expect(expected).toContain('a data entry');
+  });
+
+  // Withdrawals (PRD §4a) — a deleted pass keeps its gate verdict as the
+  // evidence for why it went, but has no data entry by design.
+  describe('withdrawals', () => {
+    it('accepts a withdrawn pass: gate verdict present, data entry gone', () => {
+      const { ok, exitCode, report } = runCheck(
+        '4',
+        [{ id: 'kept', lastVerified: RUN_DATE }],
+        [
+          { passId: 'kept', grounded: true },
+          { passId: 'gone', grounded: false },
+        ],
+        ['gone'],
+      );
+      expect(ok).toBe(true);
+      expect(exitCode).toBe(0);
+      expect(report[0].violations).toEqual([]);
+    });
+
+    it('rejects a withdrawal that was reported but never applied', () => {
+      const { ok, report } = runCheck(
+        '4',
+        [
+          { id: 'kept', lastVerified: RUN_DATE },
+          { id: 'gone', lastVerified: '2026-01-22' },
+        ],
+        [
+          { passId: 'kept', grounded: true },
+          { passId: 'gone', grounded: false },
+        ],
+        ['gone'],
+      );
+      expect(ok).toBe(false);
+      expect(report[0].violations).toContainEqual({
+        passId: 'gone',
+        expected: 'removed (withdrawn)',
+        actual: 'still in data file',
+      });
+    });
+
+    it('still rejects a stray verdict that was NOT declared a withdrawal', () => {
+      const { ok, report } = runCheck(
+        '4',
+        [{ id: 'kept', lastVerified: RUN_DATE }],
+        [
+          { passId: 'kept', grounded: true },
+          { passId: 'gone', grounded: false },
+        ],
+        [],
+      );
+      expect(ok).toBe(false);
+      expect(report[0].violations.map((v) => v.expected)).toContain('a data entry');
+    });
   });
 });

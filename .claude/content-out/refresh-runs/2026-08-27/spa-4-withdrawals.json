@@ -1,0 +1,102 @@
+{
+  "spaId": 4,
+  "spaName": "The Daffodil Hotel & Spa",
+  "runDate": "2026-08-27",
+  "rule": "PRD §4a (withdrawals), added by the 2026-08-27 amendment",
+  "authorisation": "human-authorised",
+  "authorisationNote": "Condition 4 (priorSighting) is NOT met: this is the first run to see these four missing, so the automated rule would have left them as ⚠️ flags until a second sighting. Matthew authorised the deletion directly after reviewing this run. Condition 5 (noReferences) was met by cleaning the three referencing sites in the same commit, not by waiving it. Recorded as human-authorised so it is never mistaken for the rule having fired.",
+  "withdrawn": [
+    {
+      "passId": "daffodil-its-all-good-weekday",
+      "passName": "It's All Good Spa Day",
+      "storedGBP": 170,
+      "conditions": {
+        "pageGone": true,
+        "absentFromIndex": true,
+        "noSuccessor": true,
+        "priorSighting": false,
+        "noReferences": true
+      }
+    },
+    {
+      "passId": "daffodil-its-all-good-weekend",
+      "passName": "It's All Good Spa Day",
+      "storedGBP": 180,
+      "conditions": {
+        "pageGone": true,
+        "absentFromIndex": true,
+        "noSuccessor": true,
+        "priorSighting": false,
+        "noReferences": true
+      }
+    },
+    {
+      "passId": "daffodil-do-not-disturb-weekday",
+      "passName": "Do Not Disturb Spa Day",
+      "storedGBP": 185,
+      "conditions": {
+        "pageGone": true,
+        "absentFromIndex": true,
+        "noSuccessor": true,
+        "priorSighting": false,
+        "noReferences": true
+      }
+    },
+    {
+      "passId": "daffodil-do-not-disturb-weekend",
+      "passName": "Do Not Disturb Spa Day",
+      "storedGBP": 195,
+      "conditions": {
+        "pageGone": true,
+        "absentFromIndex": true,
+        "noSuccessor": true,
+        "priorSighting": false,
+        "noReferences": true
+      }
+    }
+  ],
+  "evidence": {
+    "pageGone": {
+      "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/it-s-all-good-spa-day/": "HTTP 404 on 3 attempts, botBlocked: false",
+      "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/do-not-disturb-spa-day/": "HTTP 404 on 3 attempts, botBlocked: false",
+      "source": "spa-4-fetch-log.json, pages with role 'withdrawn-404'"
+    },
+    "absentFromIndex": {
+      "indexUrl": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/",
+      "fetchedThisRun": true,
+      "listedOffers": [
+        "afternoon-bliss",
+        "autumn-indulgence",
+        "daffodil-spa-escape",
+        "early-bird",
+        "festive-breaks",
+        "gift-vouchers",
+        "mud-rasul-and-spa-access-for-two",
+        "prosecco-afternoon-tea",
+        "seasonal-getaway",
+        "simply-spa-day",
+        "stay-and-save",
+        "tour-de-france-early-booker",
+        "twilight-spa-offer"
+      ],
+      "note": "Neither it-s-all-good-spa-day nor do-not-disturb-spa-day appears."
+    },
+    "noSuccessor": {
+      "result": "successors: []",
+      "reason": "strict 1:1 needs exactly one vanished and one unmatched pass; this spa had four vanished and zero unmatched",
+      "source": "successor.mjs over spa-4-existing.json / spa-4-fetched.json / spa-4-match.json",
+      "candidatesRuledOutByHand": {
+        "daffodil-spa-escape": "overnight stay, £242pp, includes dinner credit + breakfast",
+        "prosecco-afternoon-tea": "afternoon tea £40pp, no spa access on the page",
+        "autumn-indulgence": "stay offer, no price on the page"
+      }
+    },
+    "noReferences": {
+      "cleanedInThisCommit": [
+        "src/data/faqs/spa-4-faqs.tsx — itsAllGoodWeekdayPrice + doNotDisturbWeekendPrice removed; range and treatment sentence re-pointed at Afternoon Bliss and Mud Rasul",
+        "src/data/location-faqs/grasmere-faqs.tsx — daffodilDoNotDisturbWeekendPrice removed; range re-pointed at Afternoon Bliss, 'nine packages' → 'six'"
+      ],
+      "verifiedAfterCleanup": "withdraw.mjs rescanned content/blog, src/data/faqs, src/data/location-faqs and reported references: [] for all four ids"
+    }
+  }
+}

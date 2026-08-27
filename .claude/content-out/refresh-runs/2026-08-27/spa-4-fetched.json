@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Spa Facilities",
+    "priceGBP": 35,
+    "spaDuration": 3,
+    "included": [
+      "3-hour spa access (10am-4pm)",
+      "33ft hydrotherapy pool with cascade features",
+      "Finnish sauna and steam room",
+      "Relaxation lounge"
+    ],
+    "bookingUrl": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa-weekday",
+    "_realUrl": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa/",
+    "_variant": "Monday - Thursday, 10am to 4pm",
+    "_fanOut": true
+  },
+  {
+    "name": "Spa Facilities",
+    "priceGBP": 45,
+    "spaDuration": 3,
+    "included": [
+      "3-hour spa access (10am-4pm)",
+      "33ft hydrotherapy pool with cascade features",
+      "Finnish sauna and steam room",
+      "Relaxation lounge"
+    ],
+    "bookingUrl": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa-weekend",
+    "_realUrl": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa/",
+    "_variant": "Friday - Sunday (and bank holidays), 10am - 4pm",
+    "_fanOut": true
+  },
+  {
+    "name": "Afternoon Bliss",
+    "priceGBP": 70,
+    "spaDuration": 3,
+    "included": [
+      "3-hour spa access (available 9am-4pm)",
+      "Full Afternoon Tea in lake view Dining Room",
+      "33ft hydrotherapy pool with cascade features",
+      "Finnish sauna and steam room"
+    ],
+    "bookingUrl": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/afternoon-bliss/",
+    "_fanOut": false
+  },
+  {
+    "name": "Simply Spa Time",
+    "priceGBP": 60,
+    "spaDuration": 2,
+    "included": [
+      "2-hour spa access (available 10am-3pm)",
+      "2-course lunch in Dining Room Restaurant",
+      "33ft hydrotherapy pool with cascade features",
+      "Finnish sauna and steam room",
+      "Relaxation lounge"
+    ],
+    "bookingUrl": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/simply-spa-time/",
+    "_fanOut": false
+  },
+  {
+    "name": "Mud Rasul & Spa Access for Two",
+    "priceGBP": 125,
+    "spaDuration": 2,
+    "included": [
+      "Self-administered Mud Rasul treatment",
+      "2-hour spa access including shower and changing room access (10am-4pm)",
+      "2-course lunch per person",
+      "Complimentary robes and slippers"
+    ],
+    "bookingUrl": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/mud-rasul-and-spa-access-for-two/",
+    "_fanOut": false
+  },
+  {
+    "name": "Twilight Spa",
+    "priceGBP": 40,
+    "spaDuration": 2,
+    "included": [
+      "2-hour spa access (available 4pm-7:45pm)",
+      "Glass of Prosecco",
+      "33ft hydrotherapy pool with cascade features",
+      "Finnish sauna and steam room",
+      "Relaxation lounge"
+    ],
+    "bookingUrl": "https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/twilight-spa-offer/",
+    "_fanOut": false
+  }
+]
