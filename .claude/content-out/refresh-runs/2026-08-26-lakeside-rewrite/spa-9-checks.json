@@ -1,0 +1,47 @@
+[
+  {
+    "passId": "lakeside-dip-and-dine",
+    "passName": "Dip & Dine",
+    "quote": "\"name\": \"Dip & Dine\",\n      \"image\": {\n        \"externalKey\": \"d88bfc560b264ac512aa5564820e3106\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/d88bfc560b264ac512aa5564820e3106.webp\"\n      },\n      \"price\": {\n        \"amount\": 2500",
+    "figureGBP": 25,
+    "storedGBP": 25,
+    "arithmetic": "pence",
+    "quotedFigure": 2500,
+    "bookability": {
+      "itemId": 18904,
+      "daysProbed": 14,
+      "daysWithSlots": 10,
+      "evidence": "\"itemId\": 18904,\n      \"name\": \"Dip & Dine\",\n      \"daysProbed\": 14,\n      \"daysWithSlots\": 10"
+    }
+  },
+  {
+    "passId": "lakeside-express-escape",
+    "passName": "Express Escape",
+    "quote": "\"name\": \"Express Escape\",\n      \"image\": {\n        \"externalKey\": \"d64a3fa6e323cef1f13ff3e0f9faa62b\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/d64a3fa6e323cef1f13ff3e0f9faa62b.webp\"\n      },\n      \"price\": {\n        \"amount\": 7000",
+    "figureGBP": 70,
+    "storedGBP": 70,
+    "arithmetic": "pence",
+    "quotedFigure": 7000,
+    "bookability": {
+      "itemId": 18905,
+      "daysProbed": 14,
+      "daysWithSlots": 10,
+      "evidence": "\"itemId\": 18905,\n      \"name\": \"Express Escape\",\n      \"daysProbed\": 14,\n      \"daysWithSlots\": 10"
+    }
+  },
+  {
+    "passId": "lakeside-signature-sanctuary-spa-day",
+    "passName": "Signature Sanctuary Spa Day",
+    "quote": "\"name\": \"Signature Sanctuary Spa Day\",\n      \"image\": {\n        \"externalKey\": \"88bd2b5bde0a9b3a6fad131ef20fc5a3\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/88bd2b5bde0a9b3a6fad131ef20fc5a3.webp\"\n      },\n      \"price\": {\n        \"amount\": 9500",
+    "figureGBP": 95,
+    "storedGBP": 95,
+    "arithmetic": "pence",
+    "quotedFigure": 9500,
+    "bookability": {
+      "itemId": 18912,
+      "daysProbed": 14,
+      "daysWithSlots": 11,
+      "evidence": "\"itemId\": 18912,\n      \"name\": \"Signature Sanctuary Spa Day\",\n      \"daysProbed\": 14,\n      \"daysWithSlots\": 11"
+    }
+  }
+]

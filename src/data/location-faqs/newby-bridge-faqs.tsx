@@ -32,14 +32,14 @@ export function getNewbyBridgeFAQs(spas: Spa[]): FAQ[] {
     ? getTreatmentBrandsText(lakeside.id)
     : null;
   const lakesideAgePolicy = lakeside ? getAgePolicy(lakeside) : null;
-  const lakesideSteamSwimPrice = lakeside
-    ? getDayPassPrice(lakeside.id, 'lakeside-steam-and-swim')
+  const lakesideDipDinePrice = lakeside
+    ? getDayPassPrice(lakeside.id, 'lakeside-dip-and-dine')
     : null;
-  const lakesideAfternoonTeaPrice = lakeside
-    ? getDayPassPrice(lakeside.id, 'lakeside-afternoon-tea-spa-day')
+  const lakesideSignaturePrice = lakeside
+    ? getDayPassPrice(lakeside.id, 'lakeside-signature-sanctuary-spa-day')
     : null;
-  const lakesideSeasonalPrice = lakeside
-    ? getDayPassPrice(lakeside.id, 'lakeside-seasonal-spa-day')
+  const lakesideExpressEscapePrice = lakeside
+    ? getDayPassPrice(lakeside.id, 'lakeside-express-escape')
     : null;
 
   // Location-wide values
@@ -90,10 +90,10 @@ export function getNewbyBridgeFAQs(spas: Spa[]): FAQ[] {
           >
             Day passes
           </Link>{' '}
-          are also availble and start from {lakesideSteamSwimPrice || '£30'}.
+          are also availble and start from {lakesideDipDinePrice || '£25'}.
         </>
       ),
-      schemaText: `Newby Bridge has two spa hotels at the southern tip of Lake Windermere. ${swan?.name || 'Swan Hotel Spa'} opened in 2022 on the banks of the River Leven with a five bubble Good Spa Guide rating, ${swanThermalCount || 5} thermal experiences including an outdoor Finnish sauna, a swim through hydrotherapy pool, and ${swanBrandsText || 'TempleSpa and Holte products'}. ${lakeside?.name || 'Lakeside Hotel & Spa'} sits directly on the lakeshore in a 17th century coaching inn with a 17 metre indoor pool, sauna, steam room, outdoor spa garden, and ${lakesideBrandsText || 'ELEMIS'} treatments. Day passes start from ${cheapestPrice || '£30'}.`,
+      schemaText: `Newby Bridge has two spa hotels at the southern tip of Lake Windermere. ${swan?.name || 'Swan Hotel Spa'} opened in 2022 on the banks of the River Leven with a five bubble Good Spa Guide rating, ${swanThermalCount || 5} thermal experiences including an outdoor Finnish sauna, a swim through hydrotherapy pool, and ${swanBrandsText || 'TempleSpa and Holte products'}. ${lakeside?.name || 'Lakeside Hotel & Spa'} sits directly on the lakeshore in a 17th century coaching inn with a 17 metre indoor pool, sauna, steam room, outdoor spa garden, and ${lakesideBrandsText || 'ELEMIS'} treatments. Day passes start from ${cheapestPrice || '£25'}.`,
     },
     {
       question:
@@ -136,7 +136,7 @@ export function getNewbyBridgeFAQs(spas: Spa[]): FAQ[] {
       question: 'How much does a spa day cost in Newby Bridge?',
       answer: (
         <>
-          Spa day prices in Newby Bridge start from {cheapestPrice || '£30'}{' '}
+          Spa day prices in Newby Bridge start from {cheapestPrice || '£25'}{' '}
           and range up to {swanFullWorksPrice || '£225'} depending on the spa
           and package you choose.{' '}
           <Link
@@ -145,25 +145,25 @@ export function getNewbyBridgeFAQs(spas: Spa[]): FAQ[] {
           >
             {lakeside?.name || 'Lakeside Hotel & Spa'}
           </Link>{' '}
-          offers the most affordable entry with its Steam and Swim pass at{' '}
-          {lakesideSteamSwimPrice || '£30'} for 3 hours of pool, sauna and
-          steam room access. The{' '}
+          offers the most affordable entry with its Dip &amp; Dine pass at{' '}
+          {lakesideDipDinePrice || '£25'} for 3 hours of pool, sauna and steam
+          room access plus a £15 food credit. The{' '}
           <Link
-            href={`/spa/${lakeside?.url || 'lakeside-hotel-spa'}#lakeside-seasonal-spa-day`}
+            href={`/spa/${lakeside?.url || 'lakeside-hotel-spa'}#lakeside-express-escape`}
             className="underline"
           >
-            Seasonal Spa Day
+            Express Escape
           </Link>{' '}
-          at {lakesideSeasonalPrice || '£90'} includes a full day with a 45 minute
-          treatment, and the{' '}
+          at {lakesideExpressEscapePrice || '£70'} adds a 30 minute ELEMIS
+          treatment and afternoon tea, and the{' '}
           <Link
-            href={`/spa/${lakeside?.url || 'lakeside-hotel-spa'}#lakeside-afternoon-tea-spa-day`}
+            href={`/spa/${lakeside?.url || 'lakeside-hotel-spa'}#lakeside-signature-sanctuary-spa-day`}
             className="underline"
           >
-            Afternoon Tea Spa Day
+            Signature Sanctuary Spa Day
           </Link>{' '}
-          at {lakesideAfternoonTeaPrice || '£150'} adds a 60 minute ELEMIS
-          treatment and afternoon tea.
+          at {lakesideSignaturePrice || '£95'} upgrades that to a 60 minute
+          ELEMIS treatment.
           <br />
           <br />
           At{' '}
@@ -200,7 +200,7 @@ export function getNewbyBridgeFAQs(spas: Spa[]): FAQ[] {
           advance booking for day passes.
         </>
       ),
-      schemaText: `Spa day prices in Newby Bridge start from ${cheapestPrice || '£30'} and range up to ${swanFullWorksPrice || '£225'}. ${lakeside?.name || 'Lakeside Hotel & Spa'} offers Steam and Swim at ${lakesideSteamSwimPrice || '£30'} for 3 hours, the Seasonal Spa Day at ${lakesideSeasonalPrice || '£90'} with a 45 minute treatment, and the Afternoon Tea Spa Day at ${lakesideAfternoonTeaPrice || '£150'} with a 60 minute ELEMIS treatment. ${swan?.name || 'Swan Hotel Spa'} starts from ${swanTwilightWeekdayPrice || '£35'} for a weekday Twilight Session, with the Full Works Holte Spa Day at ${swanFullWorksPrice || '£225'} including massage, facial, and dining.`,
+      schemaText: `Spa day prices in Newby Bridge start from ${cheapestPrice || '£25'} and range up to ${swanFullWorksPrice || '£225'}. ${lakeside?.name || 'Lakeside Hotel & Spa'} offers Dip & Dine at ${lakesideDipDinePrice || '£25'} for 3 hours plus a £15 food credit, the Express Escape at ${lakesideExpressEscapePrice || '£70'} with a 30 minute ELEMIS treatment and afternoon tea, and the Signature Sanctuary Spa Day at ${lakesideSignaturePrice || '£95'} with a 60 minute ELEMIS treatment. ${swan?.name || 'Swan Hotel Spa'} starts from ${swanTwilightWeekdayPrice || '£35'} for a weekday Twilight Session, with the Full Works Holte Spa Day at ${swanFullWorksPrice || '£225'} including massage, facial, and dining.`,
     },
     {
       question: 'Is there a family friendly spa in Newby Bridge?',
@@ -219,12 +219,12 @@ export function getNewbyBridgeFAQs(spas: Spa[]): FAQ[] {
           swimmers, and the poolside jacuzzi and outdoor fire pit are open to
           everyone. Spa access is included for all hotel guests, and the{' '}
           <Link
-            href={`/spa/${lakeside?.url || 'lakeside-hotel-spa'}#lakeside-steam-and-swim`}
+            href={`/spa/${lakeside?.url || 'lakeside-hotel-spa'}#lakeside-dip-and-dine`}
             className="underline"
           >
-            Steam and Swim
+            Dip &amp; Dine
           </Link>{' '}
-          day pass at {lakesideSteamSwimPrice || '£30'} is available to day
+          day pass at {lakesideDipDinePrice || '£25'} is available to day
           visitors of all ages too.
           <br />
           <br />
@@ -248,7 +248,7 @@ export function getNewbyBridgeFAQs(spas: Spa[]): FAQ[] {
           is another family friendly option just a mile away.
         </>
       ),
-      schemaText: `Yes. ${lakeside?.name || 'Lakeside Hotel & Spa'} is ${lakesideAgePolicy || 'family friendly'} and welcomes guests of all ages to its pool, sauna, steam room and outdoor spa garden. The 17 metre indoor pool has a beach style shallow area for younger swimmers. Spa access is included for hotel guests, and the Steam and Swim day pass at ${lakesideSteamSwimPrice || '£30'} is open to all ages. ${swan?.name || 'Swan Hotel Spa'} is ${swanAgePolicy || '18+ (16-17 with parent/guardian)'}, so children under 16 cannot use the spa. For family spa visits in Newby Bridge, Lakeside is the right choice.`,
+      schemaText: `Yes. ${lakeside?.name || 'Lakeside Hotel & Spa'} is ${lakesideAgePolicy || 'family friendly'} and welcomes guests of all ages to its pool, sauna, steam room and outdoor spa garden. The 17 metre indoor pool has a beach style shallow area for younger swimmers. Spa access is included for hotel guests, and the Dip & Dine day pass at ${lakesideDipDinePrice || '£25'} is open to all ages. ${swan?.name || 'Swan Hotel Spa'} is ${swanAgePolicy || '18+ (16-17 with parent/guardian)'}, so children under 16 cannot use the spa. For family spa visits in Newby Bridge, Lakeside is the right choice.`,
     },
   ];
 }

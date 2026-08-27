@@ -5,26 +5,20 @@ import { getDayPassPrice, getDayPassDuration } from '@/data/priced-content';
 
 export function getSpa9FAQs(spa: Spa): FAQ[] {
   // Extract dynamic values from day passes
-  const steamSwimPrice = getDayPassPrice(spa.id, 'lakeside-steam-and-swim');
-  const steamSwimDuration = getDayPassDuration(
+  const dipDinePrice = getDayPassPrice(spa.id, 'lakeside-dip-and-dine');
+  const dipDineDuration = getDayPassDuration(spa.id, 'lakeside-dip-and-dine');
+  const expressEscapePrice = getDayPassPrice(
     spa.id,
-    'lakeside-steam-and-swim'
+    'lakeside-express-escape'
   );
-  const twilightPrice = getDayPassPrice(spa.id, 'lakeside-twilight-swim-steam');
-  const seasonalPrice = getDayPassPrice(spa.id, 'lakeside-seasonal-spa-day');
-  const revitalisingPrice = getDayPassPrice(
+  const signaturePrice = getDayPassPrice(
     spa.id,
-    'lakeside-revitalising-spa-day'
+    'lakeside-signature-sanctuary-spa-day'
   );
-  const afternoonTeaPrice = getDayPassPrice(
+  const signatureDuration = getDayPassDuration(
     spa.id,
-    'lakeside-afternoon-tea-spa-day'
+    'lakeside-signature-sanctuary-spa-day'
   );
-  const afternoonTeaDuration = getDayPassDuration(
-    spa.id,
-    'lakeside-afternoon-tea-spa-day'
-  );
-  const groupPrice = getDayPassPrice(spa.id, 'lakeside-group-spa-day');
 
   return [
     // FAQ 1: Pricing
@@ -32,43 +26,43 @@ export function getSpa9FAQs(spa: Spa): FAQ[] {
       question: `How much does a spa day cost at ${spa.name}?`,
       answer: (
         <>
-          Spa day packages at {spa.name} range from {steamSwimPrice || '£30'} to{' '}
-          {afternoonTeaPrice || '£150'} per person, making it one of the most
-          affordable spa options in the Lake District. With six different
-          packages available, there&apos;s an option for every budget.
+          Spa day packages at {spa.name} range from {dipDinePrice || '£25'} to{' '}
+          {signaturePrice || '£95'} per person, making it one of the most
+          affordable spa options in the Lake District. With three packages
+          available, there&apos;s an option for every budget.
           <br />
           <br />
-          The most affordable option is the{' '}
-          <Link href="#lakeside-steam-and-swim" className="underline">
-            Steam And Swim
+          The most affordable option is{' '}
+          <Link href="#lakeside-dip-and-dine" className="underline">
+            Dip &amp; Dine
           </Link>{' '}
-          package ({steamSwimPrice || '£30'}) which gives you{' '}
-          {steamSwimDuration || '3 hours'} of access to the 17 metre heated
-          pool, sauna, steam room and jacuzzi. For evening visits, the{' '}
-          <Link href="#lakeside-twilight-swim-steam" className="underline">
-            Twilight Swim & Steam
-          </Link>{' '}
-          ({twilightPrice || '£30'}) includes a glass of fizz on arrival. If you
-          want treatments included, the{' '}
-          <Link href="#lakeside-seasonal-spa-day" className="underline">
-            Seasonal Spa Day
-          </Link>{' '}
-          ({seasonalPrice || '£90'}) offers full day access with a 45 minute
-          treatment.
+          ({dipDinePrice || '£25'}), which gives you{' '}
+          {dipDineDuration || '3 hours'} of access to the 17 metre heated pool,
+          sauna, steam room and jacuzzi, plus a £15 food credit to spend in the
+          hotel.
           <br />
           <br />
-          For groups of 4 or more, the{' '}
-          <Link href="#lakeside-group-spa-day" className="underline">
-            Group Spa Day
+          If you want a treatment included, the{' '}
+          <Link href="#lakeside-express-escape" className="underline">
+            Express Escape
           </Link>{' '}
-          starts from {groupPrice || '£85'} per person. View all packages in the{' '}
+          ({expressEscapePrice || '£70'}) combines spa access with a 30 minute
+          ELEMIS treatment and afternoon tea, while the{' '}
+          <Link
+            href="#lakeside-signature-sanctuary-spa-day"
+            className="underline"
+          >
+            Signature Sanctuary Spa Day
+          </Link>{' '}
+          ({signaturePrice || '£95'}) upgrades that to a full 60 minute
+          treatment. View all packages in the{' '}
           <Link href="#day-passes" className="underline">
             Day Spa Packages section
           </Link>
           .
         </>
       ),
-      schemaText: `Spa day packages at ${spa.name} range from ${steamSwimPrice || '£30'} to ${afternoonTeaPrice || '£150'} per person. The Steam And Swim package (${steamSwimPrice || '£30'}) offers ${steamSwimDuration || '3 hours'} of pool, sauna, steam room and jacuzzi access. For treatments, the Seasonal Spa Day (${seasonalPrice || '£90'}) includes a 45 minute treatment. Group packages start from ${groupPrice || '£85'} per person for 4 or more guests.`,
+      schemaText: `Spa day packages at ${spa.name} range from ${dipDinePrice || '£25'} to ${signaturePrice || '£95'} per person. Dip & Dine (${dipDinePrice || '£25'}) offers ${dipDineDuration || '3 hours'} of pool, sauna, steam room and jacuzzi access plus a £15 food credit. For treatments, the Express Escape (${expressEscapePrice || '£70'}) includes a 30 minute ELEMIS treatment and afternoon tea, and the Signature Sanctuary Spa Day (${signaturePrice || '£95'}) includes a 60 minute treatment.`,
     },
 
     // FAQ 2: Facilities
@@ -184,15 +178,17 @@ export function getSpa9FAQs(spa: Spa): FAQ[] {
       question: `Does ${spa.name} offer spa packages with afternoon tea?`,
       answer: (
         <>
-          Yes, the{' '}
-          <Link href="#lakeside-afternoon-tea-spa-day" className="underline">
-            Afternoon Tea Spa Day
+          Yes, two of the four packages include it. The{' '}
+          <Link
+            href="#lakeside-signature-sanctuary-spa-day"
+            className="underline"
+          >
+            Signature Sanctuary Spa Day
           </Link>{' '}
-          ({afternoonTeaPrice || '£150'}) combines{' '}
-          {afternoonTeaDuration || '3 hours'} of spa access with a 60 minute
-          treatment and traditional afternoon tea in the Lake View restaurant.
-          You&apos;ll also receive tea or coffee with morning pastries on
-          arrival.
+          ({signaturePrice || '£95'}) combines{' '}
+          {signatureDuration || '3 hours'} of spa access with a 60 minute ELEMIS
+          treatment and a traditional afternoon tea served in the Spa Lounge, so
+          you can stay in your robe throughout.
           <br />
           <br />
           This package is ideal for a special occasion or a treat with friends.
@@ -203,20 +199,20 @@ export function getSpa9FAQs(spa: Spa): FAQ[] {
           dining experience.
           <br />
           <br />
-          If you prefer lunch instead of afternoon tea, the{' '}
-          <Link href="#lakeside-revitalising-spa-day" className="underline">
-            Revitalising Spa Day
+          For a shorter visit, the{' '}
+          <Link href="#lakeside-express-escape" className="underline">
+            Express Escape
           </Link>{' '}
-          ({revitalisingPrice || '£135'}) offers full day spa access, a 60
-          minute treatment and a 2 course lunch in the Conservatory. Book
-          directly through the{' '}
+          ({expressEscapePrice || '£70'}) also includes afternoon tea alongside
+          full spa access and a 30 minute ELEMIS treatment. Book directly
+          through the{' '}
           <Link href="#book" className="underline">
             spa booking page
           </Link>
           .
         </>
       ),
-      schemaText: `Yes, the Afternoon Tea Spa Day (${afternoonTeaPrice || '£150'}) includes ${afternoonTeaDuration || '3 hours'} of spa access, a 60 minute treatment, and afternoon tea in the Lake View restaurant overlooking Lake Windermere. Tea and pastries are served on arrival. Alternatively, the Revitalising Spa Day (${revitalisingPrice || '£135'}) offers a 2 course lunch instead.`,
+      schemaText: `Yes. The Signature Sanctuary Spa Day (${signaturePrice || '£95'}) includes ${signatureDuration || '3 hours'} of spa access, a 60 minute ELEMIS treatment, and a traditional afternoon tea served in the Spa Lounge overlooking Lake Windermere. The Express Escape (${expressEscapePrice || '£70'}) also includes afternoon tea with a 30 minute ELEMIS treatment.`,
     },
   ];
 }

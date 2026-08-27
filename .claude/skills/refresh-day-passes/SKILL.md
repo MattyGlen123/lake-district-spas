@@ -34,9 +34,11 @@ Implemented tiers:
 
 - `portal-trybe` — North Lakes (12), Underscar (19). Prices live only in the booking portal, so fetch each pass's **`bookingUrl`, not `dayPassUrl`**, with `scripts/fetch.mjs` exactly as the html tier uses it — one page per DISTINCT booking item. Those pages are working files: they are bundled and trimmed into a single committed `spa-<id>.html` (see step 3b), which is what the gate greps and the PR ships. try.be renders a Vite SPA shell, but it **server-renders an `application/ld+json` `Product` block** carrying the item name and price, which plain curl gets. See "Portal tier extraction (try.be JSON-LD)" below.
 
-**Portal tiers are per-vendor, not per-portal.** The four portal spas split by whether their tenant server-renders, and that cuts across both vendors — never generalize one spa's rule to another. Appleby (onejourney) server-renders, prices in **pence**; North Lakes (12) and Underscar (19) are try.be and server-render a JSON-LD block, prices in **whole pounds**; Lakeside (9, also onejourney) does NOT server-render and is unimplemented (see `.scratch/day-pass-refresh/issues/03c-portal-lakeside-shell.md`).
+- `portal-onejourney-api` — Lakeside (9). The onejourney **public JSON API**, which every onejourney tenant's storefront reads from, whether or not that tenant server-renders. One call returns the spa's whole day-pass catalogue, so this tier fetches ONE small artifact per spa and needs no trim step. See "Portal tier extraction (onejourney JSON API)" below.
 
-If a targeted spa is on no implemented tier (Lakeside 9), report "tier not implemented in this slice" and stop for that spa — do not fetch. In particular **never point the html-tier fetch at a Lakeside bookingUrl**: it returns HTTP 200 and a shell full of Elemis retail-shop prices with no day-pass data, so a quote can ground a real-looking figure to entirely the wrong product.
+**Portal tiers are per-vendor, not per-portal.** The four portal spas split by whether their tenant server-renders, and that cuts across both vendors — never generalize one spa's rule to another. Appleby (onejourney) server-renders, prices in **pence**; North Lakes (12) and Underscar (19) are try.be and server-render a JSON-LD block, prices in **whole pounds**; Lakeside (9, also onejourney) does NOT server-render, and is fetched from the JSON API instead.
+
+**Never point the html-tier fetch at a Lakeside bookingUrl.** It returns HTTP 200 and a shell full of Elemis retail-shop prices with no day-pass data, so a quote can ground a real-looking figure to entirely the wrong product. `fetch-onejourney.mjs` is the only sanctioned way to fetch this spa, and it refuses such a body outright rather than saving it.
 
 ### Portal tier extraction (onejourney SSR)
 
@@ -50,6 +52,77 @@ If a targeted spa is on no implemented tier (Lakeside 9), report "tier not imple
 - **Decode before writing data.** The reverse applies to renames: `packageName` in the data file takes the decoded human form (`&`). Same string, two representations — artifact-literal for the gate, decoded for the data.
 - An empty SSR slot (`"queries":[]`) means the tenant does not server-render. Treat it as tier-not-implemented, never as a fetch to salvage from the shell.
 - The payload is emitted twice, camelCase and snake_case. Quote from the camelCase copy; gate 3 poison-scans every occurrence of a repeated span, which is correct and was verified clean.
+
+### Portal tier extraction (onejourney JSON API)
+
+The storefront SPA reads its data from a public, unauthenticated JSON API. Route (recovered from
+`_next/static/chunks/pages/_app-<hash>.js`; see issue 03c):
+
+```
+catalogue:  https://api.onejourney.travel/<propertyId>/spa-packages/<lang>
+single item: https://api.onejourney.travel/<propertyId>/spa-packages/<itemId>/<lang>
+```
+
+`<propertyId>` is in the storefront page's own payload as `"property":{"id":N,…}` (Lakeside = 340,
+Appleby = 320). There is **no `/store` prefix** on this route family — that belongs only to the
+site-level routes (`/store/pages/site/<tenant>/…`), which is what makes a guessed path 404.
+
+```bash
+node .claude/skills/refresh-day-passes/scripts/fetch-onejourney.mjs \
+  "https://api.onejourney.travel/340/spa-packages/en" \
+  "$RUN_DIR/spa-9.json" "$RUN_DIR/spa-9-fetch-log.json"
+```
+
+- **Fetch the catalogue endpoint, not one call per pass.** It returns every bookable day pass for
+  the property in a couple of KB, so one spa is one artifact — no `trim-artifact.mjs` step, and
+  nothing to bundle. Per-item calls exist for reading detail (descriptions, inclusions,
+  configuration groups) but are working files, not the committed artifact.
+- **The script validates before it saves.** A body that isn't JSON (`notJson`), or is JSON but
+  carries no `id`/`name`/`price.amount` packages (`unexpectedShape`), fails with exit 2 and writes
+  no artifact. This is what structurally closes 03c's wrong-number hazard — the Elemis shell
+  cannot become an artifact, so no quote can be taken from it.
+- **The artifact is pretty-printed JSON**, re-serialised by the script from the API's minified
+  line, exactly as `pdftotext` reshapes the pdf tier's artifact. Quotes are copied from that
+  pretty-printed form.
+- **Quote** = `"name": "<item name>"` … `"amount": <pence>` — one contiguous span, ~200–400 bytes
+  in the catalogue artifact. `arithmetic: "pence"`, `quotedFigure` = the pence integer. Same gate 1
+  case as the SSR onejourney tier; no gate change was needed.
+- **A withdrawn pass simply is not in the catalogue.** Its booking-item id 404s and its name is
+  absent from the artifact, so it takes no quote and gate 1 demotes it to a ⚠️ flag. That is the
+  correct outcome, not a fetch failure — do not go looking for it on the rendered page.
+- The vendored `Accept` header (`application/vnd.onejourney.v2.1+json`) is what the storefront
+  sends and the script always sends it, though this route family currently accepts anything. The
+  site-level `/store/…` routes DO require it.
+
+#### Availability probe — being listed is not being bookable
+
+A pass can sit in the catalogue with a real price and a working booking page and be bookable on
+**no date at all**. Lakeside listed "Fizz and Float" at £39 exactly like that. Gates 1–5 all pass
+it happily — the price genuinely is on the page — so nothing but a human clicking through would
+ever have caught it, and we would have kept re-verifying a phantom price every month.
+
+So `fetch-onejourney.mjs` probes each package's real timeslot endpoint
+(`<base>/<propertyId>/spa-packages/<itemId>/<date>/timeslots?quantity=1`) across the next 14 days
+and writes an `availabilityProbe` block into the artifact. **This is on by default** —
+`--no-availability` disables it, `--availability-days=N` changes the window. It costs one request
+per package per day (~56 for Lakeside), so it is the slow part of the fetch.
+
+- Gate 6 reads it. `daysWithSlots: 0` → `no-availability` → ⚠️ flag, no `lastVerified` bump.
+- The fetch log surfaces it directly too: `unbookableItemIds`, `availabilityProbed`,
+  `availabilityProbeFailed`.
+- **A probe that fails is not a probe that found nothing.** If an item cannot be reached at all it
+  is omitted from the block (so gate 6 stays a no-op for it) and the log sets
+  `availabilityProbeFailed: true`. A network blip must never mass-flag a spa.
+- The block is fetched data, not an assertion: it records the endpoint, window and probe time, and
+  every count came from a real response. Gate 6 still greps its `evidence` span in the artifact —
+  the numbers are not taken on trust.
+- Empty days at the very start of the window are normal (Lakeside needs 48 hours' notice); the
+  gate only cares whether the whole window is empty.
+
+Appleby (15) is on the SSR tier and stays there; this tier would also serve it (its
+`320/spa-packages/6712/en` returns 200) and would cut its run from 11 HTML pages / 1,233 KB to a
+single small file, but switching it means re-verifying all 11 passes, so it is a deliberate
+migration, not a silent one.
 
 ### Portal tier extraction (try.be JSON-LD)
 
@@ -95,6 +168,14 @@ node .claude/skills/refresh-day-passes/scripts/fetch-playwright.mjs \
 # textLayerUsable + textChars — see "thin text layer" under step 3 when false.
 node .claude/skills/refresh-day-passes/scripts/fetch-pdf.mjs \
   "<brochurePdfUrl>" "$RUN_DIR/spa-<id>.txt" "$RUN_DIR/spa-<id>-fetch-log.json"
+# portal-onejourney-api tier: the whole catalogue in one call. Validates
+# the payload before saving — a non-JSON or non-spa-package 200 is exit 2,
+# never an artifact. Also probes each package's real timeslots (14 days,
+# ~1 request per package per day) and writes an availabilityProbe block
+# for gate 6; --no-availability skips it:
+node .claude/skills/refresh-day-passes/scripts/fetch-onejourney.mjs \
+  "https://api.onejourney.travel/<propertyId>/spa-packages/en" \
+  "$RUN_DIR/spa-<id>.json" "$RUN_DIR/spa-<id>-fetch-log.json"
 ```
 
 Record the fetch timestamp (`date '+%Y-%m-%d %H:%M %Z'`). A failed spa never blocks the run — continue with other spas.
@@ -188,6 +269,21 @@ Write `spa-<id>-checks.json` in the run dir — one entry per existing pass:
 }]
 ```
 
+**portal tiers with an availability probe** — every check for a spa whose artifact carries an `availabilityProbe` block also carries `bookability` (omit it for other tiers; gate 6 is then a no-op). Take the counts and the `evidence` span straight from the block:
+
+```jsonc
+{
+  "bookability": {
+    "itemId": 18904,          // booking-item id; must appear in `evidence`
+    "daysProbed": 14,         // the block's daysProbed for THIS item
+    "daysWithSlots": 10,      // the block's daysWithSlots for THIS item
+    "evidence": "\"itemId\": 18904,\n      \"name\": \"Dip & Dine\",\n      \"daysProbed\": 14,\n      \"daysWithSlots\": 10"
+  }
+}
+```
+
+An item the probe could not reach is **absent** from the block — omit `bookability` for it rather than inventing zeros, and say so in evidence.md. `daysWithSlots: 0` demotes with `no-availability`: flag it, never delete it (PRD §1 — removing a pass is a human decision).
+
 **pdf tier only** — every check for a pdf-tier spa also carries `pdfVintage` (omit it entirely for other tiers; gate 4 is then a no-op):
 
 ```jsonc
@@ -237,6 +333,7 @@ Gates run in order and the first failure demotes (`grounded: false`, with `gate`
 | 3 poison words | `member`/`membership`/`resident`/`voucher`/`deposit`/`per month` in the span or ±200 chars of artifact context (any occurrence of a repeated span) | `poison-word:<word>` (+ `poisonWords`) |
 | 4 PDF vintage (pdf tier only; no-op without `pdfVintage`) | `documentYear` present + evidence proven per `evidenceType` (see above) + not older than `runYear` | `pdf-vintage-year-missing`, `pdf-vintage-evidence-type-invalid`, `pdf-vintage-evidence-missing`, `pdf-vintage-year-not-in-evidence`, `pdf-vintage-evidence-not-found-in-artifact`, `pdf-vintage-stale` |
 | 5 plausibility | move ≤ ±40% vs `storedGBP`; price within £20–£400, even if unchanged | `move-exceeds-40pct`, `price-out-of-bounds` (+ computed `movePct`) |
+| 6 bookability (portal tiers; no-op without `bookability`) | `evidence` greps in the artifact's `availabilityProbe` block and names the `itemId`; counts are sane; `daysWithSlots` > 0 | `bookability-days-probed-missing`, `bookability-days-with-slots-missing`, `bookability-counts-inconsistent`, `bookability-evidence-missing`, `bookability-evidence-not-found-in-artifact`, `bookability-item-id-not-in-evidence`, `no-availability` |
 
 **Stale vintage demotes the whole spa, not just the pass** (PRD §2): `pdf-vintage-stale` on any one check means the brochure itself is out of date — every pass sourced from it is unreliable, not just that pass. Treat the spa exactly like a fetch failure (step 1's failure lane): exclude it from the run (entries and `lastVerified` untouched, no `priceGBP` edits from any of its checks even if other passes on the same brochure grounded fine), file one tracker issue (same shape as a fetch failure, error summary = "brochure dated `documentYear`, current run is `runYear`" + the vintage evidence), and render the ❌ not-fetched table row linking it. This is the one case where a gate-4 reason reaches back past step 4 into step 1's failure handling — every other gate reason (including the other pdf-vintage reasons: missing/invalid/unproven evidence) stays a normal per-pass ⚠️ flag. A pass-level flag for a **different** reason (e.g. gate 2 name drift) on a pdf-tier spa does NOT trigger this whole-spa rule — only `pdf-vintage-stale` does.
 
@@ -279,5 +376,4 @@ Open as DRAFT via `gh pr create --draft` (gh lives at `/opt/homebrew/bin/gh`).
 
 ## Later slices (stubs only — do not build here)
 
-- Portal tier, Lakeside (9) — no SSR payload; needs a rendered/API artifact, not a curl one. See issue 03c.
 - Fan-out rename guard — the "never auto-rename a fan-out pass" rule above is documented and hand-applied, not yet enforced in code. See issue 12.

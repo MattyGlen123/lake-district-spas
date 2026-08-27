@@ -1,0 +1,32 @@
+{
+  "url": "https://api.onejourney.travel/340/spa-packages/en",
+  "artifact": ".claude/content-out/refresh-runs/2026-08-26-lakeside-rewrite/spa-9.json",
+  "ok": true,
+  "botBlocked": false,
+  "notJson": false,
+  "unexpectedShape": false,
+  "error": null,
+  "packageCount": 4,
+  "packageIds": [
+    18902,
+    18904,
+    18905,
+    18912
+  ],
+  "availabilityProbed": true,
+  "availabilityProbeFailed": false,
+  "unbookableItemIds": [
+    18902
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-08-27T18:31:12.243Z",
+      "method": "curl-json",
+      "httpCode": "200",
+      "curlError": null,
+      "bytes": 2505,
+      "packageCount": 4
+    }
+  ]
+}

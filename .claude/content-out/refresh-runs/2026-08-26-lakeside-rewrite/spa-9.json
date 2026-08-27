@@ -1,0 +1,152 @@
+{
+  "total": 4,
+  "page": 1,
+  "perPage": 20,
+  "data": [
+    {
+      "id": 18902,
+      "categories": [],
+      "name": "Fizz and Float ",
+      "image": {
+        "externalKey": "da987e17f261b44890b74e3ce404f284",
+        "url": "https://hcommerce-live.s3.amazonaws.com/da987e17f261b44890b74e3ce404f284.webp"
+      },
+      "price": {
+        "amount": 3900,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 1,
+      "durationText": null,
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    },
+    {
+      "id": 18904,
+      "categories": [],
+      "name": "Dip & Dine",
+      "image": {
+        "externalKey": "d88bfc560b264ac512aa5564820e3106",
+        "url": "https://hcommerce-live.s3.amazonaws.com/d88bfc560b264ac512aa5564820e3106.webp"
+      },
+      "price": {
+        "amount": 2500,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 2,
+      "durationText": null,
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    },
+    {
+      "id": 18905,
+      "categories": [],
+      "name": "Express Escape",
+      "image": {
+        "externalKey": "d64a3fa6e323cef1f13ff3e0f9faa62b",
+        "url": "https://hcommerce-live.s3.amazonaws.com/d64a3fa6e323cef1f13ff3e0f9faa62b.webp"
+      },
+      "price": {
+        "amount": 7000,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 3,
+      "durationText": null,
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    },
+    {
+      "id": 18912,
+      "categories": [],
+      "name": "Signature Sanctuary Spa Day",
+      "image": {
+        "externalKey": "88bd2b5bde0a9b3a6fad131ef20fc5a3",
+        "url": "https://hcommerce-live.s3.amazonaws.com/88bd2b5bde0a9b3a6fad131ef20fc5a3.webp"
+      },
+      "price": {
+        "amount": 9500,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 4,
+      "durationText": "full_day",
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    }
+  ],
+  "availabilityProbe": {
+    "probedAt": "2026-08-27T18:31:39.624Z",
+    "windowDays": 14,
+    "startDate": "2026-08-27",
+    "endDate": "2026-09-09",
+    "endpoint": "https://api.onejourney.travel/340/spa-packages/<itemId>/<date>/timeslots?quantity=1",
+    "note": "daysWithSlots 0 means the pass is listed and priced but has no bookable date in the window.",
+    "anyProbeFailed": false,
+    "items": [
+      {
+        "itemId": 18902,
+        "name": "Fizz and Float ",
+        "daysProbed": 14,
+        "daysWithSlots": 0,
+        "datesWithSlots": []
+      },
+      {
+        "itemId": 18904,
+        "name": "Dip & Dine",
+        "daysProbed": 14,
+        "daysWithSlots": 10,
+        "datesWithSlots": [
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09"
+        ]
+      },
+      {
+        "itemId": 18905,
+        "name": "Express Escape",
+        "daysProbed": 14,
+        "daysWithSlots": 10,
+        "datesWithSlots": [
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09"
+        ]
+      },
+      {
+        "itemId": 18912,
+        "name": "Signature Sanctuary Spa Day",
+        "daysProbed": 14,
+        "daysWithSlots": 11,
+        "datesWithSlots": [
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-06",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09"
+        ]
+      }
+    ]
+  }
+}
