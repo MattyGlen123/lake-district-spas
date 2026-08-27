@@ -1,0 +1,117 @@
+{
+  "artifact": ".claude/content-out/refresh-runs/2026-08-27/spa-4.html",
+  "gates": [
+    "1 grounding+arithmetic",
+    "2 contiguity",
+    "3 poison words",
+    "4 pdf vintage (pdf tier only)",
+    "5 plausibility",
+    "6 bookability (portal tiers, opt-in)"
+  ],
+  "constants": {
+    "PRICE_MIN_GBP": 20,
+    "PRICE_MAX_GBP": 400,
+    "MAX_MOVE_PCT": 40,
+    "POISON_CONTEXT_CHARS": 200
+  },
+  "summary": {
+    "checked": 10,
+    "grounded": 5,
+    "flagged": 5
+  },
+  "results": [
+    {
+      "passId": "daffodil-spa-facilities-weekday",
+      "quote": "<h2>Spa Facilities</h2>\r\n\t\t\t\t<div class=\"rte-standard\">\r\n\t\t\t\t\t<p>Here at the Daffodil Hotel &amp; Spa, all our guests and those enjoying one of our Spa Day packages receive complimentary access to our spa facilities.</p>\n<p>Visitors who aren’t staying with us are also welcome to book access to our facilities during select hours:</p>\n<p><strong>Monday - Thursday, 10am to 4pm; £35 per person for 3 hours use</strong></p>",
+      "figureGBP": 35,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "daffodil-spa-facilities-weekend",
+      "quote": "<h2>Spa Facilities</h2>\r\n\t\t\t\t<div class=\"rte-standard\">\r\n\t\t\t\t\t<p>Here at the Daffodil Hotel &amp; Spa, all our guests and those enjoying one of our Spa Day packages receive complimentary access to our spa facilities.</p>\n<p>Visitors who aren’t staying with us are also welcome to book access to our facilities during select hours:</p>\n<p><strong>Monday - Thursday, 10am to 4pm; £35 per person for 3 hours use</strong></p>\n<p><strong>Friday - Sunday (and bank holidays), 10am - 4pm; £45 per person for 3 hours use</strong></p>",
+      "figureGBP": 45,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "daffodil-afternoon-bliss",
+      "quote": "<h1>Afternoon Bliss</h1>\r\n\r\n\r\n\r\n                    <div class=\"explore-line --breakout\"></div>\r\n\r\n            </div>\r\n            <div class=\"hero-image_forward\">\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<section class=\"intro-block py-3 \" data-ui-component=\"introBlock\">\r\n\t<div class=\"intro-block_inner\">\r\n\r\n\r\n\r\n\t\t\t<h2>Escape to a haven of relaxation.</h2>\r\n\r\n\r\n\t\t\t<div class=\"rte-standard\">\r\n\t\t\t\t<p style=\"text-align: center;\" dir=\"ltr\">Escape to a haven of relaxation with an Afternoon Bliss Spa Day. Enjoy three hours of full access to our serene spa facilities, including the soothing hydrotherapy pool, invigorating sauna, and aromatic steam room. Savour a delectable full afternoon tea in our lake view Dining Room, perfectly complementing your day of indulgence. To complete your experience, receive 10% off any additional treatment booked for the same day, from rejuvenating massages to revitalising facials. Available between 9 am and 4 pm, daily.</p>\n<p style=\"text-align: center;\" dir=\"ltr\"><strong>From £70.00 per person</strong></p>",
+      "figureGBP": 70,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "daffodil-simply-spa-time",
+      "quote": "<h1>Simply Spa Time</h1>\r\n\r\n\r\n\r\n                    <div class=\"explore-line --long\"></div>\r\n\r\n            </div>\r\n            <div class=\"hero-image_forward\">\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<section class=\"intro-block py-3 \" data-ui-component=\"introBlock\">\r\n\t<div class=\"intro-block_inner\">\r\n\r\n\r\n\r\n\t\t\t<h2>Escape the Stresses of Everyday Life</h2>\r\n\r\n\r\n\t\t\t<div class=\"rte-standard\">\r\n\t\t\t\t<p style=\"text-align: center;\">Indulge in some well-deserved “you time” at the Daffodil Spa with our 2-hour Thermal Experience.</p>\n<p style=\"text-align: center;\">Enjoy full access to our luxurious spa facilities, including the hydrotherapy pool, sauna, steam room, and tranquil relaxation lounge, with complimentary robes, towels, and flip flops for your comfort. After your time in the spa, savour a delicious two-course lunch in the Dining Room Restaurant, completing a perfect day of relaxation and indulgence. Available daily between 10:00 am and 3:00 pm.</p>\n<h4 style=\"text-align: center;\">Book now from £60.00 per person</h4>",
+      "figureGBP": 60,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "daffodil-mud-rasul-spa-for-two",
+      "quote": "<h1>Mud Rasul &amp; Spa Access for Two</h1>\r\n\r\n\r\n\r\n                    <div class=\"explore-line --long\"></div>\r\n\r\n            </div>\r\n            <div class=\"hero-image_forward\">\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<section class=\"intro-block py-3 \" data-ui-component=\"introBlock\">\r\n\t<div class=\"intro-block_inner\">\r\n\r\n\r\n\t\t\t<div class=\"overline\">Available 10 am - 4 pm</div>\r\n\r\n\t\t\t<h2>Traditions rooted in the Middle East come to life with the Mud Rasul, a self-administered treatment.</h2>\r\n\r\n\r\n\t\t\t<div class=\"rte-standard\">\r\n\t\t\t\t<p style=\"text-align: center;\">Nourishing mineral muds are provided for you to apply to your face and body, while a gentle stream of steam drifts into your relaxing Rasul chamber. As the warm mist softens the skin and eases tension, the muds work their magic, before a tropical monsoon-like drenching of warm water allows you to rinse away the clays – leaving skin nourished, hydrated, and super soft.</p>\n<p style=\"text-align: center;\"><strong>Book now from £125.00 per couple</strong></p>",
+      "figureGBP": 125,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "daffodil-twilight-spa",
+      "quote": "<h1>Twilight Spa</h1>\r\n\r\n\r\n\r\n                    <div class=\"explore-line --standard\"></div>\r\n\r\n            </div>\r\n            <div class=\"hero-image_forward\">\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<section class=\"intro-block py-3 \" data-ui-component=\"introBlock\">\r\n\t<div class=\"intro-block_inner\">\r\n\r\n\r\n\r\n\t\t\t<h2>Unwind after a long day with our Twilight Spa, a sparkling escape designed for pure relaxation.</h2>\r\n\r\n\r\n\t\t\t<div class=\"rte-standard\">\r\n\t\t\t\t<p style=\"text-align: center;\">Enjoy two hours of full access to our tranquil spa facilities, including the hydrotherapy pool, sauna, steam room, and peaceful relaxation lounge, with complimentary robes, towels, and flip flops for your comfort. Sip a glass of Prosecco and enjoy as you melt away the day’s stresses. To make your experience even more indulgent, receive a £10 Temple Spa voucher to spend in our retail area. Available between 4 pm and 7:45 pm</p>\n<h4 style=\"text-align: center;\">Book now from £40.00 per person</h4>",
+      "figureGBP": 40,
+      "movePct": 0,
+      "grounded": false,
+      "reason": "poison-word:voucher",
+      "gate": 3,
+      "poisonWords": [
+        "voucher"
+      ]
+    },
+    {
+      "passId": "daffodil-its-all-good-weekday",
+      "quote": "",
+      "figureGBP": 170,
+      "movePct": 0,
+      "grounded": false,
+      "reason": "empty-quote",
+      "gate": 1
+    },
+    {
+      "passId": "daffodil-its-all-good-weekend",
+      "quote": "",
+      "figureGBP": 180,
+      "movePct": 0,
+      "grounded": false,
+      "reason": "empty-quote",
+      "gate": 1
+    },
+    {
+      "passId": "daffodil-do-not-disturb-weekday",
+      "quote": "",
+      "figureGBP": 185,
+      "movePct": 0,
+      "grounded": false,
+      "reason": "empty-quote",
+      "gate": 1
+    },
+    {
+      "passId": "daffodil-do-not-disturb-weekend",
+      "quote": "",
+      "figureGBP": 195,
+      "movePct": 0,
+      "grounded": false,
+      "reason": "empty-quote",
+      "gate": 1
+    }
+  ]
+}

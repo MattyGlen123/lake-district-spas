@@ -23,7 +23,7 @@ export const spa4DayPasses: SpaDayPasses = {
       bookingRequired: true,
       bookingEmail: 'thespateam@daffodilhotel.com',
       dayPassUrl: 'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa/',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-27',
     },
     {
       id: 'daffodil-spa-facilities-weekend',
@@ -45,7 +45,7 @@ export const spa4DayPasses: SpaDayPasses = {
       bookingRequired: true,
       bookingEmail: 'thespateam@daffodilhotel.com',
       dayPassUrl: 'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/wellness/the-spa/',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-27',
     },
     {
       id: 'daffodil-afternoon-bliss',
@@ -67,7 +67,7 @@ export const spa4DayPasses: SpaDayPasses = {
       bookingRequired: true,
       bookingEmail: 'thespateam@daffodilhotel.com',
       dayPassUrl: 'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/afternoon-bliss/',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-27',
     },
     {
       id: 'daffodil-simply-spa-time',
@@ -90,7 +90,7 @@ export const spa4DayPasses: SpaDayPasses = {
       bookingRequired: true,
       bookingEmail: 'thespateam@daffodilhotel.com',
       dayPassUrl: 'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/simply-spa-time/', 
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-27',
     },
     {
       id: 'daffodil-mud-rasul-spa-for-two',
@@ -116,7 +116,7 @@ export const spa4DayPasses: SpaDayPasses = {
       bookingEmail: 'thespateam@daffodilhotel.com',
       dayPassUrl:
         'https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/mud-rasul-and-spa-access-for-two/',
-      lastVerified: '2026-03-20',
+      lastVerified: '2026-08-27',
     },
     {
       id: 'daffodil-twilight-spa',

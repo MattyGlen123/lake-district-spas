@@ -1,0 +1,48 @@
+{
+  "matches": [
+    {
+      "tier": 1,
+      "existingId": "daffodil-spa-facilities-weekday",
+      "fetchedName": "Spa Facilities",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "daffodil-spa-facilities-weekend",
+      "fetchedName": "Spa Facilities",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "daffodil-afternoon-bliss",
+      "fetchedName": "Afternoon Bliss",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "daffodil-simply-spa-time",
+      "fetchedName": "Simply Spa Time",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "daffodil-mud-rasul-spa-for-two",
+      "fetchedName": "Mud Rasul & Spa Access for Two",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "daffodil-twilight-spa",
+      "fetchedName": "Twilight Spa",
+      "rename": null
+    }
+  ],
+  "tier3Suggestions": [],
+  "missingFlags": [
+    "daffodil-its-all-good-weekday",
+    "daffodil-its-all-good-weekend",
+    "daffodil-do-not-disturb-weekday",
+    "daffodil-do-not-disturb-weekend"
+  ],
+  "unmatchedFetched": []
+}
