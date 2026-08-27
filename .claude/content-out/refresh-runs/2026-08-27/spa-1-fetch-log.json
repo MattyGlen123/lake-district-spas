@@ -1,0 +1,119 @@
+[
+  {
+    "url": "https://www.lakedistrictspa.co.uk/spa-day/morning-renew-spa/",
+    "artifact": "/Users/matty/.claude/jobs/68ed6bd1/tmp/lodore/renew.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-27T18:39:53.013Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 80997
+      }
+    ]
+  },
+  {
+    "url": "https://www.lakedistrictspa.co.uk/offers/restart-spa-day/",
+    "artifact": "/Users/matty/.claude/jobs/68ed6bd1/tmp/lodore/restart.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-27T18:39:54.439Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 80200
+      }
+    ]
+  },
+  {
+    "url": "https://www.lakedistrictspa.co.uk/spa-day/derwent-delight-for-2/",
+    "artifact": "/Users/matty/.claude/jobs/68ed6bd1/tmp/lodore/derwent.html",
+    "ok": false,
+    "botBlocked": false,
+    "error": "HTTP 404",
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-27T18:39:56.806Z",
+        "method": "curl",
+        "httpCode": "404",
+        "curlError": null,
+        "bytes": 67477
+      },
+      {
+        "attempt": 2,
+        "at": "2026-08-27T18:39:59.944Z",
+        "method": "curl",
+        "httpCode": "404",
+        "curlError": null,
+        "bytes": 67477
+      },
+      {
+        "attempt": 3,
+        "at": "2026-08-27T18:40:09.448Z",
+        "method": "curl",
+        "httpCode": "404",
+        "curlError": null,
+        "bytes": 67477
+      }
+    ]
+  },
+  {
+    "url": "https://www.lakedistrictspa.co.uk/spa-day/twilight-spa/",
+    "artifact": "/Users/matty/.claude/jobs/68ed6bd1/tmp/lodore/twilight.html",
+    "ok": true,
+    "botBlocked": false,
+    "error": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-27T18:40:10.977Z",
+        "method": "curl",
+        "httpCode": "200",
+        "curlError": null,
+        "bytes": 80335
+      }
+    ]
+  },
+  {
+    "url": "https://www.lakedistrictspa.co.uk/spa-day/rasul-ritual-spa-day/",
+    "artifact": "/Users/matty/.claude/jobs/68ed6bd1/tmp/lodore/rasul.html",
+    "ok": false,
+    "botBlocked": false,
+    "error": "HTTP 404",
+    "attempts": [
+      {
+        "attempt": 1,
+        "at": "2026-08-27T18:40:12.645Z",
+        "method": "curl",
+        "httpCode": "404",
+        "curlError": null,
+        "bytes": 67477
+      },
+      {
+        "attempt": 2,
+        "at": "2026-08-27T18:40:15.974Z",
+        "method": "curl",
+        "httpCode": "404",
+        "curlError": null,
+        "bytes": 67477
+      },
+      {
+        "attempt": 3,
+        "at": "2026-08-27T18:40:25.257Z",
+        "method": "curl",
+        "httpCode": "404",
+        "curlError": null,
+        "bytes": 67477
+      }
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Falls Renew Spa Experience",
+    "bookingUrl": "https://www.lakedistrictspa.co.uk/spa-day/morning-renew-spa/",
+    "priceGBP": 165,
+    "spaDuration": 2,
+    "included": [
+      "1 x 50 minute treatment of your choice",
+      "2-hours use of the spa facilities (various times available)"
+    ]
+  },
+  {
+    "name": "Restart Spa",
+    "bookingUrl": "https://www.lakedistrictspa.co.uk/offers/restart-spa-day/",
+    "priceGBP": 205,
+    "spaDuration": 2,
+    "included": [
+      "1 x 50 minute treatment (choice of a full body massage, full Elemis facial OR a back massage and mini facial)",
+      "2-hours use of the spa facilities",
+      "2-course lunch in Mizu Pan-Asian Restaurant OR Afternoon tea in the Falls Brasserie"
+    ]
+  },
+  {
+    "name": "Twilight Spa",
+    "bookingUrl": "https://www.lakedistrictspa.co.uk/spa-day/twilight-spa/",
+    "priceGBP": 75,
+    "spaDuration": 2,
+    "included": [
+      "Spa access – 2 hrs",
+      "Use of the spa facilities and relaxation areas",
+      "Glass of prosecco in the Champagne Bar"
+    ]
+  }
+]

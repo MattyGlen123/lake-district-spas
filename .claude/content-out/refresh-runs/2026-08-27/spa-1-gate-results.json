@@ -1,0 +1,69 @@
+{
+  "artifact": ".claude/content-out/refresh-runs/2026-08-27/spa-1.html",
+  "gates": [
+    "1 grounding+arithmetic",
+    "2 contiguity",
+    "3 poison words",
+    "4 pdf vintage (pdf tier only)",
+    "5 plausibility",
+    "6 bookability (portal tiers, opt-in)"
+  ],
+  "constants": {
+    "PRICE_MIN_GBP": 20,
+    "PRICE_MAX_GBP": 400,
+    "MAX_MOVE_PCT": 40,
+    "POISON_CONTEXT_CHARS": 200
+  },
+  "summary": {
+    "checked": 5,
+    "grounded": 3,
+    "flagged": 2
+  },
+  "results": [
+    {
+      "passId": "lodore-falls-renew-spa",
+      "quote": "<h1 class=\"entry-title single-title\" itemprop=\"headline\">\n          Falls Renew Spa Experience        </h1>\n    <hr> \n\t\t <div class=\"allprices\">\n        <h5><strong>£165          per person</strong></h5>",
+      "figureGBP": 165,
+      "movePct": 10,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "lodore-falls-restart-spa",
+      "quote": "<h1 class=\"entry-title single-title\" itemprop=\"headline\">\n          Restart Spa        </h1>\n    <hr> \n\t\t <div class=\"allprices\">\n        <h5><strong>£205          per person</strong></h5>",
+      "figureGBP": 205,
+      "movePct": 13.9,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "lodore-falls-twilight-spa",
+      "quote": "<h1 class=\"entry-title single-title\" itemprop=\"headline\">\n          Twilight Spa        </h1>\n    <hr> \n\t\t <div class=\"allprices\">\n        <h5><strong>£75          per person</strong></h5>",
+      "figureGBP": 75,
+      "movePct": 0,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "lodore-falls-derwent-delight",
+      "quote": "",
+      "figureGBP": 450,
+      "movePct": 0,
+      "grounded": false,
+      "reason": "empty-quote",
+      "gate": 1
+    },
+    {
+      "passId": "lodore-falls-rasul-ritual",
+      "quote": "",
+      "figureGBP": 250,
+      "movePct": 0,
+      "grounded": false,
+      "reason": "empty-quote",
+      "gate": 1
+    }
+  ]
+}

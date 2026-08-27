@@ -1,0 +1,31 @@
+{
+  "matches": [
+    {
+      "tier": 1,
+      "existingId": "lodore-falls-renew-spa",
+      "fetchedName": "Falls Renew Spa Experience",
+      "rename": null
+    },
+    {
+      "tier": 1,
+      "existingId": "lodore-falls-restart-spa",
+      "fetchedName": "Restart Spa",
+      "rename": {
+        "from": "Restart Spa Experience",
+        "to": "Restart Spa"
+      }
+    },
+    {
+      "tier": 1,
+      "existingId": "lodore-falls-twilight-spa",
+      "fetchedName": "Twilight Spa",
+      "rename": null
+    }
+  ],
+  "tier3Suggestions": [],
+  "missingFlags": [
+    "lodore-falls-derwent-delight",
+    "lodore-falls-rasul-ritual"
+  ],
+  "unmatchedFetched": []
+}
