@@ -32,8 +32,8 @@ export function getGrasmereFAQs(spas: Spa[]): FAQ[] {
   const daffodilTwilightSpaPrice = daffodil
     ? getDayPassPrice(daffodil.id, 'daffodil-twilight-spa')
     : null;
-  const daffodilDoNotDisturbWeekendPrice = daffodil
-    ? getDayPassPrice(daffodil.id, 'daffodil-do-not-disturb-weekend')
+  const daffodilAfternoonBlissTopPrice = daffodil
+    ? getDayPassPrice(daffodil.id, 'daffodil-afternoon-bliss')
     : null;
 
   // Rothay Garden values
@@ -132,7 +132,7 @@ export function getGrasmereFAQs(spas: Spa[]): FAQ[] {
           >
             {daffodil?.name || 'Daffodil Hotel Spa'}
           </Link>{' '}
-          offers nine different day pass packages ranging from {daffodilFacilitiesWeekdayPrice || '£35'} to {daffodilDoNotDisturbWeekendPrice || '£195'} per person. The most affordable option is 3 hours of spa facilities for {daffodilFacilitiesWeekdayPrice || '£35'} Monday to Thursday or {daffodilFacilitiesWeekendPrice || '£45'} at weekends. The{' '}
+          offers six different day pass packages ranging from {daffodilFacilitiesWeekdayPrice || '£35'} to {daffodilAfternoonBlissTopPrice || '£70'} per person. The most affordable option is 3 hours of spa facilities for {daffodilFacilitiesWeekdayPrice || '£35'} Monday to Thursday or {daffodilFacilitiesWeekendPrice || '£45'} at weekends. The{' '}
           <Link
             href={`/spa/${daffodil?.url || 'daffodil-hotel-spa'}#daffodil-twilight-spa`}
             className="underline"
@@ -161,7 +161,7 @@ export function getGrasmereFAQs(spas: Spa[]): FAQ[] {
           does not offer day passes. The Riverside Spa is exclusively for hotel guests, so you would need to book a room to access the facilities there.
         </>
       ),
-      schemaText: `Yes, but only at ${daffodil?.name || 'Daffodil Hotel Spa'}, which offers nine day pass packages from ${daffodilFacilitiesWeekdayPrice || '£35'} to ${daffodilDoNotDisturbWeekendPrice || '£195'} per person. Spa facilities access costs ${daffodilFacilitiesWeekdayPrice || '£35'} weekday or ${daffodilFacilitiesWeekendPrice || '£45'} weekend for 3 hours. Twilight Spa (${daffodilTwilightSpaPrice || '£40'}) offers 2 hours evening access with prosecco. Afternoon Bliss (${daffodilAfternoonBlissPrice || '£70'}) includes afternoon tea with lake views. ${rothayGarden?.name || 'Rothay Garden by Harbour Hotels'} does not offer day passes and is exclusively for hotel guests.`,
+      schemaText: `Yes, but only at ${daffodil?.name || 'Daffodil Hotel Spa'}, which offers six day pass packages from ${daffodilFacilitiesWeekdayPrice || '£35'} to ${daffodilAfternoonBlissTopPrice || '£70'} per person. Spa facilities access costs ${daffodilFacilitiesWeekdayPrice || '£35'} weekday or ${daffodilFacilitiesWeekendPrice || '£45'} weekend for 3 hours. Twilight Spa (${daffodilTwilightSpaPrice || '£40'}) offers 2 hours evening access with prosecco. Afternoon Bliss (${daffodilAfternoonBlissPrice || '£70'}) includes afternoon tea with lake views. ${rothayGarden?.name || 'Rothay Garden by Harbour Hotels'} does not offer day passes and is exclusively for hotel guests.`,
     },
     {
       question: 'Does the Wordsworth Hotel in Grasmere have a spa?',

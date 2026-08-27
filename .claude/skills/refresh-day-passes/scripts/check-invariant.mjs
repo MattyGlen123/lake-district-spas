@@ -15,6 +15,13 @@
 //   gate results present -> grounded passes must have
 //     lastVerified === run-date; ungrounded (flagged) must be stale
 //
+// Withdrawals (PRD §4a): <run-dir>/spa-<id>-withdrawals.json, when present,
+// lists the pass ids this run DELETED. Such an id legitimately has a gate
+// verdict but no data entry, so it is exempted from the "every gate result
+// needs a data entry" rule — and the exemption is two-way: an id claimed as
+// withdrawn that is STILL in the data file is itself a violation, so a
+// deletion that was reported but not applied cannot pass silently.
+//
 // stdout: JSON report. Exit 0 invariant holds · 2 violations · 1 usage/IO.
 
 import { readFileSync, existsSync } from 'node:fs';
@@ -30,8 +37,17 @@ export function parseDataFile(src) {
   return ids.map((id, i) => ({ id, lastVerified: dates[i] }));
 }
 
-export function checkSpa({ spaId, passes, gateResults, runDate }) {
+export function checkSpa({ spaId, passes, gateResults, runDate, withdrawn = [] }) {
   const violations = [];
+  const withdrawnIds = new Set(withdrawn);
+
+  // A withdrawn pass must actually be gone from the data file.
+  for (const id of withdrawnIds) {
+    if (passes.some((p) => p.id === id)) {
+      violations.push({ passId: id, expected: 'removed (withdrawn)', actual: 'still in data file' });
+    }
+  }
+
   if (!gateResults) {
     // Fetch failed: excluded spa, nothing may be bumped.
     for (const p of passes) {
@@ -53,11 +69,14 @@ export function checkSpa({ spaId, passes, gateResults, runDate }) {
     }
   }
   for (const r of gateResults.results) {
+    // A withdrawn pass keeps its gate verdict as the evidence for why it
+    // was deleted; its data entry is gone by design.
+    if (withdrawnIds.has(r.passId)) continue;
     if (!passes.some((p) => p.id === r.passId)) {
       violations.push({ passId: r.passId, expected: 'a data entry', actual: 'not in data file' });
     }
   }
-  return { spaId, fetched: true, passes: passes.length, violations };
+  return { spaId, fetched: true, passes: passes.length, withdrawn: withdrawnIds.size, violations };
 }
 
 function main() {
@@ -71,7 +90,11 @@ function main() {
     const passes = parseDataFile(readFileSync(join(dataDir, `spa-${spaId}-day-passes.ts`), 'utf8'));
     const gatePath = join(runDir, `spa-${spaId}-gate-results.json`);
     const gateResults = existsSync(gatePath) ? JSON.parse(readFileSync(gatePath, 'utf8')) : null;
-    return checkSpa({ spaId, passes, gateResults, runDate });
+    const wdPath = join(runDir, `spa-${spaId}-withdrawals.json`);
+    const withdrawn = existsSync(wdPath)
+      ? JSON.parse(readFileSync(wdPath, 'utf8')).withdrawn.map((w) => w.passId)
+      : [];
+    return checkSpa({ spaId, passes, gateResults, runDate, withdrawn });
   });
   const ok = report.every((r) => r.violations.length === 0);
   console.log(JSON.stringify({ runDate, ok, report }, null, 2));

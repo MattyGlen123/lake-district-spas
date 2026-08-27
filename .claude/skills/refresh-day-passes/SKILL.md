@@ -9,7 +9,7 @@ Manually-triggered refresh of existing `src/data/day-passes/` entries against ea
 
 **Iron rules (PRD §1, §5):**
 
-- Never delete or add entries. The diff touches ONLY `priceGBP` (and sibling price fields like `pricePerPerson`) and `lastVerified`.
+- Never add entries. Never delete one **except a proven withdrawal** — see "Withdrawals" below (PRD §4a, amended 2026-08-27). Otherwise the diff touches ONLY `priceGBP` (and sibling price fields like `pricePerPerson`) and `lastVerified`.
 - Every figure entering the diff — changed AND confirmed-unchanged — must pass the deterministic gate script against the saved fetch artifact. Gate failure → ⚠️ flag section of the PR, never the diff, and NO `lastVerified` bump.
 - No gate depends on model self-assessment; the script's output is final.
 
@@ -347,6 +347,42 @@ Route strictly by `gate-results.json`:
 
 Never re-quote or re-run a demoted pass to get it green: a demotion is a review item, not a retry.
 
+### 4b. Withdrawals — the one case that deletes an entry
+
+*PRD §4a, amended 2026-08-27. Before this, a dead package was re-flagged every month forever.*
+
+**Missing ≠ withdrawn.** Missing means we could not read a price. Withdrawn means the spa no longer sells it. Only the second deletes data, and only when the source says so twice, two independent ways, on two different runs.
+
+Run this for each pass that took no quote (i.e. is heading for a ⚠️ flag):
+
+```bash
+node .claude/skills/refresh-day-passes/scripts/withdraw.mjs \
+  <repo-root> <spa-id> <pass-id> "<pass-name>"
+```
+
+It refuses to write unless **all five** conditions hold. Establish them from evidence you already have — do not assert them:
+
+| # | Condition | Where it comes from |
+| --- | --- | --- |
+| 1 | `pageGone` | the fetch log's `httpCode` is **404 or 410**. A timeout/403/5xx is an outage or bot-block — NOT this. |
+| 2 | `absentFromIndex` | fetch the spa's own offers/day-pass **listing page this run**; the package is not on it. |
+| 3 | `noSuccessor` | `classifySuccessors` returned no entry for this id. A renamed package is a rename, never a deletion. |
+| 4 | `priorSighting` | the pass appears in the **previous** run dir's `spa-<id>-withdrawal-candidates.json`. |
+| 5 | `noReferences` | nothing in `content/blog/**`, `src/data/faqs/**`, `src/data/location-faqs/**` cites the id. |
+
+Any one missing → leave it as a plain ⚠️ flag, data untouched. The script exits 3 with the blocking reason.
+
+🚨 **Condition 5 is not a formality.** `getDayPassPrice` returns `null` for an unknown id and every call site falls back to a hardcoded literal — e.g. `{itsAllGoodWeekdayPrice || '£170'}` in `src/data/faqs/spa-4-faqs.tsx`. So deleting a referenced pass does **not** break the build, fail a test, or leave a visible gap: it silently freezes a dead package's price into the page and keeps advertising it. Clean the references first; the next run then deletes it unprompted.
+
+**Write both ledgers into the run dir** — condition 4 is the run's only memory:
+
+- `spa-<id>-withdrawal-candidates.json` — every pass meeting conditions 1–3 this run, whether or not it was deleted. This is what a *future* run reads to satisfy `priorSighting`. **Write it even when nothing is deleted** — otherwise the second sighting can never happen.
+- `spa-<id>-withdrawals.json` — `{ "withdrawn": [{ "passId", "passName", "evidence": {…} }] }`, the deletions actually applied. `check-invariant.mjs` reads it and reconciles **two ways**: a withdrawn id may have a gate verdict with no data entry, and an id claimed withdrawn that is *still* in the data file is a violation.
+
+After deleting, run `npm test` — `priced-content.test.ts` must stay green.
+
+**Human override.** Matthew may authorise a deletion that has not met condition 4 or 5. Label it **human-authorised** in the PR and evidence — never present it as the rule having fired.
+
 ### 5. Apply
 
 Edit only the fields above in `src/data/day-passes/spa-<id>-day-passes.ts`. Run `npm test` — must stay green.
@@ -368,7 +404,7 @@ Write `evidence.md` in the run dir — the **full** per-pass quote set (PRD §5)
 
 Branch `refresh/day-pass-run-$RUN_DATE` off `origin/main`; commit the data edits (including any renamed ids/mechanical-ref rewrites) AND the run dir (the TRIMMED artifact from step 3b, checks, gate results, fetch log, evidence.md — never the full fetched pages). Commit message: `chore(data): day-pass refresh $RUN_DATE — <n> price changes, <n> flags`.
 
-PR body follows the normative template layout exactly for every non-empty section, in template order: header (run stats line + "this PR deletes nothing" statement) → 💷 price changes → ⚠️ missing-flags (include tier-3 "possible rename: X → Y" suggestions, "possible successor: X → Y" suggestions with their evidence lines, and prose-mention flags here) → 🏷 promo notes → ❌ not-fetched table → ✅ verified-unchanged (collapsed `<details>`) → diff summary table. Per change: id + field diff, blockquoted quote, linked source URL, fetch timestamp, ℹ️ normalization notes. Omit sections with zero entries.
+PR body follows the normative template layout exactly for every non-empty section, in template order: header (run stats line + deletions statement — "this PR deletes nothing", or "this PR deletes N withdrawn passes (§4a); nothing else is removed") → 💷 price changes → 🗑 withdrawn (§4a; omit when empty; per deletion: id, stored price, the 404 status, the index artifact lacking it, `successors: []`, and the prior run dir that first recorded it) → ⚠️ missing-flags (include tier-3 "possible rename: X → Y" suggestions, "possible successor: X → Y" suggestions with their evidence lines, and prose-mention flags here) → 🏷 promo notes → ❌ not-fetched table → ✅ verified-unchanged (collapsed `<details>`) → diff summary table. Per change: id + field diff, blockquoted quote, linked source URL, fetch timestamp, ℹ️ normalization notes. Omit sections with zero entries.
 
 The header links `evidence.md` (relative repo path, in-branch) as the full quote set; **the PR body itself shows per-spa samples only** (PRD §5). Every gate demotion appears in the ⚠️ section with its quote, gate number and reason.
 
@@ -377,3 +413,4 @@ Open as DRAFT via `gh pr create --draft` (gh lives at `/opt/homebrew/bin/gh`).
 ## Later slices (stubs only — do not build here)
 
 - Fan-out rename guard — the "never auto-rename a fan-out pass" rule above is documented and hand-applied, not yet enforced in code. See issue 12.
+- Withdrawal conditions 1–4 are established by the caller and passed to `classifyWithdrawal`; only condition 5 is enforced end-to-end inside `withdraw.mjs` (it rescans the repo itself before writing). Wiring the fetch log, index fetch, successor result and prior-run ledger into the script automatically is issue 14.

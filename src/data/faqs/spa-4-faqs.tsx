@@ -38,8 +38,7 @@ export function getSpa4FAQs(spa: Spa): FAQ[] {
   const afternoonBlissPrice = getDayPassPrice(spa.id, 'daffodil-afternoon-bliss');
   const simplySpaTimePrice = getDayPassPrice(spa.id, 'daffodil-simply-spa-time');
   const twilightSpaPrice = getDayPassPrice(spa.id, 'daffodil-twilight-spa');
-  const itsAllGoodWeekdayPrice = getDayPassPrice(spa.id, 'daffodil-its-all-good-weekday');
-  const doNotDisturbWeekendPrice = getDayPassPrice(spa.id, 'daffodil-do-not-disturb-weekend');
+  const mudRasulPrice = getDayPassPrice(spa.id, 'daffodil-mud-rasul-spa-for-two');
 
   return [
     {
@@ -101,7 +100,7 @@ export function getSpa4FAQs(spa: Spa): FAQ[] {
       question: `How much does a spa day cost at ${spa.name}?`,
       answer: (
         <>
-          Spa day packages at {spa.name} range from {facilitiesWeekdayPrice || '£35'} to {doNotDisturbWeekendPrice || '£195'} per person, depending on what&apos;s included. The spa offers ten different packages to suit various budgets and preferences.
+          Spa day packages at {spa.name} range from {facilitiesWeekdayPrice || '£35'} to {afternoonBlissPrice || '£70'} per person, depending on what&apos;s included. The spa offers six different packages to suit various budgets and preferences.
           <br />
           <br />
           For spa facilities only, prices start at {facilitiesWeekdayPrice || '£35'} for 3 hours Monday to Thursday, or {facilitiesWeekendPrice || '£45'} Friday to Sunday and bank holidays. The{' '}
@@ -119,7 +118,11 @@ export function getSpa4FAQs(spa: Spa): FAQ[] {
           ({afternoonBlissPrice || '£70'}) features full afternoon tea with lake views.
           <br />
           <br />
-          Full spa days with treatments start at {itsAllGoodWeekdayPrice || '£170'} for the It&apos;s All Good package (facial, back massage, spa access, and lunch). All packages include use of the hydrotherapy pool, sauna, steam room, and relaxation lounge. The spa is{' '}
+          For a package with a treatment included, the{' '}
+          <Link href="#daffodil-mud-rasul-spa-for-two" className="underline">
+            Mud Rasul &amp; Spa Access for Two
+          </Link>{' '}
+          ({mudRasulPrice || '£62'} per person) combines a self-administered mud rasul treatment with 2 hours of spa access and a 2 course lunch each. All packages include use of the hydrotherapy pool, sauna, steam room, and relaxation lounge. The spa is{' '}
           {agePolicy ? `for guests aged ${agePolicy} only` : 'adults only'}. For booking details, see the{' '}
           <Link href="#day-passes" className="underline">
             day passes section
@@ -127,7 +130,7 @@ export function getSpa4FAQs(spa: Spa): FAQ[] {
           .
         </>
       ),
-      schemaText: `Spa day packages at ${spa.name} range from ${facilitiesWeekdayPrice || '£35'} to ${doNotDisturbWeekendPrice || '£195'} per person. Facilities only: ${facilitiesWeekdayPrice || '£35'} weekday or ${facilitiesWeekendPrice || '£45'} weekend for 3 hours. Twilight Spa (${twilightSpaPrice || '£40'}) offers 2 hours evening access with prosecco. Simply Spa Time (${simplySpaTimePrice || '£60'}) includes 2 course lunch. Afternoon Bliss (${afternoonBlissPrice || '£70'}) includes afternoon tea with lake views. Full spa days with treatments from ${itsAllGoodWeekdayPrice || '£170'}. All packages include hydrotherapy pool, sauna, steam room access.`,
+      schemaText: `Spa day packages at ${spa.name} range from ${facilitiesWeekdayPrice || '£35'} to ${afternoonBlissPrice || '£70'} per person. Facilities only: ${facilitiesWeekdayPrice || '£35'} weekday or ${facilitiesWeekendPrice || '£45'} weekend for 3 hours. Twilight Spa (${twilightSpaPrice || '£40'}) offers 2 hours evening access with prosecco. Simply Spa Time (${simplySpaTimePrice || '£60'}) includes 2 course lunch. Afternoon Bliss (${afternoonBlissPrice || '£70'}) includes afternoon tea with lake views. Mud Rasul & Spa Access for Two (${mudRasulPrice || '£62'} per person) includes a self-administered mud rasul treatment and 2 course lunch. All packages include hydrotherapy pool, sauna, steam room access.`,
     },
     {
       question: `What spa treatments are available at ${spa.name}?`,

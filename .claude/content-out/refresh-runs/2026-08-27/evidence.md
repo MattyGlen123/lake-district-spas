@@ -143,9 +143,23 @@ designed to change every month.
   working files (offers index + four offers we do not carry).
 - Matching: `spa-4-match.json` · Checks: `spa-4-checks.json` · Gate: `spa-4-gate-results.json`
 - Fetched: 2026-08-27 20:04 BST
-- **5 grounded / 5 flagged.** **0 price changes**, 5 verified unchanged, 0 renames applied.
+- **5 grounded / 5 flagged.** **0 price changes**, 5 verified unchanged, 0 renames applied,
+  **4 passes withdrawn (deleted)** — 10 entries in, 6 out.
+- Withdrawals: `spa-4-withdrawals.json` · Candidate ledger: `spa-4-withdrawal-candidates.json`
 
 Previous `lastVerified` was `2026-01-22` on nine passes and `2026-03-20` on the Mud Rasul.
+
+### 🗑 Rule change applied on this run — PRD §4a
+
+This run is the first under the **2026-08-27 amendment** that permits deleting a proven withdrawal.
+Before it, a dead package was re-flagged every month forever. The rule needs **five** conditions
+(page 404/410 · absent from the spa's own index · no successor · seen on a previous run · no
+references left in the repo); any one missing leaves the pass as a ⚠️ flag.
+
+⚠️ **The four deletions below are `human-authorised`, not the rule firing.** Condition 4
+(`priorSighting`) is *not* met — this is the first run to see them missing, so the automated rule
+would have waited for a second sighting. Matthew authorised them directly after reviewing this run.
+Condition 5 was met properly, by cleaning the references, not by waiving it.
 
 ### Matching note — tier 1 keyed on `dayPassUrl`, with synthetic fan-out keys
 
@@ -407,29 +421,81 @@ Source: https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/tw
 
 Gate: **demoted at gate 3 — `poison-word:voucher`** (poison words: `voucher`). **No data change, no `lastVerified` bump.**
 
-### ⚠️ `daffodil-its-all-good-weekday` — It's All Good Spa Day
+### 🗑 `daffodil-its-all-good-weekday` — It's All Good Spa Day — **WITHDRAWN, ENTRY DELETED**
 
 Source page **HTTP 404**: https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/it-s-all-good-spa-day/
 
-Stored £170. No quote exists to take, so the check carries an empty quote and gate 1 demotes it with **`empty-quote`**. **No data change, no `lastVerified` bump** — it stays at `2026-01-22`.
+Stored £170. No quote exists to take, so the check carries an empty quote and gate 1 demotes it
+with **`empty-quote`**. Under the pre-amendment rule that would end here as a ⚠️ flag; under
+**PRD §4a** the pass additionally qualifies as *withdrawn*, and **the entry has been deleted**.
 
-### ⚠️ `daffodil-its-all-good-weekend` — It's All Good Spa Day
+| Condition | Met | Evidence |
+| --- | --- | --- |
+| 1 `pageGone` | ✅ | HTTP 404 on 3 attempts, `botBlocked: false` (`spa-4-fetch-log.json`) |
+| 2 `absentFromIndex` | ✅ | `/offers/` fetched this run lists 13 offers; `it-s-all-good-spa-day` is not among them |
+| 3 `noSuccessor` | ✅ | `successors: []` — four vanished, zero unmatched, so strict 1:1 cannot apply |
+| 4 `priorSighting` | ❌ | **first run to see it missing** — see the human-authorisation note above |
+| 5 `noReferences` | ✅ | references cleaned in this commit, then re-scanned clean by `withdraw.mjs` |
+
+The gate verdict is retained in `spa-4-gate-results.json` as the evidence for the deletion;
+`check-invariant.mjs` reconciles it against `spa-4-withdrawals.json`.
+
+### 🗑 `daffodil-its-all-good-weekend` — It's All Good Spa Day — **WITHDRAWN, ENTRY DELETED**
 
 Source page **HTTP 404**: https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/it-s-all-good-spa-day/
 
-Stored £180. No quote exists to take, so the check carries an empty quote and gate 1 demotes it with **`empty-quote`**. **No data change, no `lastVerified` bump** — it stays at `2026-01-22`.
+Stored £180. No quote exists to take, so the check carries an empty quote and gate 1 demotes it
+with **`empty-quote`**. Under the pre-amendment rule that would end here as a ⚠️ flag; under
+**PRD §4a** the pass additionally qualifies as *withdrawn*, and **the entry has been deleted**.
 
-### ⚠️ `daffodil-do-not-disturb-weekday` — Do Not Disturb Spa Day
+| Condition | Met | Evidence |
+| --- | --- | --- |
+| 1 `pageGone` | ✅ | HTTP 404 on 3 attempts, `botBlocked: false` (`spa-4-fetch-log.json`) |
+| 2 `absentFromIndex` | ✅ | `/offers/` fetched this run lists 13 offers; `it-s-all-good-spa-day` is not among them |
+| 3 `noSuccessor` | ✅ | `successors: []` — four vanished, zero unmatched, so strict 1:1 cannot apply |
+| 4 `priorSighting` | ❌ | **first run to see it missing** — see the human-authorisation note above |
+| 5 `noReferences` | ✅ | references cleaned in this commit, then re-scanned clean by `withdraw.mjs` |
+
+The gate verdict is retained in `spa-4-gate-results.json` as the evidence for the deletion;
+`check-invariant.mjs` reconciles it against `spa-4-withdrawals.json`.
+
+### 🗑 `daffodil-do-not-disturb-weekday` — Do Not Disturb Spa Day — **WITHDRAWN, ENTRY DELETED**
 
 Source page **HTTP 404**: https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/do-not-disturb-spa-day/
 
-Stored £185. No quote exists to take, so the check carries an empty quote and gate 1 demotes it with **`empty-quote`**. **No data change, no `lastVerified` bump** — it stays at `2026-01-22`.
+Stored £185. No quote exists to take, so the check carries an empty quote and gate 1 demotes it
+with **`empty-quote`**. Under the pre-amendment rule that would end here as a ⚠️ flag; under
+**PRD §4a** the pass additionally qualifies as *withdrawn*, and **the entry has been deleted**.
 
-### ⚠️ `daffodil-do-not-disturb-weekend` — Do Not Disturb Spa Day
+| Condition | Met | Evidence |
+| --- | --- | --- |
+| 1 `pageGone` | ✅ | HTTP 404 on 3 attempts, `botBlocked: false` (`spa-4-fetch-log.json`) |
+| 2 `absentFromIndex` | ✅ | `/offers/` fetched this run lists 13 offers; `do-not-disturb-spa-day` is not among them |
+| 3 `noSuccessor` | ✅ | `successors: []` — four vanished, zero unmatched, so strict 1:1 cannot apply |
+| 4 `priorSighting` | ❌ | **first run to see it missing** — see the human-authorisation note above |
+| 5 `noReferences` | ✅ | references cleaned in this commit, then re-scanned clean by `withdraw.mjs` |
+
+The gate verdict is retained in `spa-4-gate-results.json` as the evidence for the deletion;
+`check-invariant.mjs` reconciles it against `spa-4-withdrawals.json`.
+
+### 🗑 `daffodil-do-not-disturb-weekend` — Do Not Disturb Spa Day — **WITHDRAWN, ENTRY DELETED**
 
 Source page **HTTP 404**: https://www.crerarhotels.com/collection/daffodil-hotel-and-spa/offers/do-not-disturb-spa-day/
 
-Stored £195. No quote exists to take, so the check carries an empty quote and gate 1 demotes it with **`empty-quote`**. **No data change, no `lastVerified` bump** — it stays at `2026-01-22`.
+Stored £195. No quote exists to take, so the check carries an empty quote and gate 1 demotes it
+with **`empty-quote`**. Under the pre-amendment rule that would end here as a ⚠️ flag; under
+**PRD §4a** the pass additionally qualifies as *withdrawn*, and **the entry has been deleted**.
+
+| Condition | Met | Evidence |
+| --- | --- | --- |
+| 1 `pageGone` | ✅ | HTTP 404 on 3 attempts, `botBlocked: false` (`spa-4-fetch-log.json`) |
+| 2 `absentFromIndex` | ✅ | `/offers/` fetched this run lists 13 offers; `do-not-disturb-spa-day` is not among them |
+| 3 `noSuccessor` | ✅ | `successors: []` — four vanished, zero unmatched, so strict 1:1 cannot apply |
+| 4 `priorSighting` | ❌ | **first run to see it missing** — see the human-authorisation note above |
+| 5 `noReferences` | ✅ | references cleaned in this commit, then re-scanned clean by `withdraw.mjs` |
+
+The gate verdict is retained in `spa-4-gate-results.json` as the evidence for the deletion;
+`check-invariant.mjs` reconciles it against `spa-4-withdrawals.json`.
 
 ### 🏷 Promo notes
 
@@ -496,8 +562,34 @@ read. None is a day pass:
 | `prosecco-afternoon-tea` | afternoon tea, £40.00 pp — **no spa access**: 0 mentions of spa access, hydrotherapy or sauna |
 | `autumn-indulgence` | stay offer — **no price on the page at all** |
 
-So there is no successor to suggest. All four remain in the data, flagged, with stale
-`lastVerified` — removing entries is forbidden by the iron rule (PRD §1) and is a human decision.
+So there is no successor to suggest — which is condition 3 of the withdrawal rule, satisfied.
+Together with the 404s (condition 1) and their absence from the index (condition 2), all four are
+proven withdrawals rather than merely unreadable, and **their entries have been deleted** under
+PRD §4a. Condition 4 was waived by Matthew (first sighting); condition 5 was satisfied properly, by
+cleaning the three references first — see "References cleaned before deletion" below.
+
+### 🗑 References cleaned before deletion (condition 5)
+
+Three places still cited the withdrawn ids. This is the condition that matters most, because
+**nothing would have broken if it were ignored**: `getDayPassPrice` returns `null` for an unknown id
+and every call site falls back to a hardcoded literal, so the pages would have carried on quoting a
+dead package's frozen price with no error, no failing test, and no visible gap.
+
+| File | Was | Now |
+| --- | --- | --- |
+| `src/data/faqs/spa-4-faqs.tsx` | "range from £35 to **£195** per person… **ten** different packages" | "range from £35 to **£70** per person… **six** different packages" |
+| `src/data/faqs/spa-4-faqs.tsx` | "Full spa days with treatments start at **£170** for the **It's All Good** package" | re-pointed to the **Mud Rasul & Spa Access for Two** (£62 pp), the only treatment-inclusive pass left |
+| `src/data/location-faqs/grasmere-faqs.tsx` | "**nine** different day pass packages ranging from £35 to **£195**" | "**six** different day pass packages ranging from £35 to **£70**" |
+
+All three figures are resolved dynamically from the remaining passes (`afternoonBlissPrice`,
+`mudRasulPrice`), not hardcoded — the literals shown are only the `||` display fallbacks the
+existing FAQ convention uses. After the edits, `withdraw.mjs` re-scanned `content/blog/**`,
+`src/data/faqs/**` and `src/data/location-faqs/**` and reported `references: []` for all four ids,
+which is what allowed the deletions to proceed.
+
+Verified rendering after deletion: `/spa/daffodil-hotel-spa` shows six passes and zero mentions of
+either withdrawn package; the FAQ reads "range from £35 to £70 per person… six different packages";
+`/location/spas-in-grasmere` reads "six different day pass packages ranging from £35 to £70".
 
 ### ℹ️ `simply-spa-day` is a URL alias, not a rename
 
@@ -526,8 +618,12 @@ No test pins a Daffodil price. The only test-file matches for "daffodil" are syn
 (`daffodil-discontinued-pass`) in `tests/unit/refresh-day-passes-matching.test.ts` and
 `…-successor.test.ts`, unrelated to spa 4's data. The location FAQs
 (`src/data/location-faqs/grasmere-faqs.tsx`, `ambleside-faqs.tsx`) read prices dynamically via
-`getDayPassPrice` with display fallbacks, not assertions. Nothing to fix — and no price moved this
-run in any case. `npm test`: **813 passed / 813**.
+`getDayPassPrice` with display fallbacks, not assertions. No price moved this run in any case.
+
+Tests were **added**, not fixed: `tests/unit/refresh-day-passes-withdraw.test.ts` (23 tests) covers
+the new withdrawal engine, and three cases were added to
+`tests/unit/refresh-day-passes-invariant.test.ts` for withdrawal reconciliation. `npm test`:
+**839 passed / 839** (was 813).
 
 ## Invariant check
 
@@ -543,8 +639,11 @@ node .claude/skills/refresh-day-passes/scripts/check-invariant.mjs \
   ".claude/content-out/refresh-runs/2026-08-27" "2026-08-27" "4"
 ```
 
-`{ "runDate": "2026-08-27", "ok": true, report: [{ spaId: "4", fetched: true, passes: 10, violations: [] }] }` — exit 0, **0 violations**.
+`{ "runDate": "2026-08-27", "ok": true, report: [{ spaId: "4", fetched: true, passes: 6, withdrawn: 4, violations: [] }] }` — exit 0, **0 violations**.
 
 All 10 Daffodil passes carry a gate verdict, including the four whose pages 404 — the invariant
 requires every pass of a fetched spa to have one, so they were added to `checks.json` with an
-empty quote rather than dropped from the run.
+empty quote rather than dropped from the run. Six entries remain in the data file; the four
+withdrawn ids keep their gate verdict with no data entry, which `check-invariant.mjs` now
+reconciles against `spa-4-withdrawals.json` — and it checks both ways, so an id claimed as
+withdrawn that was still in the data file would itself be a violation.
