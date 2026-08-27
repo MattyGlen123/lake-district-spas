@@ -2,7 +2,8 @@
 // Deterministic verification gates for /refresh-day-passes (PRD §5).
 // Implemented: gate 1 (exact-quote grounding + arithmetic cases),
 // gate 2 (contiguity), gate 3 (poison words), gate 4 (PDF vintage,
-// pdf-tier only), gate 5 (plausibility).
+// pdf-tier only), gate 5 (plausibility), gate 6 (bookability, portal
+// tiers, opt-in per check).
 //
 // No gate consults the model's opinion of itself: every verdict is a
 // grep/arithmetic check against the SAVED fetch artifact.
@@ -29,6 +30,14 @@
 //                                // valid-until: a verbatim quote, checked
 //                                // against the artifact like any quote
 //     "runYear":       number?  // defaults to the current calendar year
+//   }?,
+//   "bookability": {         // portal tiers; omitted -> gate 6 is a no-op
+//     "itemId":        number|string, // booking-item id, must appear in evidence
+//     "daysProbed":    number,  // days actually checked (>= 1)
+//     "daysWithSlots": number,  // of those, how many had >= 1 timeslot
+//     "evidence":      string   // verbatim span of the artifact's
+//                                // `availabilityProbe` block carrying both
+//                                // the itemId and the counts
 //   }?
 // }]
 //
@@ -234,6 +243,54 @@ export function pdfVintageCheck(vintage, artifactNorm) {
   return { ok: true };
 }
 
+// --- gate 6: bookability (portal tiers; opt-in per check) --------------
+// Runs only when a check carries `bookability` — omitted, it's a no-op.
+//
+// A pass can be listed, priced, and have a working booking page while
+// being bookable on no date at all. Lakeside's "Fizz and Float" was
+// exactly that: £39, a live page, and zero released timeslots on every
+// date probed. Gates 1-5 all pass such a pass happily — the price really
+// is on the page — so without this gate the only thing standing between
+// us and republishing a phantom price forever is a human clicking
+// through. That is the manual check this gate removes.
+//
+// `evidence` is a verbatim span of the artifact's `availabilityProbe`
+// block (written by fetch-onejourney.mjs from real timeslot responses),
+// proven by grep exactly like gate 1's quote — the counts are not taken
+// on trust. It must also contain the itemId, so the numbers cannot be
+// borrowed from a different pass's entry.
+//
+// `daysWithSlots: 0` demotes with `no-availability`. This is a per-pass
+// ⚠️ flag: data untouched, no `lastVerified` bump, and NEVER an automatic
+// deletion — removing a pass stays a human decision (PRD §1).
+export function bookabilityCheck(bookability, artifactNorm) {
+  if (bookability === undefined || bookability === null) return { ok: true };
+  const { itemId, daysProbed, daysWithSlots, evidence } = bookability;
+  if (!Number.isInteger(daysProbed) || daysProbed < 1) {
+    return { ok: false, reason: 'bookability-days-probed-missing' };
+  }
+  if (!Number.isInteger(daysWithSlots) || daysWithSlots < 0) {
+    return { ok: false, reason: 'bookability-days-with-slots-missing' };
+  }
+  if (daysWithSlots > daysProbed) {
+    return { ok: false, reason: 'bookability-counts-inconsistent' };
+  }
+  const evidenceNorm = normalize(String(evidence ?? ''));
+  if (!evidenceNorm) return { ok: false, reason: 'bookability-evidence-missing' };
+  if (!artifactNorm.includes(evidenceNorm)) {
+    return { ok: false, reason: 'bookability-evidence-not-found-in-artifact' };
+  }
+  // Tie the evidence to this pass, so one item's counts can't stand in
+  // for another's.
+  if (itemId === undefined || itemId === null || !evidenceNorm.includes(String(itemId))) {
+    return { ok: false, reason: 'bookability-item-id-not-in-evidence' };
+  }
+  if (daysWithSlots === 0) {
+    return { ok: false, reason: 'no-availability' };
+  }
+  return { ok: true };
+}
+
 // --- gate 5: plausibility bounds --------------------------------------
 export function movePct(storedGBP, figureGBP) {
   if (typeof storedGBP !== 'number' || !Number.isFinite(storedGBP) || storedGBP === 0) return null;
@@ -269,6 +326,13 @@ const GATE_OF = {
   'pdf-vintage-stale': 4,
   'price-out-of-bounds': 5,
   'move-exceeds-40pct': 5,
+  'bookability-days-probed-missing': 6,
+  'bookability-days-with-slots-missing': 6,
+  'bookability-counts-inconsistent': 6,
+  'bookability-evidence-missing': 6,
+  'bookability-evidence-not-found-in-artifact': 6,
+  'bookability-item-id-not-in-evidence': 6,
+  'no-availability': 6,
 };
 
 export function runCheck(artifactNorm, check) {
@@ -277,6 +341,10 @@ export function runCheck(artifactNorm, check) {
   const pct = movePct(check.storedGBP, check.figureGBP);
   if (pct !== null) base.movePct = pct;
   if (check.pdfVintage) base.documentYear = check.pdfVintage.documentYear;
+  if (check.bookability) {
+    base.daysProbed = check.bookability.daysProbed;
+    base.daysWithSlots = check.bookability.daysWithSlots;
+  }
   const demote = (reason, extra = {}) => ({
     ...base,
     grounded: false,
@@ -310,6 +378,10 @@ export function runCheck(artifactNorm, check) {
   const plaus = plausibility(check);
   if (!plaus.ok) return demote(plaus.reason);
 
+  // gate 6 - bookability (portal tiers; no-op when bookability is absent)
+  const bookable = bookabilityCheck(check.bookability, artifactNorm);
+  if (!bookable.ok) return demote(bookable.reason);
+
   return { ...base, grounded: true, reason: 'grounded', gate: null };
 }
 
@@ -337,6 +409,7 @@ function main() {
           '3 poison words',
           '4 pdf vintage (pdf tier only)',
           '5 plausibility',
+          '6 bookability (portal tiers, opt-in)',
         ],
         constants: { PRICE_MIN_GBP, PRICE_MAX_GBP, MAX_MOVE_PCT, POISON_CONTEXT_CHARS },
         summary,

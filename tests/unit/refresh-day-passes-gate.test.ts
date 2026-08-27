@@ -730,3 +730,152 @@ describe('gate output shape', () => {
     });
   });
 });
+
+// Gate 6 exists because gates 1-5 cannot see it: a pass can be listed,
+// priced and quotable while being bookable on no date at all. Lakeside's
+// "Fizz and Float" was exactly that — £39, a live booking page, and zero
+// released timeslots — and only a human clicking through ever caught it.
+describe('gate 6 — bookability (portal tiers, opt-in)', () => {
+  // Shaped like the `availabilityProbe` block fetch-onejourney.mjs writes.
+  const probeArtifact = `{
+  "data": [
+    { "id": 18904, "name": "Dip & Dine", "price": { "amount": 2500 } },
+    { "id": 18902, "name": "Fizz and Float ", "price": { "amount": 3900 } }
+  ],
+  "availabilityProbe": {
+    "windowDays": 14,
+    "items": [
+      { "itemId": 18904, "name": "Dip & Dine", "daysProbed": 14, "daysWithSlots": 11 },
+      { "itemId": 18902, "name": "Fizz and Float ", "daysProbed": 14, "daysWithSlots": 0 }
+    ]
+  }
+}`;
+
+  const bookableCheck = {
+    passId: 'lakeside-dip-and-dine',
+    passName: 'Dip & Dine',
+    quote: '"name": "Dip & Dine", "price": { "amount": 2500 }',
+    figureGBP: 25,
+    storedGBP: 25,
+    arithmetic: 'pence',
+    quotedFigure: 2500,
+    bookability: {
+      itemId: 18904,
+      daysProbed: 14,
+      daysWithSlots: 11,
+      evidence: '"itemId": 18904, "name": "Dip & Dine", "daysProbed": 14, "daysWithSlots": 11',
+    },
+  };
+
+  it('is a no-op when the check carries no bookability block', () => {
+    const { bookability, ...noBlock } = bookableCheck;
+    expect(bookability).toBeDefined();
+    const r = one(probeArtifact, noBlock);
+    expect(r.grounded).toBe(true);
+  });
+
+  it('grounds a pass with released availability', () => {
+    const r = one(probeArtifact, bookableCheck);
+    expect(r.grounded).toBe(true);
+    expect(r.reason).toBe('grounded');
+  });
+
+  it('demotes a listed, priced pass that is bookable on no date', () => {
+    const r = one(probeArtifact, {
+      ...bookableCheck,
+      passId: 'lakeside-fizz-and-float',
+      passName: 'Fizz and Float',
+      quote: '"name": "Fizz and Float ", "price": { "amount": 3900 }',
+      figureGBP: 39,
+      storedGBP: 39,
+      quotedFigure: 3900,
+      bookability: {
+        itemId: 18902,
+        daysProbed: 14,
+        daysWithSlots: 0,
+        evidence:
+          '"itemId": 18902, "name": "Fizz and Float ", "daysProbed": 14, "daysWithSlots": 0',
+      },
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('no-availability');
+    expect(r.gate).toBe(6);
+  });
+
+  it('runs after gate 5, so a price problem still reports as the price problem', () => {
+    const r = one(probeArtifact, {
+      ...bookableCheck,
+      storedGBP: 100, // -75% move
+      bookability: { ...bookableCheck.bookability, daysWithSlots: 0 },
+    });
+    expect(r.reason).toBe('move-exceeds-40pct');
+    expect(r.gate).toBe(5);
+  });
+
+  it('will not take the counts on trust — evidence must grep in the artifact', () => {
+    const r = one(probeArtifact, {
+      ...bookableCheck,
+      bookability: {
+        ...bookableCheck.bookability,
+        evidence: '"itemId": 18904, "daysProbed": 14, "daysWithSlots": 99',
+      },
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('bookability-evidence-not-found-in-artifact');
+    expect(r.gate).toBe(6);
+  });
+
+  it("rejects evidence borrowed from a different pass's entry", () => {
+    // The dead pass claiming the live pass's counts — real numbers, real
+    // span, wrong item.
+    const r = one(probeArtifact, {
+      ...bookableCheck,
+      passId: 'lakeside-fizz-and-float',
+      bookability: {
+        itemId: 18902,
+        daysProbed: 14,
+        daysWithSlots: 11,
+        evidence: '"itemId": 18904, "name": "Dip & Dine", "daysProbed": 14, "daysWithSlots": 11',
+      },
+    });
+    expect(r.grounded).toBe(false);
+    expect(r.reason).toBe('bookability-item-id-not-in-evidence');
+  });
+
+  it('rejects a zero-day probe rather than reading it as zero availability', () => {
+    // "We could not check" must never be recorded as "there is nothing".
+    const r = one(probeArtifact, {
+      ...bookableCheck,
+      bookability: { ...bookableCheck.bookability, daysProbed: 0 },
+    });
+    expect(r.reason).toBe('bookability-days-probed-missing');
+    expect(r.gate).toBe(6);
+  });
+
+  it('rejects counts that cannot both be true', () => {
+    const r = one(probeArtifact, {
+      ...bookableCheck,
+      bookability: { ...bookableCheck.bookability, daysProbed: 5, daysWithSlots: 11 },
+    });
+    expect(r.reason).toBe('bookability-counts-inconsistent');
+  });
+
+  it('rejects a missing or non-integer slot count', () => {
+    for (const daysWithSlots of [undefined, null, 'lots', 1.5]) {
+      const r = one(probeArtifact, {
+        ...bookableCheck,
+        bookability: { ...bookableCheck.bookability, daysWithSlots },
+      });
+      expect(r.reason).toBe('bookability-days-with-slots-missing');
+    }
+  });
+
+  it('reports the counts on the result for the PR flag', () => {
+    const r = one(probeArtifact, bookableCheck) as GateResult & {
+      daysProbed?: number;
+      daysWithSlots?: number;
+    };
+    expect(r.daysProbed).toBe(14);
+    expect(r.daysWithSlots).toBe(11);
+  });
+});

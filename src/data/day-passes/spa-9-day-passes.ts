@@ -3,9 +3,14 @@ import { SpaDayPasses } from '@/types/spa';
 // Rewritten 2026-08-26. Lakeside replaced its entire onejourney catalogue:
 // the six packages previously listed here (booking items 7198, 7203, 7685,
 // 7202, 7326, 7328) all 404 at source, so every "Book" link was dead. The
-// four below are the live catalogue, read from the onejourney JSON API
-// (`https://api.onejourney.travel/340/spa-packages/en`). See
+// three below are the live, bookable catalogue, read from the onejourney
+// JSON API (`https://api.onejourney.travel/340/spa-packages/en`). See
 // `.scratch/day-pass-refresh/issues/13-lakeside-catalogue-replaced.md`.
+//
+// The catalogue also lists a fourth package, "Fizz and Float" (18902, £39).
+// It is deliberately NOT here: it has released no bookable timeslot on any
+// date, confirmed with the hotel. Gate 6 (bookability) now detects this
+// automatically — see the `availabilityProbe` block in the run artifact.
 export const spa9DayPasses: SpaDayPasses = {
   spaId: 9, // Lakeside Hotel Spa
   options: [
@@ -30,29 +35,6 @@ export const spa9DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.lakesidehotel.co.uk/spa/spa-day/',
       bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/days/18904',
-      lastVerified: '2026-08-26',
-    },
-    {
-      id: 'lakeside-fizz-and-float',
-      packageName: 'Fizz and Float',
-      priceGBP: 39,
-      spaDuration: 3,
-      treatmentsIncluded: false,
-      refreshmentsIncluded: true,
-      mealIncluded: false,
-      included: [
-        '3 hours of leisure access',
-        '17m heated indoor pool with Lake Windermere views',
-        'Jacuzzi, sauna and steam room',
-        'A glass of chilled Prosecco',
-        'Towels provided',
-      ],
-      description: 'A relaxed few hours by the lake with a glass of fizz — built for birthdays, hen parties and catch-ups with friends.',
-      daysAvailable: 'Monday-Sunday',
-      ageRestriction: 'All ages',
-      bookingRequired: true,
-      dayPassUrl: 'https://www.lakesidehotel.co.uk/spa/spa-day/',
-      bookingUrl: 'https://lakesidehotel.onejourney.travel/spa/days/18902',
       lastVerified: '2026-08-26',
     },
     {

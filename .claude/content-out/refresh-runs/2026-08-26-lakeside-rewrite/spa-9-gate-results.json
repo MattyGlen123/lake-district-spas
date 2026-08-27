@@ -5,7 +5,8 @@
     "2 contiguity",
     "3 poison words",
     "4 pdf vintage (pdf tier only)",
-    "5 plausibility"
+    "5 plausibility",
+    "6 bookability (portal tiers, opt-in)"
   ],
   "constants": {
     "PRICE_MIN_GBP": 20,
@@ -14,8 +15,8 @@
     "POISON_CONTEXT_CHARS": 200
   },
   "summary": {
-    "checked": 4,
-    "grounded": 4,
+    "checked": 3,
+    "grounded": 3,
     "flagged": 0
   },
   "results": [
@@ -24,15 +25,8 @@
       "quote": "\"name\": \"Dip & Dine\",\n      \"image\": {\n        \"externalKey\": \"d88bfc560b264ac512aa5564820e3106\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/d88bfc560b264ac512aa5564820e3106.webp\"\n      },\n      \"price\": {\n        \"amount\": 2500",
       "figureGBP": 25,
       "movePct": 0,
-      "grounded": true,
-      "reason": "grounded",
-      "gate": null
-    },
-    {
-      "passId": "lakeside-fizz-and-float",
-      "quote": "\"name\": \"Fizz and Float \",\n      \"image\": {\n        \"externalKey\": \"da987e17f261b44890b74e3ce404f284\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/da987e17f261b44890b74e3ce404f284.webp\"\n      },\n      \"price\": {\n        \"amount\": 3900",
-      "figureGBP": 39,
-      "movePct": 0,
+      "daysProbed": 14,
+      "daysWithSlots": 10,
       "grounded": true,
       "reason": "grounded",
       "gate": null
@@ -42,6 +36,8 @@
       "quote": "\"name\": \"Express Escape\",\n      \"image\": {\n        \"externalKey\": \"d64a3fa6e323cef1f13ff3e0f9faa62b\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/d64a3fa6e323cef1f13ff3e0f9faa62b.webp\"\n      },\n      \"price\": {\n        \"amount\": 7000",
       "figureGBP": 70,
       "movePct": 0,
+      "daysProbed": 14,
+      "daysWithSlots": 10,
       "grounded": true,
       "reason": "grounded",
       "gate": null
@@ -51,6 +47,8 @@
       "quote": "\"name\": \"Signature Sanctuary Spa Day\",\n      \"image\": {\n        \"externalKey\": \"88bd2b5bde0a9b3a6fad131ef20fc5a3\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/88bd2b5bde0a9b3a6fad131ef20fc5a3.webp\"\n      },\n      \"price\": {\n        \"amount\": 9500",
       "figureGBP": 95,
       "movePct": 0,
+      "daysProbed": 14,
+      "daysWithSlots": 11,
       "grounded": true,
       "reason": "grounded",
       "gate": null

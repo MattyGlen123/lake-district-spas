@@ -6,16 +6,13 @@
     "figureGBP": 25,
     "storedGBP": 25,
     "arithmetic": "pence",
-    "quotedFigure": 2500
-  },
-  {
-    "passId": "lakeside-fizz-and-float",
-    "passName": "Fizz and Float",
-    "quote": "\"name\": \"Fizz and Float \",\n      \"image\": {\n        \"externalKey\": \"da987e17f261b44890b74e3ce404f284\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/da987e17f261b44890b74e3ce404f284.webp\"\n      },\n      \"price\": {\n        \"amount\": 3900",
-    "figureGBP": 39,
-    "storedGBP": 39,
-    "arithmetic": "pence",
-    "quotedFigure": 3900
+    "quotedFigure": 2500,
+    "bookability": {
+      "itemId": 18904,
+      "daysProbed": 14,
+      "daysWithSlots": 10,
+      "evidence": "\"itemId\": 18904,\n      \"name\": \"Dip & Dine\",\n      \"daysProbed\": 14,\n      \"daysWithSlots\": 10"
+    }
   },
   {
     "passId": "lakeside-express-escape",
@@ -24,7 +21,13 @@
     "figureGBP": 70,
     "storedGBP": 70,
     "arithmetic": "pence",
-    "quotedFigure": 7000
+    "quotedFigure": 7000,
+    "bookability": {
+      "itemId": 18905,
+      "daysProbed": 14,
+      "daysWithSlots": 10,
+      "evidence": "\"itemId\": 18905,\n      \"name\": \"Express Escape\",\n      \"daysProbed\": 14,\n      \"daysWithSlots\": 10"
+    }
   },
   {
     "passId": "lakeside-signature-sanctuary-spa-day",
@@ -33,6 +36,12 @@
     "figureGBP": 95,
     "storedGBP": 95,
     "arithmetic": "pence",
-    "quotedFigure": 9500
+    "quotedFigure": 9500,
+    "bookability": {
+      "itemId": 18912,
+      "daysProbed": 14,
+      "daysWithSlots": 11,
+      "evidence": "\"itemId\": 18912,\n      \"name\": \"Signature Sanctuary Spa Day\",\n      \"daysProbed\": 14,\n      \"daysWithSlots\": 11"
+    }
   }
 ]

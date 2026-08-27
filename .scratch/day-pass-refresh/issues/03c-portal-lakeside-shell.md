@@ -164,7 +164,15 @@ Built as the **`portal-onejourney-api`** tier — option (c), the cleanest of th
 - It **validates before it saves** — that is what closes this ticket's hazard for good rather than
   relying on a documented warning. `notJson` / `unexpectedShape` are exit-2 failures with no
   artifact written.
-- No gate change was needed: `price.amount` is pence, reusing gate 1's existing `pence` case.
+- No gate change was needed for *pricing*: `price.amount` is pence, reusing gate 1's existing
+  `pence` case. A new **gate 6 (bookability)** was added for a different problem the review turned
+  up — see below.
+- **Gate 6 (bookability).** Lakeside listed "Fizz and Float" at £39 with a working booking page and
+  zero released timeslots on every date. Gates 1–5 pass such a pass happily, because the price
+  really is on the page, so only a human clicking through would ever catch it. The fetch now probes
+  each package's real timeslot endpoint over 14 days and writes an `availabilityProbe` block into
+  the artifact; gate 6 demotes any pass with `daysWithSlots: 0` as `no-availability`. Flag only —
+  removing a pass stays a human decision. Verified against the live artifact, not just fixtures.
 - 16 unit tests in `tests/unit/refresh-day-passes-fetch-onejourney.test.ts`, run against a
   loopback HTTP server so no network is required. The refusal paths are tested with the real
   Elemis-shell shape.

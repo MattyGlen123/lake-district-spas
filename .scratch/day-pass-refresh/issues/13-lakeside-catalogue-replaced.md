@@ -98,12 +98,21 @@ prices:
 `src/data/priced-content.test.ts` is what caught every dangling reference — it failed with 8
 unresolved lookups the moment the data changed, and is green now.
 
-Two things for a human to confirm — both flagged in evidence.md:
+### Fizz and Float dropped, and the check automated
 
-1. **Express Escape `spaDuration: 3` is inferred, not quoted.** The source states no access hours
-   for that package; 3 is the standard block at this property.
-2. **Fizz and Float has released no availability** on any of the next 14 days, though it is listed
-   and priced. It is included as a live product, but may not be genuinely bookable.
+Confirmed with the hotel that **Fizz and Float (18902, £39) never has availability**, so only
+**three** passes are stored, not four. It stays in the source catalogue, so a future run sees it as
+an ℹ️ `unmatchedFetched` note — correct: it exists, we just don't sell it.
+
+Finding it took a human opening the booking calendar. That check is now automatic: see
+**gate 6 (bookability)** in `SKILL.md`. `fetch-onejourney.mjs` probes each package's real timeslot
+endpoint over 14 days, writes the counts into the artifact, and gate 6 demotes any pass with zero
+bookable days (`no-availability`) — a ⚠️ flag, never an automatic deletion.
+
+Still worth a human eye — flagged in evidence.md:
+
+- **Express Escape `spaDuration: 3` is inferred, not quoted.** The source states no access hours
+  for that package; 3 is the standard block at this property.
 
 ## Reproduce
 

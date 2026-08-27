@@ -7,7 +7,6 @@ export function getSpa9FAQs(spa: Spa): FAQ[] {
   // Extract dynamic values from day passes
   const dipDinePrice = getDayPassPrice(spa.id, 'lakeside-dip-and-dine');
   const dipDineDuration = getDayPassDuration(spa.id, 'lakeside-dip-and-dine');
-  const fizzFloatPrice = getDayPassPrice(spa.id, 'lakeside-fizz-and-float');
   const expressEscapePrice = getDayPassPrice(
     spa.id,
     'lakeside-express-escape'
@@ -29,7 +28,7 @@ export function getSpa9FAQs(spa: Spa): FAQ[] {
         <>
           Spa day packages at {spa.name} range from {dipDinePrice || '£25'} to{' '}
           {signaturePrice || '£95'} per person, making it one of the most
-          affordable spa options in the Lake District. With four packages
+          affordable spa options in the Lake District. With three packages
           available, there&apos;s an option for every budget.
           <br />
           <br />
@@ -40,11 +39,7 @@ export function getSpa9FAQs(spa: Spa): FAQ[] {
           ({dipDinePrice || '£25'}), which gives you{' '}
           {dipDineDuration || '3 hours'} of access to the 17 metre heated pool,
           sauna, steam room and jacuzzi, plus a £15 food credit to spend in the
-          hotel. For a celebration,{' '}
-          <Link href="#lakeside-fizz-and-float" className="underline">
-            Fizz and Float
-          </Link>{' '}
-          ({fizzFloatPrice || '£39'}) adds a glass of chilled Prosecco.
+          hotel.
           <br />
           <br />
           If you want a treatment included, the{' '}
@@ -67,7 +62,7 @@ export function getSpa9FAQs(spa: Spa): FAQ[] {
           .
         </>
       ),
-      schemaText: `Spa day packages at ${spa.name} range from ${dipDinePrice || '£25'} to ${signaturePrice || '£95'} per person. Dip & Dine (${dipDinePrice || '£25'}) offers ${dipDineDuration || '3 hours'} of pool, sauna, steam room and jacuzzi access plus a £15 food credit. Fizz and Float (${fizzFloatPrice || '£39'}) adds a glass of Prosecco. For treatments, the Express Escape (${expressEscapePrice || '£70'}) includes a 30 minute ELEMIS treatment and afternoon tea, and the Signature Sanctuary Spa Day (${signaturePrice || '£95'}) includes a 60 minute treatment.`,
+      schemaText: `Spa day packages at ${spa.name} range from ${dipDinePrice || '£25'} to ${signaturePrice || '£95'} per person. Dip & Dine (${dipDinePrice || '£25'}) offers ${dipDineDuration || '3 hours'} of pool, sauna, steam room and jacuzzi access plus a £15 food credit. For treatments, the Express Escape (${expressEscapePrice || '£70'}) includes a 30 minute ELEMIS treatment and afternoon tea, and the Signature Sanctuary Spa Day (${signaturePrice || '£95'}) includes a 60 minute treatment.`,
     },
 
     // FAQ 2: Facilities

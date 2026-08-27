@@ -94,6 +94,31 @@ node .claude/skills/refresh-day-passes/scripts/fetch-onejourney.mjs \
   sends and the script always sends it, though this route family currently accepts anything. The
   site-level `/store/…` routes DO require it.
 
+#### Availability probe — being listed is not being bookable
+
+A pass can sit in the catalogue with a real price and a working booking page and be bookable on
+**no date at all**. Lakeside listed "Fizz and Float" at £39 exactly like that. Gates 1–5 all pass
+it happily — the price genuinely is on the page — so nothing but a human clicking through would
+ever have caught it, and we would have kept re-verifying a phantom price every month.
+
+So `fetch-onejourney.mjs` probes each package's real timeslot endpoint
+(`<base>/<propertyId>/spa-packages/<itemId>/<date>/timeslots?quantity=1`) across the next 14 days
+and writes an `availabilityProbe` block into the artifact. **This is on by default** —
+`--no-availability` disables it, `--availability-days=N` changes the window. It costs one request
+per package per day (~56 for Lakeside), so it is the slow part of the fetch.
+
+- Gate 6 reads it. `daysWithSlots: 0` → `no-availability` → ⚠️ flag, no `lastVerified` bump.
+- The fetch log surfaces it directly too: `unbookableItemIds`, `availabilityProbed`,
+  `availabilityProbeFailed`.
+- **A probe that fails is not a probe that found nothing.** If an item cannot be reached at all it
+  is omitted from the block (so gate 6 stays a no-op for it) and the log sets
+  `availabilityProbeFailed: true`. A network blip must never mass-flag a spa.
+- The block is fetched data, not an assertion: it records the endpoint, window and probe time, and
+  every count came from a real response. Gate 6 still greps its `evidence` span in the artifact —
+  the numbers are not taken on trust.
+- Empty days at the very start of the window are normal (Lakeside needs 48 hours' notice); the
+  gate only cares whether the whole window is empty.
+
 Appleby (15) is on the SSR tier and stays there; this tier would also serve it (its
 `320/spa-packages/6712/en` returns 200) and would cut its run from 11 HTML pages / 1,233 KB to a
 single small file, but switching it means re-verifying all 11 passes, so it is a deliberate
@@ -145,7 +170,9 @@ node .claude/skills/refresh-day-passes/scripts/fetch-pdf.mjs \
   "<brochurePdfUrl>" "$RUN_DIR/spa-<id>.txt" "$RUN_DIR/spa-<id>-fetch-log.json"
 # portal-onejourney-api tier: the whole catalogue in one call. Validates
 # the payload before saving — a non-JSON or non-spa-package 200 is exit 2,
-# never an artifact:
+# never an artifact. Also probes each package's real timeslots (14 days,
+# ~1 request per package per day) and writes an availabilityProbe block
+# for gate 6; --no-availability skips it:
 node .claude/skills/refresh-day-passes/scripts/fetch-onejourney.mjs \
   "https://api.onejourney.travel/<propertyId>/spa-packages/en" \
   "$RUN_DIR/spa-<id>.json" "$RUN_DIR/spa-<id>-fetch-log.json"
@@ -242,6 +269,21 @@ Write `spa-<id>-checks.json` in the run dir — one entry per existing pass:
 }]
 ```
 
+**portal tiers with an availability probe** — every check for a spa whose artifact carries an `availabilityProbe` block also carries `bookability` (omit it for other tiers; gate 6 is then a no-op). Take the counts and the `evidence` span straight from the block:
+
+```jsonc
+{
+  "bookability": {
+    "itemId": 18904,          // booking-item id; must appear in `evidence`
+    "daysProbed": 14,         // the block's daysProbed for THIS item
+    "daysWithSlots": 10,      // the block's daysWithSlots for THIS item
+    "evidence": "\"itemId\": 18904,\n      \"name\": \"Dip & Dine\",\n      \"daysProbed\": 14,\n      \"daysWithSlots\": 10"
+  }
+}
+```
+
+An item the probe could not reach is **absent** from the block — omit `bookability` for it rather than inventing zeros, and say so in evidence.md. `daysWithSlots: 0` demotes with `no-availability`: flag it, never delete it (PRD §1 — removing a pass is a human decision).
+
 **pdf tier only** — every check for a pdf-tier spa also carries `pdfVintage` (omit it entirely for other tiers; gate 4 is then a no-op):
 
 ```jsonc
@@ -291,6 +333,7 @@ Gates run in order and the first failure demotes (`grounded: false`, with `gate`
 | 3 poison words | `member`/`membership`/`resident`/`voucher`/`deposit`/`per month` in the span or ±200 chars of artifact context (any occurrence of a repeated span) | `poison-word:<word>` (+ `poisonWords`) |
 | 4 PDF vintage (pdf tier only; no-op without `pdfVintage`) | `documentYear` present + evidence proven per `evidenceType` (see above) + not older than `runYear` | `pdf-vintage-year-missing`, `pdf-vintage-evidence-type-invalid`, `pdf-vintage-evidence-missing`, `pdf-vintage-year-not-in-evidence`, `pdf-vintage-evidence-not-found-in-artifact`, `pdf-vintage-stale` |
 | 5 plausibility | move ≤ ±40% vs `storedGBP`; price within £20–£400, even if unchanged | `move-exceeds-40pct`, `price-out-of-bounds` (+ computed `movePct`) |
+| 6 bookability (portal tiers; no-op without `bookability`) | `evidence` greps in the artifact's `availabilityProbe` block and names the `itemId`; counts are sane; `daysWithSlots` > 0 | `bookability-days-probed-missing`, `bookability-days-with-slots-missing`, `bookability-counts-inconsistent`, `bookability-evidence-missing`, `bookability-evidence-not-found-in-artifact`, `bookability-item-id-not-in-evidence`, `no-availability` |
 
 **Stale vintage demotes the whole spa, not just the pass** (PRD §2): `pdf-vintage-stale` on any one check means the brochure itself is out of date — every pass sourced from it is unreliable, not just that pass. Treat the spa exactly like a fetch failure (step 1's failure lane): exclude it from the run (entries and `lastVerified` untouched, no `priceGBP` edits from any of its checks even if other passes on the same brochure grounded fine), file one tracker issue (same shape as a fetch failure, error summary = "brochure dated `documentYear`, current run is `runYear`" + the vintage evidence), and render the ❌ not-fetched table row linking it. This is the one case where a gate-4 reason reaches back past step 4 into step 1's failure handling — every other gate reason (including the other pdf-vintage reasons: missing/invalid/unproven evidence) stays a normal per-pass ⚠️ flag. A pass-level flag for a **different** reason (e.g. gate 2 name drift) on a pdf-tier spa does NOT trigger this whole-spa rule — only `pdf-vintage-stale` does.
 

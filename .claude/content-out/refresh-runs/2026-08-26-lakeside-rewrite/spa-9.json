@@ -75,5 +75,78 @@
       "discount": null,
       "paymentOptionOverride": null
     }
-  ]
+  ],
+  "availabilityProbe": {
+    "probedAt": "2026-08-27T18:31:39.624Z",
+    "windowDays": 14,
+    "startDate": "2026-08-27",
+    "endDate": "2026-09-09",
+    "endpoint": "https://api.onejourney.travel/340/spa-packages/<itemId>/<date>/timeslots?quantity=1",
+    "note": "daysWithSlots 0 means the pass is listed and priced but has no bookable date in the window.",
+    "anyProbeFailed": false,
+    "items": [
+      {
+        "itemId": 18902,
+        "name": "Fizz and Float ",
+        "daysProbed": 14,
+        "daysWithSlots": 0,
+        "datesWithSlots": []
+      },
+      {
+        "itemId": 18904,
+        "name": "Dip & Dine",
+        "daysProbed": 14,
+        "daysWithSlots": 10,
+        "datesWithSlots": [
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09"
+        ]
+      },
+      {
+        "itemId": 18905,
+        "name": "Express Escape",
+        "daysProbed": 14,
+        "daysWithSlots": 10,
+        "datesWithSlots": [
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09"
+        ]
+      },
+      {
+        "itemId": 18912,
+        "name": "Signature Sanctuary Spa Day",
+        "daysProbed": 14,
+        "daysWithSlots": 11,
+        "datesWithSlots": [
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-06",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09"
+        ]
+      }
+    ]
+  }
 }

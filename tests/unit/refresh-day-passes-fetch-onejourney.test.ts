@@ -13,7 +13,13 @@ import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { promisify } from 'node:util';
-import { parseCatalogue, ACCEPT } from '../../.claude/skills/refresh-day-passes/scripts/fetch-onejourney.mjs';
+import {
+  parseCatalogue,
+  ACCEPT,
+  timeslotsUrl,
+  probeDates,
+  countSlots,
+} from '../../.claude/skills/refresh-day-passes/scripts/fetch-onejourney.mjs';
 
 // The stub server below runs in THIS process, so the script must be
 // spawned asynchronously — execFileSync would block the event loop and
@@ -132,13 +138,16 @@ describe('fetch-onejourney.mjs', () => {
     rmSync(dir, { recursive: true, force: true });
   });
 
-  async function run(path = '/340/spa-packages/en') {
+  // Availability probing is off unless a test asks for it: it fires one
+  // request per package per day, which would otherwise slow every case
+  // here and pollute the artifact these assertions read.
+  async function run(path = '/340/spa-packages/en', flags: string[] = ['--no-availability']) {
     const artifact = join(dir, 'spa-9.json');
     const log = join(dir, 'spa-9-fetch-log.json');
     let stdout = '';
     let status = 0;
     try {
-      ({ stdout } = await execFileAsync('node', [SCRIPT, `${base}${path}`, artifact, log], {
+      ({ stdout } = await execFileAsync('node', [SCRIPT, `${base}${path}`, artifact, log, ...flags], {
         encoding: 'utf8',
         // Exercise the retry count without three real backoff sleeps.
         env: { ...process.env, OJ_BACKOFF_MS: '0,0,0' },
@@ -223,4 +232,119 @@ describe('fetch-onejourney.mjs', () => {
     const { log } = await run();
     expect(log.botBlocked).toBe(true);
   });
+
+  describe('availability probe', () => {
+    // Catalogue on the catalogue path; timeslots on the timeslots path.
+    // 18912 has slots every day, 18902 has none — the Lakeside shape.
+    function catalogueAndSlots(path: string) {
+      if (path.includes('/timeslots')) {
+        const hasSlots = path.includes('/18912/');
+        return {
+          status: 200,
+          body: hasSlots ? '[{"startTime":"10:00:00","endTime":"17:30:00"}]' : '[]',
+        };
+      }
+      return { status: 200, body: LIST_BODY };
+    }
+
+    it('records per-item counts in the artifact and names the dead item in the log', async () => {
+      route = catalogueAndSlots;
+      const { status, log, artifact } = await run('/340/spa-packages/en', [
+        '--availability-days=3',
+      ]);
+      expect(status).toBe(0);
+      expect(log.availabilityProbed).toBe(true);
+      expect(log.unbookableItemIds).toEqual([18902]);
+
+      const probe = JSON.parse(readFileSync(artifact, 'utf8')).availabilityProbe;
+      expect(probe.windowDays).toBe(3);
+      const byId = Object.fromEntries(
+        probe.items.map((i: { itemId: number }) => [i.itemId, i]),
+      );
+      expect(byId[18912]).toMatchObject({ daysProbed: 3, daysWithSlots: 3 });
+      expect(byId[18902]).toMatchObject({ daysProbed: 3, daysWithSlots: 0 });
+    });
+
+    it('writes evidence gate 6 can grep, carrying the itemId and both counts', async () => {
+      route = catalogueAndSlots;
+      const { artifact } = await run('/340/spa-packages/en', ['--availability-days=2']);
+      const saved = readFileSync(artifact, 'utf8');
+      const start = saved.indexOf('"itemId": 18902');
+      const end = saved.indexOf('"daysWithSlots": 0');
+      expect(start).toBeGreaterThan(-1);
+      expect(end).toBeGreaterThan(start);
+      expect(end - start).toBeLessThan(300);
+    });
+
+    it('omits an item it could not probe rather than calling it unbookable', async () => {
+      // Catalogue fine, every timeslots call errors: "could not check"
+      // must not be recorded as "no availability", or a blip would flag
+      // the whole spa.
+      route = (path) =>
+        path.includes('/timeslots')
+          ? { status: 500, body: 'upstream error' }
+          : { status: 200, body: LIST_BODY };
+      const { status, log, artifact } = await run('/340/spa-packages/en', [
+        '--availability-days=2',
+      ]);
+      expect(status).toBe(0); // a failed probe never fails the fetch
+      expect(log.ok).toBe(true);
+      expect(log.availabilityProbed).toBe(false);
+      expect(log.availabilityProbeFailed).toBe(true);
+      expect(log.unbookableItemIds).toEqual([]);
+      // No block at all -> gate 6 is a no-op, rather than a false demotion.
+      expect(JSON.parse(readFileSync(artifact, 'utf8')).availabilityProbe).toBeUndefined();
+    });
+
+    it('skips probing entirely with --no-availability', async () => {
+      route = catalogueAndSlots;
+      const { log, artifact } = await run();
+      expect(log.availabilityProbed).toBe(false);
+      expect(log.availabilityProbeFailed).toBe(false);
+      expect(JSON.parse(readFileSync(artifact, 'utf8')).availabilityProbe).toBeUndefined();
+    });
+  });
+
 }, 40000);
+
+describe('availability probe helpers', () => {
+  it('builds the timeslots URL from a catalogue URL', () => {
+    expect(timeslotsUrl('https://api.onejourney.travel/340/spa-packages/en', 18904, '2026-08-27')).toBe(
+      'https://api.onejourney.travel/340/spa-packages/18904/2026-08-27/timeslots?quantity=1',
+    );
+  });
+
+  it('builds the same URL from a single-item URL', () => {
+    expect(
+      timeslotsUrl('https://api.onejourney.travel/340/spa-packages/18904/en', 18904, '2026-08-27'),
+    ).toBe('https://api.onejourney.travel/340/spa-packages/18904/2026-08-27/timeslots?quantity=1');
+  });
+
+  it('returns null for a URL that is not a spa-packages route', () => {
+    expect(timeslotsUrl('https://example.com/nope', 1, '2026-08-27')).toBeNull();
+  });
+
+  it('walks consecutive days from the start date', () => {
+    expect(probeDates(new Date('2026-08-30T00:00:00Z'), 3)).toEqual([
+      '2026-08-30',
+      '2026-08-31',
+      '2026-09-01',
+    ]);
+  });
+
+  it('counts slots in both response shapes the endpoint returns', () => {
+    // curl gets a bare array; some clients get {"data":[...]}.
+    expect(countSlots('[{"startTime":"10:00:00"},{"startTime":"14:00:00"}]')).toBe(2);
+    expect(countSlots('{"data":[{"startTime":"10:00:00"}]}')).toBe(1);
+    expect(countSlots('[]')).toBe(0);
+    expect(countSlots('{"data":[]}')).toBe(0);
+  });
+
+  it('returns null — not zero — for a body it cannot read', () => {
+    // The distinction the whole gate rests on: "could not check" must
+    // never become "there is no availability".
+    for (const bad of ['', '<html>error</html>', '{', 'null', '{"message":"Not Found"}']) {
+      expect(countSlots(bad)).toBeNull();
+    }
+  });
+});
