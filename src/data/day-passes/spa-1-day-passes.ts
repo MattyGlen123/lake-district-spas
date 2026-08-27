@@ -6,7 +6,7 @@ export const spa1DayPasses: SpaDayPasses = {
     {
       id: 'lodore-falls-renew-spa',
       packageName: 'Falls Renew Spa Experience',
-      priceGBP: 150,
+      priceGBP: 165,
       spaDuration: 2,
       treatmentsIncluded: true,
       refreshmentsIncluded: true,
@@ -23,12 +23,12 @@ export const spa1DayPasses: SpaDayPasses = {
       phoneBooking: '017687 87704',
       dayPassUrl: 'https://www.lakedistrictspa.co.uk/spa-day/morning-renew-spa/',
       bookingUrl: 'https://lodorefallsspa.try.be/items/62739efb34bdbd14e82e7df9/morning-renew-spa',
-      lastVerified: '2025-01-19',
+      lastVerified: '2026-08-27',
     },
     {
       id: 'lodore-falls-restart-spa',
-      packageName: 'Restart Spa Experience',
-      priceGBP: 180,
+      packageName: 'Restart Spa',
+      priceGBP: 205,
       spaDuration: 2,
       treatmentsIncluded: true,
       refreshmentsIncluded: true,
@@ -45,7 +45,7 @@ export const spa1DayPasses: SpaDayPasses = {
       phoneBooking: '017687 87704',
       dayPassUrl: 'https://www.lakedistrictspa.co.uk/offers/restart-spa-day/',
       bookingUrl: 'https://lodorefallsspa.try.be/items/620ba15fd5f3596b6a0b9574/restart-spa-day',
-      lastVerified: '2025-01-19',
+      lastVerified: '2026-08-27',
     },
     {
       id: 'lodore-falls-derwent-delight',
@@ -94,7 +94,7 @@ export const spa1DayPasses: SpaDayPasses = {
       phoneBooking: '017687 87704',
       dayPassUrl: 'https://www.lakedistrictspa.co.uk/spa-day/twilight-spa/',
       bookingUrl: 'https://lodorefallsspa.try.be/items/61ee95af3716053d3e487932/twilight-spa',
-      lastVerified: '2025-01-19',
+      lastVerified: '2026-08-27',
     },
     {
       id: 'lodore-falls-rasul-ritual',

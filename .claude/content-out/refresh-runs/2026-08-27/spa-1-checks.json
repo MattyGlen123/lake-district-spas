@@ -1,0 +1,42 @@
+[
+  {
+    "passId": "lodore-falls-renew-spa",
+    "passName": "Falls Renew Spa Experience",
+    "quote": "<h1 class=\"entry-title single-title\" itemprop=\"headline\">\n          Falls Renew Spa Experience        </h1>\n    <hr> \n\t\t <div class=\"allprices\">\n        <h5><strong>£165          per person</strong></h5>",
+    "figureGBP": 165,
+    "storedGBP": 150,
+    "arithmetic": "none"
+  },
+  {
+    "passId": "lodore-falls-restart-spa",
+    "passName": "Restart Spa",
+    "quote": "<h1 class=\"entry-title single-title\" itemprop=\"headline\">\n          Restart Spa        </h1>\n    <hr> \n\t\t <div class=\"allprices\">\n        <h5><strong>£205          per person</strong></h5>",
+    "figureGBP": 205,
+    "storedGBP": 180,
+    "arithmetic": "none"
+  },
+  {
+    "passId": "lodore-falls-twilight-spa",
+    "passName": "Twilight Spa",
+    "quote": "<h1 class=\"entry-title single-title\" itemprop=\"headline\">\n          Twilight Spa        </h1>\n    <hr> \n\t\t <div class=\"allprices\">\n        <h5><strong>£75          per person</strong></h5>",
+    "figureGBP": 75,
+    "storedGBP": 75,
+    "arithmetic": "none"
+  },
+  {
+    "passId": "lodore-falls-derwent-delight",
+    "passName": "Derwent Delight for 2",
+    "quote": "",
+    "figureGBP": 450,
+    "storedGBP": 450,
+    "arithmetic": "none"
+  },
+  {
+    "passId": "lodore-falls-rasul-ritual",
+    "passName": "Rasul Ritual Spa Package",
+    "quote": "",
+    "figureGBP": 250,
+    "storedGBP": 250,
+    "arithmetic": "none"
+  }
+]

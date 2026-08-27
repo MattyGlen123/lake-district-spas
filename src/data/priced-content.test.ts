@@ -107,10 +107,17 @@ describe('priced-content: pure helper functions', () => {
     });
 
     it('getDayPassPrice / getDayPassDuration / getDayPassBookingUrl / getDayPassPackageName resolve', () => {
-      expect(getDayPassPrice(1, dayPassId)).toBe('£150');
-      expect(getDayPassDuration(1, dayPassId)).toBe('2 hours');
+      // Assert the FORMATTING against the stored option, not a frozen
+      // literal: these figures are refreshed from the spa's live site by
+      // /refresh-day-passes, so a hardcoded price turns every legitimate
+      // price change into a failing test. What matters here is that the
+      // helper finds the option and renders it as "£<priceGBP>".
+      const stored = getDayPassById(1, dayPassId);
+      expect(stored).not.toBeNull();
+      expect(getDayPassPrice(1, dayPassId)).toBe(`£${stored!.priceGBP}`);
+      expect(getDayPassDuration(1, dayPassId)).toBe(`${stored!.spaDuration} hours`);
       expect(getDayPassBookingUrl(1, dayPassId)).toMatch(/^https:\/\//);
-      expect(getDayPassPackageName(1, dayPassId)).toBe('Falls Renew Spa Experience');
+      expect(getDayPassPackageName(1, dayPassId)).toBe(stored!.packageName);
     });
 
     it('getDayPassPricePerPerson uses pricePerPerson when present', () => {
