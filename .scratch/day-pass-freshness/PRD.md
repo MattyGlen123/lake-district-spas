@@ -117,7 +117,11 @@ A pass that is **missing** is not the same as a pass that is **withdrawn**. Miss
 2. **Contiguity.** The quote is one contiguous span containing *both* the pass name (or booking-item title) *and* the price.
 3. **Poison words.** `member|membership|resident|voucher|deposit|per month` in the span or ±200 chars of artifact context → demote to ⚠️ flag with quote shown.
 4. **PDF vintage.** Extractor states document-year evidence (filename year, cover date, "valid until") in the PR row; prior-year evidence → whole source treated as fetch failure with filed issue.
-5. **Plausibility bounds, flag-never-block.** Move >±40%, or any extracted price outside £20–£400 (spec constants), even if unchanged → ⚠️ flag with quote + computed %.
+5. **Plausibility bounds, flag-never-block.** Move >±75%, or any extracted price outside £20–£400 (spec constants), even if unchanged → ⚠️ flag with quote + computed %.
+
+   > **Amended 2026-08-27→28 (threshold ±40% → ±75%).** Authorised by Matthew during the spa-5 run after manually verifying the disputed price. Swan item `14258` moved £35 → £59 (+68.6%) because the booking item was **repurposed** — a £35 Mon–Thu pass became a £59 Friday one — not because it was repriced. Gate 5 cannot tell a repriced pass from a replaced one, and because the move is measured against a `storedGBP` that never changes while the pass is flagged, ±40% would have re-flagged it every run forever with no path to resolution.
+   >
+   > This is knowingly a looser net for every spa: gates 1–3 (grounding, contiguity, poison words) remain the real defence against a wrong figure, and gate 5 was always "flag, never block". The narrower fix — detecting a repurposed item from a simultaneous name **and** day-of-week change, and routing it out of the price-plausibility check entirely — is tracked as issue 15 and would allow ±40% to be restored.
 
 Unchanged passes are gated identically, rendered differently: no groundable quote → missing-from-source flag and **no `lastVerified` bump**. Full per-pass quote set written to `.claude/content-out/refresh-runs/<date>/evidence.md`, linked from the PR; the PR body shows per-spa samples.
 

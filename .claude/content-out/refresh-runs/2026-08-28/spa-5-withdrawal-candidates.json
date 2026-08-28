@@ -18,7 +18,7 @@
     },
     {
       "passId": "swan-holte-socials-night-friday",
-      "reason": "Booking item 14258 live and bookable 1/14 days (Friday only — correct for a Friday-only product). pageGone: false. Demoted by gate 5 on a +68.6% move, which is a verification/plausibility problem, not a withdrawal."
+      "reason": "Booking item 14258 live and bookable 1/14 days (Friday only — correct for a Friday-only product). pageGone: false. Initially demoted by gate 5 on a +68.6% move; price manually verified at source by Matthew and the gate 5 threshold raised 40 -> 75, after which it grounded. Either way a plausibility demotion is a verification problem, not a withdrawal."
     },
     {
       "passId": "swan-holte-after-hours-sunday-thursday",

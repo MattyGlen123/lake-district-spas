@@ -51,7 +51,16 @@ import { readFileSync } from 'node:fs';
 // --- spec constants (PRD §5) ------------------------------------------
 export const PRICE_MIN_GBP = 20;
 export const PRICE_MAX_GBP = 400;
-export const MAX_MOVE_PCT = 40;
+// Raised 40 -> 75 on 2026-08-28. A booking item can be REPURPOSED rather than
+// repriced (Swan item 14258 went from a £35 Mon-Thu pass to a £59 Friday one,
+// +68.6%), and gate 5 cannot tell a repriced pass from a replaced one. 40%
+// re-flagged such passes every run with no way to ever resolve them, since the
+// move is measured against a storedGBP that never changes while flagged.
+// This is a deliberately looser net: gates 1-3 (grounding, contiguity, poison)
+// remain the real defence against a wrong figure. See PRD §5 rule 5.
+export const MAX_MOVE_PCT = 75;
+// Derived so the reason can never drift from the constant it reports.
+export const MOVE_EXCEEDS_REASON = `move-exceeds-${MAX_MOVE_PCT}pct`;
 export const POISON_CONTEXT_CHARS = 200;
 // member/membership/resident/voucher/deposit matched as prefixes so
 // plurals and -ship suffixes hit; the leading \b keeps "remember" out.
@@ -303,7 +312,7 @@ export function plausibility(check) {
     return { ok: false, reason: 'price-out-of-bounds', movePct: pct };
   }
   if (pct !== null && Math.abs(pct) > MAX_MOVE_PCT) {
-    return { ok: false, reason: 'move-exceeds-40pct', movePct: pct };
+    return { ok: false, reason: MOVE_EXCEEDS_REASON, movePct: pct };
   }
   return { ok: true, movePct: pct };
 }
@@ -325,7 +334,7 @@ const GATE_OF = {
   'pdf-vintage-evidence-not-found-in-artifact': 4,
   'pdf-vintage-stale': 4,
   'price-out-of-bounds': 5,
-  'move-exceeds-40pct': 5,
+  [MOVE_EXCEEDS_REASON]: 5,
   'bookability-days-probed-missing': 6,
   'bookability-days-with-slots-missing': 6,
   'bookability-counts-inconsistent': 6,

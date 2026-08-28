@@ -75,7 +75,7 @@ export const spa5DayPasses: SpaDayPasses = {
     {
       id: 'swan-holte-socials-night-friday',
       packageName: 'Holte Socials Night - Friday',
-      priceGBP: 35,
+      priceGBP: 59,
       spaDuration: 2,
       treatmentsIncluded: false,
       refreshmentsIncluded: true,
@@ -94,7 +94,7 @@ export const spa5DayPasses: SpaDayPasses = {
       bookingRequired: true,
       dayPassUrl: 'https://www.swanhotel.com/spa/',
       bookingUrl: 'https://theswan.onejourney.travel/spa/days/14258',
-      lastVerified: '2026-01-22',
+      lastVerified: '2026-08-28',
     },
     {
       id: 'swan-holte-after-hours-sunday-thursday',

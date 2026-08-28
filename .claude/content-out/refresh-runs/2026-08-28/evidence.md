@@ -14,8 +14,8 @@ Full per-pass quote set (PRD §5). Not a sample.
 | Checks | `spa-5-checks.json` |
 | Withdrawal ledger | `spa-5-withdrawal-candidates.json` — 0 candidates |
 | Fetched at | 2026-08-28 20:08 BST |
-| Grounded | 7 / 8 |
-| Flagged | 1 / 8 |
+| Grounded | 8 / 8 |
+| Flagged | 0 / 8 |
 | Matching | 8/8 at **tier 1** (booking-item id). No tier-3 suggestions, no missing flags. |
 | Availability probe | 14-day window, all 8 items reachable, `anyProbeFailed: false` |
 
@@ -86,6 +86,30 @@ Matthew authorised a **wider edit than a refresh normally permits** for these tw
 contents tell the same story. Labelled **human-authorised** — this is not the refresh rule firing.
 Boolean flags (`treatmentsIncluded` etc.) and `spaDuration` were deliberately left untouched,
 as they drive site filtering and the source does not clearly evidence a change.
+
+### Gate 5 threshold amended this run: ±40% → ±75%
+
+`swan-holte-socials-night-friday` (£35 → £59, **+68.6%**) was demoted by gate 5 on the first pass
+of this run (`move-exceeds-40pct`). Matthew **manually verified £59 at source** and authorised
+raising the threshold; the gate was re-run and the pass now grounds cleanly.
+
+- `MAX_MOVE_PCT` 40 → **75** in `scripts/gate.mjs`; the demote reason is now derived from the
+  constant (`move-exceeds-${MAX_MOVE_PCT}pct`) so the label can never again disagree with the value.
+- Gate tests no longer hardcode the threshold — they import `MAX_MOVE_PCT` and compute their
+  fixtures from it, so a future change to the spec does not break them for the wrong reason.
+- PRD §5 rule 5 and SKILL.md updated. **The PRD is marked locked** — the change is recorded there
+  as an explicit dated amendment rather than a silent edit.
+
+⚠️ **This is knowingly a looser net for every spa, not just Swan.** The +68.6% move was not a
+repricing — booking item `14258` was **repurposed** from a £35 Mon–Thu pass into a £59 Friday one.
+Gate 5 cannot distinguish those two cases, and because the move is measured against a `storedGBP`
+that never changes while a pass is flagged, ±40% would have re-flagged this pass every run forever
+with no path to resolution. Gates 1–3 (grounding, contiguity, poison words) remain the real defence
+against a wrong figure, and gate 5 was always "flag, never block".
+
+The narrower fix — detect a simultaneous **name change and day-of-week change** and route it out of
+the price-plausibility check entirely — is tracked as **issue 15** and would allow ±40% to be
+restored. Approved for build.
 
 ### Per-pass evidence
 
@@ -171,12 +195,8 @@ as they drive site filtering and the source does not clearly evidence a change.
 >         "amount": 5900
 > ```
 
-- ⚠️ **Gate 5 DEMOTED — `move-exceeds-40pct`** (movePct 68.6).
-- **No data change, no `lastVerified` bump.** `priceGBP` remains £35 and `lastVerified` remains 2026-01-22.
-- The +68.6% move is real, not a bad extraction: the booking item was repurposed from a
-  £35 Mon–Thu "Twilight Session" to a £59 Friday "Holte Socials Night". Gate 5 is doing its job —
-  a plausibility gate cannot tell a repriced pass from a replaced one, so it correctly refuses.
-- Per the iron rule, a demotion is a review item, never a retry. The quote was **not** re-cut.
+- ✅ **Gate: grounded** (gates 1–6 all pass).
+- 💷 Price applied; `lastVerified` bumped to 2026-08-28.
 
 #### `swan-holte-after-hours-sunday-thursday`
 
