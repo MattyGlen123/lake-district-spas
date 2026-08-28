@@ -87,29 +87,44 @@ contents tell the same story. Labelled **human-authorised** — this is not the 
 Boolean flags (`treatmentsIncluded` etc.) and `spaDuration` were deliberately left untouched,
 as they drive site filtering and the source does not clearly evidence a change.
 
-### Gate 5 threshold amended this run: ±40% → ±75%
+### Gate 5: repurposed items — threshold raised, then restored to ±40%
 
 `swan-holte-socials-night-friday` (£35 → £59, **+68.6%**) was demoted by gate 5 on the first pass
-of this run (`move-exceeds-40pct`). Matthew **manually verified £59 at source** and authorised
-raising the threshold; the gate was re-run and the pass now grounds cleanly.
+of this run (`move-exceeds-40pct`). Matthew **manually verified £59 at source**. The threshold was
+raised to ±75% to clear it, then **restored to ±40%** once the real fix landed the same day.
 
-- `MAX_MOVE_PCT` 40 → **75** in `scripts/gate.mjs`; the demote reason is now derived from the
-  constant (`move-exceeds-${MAX_MOVE_PCT}pct`) so the label can never again disagree with the value.
-- Gate tests no longer hardcode the threshold — they import `MAX_MOVE_PCT` and compute their
-  fixtures from it, so a future change to the spec does not break them for the wrong reason.
-- PRD §5 rule 5 and SKILL.md updated. **The PRD is marked locked** — the change is recorded there
-  as an explicit dated amendment rather than a silent edit.
+**Why the raise was the wrong fix.** The move was not a repricing. Booking item `14258` was
+**repurposed** — a £35 Mon–Thu "Twilight Session" replaced by a £59 Friday-only "Holte Socials
+Night" on the same id — so `figureGBP` and `storedGBP` were never two prices for one product and
+the percentage between them measured nothing. Widening the threshold treated a *classification*
+problem as a *tolerance* problem, and loosened the net for every spa to do it.
 
-⚠️ **This is knowingly a looser net for every spa, not just Swan.** The +68.6% move was not a
-repricing — booking item `14258` was **repurposed** from a £35 Mon–Thu pass into a £59 Friday one.
-Gate 5 cannot distinguish those two cases, and because the move is measured against a `storedGBP`
-that never changes while a pass is flagged, ±40% would have re-flagged this pass every run forever
-with no path to resolution. Gates 1–3 (grounding, contiguity, poison words) remain the real defence
-against a wrong figure, and gate 5 was always "flag, never block".
+**Why it would not have self-resolved.** A demoted pass gets no data change and no `lastVerified`
+bump, so `storedGBP` stays £35 and the identical +68.6% re-flags on every future run — the same
+"flagged forever" trap that motivated the withdrawal rule (§4a).
 
-The narrower fix — detect a simultaneous **name change and day-of-week change** and route it out of
-the price-plausibility check entirely — is tracked as **issue 15** and would allow ±40% to be
-restored. Approved for build.
+**The fix (issue 15, built and shipped in this PR).** `scripts/repurpose.mjs` identifies a
+repurposed item from **two independent signals, both required**:
+
+| Signal | Source | Fired for 14258? |
+| --- | --- | --- |
+| source **name** changed | tier-1 matching `rename` | ✅ Twilight Session → Holte Socials Night - Friday |
+| probed **day coverage** changed | `availabilityProbe` → `scripts/days.mjs` | ✅ Monday-Thursday → Friday |
+
+Gate 5 then waives the *move comparison* for that item — the absolute £20–£400 bounds still apply —
+and the result carries `plausibilityWaived: "item-repurposed"`, so a waived figure is never
+indistinguishable from one that passed.
+
+Either signal **alone** is ordinary and does not waive anything. Proof from this very run: the
+Winter Glow → Summer Glow rename changed the name but not the days (`Monday-Sunday` both sides),
+and was correctly classified `name-changed-only` — **not** a repurpose. Price is deliberately not a
+signal; using the size of the move to excuse the size of the move would be circular.
+
+**Result: `MAX_MOVE_PCT` is back to 40 and this run is 8/8 grounded at the strict threshold.**
+The two repurposed items (`14258` +68.6%, `3865` +7.3%) ground via the waiver, recorded in
+`spa-5-repurpose.json`. PRD §5 rule 5 + new §5a and SKILL.md §4c updated; the PRD is marked
+**locked**, so both the raise and the restoration are recorded there as dated amendments rather
+than silent edits.
 
 ### Per-pass evidence
 

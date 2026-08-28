@@ -1,8 +1,29 @@
 # Gate 5 cannot tell a repriced pass from a repurposed booking item
 
-Status: ready-for-agent
+Status: done (2026-08-28)
 Type: AFK
 Assignee: (unclaimed)
+
+## Resolution
+
+Built the same day it was filed. `MAX_MOVE_PCT` is back to **40** — the strict net is restored and
+Swan item `14258` grounds on evidence rather than on tolerance.
+
+- `scripts/days.mjs` — weekday derivation from `availabilityProbe`, including wrap-around ranges
+  ('Sunday-Thursday'), a UTC-safe date parse, and a `confident` flag that is a claim about the
+  probe **window** (did it offer every weekday at least twice?) rather than about the package.
+  Deliberately does NOT require a weekday to be free on every occurrence — real packages sell out,
+  and Swan's own probe started inside the booking notice period, so nearly every package showed
+  13/14. Scoring that as unconfident would have made the signal useless on the run it was built for.
+- `scripts/repurpose.mjs` — two-signal classification, plus `applyRepurposeToChecks`.
+- `gate.mjs` — gate 5 waives the move comparison for `repurposed: true`, keeps the absolute
+  £20–£400 bounds, and reports `plausibilityWaived: "item-repurposed"` so a waived figure is never
+  indistinguishable from one that passed.
+- 51 new tests (32 days + 19 repurpose).
+
+Verified end-to-end against the real 2026-08-28 Swan artifact at threshold 40: **8/8 grounded**,
+`14258` (+68.6%) and `3865` waived as repurposed, and the Winter Glow → Summer Glow seasonal rename
+correctly **not** classified as a repurpose — which is the discriminator doing its job.
 
 ## Parent
 

@@ -1,0 +1,128 @@
+{
+  "spaId": 5,
+  "runDate": "2026-08-28",
+  "maxMovePct": 40,
+  "purpose": "Repurposed-item classification (issue 15). A booking item reused for a DIFFERENT product is not a price move, so gate 5 waives the move comparison for it. Requires TWO independent signals: the source name changed AND the probed day coverage changed. Price is deliberately not a signal.",
+  "classifications": [
+    {
+      "passId": "swan-summer-glow-spa-escape",
+      "itemId": "4204",
+      "oldName": "Winter Glow Spa Day",
+      "newName": "Summer Glow Spa Escape",
+      "repurposed": false,
+      "reason": "name-changed-only",
+      "signals": {
+        "nameChanged": true,
+        "daysChanged": false,
+        "daysConfident": true,
+        "storedDays": "Monday-Sunday",
+        "derivedDays": "Monday-Sunday"
+      }
+    },
+    {
+      "passId": "swan-champagne-truffle-spa-day",
+      "itemId": "4203",
+      "oldName": null,
+      "newName": null,
+      "repurposed": false,
+      "reason": "no-repurpose-signals",
+      "signals": {
+        "nameChanged": false,
+        "daysChanged": false,
+        "daysConfident": true,
+        "storedDays": "Monday-Sunday",
+        "derivedDays": "Monday-Sunday"
+      }
+    },
+    {
+      "passId": "swan-thermal-access-afternoon-tea",
+      "itemId": "3687",
+      "oldName": "Thermal Access and Afternoon Tea",
+      "newName": "2 hour spa access and Afternoon Tea",
+      "repurposed": false,
+      "reason": "name-changed-only",
+      "signals": {
+        "nameChanged": true,
+        "daysChanged": false,
+        "daysConfident": true,
+        "storedDays": "Monday-Sunday",
+        "derivedDays": "Monday-Sunday"
+      }
+    },
+    {
+      "passId": "swan-holte-socials-night-friday",
+      "itemId": "14258",
+      "oldName": "Twilight Session",
+      "newName": "Holte Socials Night - Friday",
+      "repurposed": true,
+      "reason": "item-repurposed",
+      "signals": {
+        "nameChanged": true,
+        "daysChanged": true,
+        "daysConfident": true,
+        "storedDays": "Monday-Thursday",
+        "derivedDays": "Friday"
+      }
+    },
+    {
+      "passId": "swan-holte-after-hours-sunday-thursday",
+      "itemId": "3865",
+      "oldName": "Twilight Sessions",
+      "newName": "Holte After Hours - Sunday - Thursday",
+      "repurposed": true,
+      "reason": "item-repurposed",
+      "signals": {
+        "nameChanged": true,
+        "daysChanged": true,
+        "daysConfident": true,
+        "storedDays": "Saturday-Sunday",
+        "derivedDays": "Sunday-Thursday"
+      }
+    },
+    {
+      "passId": "swan-treatment-thermal-package",
+      "itemId": "11200",
+      "oldName": null,
+      "newName": null,
+      "repurposed": false,
+      "reason": "no-repurpose-signals",
+      "signals": {
+        "nameChanged": false,
+        "daysChanged": false,
+        "daysConfident": true,
+        "storedDays": "Monday-Sunday",
+        "derivedDays": "Monday-Sunday"
+      }
+    },
+    {
+      "passId": "swan-full-works-spa-day",
+      "itemId": "16080",
+      "oldName": null,
+      "newName": null,
+      "repurposed": false,
+      "reason": "no-repurpose-signals",
+      "signals": {
+        "nameChanged": false,
+        "daysChanged": false,
+        "daysConfident": true,
+        "storedDays": "Monday-Sunday",
+        "derivedDays": "Monday-Sunday"
+      }
+    },
+    {
+      "passId": "swan-holte-restorative-ritual",
+      "itemId": "16077",
+      "oldName": null,
+      "newName": null,
+      "repurposed": false,
+      "reason": "no-repurpose-signals",
+      "signals": {
+        "nameChanged": false,
+        "daysChanged": false,
+        "daysConfident": true,
+        "storedDays": "Monday-Sunday",
+        "derivedDays": "Monday-Sunday"
+      }
+    }
+  ]
+}

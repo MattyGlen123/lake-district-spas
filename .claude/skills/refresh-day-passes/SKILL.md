@@ -334,7 +334,7 @@ Gates run in order and the first failure demotes (`grounded: false`, with `gate`
 | 2 contiguity | pass name AND price in the one span | `pass-name-not-in-quote`, `missing-pass-name` |
 | 3 poison words | `member`/`membership`/`resident`/`voucher`/`deposit`/`per month` in the span or ±200 chars of artifact context (any occurrence of a repeated span) | `poison-word:<word>` (+ `poisonWords`) |
 | 4 PDF vintage (pdf tier only; no-op without `pdfVintage`) | `documentYear` present + evidence proven per `evidenceType` (see above) + not older than `runYear` | `pdf-vintage-year-missing`, `pdf-vintage-evidence-type-invalid`, `pdf-vintage-evidence-missing`, `pdf-vintage-year-not-in-evidence`, `pdf-vintage-evidence-not-found-in-artifact`, `pdf-vintage-stale` |
-| 5 plausibility | move ≤ ±75% vs `storedGBP`; price within £20–£400, even if unchanged | `move-exceeds-75pct`, `price-out-of-bounds` (+ computed `movePct`) |
+| 5 plausibility | move ≤ ±40% vs `storedGBP`; price within £20–£400, even if unchanged. **Waived for a repurposed item** (`repurposed: true`) — bounds still apply, see §4c | `move-exceeds-40pct`, `price-out-of-bounds` (+ computed `movePct`) |
 | 6 bookability (portal tiers; no-op without `bookability`) | `evidence` greps in the artifact's `availabilityProbe` block and names the `itemId`; counts are sane; `daysWithSlots` > 0 | `bookability-days-probed-missing`, `bookability-days-with-slots-missing`, `bookability-counts-inconsistent`, `bookability-evidence-missing`, `bookability-evidence-not-found-in-artifact`, `bookability-item-id-not-in-evidence`, `no-availability` |
 
 **Stale vintage demotes the whole spa, not just the pass** (PRD §2): `pdf-vintage-stale` on any one check means the brochure itself is out of date — every pass sourced from it is unreliable, not just that pass. Treat the spa exactly like a fetch failure (step 1's failure lane): exclude it from the run (entries and `lastVerified` untouched, no `priceGBP` edits from any of its checks even if other passes on the same brochure grounded fine), file one tracker issue (same shape as a fetch failure, error summary = "brochure dated `documentYear`, current run is `runYear`" + the vintage evidence), and render the ❌ not-fetched table row linking it. This is the one case where a gate-4 reason reaches back past step 4 into step 1's failure handling — every other gate reason (including the other pdf-vintage reasons: missing/invalid/unproven evidence) stays a normal per-pass ⚠️ flag. A pass-level flag for a **different** reason (e.g. gate 2 name drift) on a pdf-tier spa does NOT trigger this whole-spa rule — only `pdf-vintage-stale` does.
@@ -348,6 +348,41 @@ Route strictly by `gate-results.json`:
 | not grounded | — | ⚠️ flag with the quote + `reason` (+ `movePct` where computed) rendered — NO data change, NO `lastVerified` bump |
 
 Never re-quote or re-run a demoted pass to get it green: a demotion is a review item, not a retry.
+
+### 4c. Repurposed items — when a price "move" is not a move
+
+*PRD §5a, issue 15. Added 2026-08-28.*
+
+A spa can retire a package and **reuse its booking-item id** for a different one. Gate 5 then compares two prices that describe different products, and the percentage between them means nothing. Swan item `14258` went from a £35 Mon–Thu "Twilight Session" to a £59 Friday-only "Holte Socials Night" (+68.6%) — a true figure gate 5 demoted.
+
+**This does not self-resolve.** A demoted pass gets no data change and no `lastVerified` bump, so `storedGBP` stays put and the identical false demotion repeats every run, forever.
+
+Run this **after matching and before the gate**, for any spa whose artifact carries an `availabilityProbe`:
+
+```bash
+node .claude/skills/refresh-day-passes/scripts/repurpose.mjs   # classifyRepurposeForSpa()
+```
+
+```js
+import { classifyRepurposeForSpa, applyRepurposeToChecks } from './repurpose.mjs';
+const classifications = classifyRepurposeForSpa(artifact, passes, matchResult.matches);
+const checks = applyRepurposeToChecks(rawChecks, classifications);   // stamps repurposed: true
+```
+
+Two independent signals, **both required**:
+
+| # | Signal | Where it comes from |
+| --- | --- | --- |
+| 1 | source **name** changed | `matching.mjs` reported a `rename` |
+| 2 | probed **day coverage** changed | `availabilityProbe` → `scripts/days.mjs` `compareDays`, status `contradiction` AND `confident: true` |
+
+- **Either alone must NOT waive the gate.** A name change alone is a seasonal rename (Winter Glow → Summer Glow — same product, same £150, same days); a day change alone is a schedule tweak.
+- **Price is never a signal.** Using the size of the move to excuse the size of the move is circular, and a genuine seasonal repricing can be large and must still be checked.
+- An **unconfident** day derivation does not count. `days.mjs` marks a derivation confident only when the probe window offered every weekday at least twice; anything less is a gap in our sampling, not evidence about the product.
+- Gate 5's **absolute £20–£400 bounds still apply** to a repurposed item. Only the move comparison is waived, and the result carries `plausibilityWaived: "item-repurposed"` so a waived figure is never indistinguishable from one that passed.
+- Write `spa-<id>-repurpose.json` into the run dir with the classifications, and render repurposed items in the PR as their own lane — id, old → new name, old → new days, old → new price — not as a price flag.
+
+**A repurpose is not a withdrawal.** The item is live and bookable, so condition 1 (`pageGone`) is false; it never enters the withdrawal path.
 
 ### 4b. Withdrawals — the one case that deletes an entry
 

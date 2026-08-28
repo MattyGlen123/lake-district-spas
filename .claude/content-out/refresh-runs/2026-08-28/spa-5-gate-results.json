@@ -11,7 +11,7 @@
   "constants": {
     "PRICE_MIN_GBP": 20,
     "PRICE_MAX_GBP": 400,
-    "MAX_MOVE_PCT": 75,
+    "MAX_MOVE_PCT": 40,
     "POISON_CONTEXT_CHARS": 200
   },
   "summary": {
@@ -60,6 +60,7 @@
       "movePct": 68.6,
       "daysProbed": 14,
       "daysWithSlots": 1,
+      "plausibilityWaived": "item-repurposed",
       "grounded": true,
       "reason": "grounded",
       "gate": null
@@ -71,6 +72,7 @@
       "movePct": 7.3,
       "daysProbed": 14,
       "daysWithSlots": 10,
+      "plausibilityWaived": "item-repurposed",
       "grounded": true,
       "reason": "grounded",
       "gate": null
