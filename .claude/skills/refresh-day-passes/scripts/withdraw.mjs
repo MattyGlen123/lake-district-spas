@@ -39,8 +39,9 @@
 // stdout: JSON { plan, updatedFiles, references }
 // Exit 0 applied · 3 blocked (see plan.reason) · 1 usage/IO error.
 
-import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';
-import { join, extname, relative } from 'node:path';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { join, relative } from 'node:path';
+import { findIdReferences, collectReferenceFiles } from './reference-scan.mjs';
 
 /** Reasons a candidate is NOT deleted, in evaluation order. */
 export const BLOCK_REASONS = {
@@ -71,17 +72,12 @@ export function classifyWithdrawal(signals) {
  * (`dayPassId="…"`, `getDayPassPrice(spa.id, '…')`) and `#<id>` anchors.
  * Mirrors rewriteMechanicalRefs in rename.mjs, but REPORTS instead of
  * rewriting — a deletion has no new id to rewrite to.
+ *
+ * Imported from `reference-scan.mjs` (issue 14) so this module and rename.mjs
+ * share ONE definition of what counts as a reference, and one list of the trees
+ * to look in. Re-exported here for back-compatibility with existing importers.
  */
-export function findIdReferences(content, passId, fileLabel) {
-  const escaped = String(passId).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const re = new RegExp(`(['"])${escaped}\\1|#${escaped}\\b`, 'g');
-  const hits = [];
-  content.split('\n').forEach((line, i) => {
-    if (re.test(line)) hits.push({ file: fileLabel, line: i + 1, context: line.trim() });
-    re.lastIndex = 0;
-  });
-  return hits;
-}
+export { findIdReferences };
 
 /**
  * Index of the `{` opening the object literal that contains `from`, and of
@@ -179,17 +175,6 @@ export function applyWithdrawalToFiles(files, { passId, passName }) {
 // ---------------------------------------------------------------------------
 // CLI: wires the pure functions above to real repo files.
 
-function walk(dir, matchExt) {
-  const out = [];
-  for (const entry of readdirSync(dir)) {
-    const full = join(dir, entry);
-    const st = statSync(full);
-    if (st.isDirectory()) out.push(...walk(full, matchExt));
-    else if (extname(full) === matchExt) out.push(full);
-  }
-  return out;
-}
-
 function main() {
   const [repoRoot, spaId, passId, passName] = process.argv.slice(2);
   if (!repoRoot || !spaId || !passId || !passName) {
@@ -198,15 +183,13 @@ function main() {
   }
 
   const dataPath = join(repoRoot, 'src/data/day-passes', `spa-${spaId}-day-passes.ts`);
-  const candidates = [
-    ...walk(join(repoRoot, 'content/blog'), '.mdx'),
-    ...walk(join(repoRoot, 'src/data/faqs'), '.tsx'),
-    ...walk(join(repoRoot, 'src/data/location-faqs'), '.tsx'),
-  ];
 
+  // Reference trees come from reference-scan.mjs, shared with rename.mjs
+  // (issue 14). This CLI used to keep its own list, which had drifted from
+  // the renamer's and from the repo's actual shape.
   const files = [
     { path: relative(repoRoot, dataPath), content: readFileSync(dataPath, 'utf8'), isDataFile: true },
-    ...candidates.map((p) => ({ path: relative(repoRoot, p), content: readFileSync(p, 'utf8') })),
+    ...collectReferenceFiles(repoRoot).map(({ path, content }) => ({ path, content })),
   ];
 
   const { updatedFiles, references } = applyWithdrawalToFiles(files, { passId, passName });

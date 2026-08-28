@@ -48,6 +48,33 @@ Deleting a referenced pass therefore does **not** break the build, fail a test, 
 gap — it silently freezes a dead package's price into the page and keeps advertising it. Exactly the
 stale claim the §5 gates exist to prevent.
 
+## Done: the reference-scan blind spot (2026-08-28)
+
+The scan gap recorded here is **closed**. `scripts/reference-scan.mjs` is now the single source of
+truth for "what cites this id", and both `rename.mjs` and `withdraw.mjs` consume it.
+
+The gap was also **wider than this issue recorded**. It described `src/app` / `src/components` as
+unscanned by `withdraw.mjs`; in fact the two scripts disagreed with each other as well:
+
+| | before | now |
+| --- | --- | --- |
+| `rename.mjs` | `content/blog`, `src/data/faqs` | all five trees |
+| `withdraw.mjs` | + `src/data/location-faqs` | all five trees |
+| neither | `src/app`, `src/components` | — |
+
+So `rename.mjs` was the narrower of the two, and a rename could orphan a reference that a
+withdrawal would have caught. This bit for real on the Swan run (2026-08-28): renaming
+`swan-twilight-sessions-weekday` left two live references in
+`src/data/location-faqs/newby-bridge-faqs.tsx` that had to be repaired by hand.
+
+Covered by `tests/unit/refresh-day-passes-reference-scan.test.ts`, including a regression case
+reproducing that exact shape. Verified against the real repo: 141 files across 4 trees, and
+`swan-champagne-truffle-spa-day` now resolves to 5 references including both `src/app` hits that
+were previously invisible.
+
+**Condition 5 is materially stronger as a result** — it can now block a deletion on a reference in
+`src/app` or `src/components`, which it silently could not see before.
+
 ## Remaining work (this issue)
 
 Conditions 1–4 are currently established **by the caller** and handed to `classifyWithdrawal`.

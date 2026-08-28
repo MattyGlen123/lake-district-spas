@@ -15,8 +15,9 @@
 // it's unit-testable without touching the filesystem. The CLI at the bottom
 // wires it to real repo files for actual runs.
 
-import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';
-import { join, extname } from 'node:path';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { collectReferenceFiles } from './reference-scan.mjs';
 
 /** URL-friendly slug, matching the existing id convention (see priced-content.ts getTreatmentId). */
 export function slugify(s) {
@@ -198,17 +199,6 @@ export function applyRenameToFiles(files, { oldId, newId, oldName, newName }) {
 // Not exercised by unit tests (those call the pure functions directly) —
 // kept thin on purpose.
 
-function walk(dir, matchExt) {
-  const out = [];
-  for (const entry of readdirSync(dir)) {
-    const full = join(dir, entry);
-    const st = statSync(full);
-    if (st.isDirectory()) out.push(...walk(full, matchExt));
-    else if (extname(full) === matchExt) out.push(full);
-  }
-  return out;
-}
-
 function main() {
   const [repoRoot, spaId, oldId, newId, oldName, newName] = process.argv.slice(2);
   if (!repoRoot || !spaId || !oldId || !newId || !oldName || !newName) {
@@ -219,13 +209,14 @@ function main() {
   }
 
   const dataFilePath = join(repoRoot, 'src/data/day-passes', `spa-${spaId}-day-passes.ts`);
-  const blogFiles = walk(join(repoRoot, 'content/blog'), '.mdx');
-  const faqFiles = walk(join(repoRoot, 'src/data/faqs'), '.tsx');
 
+  // Reference trees come from reference-scan.mjs, shared with withdraw.mjs
+  // (issue 14). This CLI used to walk only content/blog + src/data/faqs, so a
+  // rename silently orphaned references in src/data/location-faqs, src/app and
+  // src/components — with no build error or test failure to reveal it.
   const files = [
     { path: dataFilePath, content: readFileSync(dataFilePath, 'utf8'), isDataFile: true },
-    ...blogFiles.map((p) => ({ path: p, content: readFileSync(p, 'utf8') })),
-    ...faqFiles.map((p) => ({ path: p, content: readFileSync(p, 'utf8') })),
+    ...collectReferenceFiles(repoRoot).map(({ absPath, content }) => ({ path: absPath, content })),
   ];
 
   const { updatedFiles, proseFlags } = applyRenameToFiles(files, { oldId, newId, oldName, newName });

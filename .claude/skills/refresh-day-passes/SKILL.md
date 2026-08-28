@@ -203,7 +203,9 @@ Cascade (PRD §4): (1) booking-portal item id (stable trailing path segment of `
 node .claude/skills/refresh-day-passes/scripts/rename.mjs <repo-root> <spa-id> <old-id> <new-id> <old-name> <new-name>
 ```
 
-This re-slugs the id to `<spa-prefix>-<slug-of-new-name>` (derived from the old id/name pair — see `deriveSpaPrefix` in `scripts/rename.mjs`), edits the data file's `id` and `packageName` fields, and auto-rewrites MECHANICAL references across `content/blog/**/*.mdx` and `src/data/faqs/*.tsx` — quoted id literals (`dayPassId="…"`, `getDayPassPrice(spa.id, '…')`) and `#<id>` anchor fragments — so `priced-content.test.ts` stays green. It prints `proseFlags` (case-insensitive hits of the OLD NAME in prose, file:line + context) — these go into the PR as ⚠️ checklist items and are **never rewritten**. If re-slugging would collide with another id already in use at that spa, nothing is renamed — it prints `{ applied: false, reason: 'slug-collision' }` and the PR gets a ⚠️ flag instead. Run `npm test` after any rename to confirm the priced-content validation is still green before continuing.
+This re-slugs the id to `<spa-prefix>-<slug-of-new-name>` (derived from the old id/name pair — see `deriveSpaPrefix` in `scripts/rename.mjs`), edits the data file's `id` and `packageName` fields, and auto-rewrites MECHANICAL references across **every tree in `scripts/reference-scan.mjs`** — `content/blog/**/*.mdx`, `src/data/faqs/**`, `src/data/location-faqs/**`, `src/app/**`, `src/components/**` — rewriting quoted id literals (`dayPassId="…"`, `getDayPassPrice(spa.id, '…')`, bare array members) and `#<id>` anchor fragments, so `priced-content.test.ts` stays green.
+
+⚠️ Before 2026-08-28 this walked only `content/blog` + `src/data/faqs`, so a rename silently orphaned references in the other three trees — with **no build error and no test failure**, because `getDayPassPrice` returns `null` for an unknown id and every call site falls back to a hardcoded literal. `rename.mjs` and `withdraw.mjs` now share one scanner precisely so the two lists cannot drift apart again (issue 14). It prints `proseFlags` (case-insensitive hits of the OLD NAME in prose, file:line + context) — these go into the PR as ⚠️ checklist items and are **never rewritten**. If re-slugging would collide with another id already in use at that spa, nothing is renamed — it prints `{ applied: false, reason: 'slug-collision' }` and the PR gets a ⚠️ flag instead. Run `npm test` after any rename to confirm the priced-content validation is still green before continuing.
 
 **Successor suggestions (strict 1:1, PRD §4).** After `matchPasses`, feed its result plus the same `existing`/`fetched` arrays through:
 
@@ -368,7 +370,7 @@ It refuses to write unless **all five** conditions hold. Establish them from evi
 | 2 | `absentFromIndex` | fetch the spa's own offers/day-pass **listing page this run**; the package is not on it. |
 | 3 | `noSuccessor` | `classifySuccessors` returned no entry for this id. A renamed package is a rename, never a deletion. |
 | 4 | `priorSighting` | the pass appears in the **previous** run dir's `spa-<id>-withdrawal-candidates.json`. |
-| 5 | `noReferences` | nothing in `content/blog/**`, `src/data/faqs/**`, `src/data/location-faqs/**` cites the id. |
+| 5 | `noReferences` | nothing in the shared reference trees cites the id — `content/blog/**`, `src/data/faqs/**`, `src/data/location-faqs/**`, `src/app/**`, `src/components/**` (see `scripts/reference-scan.mjs`). |
 
 Any one missing → leave it as a plain ⚠️ flag, data untouched. The script exits 3 with the blocking reason.
 
