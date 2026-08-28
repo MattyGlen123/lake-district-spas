@@ -39,6 +39,22 @@ a customer cannot actually pay. Migration authorised by Matthew before any data 
 one 8.5 KB artifact instead of 8 page fetches (~1 MB) and no trim/bundle step, plus gate 6 bookability.
 `propertyId` = **165**, read from the storefront payload (`"property":{"id":165`).
 
+**This decision is now reproducible by script.** `scripts/tier-adequacy.mjs` (built in this PR)
+replays it from the run's own artifacts and reaches the same conclusion independently —
+`spa-5-tier-adequacy.json`:
+
+```
+migrate: true  |  candidate-covers-more-and-is-transactable
+portal-onejourney-api grounds 8/8 vs 3/8 on html; 1 price disagreement needs review.
+  swan-thermal-access-afternoon-tea   html £65  vs  api £79   -> authoritative: portal-onejourney-api
+```
+
+Coverage is treated as a **source** signal, not a pass signal: 5 of 8 passes failed with
+`quote-not-found-in-artifact`, which is one tier problem rather than five pass problems. A pass
+failing for a *non-missing* reason (poison word, implausible move) is excluded from that count,
+since changing tier would not fix it. The migration also had to clear a **strict-superset** test —
+trading one blind spot for another is not an improvement.
+
 ### 🚨 Do not trust the marketing page's booking links
 
 The `Book` buttons on `swanhotel.com/spa/` are **mislinked** and must never be used as booking-item evidence:

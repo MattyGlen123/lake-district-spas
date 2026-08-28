@@ -1,0 +1,93 @@
+{
+  "spaId": 5,
+  "runDate": "2026-08-28",
+  "purpose": "Tier-adequacy assessment. Coverage is a SOURCE signal: a spa where most passes fail to ground has a tier problem, not a pass problem. Authority policy: the price a customer can transact at beats published marketing copy; every disagreement is reported either way. Probing is diagnostic; switching tier still needs a human.",
+  "htmlSource": "https://www.swanhotel.com/spa/ (356,587 bytes, HTTP 200)",
+  "apiSource": "https://api.onejourney.travel/165/spa-packages/en (8,468 bytes, HTTP 200)",
+  "decision": "MIGRATED — authorised by Matthew before any data was touched",
+  "recommendation": {
+    "spaId": 5,
+    "currentTier": "html",
+    "currentCoverage": {
+      "total": 8,
+      "grounded": 3,
+      "coverage": 0.375,
+      "ungroundedIds": [
+        "swan-holte-socials-night-friday",
+        "swan-holte-after-hours-sunday-thursday",
+        "swan-treatment-thermal-package",
+        "swan-full-works-spa-day",
+        "swan-holte-restorative-ritual"
+      ],
+      "notFoundIds": [
+        "swan-holte-socials-night-friday",
+        "swan-holte-after-hours-sunday-thursday",
+        "swan-treatment-thermal-package",
+        "swan-full-works-spa-day",
+        "swan-holte-restorative-ritual"
+      ],
+      "sourceIncomplete": true
+    },
+    "candidateTier": "portal-onejourney-api",
+    "candidateCoverage": {
+      "total": 8,
+      "grounded": 8,
+      "coverage": 1,
+      "ungroundedIds": [],
+      "notFoundIds": [],
+      "sourceIncomplete": false
+    },
+    "knownAlternatives": [
+      "portal-onejourney"
+    ],
+    "comparison": {
+      "comparedPasses": 3,
+      "agreements": 2,
+      "divergences": [
+        {
+          "passId": "swan-thermal-access-afternoon-tea",
+          "htmlGBP": 65,
+          "portal-onejourney-apiGBP": 79,
+          "agrees": false,
+          "authoritative": "portal-onejourney-api"
+        }
+      ],
+      "overlap": [
+        {
+          "passId": "swan-summer-glow-spa-escape",
+          "htmlGBP": 150,
+          "portal-onejourney-apiGBP": 150,
+          "agrees": true,
+          "authoritative": null
+        },
+        {
+          "passId": "swan-champagne-truffle-spa-day",
+          "htmlGBP": 150,
+          "portal-onejourney-apiGBP": 150,
+          "agrees": true,
+          "authoritative": null
+        },
+        {
+          "passId": "swan-thermal-access-afternoon-tea",
+          "htmlGBP": 65,
+          "portal-onejourney-apiGBP": 79,
+          "agrees": false,
+          "authoritative": "portal-onejourney-api"
+        }
+      ]
+    },
+    "divergenceReview": [
+      {
+        "passId": "swan-thermal-access-afternoon-tea",
+        "htmlGBP": 65,
+        "portal-onejourney-apiGBP": 79,
+        "agrees": false,
+        "authoritative": "portal-onejourney-api"
+      }
+    ],
+    "regressions": [],
+    "migrate": true,
+    "reason": "candidate-covers-more-and-is-transactable",
+    "summary": "portal-onejourney-api grounds 8/8 vs 3/8 on html; 1 price disagreement(s) need review."
+  }
+}
