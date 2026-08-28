@@ -1,0 +1,17 @@
+{
+  "url": "https://www.swanhotel.com/spa/",
+  "artifact": ".claude/content-out/refresh-runs/2026-08-28/swan-page-full.html",
+  "ok": true,
+  "botBlocked": false,
+  "error": null,
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-08-28T18:50:32.965Z",
+      "method": "curl",
+      "httpCode": "200",
+      "curlError": null,
+      "bytes": 356587
+    }
+  ]
+}

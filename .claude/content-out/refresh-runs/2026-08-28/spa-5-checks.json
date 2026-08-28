@@ -1,0 +1,124 @@
+[
+  {
+    "passId": "swan-summer-glow-spa-escape",
+    "passName": "Summer Glow Spa Escape",
+    "quote": "\"name\": \"Summer Glow Spa Escape\",\n      \"image\": {\n        \"externalKey\": \"69c6f5a97ee3dc31041d6197a2cd2f5c\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/69c6f5a97ee3dc31041d6197a2cd2f5c.jpg\"\n      },\n      \"price\": {\n        \"amount\": 15000",
+    "figureGBP": 150,
+    "storedGBP": 150,
+    "arithmetic": "pence",
+    "quotedFigure": 15000,
+    "bookability": {
+      "itemId": 4204,
+      "daysProbed": 14,
+      "daysWithSlots": 13,
+      "evidence": "\"itemId\": 4204,\n        \"name\": \"Summer Glow Spa Escape\",\n        \"daysProbed\": 14,\n        \"daysWithSlots\": 13"
+    }
+  },
+  {
+    "passId": "swan-champagne-truffle-spa-day",
+    "passName": "Champagne And Truffle Spa Day",
+    "quote": "\"name\": \"Champagne And Truffle Spa Day\",\n      \"image\": {\n        \"externalKey\": \"c2aa30c6e00cdcb607a77dbd3323970b\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/c2aa30c6e00cdcb607a77dbd3323970b.jpg\"\n      },\n      \"price\": {\n        \"amount\": 15000",
+    "figureGBP": 150,
+    "storedGBP": 150,
+    "arithmetic": "pence",
+    "quotedFigure": 15000,
+    "bookability": {
+      "itemId": 4203,
+      "daysProbed": 14,
+      "daysWithSlots": 13,
+      "evidence": "\"itemId\": 4203,\n        \"name\": \"Champagne And Truffle Spa Day\",\n        \"daysProbed\": 14,\n        \"daysWithSlots\": 13"
+    }
+  },
+  {
+    "passId": "swan-thermal-access-afternoon-tea",
+    "passName": "2 hour spa access and Afternoon Tea",
+    "quote": "\"name\": \"2 hour spa access and Afternoon Tea\",\n      \"image\": {\n        \"externalKey\": \"9152726096792b46ad8864c815b71d1f\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/9152726096792b46ad8864c815b71d1f.jpg\"\n      },\n      \"price\": {\n        \"amount\": 7900",
+    "figureGBP": 79,
+    "storedGBP": 65,
+    "arithmetic": "pence",
+    "quotedFigure": 7900,
+    "bookability": {
+      "itemId": 3687,
+      "daysProbed": 14,
+      "daysWithSlots": 13,
+      "evidence": "\"itemId\": 3687,\n        \"name\": \"2 hour spa access and Afternoon Tea\",\n        \"daysProbed\": 14,\n        \"daysWithSlots\": 13"
+    }
+  },
+  {
+    "passId": "swan-holte-socials-night-friday",
+    "passName": "Holte Socials Night - Friday",
+    "quote": "\"name\": \"Holte Socials Night - Friday\",\n      \"image\": {\n        \"externalKey\": \"8e842aae2be4f9e7e8de464c3beb9dc8\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/8e842aae2be4f9e7e8de464c3beb9dc8.webp\"\n      },\n      \"price\": {\n        \"amount\": 5900",
+    "figureGBP": 59,
+    "storedGBP": 35,
+    "arithmetic": "pence",
+    "quotedFigure": 5900,
+    "bookability": {
+      "itemId": 14258,
+      "daysProbed": 14,
+      "daysWithSlots": 1,
+      "evidence": "\"itemId\": 14258,\n        \"name\": \"Holte Socials Night - Friday\",\n        \"daysProbed\": 14,\n        \"daysWithSlots\": 1"
+    },
+    "repurposed": true
+  },
+  {
+    "passId": "swan-holte-after-hours-sunday-thursday",
+    "passName": "Holte After Hours - Sunday - Thursday",
+    "quote": "\"name\": \"Holte After Hours - Sunday - Thursday\",\n      \"image\": {\n        \"externalKey\": \"32f2907d126687c20ffbdc220c9d2826\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/32f2907d126687c20ffbdc220c9d2826.jpg\"\n      },\n      \"price\": {\n        \"amount\": 5900",
+    "figureGBP": 59,
+    "storedGBP": 55,
+    "arithmetic": "pence",
+    "quotedFigure": 5900,
+    "bookability": {
+      "itemId": 3865,
+      "daysProbed": 14,
+      "daysWithSlots": 10,
+      "evidence": "\"itemId\": 3865,\n        \"name\": \"Holte After Hours - Sunday - Thursday\",\n        \"daysProbed\": 14,\n        \"daysWithSlots\": 10"
+    },
+    "repurposed": true
+  },
+  {
+    "passId": "swan-treatment-thermal-package",
+    "passName": "Treatment & Thermal Package",
+    "quote": "\"name\": \"Treatment & Thermal Package\",\n      \"image\": {\n        \"externalKey\": \"66867885ec3a1059296bea05b773463c\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/66867885ec3a1059296bea05b773463c.jpg\"\n      },\n      \"price\": {\n        \"amount\": 11400",
+    "figureGBP": 114,
+    "storedGBP": 125,
+    "arithmetic": "pence",
+    "quotedFigure": 11400,
+    "bookability": {
+      "itemId": 11200,
+      "daysProbed": 14,
+      "daysWithSlots": 12,
+      "evidence": "\"itemId\": 11200,\n        \"name\": \"Treatment & Thermal Package\",\n        \"daysProbed\": 14,\n        \"daysWithSlots\": 12"
+    }
+  },
+  {
+    "passId": "swan-full-works-spa-day",
+    "passName": "The Full Works Holte Spa Day",
+    "quote": "\"name\": \"The Full Works Holte Spa Day\",\n      \"image\": {\n        \"externalKey\": \"0507415bfa66c71150bdcc5645684002\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/0507415bfa66c71150bdcc5645684002.png\"\n      },\n      \"price\": {\n        \"amount\": 22500",
+    "figureGBP": 225,
+    "storedGBP": 225,
+    "arithmetic": "pence",
+    "quotedFigure": 22500,
+    "bookability": {
+      "itemId": 16080,
+      "daysProbed": 14,
+      "daysWithSlots": 13,
+      "evidence": "\"itemId\": 16080,\n        \"name\": \"The Full Works Holte Spa Day\",\n        \"daysProbed\": 14,\n        \"daysWithSlots\": 13"
+    }
+  },
+  {
+    "passId": "swan-holte-restorative-ritual",
+    "passName": "The Holte Restorative Ritual",
+    "quote": "\"name\": \"The Holte Restorative Ritual\",\n      \"image\": {\n        \"externalKey\": \"f95b45decac3c3e268f459ca78ffed8f\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/f95b45decac3c3e268f459ca78ffed8f.png\"\n      },\n      \"price\": {\n        \"amount\": 22500",
+    "figureGBP": 225,
+    "storedGBP": 225,
+    "arithmetic": "pence",
+    "quotedFigure": 22500,
+    "bookability": {
+      "itemId": 16077,
+      "daysProbed": 14,
+      "daysWithSlots": 13,
+      "evidence": "\"itemId\": 16077,\n        \"name\": \"The Holte Restorative Ritual\",\n        \"daysProbed\": 14,\n        \"daysWithSlots\": 13"
+    }
+  }
+]

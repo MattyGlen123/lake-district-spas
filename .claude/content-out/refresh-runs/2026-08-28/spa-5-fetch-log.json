@@ -1,0 +1,39 @@
+{
+  "url": "https://api.onejourney.travel/165/spa-packages/en",
+  "artifact": ".claude/content-out/refresh-runs/2026-08-28/spa-5.json",
+  "ok": true,
+  "botBlocked": false,
+  "notJson": false,
+  "unexpectedShape": false,
+  "error": null,
+  "packageCount": 11,
+  "packageIds": [
+    3687,
+    3865,
+    4203,
+    4204,
+    3473,
+    11200,
+    14258,
+    16080,
+    16077,
+    19088,
+    19482
+  ],
+  "availabilityProbed": true,
+  "availabilityProbeFailed": false,
+  "unbookableItemIds": [
+    3473
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-08-28T19:08:23.376Z",
+      "method": "curl-json",
+      "httpCode": "200",
+      "curlError": null,
+      "bytes": 8468,
+      "packageCount": 11
+    }
+  ]
+}

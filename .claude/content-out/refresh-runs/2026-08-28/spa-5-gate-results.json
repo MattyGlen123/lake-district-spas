@@ -1,0 +1,114 @@
+{
+  "artifact": ".claude/content-out/refresh-runs/2026-08-28/spa-5.json",
+  "gates": [
+    "1 grounding+arithmetic",
+    "2 contiguity",
+    "3 poison words",
+    "4 pdf vintage (pdf tier only)",
+    "5 plausibility",
+    "6 bookability (portal tiers, opt-in)"
+  ],
+  "constants": {
+    "PRICE_MIN_GBP": 20,
+    "PRICE_MAX_GBP": 400,
+    "MAX_MOVE_PCT": 40,
+    "POISON_CONTEXT_CHARS": 200
+  },
+  "summary": {
+    "checked": 8,
+    "grounded": 8,
+    "flagged": 0
+  },
+  "results": [
+    {
+      "passId": "swan-summer-glow-spa-escape",
+      "quote": "\"name\": \"Summer Glow Spa Escape\",\n      \"image\": {\n        \"externalKey\": \"69c6f5a97ee3dc31041d6197a2cd2f5c\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/69c6f5a97ee3dc31041d6197a2cd2f5c.jpg\"\n      },\n      \"price\": {\n        \"amount\": 15000",
+      "figureGBP": 150,
+      "movePct": 0,
+      "daysProbed": 14,
+      "daysWithSlots": 13,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "swan-champagne-truffle-spa-day",
+      "quote": "\"name\": \"Champagne And Truffle Spa Day\",\n      \"image\": {\n        \"externalKey\": \"c2aa30c6e00cdcb607a77dbd3323970b\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/c2aa30c6e00cdcb607a77dbd3323970b.jpg\"\n      },\n      \"price\": {\n        \"amount\": 15000",
+      "figureGBP": 150,
+      "movePct": 0,
+      "daysProbed": 14,
+      "daysWithSlots": 13,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "swan-thermal-access-afternoon-tea",
+      "quote": "\"name\": \"2 hour spa access and Afternoon Tea\",\n      \"image\": {\n        \"externalKey\": \"9152726096792b46ad8864c815b71d1f\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/9152726096792b46ad8864c815b71d1f.jpg\"\n      },\n      \"price\": {\n        \"amount\": 7900",
+      "figureGBP": 79,
+      "movePct": 21.5,
+      "daysProbed": 14,
+      "daysWithSlots": 13,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "swan-holte-socials-night-friday",
+      "quote": "\"name\": \"Holte Socials Night - Friday\",\n      \"image\": {\n        \"externalKey\": \"8e842aae2be4f9e7e8de464c3beb9dc8\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/8e842aae2be4f9e7e8de464c3beb9dc8.webp\"\n      },\n      \"price\": {\n        \"amount\": 5900",
+      "figureGBP": 59,
+      "movePct": 68.6,
+      "daysProbed": 14,
+      "daysWithSlots": 1,
+      "plausibilityWaived": "item-repurposed",
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "swan-holte-after-hours-sunday-thursday",
+      "quote": "\"name\": \"Holte After Hours - Sunday - Thursday\",\n      \"image\": {\n        \"externalKey\": \"32f2907d126687c20ffbdc220c9d2826\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/32f2907d126687c20ffbdc220c9d2826.jpg\"\n      },\n      \"price\": {\n        \"amount\": 5900",
+      "figureGBP": 59,
+      "movePct": 7.3,
+      "daysProbed": 14,
+      "daysWithSlots": 10,
+      "plausibilityWaived": "item-repurposed",
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "swan-treatment-thermal-package",
+      "quote": "\"name\": \"Treatment & Thermal Package\",\n      \"image\": {\n        \"externalKey\": \"66867885ec3a1059296bea05b773463c\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/66867885ec3a1059296bea05b773463c.jpg\"\n      },\n      \"price\": {\n        \"amount\": 11400",
+      "figureGBP": 114,
+      "movePct": -8.8,
+      "daysProbed": 14,
+      "daysWithSlots": 12,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "swan-full-works-spa-day",
+      "quote": "\"name\": \"The Full Works Holte Spa Day\",\n      \"image\": {\n        \"externalKey\": \"0507415bfa66c71150bdcc5645684002\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/0507415bfa66c71150bdcc5645684002.png\"\n      },\n      \"price\": {\n        \"amount\": 22500",
+      "figureGBP": 225,
+      "movePct": 0,
+      "daysProbed": 14,
+      "daysWithSlots": 13,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    },
+    {
+      "passId": "swan-holte-restorative-ritual",
+      "quote": "\"name\": \"The Holte Restorative Ritual\",\n      \"image\": {\n        \"externalKey\": \"f95b45decac3c3e268f459ca78ffed8f\",\n        \"url\": \"https://hcommerce-live.s3.amazonaws.com/f95b45decac3c3e268f459ca78ffed8f.png\"\n      },\n      \"price\": {\n        \"amount\": 22500",
+      "figureGBP": 225,
+      "movePct": 0,
+      "daysProbed": 14,
+      "daysWithSlots": 13,
+      "grounded": true,
+      "reason": "grounded",
+      "gate": null
+    }
+  ]
+}

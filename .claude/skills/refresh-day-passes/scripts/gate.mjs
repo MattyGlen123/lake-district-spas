@@ -51,7 +51,19 @@ import { readFileSync } from 'node:fs';
 // --- spec constants (PRD §5) ------------------------------------------
 export const PRICE_MIN_GBP = 20;
 export const PRICE_MAX_GBP = 400;
+// Briefly raised to 75 on 2026-08-28 to clear Swan item 14258 (£35 -> £59,
+// +68.6%), then RESTORED to 40 the same day once repurpose detection landed.
+//
+// That item had not been repriced, it had been REPURPOSED — a £35 Mon-Thu pass
+// replaced by a £59 Friday one on the same booking id — so the percentage
+// between the two figures measured nothing. Widening the threshold treated a
+// classification problem as a tolerance problem and loosened the net for every
+// spa to do it. `repurpose.mjs` now identifies that case from two independent
+// signals (name changed AND probed day coverage changed) and gate 5 waives the
+// move comparison for it, so the strict bound can stay strict. See issue 15.
 export const MAX_MOVE_PCT = 40;
+// Derived so the reason can never drift from the constant it reports.
+export const MOVE_EXCEEDS_REASON = `move-exceeds-${MAX_MOVE_PCT}pct`;
 export const POISON_CONTEXT_CHARS = 200;
 // member/membership/resident/voucher/deposit matched as prefixes so
 // plurals and -ship suffixes hit; the leading \b keeps "remember" out.
@@ -299,11 +311,26 @@ export function movePct(storedGBP, figureGBP) {
 
 export function plausibility(check) {
   const pct = movePct(check.storedGBP, check.figureGBP);
+
+  // Absolute bounds apply to EVERY check, including repurposed items. A price
+  // outside £20–£400 is implausible on its own terms, whatever product it
+  // belongs to — that check needs no comparison to a stored figure.
   if (check.figureGBP < PRICE_MIN_GBP || check.figureGBP > PRICE_MAX_GBP) {
     return { ok: false, reason: 'price-out-of-bounds', movePct: pct };
   }
+
+  // A repurposed booking item (issue 15) holds a DIFFERENT product from the one
+  // we stored, so `figureGBP` and `storedGBP` are not two prices for one thing
+  // and the % between them measures nothing. Waive the move comparison rather
+  // than loosen it. The caller sets this flag only when two independent signals
+  // agree — the source name changed AND the probed day coverage changed — never
+  // on the size of the move itself, which would be circular.
+  if (check.repurposed === true) {
+    return { ok: true, movePct: pct, plausibilityWaived: 'item-repurposed' };
+  }
+
   if (pct !== null && Math.abs(pct) > MAX_MOVE_PCT) {
-    return { ok: false, reason: 'move-exceeds-40pct', movePct: pct };
+    return { ok: false, reason: MOVE_EXCEEDS_REASON, movePct: pct };
   }
   return { ok: true, movePct: pct };
 }
@@ -325,7 +352,7 @@ const GATE_OF = {
   'pdf-vintage-evidence-not-found-in-artifact': 4,
   'pdf-vintage-stale': 4,
   'price-out-of-bounds': 5,
-  'move-exceeds-40pct': 5,
+  [MOVE_EXCEEDS_REASON]: 5,
   'bookability-days-probed-missing': 6,
   'bookability-days-with-slots-missing': 6,
   'bookability-counts-inconsistent': 6,
@@ -377,6 +404,9 @@ export function runCheck(artifactNorm, check) {
   // gate 5 - plausibility bounds, flag-never-block
   const plaus = plausibility(check);
   if (!plaus.ok) return demote(plaus.reason);
+  // Surface a waived comparison on the result: a grounded figure that skipped
+  // the move check must be visibly distinguishable from one that passed it.
+  if (plaus.plausibilityWaived) base.plausibilityWaived = plaus.plausibilityWaived;
 
   // gate 6 - bookability (portal tiers; no-op when bookability is absent)
   const bookable = bookabilityCheck(check.bookability, artifactNorm);

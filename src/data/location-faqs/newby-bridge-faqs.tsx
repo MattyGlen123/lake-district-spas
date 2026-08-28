@@ -18,7 +18,7 @@ export function getNewbyBridgeFAQs(spas: Spa[]): FAQ[] {
   const swanBrandsText = swan ? getTreatmentBrandsText(swan.id) : null;
   const swanAgePolicy = swan ? getAgePolicy(swan) : null;
   const swanTwilightWeekdayPrice = swan
-    ? getDayPassPrice(swan.id, 'swan-twilight-sessions-weekday')
+    ? getDayPassPrice(swan.id, 'swan-holte-socials-night-friday')
     : null;
   const swanAfternoonTeaPrice = swan
     ? getDayPassPrice(swan.id, 'swan-thermal-access-afternoon-tea')
@@ -175,7 +175,7 @@ export function getNewbyBridgeFAQs(spas: Spa[]): FAQ[] {
           </Link>
           , the{' '}
           <Link
-            href={`/spa/${swan?.url || 'swan-hotel-spa'}#swan-twilight-sessions-weekday`}
+            href={`/spa/${swan?.url || 'swan-hotel-spa'}#swan-holte-socials-night-friday`}
             className="underline"
           >
             Twilight Session

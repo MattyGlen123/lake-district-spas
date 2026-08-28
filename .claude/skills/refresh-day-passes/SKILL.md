@@ -23,7 +23,7 @@ Manually-triggered refresh of existing `src/data/day-passes/` entries against ea
 
 Implemented tiers:
 
-- `html` — Lodore Falls (1), Daffodil (4), Swan (5), Low Wood Bay (7), Beech Hill (10), Whitewater (13), Another Place (14), Netherwood (16), Grange (17).
+- `html` — Lodore Falls (1), Daffodil (4), Low Wood Bay (7), Beech Hill (10), Whitewater (13), Another Place (14), Netherwood (16), Grange (17).
 - `blocked` — Old England (6): curl gets 403, so fetch goes straight to the Playwright fallback (`scripts/fetch-playwright.mjs`, repo's existing `@playwright/test` install; `npx playwright install` once if browsers missing). The rendered-HTML artifact it saves is gated exactly like a curl artifact.
 
 - `pdf` — Armathwaite (2), sole pdf-tier spa: the brochure PDF linked from `dayPassUrl`'s page is the price source. `scripts/fetch-pdf.mjs` downloads it (curl + browser UA, same retry/backoff as `fetch.mjs`) then runs poppler's `pdftotext -layout` on it. **The extracted text layer is saved as the fetch artifact** (`spa-<id>.txt`) — that's the file the gate greps, same rule as every other tier ("the artifact the model reads is the artifact the gate greps"). The raw PDF is kept alongside at `spa-<id>.pdf` as a reading aid; it is NOT committed (large binaries bloat the repo, and it is re-fetchable from the source URL in the fetch log). See "PDF vintage (gate 4)" below for the extra check this tier requires. Missing poppler (`pdftotext` not on PATH) is reported via the log's `missingDependency`/install-hint fields, exit 2 → failure lane, never a crash — `brew install poppler` if you hit it locally (poppler binaries can sit outside the default shell PATH even when installed via Homebrew).
@@ -34,7 +34,7 @@ Implemented tiers:
 
 - `portal-trybe` — North Lakes (12), Underscar (19). Prices live only in the booking portal, so fetch each pass's **`bookingUrl`, not `dayPassUrl`**, with `scripts/fetch.mjs` exactly as the html tier uses it — one page per DISTINCT booking item. Those pages are working files: they are bundled and trimmed into a single committed `spa-<id>.html` (see step 3b), which is what the gate greps and the PR ships. try.be renders a Vite SPA shell, but it **server-renders an `application/ld+json` `Product` block** carrying the item name and price, which plain curl gets. See "Portal tier extraction (try.be JSON-LD)" below.
 
-- `portal-onejourney-api` — Lakeside (9). The onejourney **public JSON API**, which every onejourney tenant's storefront reads from, whether or not that tenant server-renders. One call returns the spa's whole day-pass catalogue, so this tier fetches ONE small artifact per spa and needs no trim step. See "Portal tier extraction (onejourney JSON API)" below.
+- `portal-onejourney-api` — Lakeside (9, `propertyId` 340), Swan (5, `propertyId` 165 — **migrated from `html` on 2026-08-28**: the marketing page carried only 3 of 8 packages and one of those was stale by £14, see `scripts/tier-adequacy.mjs`). The onejourney **public JSON API**, which every onejourney tenant's storefront reads from, whether or not that tenant server-renders. One call returns the spa's whole day-pass catalogue, so this tier fetches ONE small artifact per spa and needs no trim step. See "Portal tier extraction (onejourney JSON API)" below.
 
 **Portal tiers are per-vendor, not per-portal.** The four portal spas split by whether their tenant server-renders, and that cuts across both vendors — never generalize one spa's rule to another. Appleby (onejourney) server-renders, prices in **pence**; North Lakes (12) and Underscar (19) are try.be and server-render a JSON-LD block, prices in **whole pounds**; Lakeside (9, also onejourney) does NOT server-render, and is fetched from the JSON API instead.
 
@@ -203,7 +203,9 @@ Cascade (PRD §4): (1) booking-portal item id (stable trailing path segment of `
 node .claude/skills/refresh-day-passes/scripts/rename.mjs <repo-root> <spa-id> <old-id> <new-id> <old-name> <new-name>
 ```
 
-This re-slugs the id to `<spa-prefix>-<slug-of-new-name>` (derived from the old id/name pair — see `deriveSpaPrefix` in `scripts/rename.mjs`), edits the data file's `id` and `packageName` fields, and auto-rewrites MECHANICAL references across `content/blog/**/*.mdx` and `src/data/faqs/*.tsx` — quoted id literals (`dayPassId="…"`, `getDayPassPrice(spa.id, '…')`) and `#<id>` anchor fragments — so `priced-content.test.ts` stays green. It prints `proseFlags` (case-insensitive hits of the OLD NAME in prose, file:line + context) — these go into the PR as ⚠️ checklist items and are **never rewritten**. If re-slugging would collide with another id already in use at that spa, nothing is renamed — it prints `{ applied: false, reason: 'slug-collision' }` and the PR gets a ⚠️ flag instead. Run `npm test` after any rename to confirm the priced-content validation is still green before continuing.
+This re-slugs the id to `<spa-prefix>-<slug-of-new-name>` (derived from the old id/name pair — see `deriveSpaPrefix` in `scripts/rename.mjs`), edits the data file's `id` and `packageName` fields, and auto-rewrites MECHANICAL references across **every tree in `scripts/reference-scan.mjs`** — `content/blog/**/*.mdx`, `src/data/faqs/**`, `src/data/location-faqs/**`, `src/app/**`, `src/components/**` — rewriting quoted id literals (`dayPassId="…"`, `getDayPassPrice(spa.id, '…')`, bare array members) and `#<id>` anchor fragments, so `priced-content.test.ts` stays green.
+
+⚠️ Before 2026-08-28 this walked only `content/blog` + `src/data/faqs`, so a rename silently orphaned references in the other three trees — with **no build error and no test failure**, because `getDayPassPrice` returns `null` for an unknown id and every call site falls back to a hardcoded literal. `rename.mjs` and `withdraw.mjs` now share one scanner precisely so the two lists cannot drift apart again (issue 14). It prints `proseFlags` (case-insensitive hits of the OLD NAME in prose, file:line + context) — these go into the PR as ⚠️ checklist items and are **never rewritten**. If re-slugging would collide with another id already in use at that spa, nothing is renamed — it prints `{ applied: false, reason: 'slug-collision' }` and the PR gets a ⚠️ flag instead. Run `npm test` after any rename to confirm the priced-content validation is still green before continuing.
 
 **Successor suggestions (strict 1:1, PRD §4).** After `matchPasses`, feed its result plus the same `existing`/`fetched` arrays through:
 
@@ -332,7 +334,7 @@ Gates run in order and the first failure demotes (`grounded: false`, with `gate`
 | 2 contiguity | pass name AND price in the one span | `pass-name-not-in-quote`, `missing-pass-name` |
 | 3 poison words | `member`/`membership`/`resident`/`voucher`/`deposit`/`per month` in the span or ±200 chars of artifact context (any occurrence of a repeated span) | `poison-word:<word>` (+ `poisonWords`) |
 | 4 PDF vintage (pdf tier only; no-op without `pdfVintage`) | `documentYear` present + evidence proven per `evidenceType` (see above) + not older than `runYear` | `pdf-vintage-year-missing`, `pdf-vintage-evidence-type-invalid`, `pdf-vintage-evidence-missing`, `pdf-vintage-year-not-in-evidence`, `pdf-vintage-evidence-not-found-in-artifact`, `pdf-vintage-stale` |
-| 5 plausibility | move ≤ ±40% vs `storedGBP`; price within £20–£400, even if unchanged | `move-exceeds-40pct`, `price-out-of-bounds` (+ computed `movePct`) |
+| 5 plausibility | move ≤ ±40% vs `storedGBP`; price within £20–£400, even if unchanged. **Waived for a repurposed item** (`repurposed: true`) — bounds still apply, see §4c | `move-exceeds-40pct`, `price-out-of-bounds` (+ computed `movePct`) |
 | 6 bookability (portal tiers; no-op without `bookability`) | `evidence` greps in the artifact's `availabilityProbe` block and names the `itemId`; counts are sane; `daysWithSlots` > 0 | `bookability-days-probed-missing`, `bookability-days-with-slots-missing`, `bookability-counts-inconsistent`, `bookability-evidence-missing`, `bookability-evidence-not-found-in-artifact`, `bookability-item-id-not-in-evidence`, `no-availability` |
 
 **Stale vintage demotes the whole spa, not just the pass** (PRD §2): `pdf-vintage-stale` on any one check means the brochure itself is out of date — every pass sourced from it is unreliable, not just that pass. Treat the spa exactly like a fetch failure (step 1's failure lane): exclude it from the run (entries and `lastVerified` untouched, no `priceGBP` edits from any of its checks even if other passes on the same brochure grounded fine), file one tracker issue (same shape as a fetch failure, error summary = "brochure dated `documentYear`, current run is `runYear`" + the vintage evidence), and render the ❌ not-fetched table row linking it. This is the one case where a gate-4 reason reaches back past step 4 into step 1's failure handling — every other gate reason (including the other pdf-vintage reasons: missing/invalid/unproven evidence) stays a normal per-pass ⚠️ flag. A pass-level flag for a **different** reason (e.g. gate 2 name drift) on a pdf-tier spa does NOT trigger this whole-spa rule — only `pdf-vintage-stale` does.
@@ -346,6 +348,69 @@ Route strictly by `gate-results.json`:
 | not grounded | — | ⚠️ flag with the quote + `reason` (+ `movePct` where computed) rendered — NO data change, NO `lastVerified` bump |
 
 Never re-quote or re-run a demoted pass to get it green: a demotion is a review item, not a retry.
+
+### 4d. Tier adequacy — is this source even capable of answering?
+
+*Added 2026-08-28. Registry: `scripts/tiers.mjs`; assessment: `scripts/tier-adequacy.mjs`.*
+
+A run gates the prices it finds and flags the ones it does not — but for a long time nothing asked whether the **source** could answer at all. Swan sat on `html` while its marketing page carried 3 of its 8 packages, so five passes were flagged every run indefinitely and reported as *five pass problems* rather than *one source problem*. Of the three prices the page did carry, one was £14 stale.
+
+**Coverage is the signal.** Run this after the gate:
+
+```js
+import { assessCoverage, recommendTier } from './tier-adequacy.mjs';
+const coverage = assessCoverage(gateResults.results);
+```
+
+- `coverage < 1` **and** `sourceIncomplete: true` → the source is missing prices, not merely awkward. Consider probing an alternative tier from the registry's `alternatives`.
+- A pass that failed for a **non-missing** reason (poison word, implausible move) does **not** count toward `sourceIncomplete` — migrating tier would not fix it.
+
+**Probing an alternative is diagnostic and safe; switching is not.** A migration must clear all of:
+
+1. the candidate grounds a **strict superset** — never trade one blind spot for another (`candidate-regresses`);
+2. it grounds **strictly more** than the current tier (`candidate-no-better`);
+3. every price disagreement between the two sources is **rendered in the PR**, never applied silently.
+
+**The authority policy, stated once:** when two sources disagree about the same pass, **the price a customer can actually transact at beats published marketing copy**. A booking portal takes the money; a spa's own page is advertising and goes stale unnoticed. A brochure PDF ranks above a web page (dated, usually contractual) and below a portal (still not the checkout). Equal-authority disagreements are reported as a `tie` — never silently resolved.
+
+⚠️ A disagreement is an **argument for** migrating to the more authoritative source, not against it — Swan's £65-vs-£79 gap was the strongest evidence the page was wrong. But it is always surfaced: a migration quietly changing a price is exactly what must not happen.
+
+🚨 Still **ask a human before switching tier** (see the Swan run). This step makes the case reviewable and reproducible; it does not make the decision. Record the outcome in `spa-<id>-tier-adequacy.json` and update the spa's `TIER_REGISTRY` entry with `migratedFrom` / `migratedOn`.
+
+### 4c. Repurposed items — when a price "move" is not a move
+
+*PRD §5a, issue 15. Added 2026-08-28.*
+
+A spa can retire a package and **reuse its booking-item id** for a different one. Gate 5 then compares two prices that describe different products, and the percentage between them means nothing. Swan item `14258` went from a £35 Mon–Thu "Twilight Session" to a £59 Friday-only "Holte Socials Night" (+68.6%) — a true figure gate 5 demoted.
+
+**This does not self-resolve.** A demoted pass gets no data change and no `lastVerified` bump, so `storedGBP` stays put and the identical false demotion repeats every run, forever.
+
+Run this **after matching and before the gate**, for any spa whose artifact carries an `availabilityProbe`:
+
+```bash
+node .claude/skills/refresh-day-passes/scripts/repurpose.mjs   # classifyRepurposeForSpa()
+```
+
+```js
+import { classifyRepurposeForSpa, applyRepurposeToChecks } from './repurpose.mjs';
+const classifications = classifyRepurposeForSpa(artifact, passes, matchResult.matches);
+const checks = applyRepurposeToChecks(rawChecks, classifications);   // stamps repurposed: true
+```
+
+Two independent signals, **both required**:
+
+| # | Signal | Where it comes from |
+| --- | --- | --- |
+| 1 | source **name** changed | `matching.mjs` reported a `rename` |
+| 2 | probed **day coverage** changed | `availabilityProbe` → `scripts/days.mjs` `compareDays`, status `contradiction` AND `confident: true` |
+
+- **Either alone must NOT waive the gate.** A name change alone is a seasonal rename (Winter Glow → Summer Glow — same product, same £150, same days); a day change alone is a schedule tweak.
+- **Price is never a signal.** Using the size of the move to excuse the size of the move is circular, and a genuine seasonal repricing can be large and must still be checked.
+- An **unconfident** day derivation does not count. `days.mjs` marks a derivation confident only when the probe window offered every weekday at least twice; anything less is a gap in our sampling, not evidence about the product.
+- Gate 5's **absolute £20–£400 bounds still apply** to a repurposed item. Only the move comparison is waived, and the result carries `plausibilityWaived: "item-repurposed"` so a waived figure is never indistinguishable from one that passed.
+- Write `spa-<id>-repurpose.json` into the run dir with the classifications, and render repurposed items in the PR as their own lane — id, old → new name, old → new days, old → new price — not as a price flag.
+
+**A repurpose is not a withdrawal.** The item is live and bookable, so condition 1 (`pageGone`) is false; it never enters the withdrawal path.
 
 ### 4b. Withdrawals — the one case that deletes an entry
 
@@ -368,7 +433,7 @@ It refuses to write unless **all five** conditions hold. Establish them from evi
 | 2 | `absentFromIndex` | fetch the spa's own offers/day-pass **listing page this run**; the package is not on it. |
 | 3 | `noSuccessor` | `classifySuccessors` returned no entry for this id. A renamed package is a rename, never a deletion. |
 | 4 | `priorSighting` | the pass appears in the **previous** run dir's `spa-<id>-withdrawal-candidates.json`. |
-| 5 | `noReferences` | nothing in `content/blog/**`, `src/data/faqs/**`, `src/data/location-faqs/**` cites the id. |
+| 5 | `noReferences` | nothing in the shared reference trees cites the id — `content/blog/**`, `src/data/faqs/**`, `src/data/location-faqs/**`, `src/app/**`, `src/components/**` (see `scripts/reference-scan.mjs`). |
 
 Any one missing → leave it as a plain ⚠️ flag, data untouched. The script exits 3 with the blocking reason.
 

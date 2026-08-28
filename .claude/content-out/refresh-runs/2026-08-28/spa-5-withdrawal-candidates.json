@@ -1,0 +1,45 @@
+{
+  "spaId": 5,
+  "runDate": "2026-08-28",
+  "purpose": "Ledger of passes meeting withdrawal conditions 1-3 this run (PRD §4a). A LATER run reads the most recent prior ledger to resolve condition 4 (priorSighting). Written every run, even when nothing is deleted — without it the second sighting can never happen and deletion is silently disabled.",
+  "candidates": [],
+  "notCandidates": [
+    {
+      "passId": "swan-summer-glow-spa-escape",
+      "reason": "Booking item 4204 is live in the catalogue and bookable on 13/14 probed days. pageGone: false. Formerly 'Winter Glow Spa Day' — PRD §7 predicted this pass as withdrawn with a 'Spring Awakening Spa Escape' successor; VERIFIED FALSE. The booking item never went away, it was renamed seasonally to 'Summer Glow Spa Escape' and matched at tier 1. A rename is not a withdrawal."
+    },
+    {
+      "passId": "swan-champagne-truffle-spa-day",
+      "reason": "Booking item 4203 live and bookable 13/14 days. pageGone: false."
+    },
+    {
+      "passId": "swan-thermal-access-afternoon-tea",
+      "reason": "Booking item 3687 live and bookable 13/14 days. pageGone: false."
+    },
+    {
+      "passId": "swan-holte-socials-night-friday",
+      "reason": "Booking item 14258 live and bookable 1/14 days (Friday only — correct for a Friday-only product). pageGone: false. Initially demoted by gate 5 on a +68.6% move; price manually verified at source by Matthew and the gate 5 threshold raised 40 -> 75, after which it grounded. Either way a plausibility demotion is a verification problem, not a withdrawal."
+    },
+    {
+      "passId": "swan-holte-after-hours-sunday-thursday",
+      "reason": "Booking item 3865 live and bookable 10/14 days (Sun-Thu). pageGone: false."
+    },
+    {
+      "passId": "swan-treatment-thermal-package",
+      "reason": "Booking item 11200 live and bookable 12/14 days. pageGone: false."
+    },
+    {
+      "passId": "swan-full-works-spa-day",
+      "reason": "Booking item 16080 live and bookable 13/14 days. pageGone: false."
+    },
+    {
+      "passId": "swan-holte-restorative-ritual",
+      "reason": "Booking item 16077 live and bookable 13/14 days. pageGone: false."
+    }
+  ],
+  "notes": [
+    "ZERO candidates this run: all 8 existing passes matched a live booking item at tier 1, so condition 1 (pageGone) fails for every one of them. Nothing at Swan is withdrawn.",
+    "No prior spa-5 ledger existed before this run (only spa-4 had one), so condition 4 (priorSighting) could not have been satisfied this run in any case. This file is the FIRST spa-5 sighting record and exists so a future run can resolve condition 4.",
+    "Fetch tier migrated this run: html -> portal-onejourney-api (propertyId 165). Withdrawal evidence is now the API catalogue plus its availabilityProbe block, not a per-pass page fetch — an absent pass simply is not in the catalogue (SKILL: 'A withdrawn pass simply is not in the catalogue')."
+  ]
+}

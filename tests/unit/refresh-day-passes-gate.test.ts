@@ -6,8 +6,21 @@ import { execFileSync } from 'node:child_process';
 import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+// Constants imported, never hardcoded: gate 5's threshold is a tunable spec
+// value (raised 40 -> 75 on 2026-08-28). Asserting against the literal made
+// these tests fail the moment the spec moved, for no real loss of coverage.
+import {
+  MAX_MOVE_PCT,
+  MOVE_EXCEEDS_REASON,
+  PRICE_MIN_GBP,
+  PRICE_MAX_GBP,
+  POISON_CONTEXT_CHARS,
+} from '../../.claude/skills/refresh-day-passes/scripts/gate.mjs';
 
 const GATE = join(process.cwd(), '.claude/skills/refresh-day-passes/scripts/gate.mjs');
+
+/** A price that moves `pct` % from `stored`, rounded to a whole pound. */
+const priceAtMove = (stored: number, pct: number) => Math.round(stored * (1 + pct / 100));
 
 interface GateResult {
   passId: string;
@@ -626,43 +639,52 @@ describe('gate 5 — plausibility bounds', () => {
     expect(r.movePct).toBe(20);
   });
 
-  it('demotes a move greater than +40%', () => {
-    const r = one(html('150'), {
+  it(`demotes a move greater than +${MAX_MOVE_PCT}%`, () => {
+    const stored = 100;
+    const figure = priceAtMove(stored, MAX_MOVE_PCT + 10);
+    const r = one(html(String(figure)), {
       passId: 'twilight',
       passName: 'Twilight Spa',
-      quote: 'Twilight Spa £150',
-      figureGBP: 150,
-      storedGBP: 100,
+      quote: `Twilight Spa £${figure}`,
+      figureGBP: figure,
+      storedGBP: stored,
     });
     expect(r.grounded).toBe(false);
-    expect(r.reason).toBe('move-exceeds-40pct');
+    expect(r.reason).toBe(MOVE_EXCEEDS_REASON);
     expect(r.gate).toBe(5);
-    expect(r.movePct).toBe(50);
+    expect(r.movePct).toBeGreaterThan(MAX_MOVE_PCT);
   });
 
-  it('demotes a move steeper than -40%', () => {
-    const r = one(html('50'), {
+  // stored is high enough that the reduced figure stays above the £20 floor —
+  // otherwise gate 5's bounds check fires first and we'd assert the wrong reason.
+  it(`demotes a move steeper than -${MAX_MOVE_PCT}%`, () => {
+    const stored = 200;
+    const figure = priceAtMove(stored, -(MAX_MOVE_PCT + 10));
+    expect(figure).toBeGreaterThanOrEqual(PRICE_MIN_GBP);
+    const r = one(html(String(figure)), {
       passId: 'twilight',
       passName: 'Twilight Spa',
-      quote: 'Twilight Spa £50',
-      figureGBP: 50,
-      storedGBP: 100,
+      quote: `Twilight Spa £${figure}`,
+      figureGBP: figure,
+      storedGBP: stored,
     });
     expect(r.grounded).toBe(false);
-    expect(r.reason).toBe('move-exceeds-40pct');
-    expect(r.movePct).toBe(-50);
+    expect(r.reason).toBe(MOVE_EXCEEDS_REASON);
+    expect(r.movePct).toBeLessThan(-MAX_MOVE_PCT);
   });
 
-  it('allows a move of exactly 40%', () => {
-    const r = one(html('140'), {
+  it(`allows a move of exactly ${MAX_MOVE_PCT}% (boundary is inclusive)`, () => {
+    const stored = 100;
+    const figure = priceAtMove(stored, MAX_MOVE_PCT);
+    const r = one(html(String(figure)), {
       passId: 'twilight',
       passName: 'Twilight Spa',
-      quote: 'Twilight Spa £140',
-      figureGBP: 140,
-      storedGBP: 100,
+      quote: `Twilight Spa £${figure}`,
+      figureGBP: figure,
+      storedGBP: stored,
     });
     expect(r.grounded).toBe(true);
-    expect(r.movePct).toBe(40);
+    expect(r.movePct).toBe(MAX_MOVE_PCT);
   });
 
   it('demotes a price below the £20 floor even when unchanged', () => {
@@ -723,10 +745,10 @@ describe('gate output shape', () => {
     const out = JSON.parse(execFileSync('node', [GATE, artifactPath, checksPath], { encoding: 'utf8' }));
     expect(out.summary).toEqual({ checked: 2, grounded: 1, flagged: 1 });
     expect(out.constants).toEqual({
-      PRICE_MIN_GBP: 20,
-      PRICE_MAX_GBP: 400,
-      MAX_MOVE_PCT: 40,
-      POISON_CONTEXT_CHARS: 200,
+      PRICE_MIN_GBP,
+      PRICE_MAX_GBP,
+      MAX_MOVE_PCT,
+      POISON_CONTEXT_CHARS,
     });
   });
 });
@@ -803,12 +825,15 @@ describe('gate 6 — bookability (portal tiers, opt-in)', () => {
   });
 
   it('runs after gate 5, so a price problem still reports as the price problem', () => {
+    // storedGBP chosen so the move is steeper than -MAX_MOVE_PCT whatever the
+    // threshold is set to; figureGBP (25) stays above the £20 floor.
+    const stored = Math.ceil(bookableCheck.figureGBP / (1 - (MAX_MOVE_PCT + 10) / 100));
     const r = one(probeArtifact, {
       ...bookableCheck,
-      storedGBP: 100, // -75% move
+      storedGBP: stored,
       bookability: { ...bookableCheck.bookability, daysWithSlots: 0 },
     });
-    expect(r.reason).toBe('move-exceeds-40pct');
+    expect(r.reason).toBe(MOVE_EXCEEDS_REASON);
     expect(r.gate).toBe(5);
   });
 
