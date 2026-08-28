@@ -16,15 +16,15 @@ export function getSpa5FAQs(spa: Spa): FAQ[] {
   const agePolicy = getAgePolicy(spa);
   
   // Day pass prices
-  const twilightWeekdayPrice = getDayPassPrice(spa.id, 'swan-twilight-sessions-weekday');
-  const twilightWeekendPrice = getDayPassPrice(spa.id, 'swan-twilight-sessions-weekend');
+  const twilightWeekdayPrice = getDayPassPrice(spa.id, 'swan-holte-socials-night-friday');
+  const twilightWeekendPrice = getDayPassPrice(spa.id, 'swan-holte-after-hours-sunday-thursday');
   const afternoonTeaPrice = getDayPassPrice(spa.id, 'swan-thermal-access-afternoon-tea');
-  const winterGlowPrice = getDayPassPrice(spa.id, 'swan-winter-glow-spa-day');
+  const winterGlowPrice = getDayPassPrice(spa.id, 'swan-summer-glow-spa-escape');
   const champagneTrufflePrice = getDayPassPrice(spa.id, 'swan-champagne-truffle-spa-day');
   const fullWorksPrice = getDayPassPrice(spa.id, 'swan-full-works-spa-day');
   
   // Day pass durations
-  const twilightDuration = getDayPassDuration(spa.id, 'swan-twilight-sessions-weekday');
+  const twilightDuration = getDayPassDuration(spa.id, 'swan-holte-socials-night-friday');
   const afternoonTeaDuration = getDayPassDuration(spa.id, 'swan-thermal-access-afternoon-tea');
   const fullWorksDuration = getDayPassDuration(spa.id, 'swan-full-works-spa-day');
 
@@ -83,7 +83,7 @@ export function getSpa5FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Budget options: The{' '}
-          <Link href="#swan-twilight-sessions-weekday" className="underline">
+          <Link href="#swan-holte-socials-night-friday" className="underline">
             Twilight Session
           </Link>{' '}
           starts at {twilightWeekdayPrice || '£35'} (Monday through Thursday, 6pm to 8pm) or {twilightWeekendPrice || '£55'} (Saturday and Sunday, 6pm to 8pm). These provide {twilightDuration || '2 hours'} of thermal access at quieter times.
@@ -101,7 +101,7 @@ export function getSpa5FAQs(spa: Spa): FAQ[] {
           <br />
           <br />
           Premium options: For a more indulgent experience, the{' '}
-          <Link href="#swan-winter-glow-spa-day" className="underline">
+          <Link href="#swan-summer-glow-spa-escape" className="underline">
             Winter Glow Spa Day
           </Link>{' '}
           ({winterGlowPrice || '£150'}) and{' '}

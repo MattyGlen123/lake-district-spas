@@ -1,0 +1,454 @@
+{
+  "total": 11,
+  "page": 1,
+  "perPage": 20,
+  "data": [
+    {
+      "id": 3687,
+      "categories": [],
+      "name": "2 hour spa access and Afternoon Tea",
+      "image": {
+        "externalKey": "9152726096792b46ad8864c815b71d1f",
+        "url": "https://hcommerce-live.s3.amazonaws.com/9152726096792b46ad8864c815b71d1f.jpg"
+      },
+      "price": {
+        "amount": 7900,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 6,
+      "durationText": null,
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    },
+    {
+      "id": 3865,
+      "categories": [
+        {
+          "id": 3219,
+          "name": "Twilight and Thermal"
+        }
+      ],
+      "name": "Holte After Hours - Sunday - Thursday",
+      "image": {
+        "externalKey": "32f2907d126687c20ffbdc220c9d2826",
+        "url": "https://hcommerce-live.s3.amazonaws.com/32f2907d126687c20ffbdc220c9d2826.jpg"
+      },
+      "price": {
+        "amount": 5900,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 8,
+      "durationText": null,
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    },
+    {
+      "id": 4203,
+      "categories": [
+        {
+          "id": 2493,
+          "name": "Facials"
+        },
+        {
+          "id": 3001,
+          "name": "Temple Spa Facials"
+        },
+        {
+          "id": 3347,
+          "name": "Thermal Bathing"
+        }
+      ],
+      "name": "Champagne And Truffle Spa Day",
+      "image": {
+        "externalKey": "c2aa30c6e00cdcb607a77dbd3323970b",
+        "url": "https://hcommerce-live.s3.amazonaws.com/c2aa30c6e00cdcb607a77dbd3323970b.jpg"
+      },
+      "price": {
+        "amount": 15000,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 11,
+      "durationText": "half_day",
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    },
+    {
+      "id": 4204,
+      "categories": [
+        {
+          "id": 2493,
+          "name": "Facials"
+        },
+        {
+          "id": 3001,
+          "name": "Temple Spa Facials"
+        },
+        {
+          "id": 3002,
+          "name": "Temple Spa Body"
+        },
+        {
+          "id": 3347,
+          "name": "Thermal Bathing"
+        },
+        {
+          "id": 3699,
+          "name": "Rituals"
+        }
+      ],
+      "name": "Summer Glow Spa Escape",
+      "image": {
+        "externalKey": "69c6f5a97ee3dc31041d6197a2cd2f5c",
+        "url": "https://hcommerce-live.s3.amazonaws.com/69c6f5a97ee3dc31041d6197a2cd2f5c.jpg"
+      },
+      "price": {
+        "amount": 15000,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 12,
+      "durationText": "half_day",
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    },
+    {
+      "id": 3473,
+      "categories": [
+        {
+          "id": 3219,
+          "name": "Twilight and Thermal"
+        }
+      ],
+      "name": "Spa Party Nights!",
+      "image": {
+        "externalKey": "c5d54970f46518afde9608164c522c7f",
+        "url": "https://hcommerce-live.s3.amazonaws.com/c5d54970f46518afde9608164c522c7f.jpg"
+      },
+      "price": {
+        "amount": 6500,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 13,
+      "durationText": "evening",
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    },
+    {
+      "id": 11200,
+      "categories": [],
+      "name": "Treatment & Thermal Package",
+      "image": {
+        "externalKey": "66867885ec3a1059296bea05b773463c",
+        "url": "https://hcommerce-live.s3.amazonaws.com/66867885ec3a1059296bea05b773463c.jpg"
+      },
+      "price": {
+        "amount": 11400,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 18,
+      "durationText": "half_day",
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    },
+    {
+      "id": 14258,
+      "categories": [
+        {
+          "id": 3219,
+          "name": "Twilight and Thermal"
+        }
+      ],
+      "name": "Holte Socials Night - Friday",
+      "image": {
+        "externalKey": "8e842aae2be4f9e7e8de464c3beb9dc8",
+        "url": "https://hcommerce-live.s3.amazonaws.com/8e842aae2be4f9e7e8de464c3beb9dc8.webp"
+      },
+      "price": {
+        "amount": 5900,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 22,
+      "durationText": null,
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    },
+    {
+      "id": 16080,
+      "categories": [],
+      "name": "The Full Works Holte Spa Day",
+      "image": {
+        "externalKey": "0507415bfa66c71150bdcc5645684002",
+        "url": "https://hcommerce-live.s3.amazonaws.com/0507415bfa66c71150bdcc5645684002.png"
+      },
+      "price": {
+        "amount": 22500,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 23,
+      "durationText": "full_day",
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    },
+    {
+      "id": 16077,
+      "categories": [
+        {
+          "id": 3347,
+          "name": "Thermal Bathing"
+        }
+      ],
+      "name": "The Holte Restorative Ritual",
+      "image": {
+        "externalKey": "f95b45decac3c3e268f459ca78ffed8f",
+        "url": "https://hcommerce-live.s3.amazonaws.com/f95b45decac3c3e268f459ca78ffed8f.png"
+      },
+      "price": {
+        "amount": 22500,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 24,
+      "durationText": "half_day",
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    },
+    {
+      "id": 19088,
+      "categories": [],
+      "name": "Holte Socials Night - Saturday",
+      "image": {
+        "externalKey": "08e69e8397874e82d9642058188a413f",
+        "url": "https://hcommerce-live.s3.amazonaws.com/08e69e8397874e82d9642058188a413f.webp"
+      },
+      "price": {
+        "amount": 6900,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 27,
+      "durationText": null,
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    },
+    {
+      "id": 19482,
+      "categories": [
+        {
+          "id": 3347,
+          "name": "Thermal Bathing"
+        }
+      ],
+      "name": "Wellness Wednesday",
+      "image": {
+        "externalKey": "1e93fa4f07a5d1f5ded6b467d3d6bece",
+        "url": "https://hcommerce-live.s3.amazonaws.com/1e93fa4f07a5d1f5ded6b467d3d6bece.webp"
+      },
+      "price": {
+        "amount": 3450,
+        "currencyCode": "gbp"
+      },
+      "displayOrder": 28,
+      "durationText": null,
+      "numberOfGuests": 1,
+      "discount": null,
+      "paymentOptionOverride": null
+    }
+  ],
+  "availabilityProbe": {
+    "probedAt": "2026-08-28T19:09:38.267Z",
+    "windowDays": 14,
+    "startDate": "2026-08-28",
+    "endDate": "2026-09-10",
+    "endpoint": "https://api.onejourney.travel/165/spa-packages/<itemId>/<date>/timeslots?quantity=1",
+    "note": "daysWithSlots 0 means the pass is listed and priced but has no bookable date in the window.",
+    "anyProbeFailed": false,
+    "items": [
+      {
+        "itemId": 3687,
+        "name": "2 hour spa access and Afternoon Tea",
+        "daysProbed": 14,
+        "daysWithSlots": 13,
+        "datesWithSlots": [
+          "2026-08-29",
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-06",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10"
+        ]
+      },
+      {
+        "itemId": 3865,
+        "name": "Holte After Hours - Sunday - Thursday",
+        "daysProbed": 14,
+        "daysWithSlots": 10,
+        "datesWithSlots": [
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-06",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10"
+        ]
+      },
+      {
+        "itemId": 4203,
+        "name": "Champagne And Truffle Spa Day",
+        "daysProbed": 14,
+        "daysWithSlots": 13,
+        "datesWithSlots": [
+          "2026-08-29",
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-06",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10"
+        ]
+      },
+      {
+        "itemId": 4204,
+        "name": "Summer Glow Spa Escape",
+        "daysProbed": 14,
+        "daysWithSlots": 13,
+        "datesWithSlots": [
+          "2026-08-29",
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-06",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10"
+        ]
+      },
+      {
+        "itemId": 3473,
+        "name": "Spa Party Nights!",
+        "daysProbed": 14,
+        "daysWithSlots": 0,
+        "datesWithSlots": []
+      },
+      {
+        "itemId": 11200,
+        "name": "Treatment & Thermal Package",
+        "daysProbed": 14,
+        "daysWithSlots": 12,
+        "datesWithSlots": [
+          "2026-08-29",
+          "2026-08-30",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-06",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10"
+        ]
+      },
+      {
+        "itemId": 14258,
+        "name": "Holte Socials Night - Friday",
+        "daysProbed": 14,
+        "daysWithSlots": 1,
+        "datesWithSlots": [
+          "2026-09-04"
+        ]
+      },
+      {
+        "itemId": 16080,
+        "name": "The Full Works Holte Spa Day",
+        "daysProbed": 14,
+        "daysWithSlots": 13,
+        "datesWithSlots": [
+          "2026-08-29",
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-06",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10"
+        ]
+      },
+      {
+        "itemId": 16077,
+        "name": "The Holte Restorative Ritual",
+        "daysProbed": 14,
+        "daysWithSlots": 13,
+        "datesWithSlots": [
+          "2026-08-29",
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-06",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10"
+        ]
+      },
+      {
+        "itemId": 19088,
+        "name": "Holte Socials Night - Saturday",
+        "daysProbed": 14,
+        "daysWithSlots": 2,
+        "datesWithSlots": [
+          "2026-08-29",
+          "2026-09-05"
+        ]
+      },
+      {
+        "itemId": 19482,
+        "name": "Wellness Wednesday",
+        "daysProbed": 14,
+        "daysWithSlots": 2,
+        "datesWithSlots": [
+          "2026-09-02",
+          "2026-09-09"
+        ]
+      }
+    ]
+  }
+}
